@@ -183,21 +183,21 @@
         .hero {
             background: linear-gradient(160deg, #0A2E1A 0%, var(--green-primary) 40%, #163D26 100%);
             color: var(--off-white);
-            padding: 6rem 0 5rem;
+            padding: 5rem 0;
             position: relative;
             overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute; top: -50%; right: -20%;
-            width: 800px; height: 800px;
-            background: radial-gradient(circle, rgba(127, 191, 58, 0.12) 0%, transparent 70%);
-            border-radius: 50%;
+            min-height: 520px;
         }
         /* Slider */
-        .hero-slides { position: relative; }
-        .hero-slide { display: none; opacity: 0; transition: opacity 0.6s ease-in-out; }
-        .hero-slide.active { display: block; opacity: 1; }
+        .hero-slides { position: relative; width: 100%; overflow: hidden; }
+        .hero-slide { 
+            position: absolute; top: 0; left: 0; width: 100%;
+            transform: translateX(100%);
+            transition: transform 0.6s ease-in-out;
+            opacity: 1;
+        }
+        .hero-slide.active { transform: translateX(0); position: relative; }
+        .hero-slide.prev { transform: translateX(-100%); }
         .hero-slide .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
         .hero h1 { color: var(--off-white); margin-bottom: 1.25rem; }
         .hero p {
@@ -425,70 +425,60 @@
                             <a href="#probleem" class="btn btn-ghost">Bekijk de problemen</a>
                         </div>
                     </div>
-                    <div class="hero-illustration" style="width:100%;max-width:500px;">
-                        <!-- Piekbelasting diagram SVG -->
-                        <svg viewBox="0 0 500 300" fill="none" style="width:100%;">
-                            <!-- Grid -->
-                            <line x1="60" y1="30" x2="60" y2="250" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-                            <line x1="60" y1="250" x2="470" y2="250" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-                            <line x1="60" y1="195" x2="470" y2="195" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4"/>
-                            <line x1="60" y1="140" x2="470" y2="140" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4"/>
-                            <line x1="60" y1="85" x2="470" y2="85" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4"/>
-                            
-                            <!-- Bars — hotel verbruik per 2 uur -->
-                            <rect x="72" y="215" width="38" height="35" rx="3" fill="rgba(127,191,58,0.35)"/>
-                            <text x="91" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">00</text>
-                            
-                            <rect x="122" y="225" width="38" height="25" rx="3" fill="rgba(127,191,58,0.25)"/>
-                            <text x="141" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">02</text>
-                            
-                            <rect x="172" y="220" width="38" height="30" rx="3" fill="rgba(127,191,58,0.3)"/>
-                            <text x="191" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">04</text>
-                            
-                            <rect x="222" y="195" width="38" height="55" rx="3" fill="rgba(127,191,58,0.4)"/>
-                            <text x="241" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">06</text>
-                            
-                            <rect x="272" y="160" width="38" height="90" rx="3" fill="rgba(127,191,58,0.5)"/>
-                            <text x="291" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">08</text>
-                            
-                            <rect x="322" y="135" width="38" height="115" rx="3" fill="rgba(127,191,58,0.55)"/>
-                            <text x="341" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">10</text>
-                            
-                            <rect x="372" y="120" width="38" height="130" rx="3" fill="rgba(183,224,138,0.55)"/>
-                            <text x="391" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">12</text>
-                            
-                            <rect x="422" y="115" width="38" height="135" rx="3" fill="rgba(183,224,138,0.6)"/>
-                            <text x="441" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">14</text>
-                            
-                            <!-- Peak zone 17-21 -->
-                            <rect x="462" y="40" width="110" height="210" rx="6" fill="rgba(255,130,90,0.1)" stroke="#FF6B3A" stroke-width="1.5" stroke-dasharray="6 3"/>
-                            <text x="517" y="50" text-anchor="middle" fill="#FF6B3A" font-family="Montserrat" font-weight="600" font-size="11">PIEK</text>
-                            <text x="517" y="64" text-anchor="middle" fill="rgba(255,107,58,0.7)" font-family="Inter" font-size="9">17:00–21:00</text>
-                            
-                            <!-- Peak bars -->
-                            <rect x="472" y="85" width="22" height="165" rx="3" fill="#7FBF3A"/>
-                            <text x="483" y="270" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="8">17</text>
-                            <rect x="502" y="60" width="22" height="190" rx="3" fill="#7FBF3A"/>
-                            <text x="513" y="270" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="8">18</text>
-                            <rect x="532" y="45" width="22" height="205" rx="3" fill="#B7E08A"/>
-                            <text x="543" y="270" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="8">19</text>
-                            <rect x="562" y="55" width="22" height="195" rx="3" fill="#B7E08A"/>
-                            <text x="573" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">20</text>
-                            
-                            <!-- After peak -->
-                            <rect x="594" y="130" width="22" height="120" rx="3" fill="rgba(127,191,58,0.5)"/>
-                            <text x="605" y="270" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter" font-size="8">21</text>
-                            
-                            <!-- BESS buffer line -->
-                            <line x1="472" y1="155" x2="610" y2="155" stroke="#7FBF3A" stroke-width="2" stroke-dasharray="8 4" opacity="0.6"/>
-                            <text x="540" y="148" text-anchor="middle" fill="#7FBF3A" font-family="Inter" font-size="8">← Batterij vangt piek af</text>
+                    <div class="hero-illustration" style="width:100%;max-width:520px;">
+                        <svg viewBox="0 0 520 300" fill="none" style="width:100%;">
+                            <!-- Grid lines -->
+                            <line x1="50" y1="30" x2="50" y2="255" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            <line x1="50" y1="255" x2="500" y2="255" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            <line x1="50" y1="200" x2="500" y2="200" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="3"/>
+                            <line x1="50" y1="145" x2="500" y2="145" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="3"/>
+                            <line x1="50" y1="90" x2="500" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="3"/>
                             
                             <!-- Y-axis labels -->
-                            <text x="50" y="253" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="8">0</text>
-                            <text x="50" y="198" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="8">50</text>
-                            <text x="50" y="143" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="8">100</text>
-                            <text x="50" y="88" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="8">150</text>
-                            <text x="50" y="38" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="8">kW</text>
+                            <text x="42" y="258" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="9">0</text>
+                            <text x="42" y="203" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="9">50</text>
+                            <text x="42" y="148" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="9">100</text>
+                            <text x="42" y="93" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="9">150</text>
+                            <text x="42" y="38" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="8">kW</text>
+                            
+                            <!-- Grid consumption area (blue) -->
+                            <path d="M58 240 L58 240 L98 238 L138 235 L178 225 L218 200 L258 170 L298 140 L338 115 L378 100 L418 90 L458 85 L498 95 L498 255 L58 255Z" fill="rgba(70,110,180,0.25)" stroke="rgba(100,140,210,0.7)" stroke-width="1.5"/>
+                            
+                            <!-- Solar PV generation area (green) -->
+                            <path d="M218 255 L218 255 L258 245 L298 220 L338 195 L378 190 L418 200 L458 220 L498 245 L498 255Z" fill="rgba(127,191,58,0.3)" stroke="#7FBF3A" stroke-width="1.5"/>
+                            
+                            <!-- Net consumption line (blue gradient) -->
+                            <path d="M58 240 L98 238 L138 235 L178 225 L218 200 L258 170 L298 140 L338 115 L378 100 L418 95 L458 110 L498 130" fill="none" stroke="rgba(100,140,210,0.9)" stroke-width="2.5"/>
+                            
+                            <!-- Solar line -->
+                            <path d="M218 255 L258 245 L298 220 L338 195 L378 190 L418 200 L458 220 L498 245" fill="none" stroke="#7FBF3A" stroke-width="2.5"/>
+                            
+                            <!-- Dashed solar peak reference -->
+                            <line x1="340" y1="195" x2="340" y2="140" stroke="#7FBF3A" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+                            
+                            <!-- Peak label -->
+                            <rect x="318" y="125" width="80" height="18" rx="4" fill="rgba(255,107,58,0.15)" stroke="#FF6B3A" stroke-width="1"/>
+                            <text x="358" y="137" text-anchor="middle" fill="#FF6B3A" font-family="Montserrat" font-weight="600" font-size="9">PIEK 17-21u</text>
+                            
+                            <!-- X-axis time labels -->
+                            <text x="58" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">00</text>
+                            <text x="98" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">02</text>
+                            <text x="138" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">04</text>
+                            <text x="178" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">06</text>
+                            <text x="218" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">08</text>
+                            <text x="258" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">10</text>
+                            <text x="298" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">12</text>
+                            <text x="338" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">14</text>
+                            <text x="378" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">16</text>
+                            <text x="418" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">18</text>
+                            <text x="458" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">20</text>
+                            <text x="498" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">22</text>
+                            
+                            <!-- Legend -->
+                            <rect x="55" y="40" width="10" height="10" rx="2" fill="rgba(100,140,210,0.7)"/>
+                            <text x="70" y="50" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="8">Netverbruik</text>
+                            <rect x="140" y="40" width="10" height="10" rx="2" fill="#7FBF3A"/>
+                            <text x="155" y="50" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="8">Zon-PV</text>
                         </svg>
                     </div>
                 </div>
@@ -885,15 +875,19 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Hero slider — 2 second auto-rotate
+    // Hero slider — 2s auto-slide to left
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slider-dot');
     
     function showSlide(n) {
-        slides[currentSlide].classList.remove('active');
-        dots[currentSlide].style.background = 'rgba(255,255,255,0.3)';
+        const old = currentSlide;
+        slides[old].classList.remove('active');
+        slides[old].classList.add(n > old ? 'prev' : '');
+        dots[old].style.background = 'rgba(255,255,255,0.3)';
+        
         currentSlide = n;
+        slides[currentSlide].classList.remove('prev');
         slides[currentSlide].classList.add('active');
         dots[currentSlide].style.background = 'var(--green-accent)';
     }
