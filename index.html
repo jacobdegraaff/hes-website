@@ -421,6 +421,7 @@
 </nav>
 
 <main>
+    <!-- v3.1 — chart + slider 3s -->
     <!-- HERO SLIDER -->
     <section class="hero" style="position:relative;overflow:hidden;">
         <div class="hero-slides">
@@ -949,7 +950,7 @@
     // Initialize: slide 0 at 0%, slide 1 at 100%
     slides[1].style.transform = 'translateX(100%)';
     
-    setInterval(() => showSlide(currentSlide === 0 ? 1 : 0), 2500);
+    setInterval(() => showSlide(currentSlide === 0 ? 1 : 0), 3000);
     
     dots.forEach(dot => {
         dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.slide)));
