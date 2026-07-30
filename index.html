@@ -170,33 +170,7 @@
         .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
         .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--green-primary); margin: 5px 0; transition: 0.3s; }
         .mobile-logo { display: none; }
-
- /* Language switcher */
- .lang-switch { position: relative; }
- .lang-btn {
-     background: transparent; border: 1.5px solid var(--green-primary);
-     color: var(--green-primary); width: 36px; height: 36px;
-     border-radius: 50%; cursor: pointer; font-size: 0.85rem;
-     display: flex; align-items: center; justify-content: center;
-     transition: all 0.2s;
- }
- .lang-btn:hover { background: var(--green-primary); }
- .lang-dropdown {
-     display: none; position: absolute; top: 110%; right: 0;
-     background: white; border-radius: var(--radius); box-shadow: var(--shadow-lg);
-     border: 1px solid var(--border); min-width: 130px; z-index: 200;
-     overflow: hidden;
- }
- .lang-dropdown.show { display: block; }
- .lang-dropdown a {
-     display: flex; align-items: center; gap: 0.5rem;
-     padding: 0.6rem 1rem; text-decoration: none; color: var(--dark-grey);
-     font-size: 0.85rem; transition: background 0.15s;
- }
- .lang-dropdown a:hover { background: var(--off-white); color: var(--green-primary); }
- .lang-dropdown a .flag { font-size: 1.1rem; }
-
- @media (max-width: 768px) {
+@media (max-width: 768px) {
             /* Nav */
             nav { padding: 0.25rem 0; }
             .nav-logo { left: 0.25rem; top: -15px; }
@@ -441,15 +415,6 @@
             <li><a href="over-ons.html">Over ons</a></li>
             <li><a href="nieuws.html">Nieuws</a></li>
             <li><a href="#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
-            <li class="lang-switch">
-                <button class="lang-btn" onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" aria-label="Kies taal">🌐</button>
-                <div class="lang-dropdown">
-                    <a href="https://jacobdegraaff.github.io/hes-website/"><span class="flag">🇳🇱</span> Nederlands</a>
-                    <a href="https://jacobdegraaff-github-io.translate.goog/hes-website/?_x_tr_sl=nl&amp;_x_tr_tl=en&amp;_x_tr_hl=en"><span class="flag">🇬🇧</span> English</a>
-                    <a href="https://jacobdegraaff-github-io.translate.goog/hes-website/?_x_tr_sl=nl&amp;_x_tr_tl=fr&amp;_x_tr_hl=fr"><span class="flag">🇫🇷</span> Français</a>
-                    <a href="https://jacobdegraaff-github-io.translate.goog/hes-website/?_x_tr_sl=nl&amp;_x_tr_tl=es&amp;_x_tr_hl=es"><span class="flag">🇪🇸</span> Español</a>
-                </div>
-            </li>
         </ul>
     </div>
 </nav>
@@ -923,14 +888,6 @@
     // Radio slider auto-advance
     let si = 0;
     setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
-
-    // Close dropdown on outside click
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.lang-switch')) {
-            var dd = document.querySelector('.lang-dropdown');
-            if (dd) dd.classList.remove('show');
-        }
-    });
 </script>
 
 </body>
