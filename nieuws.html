@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nieuws — Hospitality Energy Solutions</title>
+    <meta name="description" content="Dagelijks nieuwsoverzicht over netcongestie, energiesubsidies, batterij-opslag en laadinfrastructuur voor bedrijven in de hospitality sector.">
+    <link rel="canonical" href="https://hes.energy/nieuws.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --green-primary: #0F3D23;
+            --green-secondary: #2E7032;
+            --green-accent: #7FBF3A;
+            --green-light: #B7E08A;
+            --off-white: #F5F7F2;
+            --dark-grey: #2F3437;
+            --text-muted: #6B7B6E;
+            --border: #D4DDD0;
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--dark-grey); background: var(--off-white); line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600; color: var(--green-primary); }
+        h1 { font-size: clamp(1.75rem, 4vw, 2.8rem); }
+        h2 { font-size: clamp(1.25rem, 3vw, 1.8rem); }
+        h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(245,247,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0.5rem 0; }
+        nav .container { display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo img { height: 50px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--dark-grey); font-size: 0.9rem; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: var(--green-accent); }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1.25rem; background: var(--green-accent); color: var(--green-primary); border-radius: 50px; text-decoration: none; font-family: 'Montserrat',system-ui,sans-serif; font-weight: 500; font-size: 0.85rem; }
+
+        .page-header { background: var(--green-primary); color: var(--off-white); padding: 3rem 0 2rem; text-align: center; }
+        .page-header h1 { color: var(--off-white); margin-bottom: 0.5rem; }
+        .page-header p { opacity: 0.85; }
+
+        .news-grid { display: grid; gap: 1.5rem; padding: 2.5rem 0; }
+        .news-card { background: white; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 24px rgba(15,61,35,0.06); border: 1px solid var(--border); }
+        .news-card .tag { display: inline-block; padding: 0.2rem 0.75rem; border-radius: 50px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem; }
+        .tag-congestion { background: rgba(127,191,58,0.15); color: var(--green-secondary); }
+        .tag-subsidy { background: rgba(46,112,50,0.1); color: var(--green-secondary); }
+        .tag-battery { background: rgba(15,61,35,0.08); color: var(--green-primary); }
+        .news-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .news-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .news-card .source { font-size: 0.78rem; color: #999; margin-top: 0.75rem; }
+
+        .section-divider { margin: 2rem 0 0; }
+        .section-divider h2 { margin-bottom: 1rem; }
+
+        footer { background: var(--green-primary); color: rgba(245,247,242,0.7); padding: 2rem 0; font-size: 0.85rem; text-align: center; margin-top: 3rem; }
+        footer a { color: var(--green-light); }
+
+        @media (max-width: 640px) {
+            .nav-links { gap: 1rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="index.html" class="nav-logo"><img src="logo-transparent.png" alt="HES"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="configurator.html">Configurator</a></li>
+            <li><a href="nieuws.html" class="active">Nieuws</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Nieuws & Ontwikkelingen</h1>
+    <p>Dagelijks bijgewerkt — netcongestie, subsidies, batterijopslag en laadinfrastructuur voor de hospitality sector</p>
+</div>
+
+<div class="container">
+    <div class="news-grid" id="newsContent">
+        <!-- AUTO-UPDATED BY CRON JOB -->
+        <p style="text-align:center;color:var(--text-muted);padding:3rem 0;">De eerste nieuwsupdate wordt binnenkort geladen. Kom later terug voor het laatste nieuws over netcongestie, subsidies en energie-oplossingen voor hotels.</p>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V.</p>
+        <p><a href="index.html">Home</a> · <a href="configurator.html">Configurator</a> · <a href="nieuws.html">Nieuws</a> · <a href="mailto:hello@hes.energy">hello@hes.energy</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
