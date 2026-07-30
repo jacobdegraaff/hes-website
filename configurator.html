@@ -56,9 +56,14 @@
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
-        nav .container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
-        .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--green-primary); font-family: 'Montserrat',system-ui,sans-serif; font-weight: 600; font-size: 1.15rem; }
-        .nav-logo svg { width: 40px; height: 40px; }
+        nav .container { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1.5rem; position:relative; }
+        .nav-logo{display:flex;align-items:center;gap:0;text-decoration:none;position:absolute;left:1.5rem;top:-50px;z-index:101}
+        .logo-container{position:relative;display:flex;align-items:center;justify-content:center}
+        .logo-bg{width:200px;height:200px;border-radius:50%;background:white;box-shadow:0 8px 40px rgba(15,61,35,0.18),0 0 0 4px var(--green-accent);position:absolute;z-index:0}
+        .nav-logo img{height:180px;width:auto;position:relative;z-index:1;filter:drop-shadow(0 2px 8px rgba(15,61,35,0.1))}
+        .voltage-ring{position:absolute;width:220px;height:220px;border-radius:50%;border:2px dashed rgba(127,191,58,0.3);z-index:0;animation:spin 20s linear infinite}
+        @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+        .mobile-logo{display:none}
         .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--dark-grey); font-size: 0.9rem; font-weight: 500; }
         .nav-links a:hover { color: var(--green-accent); }
@@ -73,14 +78,14 @@
 
         @media (max-width: 768px) {
             .nav-links { gap: 0.75rem; font-size: 0.75rem; }
-            .page-header { padding-top: 5rem; }
+            .page-header{padding-top:5rem}.nav-logo{left:0.25rem;top:-15px}.nav-logo img{display:none}.logo-bg{width:60px;height:60px;top:5px;left:-5px}.voltage-ring{width:70px;height:70px}.mobile-logo{display:flex;align-items:center;gap:0.4rem;font-family:"Montserrat",system-ui,sans-serif;font-weight:600;font-size:0.9rem;color:var(--green-primary);position:relative;z-index:2}.mobile-logo svg{width:32px;height:32px;flex-shrink:0}
         }
 
         /* Page structure */
         .page-header {
             background: var(--green-primary);
             color: var(--off-white);
-            padding: 3rem 0 2rem;
+            padding: 7rem 0 2rem;
             text-align: center;
         }
         .page-header h1 { color: var(--off-white); margin-bottom: 0.5rem; }
@@ -286,8 +291,16 @@
 
 <nav>
     <div class="container">
-        <a href="index.html" class="nav-logo">
-            <img src="logo-transparent.png" alt="Hospitality Energy Solutions" style="height:120px;width:auto;">
+        <a href="index.html" class="nav-logo" aria-label="Hospitality Energy Solutions home">
+            <div class="logo-container">
+                <div class="logo-bg"></div>
+                <div class="voltage-ring"></div>
+                <img src="logo-transparent.png" alt="Hospitality Energy Solutions" style="height:180px;width:auto;">
+                <span class="mobile-logo">
+                    <svg viewBox="0 0 40 40" fill="none"><defs><linearGradient id="mGrad" x1="0" y1="0" x2="40" y2="0"><stop offset="0%" stop-color="#0F3D23"/><stop offset="100%" stop-color="#7FBF3A"/></linearGradient></defs><path d="M8 20c0-5 4-9 9-9s5.5 4.5 2.5 9c-3 4.5-3.5 9 2.5 9s9-4.5 9-9" stroke="url(#mGrad)" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+                    HES
+                </span>
+            </div>
         </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -305,7 +318,7 @@
                     <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=fr&sl=nl&tl=fr&u=https://jacobdegraaff.github.io/hes-website/configurator.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇫🇷</span> Français</a>
                     <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=es&sl=nl&tl=es&u=https://jacobdegraaff.github.io/hes-website/configurator.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇪🇸</span> Español</a>
                 </div>
-            </li></li>
+            </li>
         </ul>
     </div>
 </nav>
