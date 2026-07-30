@@ -469,59 +469,69 @@
                         </div>
                     </div>
                     <div class="hero-illustration" style="width:100%;max-width:520px;">
-                        <svg viewBox="0 0 520 300" fill="none" style="width:100%;">
+                        <svg viewBox="0 0 520 320" fill="none" style="width:100%;">
+                            <!-- Background -->
+                            <rect width="520" height="320" rx="12" fill="#1A2E1A"/>
+                            
+                            <!-- Chart area -->
+                            <rect x="40" y="20" width="460" height="250" rx="4" fill="#F5FAF0"/>
+                            
                             <!-- Grid lines -->
-                            <line x1="50" y1="30" x2="50" y2="255" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                            <line x1="50" y1="255" x2="500" y2="255" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                            <line x1="50" y1="200" x2="500" y2="200" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="3"/>
-                            <line x1="50" y1="145" x2="500" y2="145" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="3"/>
-                            <line x1="50" y1="90" x2="500" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="3"/>
+                            <line x1="40" y1="220" x2="500" y2="220" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <line x1="40" y1="180" x2="500" y2="180" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <line x1="40" y1="140" x2="500" y2="140" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <line x1="40" y1="100" x2="500" y2="100" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <line x1="40" y1="60" x2="500" y2="60" stroke="#D4DDD0" stroke-width="0.5"/>
                             
                             <!-- Y-axis labels -->
-                            <text x="42" y="258" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="9">0</text>
-                            <text x="42" y="203" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="9">50</text>
-                            <text x="42" y="148" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="9">100</text>
-                            <text x="42" y="93" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="9">150</text>
-                            <text x="42" y="38" text-anchor="end" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="8">kW</text>
+                            <text x="34" y="224" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">0</text>
+                            <text x="34" y="184" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">50</text>
+                            <text x="34" y="144" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">100</text>
+                            <text x="34" y="104" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">150</text>
+                            <text x="34" y="64" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">200</text>
+                            <text x="34" y="32" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">kW</text>
                             
-                            <!-- Grid consumption area (blue) -->
-                            <path d="M58 240 L58 240 L98 238 L138 235 L178 225 L218 200 L258 170 L298 140 L338 115 L378 100 L418 90 L458 85 L498 95 L498 255 L58 255Z" fill="rgba(70,110,180,0.25)" stroke="rgba(100,140,210,0.7)" stroke-width="1.5"/>
+                            <!-- Green area: hotel consumption profile -->
+                            <path d="M50 210 L75 208 L100 205 L125 195 L150 175 L175 150 L200 125 L225 105 L250 90 L275 85 L300 80 L325 75 L350 72 L375 70 L400 75 L425 90 L450 110 L475 130 L500 160 L500 220 L50 220Z" 
+                                  fill="#C8E6B5" stroke="#8BC34A" stroke-width="1.5"/>
                             
-                            <!-- Solar PV generation area (green) -->
-                            <path d="M218 255 L218 255 L258 245 L298 220 L338 195 L378 190 L418 200 L458 220 L498 245 L498 255Z" fill="rgba(127,191,58,0.3)" stroke="#7FBF3A" stroke-width="1.5"/>
+                            <!-- Blue area: grid import baseload -->
+                            <path d="M50 215 L75 213 L100 210 L125 205 L150 200 L175 195 L200 190 L225 185 L250 180 L275 178 L300 175 L325 172 L350 170 L375 168 L400 170 L425 175 L450 185 L475 195 L500 205 L500 220 L50 220Z"
+                                  fill="#B3D4E8" stroke="#5B9BD5" stroke-width="1.5" opacity="0.7"/>
                             
-                            <!-- Net consumption line (blue gradient) -->
-                            <path d="M58 240 L98 238 L138 235 L178 225 L218 200 L258 170 L298 140 L338 115 L378 100 L418 95 L458 110 L498 130" fill="none" stroke="rgba(100,140,210,0.9)" stroke-width="2.5"/>
+                            <!-- Orange peak highlight line -->
+                            <line x1="250" y1="90" x2="475" y2="130" stroke="#F4A020" stroke-width="2.5" stroke-dasharray="6 4"/>
+                            <circle cx="375" cy="70" r="4" fill="#F4A020"/>
                             
-                            <!-- Solar line -->
-                            <path d="M218 255 L258 245 L298 220 L338 195 L378 190 L418 200 L458 220 L498 245" fill="none" stroke="#7FBF3A" stroke-width="2.5"/>
+                            <!-- Peak annotation -->
+                            <rect x="340" y="38" width="70" height="20" rx="3" fill="#F4A020" opacity="0.9"/>
+                            <text x="375" y="52" text-anchor="middle" fill="white" font-family="Montserrat" font-weight="600" font-size="10">Piek 17-21u</text>
                             
-                            <!-- Dashed solar peak reference -->
-                            <line x1="340" y1="195" x2="340" y2="140" stroke="#7FBF3A" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
-                            
-                            <!-- Peak label -->
-                            <rect x="318" y="125" width="80" height="18" rx="4" fill="rgba(255,107,58,0.15)" stroke="#FF6B3A" stroke-width="1"/>
-                            <text x="358" y="137" text-anchor="middle" fill="#FF6B3A" font-family="Montserrat" font-weight="600" font-size="9">PIEK 17-21u</text>
+                            <!-- BESS label -->
+                            <line x1="290" y1="178" x2="340" y2="178" stroke="#2E7032" stroke-width="1" stroke-dasharray="3 2"/>
+                            <text x="250" y="182" text-anchor="end" fill="#2E7032" font-family="Inter" font-size="8">Batterij vangt op</text>
                             
                             <!-- X-axis time labels -->
-                            <text x="58" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">00</text>
-                            <text x="98" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">02</text>
-                            <text x="138" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">04</text>
-                            <text x="178" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">06</text>
-                            <text x="218" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">08</text>
-                            <text x="258" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">10</text>
-                            <text x="298" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">12</text>
-                            <text x="338" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">14</text>
-                            <text x="378" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">16</text>
-                            <text x="418" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">18</text>
-                            <text x="458" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">20</text>
-                            <text x="498" y="272" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter" font-size="8">22</text>
+                            <text x="50" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">00</text>
+                            <text x="100" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">03</text>
+                            <text x="150" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">06</text>
+                            <text x="200" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">09</text>
+                            <text x="250" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">12</text>
+                            <text x="300" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">15</text>
+                            <text x="350" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">18</text>
+                            <text x="400" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">21</text>
+                            <text x="450" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">24</text>
                             
                             <!-- Legend -->
-                            <rect x="55" y="40" width="10" height="10" rx="2" fill="rgba(100,140,210,0.7)"/>
-                            <text x="70" y="50" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="8">Netverbruik</text>
-                            <rect x="140" y="40" width="10" height="10" rx="2" fill="#7FBF3A"/>
-                            <text x="155" y="50" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="8">Zon-PV</text>
+                            <rect x="45" y="255" width="12" height="12" rx="2" fill="#C8E6B5" stroke="#8BC34A" stroke-width="1"/>
+                            <text x="62" y="265" fill="#2F3437" font-family="Inter" font-size="9">Verbruik</text>
+                            <rect x="130" y="255" width="12" height="12" rx="2" fill="#B3D4E8" stroke="#5B9BD5" stroke-width="1"/>
+                            <text x="147" y="265" fill="#2F3437" font-family="Inter" font-size="9">Netimport</text>
+                            <line x1="230" y1="261" x2="270" y2="261" stroke="#F4A020" stroke-width="2.5" stroke-dasharray="6 4"/>
+                            <text x="275" y="265" fill="#F4A020" font-family="Inter" font-size="9">Netcapaciteit</text>
+
+                            <!-- Title -->
+                            <text x="270" y="295" text-anchor="middle" fill="#2F3437" font-family="Montserrat" font-weight="600" font-size="11">Hotel energieprofiel — 24-uurs verbruik (kW)</text>
                         </svg>
                     </div>
                 </div>
