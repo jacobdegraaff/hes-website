@@ -927,7 +927,8 @@
     // Language switcher — instant translation via Google Translate API
     const langCache = {};
     async function translatePage(lang) {
-        document.querySelector('.lang-dropdown').classList.remove('show');
+        var dd = document.querySelector('.lang-dropdown');
+        if (dd) dd.classList.remove('show');
         if (lang === 'nl') {
             document.cookie = 'hes_lang=nl;path=/;max-age=31536000';
             location.reload();
@@ -935,48 +936,63 @@
         }
         document.cookie = 'hes_lang=' + lang + ';path=/;max-age=31536000';
         
-        // Show loading indicator
         document.body.style.cursor = 'wait';
         
-        // Translate all text-bearing elements
-        const elements = document.querySelectorAll('h1,h2,h3,h4,p,a,span,li,td,th,label,button,figcaption,.section-label,.btn,.nav-links a');
-        const texts = [];
-        const elMap = [];
+        // Collect translatable text elements — SKIP nav, footer, lang-switch, svg
+        var skipSelectors = ['nav', 'footer', '.lang-switch', 'svg', 'script', 'style', '.nav-logo'];
+        var els = document.querySelectorAll('h1,h2,h3,h4,p,li,td,th,label,button,figcaption,.section-label,.btn,span');
+        var texts = [], elMap = [];
         
-        elements.forEach(function(el, i) {
-            // Skip elements with no text or only whitespace
+        els.forEach(function(el) {
+            if (!el.textContent || !el.textContent.trim()) return;
             var txt = el.textContent.trim();
-            if (!txt || txt.length < 2) return;
-            // Skip elements inside lang-switch, script, style, nav logo image
-            if (el.closest('.lang-switch') || el.closest('script') || el.closest('style')) return;
-            // Skip pure numbers and email addresses
-            if (/^[\d.,€%+\-\s]+$/.test(txt) || txt.includes('@')) return;
-            
+            if (txt.length < 3) return;
+            // Skip elements inside skipped containers
+            for (var i = 0; i < skipSelectors.length; i++) {
+                if (el.closest(skipSelectors[i])) return;
+            }
+            // Skip if only child is a link (nav items)
+            if (el.children.length === 1 && el.children[0].tagName === 'A' && el.textContent.trim() === el.children[0].textContent.trim()) return;
+            // Skip pure numbers/emails
+            if (/^[\d.,€%+\-\s]+$/.test(txt) || txt.includes('@') || txt.includes('hes_lang')) return;
             texts.push(txt);
             elMap.push(el);
         });
         
-        // Batch translate (max 128 texts per request)
-        const batchSize = 100;
+        // Deduplicate
+        var seen = {}, uniqueTexts = [], uniqueEls = [];
+        for (var i = 0; i < texts.length; i++) {
+            if (!seen[texts[i]]) {
+                seen[texts[i]] = true;
+                uniqueTexts.push(texts[i]);
+                uniqueEls.push(elMap[i]);
+            }
+        }
+        texts = uniqueTexts; elMap = uniqueEls;
+        
+        // Batch translate
+        var batchSize = 80;
         for (var b = 0; b < texts.length; b += batchSize) {
             var batch = texts.slice(b, b + batchSize);
             var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t&q=' + encodeURIComponent(batch.join('\n|||'));
-            
             try {
                 var resp = await fetch(url);
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
                 var data = await resp.json();
                 if (data && data[0]) {
-                    var results = data[0].map(function(r) { return r[0]; });
-                    var translated = results.join('').split('|||');
-                    for (var j = 0; j < translated.length; j++) {
+                    var translated = data[0].map(function(r) { return r[0] || ''; }).join('').split('|||');
+                    for (var j = 0; j < translated.length && j < batch.length; j++) {
                         var idx = b + j;
-                        if (idx < elMap.length) {
-                            elMap[idx].textContent = translated[j].trim();
+                        if (idx < elMap.length && translated[j] && translated[j].trim()) {
+                            // Only update if element still exists and hasn't been modified
+                            if (elMap[idx].parentNode && elMap[idx].textContent.trim() === texts[idx]) {
+                                elMap[idx].textContent = translated[j].trim();
+                            }
                         }
                     }
                 }
             } catch(e) {
-                console.log('Translate error:', e);
+                console.warn('Translate batch failed:', e.message);
             }
         }
         
