@@ -924,30 +924,51 @@
     let si = 0;
     setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
 
-    // Language switcher
+    // Language switcher — instant, no reload
     function translatePage(lang) {
         document.querySelector('.lang-dropdown').classList.remove('show');
+        
+        // Set Google Translate cookie
+        var d = new Date(); d.setTime(d.getTime() + (365*24*60*60*1000));
+        document.cookie = 'googtrans=/nl/' + lang + '; expires=' + d.toUTCString() + '; path=/';
+        
+        // Force retranslate by resetting the widget
+        var frame = document.querySelector('.goog-te-banner-frame');
+        var bodyStyle = document.body.style.top;
+        
         if (lang === 'nl') {
-            // Reset to original Dutch
-            var all = document.querySelectorAll('.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-tooltip, .goog-tooltip:hover, .goog-text-highlight, .skiptranslate');
-            all.forEach(function(el) { if (el) el.remove(); });
+            // Reset to Dutch: clear cookie, remove banner, reload frame
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+            if (frame) frame.remove();
             document.body.style.top = '';
-            // Remove Google Translate cookie
-            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname;
-            location.reload();
+            // Re-trigger translate to NL
+            var el = document.getElementById('google_translate_element');
+            if (el) { el.innerHTML = ''; }
+            if (typeof googleTranslateElementInit === 'function') {
+                googleTranslateElementInit();
+            }
             return;
         }
-        // Set Google Translate cookie
-        document.cookie = 'googtrans=/nl/' + lang;
-        document.cookie = 'googtrans=/nl/' + lang + '; path=/; domain=.' + location.hostname;
-        // Create/trigger Google Translate
-        if (window.google && google.translate) {
-            var sel = document.querySelector('.goog-te-combo');
-            if (sel) { sel.value = lang; sel.dispatchEvent(new Event('change')); }
-        } else {
-            location.reload();
+        
+        // Remove old banner if exists
+        if (frame) frame.remove();
+        document.body.style.top = '';
+        
+        // Reset and reinit the translate element
+        var el = document.getElementById('google_translate_element');
+        if (el) { el.innerHTML = ''; }
+        if (typeof googleTranslateElementInit === 'function') {
+            googleTranslateElementInit();
         }
+        
+        // After a short delay, try to trigger the translate
+        setTimeout(function() {
+            var sel = document.querySelector('.goog-te-combo');
+            if (sel) {
+                sel.value = lang;
+                sel.dispatchEvent(new Event('change'));
+            }
+        }, 500);
     }
 
     // Close dropdown on outside click
