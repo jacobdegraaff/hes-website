@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voordelen — Hospitality Energy Solutions</title>
+    <meta name="description" content="Wat HES voor jouw hotel kan betekenen: energieadvies, subsidiebegeleiding, laadinfrastructuur, slimme software en maatwerkoplossingen.">
+    <link rel="canonical" href="https://hes.energy/voordelen.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root{--green-primary:#0F3D23;--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#6B7B6E;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:'Inter',system-ui,sans-serif;color:var(--dark-grey);background:var(--off-white);line-height:1.7}
+        h1,h2,h3{font-family:'Montserrat',system-ui,sans-serif;font-weight:600;color:var(--green-primary)}
+        h1{font-size:clamp(1.75rem,4vw,2.8rem)}h2{font-size:clamp(1.25rem,3vw,1.8rem)}h3{font-size:clamp(1rem,2vw,1.25rem)}
+        .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+        .section-label{font-family:'Montserrat',system-ui,sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-accent);margin-bottom:0.5rem}
+        nav{position:sticky;top:0;z-index:100;background:rgba(245,247,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.5rem 0}
+        nav .container{display:flex;align-items:center;justify-content:space-between;position:relative}
+        .nav-logo{display:flex;align-items:center;gap:0;text-decoration:none;position:absolute;left:1.5rem;top:-50px;z-index:101}
+        .logo-container{position:relative;display:flex;align-items:center;justify-content:center}
+        .logo-bg{width:200px;height:200px;border-radius:50%;background:white;box-shadow:0 8px 40px rgba(15,61,35,0.18),0 0 0 4px var(--green-accent);position:absolute;z-index:0}
+        .nav-logo img{height:180px;width:auto;position:relative;z-index:1;filter:drop-shadow(0 2px 8px rgba(15,61,35,0.1))}
+        .voltage-ring{position:absolute;width:220px;height:220px;border-radius:50%;border:2px dashed rgba(127,191,58,0.3);z-index:0;animation:spin 20s linear infinite}
+        @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+        .mobile-logo{display:none}
+        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+        .nav-links a{text-decoration:none;color:var(--dark-grey);font-size:0.9rem;font-weight:500}
+        .nav-links a:hover,.nav-links a.active{color:var(--green-accent)}
+        .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.25rem;background:var(--green-accent);color:var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.85rem;border:none;cursor:pointer}.btn-primary:hover{background:#6FAA2E}
+        .btn-outline{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;background:transparent;color:var(--green-primary);border:2px solid var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.9rem;transition:all 0.2s}
+        .btn-outline:hover{background:var(--green-primary);color:var(--off-white)}
+        .page-header{background:var(--green-primary);color:var(--off-white);padding:7rem 0 3rem;text-align:center}
+        .page-header h1{color:var(--off-white);margin-bottom:0.75rem}
+        .page-header p{opacity:0.85;max-width:650px;margin:0 auto;font-size:1.05rem}
+        section{padding:4rem 0}
+        section.alt{background:white}
+        .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem}
+        .card{background:white;border-radius:var(--radius-lg);padding:2rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);position:relative}
+        .card .num{font-family:'Montserrat',system-ui,sans-serif;font-size:2.5rem;font-weight:600;color:var(--green-light);position:absolute;top:1rem;right:1.5rem;opacity:0.4}
+        .card h3{margin-bottom:0.75rem;position:relative;z-index:1}
+        .card p,.card li{font-size:0.9rem;color:#3D4F40}
+        .card ul{list-style:none;margin-top:0.75rem}
+        .card ul li{padding:0.35rem 0;padding-left:1.25rem;position:relative}
+        .card ul li::before{content:'•';color:var(--green-accent);font-weight:700;position:absolute;left:0}
+        .highlight-box{background:white;border-radius:var(--radius-lg);padding:2rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);margin-top:2rem}
+        .highlight-box h3{margin-bottom:0.75rem}
+        .sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
+        .sub-card{background:var(--off-white);border-radius:var(--radius);padding:1.25rem;border:1px solid var(--border)}
+        .sub-card h4{color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:0.9rem;margin-bottom:0.5rem}
+        .sub-card p{font-size:0.82rem;color:#3D4F40}
+        footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:2rem 0;font-size:0.85rem;text-align:center;margin-top:3rem}
+        footer a{color:var(--green-light)}
+        @media(max-width:768px){
+            .card-grid,.sub-grid{grid-template-columns:1fr}
+            .nav-links{gap:0.75rem;font-size:0.75rem}
+            .page-header{padding-top:5rem}
+            .nav-logo{left:0.25rem;top:-15px}.nav-logo img{display:none}.logo-bg{width:60px;height:60px;top:5px;left:-5px}.voltage-ring{width:70px;height:70px}.mobile-logo{display:flex;align-items:center;gap:0.4rem;font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:0.9rem;color:var(--green-primary);position:relative;z-index:2}.mobile-logo svg{width:32px;height:32px;flex-shrink:0}
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="container">
+        <a href="index.html" class="nav-logo" aria-label="Hospitality Energy Solutions home">
+            <div class="logo-container">
+                <div class="logo-bg"></div>
+                <div class="voltage-ring"></div>
+                <img src="logo-transparent.png" alt="Hospitality Energy Solutions" style="height:180px;width:auto;">
+                <span class="mobile-logo">
+                    <svg viewBox="0 0 40 40" fill="none"><defs><linearGradient id="mGrad" x1="0" y1="0" x2="40" y2="0"><stop offset="0%" stop-color="#0F3D23"/><stop offset="100%" stop-color="#7FBF3A"/></linearGradient></defs><path d="M8 20c0-5 4-9 9-9s5.5 4.5 2.5 9c-3 4.5-3.5 9 2.5 9s9-4.5 9-9" stroke="url(#mGrad)" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+                    HES
+                </span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="netcongestie.html">Netcongestie</a></li>
+            <li><a href="subsidies.html">Subsidies</a></li>
+            <li><a href="voordelen.html" class="active">Voordelen</a></li>
+            <li><a href="configurator.html">Configurator</a></li>
+            <li><a href="nieuws.html">Nieuws</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="index.html#contact" class="btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li style="position:relative;">
+                <a href="#" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;" style="text-decoration:none;font-size:1.1rem;" title="Vertalen">🌐</a>
+                <div style="display:none;position:absolute;top:110%;right:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:130px;z-index:200;overflow:hidden;">
+                    <a href="#" onclick="window.top.location.href='https://jacobdegraaff.github.io/hes-website/voordelen.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇳🇱</span> Nederlands</a>
+                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=en&sl=nl&tl=en&u=https://jacobdegraaff.github.io/hes-website/voordelen.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇬🇧</span> English</a>
+                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=fr&sl=nl&tl=fr&u=https://jacobdegraaff.github.io/hes-website/voordelen.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇫🇷</span> Français</a>
+                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=es&sl=nl&tl=es&u=https://jacobdegraaff.github.io/hes-website/voordelen.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇪🇸</span> Español</a>
+                </div>
+            </li></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Wat kan Hospitality Energy Solutions voor jou betekenen</h1>
+    <p>Vanuit onze roots in de hotellerie begrijpen wij als geen ander wat een hotel nodig heeft. Maatwerk, meedenken en volledige ontzorging — dat is waar HES voor staat.</p>
+</div>
+
+<section>
+    <div class="container">
+        <div class="card-grid">
+            <div class="card">
+                <div class="num">01</div>
+                <h3>Energiebehoefte in kaart</h3>
+                <p>Ieder hotel heeft een uniek energieprofiel. Wij analyseren jouw verbruik, piekmomenten en groeiambities. Op basis daarvan brengen we precies in kaart welke energiebehoefte er is — nu én in de toekomst.</p>
+            </div>
+            <div class="card">
+                <div class="num">02</div>
+                <h3>Doelstelling bepalen</h3>
+                <p>Samen met jou bepalen we wat het doel is van jouw energie-investering. Dat kan verschillend zijn per hotel:</p>
+                <ul>
+                    <li>Extra omzet genereren via laadpalen of snelladers</li>
+                    <li>Boetes van de netbeheerder voorkomen</li>
+                    <li>Goedkoop energie inkopen en gebruiken tijdens netcongestie</li>
+                    <li>Zelf opgewekte energie (zon/wind) opslaan in een batterij</li>
+                    <li>Een betrouwbare noodstroomvoorziening realiseren</li>
+                    <li>Toekomstige uitbreiding mogelijk maken — meer kamers, outlets of airconditioning</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="num">03</div>
+                <h3>Subsidieadvies & ontzorging</h3>
+                <p>De overheid stelt jaarlijks honderden miljoenen euro's beschikbaar voor energie-investeringen. Wij weten exact welke regelingen (EIA, MIA, Vamil, ISDE, SPRILA) van toepassing zijn op jouw situatie — en wij nemen de volledige aanvraag uit handen. Van subsidiecheck tot uitbetaling.</p>
+            </div>
+            <div class="card">
+                <div class="num">04</div>
+                <h3>Oplossingen op maat</h3>
+                <p>HES denkt mee in concrete oplossingen die direct impact hebben op jouw bedrijfsvoering:</p>
+                <ul>
+                    <li><strong>Extra omzet via laadpalen</strong> — 24/7 inkomsten van gasten, passanten en omwonenden</li>
+                    <li><strong>Snelladers voor leveranciers</strong> — ook vrachtwagens gaan elektrisch; bied laden aan tijdens lossen</li>
+                    <li><strong>Fiscale urgentie</strong> — per 1 januari 2027 extra belasting op uitstotende leaseauto's; elektrisch laden wordt essentieel</li>
+                    <li><strong>Slimme tariefsturing</strong> — bepaal zelf wat gasten betalen per laadsessie, van gratis service tot €0,70-0,80 per kWh marge</li>
+                    <li><strong>24/7 monitoring</strong> — modulair platform met eigen ecosysteem; alle voorzieningen realtime bewaakt</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="alt">
+    <div class="container">
+        <p class="section-label">Wist u dat?</p>
+        <h2>Extra belasting op uitstotende leaseauto's per 2027</h2>
+        <p style="color:#3D4F40;max-width:700px;margin-top:0.75rem;">
+            Per 1 januari 2027 wordt er extra belasting geheven op zakelijke auto's met uitstoot — inclusief benzine, diesel en hybride aandrijving. Dit versnelt de overstap naar elektrisch rijden. Een goed ingerichte parkeerplaats met laadpalen is daarmee geen luxe meer, maar een essentiële voorziening voor ieder hotel.
+        </p>
+        <a href="https://ondernemersplein.overheid.nl/wetswijzigingen/extra-belasting-op-uitstotende-leaseautos/" target="_blank" rel="noopener" class="btn-outline" style="margin-top:1.5rem;">Lees meer op ondernemersplein.nl →</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V.</p>
+        <p><a href="index.html">Home</a> · <a href="netcongestie.html">Netcongestie</a> · <a href="subsidies.html">Subsidies</a> · <a href="voordelen.html">Voordelen</a> · <a href="configurator.html">Configurator</a> · <a href="nieuws.html">Nieuws</a> · <a href="over-ons.html">Over ons</a> · <a href="mailto:hello@hes.energy">hello@hes.energy</a></p>
+    </div>
+</footer>
+</body>
+</html>
