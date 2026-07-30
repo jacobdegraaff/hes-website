@@ -79,25 +79,45 @@
             text-decoration: none;
             position: absolute;
             left: 1.5rem;
-            top: -20px;
+            top: -50px;
             z-index: 101;
         }
-        .nav-logo img {
-            height: 150px;
-            width: auto;
-            filter: drop-shadow(0 2px 12px rgba(15, 61, 35, 0.15));
+        .logo-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        /* Voltage bolt behind logo */
-        .voltage-bolt {
+        .logo-bg {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 8px 40px rgba(15, 61, 35, 0.18), 0 0 0 4px var(--green-accent);
             position: absolute;
-            top: 5px;
-            left: -15px;
-            width: 50px;
-            height: 140px;
             z-index: 0;
-            opacity: 0.25;
         }
-        .voltage-bolt svg { width: 100%; height: 100%; }
+        .nav-logo img {
+            height: 180px;
+            width: auto;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 8px rgba(15, 61, 35, 0.1));
+        }
+        /* Voltage ring accent */
+        .voltage-ring {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 2px dashed rgba(127, 191, 58, 0.3);
+            z-index: 0;
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
         .nav-links { 
             display: flex; gap: 2rem; list-style: none; align-items: center;
             margin-left: auto;
@@ -149,9 +169,10 @@
 
         @media (max-width: 768px) {
             nav { padding: 0.25rem 0; }
-            .nav-logo { left: 1rem; top: -10px; }
-            .nav-logo img { height: 90px; }
-            .voltage-bolt { width: 30px; height: 80px; top: 8px; left: -8px; }
+            .nav-logo { left: 0.5rem; top: -30px; }
+            .nav-logo img { height: 100px !important; }
+            .logo-bg { width: 120px; height: 120px; }
+            .voltage-ring { width: 135px; height: 135px; }
             .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--off-white); flex-direction: column; padding: 1.5rem; gap: 1rem; border-bottom: 1px solid var(--border); }
             .nav-links.active { display: flex; }
             .menu-toggle { display: block; margin-left: auto; }
@@ -330,13 +351,11 @@
 <nav>
     <div class="container">
         <a href="/" class="nav-logo" aria-label="Hospitality Energy Solutions home">
-            <div class="voltage-bolt">
-                <svg viewBox="0 0 40 120" fill="none">
-                    <path d="M25 0L8 62h10l-4 58L35 48H22l3-48z" fill="#7FBF3A" opacity="0.4"/>
-                    <path d="M22 8L10 58h9l-3 48L28 52H18l4-44z" fill="#B7E08A" opacity="0.6"/>
-                </svg>
+            <div class="logo-container">
+                <div class="logo-bg"></div>
+                <div class="voltage-ring"></div>
+                <img src="logo-transparent.png" alt="Hospitality Energy Solutions" style="height:180px;width:auto;">
             </div>
-            <img src="logo-transparent.png" alt="Hospitality Energy Solutions" style="height:150px;width:auto;position:relative;z-index:1;">
         </a>
         <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
             <span></span><span></span><span></span>
