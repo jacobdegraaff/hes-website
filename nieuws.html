@@ -76,10 +76,10 @@
             <li class="lang-switch">
                 <button class="lang-btn" onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" aria-label="Kies taal">🌐</button>
                 <div class="lang-dropdown">
-                    <a href="#" onclick="translatePage('nl');return false;"><span class="flag">🇳🇱</span> Nederlands</a>
-                    <a href="#" onclick="translatePage('en');return false;"><span class="flag">🇬🇧</span> English</a>
-                    <a href="#" onclick="translatePage('fr');return false;"><span class="flag">🇫🇷</span> Français</a>
-                    <a href="#" onclick="translatePage('es');return false;"><span class="flag">🇪🇸</span> Español</a>
+                    <a href="https://hes.energy"><span class="flag">🇳🇱</span> Nederlands</a>
+                    <a href="https://hes--energy.translate.goog/?_x_tr_sl=nl&amp;_x_tr_tl=en&amp;_x_tr_hl=en"><span class="flag">🇬🇧</span> English</a>
+                    <a href="https://hes--energy.translate.goog/?_x_tr_sl=nl&amp;_x_tr_tl=fr&amp;_x_tr_hl=fr"><span class="flag">🇫🇷</span> Français</a>
+                    <a href="https://hes--energy.translate.goog/?_x_tr_sl=nl&amp;_x_tr_tl=es&amp;_x_tr_hl=es"><span class="flag">🇪🇸</span> Español</a>
                 </div>
             </li></li>
         </ul>
@@ -184,12 +184,7 @@
     </div>
 </footer>
 <script>
-    function translatePage(lang){var d=document.querySelector(".lang-dropdown");if(d)d.classList.remove("show");if(lang==="nl"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";document.cookie="hes_lang=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";location.reload();return}var dt=new Date();dt.setTime(dt.getTime()+31536e6);document.cookie="googtrans=/nl/"+lang+"; expires="+dt.toUTCString()+"; path=/";document.cookie="hes_lang="+lang+"; expires="+dt.toUTCString()+"; path=/";var sel=document.querySelector(".goog-te-combo");if(sel){sel.value=lang;sel.dispatchEvent(new Event("change"))}else{location.reload()}}document.addEventListener("click",function(e){if(!e.target.closest(".lang-switch")){var d=document.querySelector(".lang-dropdown");if(d)d.classList.remove("show")}});
-</script>
-<div id="google_translate_element" style="display:none;"></div>
-<script>
-function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"nl",includedLanguages:"nl,en,fr,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element");var s=document.cookie.split("; ").find(function(c){return c.startsWith("hes_lang=")});if(s){var l=s.split("=")[1];if(l!=="nl"){setTimeout(function(){var sel=document.querySelector(".goog-te-combo");if(sel){sel.value=l;sel.dispatchEvent(new Event("change"))}},800)}}}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    document.addEventListener("click",function(e){if(!e.target.closest(".lang-switch")){var d=document.querySelector(".lang-dropdown");if(d)d.classList.remove("show")}});
+
 </body>
 </html>
