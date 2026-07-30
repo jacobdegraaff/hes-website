@@ -171,7 +171,32 @@
         .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--green-primary); margin: 5px 0; transition: 0.3s; }
         .mobile-logo { display: none; }
 
-        @media (max-width: 768px) {
+ /* Language switcher */
+ .lang-switch { position: relative; }
+ .lang-btn {
+     background: transparent; border: 1.5px solid var(--green-primary);
+     color: var(--green-primary); width: 36px; height: 36px;
+     border-radius: 50%; cursor: pointer; font-size: 0.85rem;
+     display: flex; align-items: center; justify-content: center;
+     transition: all 0.2s;
+ }
+ .lang-btn:hover { background: var(--green-primary); }
+ .lang-dropdown {
+     display: none; position: absolute; top: 110%; right: 0;
+     background: white; border-radius: var(--radius); box-shadow: var(--shadow-lg);
+     border: 1px solid var(--border); min-width: 130px; z-index: 200;
+     overflow: hidden;
+ }
+ .lang-dropdown.show { display: block; }
+ .lang-dropdown a {
+     display: flex; align-items: center; gap: 0.5rem;
+     padding: 0.6rem 1rem; text-decoration: none; color: var(--dark-grey);
+     font-size: 0.85rem; transition: background 0.15s;
+ }
+ .lang-dropdown a:hover { background: var(--off-white); color: var(--green-primary); }
+ .lang-dropdown a .flag { font-size: 1.1rem; }
+
+ @media (max-width: 768px) {
             /* Nav */
             nav { padding: 0.25rem 0; }
             .nav-logo { left: 0.25rem; top: -15px; }
@@ -416,6 +441,15 @@
             <li><a href="over-ons.html">Over ons</a></li>
             <li><a href="nieuws.html">Nieuws</a></li>
             <li><a href="#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li class="lang-switch">
+                <button class="lang-btn" onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" aria-label="Kies taal">🌐</button>
+                <div class="lang-dropdown">
+                    <a href="#" onclick="translatePage('nl');return false;"><span class="flag">🇳🇱</span> Nederlands</a>
+                    <a href="#" onclick="translatePage('en');return false;"><span class="flag">🇬🇧</span> English</a>
+                    <a href="#" onclick="translatePage('fr');return false;"><span class="flag">🇫🇷</span> Français</a>
+                    <a href="#" onclick="translatePage('es');return false;"><span class="flag">🇪🇸</span> Español</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
@@ -889,7 +923,46 @@
     // Radio slider auto-advance
     let si = 0;
     setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
+
+    // Language switcher
+    function translatePage(lang) {
+        document.querySelector('.lang-dropdown').classList.remove('show');
+        if (lang === 'nl') {
+            // Reset to original Dutch
+            var all = document.querySelectorAll('.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-tooltip, .goog-tooltip:hover, .goog-text-highlight, .skiptranslate');
+            all.forEach(function(el) { if (el) el.remove(); });
+            document.body.style.top = '';
+            // Remove Google Translate cookie
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname;
+            location.reload();
+            return;
+        }
+        // Set Google Translate cookie
+        document.cookie = 'googtrans=/nl/' + lang;
+        document.cookie = 'googtrans=/nl/' + lang + '; path=/; domain=.' + location.hostname;
+        // Create/trigger Google Translate
+        if (window.google && google.translate) {
+            var sel = document.querySelector('.goog-te-combo');
+            if (sel) { sel.value = lang; sel.dispatchEvent(new Event('change')); }
+        } else {
+            location.reload();
+        }
+    }
+
+    // Close dropdown on outside click
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-switch')) {
+            document.querySelector('.lang-dropdown').classList.remove('show');
+        }
+    });
 </script>
+
+<div id="google_translate_element" style="display:none;"></div>
+<script>
+function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage:'nl',includedLanguages:'nl,en,fr,es',layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},'google_translate_element');}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
 </body>
 </html>

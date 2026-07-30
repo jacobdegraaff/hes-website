@@ -63,6 +63,15 @@
             <li><a href="nieuws.html" class="active">Nieuws</a></li>
             <li><a href="over-ons.html">Over ons</a></li>
             <li><a href="index.html#contact">Contact</a></li>
+            <li class="lang-switch">
+                <button class="lang-btn" onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" aria-label="Kies taal">🌐</button>
+                <div class="lang-dropdown">
+                    <a href="#" onclick="translatePage('nl');return false;"><span class="flag">🇳🇱</span> Nederlands</a>
+                    <a href="#" onclick="translatePage('en');return false;"><span class="flag">🇬🇧</span> English</a>
+                    <a href="#" onclick="translatePage('fr');return false;"><span class="flag">🇫🇷</span> Français</a>
+                    <a href="#" onclick="translatePage('es');return false;"><span class="flag">🇪🇸</span> Español</a>
+                </div>
+            </li></li>
         </ul>
     </div>
 </nav>
@@ -164,5 +173,14 @@
         <p><a href="index.html">Home</a> · <a href="configurator.html">Configurator</a> · <a href="nieuws.html">Nieuws</a> · <a href="over-ons.html">Over ons</a> · <a href="mailto:hello@hes.energy">hello@hes.energy</a></p>
     </div>
 </footer>
+<script>
+    function translatePage(lang){var d=document.querySelector(".lang-dropdown");if(d)d.classList.remove("show");if(lang==="nl"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";location.reload();return;}document.cookie="googtrans=/nl/"+lang+"; path=/";if(window.google&&google.translate){var s=document.querySelector(".goog-te-combo");if(s){s.value=lang;s.dispatchEvent(new Event("change"))}}else{location.reload()}}
+    document.addEventListener("click",function(e){if(!e.target.closest(".lang-switch")){var d=document.querySelector(".lang-dropdown");if(d)d.classList.remove("show")}});
+</script>
+<div id="google_translate_element" style="display:none;"></div>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"nl",includedLanguages:"nl,en,fr,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element");}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 </body>
 </html>
