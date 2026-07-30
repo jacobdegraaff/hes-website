@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over ons — Hospitality Energy Solutions</title>
+    <meta name="description" content="HES is opgericht door Jacob de Graaff en Melle Pegman, in partnership met Stroomlijnen. Vanuit de hotellerie helpen wij hotels energie-onafhankelijk worden.">
+    <link rel="canonical" href="https://hes.energy/over-ons.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --green-primary: #0F3D23;
+            --green-secondary: #2E7032;
+            --green-accent: #7FBF3A;
+            --green-light: #B7E08A;
+            --off-white: #F5F7F2;
+            --dark-grey: #2F3437;
+            --text-muted: #6B7B6E;
+            --border: #D4DDD0;
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:'Inter',system-ui,sans-serif;color:var(--dark-grey);background:var(--off-white);line-height:1.7}
+        h1,h2,h3{font-family:'Montserrat',system-ui,sans-serif;font-weight:600;color:var(--green-primary)}
+        h1{font-size:clamp(1.75rem,4vw,2.8rem)}
+        h2{font-size:clamp(1.25rem,3vw,1.8rem)}
+        h3{font-size:clamp(1rem,2vw,1.25rem)}
+        .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+        .section-label{font-family:'Montserrat',system-ui,sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-accent);margin-bottom:0.5rem}
+
+        nav{position:sticky;top:0;z-index:100;background:rgba(245,247,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.75rem 0}
+        nav .container{display:flex;align-items:center;justify-content:space-between}
+        .nav-logo img{height:50px;width:auto}
+        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+        .nav-links a{text-decoration:none;color:var(--dark-grey);font-size:0.9rem;font-weight:500}
+        .nav-links a:hover,.nav-links a.active{color:var(--green-accent)}
+        .btn-green{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.25rem;background:var(--green-accent);color:var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.85rem}
+        .btn-green:hover{background:#6FAA2E}
+        .btn-outline{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;background:transparent;color:var(--green-primary);border:2px solid var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.9rem;transition:all 0.2s}
+        .btn-outline:hover{background:var(--green-primary);color:var(--off-white)}
+
+        .page-header{background:var(--green-primary);color:var(--off-white);padding:4rem 0 3rem;text-align:center}
+        .page-header h1{color:var(--off-white);margin-bottom:0.75rem}
+        .page-header p{opacity:0.85;max-width:650px;margin:0 auto;font-size:1.05rem}
+
+        section{padding:4rem 0}
+        section.alt{background:white}
+        .intro-text{max-width:750px;margin:0 auto 2rem;font-size:1.05rem;color:#3D4F40}
+
+        /* Founder cards */
+        .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2rem}
+        .team-card{background:white;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);text-align:center}
+        .team-card img{width:100%;height:280px;object-fit:cover}
+        .team-card .info{padding:1.5rem 1.25rem}
+        .team-card h3{font-size:1.15rem;margin-bottom:0.2rem}
+        .team-card .role{font-size:0.85rem;color:var(--green-accent);font-weight:500;margin-bottom:0.75rem}
+        .team-card p{font-size:0.9rem;color:#3D4F40;line-height:1.6}
+        .team-card .links{margin-top:1rem;display:flex;gap:0.75rem;justify-content:center}
+        .team-card .links a{font-size:0.8rem;color:var(--green-secondary);text-decoration:none;font-weight:500}
+        .team-card .links a:hover{color:var(--green-accent)}
+
+        /* Partner section */
+        .partner-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem}
+        .partner-card{background:white;border-radius:var(--radius-lg);padding:2rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);display:flex;align-items:center;gap:1.5rem}
+        .partner-card img{width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0}
+        .partner-card h3{font-size:1.05rem;margin-bottom:0.1rem}
+        .partner-card .role{font-size:0.8rem;color:var(--green-accent);font-weight:500;margin-bottom:0.5rem}
+        .partner-card p{font-size:0.85rem;color:#3D4F40}
+
+        /* Timeline / story */
+        .story-block{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+        .story-block img{width:100%;border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(15,61,35,0.12)}
+        .story-block p{font-size:1rem;color:#3D4F40;line-height:1.75}
+
+        .cta-section{text-align:center;padding:4rem 0;background:white}
+
+        footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:2rem 0;font-size:0.85rem;text-align:center;margin-top:3rem}
+        footer a{color:var(--green-light)}
+
+        @media(max-width:768px){
+            .team-grid,.partner-grid,.story-block{grid-template-columns:1fr}
+            .partner-card{flex-direction:column;text-align:center}
+            .nav-links{gap:1rem;font-size:0.8rem}
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="index.html" class="nav-logo"><img src="logo-transparent.png" alt="HES"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="configurator.html">Configurator</a></li>
+            <li><a href="nieuws.html">Nieuws</a></li>
+            <li><a href="over-ons.html" class="active">Over ons</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Over ons</h1>
+    <p>Vanuit de hotellerie, voor de hotellerie. HES is opgericht door twee hospitality-ondernemers die zagen dat hotels vastlopen in hun energietransitie — en besloten dat het anders moest.</p>
+</div>
+
+<!-- HET VERHAAL -->
+<section>
+    <div class="container">
+        <p class="section-label">Het verhaal</p>
+        <h2>Van hoteldirecteur naar energiepionier</h2>
+        <div class="story-block" style="margin-top:2rem;">
+            <div>
+                <p>Jacob de Graaff en Melle Pegman kennen de hotellerie van binnenuit. Beiden afgestudeerd aan de Hotelschool Den Haag, met jarenlange ervaring bij internationale ketens als Hilton en Club Med. Ze bouwden samen een netwerk op van honderden hotels via platforms als Hotelprofessionals, Hotel Leaders Network en de Hotel Business Club.</p>
+                <p style="margin-top:1rem;">In de afgelopen periode hebben Jacob en Melle zich intensief verdiept in de energieproblematiek die de hotellerie in zijn greep houdt. Van stokkende uitbreidingen door netcongestie tot de worsteling met de 'gas-los' transitie — ze hoorden dezelfde verhalen terugkomen bij tientallen hoteliers.</p>
+                <p style="margin-top:1rem;">De conclusie was helder: de hotellerie heeft een eigen energiepartij nodig. Iemand die de taal van de hotelier spreekt, het netwerk heeft én de technische kracht kan bundelen. Zo ontstond Hospitality Energy Solutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OPRICHTERS -->
+<section class="alt">
+    <div class="container">
+        <p class="section-label">Oprichters</p>
+        <h2>De mannen achter HES</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="founders.jpg" alt="Jacob de Graaff en Melle Pegman">
+                <div class="info">
+                    <h3>Jacob de Graaff</h3>
+                    <div class="role">Mede-oprichter · HES</div>
+                    <p>Hotelschool Den Haag · Hilton Amsterdam. Bouwde het grootste hospitality-netwerk van Nederland op. Zet zijn kennis van de branche nu in om hotels te helpen met de energietransitie.</p>
+                    <div class="links">
+                        <a href="https://linkedin.com/in/jacobdegraaff" target="_blank" rel="noopener">LinkedIn →</a>
+                        <a href="mailto:jacob@hes.energy">jacob@hes.energy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="founders.jpg" alt="Jacob de Graaff en Melle Pegman">
+                <div class="info">
+                    <h3>Melle Pegman</h3>
+                    <div class="role">Mede-oprichter · HES</div>
+                    <p>Hotelschool Den Haag · Club Med · Hilton. Expert in hospitality operations en business development. Vertaalt complexe energievraagstukken naar heldere oplossingen voor hoteliers.</p>
+                    <div class="links">
+                        <a href="https://linkedin.com/in/mellepegman" target="_blank" rel="noopener">LinkedIn →</a>
+                        <a href="mailto:melle@hes.energy">melle@hes.energy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERS -->
+<section>
+    <div class="container">
+        <p class="section-label">Onze partner</p>
+        <h2>Technische kracht van Stroomlijnen</h2>
+        <p style="color:#3D4F40;max-width:700px;margin-top:0.75rem;">
+            HES werkt exclusief samen met Stroomlijnen — het technische brein achter onze energieoplossingen. Met 25 jaar ervaring in laadinfrastructuur en een team van specialisten zorgt Stroomlijnen dat elk systeem feilloos werkt. Van hardware tot monitoring, van installatie tot 24/7 support.
+        </p>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <img src="https://stroomlijnen.nl/team-ignacio.jpg" alt="Ignacio Michelena">
+                <div>
+                    <h3>Ignacio Michelena</h3>
+                    <div class="role">CEO · Technisch directeur — Stroomlijnen</div>
+                    <p>Technisch brein achter het Stroomlijnen-platform. 25+ jaar ervaring in energie- en laadinfrastructuur. Verantwoordelijk voor alle hardware, software en systeemintegratie binnen HES.</p>
+                </div>
+            </div>
+            <div class="partner-card">
+                <img src="https://stroomlijnen.nl/team-jacco.jpg" alt="Jacco Patist">
+                <div>
+                    <h3>Jacco Patist</h3>
+                    <div class="role">Commercieel directeur — Stroomlijnen</div>
+                    <p>Commercieel brein met diepgaande kennis van de energiemarkt. Zorgt dat elke HES-oplossing niet alleen technisch klopt, maar ook financieel aantrekkelijk is voor hotels.</p>
+                </div>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:2rem;font-size:0.9rem;color:var(--text-muted);">
+            HES verkoopt. Stroomlijnen bouwt. Samen ontzorgen wij jouw hotel volledig.
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Klaar om kennis te maken?</h2>
+        <p style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Plan een vrijblijvend gesprek met Jacob of Melle. We kijken graag naar wat er mogelijk is voor jouw hotel.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="configurator.html" class="btn-outline">Doe de configurator →</a>
+            <a href="mailto:hello@hes.energy" class="btn-green">hello@hes.energy</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V.</p>
+        <p><a href="index.html">Home</a> · <a href="configurator.html">Configurator</a> · <a href="nieuws.html">Nieuws</a> · <a href="over-ons.html">Over ons</a> · <a href="mailto:hello@hes.energy">hello@hes.energy</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
