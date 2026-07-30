@@ -4,72 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nieuws — Hospitality Energy Solutions</title>
-    <meta name="description" content="Dagelijks nieuwsoverzicht over netcongestie, energiesubsidies, batterij-opslag en laadinfrastructuur voor bedrijven in de hospitality sector.">
+    <meta name="description" content="Dagelijks nieuwsoverzicht: algemeen energienieuws en hotelspecifiek nieuws over netcongestie, subsidies, batterijopslag en laadinfrastructuur.">
     <link rel="canonical" href="https://hes.energy/nieuws.html">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
-    
     <style>
         :root {
-            --green-primary: #0F3D23;
-            --green-secondary: #2E7032;
-            --green-accent: #7FBF3A;
-            --green-light: #B7E08A;
-            --off-white: #F5F7F2;
-            --dark-grey: #2F3437;
-            --text-muted: #6B7B6E;
-            --border: #D4DDD0;
-            --radius: 12px;
-            --radius-lg: 20px;
+            --green-primary: #0F3D23; --green-secondary: #2E7032; --green-accent: #7FBF3A;
+            --green-light: #B7E08A; --off-white: #F5F7F2; --dark-grey: #2F3437;
+            --text-muted: #6B7B6E; --border: #D4DDD0; --radius: 12px; --radius-lg: 20px;
         }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body { font-family: 'Inter', system-ui, sans-serif; color: var(--dark-grey); background: var(--off-white); line-height: 1.7; }
-        h1, h2, h3 { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600; color: var(--green-primary); }
-        h1 { font-size: clamp(1.75rem, 4vw, 2.8rem); }
-        h2 { font-size: clamp(1.25rem, 3vw, 1.8rem); }
-        h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
-
-        nav { position: sticky; top: 0; z-index: 100; background: rgba(245,247,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0.5rem 0; }
-        nav .container { display: flex; align-items: center; justify-content: space-between; }
-        .nav-logo img { height: 50px; width: auto; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--dark-grey); font-size: 0.9rem; font-weight: 500; }
-        .nav-links a:hover, .nav-links a.active { color: var(--green-accent); }
-        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1.25rem; background: var(--green-accent); color: var(--green-primary); border-radius: 50px; text-decoration: none; font-family: 'Montserrat',system-ui,sans-serif; font-weight: 500; font-size: 0.85rem; }
-
-        .page-header { background: var(--green-primary); color: var(--off-white); padding: 3rem 0 2rem; text-align: center; }
-        .page-header h1 { color: var(--off-white); margin-bottom: 0.5rem; }
-        .page-header p { opacity: 0.85; }
-
-        .news-grid { display: grid; gap: 1.5rem; padding: 2.5rem 0; }
-        .news-card { background: white; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 24px rgba(15,61,35,0.06); border: 1px solid var(--border); }
-        .news-card .tag { display: inline-block; padding: 0.2rem 0.75rem; border-radius: 50px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem; }
-        .tag-congestion { background: rgba(127,191,58,0.15); color: var(--green-secondary); }
-        .tag-subsidy { background: rgba(46,112,50,0.1); color: var(--green-secondary); }
-        .tag-battery { background: rgba(15,61,35,0.08); color: var(--green-primary); }
-        .news-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .news-card p { font-size: 0.9rem; color: var(--text-muted); }
-        .news-card .source { font-size: 0.78rem; margin-top: 0.75rem; }
-        .news-card .source a { color: #7FBF3A; text-decoration: none; font-weight: 500; }
-        .news-card .source a:hover { text-decoration: underline; color: #6FAA2E; }
-
-        .section-divider { margin: 2rem 0 0; }
-        .section-divider h2 { margin-bottom: 1rem; }
-
-        footer { background: var(--green-primary); color: rgba(245,247,242,0.7); padding: 2rem 0; font-size: 0.85rem; text-align: center; margin-top: 3rem; }
-        footer a { color: var(--green-light); }
-
-        @media (max-width: 640px) {
-            .nav-links { gap: 1rem; font-size: 0.8rem; }
-        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:'Inter',system-ui,sans-serif;color:var(--dark-grey);background:var(--off-white);line-height:1.7}
+        h1,h2,h3{font-family:'Montserrat',system-ui,sans-serif;font-weight:600;color:var(--green-primary)}
+        h1{font-size:clamp(1.75rem,4vw,2.8rem)}h2{font-size:clamp(1.25rem,3vw,1.8rem)}h3{font-size:clamp(1rem,2vw,1.25rem)}
+        .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+        nav{position:sticky;top:0;z-index:100;background:rgba(245,247,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.5rem 0}
+        nav .container{display:flex;align-items:center;justify-content:space-between}
+        .nav-logo img{height:50px;width:auto}
+        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+        .nav-links a{text-decoration:none;color:var(--dark-grey);font-size:0.9rem;font-weight:500}
+        .nav-links a:hover,.nav-links a.active{color:var(--green-accent)}
+        .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.25rem;background:var(--green-accent);color:var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.85rem}
+        .page-header{background:var(--green-primary);color:var(--off-white);padding:3rem 0 2rem;text-align:center}
+        .page-header h1{color:var(--off-white);margin-bottom:0.5rem}.page-header p{opacity:0.85}
+        .news-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2.5rem 0;align-items:start}
+        .news-column h2{font-size:1.2rem;margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:3px solid var(--green-accent);display:inline-block}
+        .news-grid{display:grid;gap:1.25rem}
+        .news-card{background:white;border-radius:var(--radius-lg);padding:1.5rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border)}
+        .news-card .tag{display:inline-block;padding:0.2rem 0.75rem;border-radius:50px;font-size:0.7rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.75rem}
+        .tag-congestion{background:rgba(127,191,58,0.15);color:var(--green-secondary)}
+        .tag-subsidy{background:rgba(46,112,50,0.1);color:var(--green-secondary)}
+        .tag-battery{background:rgba(15,61,35,0.08);color:var(--green-primary)}
+        .tag-hotel{background:rgba(183,224,138,0.2);color:var(--green-primary)}
+        .news-card h3{font-size:1.05rem;margin-bottom:0.5rem}
+        .news-card h3 a{color:var(--green-primary);text-decoration:none}
+        .news-card h3 a:hover{color:var(--green-accent)}
+        .news-card p{font-size:0.85rem;color:#3D4F40}
+        .news-card .source{font-size:0.75rem;margin-top:0.75rem}
+        .news-card .source a{color:#7FBF3A;text-decoration:none;font-weight:500}
+        .news-card .source a:hover{text-decoration:underline;color:#6FAA2E}
+        footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:2rem 0;font-size:0.85rem;text-align:center;margin-top:3rem}
+        footer a{color:var(--green-light)}
+        @media(max-width:800px){.news-layout{grid-template-columns:1fr}.nav-links{gap:1rem;font-size:0.8rem}}
     </style>
 </head>
 <body>
-
 <nav>
     <div class="container">
         <a href="index.html" class="nav-logo"><img src="logo-transparent.png" alt="HES"></a>
@@ -77,91 +59,38 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="configurator.html">Configurator</a></li>
             <li><a href="nieuws.html" class="active">Nieuws</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
-
 <div class="page-header">
     <h1>Nieuws & Ontwikkelingen</h1>
-    <p>Dagelijks bijgewerkt — netcongestie, subsidies, batterijopslag en laadinfrastructuur voor de hospitality sector</p>
+    <p>Dagelijks bijgewerkt — links algemeen energienieuws, rechts hotelspecifiek nieuws</p>
 </div>
-
 <div class="container">
-    <div class="news-grid" id="newsContent">
-        <!-- AUTO-UPDATED BY CRON JOB — 30 juli 2026 -->
-
-        <div class="news-card">
-            <span class="tag tag-congestion">Netcongestie</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxQaU9mUml3X0lLRks0UU5TN0YwV2c2WXQ5bkNyeTVYaTNLTTBTazBPaWE3d0dmRGFOTFc0dW5iQW1rMkhnNEMyUTY5RzFMazY3Z2lZWjEtSFlDU2hudjBXM2JmcGdxUDBpa21oQ0lHMzJqQ3hWaUh0SWpyU2ZreFpSaWZHZGJaSGRZV3h3QTFoWXZtNnc1elVlMUxIUzlISDMtYjVjbUZlQ0U0bE5TRTdSWTNtaUtpcG4tekRyT3F0OVJGTng4UjhHd0hIM1N0YXM?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Eén datacenter van Microsoft slurpt evenveel stroom als heel Eindhoven — hoe kan dat?</a></h3>
-            <p>NRC onderzocht hoe het kan dat een enkel datacenter van Microsoft evenveel elektriciteit verbruikt als de hele stad Eindhoven, terwijl het Nederlandse stroomnet al overvol zit. De komst van grootschalige datacenters zet de netcapaciteit verder onder druk, terwijl woonwijken en bedrijventerreinen op de wachtlijst staan.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxQaU9mUml3X0lLRks0UU5TN0YwV2c2WXQ5bkNyeTVYaTNLTTBTazBPaWE3d0dmRGFOTFc0dW5iQW1rMkhnNEMyUTY5RzFMazY3Z2lZWjEtSFlDU2hudjBXM2JmcGdxUDBpa21oQ0lHMzJqQ3hWaUh0SWpyU2ZreFpSaWZHZGJaSGRZV3h3QTFoWXZtNnc1elVlMUxIUzlISDMtYjVjbUZlQ0U0bE5TRTdSWTNtaUtpcG4tekRyT3F0OVJGTng4UjhHd0hIM1N0YXM?oc=5" target="_blank" rel="noopener">Bron: NRC — 16 juli 2026</a></p>
+    <div class="news-layout">
+        <div class="news-column">
+            <h2>⚡ Algemeen</h2>
+            <div class="news-grid" id="newsGeneral">
+                <!-- AUTO-UPDATED BY CRON -->
+                <p style="color:var(--text-muted);padding:2rem 0;text-align:center;">Nieuws wordt geladen…</p>
+            </div>
         </div>
-
-        <div class="news-card">
-            <span class="tag tag-congestion">Netcongestie</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMi-AFBVV95cUxPVkZoNUxzTkpMS0dGVEE0ZHhLdkhzT3plcGdsRUwza2lVeVFubEc5N1hKSkdMMmUybFhocHR6cFZCTTlob3NVdDhxc242QWRiV19iem5LYW5GcVpzSURRa19KNFdXUm1QUGZrc21ZajNHd3ZyT0h1d0tDd19WdElNS0lhTlB2SzZDY0tYdnFKekpVeW9oY2IyNWd6OFhXV1VCS21XRmgtT0VpZjFZMTNQMUk2aTVDOFI1V3o0Zm1waU1hZlJ4NFlNdzJxdEFjUGhYNGhLUU5qb3RxTlVRSTNuWVlSOFFpRU1peEtFT09sZUZuRWhReUFmTw?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Weinig financiering en vol stroomnet jagen innovatieve bedrijven weg uit Nederland</a></h3>
-            <p>Innovatieve Nederlandse bedrijven overwegen steeds vaker vertrek naar het buitenland door gebrek aan financiering en een overvol stroomnet. 'Amerika wil onze kennis wél hebben', waarschuwen ondernemers. De combinatie van netcongestie en beperkte investeringsmogelijkheden vormt een serieuze bedreiging voor de Nederlandse kenniseconomie.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMi-AFBVV95cUxPVkZoNUxzTkpMS0dGVEE0ZHhLdkhzT3plcGdsRUwza2lVeVFubEc5N1hKSkdMMmUybFhocHR6cFZCTTlob3NVdDhxc242QWRiV19iem5LYW5GcVpzSURRa19KNFdXUm1QUGZrc21ZajNHd3ZyT0h1d0tDd19WdElNS0lhTlB2SzZDY0tYdnFKekpVeW9oY2IyNWd6OFhXV1VCS21XRmgtT0VpZjFZMTNQMUk2aTVDOFI1V3o0Zm1waU1hZlJ4NFlNdzJxdEFjUGhYNGhLUU5qb3RxTlVRSTNuWVlSOFFpRU1peEtFT09sZUZuRWhReUFmTw?oc=5" target="_blank" rel="noopener">Bron: EenVandaag — 17 juli 2026</a></p>
-        </div>
-
-        <div class="news-card">
-            <span class="tag tag-congestion">Netcongestie</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQcG5DUVdMRG1qd2JpaURnOElwUlNVNUV5UkN5TWpfdEM2MTQ0N1d0T2MyQUZmc04zMmRFeUxtTjRtNEhMWXU4RHdhMi1KYU5ETXh3bFdad2U2dmhvTXVpdzdKNFo5Y1NSM3pGakhRUWZXb0dGQTQ1N1RPb05VTW1wdDVZZmwxaVp2WUhQMFR2RFpseDVLUFltZ2h0b1d6YkdsNlE?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Dit verandert er per 1 juli aan de toegang tot het stroomnet</a></h3>
-            <p>NU.nl zet op een rij wat er per 1 juli 2026 is veranderd voor huishoudens en bedrijven die een stroomaansluiting willen. De nieuwe regels maken duidelijk dat een aansluiting niet langer vanzelfsprekend is — voorrang gaat naar maatschappelijke projecten en flexibel energiegebruik wordt de norm.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQcG5DUVdMRG1qd2JpaURnOElwUlNVNUV5UkN5TWpfdEM2MTQ0N1d0T2MyQUZmc04zMmRFeUxtTjRtNEhMWXU4RHdhMi1KYU5ETXh3bFdad2U2dmhvTXVpdzdKNFo5Y1NSM3pGakhRUWZXb0dGQTQ1N1RPb05VTW1wdDVZZmwxaVp2WUhQMFR2RFpseDVLUFltZ2h0b1d6YkdsNlE?oc=5" target="_blank" rel="noopener">Bron: NU.nl — 26 juni 2026</a></p>
-        </div>
-
-        <div class="news-card">
-            <span class="tag tag-subsidy">Subsidie</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxNV0ZTYUJjVFM3clByQW0yM0FDQ0lLRTRQYnFUVEJvWW5nMFFyZl9vQWc5eWRvUjMzU3hMVTZ3bEF1RF9KUDYwOFpOQkpfR1pPU3l2RWtyTjZYX3pDV3pTWlE1TDRXRW1JWTRraG1FSnZjV2dlTlA5X2huc24xcGE1VVdMWkpPU3djUG84V1QtWTNXTEE2R0FJdERoLVFSRG5SSmszMjdwMWtnOWQyankzZ3NJXzAxb1lzLXhCTXI1MUt3cER2UEJWSEZab2VoNV9fdkNSYzBDNWRRckVzWEFz?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Honderdduizenden huishoudens krijgen geld als ze thuisbatterij of laadpaal laten aansturen</a></h3>
-            <p>Nederlandse netbeheerders gaan huishoudens betalen om hun thuisbatterij of laadpaal op afstand te laten aansturen om netcongestie tegen te gaan. Het gaat om honderdduizenden huishoudens die een vergoeding ontvangen in ruil voor flexibel stroomgebruik tijdens piekuren. Dit nieuwe systeem markeert een omslag naar actief congestiemanagement op huishoudniveau.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxNV0ZTYUJjVFM3clByQW0yM0FDQ0lLRTRQYnFUVEJvWW5nMFFyZl9vQWc5eWRvUjMzU3hMVTZ3bEF1RF9KUDYwOFpOQkpfR1pPU3l2RWtyTjZYX3pDV3pTWlE1TDRXRW1JWTRraG1FSnZjV2dlTlA5X2huc24xcGE1VVdMWkpPU3djUG84V1QtWTNXTEE2R0FJdERoLVFSRG5SSmszMjdwMWtnOWQyankzZ3NJXzAxb1lzLXhCTXI1MUt3cER2UEJWSEZab2VoNV9fdkNSYzBDNWRRckVzWEFz?oc=5" target="_blank" rel="noopener">Bron: AD.nl — 25 juni 2026</a></p>
-        </div>
-
-        <div class="news-card">
-            <span class="tag tag-subsidy">Regelgeving</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaXFhYXVRb0JSU3lvNWVJR3YxV25ScVlUVFNjcTZnUVh4VzVhb01GdnZ2b1k4ekZvSkx1dDZXNERJcjhid3BfVHlmVVhsbmRmcWxzNG4xVUlrVmlyQ0UyVXFWME5sTFNQd25UcExkZWJvc3hCdVIwdUJuZ3hHZl8yQzlDTklXdThOUHdVSFRrWXZkanhXV2FJWXktZkxUdkJsQnV5YWNEZzNpbV9oN3BMNWxlbFR0LVE1S1JtbGM3Z1VFR2s?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Salderingsregeling stopt in 2027: bidirectioneel laden als redding voor uw portemonnee</a></h3>
-            <p>Met het einde van de salderingsregeling voor zonnepanelen in 2027 in zicht, wijst EWmagazine op bidirectioneel laden als alternatief. Door uw elektrische auto in te zetten als thuisbatterij kunt u zonne-energie opslaan en terugleveren op gunstige momenten — een slimme combinatie van mobiliteit en energieopslag.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaXFhYXVRb0JSU3lvNWVJR3YxV25ScVlUVFNjcTZnUVh4VzVhb01GdnZ2b1k4ekZvSkx1dDZXNERJcjhid3BfVHlmVVhsbmRmcWxzNG4xVUlrVmlyQ0UyVXFWME5sTFNQd25UcExkZWJvc3hCdVIwdUJuZ3hHZl8yQzlDTklXdThOUHdVSFRrWXZkanhXV2FJWXktZkxUdkJsQnV5YWNEZzNpbV9oN3BMNWxlbFR0LVE1S1JtbGM3Z1VFR2s?oc=5" target="_blank" rel="noopener">Bron: EWmagazine.nl — 20 juli 2026</a></p>
-        </div>
-
-        <div class="news-card">
-            <span class="tag tag-subsidy">Regelgeving</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMickFVX3lxTFBKbHZNMExLakZzSld5X2lrWGIxYW9xaVV5dzRNcHMtRFlwRHdsbXNFMGgyVWhDV0FWQndlZDl0dG8tV0szdHJCRUFVMDRRUU9pQ1MxVlpTMVNXQ3k1LUxUcGdfVWtaczV0S1E3MUc0VDhoUQ?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Europese Richtlijn energieprestatie gebouwen (EPBD IV): wat betekent dit voor Nederland?</a></h3>
-            <p>RVO informeert over de nieuwe Europese richtlijn EPBD IV die per juli 2026 in werking treedt. De richtlijn verplicht gebouweigenaren tot vergaande verduurzaming, inclusief laadinfrastructuur en energieopslag. Voor de hospitalitysector betekent dit extra eisen aan nieuwbouw en renovatie, maar ook kansen via subsidies.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMickFVX3lxTFBKbHZNMExLakZzSld5X2lrWGIxYW9xaVV5dzRNcHMtRFlwRHdsbXNFMGgyVWhDV0FWQndlZDl0dG8tV0szdHJCRUFVMDRRUU9pQ1MxVlpTMVNXQ3k1LUxUcGdfVWtaczV0S1E3MUc0VDhoUQ?oc=5" target="_blank" rel="noopener">Bron: RVO.nl — 17 juli 2026</a></p>
-        </div>
-
-        <div class="news-card">
-            <span class="tag tag-battery">Batterij & EMS</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNM3hzRmk1X2NNbXY2Uy1DcTRCSnBIeXhBYzFnd0NqbVJtT3hHMVQ5X3BRNjNqOUpPeU9Hb2RReEJkTTVxcFUwbnpFUXdTd1RnS2Y2N0IyM0wwTl9xTVBhWGFDVTBBNHJjTXY3SFljeC1YQ0FwLTNUX3puOGhWRmRLdTRocGJtWWl5UzgxdlJ6VXd6eW13NmRPZFliSk9WUQ?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Vopak investeert 230 miljoen euro in batterijopslag</a></h3>
-            <p>Tankopslagbedrijf Vopak zet een forse stap in de energietransitie met een investering van 230 miljoen euro in grootschalige batterijopslag. Het bedrijf richt zich op batterijparken die het stroomnet kunnen stabiliseren en wil hiermee inspelen op de groeiende vraag naar flexibele opslagcapaciteit door de energietransitie.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNM3hzRmk1X2NNbXY2Uy1DcTRCSnBIeXhBYzFnd0NqbVJtT3hHMVQ5X3BRNjNqOUpPeU9Hb2RReEJkTTVxcFUwbnpFUXdTd1RnS2Y2N0IyM0wwTl9xTVBhWGFDVTBBNHJjTXY3SFljeC1YQ0FwLTNUX3puOGhWRmRLdTRocGJtWWl5UzgxdlJ6VXd6eW13NmRPZFliSk9WUQ?oc=5" target="_blank" rel="noopener">Bron: Industrielinqs — 2 juli 2026</a></p>
-        </div>
-
-        <div class="news-card">
-            <span class="tag tag-battery">Batterij & EMS</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxOdEdCcy1LWDhULWRveEtyYjZ0SVVpSHRYekg0WTZqZ0lLNHBSQ2xyck9WUmJVaTBBUmQ1aVp5REJNeFJUaTZhelk1dWxfb1h6ckdaWURfNDZOYVl5Z2VCa05qTGRmSmZfemt4ZEZDamFLTnBzYkVKTHUxbnZGUTFtWm9tNHNSOGdQanRoX2MzNUtOZkZld3BYdGdCeGhZdkl3QklxbDJieldEOTBJQXBHX1dWbVlQejktcFh3NUxLWDR2UVV1T1p3eWJYbUtWaHpiVTRVdmNKQ01ubEhZM1EwY1JuUWlDVjB4OGc?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Nederland en EU schalen razendsnel op met batterijopslag</a></h3>
-            <p>Change Inc. signaleert dat Nederland en de EU in hoog tempo opschalen met grootschalige batterijopslag. In het afgelopen jaar verdubbelde de geïnstalleerde batterijcapaciteit in Europa, gedreven door dalende batterijprijzen en toenemende netcongestie. Batterijen worden steeds vaker ingezet als flexibele buffer voor het overbelaste stroomnet.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxOdEdCcy1LWDhULWRveEtyYjZ0SVVpSHRYekg0WTZqZ0lLNHBSQ2xyck9WUmJVaTBBUmQ1aVp5REJNeFJUaTZhelk1dWxfb1h6ckdaWURfNDZOYVl5Z2VCa05qTGRmSmZfemt4ZEZDamFLTnBzYkVKTHUxbnZGUTFtWm9tNHNSOGdQanRoX2MzNUtOZkZld3BYdGdCeGhZdkl3QklxbDJieldEOTBJQXBHX1dWbVlQejktcFh3NUxLWDR2UVV1T1p3eWJYbUtWaHpiVTRVdmNKQ01ubEhZM1EwY1JuUWlDVjB4OGc?oc=5" target="_blank" rel="noopener">Bron: Change Inc. — 24 juni 2026</a></p>
-        </div>
-
-        <div class="news-card">
-            <span class="tag tag-battery">Batterij & EMS</span>
-            <h3><a href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxQbDkyajc0cXJUUm1ZaXpBWmtWUnl1bU4wNm5JMjZVLWtTVGJaZE1JY29XLUszZlFDSl96TkhwRU9BUzJVU00wbU1LSVhfNnFqbWVuYjhWVkNhZ29jZUFYeVVYbV9uMlpiUGZycnlUZWRZcHNDc2dJUU1DWVB6OWFsVHptMV9SZTN6Q2l5SllSWTRrMTJzQXF3dDg0ZlJ3em1vTEFRSXVTR29YQUFMYXA3a1RPNmxjdkZIRi1WbnMyYWVlV25XVlV4enAtMUJlMngxMjJJVW5uendyVV9hZUhXRHBoSQ?oc=5" target="_blank" rel="noopener" style="color:var(--green-primary);text-decoration:none;">Nederlandse innovaties bundelen krachten: Sessy thuisbatterij met Currentt EMS</a></h3>
-            <p>Solar365 meldt dat twee Nederlandse innovaties — de Sessy thuisbatterij en het Currentt Energy Management Systeem — de handen ineenslaan. De combinatie van slimme batterijopslag en lokaal energiemanagement biedt huishoudens en kleine bedrijven een kant-en-klare oplossing om piekbelasting te verminderen en energie zelf te optimaliseren.</p>
-            <p class="source"><a href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxQbDkyajc0cXJUUm1ZaXpBWmtWUnl1bU4wNm5JMjZVLWtTVGJaZE1JY29XLUszZlFDSl96TkhwRU9BUzJVU00wbU1LSVhfNnFqbWVuYjhWVkNhZ29jZUFYeVVYbV9uMlpiUGZycnlUZWRZcHNDc2dJUU1DWVB6OWFsVHptMV9SZTN6Q2l5SllSWTRrMTJzQXF3dDg0ZlJ3em1vTEFRSXVTR29YQUFMYXA3a1RPNmxjdkZIRi1WbnMyYWVlV25XVlV4enAtMUJlMngxMjJJVW5uendyVV9hZUhXRHBoSQ?oc=5" target="_blank" rel="noopener">Bron: Solar365 — 10 maart 2026</a></p>
+        <div class="news-column">
+            <h2>🏨 Hotels</h2>
+            <div class="news-grid" id="newsHotels">
+                <!-- AUTO-UPDATED BY CRON -->
+                <p style="color:var(--text-muted);padding:2rem 0;text-align:center;">Hotelnieuws wordt geladen…</p>
+            </div>
         </div>
     </div>
 </div>
-
 <footer>
     <div class="container">
         <p>© 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V.</p>
-        <p><a href="index.html">Home</a> · <a href="configurator.html">Configurator</a> · <a href="nieuws.html">Nieuws</a> · <a href="mailto:hello@hes.energy">hello@hes.energy</a></p>
+        <p><a href="index.html">Home</a> · <a href="configurator.html">Configurator</a> · <a href="nieuws.html">Nieuws</a> · <a href="over-ons.html">Over ons</a> · <a href="mailto:hello@hes.energy">hello@hes.energy</a></p>
     </div>
 </footer>
-
 </body>
 </html>
