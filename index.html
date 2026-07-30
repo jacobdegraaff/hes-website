@@ -191,7 +191,12 @@
 
             /* Hero */
             .hero { min-height: auto; padding: 3rem 0; }
-            .hero .container { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+            .hero-slides-track { width: 100% !important; flex-direction: column; }
+            .hero-slide-panel { width: 100% !important; }
+            .hero-slide-panel .container { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+            .hero-slide-panel:not(:first-child) { display: none; }
+            .hero-slider input:checked + .hero-slides-track + .hero-dots,
+            .hero-dots { display: none; }
             .hero h1 { font-size: 1.75rem; }
             .hero p { font-size: 0.95rem; max-width: 100%; }
             .hero-cta { justify-content: center; }
@@ -415,96 +420,142 @@
 </nav>
 
 <main>
-    <!-- HERO — geen slider, alles direct zichtbaar -->
-    <section class="hero">
-        <div class="container">
-            <div>
-                <p class="section-label" style="margin-bottom:0.5rem;">Hospitality Energy Solutions (HES)</p>
-                <h1>Energie-onafhankelijk.<br>Zonder zorgen.</h1>
-                <p>Van batterijopslag tot slimme laadpalen — HES bouwt samen met Stroomlijnen één totaaloplossing waarmee jouw hotel bespaart, verdient én verduurzaamt.</p>
-                <div class="hero-cta">
-                    <a href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
-                    <a href="#probleem" class="btn btn-ghost">Ontdek hoe het werkt</a>
-                </div>
-            </div>
-            <div class="hero-illustration">
-                <svg viewBox="0 0 420 340" fill="none">
-                    <rect x="40" y="60" width="340" height="220" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                    <rect x="70" y="100" width="80" height="55" rx="8" fill="rgba(127,191,58,0.2)" stroke="#7FBF3A" stroke-width="1.5"/>
-                    <text x="110" y="133" text-anchor="middle" fill="#7FBF3A" font-family="Montserrat" font-weight="600" font-size="11">ACCU</text>
-                    <rect x="180" y="100" width="80" height="55" rx="8" fill="rgba(127,191,58,0.15)" stroke="#7FBF3A" stroke-width="1.5"/>
-                    <text x="220" y="133" text-anchor="middle" fill="#7FBF3A" font-family="Montserrat" font-weight="600" font-size="10">EMS</text>
-                    <rect x="290" y="100" width="60" height="55" rx="8" fill="rgba(127,191,58,0.12)" stroke="#7FBF3A" stroke-width="1.5"/>
-                    <text x="320" y="133" text-anchor="middle" fill="#7FBF3A" font-family="Montserrat" font-weight="600" font-size="10">ZON</text>
-                    <rect x="70" y="185" width="280" height="55" rx="8" fill="rgba(183,224,138,0.12)" stroke="#B7E08A" stroke-width="1.5"/>
-                    <text x="210" y="218" text-anchor="middle" fill="#B7E08A" font-family="Montserrat" font-weight="600" font-size="11">EV LAADPALEN</text>
-                    <line x1="150" y1="155" x2="180" y2="155" stroke="#7FBF3A" stroke-width="1" opacity="0.4"/>
-                    <line x1="260" y1="155" x2="290" y2="155" stroke="#7FBF3A" stroke-width="1" opacity="0.4"/>
-                    <line x1="210" y1="155" x2="210" y2="185" stroke="#B7E08A" stroke-width="1" opacity="0.4"/>
-                    <text x="210" y="280" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="11">☀️ Opgewekt, opgeslagen, benut</text>
-                    <text x="210" y="300" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="10">Eén integraal systeem — één aanspreekpunt</text>
-                </svg>
-            </div>
-        </div>
-    </section>
-
-    <!-- DIAGRAM + NETCONGESTIE — direct onder hero -->
-    <section style="padding:2.5rem 0;background:white;">
-        <div class="container">
-            <p class="section-label">Netcongestie & Piekbelasting</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
-                <div>
-                    <h2 style="margin-bottom:0.75rem;">File op het stroomnet</h2>
-                    <p style="color:#3D4F40;line-height:1.7;margin-bottom:1rem;">
-                        Tussen 17:00 en 21:00 piekt het verbruik van een hotel — keukens, airco's, laadpalen. Het net kan het niet aan. 
-                        Met HES sla je goedkope stroom op en gebruik je die juist tijdens de piek. 
-                        De batterij vangt de piekbelasting af, waardoor je niet boven je contractvermogen komt.
-                    </p>
-                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                        <a href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
+    <style>
+        .hero-slider { position: relative; overflow: hidden; }
+        .hero-slider input { display: none; }
+        .hero-slides-track { display: flex; width: 300%; transition: transform 0.6s ease-in-out; }
+        .hero-slide-panel { width: 33.333%; flex-shrink: 0; }
+        #hs1:checked ~ .hero-slides-track { transform: translateX(0); }
+        #hs2:checked ~ .hero-slides-track { transform: translateX(-33.333%); }
+        #hs3:checked ~ .hero-slides-track { transform: translateX(-66.666%); }
+        .hero-dots { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.75rem; z-index: 10; }
+        .hero-dots label { width: 32px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s; }
+        #hs1:checked ~ .hero-dots label[for="hs1"],
+        #hs2:checked ~ .hero-dots label[for="hs2"],
+        #hs3:checked ~ .hero-dots label[for="hs3"] { background: var(--green-accent); }
+    </style>
+    <section class="hero hero-slider">
+        <input type="radio" name="hs" id="hs1" checked>
+        <input type="radio" name="hs" id="hs2">
+        <input type="radio" name="hs" id="hs3">
+        <div class="hero-slides-track">
+            <!-- SLIDE 1 -->
+            <div class="hero-slide-panel">
+                <div class="container">
+                    <div>
+                        <p class="section-label" style="margin-bottom:0.5rem;">Hospitality Energy Solutions (HES)</p>
+                        <h1>Energie-onafhankelijk.<br>Zonder zorgen.</h1>
+                        <p>Van batterijopslag tot slimme laadpalen — HES bouwt samen met Stroomlijnen één totaaloplossing waarmee jouw hotel bespaart, verdient én verduurzaamt.</p>
+                        <div class="hero-cta">
+                            <a href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
+                            <a href="#probleem" class="btn btn-ghost">Ontdek hoe het werkt</a>
+                        </div>
+                    </div>
+                    <div class="hero-illustration">
+                        <svg viewBox="0 0 420 340" fill="none">
+                            <rect x="40" y="60" width="340" height="220" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            <rect x="70" y="100" width="80" height="55" rx="8" fill="rgba(127,191,58,0.2)" stroke="#7FBF3A" stroke-width="1.5"/>
+                            <text x="110" y="133" text-anchor="middle" fill="#7FBF3A" font-family="Montserrat" font-weight="600" font-size="11">ACCU</text>
+                            <rect x="180" y="100" width="80" height="55" rx="8" fill="rgba(127,191,58,0.15)" stroke="#7FBF3A" stroke-width="1.5"/>
+                            <text x="220" y="133" text-anchor="middle" fill="#7FBF3A" font-family="Montserrat" font-weight="600" font-size="10">EMS</text>
+                            <rect x="290" y="100" width="60" height="55" rx="8" fill="rgba(127,191,58,0.12)" stroke="#7FBF3A" stroke-width="1.5"/>
+                            <text x="320" y="133" text-anchor="middle" fill="#7FBF3A" font-family="Montserrat" font-weight="600" font-size="10">ZON</text>
+                            <rect x="70" y="185" width="280" height="55" rx="8" fill="rgba(183,224,138,0.12)" stroke="#B7E08A" stroke-width="1.5"/>
+                            <text x="210" y="218" text-anchor="middle" fill="#B7E08A" font-family="Montserrat" font-weight="600" font-size="11">EV LAADPALEN</text>
+                            <line x1="150" y1="155" x2="180" y2="155" stroke="#7FBF3A" stroke-width="1" opacity="0.4"/>
+                            <line x1="260" y1="155" x2="290" y2="155" stroke="#7FBF3A" stroke-width="1" opacity="0.4"/>
+                            <line x1="210" y1="155" x2="210" y2="185" stroke="#B7E08A" stroke-width="1" opacity="0.4"/>
+                            <text x="210" y="280" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="11">☀️ Opgewekt, opgeslagen, benut</text>
+                            <text x="210" y="300" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="10">Eén integraal systeem — één aanspreekpunt</text>
+                        </svg>
                     </div>
                 </div>
-                <div style="width:100%;">
-                    <svg viewBox="0 0 520 320" fill="none" width="100%" height="auto" style="width:100%;max-width:520px;">
-                        <rect x="35" y="15" width="470" height="260" rx="6" fill="#FFFFFF" stroke="#D4DDD0" stroke-width="1"/>
-                        <line x1="40" y1="220" x2="500" y2="220" stroke="#D4DDD0" stroke-width="0.5"/>
-                        <line x1="40" y1="180" x2="500" y2="180" stroke="#D4DDD0" stroke-width="0.5"/>
-                        <line x1="40" y1="140" x2="500" y2="140" stroke="#D4DDD0" stroke-width="0.5"/>
-                        <line x1="40" y1="100" x2="500" y2="100" stroke="#D4DDD0" stroke-width="0.5"/>
-                        <line x1="40" y1="60" x2="500" y2="60" stroke="#D4DDD0" stroke-width="0.5"/>
-                        <text x="30" y="224" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">0</text>
-                        <text x="30" y="184" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">50</text>
-                        <text x="30" y="144" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">100</text>
-                        <text x="30" y="104" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">150</text>
-                        <text x="30" y="64" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">200</text>
-                        <text x="30" y="30" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">kW</text>
-                        <path d="M50 210 L75 208 L100 205 L125 195 L150 175 L175 150 L200 125 L225 105 L250 90 L275 85 L300 80 L325 75 L350 72 L375 70 L400 75 L425 90 L450 110 L475 130 L500 160 L500 220 L50 220Z" fill="#C8E6B5" stroke="#8BC34A" stroke-width="1.5"/>
-                        <path d="M50 215 L75 213 L100 210 L125 205 L150 200 L175 195 L200 190 L225 185 L250 180 L275 178 L300 175 L325 172 L350 170 L375 168 L400 170 L425 175 L450 185 L475 195 L500 205 L500 220 L50 220Z" fill="#B3D4E8" stroke="#5B9BD5" stroke-width="1.5" opacity="0.7"/>
-                        <line x1="250" y1="90" x2="475" y2="130" stroke="#F4A020" stroke-width="2.5" stroke-dasharray="6 4"/>
-                        <circle cx="375" cy="70" r="4" fill="#F4A020"/>
-                        <rect x="340" y="38" width="70" height="20" rx="3" fill="#F4A020" opacity="0.9"/>
-                        <text x="375" y="52" text-anchor="middle" fill="white" font-family="Montserrat" font-weight="600" font-size="10">Piek 17-21u</text>
-                        <line x1="290" y1="178" x2="340" y2="178" stroke="#2E7032" stroke-width="1" stroke-dasharray="3 2"/>
-                        <text x="250" y="182" text-anchor="end" fill="#2E7032" font-family="Inter" font-size="8">Batterij vangt op</text>
-                        <text x="50" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">00</text>
-                        <text x="100" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">03</text>
-                        <text x="150" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">06</text>
-                        <text x="200" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">09</text>
-                        <text x="250" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">12</text>
-                        <text x="300" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">15</text>
-                        <text x="350" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">18</text>
-                        <text x="400" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">21</text>
-                        <text x="450" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">24</text>
-                        <rect x="45" y="280" width="12" height="12" rx="2" fill="#C8E6B5" stroke="#8BC34A" stroke-width="1"/>
-                        <text x="62" y="290" fill="#2F3437" font-family="Inter" font-size="9">Verbruik</text>
-                        <rect x="130" y="280" width="12" height="12" rx="2" fill="#B3D4E8" stroke="#5B9BD5" stroke-width="1"/>
-                        <text x="147" y="290" fill="#2F3437" font-family="Inter" font-size="9">Netimport</text>
-                        <line x1="230" y1="286" x2="270" y2="286" stroke="#F4A020" stroke-width="2.5" stroke-dasharray="6 4"/>
-                        <text x="275" y="290" fill="#F4A020" font-family="Inter" font-size="9">Netcapaciteit</text>
-                        <text x="270" y="310" text-anchor="middle" fill="#5A6A55" font-family="Montserrat" font-weight="600" font-size="11">Hotel energieprofiel — 24-uurs verbruik (kW)</text>
-                    </svg>
+            </div>
+            <!-- SLIDE 2 -->
+            <div class="hero-slide-panel">
+                <div class="container">
+                    <div>
+                        <p class="section-label" style="margin-bottom:0.5rem;">Netcongestie & Piekbelasting</p>
+                        <h1>File<br>op het stroomnet</h1>
+                        <p>Tussen 17:00 en 21:00 piekt het verbruik van een hotel. De batterij van HES vangt deze piek af, waardoor je niet boven je contractvermogen komt en boetes voorkomt.</p>
+                        <div class="hero-cta">
+                            <a href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
+                            <a href="#probleem" class="btn btn-ghost">Bekijk de problemen</a>
+                        </div>
+                    </div>
+                    <div class="hero-illustration" style="width:100%;">
+                        <svg viewBox="0 0 520 320" fill="none" width="100%" height="auto" style="max-width:520px;">
+                            <rect x="35" y="15" width="470" height="260" rx="6" fill="#FFFFFF" stroke="#D4DDD0" stroke-width="1"/>
+                            <line x1="40" y1="220" x2="500" y2="220" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <line x1="40" y1="180" x2="500" y2="180" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <line x1="40" y1="140" x2="500" y2="140" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <line x1="40" y1="100" x2="500" y2="100" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <line x1="40" y1="60" x2="500" y2="60" stroke="#D4DDD0" stroke-width="0.5"/>
+                            <text x="30" y="224" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">0</text>
+                            <text x="30" y="184" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">50</text>
+                            <text x="30" y="144" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">100</text>
+                            <text x="30" y="104" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">150</text>
+                            <text x="30" y="64" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">200</text>
+                            <text x="30" y="30" text-anchor="end" fill="#7A8A75" font-family="Inter" font-size="9">kW</text>
+                            <path d="M50 210 L75 208 L100 205 L125 195 L150 175 L175 150 L200 125 L225 105 L250 90 L275 85 L300 80 L325 75 L350 72 L375 70 L400 75 L425 90 L450 110 L475 130 L500 160 L500 220 L50 220Z" fill="#C8E6B5" stroke="#8BC34A" stroke-width="1.5"/>
+                            <path d="M50 215 L75 213 L100 210 L125 205 L150 200 L175 195 L200 190 L225 185 L250 180 L275 178 L300 175 L325 172 L350 170 L375 168 L400 170 L425 175 L450 185 L475 195 L500 205 L500 220 L50 220Z" fill="#B3D4E8" stroke="#5B9BD5" stroke-width="1.5" opacity="0.7"/>
+                            <line x1="250" y1="90" x2="475" y2="130" stroke="#F4A020" stroke-width="2.5" stroke-dasharray="6 4"/>
+                            <circle cx="375" cy="70" r="4" fill="#F4A020"/>
+                            <rect x="340" y="38" width="70" height="20" rx="3" fill="#F4A020" opacity="0.9"/>
+                            <text x="375" y="52" text-anchor="middle" fill="white" font-family="Montserrat" font-weight="600" font-size="10">Piek 17-21u</text>
+                            <text x="50" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">00</text>
+                            <text x="100" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">03</text>
+                            <text x="150" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">06</text>
+                            <text x="200" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">09</text>
+                            <text x="250" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">12</text>
+                            <text x="300" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">15</text>
+                            <text x="350" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">18</text>
+                            <text x="400" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">21</text>
+                            <text x="450" y="240" text-anchor="middle" fill="#7A8A75" font-family="Inter" font-size="9">24</text>
+                            <rect x="45" y="280" width="12" height="12" rx="2" fill="#C8E6B5" stroke="#8BC34A" stroke-width="1"/>
+                            <text x="62" y="290" fill="#2F3437" font-family="Inter" font-size="9">Verbruik</text>
+                            <rect x="130" y="280" width="12" height="12" rx="2" fill="#B3D4E8" stroke="#5B9BD5" stroke-width="1"/>
+                            <text x="147" y="290" fill="#2F3437" font-family="Inter" font-size="9">Netimport</text>
+                            <line x1="230" y1="286" x2="270" y2="286" stroke="#F4A020" stroke-width="2.5" stroke-dasharray="6 4"/>
+                            <text x="275" y="290" fill="#F4A020" font-family="Inter" font-size="9">Netcapaciteit</text>
+                            <text x="270" y="310" text-anchor="middle" fill="#5A6A55" font-family="Montserrat" font-weight="600" font-size="11">Hotel energieprofiel — 24-uurs verbruik (kW)</text>
+                        </svg>
+                    </div>
                 </div>
             </div>
+            <!-- SLIDE 3 -->
+            <div class="hero-slide-panel">
+                <div class="container">
+                    <div>
+                        <p class="section-label" style="margin-bottom:0.5rem;">Subsidies & Besparing</p>
+                        <h1>Tot 60% subsidie<br>op batterijen</h1>
+                        <p>De overheid stimuleert energieopslag met forse subsidies. Combineer dit met inkomsten uit laadsessies en een lagere energierekening — jouw investering verdient zich razendsnel terug.</p>
+                        <div class="hero-cta">
+                            <a href="configurator.html" class="btn btn-primary">Bereken je subsidie →</a>
+                            <a href="nieuws.html" class="btn btn-ghost">Lees het laatste nieuws</a>
+                        </div>
+                    </div>
+                    <div class="hero-illustration">
+                        <svg viewBox="0 0 420 300" fill="none">
+                            <rect x="60" y="40" width="300" height="60" rx="10" fill="rgba(127,191,58,0.2)" stroke="#7FBF3A" stroke-width="1.5"/>
+                            <text x="210" y="58" text-anchor="middle" fill="#7FBF3A" font-family="Montserrat" font-weight="600" font-size="12">💰 EIA / MIA / Vamil</text>
+                            <text x="210" y="78" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="10">Tot 60% subsidie op batterijopslag</text>
+                            <rect x="60" y="120" width="300" height="60" rx="10" fill="rgba(183,224,138,0.12)" stroke="#B7E08A" stroke-width="1.5"/>
+                            <text x="210" y="138" text-anchor="middle" fill="#B7E08A" font-family="Montserrat" font-weight="600" font-size="12">🔌 EV-laadinkomsten</text>
+                            <text x="210" y="158" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="10">Verdien per laadsessie van je gasten</text>
+                            <rect x="60" y="200" width="300" height="60" rx="10" fill="rgba(127,191,58,0.1)" stroke="#7FBF3A" stroke-width="1" opacity="0.5"/>
+                            <text x="210" y="218" text-anchor="middle" fill="#7FBF3A" font-family="Montserrat" font-weight="600" font-size="12">📉 Lagere energierekening</text>
+                            <text x="210" y="238" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="10">Pieksnijden = minder transportkosten</text>
+                            <text x="210" y="285" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="Inter" font-size="10">Terugverdientijd: 3–5 jaar</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-dots">
+            <label for="hs1"></label>
+            <label for="hs2"></label>
+            <label for="hs3"></label>
         </div>
     </section>
 
@@ -891,6 +942,10 @@
         });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Radio slider auto-advance
+    let si = 0;
+    setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
 </script>
 
 </body>
