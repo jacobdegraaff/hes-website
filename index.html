@@ -924,97 +924,68 @@
     let si = 0;
     setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
 
-    // Language switcher — instant translation via Google Translate API
-    const langCache = {};
-    async function translatePage(lang) {
+    // Language switcher — native Google Translate widget
+    function translatePage(lang) {
         var dd = document.querySelector('.lang-dropdown');
         if (dd) dd.classList.remove('show');
+        
         if (lang === 'nl') {
-            document.cookie = 'hes_lang=nl;path=/;max-age=31536000';
+            // Clear cookie and reload to reset
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+            document.cookie = 'hes_lang=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
             location.reload();
             return;
         }
-        document.cookie = 'hes_lang=' + lang + ';path=/;max-age=31536000';
         
-        document.body.style.cursor = 'wait';
+        // Set both cookies
+        var d = new Date(); d.setTime(d.getTime() + 31536e6);
+        document.cookie = 'googtrans=/nl/' + lang + '; expires=' + d.toUTCString() + '; path=/';
+        document.cookie = 'hes_lang=' + lang + '; expires=' + d.toUTCString() + '; path=/';
         
-        // Collect translatable text elements — SKIP nav, footer, lang-switch, svg
-        var skipSelectors = ['nav', 'footer', '.lang-switch', 'svg', 'script', 'style', '.nav-logo'];
-        var els = document.querySelectorAll('h1,h2,h3,h4,p,li,td,th,label,button,figcaption,.section-label,.btn,span');
-        var texts = [], elMap = [];
-        
-        els.forEach(function(el) {
-            if (!el.textContent || !el.textContent.trim()) return;
-            var txt = el.textContent.trim();
-            if (txt.length < 3) return;
-            // Skip elements inside skipped containers
-            for (var i = 0; i < skipSelectors.length; i++) {
-                if (el.closest(skipSelectors[i])) return;
-            }
-            // Skip if only child is a link (nav items)
-            if (el.children.length === 1 && el.children[0].tagName === 'A' && el.textContent.trim() === el.children[0].textContent.trim()) return;
-            // Skip pure numbers/emails
-            if (/^[\d.,€%+\-\s]+$/.test(txt) || txt.includes('@') || txt.includes('hes_lang')) return;
-            texts.push(txt);
-            elMap.push(el);
-        });
-        
-        // Deduplicate
-        var seen = {}, uniqueTexts = [], uniqueEls = [];
-        for (var i = 0; i < texts.length; i++) {
-            if (!seen[texts[i]]) {
-                seen[texts[i]] = true;
-                uniqueTexts.push(texts[i]);
-                uniqueEls.push(elMap[i]);
-            }
+        // Trigger native Google Translate
+        var sel = document.querySelector('.goog-te-combo');
+        if (sel) {
+            sel.value = lang;
+            sel.dispatchEvent(new Event('change'));
+        } else {
+            // Widget not loaded yet, reload to apply cookie
+            location.reload();
         }
-        texts = uniqueTexts; elMap = uniqueEls;
-        
-        // Batch translate
-        var batchSize = 80;
-        for (var b = 0; b < texts.length; b += batchSize) {
-            var batch = texts.slice(b, b + batchSize);
-            var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t&q=' + encodeURIComponent(batch.join('\n|||'));
-            try {
-                var resp = await fetch(url);
-                if (!resp.ok) throw new Error('HTTP ' + resp.status);
-                var data = await resp.json();
-                if (data && data[0]) {
-                    var translated = data[0].map(function(r) { return r[0] || ''; }).join('').split('|||');
-                    for (var j = 0; j < translated.length && j < batch.length; j++) {
-                        var idx = b + j;
-                        if (idx < elMap.length && translated[j] && translated[j].trim()) {
-                            // Only update if element still exists and hasn't been modified
-                            if (elMap[idx].parentNode && elMap[idx].textContent.trim() === texts[idx]) {
-                                elMap[idx].textContent = translated[j].trim();
-                            }
-                        }
-                    }
-                }
-            } catch(e) {
-                console.warn('Translate batch failed:', e.message);
-            }
-        }
-        
-        document.body.style.cursor = '';
     }
-
-    // Apply saved language on load
-    (function() {
-        var saved = document.cookie.split('; ').find(function(c) { return c.startsWith('hes_lang='); });
-        if (saved) {
-            var lang = saved.split('=')[1];
-            if (lang !== 'nl') translatePage(lang);
-        }
-    })();
 
     // Close dropdown on outside click
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.lang-switch')) {
-            document.querySelector('.lang-dropdown').classList.remove('show');
+            var dd = document.querySelector('.lang-dropdown');
+            if (dd) dd.classList.remove('show');
         }
     });
 </script>
+
+<div id="google_translate_element" style="display:none;"></div>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'nl',
+        includedLanguages: 'nl,en,fr,es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+    
+    // Apply saved language
+    var saved = document.cookie.split('; ').find(function(c) { return c.startsWith('hes_lang='); });
+    if (saved) {
+        var lang = saved.split('=')[1];
+        if (lang !== 'nl') {
+            setTimeout(function() {
+                var sel = document.querySelector('.goog-te-combo');
+                if (sel) { sel.value = lang; sel.dispatchEvent(new Event('change')); }
+            }, 800);
+        }
+    }
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
 </body>
 </html>
