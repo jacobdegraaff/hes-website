@@ -27,6 +27,12 @@
         .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;grid-column:3}
         .nav-links a{text-decoration:none;color:var(--dark-grey);font-size:0.9rem;font-weight:500}
         .nav-links a:hover,.nav-links a.active{color:var(--green-accent)}
+        /* Dropdown */
+        .nav-dropdown{position:relative}
+        .nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:160px;z-index:200;overflow:hidden}
+        .nav-dropdown:hover .nav-dropdown-menu{display:block}
+        .nav-dropdown-menu a{display:block;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem}
+        .nav-dropdown-menu a:hover{background:var(--off-white)}
         .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.25rem;background:var(--green-accent);color:var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.85rem}
         .page-header{background:var(--green-primary);color:var(--off-white);padding:7rem 0 2rem;text-align:center}
         .page-header h1{color:var(--off-white);margin-bottom:0.5rem}.page-header p{opacity:0.85}
@@ -76,10 +82,10 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="netcongestie.html">Netcongestie</a></li>
             <li><a href="subsidies.html">Subsidies</a></li>
-            <li style="position:relative;">
-                <a href="voordelen.html" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;">Voordelen ▾</a>
-                <div style="display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:160px;z-index:200;overflow:hidden;">
-                    <a href="configurator.html" style="display:block;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;">Configurator</a>
+            <li class="nav-dropdown">
+                <a href="voordelen.html">Voordelen ▾</a>
+                <div class="nav-dropdown-menu">
+                    <a href="configurator.html">Configurator</a>
                 </div>
             </li>
             <li><a href="nieuws.html" class="active">Nieuws</a></li>

@@ -131,6 +131,24 @@
         }
         .nav-links a:hover { color: var(--green-accent); }
         
+        /* Dropdown */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-menu {
+            display: none;
+            position: absolute; top: 100%; left: 0;
+            background: white; border-radius: 12px;
+            box-shadow: 0 12px 48px rgba(15,61,35,0.12);
+            border: 1px solid #D4DDD0;
+            min-width: 160px; z-index: 200; overflow: hidden;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a {
+            display: block; padding: 0.6rem 1rem;
+            text-decoration: none; color: #2F3437;
+            font-size: 0.85rem;
+        }
+        .nav-dropdown-menu a:hover { background: var(--off-white); }
+        
         .btn {
             display: inline-flex; align-items: center; gap: 0.5rem;
             padding: 0.85rem 2rem;
@@ -410,10 +428,10 @@
         <ul class="nav-links">
             <li><a href="netcongestie.html">Netcongestie</a></li>
             <li><a href="subsidies.html">Subsidies</a></li>
-            <li style="position:relative;">
-                <a href="voordelen.html" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;">Voordelen ▾</a>
-                <div style="display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:160px;z-index:200;overflow:hidden;">
-                    <a href="configurator.html" style="display:block;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;">Configurator</a>
+            <li class="nav-dropdown">
+                <a href="voordelen.html">Voordelen ▾</a>
+                <div class="nav-dropdown-menu">
+                    <a href="configurator.html">Configurator</a>
                 </div>
             </li>
             <li><a href="#vergelijk">Vergelijk</a></li>
