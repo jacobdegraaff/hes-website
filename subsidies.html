@@ -73,8 +73,12 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="netcongestie.html">Netcongestie</a></li>
             <li><a href="subsidies.html" class="active">Subsidies</a></li>
-            <li><a href="voordelen.html">Voordelen</a></li>
-            <li><a href="configurator.html">Configurator</a></li>
+            <li style="position:relative;">
+                <a href="voordelen.html" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;">Voordelen ▾</a>
+                <div style="display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:160px;z-index:200;overflow:hidden;">
+                    <a href="configurator.html" style="display:block;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;">Configurator</a>
+                </div>
+            </li>
             <li><a href="nieuws.html">Nieuws</a></li>
             <li><a href="over-ons.html">Over ons</a></li>
             <li><a href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
