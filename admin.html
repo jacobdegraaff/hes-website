@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>SEO Admin — Hospitality Energy Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-primary: #0F3D23;
+            --green-accent: #7FBF3A;
+            --off-white: #F5F7F2;
+            --dark-grey: #2F3437;
+            --text-muted: #6B7B6E;
+            --border: #D4DDD0;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--off-white);
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+        
+        /* Login Gate */
+        #login-gate {
+            display: flex; align-items: center; justify-content: center;
+            min-height: 100vh; background: var(--green-primary);
+        }
+        .login-card {
+            background: white; border-radius: 16px; padding: 3rem;
+            width: 400px; text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .login-card h1 { font-family: 'Montserrat', sans-serif; color: var(--green-primary); margin-bottom: 0.5rem; }
+        .login-card p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .login-card input {
+            width: 100%; padding: 0.85rem; border: 2px solid var(--border);
+            border-radius: 10px; font-size: 1rem; margin-bottom: 0.5rem;
+            font-family: inherit;
+        }
+        .login-card input:focus { outline: none; border-color: var(--green-accent); }
+        .login-error { color: #c0392b; font-size: 0.85rem; margin: 0.5rem 0; display: none; }
+        .login-error.show { display: block; }
+        
+        /* Admin Layout */
+        #admin-panel { display: none; }
+        .admin-header {
+            background: var(--green-primary); color: white;
+            padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+        }
+        .admin-header h1 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; }
+        .admin-header .token-status { font-size: 0.8rem; opacity: 0.8; }
+        .admin-header button {
+            background: transparent; border: 1px solid rgba(255,255,255,0.3);
+            color: white; padding: 0.5rem 1rem; border-radius: 8px;
+            cursor: pointer; font-size: 0.85rem;
+        }
+        .admin-header button:hover { background: rgba(255,255,255,0.1); }
+        
+        .admin-body {
+            max-width: 1000px; margin: 0 auto; padding: 2rem;
+        }
+        
+        .toolbar {
+            display: flex; gap: 1rem; margin-bottom: 2rem;
+            flex-wrap: wrap; align-items: center;
+        }
+        .toolbar select {
+            padding: 0.65rem 1rem; border: 2px solid var(--border);
+            border-radius: 10px; font-family: inherit; font-size: 0.9rem;
+            background: white; cursor: pointer;
+        }
+        .toolbar .btn {
+            padding: 0.65rem 1.5rem; border-radius: 10px;
+            font-family: 'Montserrat', sans-serif; font-weight: 500;
+            font-size: 0.9rem; cursor: pointer; border: none;
+            transition: all 0.15s;
+        }
+        .btn-primary { background: var(--green-accent); color: var(--green-primary); }
+        .btn-primary:hover { background: #6FAA2E; }
+        .btn-secondary { background: white; color: var(--dark-grey); border: 2px solid var(--border); }
+        .btn-danger { background: #c0392b; color: white; }
+        .btn-success { background: #27ae60; color: white; }
+        
+        /* Form */
+        .seo-section {
+            background: white; border-radius: 14px;
+            padding: 1.5rem 2rem; margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        .seo-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem; color: var(--green-primary);
+            margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .form-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+        }
+        .form-group { margin-bottom: 0.75rem; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label {
+            display: block; font-size: 0.78rem; font-weight: 600;
+            color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.05em; margin-bottom: 0.3rem;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 0.6rem 0.75rem;
+            border: 1.5px solid var(--border); border-radius: 8px;
+            font-family: inherit; font-size: 0.9rem;
+            transition: border-color 0.15s;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none; border-color: var(--green-accent);
+        }
+        .form-group textarea { resize: vertical; min-height: 60px; }
+        .form-group .char-count {
+            font-size: 0.72rem; color: var(--text-muted); text-align: right;
+        }
+        .form-group .char-count.warn { color: #e67e22; }
+        .form-group .char-count.danger { color: #c0392b; }
+        
+        .toggle-row {
+            display: flex; gap: 2rem; align-items: center;
+        }
+        .toggle-row label { margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+        .toggle-row input[type=checkbox] {
+            width: auto; accent-color: var(--green-accent);
+        }
+        
+        /* SERP Preview */
+        .serp-preview {
+            background: white; border: 1px solid #dadce0;
+            border-radius: 8px; padding: 1rem; margin-top: 1rem;
+            max-width: 600px;
+        }
+        .serp-preview .serp-title {
+            color: #1a0dab; font-size: 1.1rem;
+            text-decoration: none; display: block; margin-bottom: 2px;
+            font-family: arial, sans-serif;
+        }
+        .serp-preview .serp-url {
+            color: #006621; font-size: 0.82rem; margin-bottom: 2px;
+        }
+        .serp-preview .serp-desc {
+            color: #545454; font-size: 0.85rem; line-height: 1.4;
+        }
+        
+        .toast {
+            position: fixed; bottom: 2rem; right: 2rem;
+            padding: 1rem 1.5rem; border-radius: 10px;
+            color: white; font-weight: 500; z-index: 999;
+            animation: slideIn 0.3s ease;
+            display: none;
+        }
+        .toast.success { background: #27ae60; }
+        .toast.error { background: #c0392b; }
+        @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } }
+        
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .login-card { width: 90%; padding: 2rem; }
+            .admin-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== LOGIN GATE ========== -->
+<div id="login-gate">
+    <div class="login-card">
+        <h1>🔐 HES SEO Admin</h1>
+        <p>Beheer meta tags, OG/Twitter cards en JSON-LD voor alle pagina's</p>
+        <input type="password" id="login-password" placeholder="Wachtwoord" autofocus>
+        <p class="login-error" id="login-error">Onjuist wachtwoord</p>
+        <button class="btn btn-primary" style="width:100%;padding:0.85rem;margin-top:0.5rem;" onclick="doLogin()">Inloggen</button>
+    </div>
+</div>
+
+<!-- ========== ADMIN PANEL ========== -->
+<div id="admin-panel">
+    <div class="admin-header">
+        <div>
+            <h1>SEO Admin Panel</h1>
+            <span class="token-status" id="token-status">GitHub token: niet ingesteld</span>
+        </div>
+        <div style="display:flex;gap:0.75rem;align-items:center;">
+            <button onclick="setupToken()" id="btn-token">⚙️ Token</button>
+            <button onclick="doLogout()">🚪 Uitloggen</button>
+        </div>
+    </div>
+    
+    <div class="admin-body">
+        <div class="toolbar">
+            <label style="font-weight:600;font-size:0.9rem;">📄 Pagina:</label>
+            <select id="page-select" onchange="loadPage()">
+                <option value="index.html">🏠 Home (index.html)</option>
+                <option value="netcongestie.html">⚡ Netcongestie</option>
+                <option value="subsidies.html">💰 Subsidies</option>
+                <option value="voordelen.html">📈 Voordelen</option>
+                <option value="configurator.html">🔧 Configurator</option>
+                <option value="nieuws.html">📰 Nieuws</option>
+                <option value="over-ons.html">👥 Over ons</option>
+            </select>
+            <button class="btn btn-secondary" onclick="loadPage()">📥 Laden</button>
+            <button class="btn btn-primary" onclick="deployPage()">🚀 Deploy</button>
+            <button class="btn btn-secondary" onclick="deployAll()" style="margin-left:auto;">📦 Deploy alle pagina's</button>
+            <span id="save-status" style="font-size:0.85rem;color:var(--text-muted);"></span>
+        </div>
+        
+        <div id="seo-form"></div>
+        
+        <div id="serp-preview-container"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── Password (SHA-256 hash) ───
+const PASSWORD_HASH = '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090'; // SHA256('admin123')
+const REPO_OWNER = 'jacobdegraaff';
+const REPO_NAME = 'hes-website';
+const BRANCH = 'main';
+
+// ─── State ───
+let githubToken = localStorage.getItem('hes_seo_github_token') || '';
+let currentPageSeo = null;
+let currentFilename = '';
+
+// ─── Page SEO defaults ───
+const pageDefaults = {
+    'index.html': {
+        title: 'Hospitality Energy Solutions — Energieoplossingen voor Hotels | Batterijopslag · EMS · EV-laden',
+        description: 'HES maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. Lagere energiekosten, nieuwe inkomsten, volledig ontzorgd door Stroomlijnen.',
+        canonical: 'https://hes.energy/',
+        ogTitle: 'Hospitality Energy Solutions — Energieoplossingen voor Hotels',
+        ogDescription: 'Van batterijopslag tot EV-laadpalen — HES maakt jouw hotel energie-onafhankelijk. Stap voor stap, volledig ontzorgd.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Hospitality Energy Solutions — Energieoplossingen voor Hotels',
+        twitterDescription: 'Van batterijopslag tot EV-laadpalen — HES maakt jouw hotel energie-onafhankelijk.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'netcongestie.html': {
+        title: 'Wat is netcongestie? — Hospitality Energy Solutions | Oplossingen voor hotels',
+        description: 'Netcongestie blokkeert de groei van jouw hotel. Ontdek wat netcongestie is, hoe het jouw hotel raakt, en hoe HES het oplost met batterijopslag, EMS en slimme sturing.',
+        canonical: 'https://hes.energy/netcongestie.html',
+        ogTitle: 'Wat is netcongestie? — Oplossingen voor hotels | HES',
+        ogDescription: 'Netcongestie blokkeert de groei van jouw hotel. Ontdek hoe HES het oplost.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Wat is netcongestie? — Oplossingen voor hotels | HES',
+        twitterDescription: 'Netcongestie blokkeert de groei van jouw hotel. Ontdek hoe HES het oplost.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'subsidies.html': {
+        title: 'Subsidies voor hotels — Hospitality Energy Solutions | EIA · MIA · ISDE · SPRILA',
+        description: 'Ontdek alle subsidies voor energieoplossingen in hotels: EIA, MIA/Vamil, ISDE en SPRILA. HES helpt met aanvragen en maximaliseert je voordeel.',
+        canonical: 'https://hes.energy/subsidies.html',
+        ogTitle: 'Subsidies voor hotels — EIA · MIA · ISDE · SPRILA | HES',
+        ogDescription: 'EIA, MIA/Vamil, ISDE en SPRILA — HES helpt hotels maximale subsidie te krijgen.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Subsidies voor hotels — EIA · MIA · ISDE · SPRILA | HES',
+        twitterDescription: 'EIA, MIA/Vamil, ISDE en SPRILA — maximale subsidie voor jouw hotel.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'voordelen.html': {
+        title: 'Voordelen — Hospitality Energy Solutions | Hotel energie-oplossingen',
+        description: 'Wat HES voor jouw hotel kan betekenen: energieadvies, subsidiebegeleiding, laadinfrastructuur, slimme software en maatwerkoplossingen.',
+        canonical: 'https://hes.energy/voordelen.html',
+        ogTitle: 'Voordelen — Hospitality Energy Solutions',
+        ogDescription: 'Energieadvies, subsidiebegeleiding, laadinfrastructuur en maatwerk voor hotels.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Voordelen — Hospitality Energy Solutions',
+        twitterDescription: 'Energieadvies, subsidiebegeleiding, laadinfrastructuur en maatwerk voor hotels.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'configurator.html': {
+        title: 'Hotel Energieconfigurator — Hospitality Energy Solutions | Bereken je besparing',
+        description: 'Bereken binnen 2 minuten wat jouw hotel kan besparen met batterijopslag, EMS, zonnepanelen en EV-laadpalen.',
+        canonical: 'https://hes.energy/configurator.html',
+        ogTitle: 'Hotel Energieconfigurator — Bereken je besparing | HES',
+        ogDescription: 'Bereken binnen 2 minuten wat jouw hotel kan besparen met batterijopslag, EMS, zonnepanelen en EV-laadpalen.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Hotel Energieconfigurator — Bereken je besparing | HES',
+        twitterDescription: 'Bereken binnen 2 minuten wat jouw hotel kan besparen.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'nieuws.html': {
+        title: 'Nieuws — Hospitality Energy Solutions | EV subsidies & energie voor hotels',
+        description: 'Het laatste nieuws over EV-subsidies, energieoplossingen, netcongestie en verduurzaming voor de hotellerie. Dagelijks bijgewerkt door HES.',
+        canonical: 'https://hes.energy/nieuws.html',
+        ogTitle: 'Nieuws — EV subsidies & energie voor hotels | HES',
+        ogDescription: 'Het laatste nieuws over EV-subsidies, energieoplossingen en netcongestie voor hotels.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Nieuws — EV subsidies & energie voor hotels | HES',
+        twitterDescription: 'Het laatste nieuws over EV-subsidies, energieoplossingen en netcongestie.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'over-ons.html': {
+        title: 'Over ons — Hospitality Energy Solutions | Jacob de Graaff & Melle Pegman',
+        description: 'HES is opgericht door Jacob de Graaff en Melle Pegman. Samen met technisch partner Stroomlijnen maken wij hotels energie-onafhankelijk.',
+        canonical: 'https://hes.energy/over-ons.html',
+        ogTitle: 'Over ons — Team achter HES | Jacob & Melle',
+        ogDescription: 'HES is opgericht door Jacob de Graaff en Melle Pegman. Samen met Stroomlijnen.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Over ons — HES | Jacob de Graaff & Melle Pegman',
+        twitterDescription: 'HES is opgericht door Jacob de Graaff en Melle Pegman. Samen met Stroomlijnen.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    }
+};
+
+// ─── Auth ───
+async function sha256(str) {
+    const buf = new TextEncoder().encode(str);
+    const hash = await crypto.subtle.digest('SHA-256', buf);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function doLogin() {
+    const pw = document.getElementById('login-password').value;
+    const hash = await sha256(pw);
+    if (hash === PASSWORD_HASH) {
+        document.getElementById('login-gate').style.display = 'none';
+        document.getElementById('admin-panel').style.display = 'block';
+        updateTokenStatus();
+        sessionStorage.setItem('hes_seo_authed', '1');
+    } else {
+        document.getElementById('login-error').classList.add('show');
+    }
+}
+
+function doLogout() {
+    sessionStorage.removeItem('hes_seo_authed');
+    location.reload();
+}
+
+// ─── Token ───
+function setupToken() {
+    const token = prompt('GitHub Personal Access Token (repo scope):\n\nMaak er een op: https://github.com/settings/tokens\nKies "repo" scope.', githubToken);
+    if (token) {
+        githubToken = token;
+        localStorage.setItem('hes_seo_github_token', token);
+        updateTokenStatus();
+        showToast('success', '✅ Token opgeslagen');
+    }
+}
+
+function updateTokenStatus() {
+    const el = document.getElementById('token-status');
+    const btn = document.getElementById('btn-token');
+    if (githubToken) {
+        el.textContent = 'GitHub token: ✅ actief';
+        el.style.color = '#7FBF3A';
+        btn.textContent = '🔄 Token';
+    } else {
+        el.textContent = 'GitHub token: ⚠️ niet ingesteld';
+        el.style.color = '#ffc107';
+        btn.textContent = '⚙️ Token';
+    }
+}
+
+// ─── Load page ───
+async function loadPage() {
+    const filename = document.getElementById('page-select').value;
+    currentFilename = filename;
+    document.getElementById('save-status').textContent = 'Laden...';
+    
+    try {
+        const url = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/${filename}`;
+        const resp = await fetch(url, { cache: 'no-store' });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        
+        const html = await resp.text();
+        currentPageSeo = extractSEO(html);
+        
+        // Merge with defaults for any missing fields
+        if (pageDefaults[filename]) {
+            currentPageSeo = { ...pageDefaults[filename], ...currentPageSeo };
+        }
+        
+        renderForm(currentPageSeo);
+        updateSERPPreview(currentPageSeo);
+        document.getElementById('save-status').textContent = '✅ Geladen';
+    } catch (e) {
+        // Fallback to defaults
+        currentPageSeo = pageDefaults[filename] ? { ...pageDefaults[filename] } : {};
+        renderForm(currentPageSeo);
+        document.getElementById('save-status').textContent = '⚠️ Kon niet laden van GitHub — defaults getoond';
+    }
+}
+
+function extractSEO(html) {
+    const seo = {};
+    const getMeta = (name, attr='name') => {
+        const regex = new RegExp(`<meta\\s+${attr}="${name}"\\s+content="([^"]*)"`, 'i');
+        const m = html.match(regex);
+        return m ? m[1] : '';
+    };
+    const getProp = (name) => getMeta(name, 'property');
+    
+    seo.title = (html.match(/<title>([^<]*)<\/title>/) || [])[1] || '';
+    seo.description = getMeta('description');
+    seo.canonical = (html.match(/<link rel="canonical" href="([^"]*)"/) || [])[1] || '';
+    seo.ogTitle = getProp('og:title');
+    seo.ogDescription = getProp('og:description');
+    seo.ogImage = getProp('og:image');
+    seo.twitterTitle = getMeta('twitter:title');
+    seo.twitterDescription = getMeta('twitter:description');
+    seo.twitterImage = getMeta('twitter:image');
+    seo.robots = getMeta('robots');
+    
+    return seo;
+}
+
+// ─── Render form ───
+function renderForm(seo) {
+    const container = document.getElementById('seo-form');
+    container.innerHTML = `
+        <div class="seo-section">
+            <h3>📝 Basis SEO</h3>
+            <div class="form-grid">
+                <div class="form-group full">
+                    <label>Title tag <span style="font-weight:400;text-transform:none;">(50-60 chars optimaal)</span></label>
+                    <input id="f-title" value="${esc(seo.title)}" oninput="onFieldChange();updateSERPPreview(getFormData())">
+                    <div class="char-count" id="count-title"></div>
+                </div>
+                <div class="form-group full">
+                    <label>Meta description <span style="font-weight:400;text-transform:none;">(150-160 chars optimaal)</span></label>
+                    <textarea id="f-description" oninput="onFieldChange();updateSERPPreview(getFormData())">${esc(seo.description)}</textarea>
+                    <div class="char-count" id="count-desc"></div>
+                </div>
+                <div class="form-group">
+                    <label>Canonical URL</label>
+                    <input id="f-canonical" value="${esc(seo.canonical)}" oninput="onFieldChange()">
+                </div>
+                <div class="form-group">
+                    <label>Robots</label>
+                    <select id="f-robots" onchange="onFieldChange()">
+                        <option value="index, follow" ${seo.robots === 'index, follow' ? 'selected' : ''}>index, follow</option>
+                        <option value="noindex, follow" ${seo.robots === 'noindex, follow' ? 'selected' : ''}>noindex, follow</option>
+                        <option value="index, nofollow" ${seo.robots === 'index, nofollow' ? 'selected' : ''}>index, nofollow</option>
+                        <option value="noindex, nofollow" ${seo.robots === 'noindex, nofollow' ? 'selected' : ''}>noindex, nofollow</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="seo-section">
+            <h3>🔗 Open Graph (Facebook, LinkedIn, WhatsApp)</h3>
+            <div class="form-grid">
+                <div class="form-group full">
+                    <label>OG Title</label>
+                    <input id="f-ogTitle" value="${esc(seo.ogTitle)}" oninput="onFieldChange()">
+                </div>
+                <div class="form-group full">
+                    <label>OG Description</label>
+                    <textarea id="f-ogDescription" oninput="onFieldChange()">${esc(seo.ogDescription)}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>OG Image URL</label>
+                    <input id="f-ogImage" value="${esc(seo.ogImage)}" oninput="onFieldChange()">
+                </div>
+            </div>
+        </div>
+        
+        <div class="seo-section">
+            <h3>🐦 Twitter Card</h3>
+            <div class="form-grid">
+                <div class="form-group full">
+                    <label>Twitter Title</label>
+                    <input id="f-twitterTitle" value="${esc(seo.twitterTitle)}" oninput="onFieldChange()">
+                </div>
+                <div class="form-group full">
+                    <label>Twitter Description</label>
+                    <textarea id="f-twitterDescription" oninput="onFieldChange()">${esc(seo.twitterDescription)}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Twitter Image</label>
+                    <input id="f-twitterImage" value="${esc(seo.twitterImage)}" oninput="onFieldChange()">
+                </div>
+            </div>
+        </div>
+    `;
+    
+    updateCharCounts();
+}
+
+function esc(s) { return (s || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function getFormData() {
+    const g = id => document.getElementById(id)?.value || '';
+    return {
+        title: g('f-title'), description: g('f-description'),
+        canonical: g('f-canonical'), robots: g('f-robots'),
+        ogTitle: g('f-ogTitle'), ogDescription: g('f-ogDescription'), ogImage: g('f-ogImage'),
+        twitterTitle: g('f-twitterTitle'), twitterDescription: g('f-twitterDescription'), twitterImage: g('f-twitterImage')
+    };
+}
+
+function onFieldChange() {
+    updateCharCounts();
+    document.getElementById('save-status').textContent = '✏️ Gewijzigd';
+}
+
+function updateCharCounts() {
+    const title = document.getElementById('f-title')?.value || '';
+    const desc = document.getElementById('f-description')?.value || '';
+    
+    const countTitle = document.getElementById('count-title');
+    const countDesc = document.getElementById('count-desc');
+    
+    if (countTitle) {
+        countTitle.textContent = `${title.length} tekens`;
+        countTitle.className = 'char-count' + (title.length > 60 ? ' danger' : title.length > 55 ? ' warn' : '');
+    }
+    if (countDesc) {
+        countDesc.textContent = `${desc.length} tekens`;
+        countDesc.className = 'char-count' + (desc.length > 160 ? ' danger' : desc.length > 155 ? ' warn' : '');
+    }
+}
+
+// ─── SERP Preview ───
+function updateSERPPreview(seo) {
+    const container = document.getElementById('serp-preview-container');
+    const canonical = seo.canonical || `https://hes.energy/${currentFilename}`;
+    const url = canonical.replace(/^https?:\/\//, '');
+    
+    container.innerHTML = `
+        <div class="seo-section">
+            <h3>🔍 Google SERP Preview</h3>
+            <div class="serp-preview">
+                <span class="serp-title">${esc(seo.title || 'Geen title')}</span>
+                <span class="serp-url">${esc(url)} ▾</span>
+                <span class="serp-desc">${esc(seo.description || 'Geen description')}</span>
+            </div>
+        </div>
+    `;
+}
+
+// ─── Generate updated HTML head ───
+function generateHeadHTML(seo) {
+    const canonical = seo.canonical || `https://hes.energy/${currentFilename}`;
+    return `    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="${seo.robots || 'index, follow'}">
+    <title>${seo.title}</title>
+    <meta name="description" content="${seo.description}">
+    <link rel="canonical" href="${canonical}">
+    <meta property="og:title" content="${seo.ogTitle || seo.title}">
+    <meta property="og:description" content="${seo.ogDescription || seo.description}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="${canonical}">
+    <meta property="og:image" content="${seo.ogImage || 'https://hes.energy/assets/logo-og.png'}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Hospitality Energy Solutions">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${seo.twitterTitle || seo.title}">
+    <meta name="twitter:description" content="${seo.twitterDescription || seo.description}">
+    <meta name="twitter:image" content="${seo.twitterImage || seo.ogImage || 'https://hes.energy/assets/logo-og.png'}">`;
+}
+
+// ─── Deploy via GitHub API ───
+async function deployPage() {
+    if (!githubToken) { showToast('error', '⚠️ Stel eerst een GitHub token in'); return setupToken(); }
+    if (!currentPageSeo) { showToast('error', '⚠️ Laad eerst een pagina'); return; }
+    
+    const seo = getFormData();
+    const filename = currentFilename;
+    document.getElementById('save-status').textContent = '⏳ Deployen...';
+    
+    try {
+        // Get current file SHA
+        const getUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${filename}?ref=${BRANCH}`;
+        const getResp = await fetch(getUrl, {
+            headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
+        });
+        if (!getResp.ok) throw new Error(`GitHub GET failed: ${getResp.status}`);
+        const fileData = await getResp.json();
+        const sha = fileData.sha;
+        let html = atob(fileData.content);
+        
+        // Replace SEO head section
+        const newHead = generateHeadHTML(seo);
+        const oldHeadRegex = /<meta charset="UTF-8">[\s\S]*?<meta name="twitter:image"[^>]*>/;
+        html = html.replace(oldHeadRegex, newHead);
+        
+        // Commit
+        const putUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${filename}`;
+        const body = {
+            message: `SEO update: ${filename.replace('.html','')}`,
+            content: btoa(unescape(encodeURIComponent(html))),
+            sha: sha,
+            branch: BRANCH
+        };
+        const putResp = await fetch(putUrl, {
+            method: 'PUT',
+            headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+        if (!putResp.ok) throw new Error(`GitHub PUT failed: ${putResp.status}`);
+        
+        document.getElementById('save-status').textContent = '✅ Gedeployed! (CDN ~30s)';
+        showToast('success', `✅ ${filename} gedeployed! Live over ~30 seconden.`);
+    } catch (e) {
+        document.getElementById('save-status').textContent = '❌ Fout bij deploy';
+        showToast('error', `❌ ${e.message}`);
+    }
+}
+
+async function deployAll() {
+    if (!githubToken) { showToast('error', '⚠️ Stel eerst een GitHub token in'); return setupToken(); }
+    if (!confirm('Alle 7 pagina\'s deployen met huidige SEO-waarden? Dit overschrijft alle head-secties.')) return;
+    
+    document.getElementById('save-status').textContent = '⏳ Alle pagina\'s deployen...';
+    const pages = Object.keys(pageDefaults);
+    let done = 0, failed = 0;
+    
+    for (const filename of pages) {
+        try {
+            const seo = pageDefaults[filename];
+            const getUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${filename}?ref=${BRANCH}`;
+            const getResp = await fetch(getUrl, {
+                headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
+            });
+            if (!getResp.ok) throw new Error(`GET ${filename}: ${getResp.status}`);
+            const fileData = await getResp.json();
+            const sha = fileData.sha;
+            let html = atob(fileData.content);
+            
+            const newHead = generateHeadHTML(seo);
+            const oldHeadRegex = /<meta charset="UTF-8">[\s\S]*?<meta name="twitter:image"[^>]*>/;
+            html = html.replace(oldHeadRegex, newHead);
+            
+            const putUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${filename}`;
+            const body = {
+                message: `SEO update: ${filename.replace('.html','')}`,
+                content: btoa(unescape(encodeURIComponent(html))),
+                sha: sha,
+                branch: BRANCH
+            };
+            const putResp = await fetch(putUrl, {
+                method: 'PUT',
+                headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            });
+            if (putResp.ok) done++; else failed++;
+        } catch (e) { failed++; }
+    }
+    
+    document.getElementById('save-status').textContent = `✅ ${done} gedeployed${failed ? `, ${failed} fout` : ''}`;
+    showToast(failed ? 'error' : 'success', `${done} pagina's gedeployed${failed ? `, ${failed} mislukt` : ' ✅'}`);
+}
+
+// ─── Toast ───
+function showToast(type, msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = `toast ${type}`;
+    t.style.display = 'block';
+    setTimeout(() => t.style.display = 'none', 4000);
+}
+
+// ─── Init ───
+if (sessionStorage.getItem('hes_seo_authed') === '1') {
+    document.getElementById('login-gate').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    updateTokenStatus();
+}
+
+document.getElementById('login-password').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doLogin();
+});
+</script>
+</body>
+</html>
