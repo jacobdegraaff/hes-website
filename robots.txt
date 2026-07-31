@@ -1,0 +1,8 @@
+# robots.txt — Hospitality Energy Solutions
+# Laatst bijgewerkt: 2026-07-31
+
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+Sitemap: https://hes.energy/sitemap.xml
