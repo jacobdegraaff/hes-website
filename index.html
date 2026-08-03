@@ -77,7 +77,7 @@
             --green-light: #B7E08A;
             --off-white: #F5F7F2;
             --dark-grey: #2F3437;
-            --text-muted: #6B7B6E;
+            --text-muted: #556B58;
             --border: #D4DDD0;
             --radius: 12px;
             --radius-lg: 20px;
@@ -208,6 +208,10 @@
         
         .nav-dropdown:hover .nav-dropdown-panel,
         .nav-dropdown:hover .nav-backdrop { display: block; }
+        
+        /* Skip link */
+        .skip-link { position: absolute; top: -100px; left: 0; background: var(--green-primary); color: white; padding: 0.75rem 1.5rem; z-index: 200; font-weight: 600; border-radius: 0 0 8px 0; text-decoration: none; font-family: 'Inter',sans-serif; font-size: 0.9rem; }
+        .skip-link:focus { top: 0; }
         
         .nav-mega-col h4 {
             font-family: 'Montserrat', sans-serif;
@@ -376,7 +380,7 @@
         section.dark h2, section.dark h3 { color: var(--off-white); }
         section.dark p { color: rgba(245, 247, 242, 0.85); }
         section.dark .problem-card p { color: #3D4F40; }
-        section.dark .problem-card h4 { color: var(--green-primary); }
+        section.dark .problem-card h3 { color: var(--green-primary); }
         .section-label {
             font-family: 'Montserrat', system-ui, sans-serif;
             font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em;
@@ -395,7 +399,7 @@
             border: 1px solid var(--border);
         }
         .problem-card .icon { width: 48px; height: 48px; margin-bottom: 1rem; color: var(--green-accent); }
-        .problem-card h4 { color: var(--green-primary); margin-bottom: 0.5rem; }
+        .problem-card h3 { color: var(--green-primary); margin-bottom: 0.5rem; }
 
         /* Scenario cards */
         .scenario {
@@ -497,6 +501,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Direct naar inhoud</a>
+
 <nav>
     <div class="container">
         <a href="/" class="nav-logo" aria-label="Hospitality Energy Solutions home">
@@ -513,7 +519,7 @@
                 </span>
             </div>
         </a>
-        <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.nav-links');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
@@ -558,7 +564,7 @@
     </div>
 </nav>
 
-<main>
+<main id="main-content">
     <style>
         .hero-slider { position: relative; overflow: hidden; }
         .hero-slider input { display: none; }
@@ -583,7 +589,7 @@
                 <div class="container">
                     <div>
                         <p class="section-label" style="margin-bottom:0.5rem;">Hospitality Energy Solutions (HES)</p>
-                        <h1>Energie-onafhankelijk.<br>Zonder zorgen.</h1>
+                        <h2>Energie-onafhankelijk.<br>Zonder zorgen.</h2>
                         <p>Van batterijopslag tot slimme laadpalen — HES bouwt samen met Stroomlijnen één totaaloplossing waarmee jouw hotel bespaart, verdient én verduurzaamt.</p>
                         <div class="hero-cta">
                             <a href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
@@ -600,7 +606,7 @@
                 <div class="container">
                     <div>
                         <p class="section-label" style="margin-bottom:0.5rem;">Netcongestie & Piekbelasting</p>
-                        <h1>File<br>op het stroomnet</h1>
+                        <h2>File<br>op het stroomnet</h2>
                         <p>Tussen 17:00 en 21:00 piekt het verbruik van een hotel. De batterij van HES vangt deze piek af, waardoor je niet boven je contractvermogen komt en boetes voorkomt.</p>
                         <div class="hero-cta">
                             <a href="netcongestie.html" class="btn btn-primary">Lees meer over netcongestie →</a>
@@ -617,7 +623,7 @@
                 <div class="container">
                     <div>
                         <p class="section-label" style="margin-bottom:0.5rem;">Subsidies & Besparing</p>
-                        <h1>Tot 60% subsidie<br>op batterijen</h1>
+                        <h2>Tot 60% subsidie<br>op batterijen</h2>
                         <p>De overheid stimuleert energieopslag met forse subsidies. Combineer dit met inkomsten uit laadsessies en een lagere energierekening — jouw investering verdient zich razendsnel terug.</p>
                         <div class="hero-cta">
                             <a href="subsidies.html" class="btn btn-primary">Bekijk alle subsidies →</a>
@@ -650,35 +656,35 @@
                     <div class="icon">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M14 14h20M14 22h20M14 30h12" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/></svg>
                     </div>
-                    <h4>Stokkende uitbreiding en nieuwbouw</h4>
+                    <h3>Stokkende uitbreiding en nieuwbouw</h3>
                     <p>Wil een hotel 50 kamers, een wellnessruimte of een congreszaal bouwen? Dan zegt de netbeheerder: geen zwaardere aansluiting beschikbaar. De bouwtekeningen liggen klaar, maar de stekker mag er letterlijk niet in.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 6v8M24 34v8M8 24h8M32 24h8" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="24" r="10" stroke="#7FBF3A" stroke-width="2"/></svg>
                     </div>
-                    <h4>Knelpunten bij 'Gas-los'</h4>
+                    <h3>Knelpunten bij 'Gas-los'</h3>
                     <p>De overstap van gas-cv's naar warmtepompen, of van gasfornuizen naar inductie, vraagt enorm veel elektrisch vermogen. Zonder zwaardere aansluiting moeten hotels noodgedwongen op gas blijven stoken.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="14" y="6" width="20" height="30" rx="4" stroke="#7FBF3A" stroke-width="2"/><path d="M16 10h16M16 16h16M16 22h10" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><rect x="18" y="38" width="12" height="4" rx="2" stroke="#7FBF3A" stroke-width="2"/></svg>
                     </div>
-                    <h4>Laadpalen voor gasten vastgezet</h4>
+                    <h3>Laadpalen voor gasten vastgezet</h3>
                     <p>Reizigers verwachten hun elektrische auto op te laden bij het hotel. Maar hotels kunnen vaak geen laadpleinen meer aanleggen — de aansluitcapaciteit is volledig vergeven.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M12 36V20l12-12 12 12v16H12z" stroke="#7FBF3A" stroke-width="2"/><path d="M20 36V26h8v10" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><rect x="18" y="14" width="12" height="3" rx="1" fill="#7FBF3A" opacity="0.3"/></svg>
                     </div>
-                    <h4>Extreme verbruikspieken</h4>
+                    <h3>Extreme verbruikspieken</h3>
                     <p>Tussen 17:00 en 21:00 piekt het verbruik: keukens, sauna's, liften, honderden douchende gasten. Overschrijd je het contractvermogen? Dan volgen torenhoge boetes van de netbeheerder.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#7FBF3A" stroke-width="2"/><path d="M24 10v28M14 24h20" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round"/><rect x="16" y="16" width="16" height="16" rx="3" stroke="#7FBF3A" stroke-width="1.5" opacity="0.5"/></svg>
                     </div>
-                    <h4>Dieselaggregaat vervangen?</h4>
+                    <h3>Dieselaggregaat vervangen?</h3>
                     <p>Veel hotels hebben een dieselaggregaat voor noodsituaties. Wil je hiervan af en deze vervangen door een batterij? Dat kan — met een slim accusysteem heb je altijd noodstroom, zonder uitstoot en zonder onderhoud.</p>
                 </div>
             </div>
@@ -696,22 +702,22 @@
             <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:2rem;">
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="18" y="6" width="12" height="18" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M20 26v6M28 26v6M20 32h8M24 38v4" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="14" r="3" stroke="#7FBF3A" stroke-width="1.5"/><text x="24" y="47" text-anchor="middle" fill="#7FBF3A" font-size="10" font-weight="700">€</text></svg></div>
-                    <h4>Extra omzet via laadpalen</h4>
+                    <h3>Extra omzet via laadpalen</h3>
                     <p>Plaats laadpalen of snelladers bij jouw hotel en verdien per laadsessie. Gasten, passanten én omwonenden laden bij jou — 24/7 inkomsten.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="3" stroke="#7FBF3A" stroke-width="2"/><line x1="8" y1="14" x2="40" y2="14" stroke="#7FBF3A" stroke-width="1.5"/><rect x="14" y="20" width="20" height="3" rx="1" fill="#7FBF3A" opacity="0.3"/><rect x="14" y="27" width="16" height="3" rx="1" fill="#7FBF3A" opacity="0.3"/><circle cx="34" cy="35" r="5" stroke="#7FBF3A" stroke-width="1.5"/><path d="M32 33l4 4 4-4" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                    <h4>Upsell bij kamerreservering</h4>
+                    <h3>Upsell bij kamerreservering</h3>
                     <p>Bied bij de boeking een gegarandeerde laadpaal aan. Een extra service die gasten overtuigt om voor jouw hotel te kiezen — én extra omzet oplevert.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="24" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M14 44v-6M24 44v-4M34 44v-6" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><rect x="14" y="16" width="20" height="12" rx="2" fill="#7FBF3A" opacity="0.15"/><path d="M18 20l4 4 8-8" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                    <h4>Marketing op laaddisplays</h4>
+                    <h3>Marketing op laaddisplays</h3>
                     <p>Snelladers hebben grote schermen. Toon tijdens het wachten: "Koffie & gebak in ons restaurant" of "10% korting op je volgende overnachting" — directe conversie.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="16" cy="16" r="6" stroke="#7FBF3A" stroke-width="2"/><circle cx="32" cy="32" r="6" stroke="#7FBF3A" stroke-width="2"/><line x1="20" y1="20" x2="28" y2="28" stroke="#7FBF3A" stroke-width="2"/><circle cx="16" cy="32" r="6" stroke="#7FBF3A" stroke-width="2" stroke-dasharray="3 2"/><circle cx="32" cy="16" r="6" stroke="#7FBF3A" stroke-width="2" stroke-dasharray="3 2"/></svg></div>
-                    <h4>Flexibel EMS × PMS-koppeling</h4>
+                    <h3>Flexibel EMS × PMS-koppeling</h3>
                     <p>Het EMS van HES koppelt via API's met jouw Property Management System. Maak slimme upsell-pakketten: laadpaal + kamer + ontbijt in één boeking.</p>
                 </div>
             </div>
@@ -729,32 +735,32 @@
             <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:2rem;">
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="3" stroke="#7FBF3A" stroke-width="2"/><line x1="18" y1="20" x2="30" y2="20" stroke="#7FBF3A" stroke-width="1.5"/><line x1="18" y1="26" x2="30" y2="26" stroke="#7FBF3A" stroke-width="1.5"/><line x1="18" y1="32" x2="24" y2="32" stroke="#7FBF3A" stroke-width="1.5"/><path d="M36 18l4 4-4 4" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                    <h4>Directe fabrieksdistributie</h4>
+                    <h3>Directe fabrieksdistributie</h3>
                     <p>Wij importeren hardware direct van de fabriek. Onderdelen op voorraad in Nederland. Geen tussenpersonen. <strong>2-4 weken levertijd</strong> vanuit voorraad.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="12" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="6" fill="#7FBF3A"/><line x1="24" y1="6" x2="24" y2="18" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="30" x2="24" y2="42" stroke="#7FBF3A" stroke-width="2"/><line x1="6" y1="24" x2="18" y2="24" stroke="#7FBF3A" stroke-width="2"/><line x1="30" y1="24" x2="42" y2="24" stroke="#7FBF3A" stroke-width="2"/></svg></div>
-                    <h4>Eén geïntegreerd ecosysteem</h4>
+                    <h3>Eén geïntegreerd ecosysteem</h3>
                     <p>Batterij + EMS + OCPP 2.0.1 laden + 25 kW DC-gekoppelde zon in <strong>één platform</strong>. Één contract, één factuur, één telefoonnummer. Alles uit één hand — geen gedoe met losse partijen.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="#7FBF3A" stroke-width="2"/><line x1="14" y1="16" x2="34" y2="16" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="22" x2="30" y2="22" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="28" x2="34" y2="28" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="34" x2="26" y2="34" stroke="#7FBF3A" stroke-width="1.5"/><circle cx="38" cy="20" r="1.5" fill="#7FBF3A"/></svg></div>
-                    <h4>Programmeerbaar EMS</h4>
+                    <h3>Programmeerbaar EMS</h3>
                     <p>Het <strong>enige programmeerbare</strong> energie management systeem. Geen vaste profielen, geen gesloten cloudplatforms — op maat gemaakte Python-strategieën per locatie.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 6L6 18l18 12 18-12L24 6z" stroke="#7FBF3A" stroke-width="2"/><path d="M6 18v12l18 12 18-12V18" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="30" x2="24" y2="42" stroke="#7FBF3A" stroke-width="1.5"/><path d="M18 24l-12-4M30 24l12-4" stroke="#7FBF3A" stroke-width="1" stroke-linecap="round"/></svg></div>
-                    <h4>6-laags veiligheidsarchitectuur</h4>
+                    <h3>6-laags veiligheidsarchitectuur</h3>
                     <p>LFP-chemie → per-cel BMS-monitoring → vloeistofkoeling → ingebouwde brandonderdrukking → noodstop met AC-contactor → integratie met brandmeldpaneel. <strong>UL 9540A, UL 1973, UL 1642, IEC 62933-5-2.</strong></p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="6" x2="24" y2="16" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="32" x2="24" y2="42" stroke="#7FBF3A" stroke-width="2"/><line x1="6" y1="24" x2="16" y2="24" stroke="#7FBF3A" stroke-width="2"/><line x1="32" y1="24" x2="42" y2="24" stroke="#7FBF3A" stroke-width="2"/><path d="M14 14l-6-6M34 14l6-6M14 34l-6 6M34 34l6 6" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-                    <h4>DC-gekoppelde zonne-energie</h4>
+                    <h3>DC-gekoppelde zonne-energie</h3>
                     <p>25 kW+ MPPT direct op de DC-bus. <strong>Geen conversieverlies.</strong> Maximaal rendement uit je zonnepanelen — elke opgewekte kWh gaat direct je accu in.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#7FBF3A" stroke-width="2"/><path d="M16 24l6 6 12-12" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="3" fill="#7FBF3A"/></svg></div>
-                    <h4>Turnkey oplevering</h4>
+                    <h3>Turnkey oplevering</h3>
                     <p>Engineering, installatie, inbedrijfstelling, 24/7 monitoring, onderdelen, support. <strong>Alles inbegrepen</strong> in één transparante prijs — geen verborgen kosten achteraf.</p>
                 </div>
             </div>
@@ -809,8 +815,8 @@
                             <filter id="g1"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                         </defs>
                         <rect width="360" height="300" rx="16" fill="white" stroke="#D4DDD0" stroke-width="1"/>
-                        <text x="110" y="28" text-anchor="middle" fill="#6B7B6E" font-size="9" font-weight="600" font-family="Inter,sans-serif" letter-spacing="2">NACHT — DALUREN LADEN</text>
-                        <text x="290" y="28" text-anchor="middle" fill="#6B7B6E" font-size="9" font-weight="600" font-family="Inter,sans-serif" letter-spacing="2">DAG — PIEK ONTLADEN</text>
+                        <text x="110" y="28" text-anchor="middle" fill="#556B58" font-size="9" font-weight="600" font-family="Inter,sans-serif" letter-spacing="2">NACHT — DALUREN LADEN</text>
+                        <text x="290" y="28" text-anchor="middle" fill="#556B58" font-size="9" font-weight="600" font-family="Inter,sans-serif" letter-spacing="2">DAG — PIEK ONTLADEN</text>
                         <line x1="180" y1="18" x2="180" y2="282" stroke="#D4DDD0" stroke-width="1" stroke-dasharray="4,6"/>
                         <!-- Night: Grid -->
                         <rect x="20" y="85" width="130" height="48" rx="10" fill="rgba(127,191,58,0.12)" stroke="#7FBF3A" stroke-width="1.5"/>
@@ -818,7 +824,7 @@
                         <!-- Night: Battery -->
                         <rect x="20" y="175" width="130" height="48" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
                         <text x="85" y="204" text-anchor="middle" fill="#0F3D23" font-size="13" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text x="85" y="218" text-anchor="middle" fill="#6B7B6E" font-size="8" font-family="Inter,sans-serif">Laden</text>
+                        <text x="85" y="218" text-anchor="middle" fill="#556B58" font-size="8" font-family="Inter,sans-serif">Laden</text>
                         <!-- Night flow -->
                         <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5,4" d="M85,133 L85,173" style="--p:path('M85,133 L85,173');--fd:2s"/>
                         <circle class="energy-dot" color="#7FBF3A" r="4" style="--fp:path('M85,133 L85,173');--fd:2s"/>
@@ -826,17 +832,17 @@
                         <rect x="210" y="55" width="130" height="48" rx="10" fill="rgba(46,112,50,0.15)" stroke="#2E7032" stroke-width="1.5"/>
                         <rect x="205" y="50" width="140" height="58" rx="13" fill="none" stroke="rgba(46,112,50,0.1)" stroke-width="1.5" class="energy-glow"/>
                         <text x="275" y="84" text-anchor="middle" fill="#0F3D23" font-size="13" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text x="275" y="98" text-anchor="middle" fill="#6B7B6E" font-size="8" font-family="Inter,sans-serif">Ontladen</text>
+                        <text x="275" y="98" text-anchor="middle" fill="#556B58" font-size="8" font-family="Inter,sans-serif">Ontladen</text>
                         <!-- Day: Hotel -->
                         <rect x="210" y="170" width="130" height="48" rx="10" fill="rgba(127,191,58,0.08)" stroke="#7FBF3A" stroke-width="1.5"/>
                         <text x="275" y="199" text-anchor="middle" fill="#0F3D23" font-size="13" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
                         <!-- Day flow -->
                         <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5,4" d="M275,103 L275,168"/>
                         <circle class="energy-dot" color="#2E7032" r="4" style="--fp:path('M275,103 L275,168');--fd:2.5s"/>
-                        <text x="110" y="155" fill="#6B7B6E" font-size="7">Daluurtarief</text>
-                        <text x="290" y="143" fill="#6B7B6E" font-size="7">Piekvoorziening</text>
-                        <text x="85" y="68" text-anchor="middle" fill="#6B7B6E" font-size="7">23:00 — 07:00</text>
-                        <text x="275" y="40" text-anchor="middle" fill="#6B7B6E" font-size="7">07:00 — 23:00</text>
+                        <text x="110" y="155" fill="#556B58" font-size="7">Daluurtarief</text>
+                        <text x="290" y="143" fill="#556B58" font-size="7">Piekvoorziening</text>
+                        <text x="85" y="68" text-anchor="middle" fill="#556B58" font-size="7">23:00 — 07:00</text>
+                        <text x="275" y="40" text-anchor="middle" fill="#556B58" font-size="7">07:00 — 23:00</text>
                     </svg>
                 </div>
             </div>
@@ -857,7 +863,7 @@
                         <circle cx="180" cy="140" r="52" fill="rgba(46,112,50,0.06)" stroke="#2E7032" stroke-width="1.5" filter="url(#g2)"/>
                         <circle cx="180" cy="140" r="40" fill="none" stroke="rgba(46,112,50,0.2)" stroke-width="1" stroke-dasharray="3,4"/>
                         <text x="180" y="135" text-anchor="middle" fill="#0F3D23" font-size="14" font-weight="800" font-family="Inter,sans-serif">EMS</text>
-                        <text x="180" y="151" text-anchor="middle" fill="#6B7B6E" font-size="8" font-family="Inter,sans-serif">Energiemanagement</text>
+                        <text x="180" y="151" text-anchor="middle" fill="#556B58" font-size="8" font-family="Inter,sans-serif">Energiemanagement</text>
                         <circle cx="180" cy="140" r="44" fill="none" stroke="rgba(46,112,50,0.08)" stroke-width="2" class="energy-glow"/>
                         <!-- Flows -->
                         <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5,4" d="M100,52 L140,100"/>
@@ -868,8 +874,8 @@
                         <circle class="energy-dot" color="#2E7032" r="3.5" style="--fp:path('M140,212 L160,188');--fd:2.5s"/>
                         <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5,4" d="M80,190 L150,160"/>
                         <circle class="energy-dot energy-dot-delayed" color="#2E7032" r="3.5" style="--fp:path('M80,190 L150,160');--fd:2.5s;--fdl:1.2s"/>
-                        <text x="80" y="120" fill="#6B7B6E" font-size="7" transform="rotate(-50,80,120)">Real-time prijzen</text>
-                        <text x="270" y="90" fill="#6B7B6E" font-size="7" transform="rotate(50,270,90)">Geoptimaliseerd</text>
+                        <text x="80" y="120" fill="#556B58" font-size="7" transform="rotate(-50,80,120)">Real-time prijzen</text>
+                        <text x="270" y="90" fill="#556B58" font-size="7" transform="rotate(50,270,90)">Geoptimaliseerd</text>
                     </svg>
                 </div>
                 <div class="fade-in">
@@ -953,8 +959,8 @@
                         <circle class="energy-dot energy-dot-delayed" color="#f59e0b" r="3.5" style="--fp:path('M240,64 L250,118');--fd:2.5s;--fdl:1.2s"/>
                         <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5,4" d="M160,142 L198,142"/>
                         <circle class="energy-dot" color="#2E7032" r="3.5" style="--fp:path('M160,142 L198,142');--fd:3s"/>
-                        <text x="150" y="95" text-anchor="middle" fill="#6B7B6E" font-size="7">Prioriteit: zon → accu → hotel</text>
-                        <text x="180" y="175" text-anchor="middle" fill="#6B7B6E" font-size="7">Overschot: accu → hotel tijdens piek</text>
+                        <text x="150" y="95" text-anchor="middle" fill="#556B58" font-size="7">Prioriteit: zon → accu → hotel</text>
+                        <text x="180" y="175" text-anchor="middle" fill="#556B58" font-size="7">Overschot: accu → hotel tijdens piek</text>
                         <text x="180" y="200" text-anchor="middle" fill="#0F3D23" font-size="9" font-weight="600">Tot 80% zelfvoorzienend</text>
                     </svg>
                 </div>
@@ -967,9 +973,9 @@
                         <rect width="360" height="220" rx="16" fill="white" stroke="#D4DDD0" stroke-width="1"/>
                         <rect x="130" y="30" width="100" height="44" rx="10" fill="rgba(14,165,233,0.08)" stroke="#0ea5e9" stroke-width="1.5"/>
                         <text x="180" y="57" text-anchor="middle" fill="#0F3D23" font-size="11" font-weight="700" font-family="Inter,sans-serif">EV Laadpalen</text>
-                        <text x="180" y="70" text-anchor="middle" fill="#6B7B6E" font-size="7">40-120 kW DC</text>
+                        <text x="180" y="70" text-anchor="middle" fill="#556B58" font-size="7">40-120 kW DC</text>
                         <text x="180" y="105" text-anchor="middle" fill="#0F3D23" font-size="11" font-weight="600">Nieuwe inkomstenbron</text>
-                        <text x="180" y="125" text-anchor="middle" fill="#6B7B6E" font-size="9">Premium gastenservice</text>
+                        <text x="180" y="125" text-anchor="middle" fill="#556B58" font-size="9">Premium gastenservice</text>
                         <circle cx="180" cy="170" r="20" fill="rgba(14,165,233,0.06)" stroke="#0ea5e9" stroke-width="1.5" class="energy-pulse"/>
                         <text x="180" y="175" text-anchor="middle" fill="#0F3D23" font-size="10" font-weight="600">€</text>
                     </svg>
