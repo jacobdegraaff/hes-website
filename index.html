@@ -88,7 +88,7 @@
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html { scroll-behavior: smooth; font-size: 16px; overflow-y: scroll; }
+        html { scroll-behavior: smooth; font-size: 16px; overflow-y: scroll; scroll-padding-top: 56px; }
 
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -402,6 +402,8 @@
             .hero-slides-track { width: 100% !important; flex-direction: column; }
             .hero-slide-panel { width: 100% !important; padding: 0.5rem 0; }
             .hero-slide-panel:not(:first-child) { display: none; }
+            .hero-slider { overflow: hidden; }
+            .hero-slide-panel .hero-illustration { display: none; }
             .hero-slider input:checked + .hero-slides-track + .hero-dots,
             .hero-dots, .hero-slider-nav { display: none; }
             .hero h1, .hero h2 { font-size: 1.35rem; }
@@ -468,7 +470,7 @@
             .footer-bottom { grid-column: 1 / -1; text-align: center; font-size: 0.7rem; padding-top: 0.75rem; }
 
             /* ── IMAGES ── */
-            section img, .problem-card img, .info-card img { max-width: 100% !important; height: auto; }
+            section img, .problem-card img, .info-card img, .chart-wrap img, .hero-illustration img, img[src*="assets/"] { display: none !important; }
             
             /* ── BUDGET STATUS ── */
             div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
