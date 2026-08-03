@@ -1,5 +1,5 @@
 # robots.txt — Hospitality Energy Solutions
-# Laatst bijgewerkt: 2026-07-31
+# Laatst bijgewerkt: 2026-08-03
 
 User-agent: *
 Allow: /
