@@ -349,7 +349,7 @@
                 overflow-y: auto;
                 z-index: 99;
             }
-            .nav-links.active { display: flex; }
+            .nav-links.active { display: flex !important; grid-column: auto !important; margin-left: 0 !important; position: fixed !important; }
             .nav-links > li { 
                 padding: 0.5rem 0; 
                 border-bottom: 1px solid var(--border);
@@ -398,7 +398,7 @@
 
             /* ── HERO ── */
             .hero { min-height: auto; padding: 2rem 0 2.5rem; }
-            .hero .container { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+            .hero .container { grid-template-columns: 1fr; gap: 0.75rem; text-align: left; padding: 0 1rem; }
             .hero-slides-track { width: 300% !important; }
             .hero-slide-panel { width: 33.333% !important; flex-shrink: 0; padding: 1rem 0; }
             .hero-slide-panel .container { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
@@ -406,8 +406,8 @@
             .hero-slider { overflow: hidden; }
             .hero-dots { bottom: 0.5rem; gap: 0.5rem; }
             .hero-dots label { width: 24px; height: 3px; }
-            .hero h1, .hero h2 { font-size: 1.35rem; }
-            .hero p { font-size: 0.85rem; max-width: 100%; }
+            .hero h1, .hero h2 { font-size: 1.35rem; text-align: left; }
+            .hero p { font-size: 0.9rem; max-width: 100%; text-align: left; padding: 0; }
             .hero-cta { flex-direction: column; align-items: center; gap: 0.6rem; }
             .hero-cta .btn { width: 100%; max-width: 280px; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
             .hero-illustration { display: none; }
@@ -429,7 +429,7 @@
 
             /* ── SCENARIOS ── */
             .scenario { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.25rem 0; }
-            .scenario-visual svg { max-width: 340px; }
+            .scenario-visual svg { max-width: 100%; }
             .scenario-benefit { padding: 0.65rem; }
 
             /* ── TABLE ── */
@@ -568,7 +568,7 @@
         .scenario-visual {
             display: flex; align-items: center; justify-content: center;
         }
-        .scenario-visual svg { width: 100%; max-width: 480px; }
+        .scenario-visual svg { width: 100%; max-width: 100%; }
 
         /* Comparison */
         .comparison-table {
@@ -658,7 +658,7 @@
                 </span>
             </div>
         </a>
-        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.nav-links');m.classList.toggle('active');this.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'));document.body.style.overflow=m.classList.contains('active')?'hidden':''">
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.nav-links');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
             <span></span><span></span><span></span>
         </button>
                 <ul class="nav-links">
@@ -859,7 +859,7 @@
             </p>
             <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:2rem;">
                 <div class="problem-card fade-in">
-                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="18" y="6" width="12" height="18" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M20 26v6M28 26v6M20 32h8M24 38v4" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="14" r="3" stroke="#7FBF3A" stroke-width="1.5"/><text x="24" y="47" text-anchor="middle" fill="#7FBF3A" font-size="14" font-weight="700">€</text></svg></div>
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="18" y="6" width="12" height="18" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M20 26v6M28 26v6M20 32h8M24 38v4" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="14" r="3" stroke="#7FBF3A" stroke-width="1.5"/><text x="24" y="47" text-anchor="middle" fill="#7FBF3A" font-size="16" font-weight="700">€</text></svg></div>
                     <h3>Extra omzet via laadpalen</h3>
                     <p>Plaats laadpalen of snelladers bij jouw hotel en verdien per laadsessie. Gasten, passanten én omwonenden laden bij jou — 24/7 inkomsten.</p>
                 </div>
@@ -968,39 +968,39 @@
                     </div>
                 </div>
                 <div class="scenario-visual fade-in">
-                    <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <filter id="g1"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                         </defs>
                         <rect width="360" height="300" rx="16" fill="white" stroke="#D4DDD0" stroke-width="1"/>
-                        <text x="110" y="28" text-anchor="middle" fill="#556B58" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="2">NACHT — DALUREN LADEN</text>
-                        <text x="290" y="28" text-anchor="middle" fill="#556B58" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="2">DAG — PIEK ONTLADEN</text>
+                        <text x="110" y="28" text-anchor="middle" fill="#556B58" font-size="12" font-weight="600" font-family="Inter,sans-serif" letter-spacing="2">NACHT — DALUREN LADEN</text>
+                        <text x="290" y="28" text-anchor="middle" fill="#556B58" font-size="12" font-weight="600" font-family="Inter,sans-serif" letter-spacing="2">DAG — PIEK ONTLADEN</text>
                         <line x1="180" y1="18" x2="180" y2="282" stroke="#D4DDD0" stroke-width="1" stroke-dasharray="4,6"/>
                         <!-- Night: Grid -->
                         <rect x="20" y="85" width="130" height="48" rx="10" fill="rgba(127,191,58,0.12)" stroke="#7FBF3A" stroke-width="1.5"/>
-                        <text x="85" y="114" text-anchor="middle" fill="#0F3D23" font-size="15" font-weight="700" font-family="Inter,sans-serif">Net</text>
+                        <text x="85" y="114" text-anchor="middle" fill="#0F3D23" font-size="17" font-weight="700" font-family="Inter,sans-serif">Net</text>
                         <!-- Night: Battery -->
                         <rect x="20" y="175" width="130" height="48" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
-                        <text x="85" y="204" text-anchor="middle" fill="#0F3D23" font-size="15" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text x="85" y="218" text-anchor="middle" fill="#556B58" font-size="10" font-family="Inter,sans-serif">Laden</text>
+                        <text x="85" y="204" text-anchor="middle" fill="#0F3D23" font-size="17" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
+                        <text x="85" y="218" text-anchor="middle" fill="#556B58" font-size="12" font-family="Inter,sans-serif">Laden</text>
                         <!-- Night flow -->
                         <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5,4" d="M85,133 L85,173" style="--p:path('M85,133 L85,173');--fd:2s"/>
                         <circle class="energy-dot" color="#7FBF3A" r="4" style="--fp:path('M85,133 L85,173');--fd:2s"/>
                         <!-- Day: Battery -->
                         <rect x="210" y="55" width="130" height="48" rx="10" fill="rgba(46,112,50,0.15)" stroke="#2E7032" stroke-width="1.5"/>
                         <rect x="205" y="50" width="140" height="58" rx="13" fill="none" stroke="rgba(46,112,50,0.1)" stroke-width="1.5" class="energy-glow"/>
-                        <text x="275" y="84" text-anchor="middle" fill="#0F3D23" font-size="15" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text x="275" y="98" text-anchor="middle" fill="#556B58" font-size="10" font-family="Inter,sans-serif">Ontladen</text>
+                        <text x="275" y="84" text-anchor="middle" fill="#0F3D23" font-size="17" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
+                        <text x="275" y="98" text-anchor="middle" fill="#556B58" font-size="12" font-family="Inter,sans-serif">Ontladen</text>
                         <!-- Day: Hotel -->
                         <rect x="210" y="170" width="130" height="48" rx="10" fill="rgba(127,191,58,0.08)" stroke="#7FBF3A" stroke-width="1.5"/>
-                        <text x="275" y="199" text-anchor="middle" fill="#0F3D23" font-size="15" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
+                        <text x="275" y="199" text-anchor="middle" fill="#0F3D23" font-size="17" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
                         <!-- Day flow -->
                         <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5,4" d="M275,103 L275,168"/>
                         <circle class="energy-dot" color="#2E7032" r="4" style="--fp:path('M275,103 L275,168');--fd:2.5s"/>
-                        <text x="110" y="155" fill="#556B58" font-size="10">Daluurtarief</text>
-                        <text x="290" y="143" fill="#556B58" font-size="10">Piekvoorziening</text>
-                        <text x="85" y="68" text-anchor="middle" fill="#556B58" font-size="10">23:00 — 07:00</text>
-                        <text x="275" y="40" text-anchor="middle" fill="#556B58" font-size="10">07:00 — 23:00</text>
+                        <text x="110" y="155" fill="#556B58" font-size="12">Daluurtarief</text>
+                        <text x="290" y="143" fill="#556B58" font-size="12">Piekvoorziening</text>
+                        <text x="85" y="68" text-anchor="middle" fill="#556B58" font-size="12">23:00 — 07:00</text>
+                        <text x="275" y="40" text-anchor="middle" fill="#556B58" font-size="12">07:00 — 23:00</text>
                     </svg>
                 </div>
             </div>
@@ -1036,20 +1036,20 @@
                     </div>
                 </div>
                 <div class="scenario-visual fade-in">
-                    <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
                         <defs><filter id="g2"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
                         <rect width="360" height="280" rx="16" fill="white" stroke="#D4DDD0" stroke-width="1"/>
                         <rect x="20" y="30" width="110" height="44" rx="10" fill="rgba(127,191,58,0.1)" stroke="#7FBF3A" stroke-width="1.5"/>
-                        <text x="75" y="57" text-anchor="middle" fill="#0F3D23" font-size="14" font-weight="700" font-family="Inter,sans-serif">Net</text>
+                        <text x="75" y="57" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Net</text>
                         <rect x="230" y="30" width="110" height="44" rx="10" fill="rgba(127,191,58,0.08)" stroke="#B7E08A" stroke-width="1.5"/>
-                        <text x="285" y="57" text-anchor="middle" fill="#0F3D23" font-size="14" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
+                        <text x="285" y="57" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
                         <rect x="20" y="190" width="110" height="44" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
-                        <text x="75" y="217" text-anchor="middle" fill="#0F3D23" font-size="14" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
+                        <text x="75" y="217" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
                         <!-- EMS -->
                         <circle cx="180" cy="140" r="52" fill="rgba(46,112,50,0.06)" stroke="#2E7032" stroke-width="1.5" filter="url(#g2)"/>
                         <circle cx="180" cy="140" r="40" fill="none" stroke="rgba(46,112,50,0.2)" stroke-width="1" stroke-dasharray="3,4"/>
-                        <text x="180" y="135" text-anchor="middle" fill="#0F3D23" font-size="18" font-weight="800" font-family="Inter,sans-serif">EMS</text>
-                        <text x="180" y="151" text-anchor="middle" fill="#556B58" font-size="10" font-family="Inter,sans-serif">Energiemanagement</text>
+                        <text x="180" y="135" text-anchor="middle" fill="#0F3D23" font-size="20" font-weight="800" font-family="Inter,sans-serif">EMS</text>
+                        <text x="180" y="151" text-anchor="middle" fill="#556B58" font-size="12" font-family="Inter,sans-serif">Energiemanagement</text>
                         <circle cx="180" cy="140" r="44" fill="none" stroke="rgba(46,112,50,0.08)" stroke-width="2" class="energy-glow"/>
                         <!-- Flows -->
                         <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5,4" d="M100,52 L140,100"/>
@@ -1060,8 +1060,8 @@
                         <circle class="energy-dot" color="#2E7032" r="3.5" style="--fp:path('M140,212 L160,188');--fd:2.5s"/>
                         <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5,4" d="M80,190 L150,160"/>
                         <circle class="energy-dot energy-dot-delayed" color="#2E7032" r="3.5" style="--fp:path('M80,190 L150,160');--fd:2.5s;--fdl:1.2s"/>
-                        <text x="80" y="120" fill="#556B58" font-size="10" transform="rotate(-50,80,120)">Real-time prijzen</text>
-                        <text x="270" y="90" fill="#556B58" font-size="10" transform="rotate(50,270,90)">Geoptimaliseerd</text>
+                        <text x="80" y="120" fill="#556B58" font-size="12" transform="rotate(-50,80,120)">Real-time prijzen</text>
+                        <text x="270" y="90" fill="#556B58" font-size="12" transform="rotate(50,270,90)">Geoptimaliseerd</text>
                     </svg>
                 </div>
             </div>
@@ -1102,14 +1102,14 @@
                         <rect width="360" height="260" rx="16" fill="white" stroke="#D4DDD0" stroke-width="1"/>
                         <!-- Solar -->
                         <rect x="80" y="20" width="200" height="44" rx="10" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="1.5" filter="url(#g3)"/>
-                        <text x="180" y="47" text-anchor="middle" fill="#0F3D23" font-size="14" font-weight="700" font-family="Inter,sans-serif">☀️ Zonnepanelen</text>
+                        <text x="180" y="47" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">☀️ Zonnepanelen</text>
                         <rect x="75" y="15" width="210" height="54" rx="13" fill="none" stroke="rgba(245,158,11,0.1)" stroke-width="1.5" class="energy-glow"/>
                         <!-- Battery -->
                         <rect x="20" y="120" width="140" height="44" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
-                        <text x="90" y="147" text-anchor="middle" fill="#0F3D23" font-size="14" font-weight="700" font-family="Inter,sans-serif">ACCU</text>
+                        <text x="90" y="147" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">ACCU</text>
                         <!-- Hotel -->
                         <rect x="200" y="120" width="140" height="44" rx="10" fill="rgba(127,191,58,0.08)" stroke="#B7E08A" stroke-width="1.5"/>
-                        <text x="270" y="147" text-anchor="middle" fill="#0F3D23" font-size="14" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
+                        <text x="270" y="147" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
                         <!-- Flows -->
                         <path class="energy-flow" stroke="#f59e0b" stroke-dasharray="5,4" d="M120,64 L110,118"/>
                         <circle class="energy-dot" color="#f59e0b" r="3.5" style="--fp:path('M120,64 L110,118');--fd:2.5s"/>
@@ -1117,9 +1117,9 @@
                         <circle class="energy-dot energy-dot-delayed" color="#f59e0b" r="3.5" style="--fp:path('M240,64 L250,118');--fd:2.5s;--fdl:1.2s"/>
                         <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5,4" d="M160,142 L198,142"/>
                         <circle class="energy-dot" color="#2E7032" r="3.5" style="--fp:path('M160,142 L198,142');--fd:3s"/>
-                        <text x="150" y="95" text-anchor="middle" fill="#556B58" font-size="10">Prioriteit: zon → accu → hotel</text>
-                        <text x="180" y="175" text-anchor="middle" fill="#556B58" font-size="10">Overschot: accu → hotel tijdens piek</text>
-                        <text x="180" y="200" text-anchor="middle" fill="#0F3D23" font-size="10" font-weight="600">Tot 80% zelfvoorzienend</text>
+                        <text x="150" y="95" text-anchor="middle" fill="#556B58" font-size="12">Prioriteit: zon → accu → hotel</text>
+                        <text x="180" y="175" text-anchor="middle" fill="#556B58" font-size="12">Overschot: accu → hotel tijdens piek</text>
+                        <text x="180" y="200" text-anchor="middle" fill="#0F3D23" font-size="12" font-weight="600">Tot 80% zelfvoorzienend</text>
                     </svg>
                 </div>
             </div>
@@ -1131,11 +1131,11 @@
                         <rect width="360" height="220" rx="16" fill="white" stroke="#D4DDD0" stroke-width="1"/>
                         <rect x="130" y="30" width="100" height="44" rx="10" fill="rgba(14,165,233,0.08)" stroke="#0ea5e9" stroke-width="1.5"/>
                         <text x="180" y="57" text-anchor="middle" fill="#0F3D23" font-size="11" font-weight="700" font-family="Inter,sans-serif">EV Laadpalen</text>
-                        <text x="180" y="70" text-anchor="middle" fill="#556B58" font-size="10">40-120 kW DC</text>
+                        <text x="180" y="70" text-anchor="middle" fill="#556B58" font-size="12">40-120 kW DC</text>
                         <text x="180" y="105" text-anchor="middle" fill="#0F3D23" font-size="11" font-weight="600">Nieuwe inkomstenbron</text>
-                        <text x="180" y="125" text-anchor="middle" fill="#556B58" font-size="10">Premium gastenservice</text>
+                        <text x="180" y="125" text-anchor="middle" fill="#556B58" font-size="12">Premium gastenservice</text>
                         <circle cx="180" cy="170" r="20" fill="rgba(14,165,233,0.06)" stroke="#0ea5e9" stroke-width="1.5" class="energy-pulse"/>
-                        <text x="180" y="175" text-anchor="middle" fill="#0F3D23" font-size="10" font-weight="600">€</text>
+                        <text x="180" y="175" text-anchor="middle" fill="#0F3D23" font-size="12" font-weight="600">€</text>
                     </svg>
                 </div>
                 <div class="fade-in">
