@@ -93,11 +93,16 @@
             .page-header{padding-top:5rem}
             .nav-logo{margin-top:-20px;margin-bottom:-20px}.nav-logo img{display:none}.logo-bg{width:60px;height:60px;top:5px;left:-5px}.voltage-ring{width:70px;height:70px}.mobile-logo{display:flex;align-items:center;gap:0.4rem;font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:0.9rem;color:var(--green-primary);position:relative;z-index:2}.mobile-logo svg{width:32px;height:32px;flex-shrink:0}
         }
-    </style>
+    
+        .menu-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 0.4rem; z-index: 102; }
+        .menu-toggle span { width: 22px; height: 2px; background: var(--green-primary); border-radius: 2px; transition: all 0.25s; }
+        @media (max-width: 768px) { .menu-toggle { display: flex; } }
+        </style>
 </head>
 <body>
 
 <a href="#content" class="skip-link">Direct naar inhoud</a>
+        
 <nav>
     <div class="container">
         <a href="index.html" class="nav-logo" aria-label="Hospitality Energy Solutions home">
@@ -111,6 +116,9 @@
                 </span>
             </div>
         </a>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.nav-links');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
+            <span></span><span></span><span></span>
+        </button>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">

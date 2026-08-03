@@ -318,11 +318,16 @@
             margin-top: 3rem;
         }
         footer a { color: var(--green-light); }
-    </style>
+    
+        .menu-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 0.4rem; z-index: 102; }
+        .menu-toggle span { width: 22px; height: 2px; background: var(--green-primary); border-radius: 2px; transition: all 0.25s; }
+        @media (max-width: 768px) { .menu-toggle { display: flex; } }
+        </style>
 </head>
 <body>
 
 <a href="#content" class="skip-link">Direct naar inhoud</a>
+        
 
 <nav>
     <div class="container">
@@ -337,6 +342,9 @@
                 </span>
             </div>
         </a>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.nav-links');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
+            <span></span><span></span><span></span>
+        </button>
                 <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">

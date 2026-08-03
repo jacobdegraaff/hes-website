@@ -47,6 +47,8 @@
         .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;grid-column:3}
         .nav-links a{text-decoration:none;color:var(--dark-grey);font-size:0.9rem;font-weight:500}
         .nav-links a:hover,.nav-links a.active{color:var(--green-secondary)}
+
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: 4px; }
         /* Mega Menu */
         .nav-dropdown{position:relative}.nav-dropdown>a{cursor:pointer}
         .nav-dropdown-panel{display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,0.12);border:1px solid #D4DDD0;z-index:99;padding:1.5rem;min-width:260px;transition:opacity 0.15s ease-in-out}
@@ -85,11 +87,18 @@
         footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:2rem 0;font-size:0.85rem;text-align:center;margin-top:3rem}
         footer a{color:var(--green-light)}
         @media(max-width:800px){.news-layout{grid-template-columns:1fr}.nav-links{gap:0.75rem;font-size:0.75rem}.page-header{padding-top:5rem}.nav-logo{margin-top:-20px;margin-bottom:-20px}.nav-logo img{display:none}.logo-bg{width:60px;height:60px;top:5px;left:-5px}.voltage-ring{width:70px;height:70px}.mobile-logo{display:flex;align-items:center;gap:0.4rem;font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:0.9rem;color:var(--green-primary);position:relative;z-index:2}.mobile-logo svg{width:32px;height:32px;flex-shrink:0}}
-    </style>
+    
+        .skip-link:focus { top: 0.5rem; }
+        
+        .menu-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 0.4rem; z-index: 102; }
+        .menu-toggle span { width: 22px; height: 2px; background: var(--green-primary); border-radius: 2px; transition: all 0.25s; }
+        @media (max-width: 768px) { .menu-toggle { display: flex; } }
+        </style>
 </head>
 <body>
 
 <a href="#content" class="skip-link">Direct naar inhoud</a>
+        
 <nav>
     <div class="container">
         <a href="index.html" class="nav-logo" aria-label="Hospitality Energy Solutions home">
@@ -103,6 +112,9 @@
                 </span>
             </div>
         </a>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.nav-links');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
+            <span></span><span></span><span></span>
+        </button>
                 <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">

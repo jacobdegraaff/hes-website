@@ -199,7 +199,12 @@
             <label style="font-weight:600;font-size:0.9rem;">📄 Pagina:</label>
             <select id="page-select" onchange="loadPage()">
                 <option value="index.html">🏠 Home (index.html)</option>
+                <option value="oplossingen.html">🔌 Oplossingen (overzicht)</option>
                 <option value="netcongestie.html">⚡ Netcongestie</option>
+                <option value="verduurzamen.html">🌱 Verduurzamen</option>
+                <option value="maximum-belasting.html">📊 Maximum belasting</option>
+                <option value="stroom-overschot.html">☀️ Stroom (zon) overschot</option>
+                <option value="stroomuitval-noodaggregaat.html">🔋 Stroomuitval / noodaggregaat</option>
                 <option value="subsidies.html">💰 Subsidies</option>
                 <option value="voordelen.html">📈 Voordelen</option>
                 <option value="configurator.html">🔧 Configurator</option>
@@ -329,6 +334,66 @@ const pageDefaults = {
         ogImage: 'https://hes.energy/assets/logo-og.png',
         twitterTitle: 'USP & Veiligheid | HES',
         twitterDescription: 'Directe fabrieksdistributie, één ecosysteem, programmeerbaar EMS en 6-laags veiligheid.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'oplossingen.html': {
+        title: 'Oplossingen voor hotels — Hospitality Energy Solutions | Netcongestie · Verduurzamen · Energieopslag',
+        description: 'Van netcongestie tot verduurzaming: ontdek alle energieoplossingen van HES voor hotels. Batterijopslag, EMS, laadpalen, zonnepanelen en meer.',
+        canonical: 'https://hes.energy/oplossingen.html',
+        ogTitle: 'Oplossingen voor hotels — HES | Netcongestie · Verduurzamen · Energieopslag',
+        ogDescription: 'Van netcongestie tot verduurzaming: ontdek alle energieoplossingen van HES voor hotels.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Oplossingen voor hotels | HES',
+        twitterDescription: 'Van netcongestie tot verduurzaming: alle energieoplossingen voor hotels.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'verduurzamen.html': {
+        title: 'Verduurzamen zonder netverzwaring — Hospitality Energy Solutions | Gas-loos · Warmtepompen',
+        description: 'Gas-loos worden zonder extra netcapaciteit? HES maakt het mogelijk. Combineer warmtepompen en inductie met batterijopslag.',
+        canonical: 'https://hes.energy/verduurzamen.html',
+        ogTitle: 'Verduurzamen zonder netverzwaring — HES | Gas-loos · Warmtepompen',
+        ogDescription: 'Gas-loos worden zonder extra netcapaciteit? HES maakt het mogelijk met batterijopslag.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Verduurzamen zonder netverzwaring | HES',
+        twitterDescription: 'Gas-loos worden zonder extra netcapaciteit? HES maakt het mogelijk.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'maximum-belasting.html': {
+        title: 'Maximum belasting & pieksnijden — Hospitality Energy Solutions | Contractvermogen · Boetevrij',
+        description: 'Extreme verbruikspieken tussen 17:00 en 21:00? HES snijdt pieken af met batterijopslag en EMS. Blijf onder je contractvermogen.',
+        canonical: 'https://hes.energy/maximum-belasting.html',
+        ogTitle: 'Maximum belasting & pieksnijden — HES | Contractvermogen · Boetevrij',
+        ogDescription: 'Extreme verbruikspieken? HES snijdt pieken af met batterijopslag en EMS. Voorkom boetes.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Maximum belasting & pieksnijden | HES',
+        twitterDescription: 'Extreme verbruikspieken? HES snijdt pieken af met batterijopslag en EMS.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'stroom-overschot.html': {
+        title: 'Stroomoverschot & zonne-energie opslaan — Hospitality Energy Solutions | Terugleveren · Accu',
+        description: 'Wat doe je met overtollige zonne-energie? Terugleveren kost steeds vaker geld. Sla je overschot op in een HES-accu.',
+        canonical: 'https://hes.energy/stroom-overschot.html',
+        ogTitle: 'Stroomoverschot & zonne-energie opslaan — HES | Terugleveren · Accu',
+        ogDescription: 'Terugleveren kost geld? Sla je zonne-energie op in een HES-accu en gebruik het zelf.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Stroomoverschot & zonne-energie opslaan | HES',
+        twitterDescription: 'Terugleveren kost geld? Sla je zonne-energie op in een HES-accu.',
+        twitterImage: 'https://hes.energy/assets/logo-og.png',
+        robots: 'index, follow'
+    },
+    'stroomuitval-noodaggregaat.html': {
+        title: 'Stroomuitval & noodstroom — Hospitality Energy Solutions | Dieselaggregaat vervangen · Batterij',
+        description: 'Wil je van je dieselaggregaat af? Een HES-batterijsysteem levert betrouwbare noodstroom — zonder uitstoot, zonder onderhoud.',
+        canonical: 'https://hes.energy/stroomuitval-noodaggregaat.html',
+        ogTitle: 'Stroomuitval & noodstroom — HES | Dieselaggregaat vervangen · Batterij',
+        ogDescription: 'Van je dieselaggregaat af? HES levert betrouwbare noodstroom uit een batterij.',
+        ogImage: 'https://hes.energy/assets/logo-og.png',
+        twitterTitle: 'Stroomuitval & noodstroom | HES',
+        twitterDescription: 'Van je dieselaggregaat af? HES levert betrouwbare noodstroom uit een batterij.',
         twitterImage: 'https://hes.energy/assets/logo-og.png',
         robots: 'index, follow'
     },
