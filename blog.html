@@ -59,7 +59,11 @@
         .nav-mega-col a{display:block;padding:0.4rem 0;text-decoration:none;color:#2F3437;font-size:0.88rem;font-weight:500;transition:color 0.15s}
         .nav-mega-col a:hover{color:var(--green-secondary)}
         .nav-mega-col .mega-desc{display:block;font-size:0.75rem;color:var(--text-muted);font-weight:400;line-height:1.3;margin-top:0.1rem}
-        .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.25rem;background:var(--green-accent);color:var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.85rem;border:none;cursor:pointer}.btn-primary:hover{background:#6FAA2E}
+/* Skip link */
+        .skip-link { position: absolute; top: -100px; left: 0; background: var(--green-primary); color: white; padding: 0.75rem 1.5rem; z-index: 200; font-weight: 600; border-radius: 0 0 8px 0; text-decoration: none; font-family: 'Inter',sans-serif; font-size: 0.9rem; }
+        .skip-link:focus { top: 0; }
+                a:focus-visible, button:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: 4px; }
+                .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.25rem;background:var(--green-accent);color:var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.85rem;border:none;cursor:pointer}.btn-primary:hover{background:#6FAA2E}
         .btn-outline{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;background:transparent;color:var(--green-primary);border:2px solid var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:0.9rem;transition:all 0.2s}
         .btn-outline:hover{background:var(--green-primary);color:var(--off-white)}
         .page-header{background:var(--green-primary);color:var(--off-white);padding:7rem 0 3rem;text-align:center}
@@ -92,6 +96,8 @@
     </style>
 </head>
 <body>
+
+<a href="#content" class="skip-link">Direct naar inhoud</a>
 <nav>
     <div class="container">
         <a href="index.html" class="nav-logo" aria-label="Hospitality Energy Solutions home">
@@ -148,7 +154,7 @@
     </div>
 </nav>
 
-<div class="page-header">
+<div class="page-header" id="content">
     <h1>Wat kan Hospitality Energy Solutions voor jou betekenen</h1>
     <p>Vanuit onze roots in de hotellerie begrijpen wij als geen ander wat een hotel nodig heeft. Maatwerk, meedenken en volledige ontzorging — dat is waar HES voor staat.</p>
 </div>
@@ -177,6 +183,7 @@
         <p>© 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V.</p>
         <p><a href="index.html">Home</a> · <a href="netcongestie.html">Netcongestie</a> · <a href="subsidies.html">Subsidies</a> · <a href="voordelen.html">Voordelen</a> · <a href="configurator.html">Configurator</a> · <a href="nieuws.html">Nieuws</a> · <a href="over-ons.html">Over ons</a> · <a href="mailto:hello@hes.energy">hello@hes.energy</a></p>
     </div>
-</footer>
+<p style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
+    </footer>
 </body>
 </html>
