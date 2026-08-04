@@ -312,7 +312,7 @@
                 position: relative; z-index: 2;
                 white-space: nowrap;
             }
-            .mobile-logo svg { width: 40px; height: 40px; flex-shrink: 0; }
+            .mobile-logo svg { width: 50px; height: 50px; flex-shrink: 0; }
             .mobile-logo img { width: auto; height: 28px; flex-shrink: 0; }
 
             /* Hamburger button */
@@ -348,7 +348,9 @@
                 padding: 0.5rem 1.25rem 2rem; 
                 gap: 0;
                 overflow-y: auto;
-                z-index: 99;
+                z-index: 999;
+                border-top: 4px solid #7FBF3A;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
             }
             .nav-links.active { display: flex !important; grid-column: auto !important; margin-left: 0 !important; position: fixed !important; }
             .nav-links > li { 
@@ -689,10 +691,10 @@
                 <div class="voltage-ring"></div>
                 <img src="logo-transparent.png" alt="Hospitality Energy Solutions" style="height:180px;width:auto;">
                 <span class="mobile-logo">
-                    <svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="22" cy="22" r="20" fill="white" stroke="#0F3D23" stroke-width="2"/>
-                        <path d="M9 22c0-7 4.5-11 9.5-11s6 5 3 10.5c-3 5.5-4 10.5 2.5 10.5s9.5-4.5 9.5-10" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                        <text x="22" y="36" text-anchor="middle" fill="#0F3D23" font-size="8.5" font-weight="800" font-family="Montserrat,sans-serif">HES</text>
+                    <svg viewBox="0 0 60 60" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="28" fill="white" stroke="#0F3D23" stroke-width="3"/>
+                        <path d="M12 30c0-10 6-15 13-15s7 7 3 14c-4 7-4 14 3 14s13-6 13-14" stroke="#7FBF3A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        <text x="30" y="50" text-anchor="middle" fill="#0F3D23" font-size="13" font-weight="800" font-family="Montserrat,sans-serif">HES</text>
                     </svg>
                 </span>
             </div>
