@@ -184,6 +184,10 @@ footer a{font-size:.72rem}
 section img,.problem-card img,.info-card img,.chart-wrap img,img[src*="assets/"]{display:none!important}
 div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important}
 }
+/* ── CONTACT MODAL ── */
+            .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
 @media (max-width: 480px) {
 .hero h1,.hero h2{font-size:1.15rem}
 .btn{padding:.5rem .85rem;font-size:.8rem;min-height:44px}
@@ -259,7 +263,7 @@ h2{font-size:1.1rem}
                     </div>
                 </div>
             </li>
-            <li><a href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li><a href="#" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
 <li style="position:relative;">
                 <a href="#" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;" style="text-decoration:none;font-size:1.1rem;" title="Vertalen">🌐</a>
                 <div style="display:none;position:absolute;top:110%;right:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:130px;z-index:200;overflow:hidden;">
@@ -365,7 +369,7 @@ h2{font-size:1.1rem}
                 <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
                 <li><a href="over-ons.html">Over ons</a></li>
                 <li><a href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a href="mailto:hello@hes.energy">Contact</a></li>
+                <li><a href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
@@ -380,5 +384,56 @@ h2{font-size:1.1rem}
 document.querySelectorAll('.nav-dropdown > a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open')}})});
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.nav-links');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
 </script>
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="contact-modal">
+    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
+    <div class="contact-modal-content">
+        <button class="contact-modal-close" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <h3>Vrijblijvend contact</h3>
+        <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
+
+        <form id="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="voornaam">Voornaam <span class="required">*</span></label>
+                    <input type="text" id="voornaam" name="voornaam" required placeholder="Jan">
+                </div>
+                <div class="form-group">
+                    <label for="achternaam">Achternaam <span class="required">*</span></label>
+                    <input type="text" id="achternaam" name="achternaam" required placeholder="Jansen">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required">*</span></label>
+                    <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
+                </div>
+                <div class="form-group">
+                    <label for="functie">Functie <span class="required">*</span></label>
+                    <input type="text" id="functie" name="functie" required placeholder="Directeur / Facility Manager">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mailadres <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                </div>
+                <div class="form-group">
+                    <label for="mobiel">Mobiel nummer <span class="required">*</span></label>
+                    <input type="tel" id="mobiel" name="mobiel" required placeholder="06 12345678">
+                </div>
+            </div>
+            <div class="form-group" style="grid-column:1/-1;">
+                <label for="bericht">Je bericht <span class="required">*</span></label>
+                <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
+            </div>
+            <div style="text-align:center;margin-top:1.25rem;">
+                <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 </body>
 </html> 
