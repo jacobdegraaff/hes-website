@@ -387,7 +387,7 @@ document.querySelectorAll('.nav-dropdown > a').forEach(function(l){l.addEventLis
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.nav-links');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
 </script>
 <!-- CONTACT MODAL -->
-<div id="contact-modal" class="contact-modal">
+<div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
     <div class="contact-modal-content">
         <button class="contact-modal-close" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
