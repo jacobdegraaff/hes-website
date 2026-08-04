@@ -312,7 +312,7 @@
                 position: relative; z-index: 2;
                 white-space: nowrap;
             }
-            .mobile-logo svg { width: 28px; height: 28px; flex-shrink: 0; }
+            .mobile-logo svg { width: 40px; height: 40px; flex-shrink: 0; }
             .mobile-logo img { width: auto; height: 28px; flex-shrink: 0; }
 
             /* Hamburger button */
@@ -689,7 +689,12 @@
                 <div class="voltage-ring"></div>
                 <img src="logo-transparent.png" alt="Hospitality Energy Solutions" style="height:180px;width:auto;">
                 <span class="mobile-logo">
-                    <img src="assets/logo-monogram-v2.png" alt="HES" style="height:28px;width:auto;">
+                    <svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="22" cy="22" r="21" fill="white" stroke="#7FBF3A" stroke-width="1.5"/>
+                        <defs><linearGradient id="mg" x1="0" y1="0" x2="44" y2="0"><stop offset="0%" stop-color="#0F3D23"/><stop offset="100%" stop-color="#7FBF3A"/></linearGradient></defs>
+                        <path d="M10 22c0-6 4-10 8-10s5 5 2 10c-3 5-3 10 2 10s8-4 8-10" stroke="url(#mg)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                        <text x="22" y="35" text-anchor="middle" fill="#0F3D23" font-size="8" font-weight="800" font-family="Montserrat,sans-serif">HES</text>
+                    </svg>
                 </span>
             </div>
         </a>
