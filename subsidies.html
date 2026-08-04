@@ -191,7 +191,41 @@ h2{font-size:1.1rem}
 .page-header h1{font-size:1.3rem}
 }
 
-        </style>
+                /* Contact Modal */
+        .contact-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 200; align-items: center; justify-content: center; }
+        .contact-modal-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,61,35,0.5); }
+        .contact-modal-content { position: relative; background: white; border-radius: 16px; padding: 2.5rem; max-width: 640px; width: 90%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(15,61,35,0.2); }
+        .contact-modal-close { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); line-height: 1; padding: 0.25rem; }
+        .contact-modal-close:hover { color: var(--green-primary); }
+        .contact-modal h3 { font-family: 'Montserrat',sans-serif; font-weight: 600; font-size: 1.3rem; color: var(--green-primary); margin-bottom: 0.5rem; }
+        .contact-modal .modal-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+        /* Form fields (shared by modal) */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--green-primary); margin-bottom: 0.35rem; }
+        .form-group .required { color: var(--green-accent); }
+        .form-group input, .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #D4DDD0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green-accent);
+            box-shadow: 0 0 0 3px rgba(127,191,58,0.15);
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: #A0AEA0; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+    </style>
 </head>
 <body>
 
