@@ -475,9 +475,9 @@
             /* ── BUDGET STATUS ── */
             div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
 
-            /* ── CONTACT FORM ── */
+            /* ── CONTACT MODAL ── */
+            .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
             .form-row { grid-template-columns: 1fr; }
-            .cta-section { padding: 3rem 0 !important; }
         }
 @media (max-width: 480px) {
             .hero h1, .hero h2 { font-size: 1.15rem; }
@@ -614,7 +614,16 @@
         .cta-section h2 { margin-bottom: 1rem; }
         .cta-section p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
 
-        /* Contact form */
+        /* Contact Modal */
+        .contact-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 200; align-items: center; justify-content: center; }
+        .contact-modal-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,61,35,0.5); }
+        .contact-modal-content { position: relative; background: white; border-radius: 16px; padding: 2.5rem; max-width: 640px; width: 90%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(15,61,35,0.2); }
+        .contact-modal-close { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); line-height: 1; padding: 0.25rem; }
+        .contact-modal-close:hover { color: var(--green-primary); }
+        .contact-modal h3 { font-family: 'Montserrat',sans-serif; font-weight: 600; font-size: 1.3rem; color: var(--green-primary); margin-bottom: 0.5rem; }
+        .contact-modal .modal-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+        /* Form fields (shared by modal) */
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
         .form-group { display: flex; flex-direction: column; }
         .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--green-primary); margin-bottom: 0.35rem; }
@@ -732,7 +741,7 @@
                     </div>
                 </div>
             </li>
-            <li><a href="#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li><a href="#" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
             <li style="position:relative;">
                 <a href="#" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;" style="text-decoration:none;font-size:1.1rem;" title="Vertalen">🌐</a>
                 <div style="display:none;position:absolute;top:110%;right:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:130px;z-index:200;overflow:hidden;">
@@ -1259,52 +1268,15 @@
         </div>
     </section>
 
-    <!-- CONTACT FORM -->
+    <!-- CONTACT CTA -->
     <section id="contact" class="cta-section">
         <div class="container">
             <h2>Klaar om jouw hotel energie-onafhankelijk te maken?</h2>
-            <p>Vul het formulier in en we nemen binnen 24 uur contact met je op — vrijblijvend en zonder verplichtingen.</p>
-
-            <form id="contact-form" style="max-width:640px;margin:0 auto;text-align:left;">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="voornaam">Voornaam <span class="required">*</span></label>
-                        <input type="text" id="voornaam" name="voornaam" required placeholder="Jan">
-                    </div>
-                    <div class="form-group">
-                        <label for="achternaam">Achternaam <span class="required">*</span></label>
-                        <input type="text" id="achternaam" name="achternaam" required placeholder="Jansen">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="bedrijfsnaam">Bedrijfsnaam <span class="required">*</span></label>
-                        <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
-                    </div>
-                    <div class="form-group">
-                        <label for="functie">Functie <span class="required">*</span></label>
-                        <input type="text" id="functie" name="functie" required placeholder="Directeur / Facility Manager">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">E-mailadres <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
-                    </div>
-                    <div class="form-group">
-                        <label for="mobiel">Mobiel nummer <span class="required">*</span></label>
-                        <input type="tel" id="mobiel" name="mobiel" required placeholder="06 12345678">
-                    </div>
-                </div>
-                <div class="form-group" style="grid-column:1/-1;">
-                    <label for="bericht">Je bericht <span class="required">*</span></label>
-                    <textarea id="bericht" name="bericht" rows="5" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
-                </div>
-                <div style="text-align:center;margin-top:1.5rem;">
-                    <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
-                </div>
-            </form>
-
+            <p>Elk hotel is uniek. In een vrijblijvend gesprek kijken we naar jouw situatie en schetsen we wat er mogelijk is — zonder verplichtingen.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <a href="configurator.html" class="btn btn-primary">Doe de configurator →</a>
+                <a href="mailto:hello@hes.energy" class="btn btn-outline">hello@hes.energy</a>
+            </div>
         </div>
     </section>
 </main>
@@ -1368,7 +1340,7 @@
 </script>
 
 <script>
-/* Contact form — verzend via mailto: */
+/* Contact modal — verzend via mailto: */
 (function(){
     var form = document.getElementById('contact-form');
     if (!form) return;
@@ -1397,6 +1369,17 @@
 
         // Toon bevestiging
         form.innerHTML = '<div style="text-align:center;padding:2rem;"><div style="font-size:3rem;margin-bottom:1rem;">✓</div><h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3><p style="color:var(--text-muted);">Je e-mailprogramma is geopend. Verstuur de e-mail en we nemen binnen 24 uur contact met je op.</p><p style="margin-top:1rem;"><a href="mailto:hello@hes.energy" style="color:var(--green-accent);font-weight:600;">Of stuur direct een e-mail →</a></p></div>';
+    });
+
+    // Sluit modal met ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var modal = document.getElementById('contact-modal');
+            if (modal && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
     });
 })();
 </script>
@@ -1437,5 +1420,56 @@ document.addEventListener('keydown', function(e) {
     }
 });
 </script>
+
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="contact-modal">
+    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
+    <div class="contact-modal-content">
+        <button class="contact-modal-close" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <h3>Vrijblijvend contact</h3>
+        <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
+
+        <form id="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="voornaam">Voornaam <span class="required">*</span></label>
+                    <input type="text" id="voornaam" name="voornaam" required placeholder="Jan">
+                </div>
+                <div class="form-group">
+                    <label for="achternaam">Achternaam <span class="required">*</span></label>
+                    <input type="text" id="achternaam" name="achternaam" required placeholder="Jansen">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required">*</span></label>
+                    <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
+                </div>
+                <div class="form-group">
+                    <label for="functie">Functie <span class="required">*</span></label>
+                    <input type="text" id="functie" name="functie" required placeholder="Directeur / Facility Manager">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mailadres <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                </div>
+                <div class="form-group">
+                    <label for="mobiel">Mobiel nummer <span class="required">*</span></label>
+                    <input type="tel" id="mobiel" name="mobiel" required placeholder="06 12345678">
+                </div>
+            </div>
+            <div class="form-group" style="grid-column:1/-1;">
+                <label for="bericht">Je bericht <span class="required">*</span></label>
+                <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
+            </div>
+            <div style="text-align:center;margin-top:1.25rem;">
+                <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
