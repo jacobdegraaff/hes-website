@@ -111,8 +111,15 @@
 
         .cta-section{text-align:center;padding:4rem 0;background:white}
 
-        footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:2rem 0;font-size:0.85rem;text-align:center;margin-top:3rem}
-        footer a{color:var(--green-light)}
+        footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:3rem 0 2rem;font-size:0.85rem}
+        footer .container{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}
+footer h4{color:var(--off-white);font-size:.9rem;margin-bottom:1rem;letter-spacing:.05em}
+footer ul{list-style:none}
+footer ul li{margin-bottom:.5rem}
+footer a{color:rgba(245,247,242,.6);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--green-light)}
+.footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:1rem;text-align:center}
+footer a{color:var(--green-light)}
 
         @media(max-width:768px){
             .team-grid,.partner-grid,.story-block{grid-template-columns:1fr}
@@ -408,8 +415,43 @@ h2{font-size:1.1rem}
 
 <footer>
     <div class="container">
-        <p>© 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V.</p>
-                <p><a href="index.html">Home</a> · <a href="oplossingen.html">Oplossingen</a> · <a href="producten.html">Producten</a> · <a href="subsidies.html">Subsidies</a> · <a href="configurator.html">Configurator</a> · <a href="nieuws.html">Nieuws</a> · <a href="over-ons.html">Over ons</a> · <a href="mailto:hello@hes.energy">hello@hes.energy</a></p>
+        <div>
+            <h4 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">HOSPITALITY ENERGY SOLUTIONS</h4>
+            <p style="margin-top:0.5rem;">HES maakt hotels energie-onafhankelijk — met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
+            <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
+        </div>
+        <div>
+            <h4>Oplossingen</h4>
+            <ul>
+                <li><a href="netcongestie.html">Netcongestie</a></li>
+                <li><a href="verduurzamen.html">Verduurzamen</a></li>
+                <li><a href="maximum-belasting.html">Maximum belasting</a></li>
+                <li><a href="stroom-overschot.html">Stroom overschot</a></li>
+                <li><a href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Producten &amp; Diensten</h4>
+            <ul>
+                <li><a href="producten.html">Batterijopslag</a></li>
+                <li><a href="producten.html">Laadpalen &amp; snelladers</a></li>
+                <li><a href="producten.html">EMS &amp; monitoring</a></li>
+                <li><a href="configurator.html">Energieconfigurator</a></li>
+                <li><a href="subsidies.html">Subsidies &amp; regelingen</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Informatie</h4>
+            <ul>
+                <li><a href="voordelen.html">Verdienmodellen</a></li>
+                <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
+                <li><a href="over-ons.html">Over ons</a></li>
+                <li><a href="nieuws.html">Nieuws &amp; blog</a></li>
+                <li><a href="mailto:hello@hes.energy">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V.</p></div>
     </div>
 <p style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
     </footer>
