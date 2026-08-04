@@ -474,6 +474,10 @@
             
             /* ── BUDGET STATUS ── */
             div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+
+            /* ── CONTACT FORM ── */
+            .form-row { grid-template-columns: 1fr; }
+            .cta-section { padding: 3rem 0 !important; }
         }
 @media (max-width: 480px) {
             .hero h1, .hero h2 { font-size: 1.15rem; }
@@ -609,6 +613,31 @@
         .cta-section { text-align: center; padding: 6rem 0; }
         .cta-section h2 { margin-bottom: 1rem; }
         .cta-section p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
+
+        /* Contact form */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--green-primary); margin-bottom: 0.35rem; }
+        .form-group .required { color: var(--green-accent); }
+        .form-group input, .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #D4DDD0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green-accent);
+            box-shadow: 0 0 0 3px rgba(127,191,58,0.15);
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: #A0AEA0; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
 
         /* Footer */
         footer {
@@ -1230,15 +1259,52 @@
         </div>
     </section>
 
-    <!-- CONTACT CTA -->
+    <!-- CONTACT FORM -->
     <section id="contact" class="cta-section">
         <div class="container">
             <h2>Klaar om jouw hotel energie-onafhankelijk te maken?</h2>
-            <p>Elk hotel is uniek. In een vrijblijvend gesprek kijken we naar jouw situatie en schetsen we wat er mogelijk is — zonder verplichtingen.</p>
-            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-                <a href="configurator.html" class="btn btn-primary">Doe de configurator →</a>
-                <a href="mailto:hello@hes.energy" class="btn btn-outline">hello@hes.energy</a>
-            </div>
+            <p>Vul het formulier in en we nemen binnen 24 uur contact met je op — vrijblijvend en zonder verplichtingen.</p>
+
+            <form id="contact-form" style="max-width:640px;margin:0 auto;text-align:left;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="voornaam">Voornaam <span class="required">*</span></label>
+                        <input type="text" id="voornaam" name="voornaam" required placeholder="Jan">
+                    </div>
+                    <div class="form-group">
+                        <label for="achternaam">Achternaam <span class="required">*</span></label>
+                        <input type="text" id="achternaam" name="achternaam" required placeholder="Jansen">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bedrijfsnaam">Bedrijfsnaam <span class="required">*</span></label>
+                        <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
+                    </div>
+                    <div class="form-group">
+                        <label for="functie">Functie <span class="required">*</span></label>
+                        <input type="text" id="functie" name="functie" required placeholder="Directeur / Facility Manager">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-mailadres <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobiel">Mobiel nummer <span class="required">*</span></label>
+                        <input type="tel" id="mobiel" name="mobiel" required placeholder="06 12345678">
+                    </div>
+                </div>
+                <div class="form-group" style="grid-column:1/-1;">
+                    <label for="bericht">Je bericht <span class="required">*</span></label>
+                    <textarea id="bericht" name="bericht" rows="5" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
+                </div>
+                <div style="text-align:center;margin-top:1.5rem;">
+                    <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
+                </div>
+            </form>
+
         </div>
     </section>
 </main>
@@ -1299,6 +1365,40 @@
     // Radio slider auto-advance
     let si = 0;
     setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
+</script>
+
+<script>
+/* Contact form — verzend via mailto: */
+(function(){
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var v = document.getElementById('voornaam').value.trim();
+        var a = document.getElementById('achternaam').value.trim();
+        var b = document.getElementById('bedrijfsnaam').value.trim();
+        var f = document.getElementById('functie').value.trim();
+        var em = document.getElementById('email').value.trim();
+        var m = document.getElementById('mobiel').value.trim();
+        var ber = document.getElementById('bericht').value.trim();
+
+        var subject = 'Contactverzoek van ' + v + ' ' + a + ' — ' + b;
+        var body = '';
+        body += 'Naam: ' + v + ' ' + a + '\n';
+        body += 'Bedrijf: ' + b + '\n';
+        body += 'Functie: ' + f + '\n';
+        body += 'E-mail: ' + em + '\n';
+        body += 'Mobiel: ' + m + '\n';
+        body += '\nBericht:\n' + ber;
+
+        window.location.href = 'mailto:hello@hes.energy'
+            + '?subject=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(body);
+
+        // Toon bevestiging
+        form.innerHTML = '<div style="text-align:center;padding:2rem;"><div style="font-size:3rem;margin-bottom:1rem;">✓</div><h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3><p style="color:var(--text-muted);">Je e-mailprogramma is geopend. Verstuur de e-mail en we nemen binnen 24 uur contact met je op.</p><p style="margin-top:1rem;"><a href="mailto:hello@hes.energy" style="color:var(--green-accent);font-weight:600;">Of stuur direct een e-mail →</a></p></div>';
+    });
+})();
 </script>
 
 
