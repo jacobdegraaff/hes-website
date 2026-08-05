@@ -477,5 +477,65 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
 </div>
 
 
+
+<script>
+/* Mobile menu: move nav-links outside nav stacking context */
+(function(){
+    var nav = document.querySelector('nav');
+    var panel = document.getElementById('mobile-menu-panel');
+    var links = document.querySelector('.nav-links');
+    if (!panel || !links) return;
+    
+    function moveMenu() {
+        if (window.innerWidth <= 768) {
+            if (links.parentNode !== panel) {
+                panel.appendChild(links);
+            }
+        } else {
+            var container = nav.querySelector('.container');
+            if (links.parentNode === panel && container) {
+                container.appendChild(links);
+            }
+        }
+    }
+    
+    moveMenu();
+    window.addEventListener('resize', moveMenu);
+})();
+</script>
+
+<script>
+/* Mobile dropdown toggle */
+document.querySelectorAll('.nav-dropdown > a').forEach(function(l){
+  l.addEventListener('click',function(e){
+    if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open')}
+  })
+});
+/* Close menu when clicking a non-dropdown link */
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){
+  l.addEventListener('click',function(){
+    if(window.innerWidth<=768){
+      var m=document.querySelector('.mobile-menu-panel');
+      var b=document.querySelector('.menu-toggle');
+      if(m)m.classList.remove('active');
+      if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
+      document.body.style.overflow='';
+    }
+  })
+});
+/* Close menu on ESC */
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&window.innerWidth<=768){
+    var m=document.querySelector('.mobile-menu-panel');
+    var b=document.querySelector('.menu-toggle');
+    if(m&&m.classList.contains('active')){
+      m.classList.remove('active');
+      if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
+      document.body.style.overflow='';
+    }
+  }
+});
+</script>
+
 </body>
 </html>
