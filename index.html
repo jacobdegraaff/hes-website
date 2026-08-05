@@ -338,21 +338,10 @@
             .menu-toggle.active span:nth-child(2) { opacity: 0; }
             .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg); }
 
-            /* Mobile menu panel */
-            .nav-links { 
-                display: none; 
-                position: fixed; 
-                top: 56px; left: 0; right: 0; bottom: 0;
-                background: white; 
-                flex-direction: column; 
-                padding: 0.5rem 1.25rem 2rem; 
-                gap: 0;
-                overflow-y: auto;
-                z-index: 999;
-                border-top: 4px solid #7FBF3A;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            }
-            .nav-links.active { display: flex !important; grid-column: auto !important; margin-left: 0 !important; position: fixed !important; }
+            /* Mobile menu panel — standalone, outside nav stacking context */
+            .mobile-menu-panel { display: none; position: fixed; top: 56px; left: 0; right: 0; bottom: 0; background: white; flex-direction: column; padding: 0.5rem 1.25rem 2rem; gap: 0; overflow-y: auto; z-index: 99999; border-top: 4px solid #7FBF3A; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+            .mobile-menu-panel.active { display: flex !important; }
+            .mobile-menu-panel .nav-links { display: flex; flex-direction: column; gap: 0; list-style: none; width: 100%; }
             .nav-links > li { 
                 padding: 0.5rem 0; 
                 border-bottom: 1px solid var(--border);
@@ -699,7 +688,7 @@
                 </span>
             </div>
         </a>
-        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.nav-links');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
             <span></span><span></span><span></span>
         </button>
                 <ul class="nav-links">
@@ -757,6 +746,9 @@
         </ul>
     </div>
 </nav>
+    <!-- Mobile menu panel (outside nav stacking context) -->
+    <div id="mobile-menu-panel" class="mobile-menu-panel"></div>
+
 
 <main id="main-content">
     <style>
@@ -1414,6 +1406,33 @@
 </script>
 
 
+
+<script>
+/* Mobile menu: move nav-links outside nav stacking context */
+(function(){
+    var nav = document.querySelector('nav');
+    var panel = document.getElementById('mobile-menu-panel');
+    var links = document.querySelector('.mobile-menu-panel');
+    if (!panel || !links) return;
+    
+    function moveMenu() {
+        if (window.innerWidth <= 768) {
+            if (links.parentNode !== panel) {
+                panel.appendChild(links);
+            }
+        } else {
+            var container = nav.querySelector('.container');
+            if (links.parentNode === panel && container) {
+                container.appendChild(links);
+            }
+        }
+    }
+    
+    moveMenu();
+    window.addEventListener('resize', moveMenu);
+})();
+</script>
+
 <script>
 /* Mobile dropdown toggle */
 document.querySelectorAll('.nav-dropdown > a').forEach(link => {
@@ -1428,7 +1447,7 @@ document.querySelectorAll('.nav-dropdown > a').forEach(link => {
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(link => {
     link.addEventListener('click', function() {
         if (window.innerWidth <= 768) {
-            var m = document.querySelector('.nav-links');
+            var m = document.querySelector('.mobile-menu-panel');
             var btn = document.querySelector('.menu-toggle');
             m.classList.remove('active');
             if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded','false'); }
@@ -1439,7 +1458,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(link
 /* Close menu on ESC */
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && window.innerWidth <= 768) {
-        var m = document.querySelector('.nav-links');
+        var m = document.querySelector('.mobile-menu-panel');
         var btn = document.querySelector('.menu-toggle');
         if (m.classList.contains('active')) {
             m.classList.remove('active');
