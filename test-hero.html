@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Primary SEO -->
+    <title>Hospitality Energy Solutions — Energieoplossingen voor Hotels | Batterijopslag · EMS · EV-laden</title>
+    <meta name="description" content="HES maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. Lagere energiekosten, nieuwe inkomsten, volledig ontzorgd door Stroomlijnen.">
+    <link rel="canonical" href="https://hes.energy/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hospitality Energy Solutions — Energieoplossingen voor Hotels">
+    <meta property="og:description" content="Van batterijopslag tot EV-laadpalen — HES maakt jouw hotel energie-onafhankelijk. Stap voor stap, volledig ontzorgd.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hes.energy/">
+    <meta property="og:image" content="https://hes.energy/assets/logo-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Hospitality Energy Solutions">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hospitality Energy Solutions — Energieoplossingen voor Hotels">
+    <meta name="twitter:description" content="Van batterijopslag tot EV-laadpalen — HES maakt jouw hotel energie-onafhankelijk.">
+    <meta name="twitter:image" content="https://hes.energy/assets/logo-og.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Hospitality Energy Solutions",
+      "alternateName": "HES",
+      "url": "https://hes.energy/",
+      "logo": "https://hes.energy/assets/logo-og.png",
+      "description": "HES maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen.",
+      "foundingDate": "2025",
+      "founders": [
+        {"@type": "Person", "name": "Jacob de Graaff"},
+        {"@type": "Person", "name": "Melle Pegman"}
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@hes.energy",
+        "contactType": "sales"
+      },
+      "sameAs": [],
+      "knowsAbout": ["Energieopslag", "EMS", "EV-laadpalen", "Zonnepanelen", "Netcongestie", "Hotels"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://hes.energy/"
+      }]
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --green-primary: #0F3D23;
+            --green-secondary: #2E7032;
+            --green-accent: #7FBF3A;
+            --green-light: #B7E08A;
+            --off-white: #F5F7F2;
+            --dark-grey: #2F3437;
+            --text-muted: #556B58;
+            --border: #D4DDD0;
+            --radius: 12px;
+            --radius-lg: 20px;
+            --shadow: 0 4px 24px rgba(15, 61, 35, 0.08);
+            --shadow-lg: 0 12px 48px rgba(15, 61, 35, 0.12);
+            --max-width: 1200px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; font-size: 16px; overflow-y: scroll; scroll-padding-top: 56px; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--dark-grey);
+            background: var(--off-white);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .hero-tagline {
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--green-primary);
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
+        h4 { font-size: 1.1rem; font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500; }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Navigation */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(245, 247, 242, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 0;
+        }
+        nav .container {
+            display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+            padding-top: 0.5rem; padding-bottom: 0.5rem;
+            position: relative;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 0;
+            text-decoration: none;
+            margin-top: -65px; margin-bottom: -65px; margin-right: auto;
+            z-index: 101;
+        }
+        .logo-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-bg {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 8px 40px rgba(15, 61, 35, 0.18), 0 0 0 4px var(--green-accent);
+            position: absolute;
+            z-index: 0;
+        }
+        .nav-logo img {
+            height: 180px;
+            width: auto;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 8px rgba(15, 61, 35, 0.1));
+        }
+        /* Voltage ring accent */
+        .voltage-ring {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 2px dashed rgba(127, 191, 58, 0.3);
+            z-index: 0;
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .nav-links { 
+            display: flex; gap: 2rem; list-style: none; align-items: center;
+            grid-column: 3;
+            margin-left: auto;
+        }
+        .nav-links a {
+            text-decoration: none; color: var(--dark-grey);
+            font-size: 0.9rem; font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--green-accent); }
+        
+        /* Mega Menu Dropdown — Joulz-inspired */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > a { cursor: pointer; }
+        
+        .nav-dropdown-panel {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(15,61,35,0.12);
+            border: 1px solid #D4DDD0;
+            z-index: 99;
+            padding: 1.5rem;
+            min-width: 260px;
+            transition: opacity 0.15s ease-in-out;
+        }
+        
+        .nav-backdrop {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 61, 35, 0.08);
+            z-index: 98;
+            pointer-events: none;
+        }
+        
+        .nav-dropdown:hover .nav-dropdown-panel,
+        .nav-dropdown:hover .nav-backdrop { display: block; }
+        
+        /* Skip link */
+        .skip-link { position: absolute; top: -100px; left: 0; background: var(--green-primary); color: white; padding: 0.75rem 1.5rem; z-index: 200; font-weight: 600; border-radius: 0 0 8px 0; text-decoration: none; font-family: 'Inter',sans-serif; font-size: 0.9rem; }
+        .skip-link:focus { top: 0; }
+        
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: 4px; }
+        
+        .nav-mega-col h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin: 0 0 0.6rem 0;
+        }
+        .nav-mega-col a {
+            display: block; padding: 0.4rem 0;
+            text-decoration: none; color: #2F3437;
+            font-size: 0.88rem; font-weight: 500;
+            transition: color 0.15s;
+        }
+        .nav-mega-col a:hover { color: var(--green-accent); }
+        .nav-mega-col .mega-desc {
+            display: block;
+            font-size: 0.75rem; color: var(--text-muted);
+            font-weight: 400; line-height: 1.3;
+            margin-top: 0.1rem;
+        }
+        
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            border-radius: 50px; border: none;
+            font-family: 'Montserrat', system-ui, sans-serif;
+            font-weight: 500; font-size: 0.95rem;
+            cursor: pointer; text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .btn-primary {
+            background: var(--green-accent); color: var(--green-primary);
+        }
+        .btn-primary:hover {
+            background: #6FAA2E; transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(127, 191, 58, 0.35);
+        }
+        .btn-outline {
+            background: transparent; color: var(--green-primary);
+            border: 2px solid var(--green-primary);
+        }
+        .btn-outline:hover {
+            background: var(--green-primary); color: var(--off-white);
+        }
+
+        .btn-ghost {
+            background: transparent; color: var(--off-white);
+            border: 1.5px solid rgba(245, 247, 242, 0.3);
+            padding: 0.65rem 1.5rem; font-size: 0.85rem;
+        }
+        .btn-ghost:hover {
+            background: rgba(245, 247, 242, 0.1);
+            border-color: var(--off-white);
+        }
+
+        /* Mobile */
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 102; width: 44px; height: 44px; align-items: center; justify-content: center; }
+        .menu-toggle span { display: block; width: 22px; height: 2.5px; background: var(--green-primary); border-radius: 2px; transition: 0.3s; position: absolute; }
+        .menu-toggle span:nth-child(1) { transform: translateY(-7px); }
+        .menu-toggle span:nth-child(3) { transform: translateY(7px); }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg); }
+        .mobile-logo { display: none; }
+@media (max-width: 768px) {
+            /* ── BASE RESET ── */
+            html, body { overflow-x: hidden; width: 100%; }
+            body { padding: 0; }
+            .container { padding: 0 1rem; max-width: 100%; }
+
+            /* ── NAV ── */
+            nav { 
+                position: sticky; top: 0; z-index: 100;
+                padding: 0; 
+                height: 56px;
+                display: flex; align-items: center;
+            }
+            nav .container { 
+                padding: 0 0.75rem; 
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            /* Logo */
+            .nav-logo { margin: 0; display: flex; align-items: center; }
+            .nav-logo img { display: none; }
+            .logo-bg { width: 38px; height: 38px; top: 0; left: 0; border-radius: 50%; position: absolute; box-shadow: 0 2px 8px rgba(15,61,35,0.15), 0 0 0 2px var(--green-accent); }
+            .voltage-ring { width: 44px; height: 44px; border-radius: 50%; border: 1.5px dashed rgba(127,191,58,0.25); position: absolute; z-index: -1; }
+            .logo-container { width: 44px; height: 44px; position: relative; }
+            .mobile-logo { 
+                display: flex; align-items: center; gap: 0.35rem;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600; font-size: 0.85rem; 
+                color: var(--green-primary);
+                position: relative; z-index: 2;
+                white-space: nowrap;
+            }
+            .mobile-logo svg { width: 50px; height: 50px; flex-shrink: 0; }
+            .mobile-logo img { width: auto; height: 28px; flex-shrink: 0; }
+
+            /* Hamburger button */
+            .menu-toggle { 
+                display: flex; flex-direction: column;
+                align-items: center; justify-content: center;
+                width: 44px; height: 44px;
+                margin-left: auto; 
+                padding: 0;
+                background: none; border: none; cursor: pointer;
+                z-index: 103;
+                position: relative;
+            }
+            .menu-toggle span { 
+                display: block; width: 22px; height: 2.5px; 
+                background: var(--green-primary); border-radius: 2px; 
+                transition: 0.2s ease;
+                position: absolute;
+            }
+            .menu-toggle span:nth-child(1) { transform: translateY(-7px); }
+            .menu-toggle span:nth-child(3) { transform: translateY(7px); }
+            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg); }
+            .menu-toggle.active span:nth-child(2) { opacity: 0; }
+            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg); }
+
+            /* Mobile menu panel — standalone, outside nav stacking context */
+            .mobile-menu-panel { display: none; position: fixed; top: 56px; left: 0; right: 0; bottom: 0; background: white; flex-direction: column; padding: 0.5rem 1.25rem 2rem; gap: 0; overflow-y: auto; z-index: 99999; border-top: 4px solid #7FBF3A; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+            .mobile-menu-panel.active { display: flex !important; }
+            .mobile-menu-panel .nav-links { display: flex; flex-direction: column; gap: 0; list-style: none; width: 100%; }
+            .nav-links > li { 
+                padding: 0.5rem 0; 
+                border-bottom: 1px solid var(--border);
+            }
+            .nav-links > li:last-child { border-bottom: none; }
+            .nav-links > li > a { 
+                font-size: 1rem; min-height: 46px;
+                display: flex; align-items: center;
+            }
+            .nav-links > li[style] { border-bottom: none; padding: 0.25rem 0; }
+
+            /* Dropdowns */
+            .nav-dropdown > a { 
+                display: flex; align-items: center; justify-content: space-between;
+                min-height: 46px;
+            }
+            .nav-dropdown > a::after {
+                content: '▾'; font-size: 0.8rem; 
+                transition: transform 0.2s;
+            }
+            .nav-dropdown.open > a::after { transform: rotate(180deg); }
+            .nav-dropdown-panel {
+                display: none;
+                position: static !important;
+                box-shadow: none; border: none;
+                padding: 0.25rem 0 0.5rem 1rem;
+                min-width: auto;
+                background: transparent;
+            }
+            .nav-dropdown.open > .nav-dropdown-panel { display: block; }
+            .nav-backdrop { display: none !important; }
+            .nav-mega-col h4 { display: none; }
+            .nav-mega-col a { 
+                font-size: 0.9rem; padding: 0.4rem 0;
+                min-height: 44px;
+                display: flex; align-items: center;
+            }
+            .nav-mega-col .mega-desc { display: none; }
+
+            /* Contact button in nav */
+            .nav-links .btn-primary { 
+                display: inline-flex !important; 
+                margin-top: 0.5rem; width: auto; min-height: 44px;
+                align-items: center; justify-content: center;
+            }
+
+            /* ── HERO ── */
+            .hero { min-height: auto; padding: 1.5rem 0 1.5rem; }
+            .hero .container { grid-template-columns: 1fr; gap: 0.75rem; text-align: center; padding: 0 1rem; }
+            .hero-slides-track { width: 300% !important; }
+            .hero-slide-panel { width: 33.333% !important; flex-shrink: 0; padding: 0.5rem 0; }
+            .hero-slide-panel .container { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
+            .hero-slide-panel .hero-illustration { display: none; }
+            .hero-slider { overflow: hidden; }
+            .hero-dots { bottom: 0.5rem; gap: 0.5rem; }
+            .hero-dots label { width: 24px; height: 3px; }
+            .hero h1, .hero h2 { font-size: 1.2rem; text-align: center !important; max-width: 100% !important; }
+            .hero p { font-size: 0.85rem; max-width: 100% !important; text-align: center !important; padding: 0; }
+            .hero-cta { flex-direction: column; align-items: center; gap: 0.6rem; }
+            .hero-cta .btn { width: 100%; max-width: 280px; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+            .hero-illustration { display: none; }
+            .hero img { max-width: 100% !important; }
+
+            /* ── SECTIONS ── */
+            section { padding: 2rem 0; }
+            h2 { font-size: 1.25rem; }
+            h3 { font-size: 1rem; }
+            .section-label { font-size: 0.7rem; margin-bottom: 0.5rem; }
+
+            /* ── CARDS ── */
+            .problem-grid { grid-template-columns: 1fr !important; gap: 0.75rem; }
+            .problem-card { padding: 1rem; }
+            .problem-card h3 { font-size: 0.95rem; }
+            .problem-card p { font-size: 0.82rem; }
+            .problem-card .icon { width: 36px; height: 36px; margin-bottom: 0.5rem; }
+            .problem-card .icon svg { width: 36px; height: 36px; }
+
+            /* ── SCENARIOS ── */
+            .scenario { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.25rem 0; }
+            .scenario-visual svg { max-width: 100%; }
+            .scenario-benefit { padding: 0.65rem; }
+
+            /* ── TABLE ── */
+            .table-wrap { margin: 0 -0.5rem; padding: 0 0.25rem; overflow-x: auto; }
+            .comparison-table { min-width: 480px; font-size: 0.7rem; }
+            .comparison-table th, .comparison-table td { padding: 0.35rem 0.4rem; }
+
+            /* ── ABOUT ── */
+            .about-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+
+            /* ── INFO/FLOW GRIDS (subpages) ── */
+            .info-grid { grid-template-columns: 1fr !important; gap: 0.75rem; }
+            .flow-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+            .arrow { transform: rotate(90deg); }
+
+            /* ── PAGE HEADER ── */
+            .page-header { padding: 5rem 0 2rem; }
+            .page-header h1 { font-size: 1.5rem; }
+            .page-header p { font-size: 0.85rem; }
+
+            /* ── CTA ── */
+            .cta-section { padding: 2.5rem 0; }
+            .cta-section h2 { font-size: 1.2rem; }
+
+            /* ── FOOTER ── */
+            footer { padding: 1.5rem 0 1rem; }
+            footer .container { 
+                grid-template-columns: 1fr 1fr; 
+                gap: 1rem 0.75rem; 
+                text-align: left; 
+                font-size: 0.75rem;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            footer h4 { font-size: 0.75rem; margin-bottom: 0.5rem; }
+            footer ul li { margin-bottom: 0.3rem; }
+            footer a { font-size: 0.72rem; }
+            .footer-bottom { grid-column: 1 / -1; text-align: center; font-size: 0.7rem; padding-top: 0.75rem; }
+
+            /* ── IMAGES ── */
+            section img, .problem-card img, .info-card img, .chart-wrap img, .hero-illustration img, img[src*="assets/"] { display: none !important; }
+            
+            /* ── BUDGET STATUS ── */
+            div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+
+            /* ── CONTACT MODAL ── */
+            .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+@media (max-width: 480px) {
+            .hero h1, .hero h2 { font-size: 1.15rem; text-align: center !important; max-width: 100% !important; }
+            .btn { padding: 0.5rem 0.85rem; font-size: 0.8rem; min-height: 44px; }
+            .nav-links .btn { padding: 0.45rem 0.85rem; font-size: 0.8rem; min-height: 44px; }
+            footer .container { grid-template-columns: 1fr; gap: 0.75rem; text-align: center; }
+            footer .footer-bottom { text-align: center; }
+            h2 { font-size: 1.1rem; }
+            .page-header { padding: 4.5rem 0 1.5rem; }
+            .page-header h1 { font-size: 1.3rem; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(160deg, #0A2E1A 0%, var(--green-primary) 40%, #163D26 100%);
+            color: var(--off-white);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: -30%; right: -15%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(127, 191, 58, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .hero h1 { color: var(--off-white); margin-bottom: 1.25rem; }
+        .hero p {
+            font-size: 1.15rem; opacity: 0.9; margin-bottom: 2rem;
+            max-width: 500px; line-height: 1.7;
+        }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .hero-illustration {
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-illustration svg { width: 100%; max-width: 420px; }
+
+        /* Section */
+        section { padding: 5rem 0; }
+        section.dark { background: var(--green-primary); color: var(--off-white); }
+        section.dark h2, section.dark h3 { color: var(--off-white); }
+        section.dark p { color: rgba(245, 247, 242, 0.85); }
+        section.dark .problem-card p { color: #3D4F40; }
+        section.dark .problem-card h3 { color: var(--green-primary); }
+        .section-label {
+            font-family: 'Montserrat', system-ui, sans-serif;
+            font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--green-accent);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Problem grid */
+        .problem-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .problem-card {
+            background: white; border-radius: var(--radius-lg);
+            padding: 2rem; box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .problem-card .icon { width: 48px; height: 48px; margin-bottom: 1rem; color: var(--green-accent); }
+        .problem-card h3 { color: var(--green-primary); margin-bottom: 0.5rem; }
+
+        /* Scenario cards */
+        .scenario {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+            align-items: center; padding: 3rem 0;
+        }
+        .scenario + .scenario { border-top: 1px solid var(--border); }
+        .scenario-number {
+            font-family: 'Montserrat', system-ui, sans-serif;
+            font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em;
+            color: var(--green-accent); margin-bottom: 0.5rem;
+        }
+        .scenario-benefits { display: grid; gap: 1rem; margin-top: 1.5rem; }
+        .scenario-benefit {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            padding: 1rem; background: white; border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        .scenario-benefit .num {
+            font-family: 'Montserrat', system-ui, sans-serif;
+            font-weight: 600; font-size: 0.85rem;
+            color: var(--green-secondary); font-weight: 700; font-size: 0.95rem; min-width: 24px;
+        }
+        .scenario-benefit h4 { font-size: 0.95rem; margin-bottom: 0.2rem; }
+        .scenario-benefit p { font-size: 0.85rem; color: #3D4F40 !important; }
+        .problem-card p { font-size: 0.9rem; color: #3D4F40; }
+        .scenario-visual {
+            display: flex; align-items: center; justify-content: center;
+        }
+        .scenario-visual svg { width: 100%; max-width: 100%; }
+
+        /* Comparison */
+        .comparison-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            margin-top: 2rem; border-radius: var(--radius-lg);
+            overflow: hidden; box-shadow: var(--shadow-lg);
+        }
+        .comparison-table th {
+            background: var(--green-primary); color: var(--off-white);
+            padding: 1rem 1.25rem; text-align: left;
+            font-family: 'Montserrat', system-ui, sans-serif;
+            font-weight: 500; font-size: 0.85rem;
+        }
+        .comparison-table td {
+            padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border);
+            font-size: 0.9rem; background: white;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .check { color: var(--green-accent); font-weight: 600; }
+        .comparison-table .dash { color: #ccc; }
+        .comparison-table .optimal { color: var(--green-secondary); font-weight: 600; }
+
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -1.5rem; padding: 0 1.5rem; }
+
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; }
+        .about-card {
+            background: rgba(255,255,255,0.05); border-radius: var(--radius-lg);
+            padding: 2rem; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .about-card h3 { margin-bottom: 0.75rem; }
+        .about-card p { font-size: 0.95rem; }
+
+        /* Wave divider */
+        .wave-divider { display: block; width: 100%; height: auto; }
+
+        /* CTA section */
+        .cta-section { text-align: center; padding: 6rem 0; }
+        .cta-section h2 { margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
+
+        /* Contact Modal */
+        .contact-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 200; align-items: center; justify-content: center; }
+        .contact-modal-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,61,35,0.5); }
+        .contact-modal-content { position: relative; background: white; border-radius: 16px; padding: 2.5rem; max-width: 640px; width: 90%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(15,61,35,0.2); }
+        .contact-modal-close { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); line-height: 1; padding: 0.25rem; }
+        .contact-modal-close:hover { color: var(--green-primary); }
+        .contact-modal h3 { font-family: 'Montserrat',sans-serif; font-weight: 600; font-size: 1.3rem; color: var(--green-primary); margin-bottom: 0.5rem; }
+        .contact-modal .modal-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+        /* Form fields (shared by modal) */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--green-primary); margin-bottom: 0.35rem; }
+        .form-group .required { color: var(--green-accent); }
+        .form-group input, .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #D4DDD0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green-accent);
+            box-shadow: 0 0 0 3px rgba(127,191,58,0.15);
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: #A0AEA0; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        /* Footer */
+        footer {
+            background: var(--green-primary); color: rgba(245, 247, 242, 0.7);
+            padding: 3rem 0 2rem; font-size: 0.85rem;
+        }
+        footer .container { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2rem; }
+        footer h4 { color: var(--off-white); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 0.5rem; }
+        footer a { color: rgba(245, 247, 242, 0.6); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--green-light); }
+        .footer-bottom { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin-top: 1rem; text-align: center; }
+
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(24px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Flow animation — animated energy diagrams */
+        @keyframes flowDot { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+        @keyframes pulseGreen { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+        @keyframes pulseGlow { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        .energy-flow { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+        .energy-dot { fill: currentcolor; offset-path: var(--fp); offset-distance: 0%; animation: flowDot var(--fd,3s) linear infinite; }
+        .energy-dot-delayed { animation-delay: var(--fdl,1.5s); }
+        .energy-glow { animation: 2s ease-in-out infinite pulseGreen; }
+        .energy-pulse { animation: 1.5s ease-in-out infinite pulseGlow; }
+    </style>
+</head>
+<body>
+<!-- TEST PAGE WITH CENTERED HERO TEXT --><!-- Force CDN refresh 1786008191.641424 -->
+
+<a href="#main-content" class="skip-link">Direct naar inhoud</a>
+
+<nav>
+    <div class="container">
+        <a href="/" class="nav-logo" aria-label="Hospitality Energy Solutions home">
+            <div class="logo-container">
+                <div class="logo-bg"></div>
+                <div class="voltage-ring"></div>
+                <img src="logo-transparent.png" alt="Hospitality Energy Solutions" style="height:180px;width:auto;">
+                <span class="mobile-logo">
+                    <svg viewBox="0 0 60 60" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="28" fill="white" stroke="#0F3D23" stroke-width="3"/>
+                        <path d="M12 30c0-10 6-15 13-15s7 7 3 14c-4 7-4 14 3 14s13-6 13-14" stroke="#7FBF3A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        <text x="30" y="50" text-anchor="middle" fill="#0F3D23" font-size="13" font-weight="800" font-family="Montserrat,sans-serif">HES</text>
+                    </svg>
+                </span>
+            </div>
+        </a>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
+            <span></span><span></span><span></span>
+        </button>
+                <ul class="nav-links">
+            <li class="nav-dropdown">
+                <a href="oplossingen.html">Oplossingen ▾</a>
+                <div class="nav-backdrop"></div>
+                <div class="nav-dropdown-panel">
+                    <div class="nav-mega-col">
+                        <h4>Oplossingen</h4>
+                        <a href="netcongestie.html">Netcongestie</a>
+                        <a href="verduurzamen.html">Verduurzamen</a>
+                        <a href="maximum-belasting.html">Maximum belasting</a>
+                        <a href="stroom-overschot.html">Stroom (zon) overschot</a>
+                        <a href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <a href="voordelen.html">Voordelen ▾</a>
+                <div class="nav-backdrop"></div>
+                <div class="nav-dropdown-panel">
+                    <div class="nav-mega-col">
+                        <h4>Voordelen</h4>
+                        <a href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat HES echt anders maakt</span></a>
+                        <a href="voordelen.html">Verdienmodellen</a>
+                        <a href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="producten.html">Producten</a></li>
+            <li><a href="subsidies.html">Subsidies</a></li>
+                        <li><a href="over-ons.html">Over ons</a></li>
+            <li class="nav-dropdown">
+                <a href="nieuws.html">Nieuws ▾</a>
+                <div class="nav-backdrop"></div>
+                <div class="nav-dropdown-panel">
+                    <div class="nav-mega-col">
+                        <h4>Nieuws</h4>
+                        <a href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+            <li style="position:relative;">
+                <a href="#" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;" style="text-decoration:none;font-size:1.1rem;" title="Vertalen">🌐</a>
+                <div style="display:none;position:absolute;top:110%;right:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:130px;z-index:200;overflow:hidden;">
+                    <a href="#" onclick="window.top.location.href='https://jacobdegraaff.github.io/hes-website/';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇳🇱</span> Nederlands</a>
+                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=en&amp;sl=nl&amp;tl=en&amp;u=https://jacobdegraaff.github.io/hes-website/';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇬🇧</span> English</a>
+                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=fr&amp;sl=nl&amp;tl=fr&amp;u=https://jacobdegraaff.github.io/hes-website/';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇫🇷</span> Francais</a>
+                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=es&amp;sl=nl&amp;tl=es&amp;u=https://jacobdegraaff.github.io/hes-website/';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇪🇸</span> Espanol</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <!-- Mobile menu panel (outside nav stacking context) -->
+    <div id="mobile-menu-panel" class="mobile-menu-panel"></div>
+
+
+<main id="main-content">
+    <style>
+        .hero-slider { position: relative; overflow: hidden; }
+        .hero-slider input { display: none; }
+        .hero-slides-track { display: flex; width: 300%; transition: transform 0.6s ease-in-out; }
+        .hero-slide-panel { width: 33.333%; flex-shrink: 0; }
+        #hs1:checked ~ .hero-slides-track { transform: translateX(0); }
+        #hs2:checked ~ .hero-slides-track { transform: translateX(-33.333%); }
+        #hs3:checked ~ .hero-slides-track { transform: translateX(-66.666%); }
+        .hero-dots { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.75rem; z-index: 10; }
+        .hero-dots label { width: 32px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s; }
+        #hs1:checked ~ .hero-dots label[for="hs1"],
+        #hs2:checked ~ .hero-dots label[for="hs2"],
+        #hs3:checked ~ .hero-dots label[for="hs3"] { background: var(--green-accent); }
+    </style>
+    <section class="hero hero-slider">
+        <input type="radio" name="hs" id="hs1" checked>
+        <input type="radio" name="hs" id="hs2">
+        <input type="radio" name="hs" id="hs3">
+        <div class="hero-slides-track">
+            <!-- SLIDE 1 -->
+            <div class="hero-slide-panel">
+                <div class="container">
+                    <div style="text-align:center;max-width:100%;">
+                        <p class="section-label" style="margin-bottom:0.5rem;text-align:center;">Hospitality Energy Solutions (HES)</p>
+                        <h2 style="text-align:center;max-width:100%;">Energie-onafhankelijk.<br>Zonder zorgen.</h2>
+                        <p style="text-align:center;max-width:100%;">Van batterijopslag tot slimme laadpalen — HES bouwt samen met Stroomlijnen één totaaloplossing waarmee jouw hotel bespaart, verdient én verduurzaamt.</p>
+                        <div class="hero-cta">
+                            <a href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
+                            <a href="#probleem" class="btn btn-ghost">Ontdek hoe het werkt</a>
+                        </div>
+                    </div>
+                    <div class="hero-illustration">
+                        <img src="assets/hero-diagram.jpg" alt="EMS, accu, zon en EV laadpalen — één integraal systeem" style="width:100%; max-width:520px; border-radius:12px;">
+                    </div>
+                </div>
+            </div>
+            <!-- SLIDE 2 -->
+            <div class="hero-slide-panel">
+                <div class="container">
+                    <div style="text-align:center;max-width:100%;">
+                        <p class="section-label" style="margin-bottom:0.5rem;text-align:center;">Netcongestie & Piekbelasting</p>
+                        <h2 style="text-align:center;max-width:100%;">File<br>op het stroomnet</h2>
+                        <p style="text-align:center;max-width:100%;">Tussen 17:00 en 21:00 piekt het verbruik van een hotel. De batterij van HES vangt deze piek af, waardoor je niet boven je contractvermogen komt en boetes voorkomt.</p>
+                        <div class="hero-cta">
+                            <a href="netcongestie.html" class="btn btn-primary">Lees meer over netcongestie →</a>
+                            <a href="#probleem" class="btn btn-ghost">Bekijk de problemen</a>
+                        </div>
+                    </div>
+                    <div class="hero-illustration" style="width:100%;">
+                        <img src="assets/netcongestie-diagram-v2.jpg" alt="Hotel energieprofiel — 24-uurs verbruik met piekbelasting" style="width:100%; max-width:700px; border-radius:12px;">
+                    </div>
+                </div>
+            </div>
+            <!-- SLIDE 3 -->
+            <div class="hero-slide-panel">
+                <div class="container">
+                    <div style="text-align:center;max-width:100%;">
+                        <p class="section-label" style="margin-bottom:0.5rem;text-align:center;">Subsidies & Besparing</p>
+                        <h2 style="text-align:center;max-width:100%;">Tot 60% subsidie<br>op batterijen</h2>
+                        <p style="text-align:center;max-width:100%;">De overheid stimuleert energieopslag met forse subsidies. Combineer dit met inkomsten uit laadsessies en een lagere energierekening — jouw investering verdient zich razendsnel terug.</p>
+                        <div class="hero-cta">
+                            <a href="subsidies.html" class="btn btn-primary">Bekijk alle subsidies →</a>
+                            <a href="nieuws.html" class="btn btn-ghost">Lees het laatste nieuws</a>
+                        </div>
+                    </div>
+                    <div class="hero-illustration">
+                        <img src="assets/subsidies-hero.jpg" alt="Subsidies en besparingen voor energieoplossingen" style="width:100%; max-width:520px; border-radius:12px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-dots">
+            <label for="hs1"></label>
+            <label for="hs2"></label>
+            <label for="hs3"></label>
+        </div>
+    </section>
+
+    <!-- PROBLEEM -->
+    <section id="probleem">
+        <div class="container">
+            <p class="section-label">Het probleem</p>
+            <h2>Je hotel groeit — je stroomnet niet</h2>
+            <p style="color:var(--text-muted);max-width:700px;margin-top:0.75rem;">
+                Hotels willen verduurzamen, uitbreiden en hun gasten de beste service bieden. Maar de netaansluiting is een blokkade. De netbeheerder heeft wachttijden van maanden tot jaren. Ondertussen stijgen de energiekosten, blijft verduurzaming liggen en loopt het comfort voor gasten gevaar. Dit zijn de vijf belangrijkste knelpunten waar hotels tegenaan lopen:
+            </p>
+            <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="problem-card fade-in">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M14 14h20M14 22h20M14 30h12" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Stokkende uitbreiding en nieuwbouw</h3>
+                    <p>Wil een hotel 50 kamers, een wellnessruimte of een congreszaal bouwen? Dan zegt de netbeheerder: geen zwaardere aansluiting beschikbaar. De bouwtekeningen liggen klaar, maar de stekker mag er letterlijk niet in. Ook laadpleinen voor gasten blijven hierdoor onmogelijk — de aansluitcapaciteit is volledig vergeven.</p>
+                    <a href="netcongestie.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over netcongestie →</a>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 6v8M24 34v8M8 24h8M32 24h8" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="24" r="10" stroke="#7FBF3A" stroke-width="2"/></svg>
+                    </div>
+                    <h3>Knelpunten bij 'Gas-los' – verduurzamen</h3>
+                    <p>De overstap van gas-cv's naar warmtepompen, of van gasfornuizen naar inductie, vraagt enorm veel elektrisch vermogen. Zonder zwaardere aansluiting moeten hotels noodgedwongen op gas blijven stoken.</p>
+                    <a href="verduurzamen.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over verduurzamen →</a>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M12 36V20l12-12 12 12v16H12z" stroke="#7FBF3A" stroke-width="2"/><path d="M20 36V26h8v10" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><rect x="18" y="14" width="12" height="3" rx="1" fill="#7FBF3A" opacity="0.3"/></svg>
+                    </div>
+                    <h3>Extreme verbruikspieken – maximum belasting</h3>
+                    <p>Tussen 17:00 en 21:00 piekt het verbruik: keukens, sauna's, liften, honderden douchende gasten. Overschrijd je het contractvermogen? Dan volgen torenhoge boetes van de netbeheerder.</p>
+                    <a href="maximum-belasting.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over maximum belasting →</a>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#7FBF3A" stroke-width="2"/><path d="M24 6v4M24 38v4M6 24h4M38 24h4" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="6" fill="#7FBF3A" opacity="0.2"/></svg>
+                    </div>
+                    <h3>Stroom (zon) overschot</h3>
+                    <p>Wat moet je doen met overschot aan energie? Terugleveren lukt of mag niet altijd meer. Terugleveren kan zelfs geld kosten. Sla je eigen zonne-energie op en gebruik het wanneer jij het nodig hebt.</p>
+                    <a href="stroom-overschot.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over stroomoverschot →</a>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#7FBF3A" stroke-width="2"/><path d="M24 10v28M14 24h20" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round"/><rect x="16" y="16" width="16" height="16" rx="3" stroke="#7FBF3A" stroke-width="1.5" opacity="0.5"/></svg>
+                    </div>
+                    <h3>Dieselaggregaat vervangen? Stroomuitval managen</h3>
+                    <p>Veel hotels hebben een dieselaggregaat voor noodsituaties. Wil je hiervan af en deze vervangen door een batterij? Dat kan — met een slim accusysteem heb je altijd noodstroom, zonder uitstoot en zonder onderhoud.</p>
+                    <a href="stroomuitval-noodaggregaat.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over stroomuitval →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAAROM HES -->
+    <section id="voordelen" class="dark" style="padding:5rem 0;">
+        <div class="container">
+            <p class="section-label">Waarom Hospitality Energy Solutions</p>
+            <h2>Meer dan alleen energie</h2>
+            <p style="max-width:700px;margin-top:0.75rem;">
+                HES levert niet alleen batterijen en laadpalen — wij creëren nieuwe verdienmodellen voor jouw hotel. Van upsell naar je gasten tot marketing op snelladers.
+            </p>
+            <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:2rem;">
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="18" y="6" width="12" height="18" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M20 26v6M28 26v6M20 32h8M24 38v4" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="14" r="3" stroke="#7FBF3A" stroke-width="1.5"/><text x="24" y="47" text-anchor="middle" fill="#7FBF3A" font-size="16" font-weight="700">€</text></svg></div>
+                    <h3>Extra omzet via laadpalen</h3>
+                    <p>Plaats laadpalen of snelladers bij jouw hotel en verdien per laadsessie. Gasten, passanten én omwonenden laden bij jou — 24/7 inkomsten.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="3" stroke="#7FBF3A" stroke-width="2"/><line x1="8" y1="14" x2="40" y2="14" stroke="#7FBF3A" stroke-width="1.5"/><rect x="14" y="20" width="20" height="3" rx="1" fill="#7FBF3A" opacity="0.3"/><rect x="14" y="27" width="16" height="3" rx="1" fill="#7FBF3A" opacity="0.3"/><circle cx="34" cy="35" r="5" stroke="#7FBF3A" stroke-width="1.5"/><path d="M32 33l4 4 4-4" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3>Upsell bij kamerreservering</h3>
+                    <p>Bied bij de boeking een gegarandeerde laadpaal aan. Een extra service die gasten overtuigt om voor jouw hotel te kiezen — én extra omzet oplevert.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="24" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M14 44v-6M24 44v-4M34 44v-6" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><rect x="14" y="16" width="20" height="12" rx="2" fill="#7FBF3A" opacity="0.15"/><path d="M18 20l4 4 8-8" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3>Marketing op laaddisplays</h3>
+                    <p>Snelladers hebben grote schermen. Toon tijdens het wachten: "Koffie & gebak in ons restaurant" of "10% korting op je volgende overnachting" — directe conversie.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="16" cy="16" r="6" stroke="#7FBF3A" stroke-width="2"/><circle cx="32" cy="32" r="6" stroke="#7FBF3A" stroke-width="2"/><line x1="20" y1="20" x2="28" y2="28" stroke="#7FBF3A" stroke-width="2"/><circle cx="16" cy="32" r="6" stroke="#7FBF3A" stroke-width="2" stroke-dasharray="3 2"/><circle cx="32" cy="16" r="6" stroke="#7FBF3A" stroke-width="2" stroke-dasharray="3 2"/></svg></div>
+                    <h3>Flexibel EMS × PMS-koppeling</h3>
+                    <p>Het EMS van HES koppelt via API's met jouw Property Management System. Maak slimme upsell-pakketten: laadpaal + kamer + ontbijt in één boeking.</p>
+                </div>
+            </div>
+            <div style="text-align:right;margin-top:1.5rem;">
+                <a href="voordelen.html" class="btn btn-ghost">Lees meer over de verdienmodellen →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIEKE POSITIE -->
+    <section style="background:#E8F2DC;padding:5rem 0;">
+        <div class="container">
+            <p class="section-label" style="color:#0F3D23;">Onze Unieke Positie in de Markt</p>
+            <h2 style="color:#0F3D23;">Wat HES écht anders maakt (USP)</h2>
+            <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:2rem;">
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="3" stroke="#7FBF3A" stroke-width="2"/><line x1="18" y1="20" x2="30" y2="20" stroke="#7FBF3A" stroke-width="1.5"/><line x1="18" y1="26" x2="30" y2="26" stroke="#7FBF3A" stroke-width="1.5"/><line x1="18" y1="32" x2="24" y2="32" stroke="#7FBF3A" stroke-width="1.5"/><path d="M36 18l4 4-4 4" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3>Directe fabrieksdistributie</h3>
+                    <p>Wij importeren hardware direct van de fabriek. Onderdelen op voorraad in Nederland. Geen tussenpersonen. <strong>2-4 weken levertijd</strong> vanuit voorraad.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="12" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="6" fill="#7FBF3A"/><line x1="24" y1="6" x2="24" y2="18" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="30" x2="24" y2="42" stroke="#7FBF3A" stroke-width="2"/><line x1="6" y1="24" x2="18" y2="24" stroke="#7FBF3A" stroke-width="2"/><line x1="30" y1="24" x2="42" y2="24" stroke="#7FBF3A" stroke-width="2"/></svg></div>
+                    <h3>Eén geïntegreerd ecosysteem</h3>
+                    <p>Batterij + EMS + OCPP 2.0.1 laden + 25 kW DC-gekoppelde zon in <strong>één platform</strong>. Één contract, één factuur, één telefoonnummer. Alles uit één hand — geen gedoe met losse partijen.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="#7FBF3A" stroke-width="2"/><line x1="14" y1="16" x2="34" y2="16" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="22" x2="30" y2="22" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="28" x2="34" y2="28" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="34" x2="26" y2="34" stroke="#7FBF3A" stroke-width="1.5"/><circle cx="38" cy="20" r="1.5" fill="#7FBF3A"/></svg></div>
+                    <h3>Programmeerbaar EMS</h3>
+                    <p>Het <strong>enige programmeerbare</strong> energie management systeem. Geen vaste profielen, geen gesloten cloudplatforms — op maat gemaakte Python-strategieën per locatie.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 6L6 18l18 12 18-12L24 6z" stroke="#7FBF3A" stroke-width="2"/><path d="M6 18v12l18 12 18-12V18" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="30" x2="24" y2="42" stroke="#7FBF3A" stroke-width="1.5"/><path d="M18 24l-12-4M30 24l12-4" stroke="#7FBF3A" stroke-width="1" stroke-linecap="round"/></svg></div>
+                    <h3>6-laags veiligheidsarchitectuur</h3>
+                    <p>LFP-chemie → per-cel BMS-monitoring → vloeistofkoeling → ingebouwde brandonderdrukking → noodstop met AC-contactor → integratie met brandmeldpaneel. <strong>UL 9540A, UL 1973, UL 1642, IEC 62933-5-2.</strong></p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="6" x2="24" y2="16" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="32" x2="24" y2="42" stroke="#7FBF3A" stroke-width="2"/><line x1="6" y1="24" x2="16" y2="24" stroke="#7FBF3A" stroke-width="2"/><line x1="32" y1="24" x2="42" y2="24" stroke="#7FBF3A" stroke-width="2"/><path d="M14 14l-6-6M34 14l6-6M14 34l-6 6M34 34l6 6" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                    <h3>DC-gekoppelde zonne-energie</h3>
+                    <p>25 kW+ MPPT direct op de DC-bus. <strong>Geen conversieverlies.</strong> Maximaal rendement uit je zonnepanelen — elke opgewekte kWh gaat direct je accu in.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#7FBF3A" stroke-width="2"/><path d="M16 24l6 6 12-12" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="3" fill="#7FBF3A"/></svg></div>
+                    <h3>Turnkey oplevering</h3>
+                    <p>Engineering, installatie, inbedrijfstelling, 24/7 monitoring, onderdelen, support. <strong>Alles inbegrepen</strong> in één transparante prijs — geen verborgen kosten achteraf.</p>
+                </div>
+            </div>
+            <div style="text-align:right;margin-top:1.5rem;">
+                <a href="usp-veiligheid.html" class="btn" style="background:var(--green-primary);color:white;padding:0.65rem 1.5rem;font-size:0.85rem;border-radius:50px;">Lees verder over USP's en veiligheid →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENARIOS -->
+    <section id="scenarios" style="background:var(--off-white);">
+        <div class="container">
+            <p class="section-label">Waar begin ik</p>
+            <h2>Bouw stap voor stap<br>naar energie-onafhankelijkheid</h2>
+            <p style="margin-top:0.75rem;color:var(--text-muted);max-width:700px;">
+                Elk hotel is anders. Daarom bouwt HES jouw energiesysteem modulair op — van eenvoudige batterijopslag tot een compleet ecosysteem met zonnepanelen, EMS en EV-laadpalen. Begin waar jij wilt, breid uit wanneer jij klaar bent.
+            </p>
+
+            <!-- Scenario 1 -->
+            <div class="scenario">
+                <div class="fade-in">
+                    <p class="scenario-number">Stap 1</p>
+                    <h3>Begin met Opslag</h3>
+                    <p style="margin-top:0.5rem;opacity:0.85;">Een accusysteem dat goedkope nachtenergie opslaat en overdag vrijgeeft — met noodstroom als het net uitvalt.</p>
+                    <div class="scenario-benefits">
+                        <div class="scenario-benefit">
+                            <span class="num">01</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Besparing door pieksnijden</h4>
+                                <p>Laad van het net tijdens goedkope daluren (40-60% lager tarief) en gebruik opgeslagen stroom tijdens dure piekuren.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-benefit">
+                            <span class="num">02</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Stroomzekerheid</h4>
+                                <p>261 kWh LFP-opslag houdt kritische systemen draaiend tijdens netuitval — gasten merken er niets van.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-benefit">
+                            <span class="num">03</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Lagere transportkosten</h4>
+                                <p>Accu vangt piekbelasting af — de transportkostencomponent op je energierekening daalt direct.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scenario-visual fade-in">
+                    <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="g1"><feGaussianBlur stdDeviation="2.5"/></filter>
+                        </defs>
+                        <rect width="360" height="300" rx="14" fill="white" stroke="#D4DDD0" stroke-width="1"/>
+                        <!-- Divider -->
+                        <line x1="180" y1="15" x2="180" y2="285" stroke="#D4DDD0" stroke-width="1" stroke-dasharray="4 6"/>
+                        <!-- Headers -->
+                        <text x="90" y="28" text-anchor="middle" fill="#0F3D23" font-size="11" font-weight="700" font-family="Inter,sans-serif" letter-spacing="1">NACHT — DALUREN LADEN</text>
+                        <text x="270" y="28" text-anchor="middle" fill="#0F3D23" font-size="11" font-weight="700" font-family="Inter,sans-serif" letter-spacing="1">DAG — PIEK ONTLADEN</text>
+                        <!-- Night: Grid box -->
+                        <rect x="25" y="55" width="130" height="52" rx="10" fill="rgba(127,191,58,0.1)" stroke="#7FBF3A" stroke-width="1.5"/>
+                        <text x="90" y="78" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Net</text>
+                        <text x="90" y="96" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Daluurtarief laden</text>
+                        <!-- Night: Battery box -->
+                        <rect x="25" y="145" width="130" height="52" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
+                        <text x="90" y="168" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
+                        <text x="90" y="186" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Opladen 23:00–07:00</text>
+                        <!-- Night flow -->
+                        <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5 4" d="M90 107 L90 143"/>
+                        <circle class="energy-dot" color="#7FBF3A" r="4" style="--fp:path('M90 107 L90 143');--fd:2s"/>
+                        <!-- Day: Battery box -->
+                        <rect x="205" y="55" width="130" height="52" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
+                        <text x="270" y="78" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
+                        <text x="270" y="96" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Ontladen 07:00–23:00</text>
+                        <!-- Day: Hotel box -->
+                        <rect x="205" y="170" width="130" height="52" rx="10" fill="rgba(127,191,58,0.08)" stroke="#7FBF3A" stroke-width="1.5"/>
+                        <text x="270" y="193" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
+                        <text x="270" y="211" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Piekvoorziening</text>
+                        <!-- Day flow -->
+                        <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5 4" d="M270 107 L270 168"/>
+                        <circle class="energy-dot" color="#2E7032" r="4" style="--fp:path('M270 107 L270 168');--fd:2.5s"/>
+                        <!-- Labels -->
+                        <text x="90" y="245" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Inkoop tegen laag tarief</text>
+                        <text x="270" y="245" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Voorkomt piekboetes</text>
+                        <text x="180" y="280" text-anchor="middle" fill="#2E7032" font-size="11" font-weight="600" font-family="Inter,sans-serif">Besparing: 40-60% op energiekosten</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Scenario 2 -->
+            <div class="scenario">
+                <div class="fade-in">
+                    <p class="scenario-number">Stap 2</p>
+                    <h3>Voeg Intelligentie Toe</h3>
+                    <p style="margin-top:0.5rem;opacity:0.85;">Het Energy Management System is het brein dat alles automatisch optimaliseert — het leert jouw hotel, reageert op prijzen en geeft volledig inzicht.</p>
+                    <div class="scenario-benefits">
+                        <div class="scenario-benefit">
+                            <span class="num">01</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Hands-free optimalisatie</h4>
+                                <p>Het EMS leert de verbruikspatronen van jouw hotel en optimaliseert laden en ontladen — zonder dat jij een vinger uitsteekt.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-benefit">
+                            <span class="num">02</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Real-time dashboard</h4>
+                                <p>Zie precies waar elke kilowatt naartoe gaat: live verbruik, accustatus, netimport/export en besparing — in één overzicht.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-benefit">
+                            <span class="num">03</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Automatische tariefresponse</h4>
+                                <p>Met dynamische energieprijzen reageert het EMS in real-time — ontladen tijdens dure uren, laden wanneer tarieven dalen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scenario-visual fade-in">
+                    <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs><filter id="g2"><feGaussianBlur stdDeviation="2.5"/></filter></defs>
+                        <rect width="360" height="300" rx="14" fill="white" stroke="#D4DDD0" stroke-width="1"/>
+                        <!-- Top row: Grid + Hotel -->
+                        <rect x="20" y="20" width="120" height="52" rx="10" fill="rgba(127,191,58,0.1)" stroke="#7FBF3A" stroke-width="1.5"/>
+                        <text x="80" y="43" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Net</text>
+                        <text x="80" y="61" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Real-time prijzen</text>
+                        <rect x="220" y="20" width="120" height="52" rx="10" fill="rgba(127,191,58,0.08)" stroke="#B7E08A" stroke-width="1.5"/>
+                        <text x="280" y="43" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
+                        <text x="280" y="61" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Geoptimaliseerd</text>
+                        <!-- Center: EMS hub -->
+                        <circle cx="180" cy="160" r="55" fill="rgba(46,112,50,0.05)" stroke="#2E7032" stroke-width="1.5" filter="url(#g2)"/>
+                        <circle cx="180" cy="160" r="42" fill="none" stroke="rgba(46,112,50,0.15)" stroke-width="1" stroke-dasharray="3 4"/>
+                        <circle cx="180" cy="160" r="46" fill="none" stroke="rgba(46,112,50,0.06)" stroke-width="2" class="energy-glow"/>
+                        <text x="180" y="155" text-anchor="middle" fill="#0F3D23" font-size="20" font-weight="800" font-family="Inter,sans-serif">EMS</text>
+                        <text x="180" y="171" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Energiemanagement</text>
+                        <!-- Bottom: Battery -->
+                        <rect x="110" y="240" width="140" height="44" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
+                        <text x="180" y="263" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
+                        <text x="180" y="278" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Opslag &amp; buffering</text>
+                        <!-- Flow lines: Grid → EMS -->
+                        <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5 4" d="M80 72 L150 118"/>
+                        <circle class="energy-dot" color="#7FBF3A" r="3.5" style="--fp:path('M80 72 L150 118');--fd:2.5s"/>
+                        <!-- Hotel → EMS -->
+                        <path class="energy-flow" stroke="#B7E08A" stroke-dasharray="5 4" d="M280 72 L210 118"/>
+                        <circle class="energy-dot energy-dot-delayed" color="#7FBF3A" r="3.5" style="--fp:path('M280 72 L210 118');--fd:2.5s;--fdl:1.2s"/>
+                        <!-- EMS → Battery -->
+                        <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5 4" d="M180 215 L180 238"/>
+                        <circle class="energy-dot" color="#2E7032" r="3.5" style="--fp:path('M180 215 L180 238');--fd:3s"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Scenario 3 -->
+            <div class="scenario">
+                <div class="fade-in">
+                    <p class="scenario-number">Stap 3</p>
+                    <h3>Benut de Zon</h3>
+                    <p style="margin-top:0.5rem;opacity:0.85;">Gebruik je bestaande zonnepanelen — of laat nieuwe installeren — en sla elke kilowatt op in plaats van terug te leveren tegen ongunstige tarieven.</p>
+                    <div class="scenario-benefits">
+                        <div class="scenario-benefit">
+                            <span class="num">01</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Maximaliseer zonne-ROI</h4>
+                                <p>Sla overtollige zonne-energie op in je accu en gebruik het wanneer jouw hotel het nodig heeft — of wanneer de prijzen het hoogst zijn.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-benefit">
+                            <span class="num">02</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">60-80% zelfvoorzienend</h4>
+                                <p>Met zon en opslag samen dekken typische hotels het grootste deel van hun dagelijkse elektriciteitsbehoefte uit eigen installatie.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-benefit">
+                            <span class="num">03</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Lagere CO₂-voetafdruk</h4>
+                                <p>Elke kilowatt van je eigen dak verlaagt de CO₂-uitstoot — steeds belangrijker voor gasten, ketens en regelgeving.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scenario-visual fade-in">
+                    <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg">
+                        <defs><filter id="g3"><feGaussianBlur stdDeviation="2.5"/></filter></defs>
+                        <rect width="360" height="280" rx="14" fill="white" stroke="#D4DDD0" stroke-width="1"/>
+                        <!-- Solar panels top -->
+                        <rect x="80" y="15" width="200" height="48" rx="10" fill="rgba(245,158,11,0.06)" stroke="#F59E0B" stroke-width="1.5" filter="url(#g3)"/>
+                        <text x="180" y="44" text-anchor="middle" fill="#0F3D23" font-size="15" font-weight="700" font-family="Inter,sans-serif">Zonnepanelen</text>
+                        <!-- Battery left -->
+                        <rect x="15" y="120" width="150" height="52" rx="10" fill="rgba(46,112,50,0.1)" stroke="#2E7032" stroke-width="1.5"/>
+                        <text x="90" y="143" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
+                        <text x="90" y="161" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Slaat overschot op</text>
+                        <!-- Hotel right -->
+                        <rect x="195" y="120" width="150" height="52" rx="10" fill="rgba(127,191,58,0.08)" stroke="#7FBF3A" stroke-width="1.5"/>
+                        <text x="270" y="143" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
+                        <text x="270" y="161" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Direct verbruik</text>
+                        <!-- Flows -->
+                        <path class="energy-flow" stroke="#F59E0B" stroke-dasharray="5 4" d="M120 63 L100 118"/>
+                        <circle class="energy-dot" color="#F59E0B" r="3.5" style="--fp:path('M120 63 L100 118');--fd:2.2s"/>
+                        <path class="energy-flow" stroke="#F59E0B" stroke-dasharray="5 4" d="M240 63 L250 118"/>
+                        <circle class="energy-dot energy-dot-delayed" color="#F59E0B" r="3.5" style="--fp:path('M240 63 L250 118');--fd:2.2s;--fdl:1s"/>
+                        <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5 4" d="M165 146 L193 146"/>
+                        <circle class="energy-dot" color="#2E7032" r="3.5" style="--fp:path('M165 146 L193 146');--fd:3s"/>
+                        <!-- Labels -->
+                        <text x="180" y="210" text-anchor="middle" fill="#556B58" font-size="12" font-family="Inter,sans-serif">Prioriteit: zon → accu → hotel</text>
+                        <text x="180" y="235" text-anchor="middle" fill="#0F3D23" font-size="12" font-weight="700" font-family="Inter,sans-serif">Tot 80% zelfvoorzienend</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Scenario 4 -->
+            <div class="scenario">
+                <div class="scenario-visual fade-in">
+                    <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+                        <defs><filter id="g4"><feGaussianBlur stdDeviation="2.5"/></filter></defs>
+                        <rect width="360" height="260" rx="14" fill="white" stroke="#D4DDD0" stroke-width="1"/>
+                        <!-- Accu left -->
+                        <rect x="20" y="70" width="130" height="52" rx="10" fill="rgba(46,112,50,0.1)" stroke="#2E7032" stroke-width="1.5"/>
+                        <text x="85" y="93" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
+                        <text x="85" y="111" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Opgeslagen energie</text>
+                        <!-- Solar panel left-top -->
+                        <rect x="40" y="15" width="90" height="36" rx="8" fill="rgba(245,158,11,0.06)" stroke="#F59E0B" stroke-width="1.2"/>
+                        <text x="85" y="38" text-anchor="middle" fill="#0F3D23" font-size="12" font-weight="600" font-family="Inter,sans-serif">☀ Zon</text>
+                        <path class="energy-flow" stroke="#F59E0B" stroke-dasharray="4 3" d="M85 51 L85 68"/>
+                        <circle class="energy-dot" color="#F59E0B" r="3" style="--fp:path('M85 51 L85 68');--fd:2s"/>
+                        <!-- EV charger center -->
+                        <rect x="210" y="70" width="130" height="52" rx="10" fill="rgba(14,165,233,0.06)" stroke="#0EA5E9" stroke-width="1.5"/>
+                        <text x="275" y="93" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">EV Laadpalen</text>
+                        <text x="275" y="111" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">40–120 kW DC</text>
+                        <!-- Flow battery → EV -->
+                        <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5 4" d="M150 96 L208 96"/>
+                        <circle class="energy-dot" color="#7FBF3A" r="3.5" style="--fp:path('M150 96 L208 96');--fd:2.5s"/>
+                        <!-- Revenue indicator -->
+                        <rect x="100" y="170" width="160" height="40" rx="10" fill="rgba(127,191,58,0.08)" stroke="#7FBF3A" stroke-width="1.5" filter="url(#g4)"/>
+                        <text x="180" y="195" text-anchor="middle" fill="#0F3D23" font-size="13" font-weight="700" font-family="Inter,sans-serif">€ Omzet per kWh</text>
+                        <!-- Flow EV → revenue -->
+                        <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5 4" d="M275 122 L220 168"/>
+                        <circle class="energy-dot energy-dot-delayed" color="#7FBF3A" r="3.5" style="--fp:path('M275 122 L220 168');--fd:2.5s;--fdl:1.2s"/>
+                        <!-- Labels -->
+                        <text x="180" y="232" text-anchor="middle" fill="#0F3D23" font-size="12" font-weight="700" font-family="Inter,sans-serif">Nieuwe inkomstenbron voor je hotel</text>
+                        <text x="180" y="250" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Gasten laden — jij verdient, 24/7</text>
+                    </svg>
+                </div>
+                <div class="fade-in">
+                    <p class="scenario-number">Stap 4</p>
+                    <h3>Laad Vooruit</h3>
+                    <p style="margin-top:0.5rem;opacity:0.85;">Voeg snelle DC-laadpalen toe, aangedreven door jouw opgeslagen zonne-energie. Het EMS beheert de belasting dynamisch — gasten laden, jij verdient.</p>
+                    <div class="scenario-benefits">
+                        <div class="scenario-benefit">
+                            <span class="num">01</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Nieuwe inkomstenbron</h4>
+                                <p>Reken gasten voor laadsessies. Eén lader kan een significante extra omzet per jaar genereren — direct op je bottom line.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-benefit">
+                            <span class="num">02</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Premium voorziening</h4>
+                                <p>Bied snelladen als onderscheidende service — gasten vertrekken volgeladen. Jouw hotel wordt de voorkeur van EV-rijders.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-benefit">
+                            <span class="num">03</span>
+                            <div>
+                                <h4 style="color:var(--green-primary);">Toekomstbestendig</h4>
+                                <p>Met de snelle adoptie van EV's in Europa positioneer jij je hotel klaar voor het komende decennium.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VERGELIJK -->
+    <section id="vergelijk">
+        <div class="container">
+            <p class="section-label">Vergelijk</p>
+            <h2>Elke stap bouwt verder</h2>
+            <p style="color:var(--text-muted);margin-top:0.5rem;">Van simpele opslag tot een compleet energie-ecosysteem — elke stap voegt functionaliteit toe zonder dat de basis verandert.</p>
+            <div class="table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Functionaliteit</th>
+                            <th>1 — OPSLAG</th>
+                            <th>2 — + EMS</th>
+                            <th>3 — + ZON</th>
+                            <th>4 — + EV</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Pieksnijden</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Noodstroom</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Lagere transportkosten</td><td class="check">✓</td><td class="optimal">Optimaal</td><td class="optimal">Optimaal</td><td class="optimal">Optimaal</td></tr>
+                        <tr><td>Automatische optimalisatie</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Real-time monitoring</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Dynamische tariefresponse</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Zonne-integratie</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Maximale zonne-ROI</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>EV-laadinkomsten</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>Dynamisch lastbeheer</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>Gasten laden (premium service)</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td><strong>Componenten</strong></td><td>Alleen accu</td><td>Accu + EMS</td><td>Accu + EMS + Zon</td><td><strong>Alle vier</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align:center;margin-top:2rem;">
+                <a href="configurator.html" class="btn btn-primary">Bereken jouw configuratie →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OVER ONS -->
+    <section id="over-ons" class="dark">
+        <div class="container">
+            <p class="section-label">Over ons</p>
+            <h2>Samen sterk in hospitality</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3 style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42V14l18-10 18 10v28"/><path d="M12 42V18l12-7 12 7v24"/><path d="M20 42V30h8v12"/></svg> HES</h3>
+                    <p>Hospitality Energy Solutions is jouw aanspreekpunt. Wij kennen de hotellerie — van boutique hotel tot internationale keten. HES vertaalt jouw wensen naar een passende energieoplossing en begeleidt je van eerste gesprek tot operationeel systeem. Geen technische praat, gewoon helder advies.</p>
+                </div>
+                <div class="about-card">
+                    <h3 style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="26 4 6 28 24 28 22 44 42 20 24 20 26 4"/></svg> Stroomlijnen</h3>
+                    <p>Onze technische partner met 25+ jaar ervaring in laadinfrastructuur. Stroomlijnen verzorgt de hardware, installatie, het OCPP-platform, 24/7 monitoring, onderhoud en alle certificeringen. Alles wat met techniek te maken heeft, ligt bij hen — en werkt gegarandeerd.</p>
+                </div>
+            </div>
+            <p style="margin-top:1.5rem;opacity:0.8;text-align:center;">
+                HES verkoopt. Stroomlijnen bouwt. Jij profiteert.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Klaar om jouw hotel energie-onafhankelijk te maken?</h2>
+            <p>Elk hotel is uniek. In een vrijblijvend gesprek kijken we naar jouw situatie en schetsen we wat er mogelijk is — zonder verplichtingen.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <a href="configurator.html" class="btn btn-primary">Doe de configurator →</a>
+                <a href="mailto:hello@hes.energy" class="btn btn-outline">hello@hes.energy</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div>
+            <h4 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">HOSPITALITY ENERGY SOLUTIONS</h4>
+            <p style="margin-top:0.5rem;">HES maakt hotels energie-onafhankelijk — met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
+            <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
+        </div>
+        <div>
+            <h4>Oplossingen</h4>
+            <ul>
+                <li><a href="netcongestie.html">Netcongestie</a></li>
+                <li><a href="verduurzamen.html">Verduurzamen</a></li>
+                <li><a href="maximum-belasting.html">Maximum belasting</a></li>
+                <li><a href="stroom-overschot.html">Stroom overschot</a></li>
+                <li><a href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Producten &amp; Diensten</h4>
+            <ul>
+                <li><a href="producten.html">Batterijopslag</a></li>
+                <li><a href="producten.html">Laadpalen &amp; snelladers</a></li>
+                <li><a href="producten.html">EMS &amp; monitoring</a></li>
+                <li><a href="configurator.html">Energieconfigurator</a></li>
+                <li><a href="subsidies.html">Subsidies &amp; regelingen</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Informatie</h4>
+            <ul>
+                <li><a href="voordelen.html">Verdienmodellen</a></li>
+                <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
+                <li><a href="over-ons.html">Over ons</a></li>
+                <li><a href="nieuws.html">Nieuws &amp; blog</a></li>
+                <li><a href="mailto:hello@hes.energy">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
+        </div>
+    </div>
+    </footer>
+
+<script>
+    // Intersection Observer for fade-in
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Radio slider auto-advance
+    let si = 0;
+    setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
+</script>
+
+<script>
+/* Contact modal — verzend via mailto: */
+(function(){
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var v = document.getElementById('voornaam').value.trim();
+        var a = document.getElementById('achternaam').value.trim();
+        var b = document.getElementById('bedrijfsnaam').value.trim();
+        var f = document.getElementById('functie').value.trim();
+        var em = document.getElementById('email').value.trim();
+        var m = document.getElementById('mobiel').value.trim();
+        var ber = document.getElementById('bericht').value.trim();
+
+        var subject = 'Contactverzoek van ' + v + ' ' + a + ' — ' + b;
+        var body = '';
+        body += 'Naam: ' + v + ' ' + a + '\n';
+        body += 'Bedrijf: ' + b + '\n';
+        body += 'Functie: ' + f + '\n';
+        body += 'E-mail: ' + em + '\n';
+        body += 'Mobiel: ' + m + '\n';
+        body += '\nBericht:\n' + ber;
+
+        window.location.href = 'mailto:hello@hes.energy'
+            + '?subject=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(body);
+
+        // Toon bevestiging
+        form.innerHTML = '<div style="text-align:center;padding:2rem;"><div style="font-size:3rem;margin-bottom:1rem;">✓</div><h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3><p style="color:var(--text-muted);">Je e-mailprogramma is geopend. Verstuur de e-mail en we nemen binnen 24 uur contact met je op.</p><p style="margin-top:1rem;"><a href="mailto:hello@hes.energy" style="color:var(--green-accent);font-weight:600;">Of stuur direct een e-mail →</a></p></div>';
+    });
+
+    // Sluit modal met ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var modal = document.getElementById('contact-modal');
+            if (modal && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
+    });
+})();
+</script>
+
+
+
+<script>
+/* Mobile menu: move nav-links outside nav stacking context */
+(function(){
+    var nav = document.querySelector('nav');
+    var panel = document.getElementById('mobile-menu-panel');
+    var links = document.querySelector('.mobile-menu-panel');
+    if (!panel || !links) return;
+    
+    function moveMenu() {
+        if (window.innerWidth <= 768) {
+            if (links.parentNode !== panel) {
+                panel.appendChild(links);
+            }
+        } else {
+            var container = nav.querySelector('.container');
+            if (links.parentNode === panel && container) {
+                container.appendChild(links);
+            }
+        }
+    }
+    
+    moveMenu();
+    window.addEventListener('resize', moveMenu);
+})();
+</script>
+
+<script>
+/* Mobile dropdown toggle */
+document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('open');
+        }
+    });
+});
+/* Close menu when clicking a non-dropdown link */
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(link => {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+            var m = document.querySelector('.mobile-menu-panel');
+            var btn = document.querySelector('.menu-toggle');
+            m.classList.remove('active');
+            if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded','false'); }
+            document.body.style.overflow = '';
+        }
+    });
+});
+/* Close menu on ESC */
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && window.innerWidth <= 768) {
+        var m = document.querySelector('.mobile-menu-panel');
+        var btn = document.querySelector('.menu-toggle');
+        if (m.classList.contains('active')) {
+            m.classList.remove('active');
+            if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded','false'); }
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="contact-modal" style="display:none;">
+    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
+    <div class="contact-modal-content">
+        <button class="contact-modal-close" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <h3>Vrijblijvend contact</h3>
+        <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
+
+        <form id="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="voornaam">Voornaam <span class="required">*</span></label>
+                    <input type="text" id="voornaam" name="voornaam" required placeholder="Jan">
+                </div>
+                <div class="form-group">
+                    <label for="achternaam">Achternaam <span class="required">*</span></label>
+                    <input type="text" id="achternaam" name="achternaam" required placeholder="Jansen">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required">*</span></label>
+                    <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
+                </div>
+                <div class="form-group">
+                    <label for="functie">Functie <span class="required">*</span></label>
+                    <input type="text" id="functie" name="functie" required placeholder="Directeur / Facility Manager">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mailadres <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                </div>
+                <div class="form-group">
+                    <label for="mobiel">Mobiel nummer <span class="required">*</span></label>
+                    <input type="tel" id="mobiel" name="mobiel" required placeholder="06 12345678">
+                </div>
+            </div>
+            <div class="form-group" style="grid-column:1/-1;">
+                <label for="bericht">Je bericht <span class="required">*</span></label>
+                <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
+            </div>
+            <div style="text-align:center;margin-top:1.25rem;">
+                <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
