@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <defs>
+    <linearGradient id="lemnion-mark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7FBF3A"/>
+      <stop offset="50%" stop-color="#B7E08A"/>
+      <stop offset="100%" stop-color="#7FBF3A"/>
+    </linearGradient>
+  </defs>
+  <!-- Echte lemniscaat (∞) gecentreerd in 160x160: twee lussen die in het midden kruisen -->
+  <path d="M40 120 C0 120 0 40 40 40 C80 40 80 120 120 120 C160 120 160 40 120 40 C80 40 80 120 40 120 Z"
+    fill="none" stroke="url(#lemnion-mark)" stroke-width="13" stroke-linecap="round"/>
+  <!-- Energiepuntjes op de uiteinden -->
+  <circle cx="40" cy="40" r="6" fill="#B7E08A"/>
+  <circle cx="120" cy="120" r="6" fill="#7FBF3A"/>
+</svg>

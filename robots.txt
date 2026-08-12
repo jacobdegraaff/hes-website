@@ -1,4 +1,4 @@
-# robots.txt — Hospitality Energy Solutions
+# robots.txt voor Hospitality Energy Solutions
 # Laatst bijgewerkt: 2026-08-03
 
 User-agent: *
@@ -6,4 +6,4 @@ Allow: /
 Disallow: /assets/
 Disallow: /admin.html
 
-Sitemap: https://hes.energy/sitemap.xml
+Sitemap: https://lemnion.com/sitemap.xml
