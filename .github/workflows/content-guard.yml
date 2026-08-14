@@ -1,0 +1,74 @@
+name: Content Guard
+
+# Deze workflow beschermt de main-branch:
+# - Content-updates (nieuws.html, subsidies.html, .xlsx, assets) mogen altijd door
+# - Code/structuur-wijzigingen naar main worden gemarkeerd als FAILED
+#   zodat ze zichtbaar zijn en via dev → PR moeten gaan
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  check-content-only:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Determine changed files
+        id: changed
+        run: |
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          git diff --name-only HEAD^ HEAD >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Check for non-content files
+        id: check
+        run: |
+          # Content-bestanden die ALTIJD mogen naar main (cronjob-updates)
+          # pas dit lijstje aan als er nieuwe content-bestanden bijkomen
+          python3 << 'PYEOF'
+          import os, re, sys
+
+          changed = """${{ steps.changed.outputs.files }}""".strip().splitlines()
+          changed = [c for c in changed if c.strip()]
+
+          # Regels: bestand is content als...
+          def is_content(f):
+              f = f.strip()
+              if not f:
+                  return True
+              # Bestanden die de cronjobs dagelijks bijwerken
+              if f in ("nieuws.html", "subsidies.html"):
+                  return True
+              # Excel-budgetbestanden
+              if f.startswith("HES_Budget_") and f.endswith(".xlsx"):
+                  return True
+              if f == "HES_Factcheck_Claims.xlsx":
+                  return True
+              # Afbeeldingen en assets (nieuwe plaatjes mogen mee)
+              if f.startswith("assets/") or f.endswith((".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif")):
+                  return True
+              # SEO/structuur-bestanden die geen code zijn
+              if f in ("robots.txt", "sitemap.xml", "CONTENT-RICHTLIJNEN.md"):
+                  return True
+              # Alles wat hier niet in staat = code/structuur
+              return False
+
+          bad = [f for f in changed if not is_content(f)]
+
+          if bad:
+              print(f"::error::Niet-content bestanden gevonden: {', '.join(bad)}")
+              print("Deze wijzigingen mogen niet direct naar main.")
+              print("Gebruik de dev-branch: push naar dev → test op dev.lemnion.nl → merge via PR.")
+              print("Nieuws/subsidies/budget-updates gaan via de cronjob-scripts en mogen wél.")
+              sys.exit(1)
+
+          print(f"Content-only check geslaagd: {len(changed)} bestanden zijn content")
+          PYEOF
+
+      - name: Content check passed
+        run: echo "✅ Alleen content-bestanden gewijzigd — deploy mag doorgaan"
