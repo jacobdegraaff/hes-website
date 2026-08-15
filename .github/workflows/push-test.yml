@@ -1,0 +1,24 @@
+name: Push Test
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Push test met GH_ADMIN_TOKEN
+        run: |
+          git config user.name "jacobdegraaff"
+          git config user.email "jacob@mjpeople.nl"
+          git commit --allow-empty -m "push-test met GH_ADMIN_TOKEN $(date +%s)"
+          echo "=== PUSH ==="
+          git push "https://x-access-token:${GH_ADMIN_TOKEN}@github.com/jacobdegraaff/hes-website.git" main
+          echo "=== PUSH GESLAAGD ==="
+        env:
+          GH_ADMIN_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
