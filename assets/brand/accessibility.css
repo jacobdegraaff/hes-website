@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Lemnion — Accessibility enhancements (WCAG 2.2)
+   Shared layer, loaded after each page's inline <style>.
+   Only fixes accessibility/responsive issues; does NOT redesign.
+   ========================================================================== */
+
+/* ── Reduced motion (WCAG 2.2.2, 2.3.3) ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        transition-delay: 0ms !important;
+        scroll-behavior: auto !important;
+    }
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .energy-dot, .energy-glow, .energy-pulse {
+        animation: none !important;
+        opacity: 0.4 !important;
+    }
+}
+
+/* ── Enhanced focus visibility (WCAG 2.4.7, 2.4.13) ─────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--green-accent, #7FBF3A);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Form fields: keep a strong, high-contrast focus indicator */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--green-secondary, #2E7032);
+    outline-offset: 2px;
+    border-color: var(--green-secondary, #2E7032);
+}
+
+/* ── Visually hidden (screenreader-only) utility ─────────────────────── */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+}
+
+/* ── Keyboard-focusable slider dots (replaces display:none radios) ──── */
+.hero-slider input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.hero-slider input[type="radio"]:focus-visible + label {
+    outline: 3px solid var(--green-accent, #7FBF3A);
+    outline-offset: 2px;
+}
+
+/* ── Touch target floor for small interactive elements (WCAG 2.5.8) ── */
+@media (max-width: 768px) {
+    .nav-links a,
+    .mobile-menu-panel a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* ── Hero main heading (promoted h2 -> h1): preserve the visual size ── */
+.hero h1 {
+    margin-bottom: 0;
+    letter-spacing: -0.01em;
+}
+@media (min-width: 769px) {
+    .hero h1 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+}
