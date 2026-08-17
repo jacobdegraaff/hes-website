@@ -419,7 +419,7 @@
                 word-wrap: break-word;
                 overflow-wrap: break-word;
             }
-            footer h4 { font-size: 0.75rem; margin-bottom: 0.5rem; }
+            footer h3 { font-size: 0.75rem; margin-bottom: 0.5rem; }
             footer ul li { margin-bottom: 0.3rem; }
             footer a { font-size: 0.72rem; }
             .footer-bottom { grid-column: 1 / -1; text-align: center; font-size: 0.7rem; padding-top: 0.75rem; }
@@ -612,7 +612,7 @@
             padding: 3rem 0 2rem; font-size: 0.85rem;
         }
         footer .container { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2rem; }
-        footer h4 { color: var(--off-white); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
+        footer h3 { color: var(--off-white); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
         footer ul { list-style: none; }
         footer ul li { margin-bottom: 0.5rem; }
         footer a { color: rgba(245, 247, 242, 0.6); text-decoration: none; transition: color 0.2s; }
@@ -653,6 +653,7 @@
 }
 
 </style>
+    <link rel="stylesheet" href="/assets/brand/accessibility.css">
 </head>
 <body>
 
@@ -660,7 +661,7 @@
 
 <nav>
     <div class="container">
-        <a href="/" class="nav-logo" aria-label="Lemnion · Hospitality Energy Solutions home">
+        <a href="/" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
             <svg class="nav-logo-icon" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <defs>
                     <linearGradient id="lemnion-mark-eacf33" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -766,7 +767,7 @@
                 <div class="container">
                     <div style="text-align:center;max-width:100%;">
                         <p class="section-label" style="margin-bottom:0.5rem;text-align:center;">Hospitality Energy Solutions</p>
-                        <h2 style="text-align:center;max-width:100%;">Energie-onafhankelijk.<br>Zonder zorgen.</h2>
+                        <h1 style="text-align:center;max-width:100%;">Energie-onafhankelijk.<br>Zonder zorgen.</h1>
                         <p style="text-align:center;max-width:100%;">Lemnion bouwt samen met Stroomlijnen één totaaloplossing waarmee jouw hotel bespaart, verdient én verduurzaamt, van batterijopslag tot slimme laadpalen.</p>
                         <div class="hero-cta">
                             <a href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
@@ -1306,12 +1307,12 @@
 <footer>
     <div class="container">
         <div>
-            <h4 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h4>
+            <h3 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h3>
             <p style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h4>Oplossingen</h4>
+            <h3>Oplossingen</h3>
             <ul>
                 <li><a href="netcongestie.html">Netcongestie</a></li>
                 <li><a href="verduurzamen.html">Verduurzamen</a></li>
@@ -1321,7 +1322,7 @@
             </ul>
         </div>
         <div>
-            <h4>Producten &amp; Diensten</h4>
+            <h3>Producten &amp; Diensten</h3>
             <ul>
                 <li><a href="producten.html">Batterijopslag</a></li>
                 <li><a href="producten.html">Laadpalen &amp; snelladers</a></li>
@@ -1331,7 +1332,7 @@
             </ul>
         </div>
         <div>
-            <h4>Informatie</h4>
+            <h3>Informatie</h3>
             <ul>
                 <li><a href="voordelen.html">Verdienmodellen</a></li>
                 <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
@@ -1358,7 +1359,19 @@
 
     // Radio slider auto-advance
     let si = 0;
-    setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
+    var heroAuto = null;
+    var heroReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function heroAdvance(){ si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }
+    function heroStart(){ if (!heroAuto) heroAuto = setInterval(heroAdvance, 5000); }
+    function heroStop(){ if (heroAuto) { clearInterval(heroAuto); heroAuto = null; } }
+    if (!heroReduced) heroStart();
+    var heroSliderEl = document.querySelector('.hero-slider');
+    if (heroSliderEl) {
+        heroSliderEl.addEventListener('mouseenter', heroStop);
+        heroSliderEl.addEventListener('mouseleave', function(){ if (!heroReduced) heroStart(); });
+        heroSliderEl.addEventListener('focusin', heroStop);
+        heroSliderEl.addEventListener('focusout', function(){ if (!heroReduced) heroStart(); });
+    }
 </script>
 
 <script>
@@ -1474,43 +1487,43 @@ document.addEventListener('keydown', function(e) {
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
         <h3>Vrijblijvend contact</h3>
         <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
         <form id="contact-form">
             <div class="form-row">
                 <div class="form-group">
-                    <label for="voornaam">Voornaam <span class="required">*</span></label>
-                    <input type="text" id="voornaam" name="voornaam" required placeholder="Jan">
+                    <label for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
                 </div>
                 <div class="form-group">
-                    <label for="achternaam">Achternaam <span class="required">*</span></label>
-                    <input type="text" id="achternaam" name="achternaam" required placeholder="Jansen">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required">*</span></label>
-                    <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
-                </div>
-                <div class="form-group">
-                    <label for="functie">Functie <span class="required">*</span></label>
-                    <input type="text" id="functie" name="functie" required placeholder="Directeur / Facility Manager">
+                    <label for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="email">E-mailadres <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
-                    <label for="mobiel">Mobiel nummer <span class="required">*</span></label>
-                    <input type="tel" id="mobiel" name="mobiel" required placeholder="06 12345678">
+                    <label for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
+                    <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                </div>
+                <div class="form-group">
+                    <label for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
+                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
-                <label for="bericht">Je bericht <span class="required">*</span></label>
+                <label for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
                 <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
@@ -1520,5 +1533,6 @@ document.addEventListener('keydown', function(e) {
     </div>
 </div>
 
+<script src="/assets/brand/accessibility.js" defer></script>
 </body>
 </html>
