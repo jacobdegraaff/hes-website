@@ -6,4 +6,4 @@ Allow: /
 Disallow: /assets/
 Disallow: /admin.html
 
-Sitemap: https://lemnion.com/sitemap.xml
+Sitemap: https://lemnion.nl/sitemap.xml
