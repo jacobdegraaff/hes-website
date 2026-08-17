@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-08-17",
+  "source": "Extracted from live lemnion.nl (repo jacobdegraaff/hes-website). Do not invent new values.",
+  "brand": {
+    "name": "Lemnion",
+    "descriptor": "Hospitality Energy Solutions",
+    "tagline": "Optimizing Every Watt",
+    "partner": "Stroomlijnen",
+    "positioning": "Premium energy infrastructure and technology partner for hospitality",
+    "voice": ["knowledgeable", "clear", "commercially intelligent", "calm", "confident", "practical", "hospitality-focused", "technically credible"]
+  },
+  "logo": {
+    "symbol": "/assets/lemnion-mark.svg",
+    "horizontal": "/assets/lemnion-logo.svg",
+    "white": "/assets/lemnion-logo-white.svg",
+    "og": "/assets/logo-og.png",
+    "faviconDir": "/assets/brand/favicon/",
+    "lemniscatePath": "M40 120 C0 120 0 40 40 40 C80 40 80 120 120 120 C160 120 160 40 120 40 C80 40 80 120 40 120 Z",
+    "gradient": ["#7FBF3A", "#B7E08A", "#7FBF3A"],
+    "wordmark": { "text": "lemnion", "font": "Montserrat", "weight": 700, "color": "#0F3D23", "colorOnDark": "#FFFFFF" },
+    "minimumSize": { "desktopSymbolPx": 34, "mobileSymbolPx": 30 }
+  },
+  "colors": {
+    "primary": { "name": "Lemnion Primary Green", "hex": "#0F3D23", "rgb": "15,61,35", "css": "--lemnion-primary", "usage": "brand core, dark backgrounds, headings on light" },
+    "secondary": { "name": "Lemnion Secondary Green", "hex": "#2E7032", "rgb": "46,112,50", "css": "--lemnion-secondary", "usage": "descriptors, optimal states" },
+    "accent": { "name": "Lemnion Accent Green", "hex": "#7FBF3A", "rgb": "127,191,58", "css": "--lemnion-accent", "usage": "CTAs, focus, active states, energy accents" },
+    "accentHover": { "hex": "#6FAA2E", "css": "--lemnion-accent-hover", "usage": "CTA hover" },
+    "light": { "name": "Lemnion Light Green", "hex": "#B7E08A", "rgb": "183,224,138", "css": "--lemnion-light", "usage": "logo gradient, highlights, footer hover" },
+    "deep0": { "hex": "#0A2E1A", "css": "--lemnion-deep-0", "usage": "hero gradient start" },
+    "deep1": { "hex": "#163D26", "css": "--lemnion-deep-1", "usage": "hero gradient end" },
+    "neutral": {
+      "white": { "hex": "#FFFFFF", "css": "--neutral-white" },
+      "offWhite": { "hex": "#F5F7F2", "css": "--neutral-off-white", "usage": "page background" },
+      "n100": { "hex": "#F0F5EA", "css": "--neutral-100", "usage": "light green tint" },
+      "n300": { "hex": "#D4DDD0", "css": "--neutral-300", "usage": "borders" },
+      "n400": { "hex": "#A0AEA0", "css": "--neutral-400", "usage": "placeholders, disabled" },
+      "n500": { "hex": "#556B58", "css": "--neutral-500", "usage": "muted text" },
+      "n700": { "hex": "#3D4F40", "css": "--neutral-700", "usage": "card body text" },
+      "n900": { "hex": "#2F3437", "css": "--neutral-900", "usage": "primary text" }
+    },
+    "semantic": {
+      "success": { "hex": "#27AE60", "css": "--color-success" },
+      "warning": { "hex": "#E67E22", "css": "--color-warning" },
+      "error": { "hex": "#C0392B", "css": "--color-error" },
+      "errorSoftBg": { "hex": "#FFF3F0", "css": "--color-error-soft-bg" },
+      "errorSoftBorder": { "hex": "#E8A090", "css": "--color-error-soft-border" },
+      "info": { "hex": "#33658A", "css": "--color-info", "note": "proposed, not yet in use" }
+    }
+  },
+  "typography": {
+    "display": { "family": "Montserrat", "weights": [500, 600, 700], "css": "--font-display" },
+    "body": { "family": "Inter", "weights": [400, 500, 600], "css": "--font-body" },
+    "scale": {
+      "hero": "clamp(2rem, 5vw, 3.5rem)",
+      "h2": "clamp(1.5rem, 3.5vw, 2.5rem)",
+      "h3": "clamp(1.1rem, 2vw, 1.5rem)",
+      "h4": "1.1rem",
+      "bodyLg": "1.15rem",
+      "body": "1rem",
+      "bodySm": "0.95rem",
+      "small": "0.9rem",
+      "xs": "0.85rem",
+      "caption": "0.8rem"
+    },
+    "lineHeight": { "body": 1.65, "heading": 1.2 }
+  },
+  "spacing": {
+    "base": "8px",
+    "tokens": { "0": "0", "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "8": "2rem", "10": "2.5rem", "12": "3rem", "16": "4rem", "20": "5rem", "24": "6rem" },
+    "sectionDesktop": "5rem",
+    "sectionMobile": "2rem"
+  },
+  "radius": {
+    "xs": "2px", "sm": "8px", "md": "12px", "lg": "20px", "modal": "16px", "pill": "50px", "circle": "50%"
+  },
+  "shadows": {
+    "subtle": "0 4px 24px rgba(15, 61, 35, 0.06)",
+    "card": "0 4px 24px rgba(15, 61, 35, 0.08)",
+    "elevated": "0 20px 60px rgba(15, 61, 35, 0.12)",
+    "overlay": "0 20px 60px rgba(15, 61, 35, 0.2)",
+    "focus": "0 0 0 3px rgba(127, 191, 58, 0.15)",
+    "cta": "0 6px 20px rgba(127, 191, 58, 0.35)",
+    "mobileMenu": "0 10px 40px rgba(0, 0, 0, 0.2)"
+  },
+  "buttons": {
+    "primary": { "bg": "#7FBF3A", "color": "#0F3D23", "radius": "50px", "padding": "0.85rem 2rem", "minHeight": "44px", "hoverBg": "#6FAA2E", "hoverGlow": "0 6px 20px rgba(127, 191, 58, 0.35)" },
+    "secondary": { "bg": "transparent", "color": "#0F3D23", "border": "2px solid #0F3D23", "hoverBg": "#0F3D23", "hoverColor": "#F5F7F2" },
+    "ghost": { "bg": "transparent", "color": "#F5F7F2", "border": "1.5px solid rgba(245, 247, 242, 0.3)" }
+  },
+  "forms": {
+    "input": { "padding": "0.75rem 1rem", "border": "1.5px solid #D4DDD0", "radius": "8px", "bg": "#FFFFFF" },
+    "focus": { "border": "#7FBF3A", "ring": "0 0 0 3px rgba(127, 191, 58, 0.15)" },
+    "placeholder": "#A0AEA0",
+    "label": { "color": "#0F3D23", "size": "0.85rem", "weight": 600 }
+  },
+  "cards": {
+    "base": { "bg": "#FFFFFF", "border": "1px solid #D4DDD0", "radius": "20px", "padding": "2rem", "shadow": "0 4px 24px rgba(15, 61, 35, 0.06)" },
+    "onDark": { "bg": "rgba(255,255,255,0.05)", "border": "1px solid rgba(255,255,255,0.1)" }
+  },
+  "icons": {
+    "style": "inline SVG, rounded strokes",
+    "energyStrokeWidth": 2.5,
+    "color": "#7FBF3A",
+    "concepts": ["battery", "electricity", "ev-charging", "solar", "ems", "grid", "hotel", "savings", "revenue", "resilience", "safety", "monitoring", "sustainability"]
+  },
+  "imagery": {
+    "direction": "energy solutions inside a real hospitality environment",
+    "hospitality": ["premium hotels", "boutique hotels", "urban hotels", "resorts", "conference hotels"],
+    "infrastructure": ["battery systems", "ev charging", "electrical infrastructure", "rooftop solar"],
+    "avoid": ["random leaves", "hands holding plants", "generic wind turbines", "isolated solar fields"]
+  },
+  "charts": {
+    "lineWeight": "2px - 2.5px",
+    "grid": "#D4DDD0",
+    "positive": "#7FBF3A",
+    "positiveAlt": "#2E7032",
+    "negative": "#C0392B",
+    "note": "understandable without colour alone; use line style, hatching or labels too"
+  },
+  "accessibility": {
+    "target": "WCAG 2.2 AA",
+    "minTouchTarget": "44px",
+    "focusOutline": "2px solid #7FBF3A",
+    "textOnDark": "#F5F7F2 on #0F3D23 (11.37:1)",
+    "knownIssues": {
+      "sectionLabelAccentOnWhite": "2.23:1 — fix to #2E7032",
+      "calloutText": "#E8A090 on #FFF3F0 = 1.96:1 — fix to #C0392B",
+      "successOnWhite": "2.87:1", "warningOnWhite": "2.85:1"
+    }
+  },
+  "responsive": {
+    "breakpoints": { "sm": "480px", "md": "768px", "lg": "1024px" },
+    "container": { "max": "1200px", "pad": "1.5rem", "padMobile": "1rem" },
+    "testWidths": [375, 430, 768, 1024, 1440]
+  },
+  "zIndex": { "base": 1, "above": 2, "navBackdrop": 98, "dropdown": 99, "stickyNav": 100, "navLogo": 101, "menuToggle": 102, "skipLink": 200, "modal": 200, "mobileMenu": 999 },
+  "transitions": { "fast": "0.15s", "base": "0.2s", "slow": "0.25s", "slower": "0.3s", "reveal": "0.6s" }
+}
