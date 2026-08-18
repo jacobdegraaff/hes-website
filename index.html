@@ -13,14 +13,14 @@
     <!-- Primary SEO -->
     <title>Lemnion · Hospitality Energy Solutions | Energieoplossingen voor Hotels | Batterijopslag · EMS · EV-laden</title>
     <meta name="description" content="Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. Lagere energiekosten, nieuwe inkomsten, volledig ontzorgd door Stroomlijnen.">
-    <link rel="canonical" href="https://lemnion.com/">
+    <link rel="canonical" href="https://lemnion.nl/">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Lemnion · Hospitality Energy Solutions | Energieoplossingen voor Hotels">
     <meta property="og:description" content="Van batterijopslag tot EV-laadpalen | Lemnion maakt jouw hotel energie-onafhankelijk. Stap voor stap, volledig ontzorgd.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lemnion.com/">
-    <meta property="og:image" content="https://lemnion.com/assets/logo-og.png">
+    <meta property="og:url" content="https://lemnion.nl/">
+    <meta property="og:image" content="https://lemnion.nl/assets/logo-og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="nl_NL">
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lemnion · Hospitality Energy Solutions | Energieoplossingen voor Hotels">
     <meta name="twitter:description" content="Van batterijopslag tot EV-laadpalen | Lemnion maakt jouw hotel energie-onafhankelijk.">
-    <meta name="twitter:image" content="https://lemnion.com/assets/logo-og.png">
+    <meta name="twitter:image" content="https://lemnion.nl/assets/logo-og.png">
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -39,8 +39,8 @@
       "@type": "Organization",
       "name": "Lemnion",
       "alternateName": "Lemnion",
-      "url": "https://lemnion.com/",
-      "logo": "https://lemnion.com/assets/logo-og.png",
+      "url": "https://lemnion.nl/",
+      "logo": "https://lemnion.nl/assets/logo-og.png",
       "description": "Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen.",
       "foundingDate": "2025",
       "founders": [
@@ -49,7 +49,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "hello@lemnion.com",
+        "email": "info@lemnion.nl",
         "contactType": "sales"
       },
       "sameAs": [],
@@ -64,7 +64,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://lemnion.com/"
+        "item": "https://lemnion.nl/"
       }]
     }
     </script>
@@ -243,210 +243,6 @@
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg); }
         .mobile-logo { display: none; }
-@media (max-width: 768px) {
-            /* ── BASE RESET ── */
-            html, body { overflow-x: hidden; width: 100%; }
-            body { padding: 0; }
-            .container { padding: 0 1rem; max-width: 100%; }
-
-            /* ── NAV ── */
-            nav { 
-                position: sticky; top: 0; z-index: 100;
-                padding: 0; 
-                height: 56px;
-                display: flex; align-items: center;
-            }
-            nav .container { 
-                padding: 0 0.75rem; 
-                width: 100%;
-                max-width: 100%;
-            }
-            
-            /* Logo */
-            .nav-logo { margin: 0; display: flex; align-items: center; }
-            .nav-logo-icon { height: 38px; width: auto; }
-
-            .mobile-logo { 
-                display: flex; align-items: center; gap: 0.35rem;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 600; font-size: 0.85rem; 
-                color: var(--green-primary);
-                position: relative; z-index: 2;
-                white-space: nowrap;
-            }
-            .mobile-logo svg { width: 50px; height: 50px; flex-shrink: 0; }
-            .mobile-logo img { width: auto; height: 28px; flex-shrink: 0; }
-
-            /* Hamburger button */
-            .menu-toggle { 
-                display: flex; flex-direction: column;
-                align-items: center; justify-content: center;
-                width: 44px; height: 44px;
-                margin-left: auto; 
-                padding: 0;
-                background: none; border: none; cursor: pointer;
-                z-index: 103;
-                position: relative;
-            }
-            .menu-toggle span { 
-                display: block; width: 22px; height: 2.5px; 
-                background: var(--green-primary); border-radius: 2px; 
-                transition: 0.2s ease;
-                position: absolute;
-            }
-            .menu-toggle span:nth-child(1) { transform: translateY(-7px); }
-            .menu-toggle span:nth-child(3) { transform: translateY(7px); }
-            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg); }
-            .menu-toggle.active span:nth-child(2) { opacity: 0; }
-            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg); }
-
-            /* Mobile menu panel | standalone, outside nav stacking context */
-            .mobile-menu-panel { display: none; position: fixed; top: 56px; left: 0; right: 0; bottom: 0; background: white; flex-direction: column; padding: 0.5rem 1.25rem 2rem; gap: 0; overflow-y: auto; z-index: 99999; border-top: 4px solid #7FBF3A; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-            .mobile-menu-panel.active { display: flex !important; }
-            .mobile-menu-panel .nav-links { display: flex; flex-direction: column; gap: 0; list-style: none; width: 100%; }
-            .nav-links > li { 
-                padding: 0.5rem 0; 
-                border-bottom: 1px solid var(--border);
-            }
-            .nav-links > li:last-child { border-bottom: none; }
-            .nav-links > li > a { 
-                font-size: 1rem; min-height: 46px;
-                display: flex; align-items: center;
-            }
-            .nav-links > li[style] { border-bottom: none; padding: 0.25rem 0; }
-
-            /* Dropdowns */
-            .nav-dropdown > a { 
-                display: flex; align-items: center; justify-content: space-between;
-                min-height: 46px;
-            }
-            .nav-dropdown > a::after {
-                content: '▾'; font-size: 0.8rem; 
-                transition: transform 0.2s;
-            }
-            .nav-dropdown.open > a::after { transform: rotate(180deg); }
-            .nav-dropdown-panel {
-                display: none;
-                position: static !important;
-                box-shadow: none; border: none;
-                padding: 0.25rem 0 0.5rem 1rem;
-                min-width: auto;
-                background: transparent;
-            }
-            .nav-dropdown.open > .nav-dropdown-panel { display: block; }
-            .nav-backdrop { display: none !important; }
-            .nav-mega-col h4 { display: none; }
-            .nav-mega-col a { 
-                font-size: 0.9rem; padding: 0.4rem 0;
-                min-height: 44px;
-                display: flex; align-items: center;
-            }
-            .nav-mega-col .mega-desc { display: none; }
-
-            /* Contact button in nav */
-            .nav-links .btn-primary { 
-                display: inline-flex !important; 
-                margin-top: 0.5rem; width: auto; min-height: 44px;
-                align-items: center; justify-content: center;
-            }
-
-            /* ── HERO ── */
-            .hero { min-height: auto; padding: 1.5rem 0 1.5rem; max-width: 100% !important; width: 100% !important; }
-            .hero .container { grid-template-columns: 1fr; gap: 0.75rem; text-align: center; padding: 0 1rem; max-width: 100% !important; }
-            .hero .container > div { max-width: 100% !important; width: 100% !important; }
-            .hero-slides-track { width: 300% !important; }
-            .hero-slide-panel { width: 33.333% !important; flex-shrink: 0; padding: 0.5rem 0; }
-            .hero-slide-panel .container { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
-            .hero-slide-panel .hero-illustration { display: none; }
-            .hero-slider { overflow: hidden; }
-            .hero-dots { bottom: 0.5rem; gap: 0.5rem; }
-            .hero-dots label { width: 24px; height: 3px; }
-            .hero h1, .hero h2 { font-size: 1.2rem; text-align: center !important; max-width: 100% !important; }
-            .hero p { font-size: 0.85rem; max-width: 100% !important; text-align: center !important; padding: 0; }
-            .hero-cta { flex-direction: column; align-items: center; gap: 0.6rem; }
-            .hero-cta .btn { width: 100%; max-width: 280px; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
-            .hero-illustration { display: none; }
-            .hero img { max-width: 100% !important; }
-
-            /* ── SECTIONS ── */
-            section { padding: 2rem 0; }
-            h2 { font-size: 1.25rem; }
-            h3 { font-size: 1rem; }
-            .section-label { font-size: 0.7rem; margin-bottom: 0.5rem; }
-
-            /* ── CARDS ── */
-            .problem-grid { grid-template-columns: 1fr !important; gap: 0.75rem; }
-            .problem-card { padding: 1rem; }
-            .problem-card h3 { font-size: 0.95rem; }
-            .problem-card p { font-size: 0.82rem; }
-            .problem-card .icon { width: 36px; height: 36px; margin-bottom: 0.5rem; }
-            .problem-card .icon svg { width: 36px; height: 36px; }
-
-            /* ── SCENARIOS ── */
-            .scenario { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.25rem 0; }
-            .scenario-visual svg { max-width: 100%; }
-            .scenario-benefit { padding: 0.65rem; }
-
-            /* ── TABLE ── */
-            .table-wrap { margin: 0 -0.5rem; padding: 0 0.25rem; overflow-x: auto; }
-            .comparison-table { min-width: 480px; font-size: 0.7rem; }
-            .comparison-table th, .comparison-table td { padding: 0.35rem 0.4rem; }
-
-            /* ── ABOUT ── */
-            .about-grid { grid-template-columns: 1fr; gap: 0.75rem; }
-
-            /* ── INFO/FLOW GRIDS (subpages) ── */
-            .info-grid { grid-template-columns: 1fr !important; gap: 0.75rem; }
-            .flow-grid { grid-template-columns: 1fr; gap: 0.5rem; }
-            .arrow { transform: rotate(90deg); }
-
-            /* ── PAGE HEADER ── */
-            .page-header { padding: 5rem 0 2rem; }
-            .page-header h1 { font-size: 1.5rem; }
-            .page-header p { font-size: 0.85rem; }
-
-            /* ── CTA ── */
-            .cta-section { padding: 2.5rem 0; }
-            .cta-section h2 { font-size: 1.2rem; }
-
-            /* ── FOOTER ── */
-            footer { padding: 1.5rem 0 1rem; }
-            footer .container { 
-                grid-template-columns: 1fr 1fr; 
-                gap: 1rem 0.75rem; 
-                text-align: left; 
-                font-size: 0.75rem;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-            footer h4 { font-size: 0.75rem; margin-bottom: 0.5rem; }
-            footer ul li { margin-bottom: 0.3rem; }
-            footer a { font-size: 0.72rem; }
-            .footer-bottom { grid-column: 1 / -1; text-align: center; font-size: 0.7rem; padding-top: 0.75rem; }
-
-            /* ── IMAGES ── */
-            section img, .problem-card img, .info-card img, .chart-wrap img, .hero-illustration img { display: none !important; }
-            
-            /* ── BUDGET STATUS ── */
-            div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
-
-            /* ── CONTACT MODAL ── */
-            .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
-            .form-row { grid-template-columns: 1fr; }
-        }
-@media (max-width: 480px) {
-            #valueprop p { font-size: 0.95rem !important; }
-            #valueprop .container { padding: 0 1.25rem; }
-            .hero h1, .hero h2 { font-size: 1.15rem; text-align: center !important; max-width: 100% !important; }
-            .btn { padding: 0.5rem 0.85rem; font-size: 0.8rem; min-height: 44px; }
-            .nav-links .btn { padding: 0.45rem 0.85rem; font-size: 0.8rem; min-height: 44px; }
-            footer .container { grid-template-columns: 1fr; gap: 0.75rem; text-align: center; }
-            footer .footer-bottom { text-align: center; }
-            h2 { font-size: 1.1rem; }
-            .page-header { padding: 4.5rem 0 1.5rem; }
-            .page-header h1 { font-size: 1.3rem; }
-        }
-
         /* Hero */
         .hero {
             background: linear-gradient(160deg, #0A2E1A 0%, var(--green-primary) 40%, #163D26 100%);
@@ -612,7 +408,7 @@
             padding: 3rem 0 2rem; font-size: 0.85rem;
         }
         footer .container { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2rem; }
-        footer h4 { color: var(--off-white); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
+        footer h3 { color: var(--off-white); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
         footer ul { list-style: none; }
         footer ul li { margin-bottom: 0.5rem; }
         footer a { color: rgba(245, 247, 242, 0.6); text-decoration: none; transition: color 0.2s; }
@@ -652,7 +448,212 @@
     .nav-logo { gap: 0.5rem; }
 }
 
+@media (max-width: 768px) {
+            /* ── BASE RESET ── */
+            html, body { overflow-x: hidden; width: 100%; }
+            body { padding: 0; }
+            .container { padding: 0 1rem; max-width: 100%; }
+
+            /* ── NAV ── */
+            nav { 
+                position: sticky; top: 0; z-index: 100;
+                padding: 0; 
+                height: 56px;
+                display: flex; align-items: center;
+            }
+            nav .container { 
+                padding: 0 0.75rem; 
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            /* Logo */
+            .nav-logo { margin: 0; display: flex; align-items: center; }
+            .nav-logo-icon { height: 38px; width: auto; }
+
+            .mobile-logo { 
+                display: flex; align-items: center; gap: 0.35rem;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600; font-size: 0.85rem; 
+                color: var(--green-primary);
+                position: relative; z-index: 2;
+                white-space: nowrap;
+            }
+            .mobile-logo svg { width: 50px; height: 50px; flex-shrink: 0; }
+            .mobile-logo img { width: auto; height: 28px; flex-shrink: 0; }
+
+            /* Hamburger button */
+            .menu-toggle { 
+                display: flex; flex-direction: column;
+                align-items: center; justify-content: center;
+                width: 44px; height: 44px;
+                margin-left: auto; 
+                padding: 0;
+                background: none; border: none; cursor: pointer;
+                z-index: 103;
+                position: relative;
+            }
+            .menu-toggle span { 
+                display: block; width: 22px; height: 2.5px; 
+                background: var(--green-primary); border-radius: 2px; 
+                transition: 0.2s ease;
+                position: absolute;
+            }
+            .menu-toggle span:nth-child(1) { transform: translateY(-7px); }
+            .menu-toggle span:nth-child(3) { transform: translateY(7px); }
+            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg); }
+            .menu-toggle.active span:nth-child(2) { opacity: 0; }
+            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg); }
+
+            /* Mobile menu panel | standalone, outside nav stacking context */
+            .mobile-menu-panel { display: none; position: fixed; top: 56px; left: 0; right: 0; bottom: 0; background: white; flex-direction: column; padding: 0.5rem 1.25rem 2rem; gap: 0; overflow-y: auto; z-index: 99999; border-top: 4px solid #7FBF3A; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+            .mobile-menu-panel.active { display: flex !important; }
+            .mobile-menu-panel .nav-links { display: flex; flex-direction: column; gap: 0; list-style: none; width: 100%; }
+            .nav-links > li { 
+                padding: 0.5rem 0; 
+                border-bottom: 1px solid var(--border);
+            }
+            .nav-links > li:last-child { border-bottom: none; }
+            .nav-links > li > a { 
+                font-size: 1rem; min-height: 46px;
+                display: flex; align-items: center;
+            }
+            .nav-links > li[style] { border-bottom: none; padding: 0.25rem 0; }
+
+            /* Dropdowns */
+            .nav-dropdown > a { 
+                display: flex; align-items: center; justify-content: space-between;
+                min-height: 46px;
+            }
+            .nav-dropdown > a::after {
+                content: '▾'; font-size: 0.8rem; 
+                transition: transform 0.2s;
+            }
+            .nav-dropdown.open > a::after { transform: rotate(180deg); }
+            .nav-dropdown-panel {
+                display: none;
+                position: static !important;
+                box-shadow: none; border: none;
+                padding: 0.25rem 0 0.5rem 1rem;
+                min-width: auto;
+                background: transparent;
+            }
+            .nav-dropdown.open > .nav-dropdown-panel { display: block; }
+            .nav-backdrop { display: none !important; }
+            .nav-mega-col h4 { display: none; }
+            .nav-mega-col a { 
+                font-size: 0.9rem; padding: 0.4rem 0;
+                min-height: 44px;
+                display: flex; align-items: center;
+            }
+            .nav-mega-col .mega-desc { display: none; }
+
+            /* Contact button in nav */
+            .nav-links .btn-primary { 
+                display: inline-flex !important; 
+                margin-top: 0.5rem; width: auto; min-height: 44px;
+                align-items: center; justify-content: center;
+            }
+
+            /* ── HERO ── */
+            .hero { min-height: auto; padding: 1.5rem 0 1.5rem; max-width: 100% !important; width: 100% !important; }
+            .hero .container { grid-template-columns: 1fr; gap: 0.75rem; text-align: center; padding: 0 1rem; max-width: 100% !important; }
+            .hero .container > div { max-width: 100% !important; width: 100% !important; }
+            .hero-slides-track { width: 300% !important; }
+            .hero-slide-panel { width: 33.333% !important; flex-shrink: 0; padding: 0.5rem 0; }
+            .hero-slide-panel .container { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
+            .hero-slide-panel .hero-illustration { display: flex; align-items: center; justify-content: center; }
+            .hero-slider { overflow: hidden; }
+            .hero-dots { bottom: 0.5rem; gap: 0.5rem; }
+            .hero-dots label { width: 24px; height: 3px; }
+            .hero h1, .hero h2 { font-size: 1.2rem; text-align: center !important; max-width: 100% !important; }
+            .hero p { font-size: 0.85rem; max-width: 100% !important; text-align: center !important; padding: 0; }
+            .hero-cta { flex-direction: column; align-items: center; gap: 0.6rem; }
+            .hero-cta .btn { width: 100%; max-width: 280px; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+            .hero-illustration { display: flex; align-items: center; justify-content: center; }
+            .hero img { max-width: 100% !important; }
+
+            /* ── SECTIONS ── */
+            section { padding: 2rem 0; }
+            h2 { font-size: 1.25rem; }
+            h3 { font-size: 1rem; }
+            .section-label { font-size: 0.7rem; margin-bottom: 0.5rem; }
+
+            /* ── CARDS ── */
+            .problem-grid { grid-template-columns: 1fr !important; gap: 0.75rem; }
+            .problem-card { padding: 1rem; }
+            .problem-card h3 { font-size: 0.95rem; }
+            .problem-card p { font-size: 0.82rem; }
+            .problem-card .icon { width: 36px; height: 36px; margin-bottom: 0.5rem; }
+            .problem-card .icon svg { width: 36px; height: 36px; }
+
+            /* ── SCENARIOS ── */
+            .scenario { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.25rem 0; }
+            .scenario-visual svg { max-width: 100%; }
+            .scenario-benefit { padding: 0.65rem; }
+
+            /* ── TABLE ── */
+            .table-wrap { margin: 0 -0.5rem; padding: 0 0.25rem; overflow-x: auto; }
+            .comparison-table { min-width: 480px; font-size: 0.7rem; }
+            .comparison-table th, .comparison-table td { padding: 0.35rem 0.4rem; }
+
+            /* ── ABOUT ── */
+            .about-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+
+            /* ── INFO/FLOW GRIDS (subpages) ── */
+            .info-grid { grid-template-columns: 1fr !important; gap: 0.75rem; }
+            .flow-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+            .arrow { transform: rotate(90deg); }
+
+            /* ── PAGE HEADER ── */
+            .page-header { padding: 5rem 0 2rem; }
+            .page-header h1 { font-size: 1.5rem; }
+            .page-header p { font-size: 0.85rem; }
+
+            /* ── CTA ── */
+            .cta-section { padding: 2.5rem 0; }
+            .cta-section h2 { font-size: 1.2rem; }
+
+            /* ── FOOTER ── */
+            footer { padding: 1.5rem 0 1rem; }
+            footer .container { 
+                grid-template-columns: 1fr 1fr; 
+                gap: 1rem 0.75rem; 
+                text-align: left; 
+                font-size: 0.75rem;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            footer h3 { font-size: 0.75rem; margin-bottom: 0.5rem; }
+            footer ul li { margin-bottom: 0.3rem; }
+            footer a { font-size: 0.72rem; }
+            .footer-bottom { grid-column: 1 / -1; text-align: center; font-size: 0.7rem; padding-top: 0.75rem; }
+
+            /* ── IMAGES ── */
+            section img, .problem-card img, .info-card img, .chart-wrap img, .hero-illustration img { max-width: 100% !important; height: auto; }
+            
+            /* ── BUDGET STATUS ── */
+            div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+
+            /* ── CONTACT MODAL ── */
+            .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+@media (max-width: 480px) {
+            #valueprop p { font-size: 0.95rem !important; }
+            #valueprop .container { padding: 0 1.25rem; }
+            .hero h1, .hero h2 { font-size: 1.15rem; text-align: center !important; max-width: 100% !important; }
+            .btn { padding: 0.5rem 0.85rem; font-size: 0.8rem; min-height: 44px; }
+            .nav-links .btn { padding: 0.45rem 0.85rem; font-size: 0.8rem; min-height: 44px; }
+            footer .container { grid-template-columns: 1fr; gap: 0.75rem; text-align: center; }
+            footer .footer-bottom { text-align: center; }
+            h2 { font-size: 1.1rem; }
+            .page-header { padding: 4.5rem 0 1.5rem; }
+            .page-header h1 { font-size: 1.3rem; }
+        }
+
 </style>
+    <link rel="stylesheet" href="/assets/brand/accessibility.css">
 </head>
 <body>
 
@@ -660,7 +661,7 @@
 
 <nav>
     <div class="container">
-        <a href="/" class="nav-logo" aria-label="Lemnion · Hospitality Energy Solutions home">
+        <a href="/" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
             <svg class="nav-logo-icon" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <defs>
                     <linearGradient id="lemnion-mark-eacf33" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -766,7 +767,7 @@
                 <div class="container">
                     <div style="text-align:center;max-width:100%;">
                         <p class="section-label" style="margin-bottom:0.5rem;text-align:center;">Hospitality Energy Solutions</p>
-                        <h2 style="text-align:center;max-width:100%;">Energie-onafhankelijk.<br>Zonder zorgen.</h2>
+                        <h1 style="text-align:center;max-width:100%;">Energie-onafhankelijk.<br>Zonder zorgen.</h1>
                         <p style="text-align:center;max-width:100%;">Lemnion bouwt samen met Stroomlijnen één totaaloplossing waarmee jouw hotel bespaart, verdient én verduurzaamt, van batterijopslag tot slimme laadpalen.</p>
                         <div class="hero-cta">
                             <a href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
@@ -1297,7 +1298,7 @@
             <p>Elk hotel is uniek. In een vrijblijvend gesprek kijken we naar jouw situatie en schetsen we wat er mogelijk is, zonder verplichtingen.</p>
             <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
                 <a href="configurator.html" class="btn btn-primary">Doe de configurator →</a>
-                <a href="mailto:hello@lemnion.com" class="btn btn-outline">hello@lemnion.com</a>
+                <a href="mailto:info@lemnion.nl" class="btn btn-outline">info@lemnion.nl</a>
             </div>
         </div>
     </section>
@@ -1306,12 +1307,12 @@
 <footer>
     <div class="container">
         <div>
-            <h4 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h4>
+            <h3 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h3>
             <p style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h4>Oplossingen</h4>
+            <h3>Oplossingen</h3>
             <ul>
                 <li><a href="netcongestie.html">Netcongestie</a></li>
                 <li><a href="verduurzamen.html">Verduurzamen</a></li>
@@ -1321,7 +1322,7 @@
             </ul>
         </div>
         <div>
-            <h4>Producten &amp; Diensten</h4>
+            <h3>Producten &amp; Diensten</h3>
             <ul>
                 <li><a href="producten.html">Batterijopslag</a></li>
                 <li><a href="producten.html">Laadpalen &amp; snelladers</a></li>
@@ -1331,13 +1332,13 @@
             </ul>
         </div>
         <div>
-            <h4>Informatie</h4>
+            <h3>Informatie</h3>
             <ul>
                 <li><a href="voordelen.html">Verdienmodellen</a></li>
                 <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
                 <li><a href="over-ons.html">Over ons</a></li>
                 <li><a href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a href="mailto:hello@lemnion.com">Contact</a></li>
+                <li><a href="mailto:info@lemnion.nl">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
@@ -1358,7 +1359,19 @@
 
     // Radio slider auto-advance
     let si = 0;
-    setInterval(() => { si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }, 3000);
+    var heroAuto = null;
+    var heroReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function heroAdvance(){ si = (si + 1) % 3; document.getElementById('hs' + (si + 1)).checked = true; }
+    function heroStart(){ if (!heroAuto) heroAuto = setInterval(heroAdvance, 5000); }
+    function heroStop(){ if (heroAuto) { clearInterval(heroAuto); heroAuto = null; } }
+    if (!heroReduced) heroStart();
+    var heroSliderEl = document.querySelector('.hero-slider');
+    if (heroSliderEl) {
+        heroSliderEl.addEventListener('mouseenter', heroStop);
+        heroSliderEl.addEventListener('mouseleave', function(){ if (!heroReduced) heroStart(); });
+        heroSliderEl.addEventListener('focusin', heroStop);
+        heroSliderEl.addEventListener('focusout', function(){ if (!heroReduced) heroStart(); });
+    }
 </script>
 
 <script>
@@ -1385,12 +1398,12 @@
         body += 'Mobiel: ' + m + '\n';
         body += '\nBericht:\n' + ber;
 
-        window.location.href = 'mailto:hello@lemnion.com'
+        window.location.href = 'mailto:info@lemnion.nl'
             + '?subject=' + encodeURIComponent(subject)
             + '&body=' + encodeURIComponent(body);
 
         // Toon bevestiging
-        form.innerHTML = '<div style="text-align:center;padding:2rem;"><div style="font-size:3rem;margin-bottom:1rem;">✓</div><h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3><p style="color:var(--text-muted);">Je e-mailprogramma is geopend. Verstuur de e-mail en we nemen binnen 24 uur contact met je op.</p><p style="margin-top:1rem;"><a href="mailto:hello@lemnion.com" style="color:var(--green-accent);font-weight:600;">Of stuur direct een e-mail →</a></p></div>';
+        form.innerHTML = '<div style="text-align:center;padding:2rem;"><div style="font-size:3rem;margin-bottom:1rem;">✓</div><h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3><p style="color:var(--text-muted);">Je e-mailprogramma is geopend. Verstuur de e-mail en we nemen binnen 24 uur contact met je op.</p><p style="margin-top:1rem;"><a href="mailto:info@lemnion.nl" style="color:var(--green-accent);font-weight:600;">Of stuur direct een e-mail →</a></p></div>';
     });
 
     // Sluit modal met ESC
@@ -1474,43 +1487,43 @@ document.addEventListener('keydown', function(e) {
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
         <h3>Vrijblijvend contact</h3>
         <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
         <form id="contact-form">
             <div class="form-row">
                 <div class="form-group">
-                    <label for="voornaam">Voornaam <span class="required">*</span></label>
-                    <input type="text" id="voornaam" name="voornaam" required placeholder="Jan">
+                    <label for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
                 </div>
                 <div class="form-group">
-                    <label for="achternaam">Achternaam <span class="required">*</span></label>
-                    <input type="text" id="achternaam" name="achternaam" required placeholder="Jansen">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required">*</span></label>
-                    <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
-                </div>
-                <div class="form-group">
-                    <label for="functie">Functie <span class="required">*</span></label>
-                    <input type="text" id="functie" name="functie" required placeholder="Directeur / Facility Manager">
+                    <label for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="email">E-mailadres <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
-                    <label for="mobiel">Mobiel nummer <span class="required">*</span></label>
-                    <input type="tel" id="mobiel" name="mobiel" required placeholder="06 12345678">
+                    <label for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
+                    <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                </div>
+                <div class="form-group">
+                    <label for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
+                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
-                <label for="bericht">Je bericht <span class="required">*</span></label>
+                <label for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
                 <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
@@ -1520,5 +1533,6 @@ document.addEventListener('keydown', function(e) {
     </div>
 </div>
 
+<script src="/assets/brand/accessibility.js" defer></script>
 </body>
 </html>
