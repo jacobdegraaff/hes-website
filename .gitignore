@@ -1,1 +1,4 @@
 .wrangler/
+
+# gegenereerde build-output (nooit committen)
+dist/

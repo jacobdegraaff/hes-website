@@ -10,6 +10,32 @@ const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minuten
 const RATE_LIMIT_MAX = 5; // max 5 verzoeken per IP per venster
 const hits = new Map();
 
+// Taalafhankelijke foutmeldingen (client stuurt data.lang mee)
+const MSG = {
+  nl: {
+    rate: "Te veel verzoeken. Probeer het later opnieuw.",
+    invalid: "Ongeldige aanvraag.",
+    required: "Dit veld is verplicht.",
+    email: "Vul een geldig e-mailadres in.",
+    emailTooLong: "E-mailadres is te lang.",
+    berichtTooLong: "Het bericht mag maximaal 2000 tekens bevatten.",
+    fieldTooLong: "Dit veld is te lang (maximaal 100 tekens).",
+    phone: "Ongeldig telefoonnummer.",
+    fail: "Het versturen is mislukt. Probeer het later opnieuw.",
+  },
+  en: {
+    rate: "Too many requests. Please try again later.",
+    invalid: "Invalid request.",
+    required: "This field is required.",
+    email: "Please enter a valid email address.",
+    emailTooLong: "Email address is too long.",
+    berichtTooLong: "The message may contain at most 2000 characters.",
+    fieldTooLong: "This field is too long (max 100 characters).",
+    phone: "Invalid phone number.",
+    fail: "Sending failed. Please try again later.",
+  },
+};
+
 function json(data, status) {
   return new Response(JSON.stringify(data), {
     status,
@@ -60,6 +86,8 @@ export async function onRequestPost(context) {
     return json({ success: true }, 200);
   }
 
+  const L = MSG[data.lang === "en" ? "en" : "nl"];
+
   const str = (v) => (typeof v === "string" ? v.trim() : "");
   const fields = {
     voornaam: str(data.voornaam),
@@ -74,24 +102,24 @@ export async function onRequestPost(context) {
   // Validatie
   const errors = {};
   for (const key of Object.keys(fields)) {
-    if (!fields[key]) errors[key] = "Dit veld is verplicht.";
+    if (!fields[key]) errors[key] = L.required;
   }
   if (fields.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(fields.email)) {
-    errors.email = "Vul een geldig e-mailadres in.";
+    errors.email = L.email;
   }
   if (fields.email && fields.email.length > 150) {
-    errors.email = "E-mailadres is te lang.";
+    errors.email = L.emailTooLong;
   }
   if (fields.bericht && fields.bericht.length > 2000) {
-    errors.bericht = "Het bericht mag maximaal 2000 tekens bevatten.";
+    errors.bericht = L.berichtTooLong;
   }
   for (const key of ["voornaam", "achternaam", "bedrijfsnaam", "functie"]) {
     if (fields[key] && fields[key].length > 100) {
-      errors[key] = "Dit veld is te lang (maximaal 100 tekens).";
+      errors[key] = L.fieldTooLong;
     }
   }
   if (fields.mobiel && fields.mobiel.length > 30) {
-    errors.mobiel = "Ongeldig telefoonnummer.";
+    errors.mobiel = L.phone;
   }
 
   if (Object.keys(errors).length > 0) {
@@ -133,14 +161,14 @@ export async function onRequestPost(context) {
 
     if (!res.ok) {
       return json(
-        { success: false, message: "Het versturen is mislukt. Probeer het later opnieuw." },
+        { success: false, message: L.fail },
         500
       );
     }
     return json({ success: true }, 200);
   } catch (e) {
     return json(
-      { success: false, message: "Het versturen is mislukt. Probeer het later opnieuw." },
+      { success: false, message: L.fail },
       500
     );
   }
