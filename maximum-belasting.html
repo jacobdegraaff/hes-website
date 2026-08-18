@@ -203,7 +203,7 @@ h2{font-size:1.1rem}
 }
 
                 /* Contact Modal */
-        .contact-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 200; align-items: center; justify-content: center; }
+        .contact-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100000; align-items: center; justify-content: center; } /* boven mobiel menu (99999) */
         .contact-modal-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,61,35,0.5); }
         .contact-modal-content { position: relative; background: white; border-radius: 16px; padding: 2.5rem; max-width: 640px; width: 90%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(15,61,35,0.2); }
         .contact-modal-close { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); line-height: 1; padding: 0.25rem; }
@@ -446,7 +446,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
         <h3>Vrijblijvend contact</h3>
         <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
-        <form id="contact-form">
+        <form id="contact-form" novalidate>
             <div class="form-row">
                 <div class="form-group">
                     <label for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
@@ -529,9 +529,10 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
     if(window.innerWidth<=768){
       var m=document.querySelector('.mobile-menu-panel');
       var b=document.querySelector('.menu-toggle');
-      if(m)m.classList.remove('active');
+      if(m){m.classList.remove('active');m.style.display=''}
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
-      document.body.style.overflow='';
+      var cm=document.getElementById('contact-modal');
+      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
     }
   })
 });
@@ -541,9 +542,11 @@ document.addEventListener('keydown',function(e){
     var m=document.querySelector('.mobile-menu-panel');
     var b=document.querySelector('.menu-toggle');
     if(m&&m.classList.contains('active')){
+      if(m.style.display)m.style.display='';
       m.classList.remove('active');
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
-      document.body.style.overflow='';
+      var cm=document.getElementById('contact-modal');
+      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
     }
   }
 });
@@ -565,14 +568,52 @@ document.addEventListener('keydown',function(e){
     honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;';
     form.appendChild(honeypot);
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var btn = form.querySelector('button[type="submit"]');
-        var orig = btn ? btn.innerHTML : '';
-        if (btn) { btn.disabled = true; btn.innerHTML = 'Versturen...'; }
+    var requiredLabels = {
+        voornaam: 'voornaam',
+        achternaam: 'achternaam',
+        bedrijfsnaam: 'bedrijfsnaam',
+        functie: 'functie',
+        email: 'e-mailadres',
+        mobiel: 'mobiel nummer',
+        bericht: 'bericht'
+    };
 
+    function clearErrors() {
         form.querySelectorAll('[id^="error-"], #form-error').forEach(function(el){ el.remove(); });
         form.querySelectorAll('[aria-invalid]').forEach(function(el){ el.removeAttribute('aria-invalid'); });
+    }
+
+    function showErrors(errors) {
+        var first = null;
+        for (var key in errors) {
+            var input = document.getElementById(key);
+            if (!input) continue;
+            input.setAttribute('aria-invalid', 'true');
+            var err = document.createElement('p');
+            err.id = 'error-' + key;
+            err.style.cssText = 'color:var(--color-error,#C0392B);font-size:0.8rem;margin:0.25rem 0 0;';
+            err.textContent = errors[key];
+            input.parentNode.appendChild(err);
+            if (!first) first = input;
+        }
+        if (first) first.focus();
+    }
+
+    function showFormError(msg) {
+        var el = document.getElementById('form-error');
+        if (!el) {
+            el = document.createElement('p');
+            el.id = 'form-error';
+            el.setAttribute('role', 'alert');
+            el.style.cssText = 'color:var(--color-error,#C0392B);font-size:0.9rem;margin:0 0 1rem;';
+            form.insertBefore(el, form.firstChild);
+        }
+        el.textContent = msg;
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        clearErrors();
 
         var payload = {
             voornaam: document.getElementById('voornaam').value.trim(),
@@ -584,6 +625,23 @@ document.addEventListener('keydown',function(e){
             bericht: document.getElementById('bericht').value.trim(),
             website: honeypot.value
         };
+
+        // Client-side validatie (Nederlands, onafhankelijk van browsertaal)
+        var errors = {};
+        for (var key in requiredLabels) {
+            if (!payload[key]) errors[key] = 'Vul je ' + requiredLabels[key] + ' in.';
+        }
+        if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) {
+            errors.email = 'Vul een geldig e-mailadres in.';
+        }
+        if (Object.keys(errors).length > 0) {
+            showErrors(errors);
+            return;
+        }
+
+        var btn = form.querySelector('button[type="submit"]');
+        var orig = btn ? btn.innerHTML : '';
+        if (btn) { btn.disabled = true; btn.innerHTML = 'Versturen...'; }
 
         fetch('/api/contact', {
             method: 'POST',
@@ -600,21 +658,8 @@ document.addEventListener('keydown',function(e){
                 return;
             }
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
-            var errors = res.data.errors;
-            if (errors) {
-                var first = null;
-                for (var key in errors) {
-                    var input = document.getElementById(key);
-                    if (!input) continue;
-                    input.setAttribute('aria-invalid', 'true');
-                    var err = document.createElement('p');
-                    err.id = 'error-' + key;
-                    err.style.cssText = 'color:var(--color-error,#C0392B);font-size:0.8rem;margin:0.25rem 0 0;';
-                    err.textContent = errors[key];
-                    input.parentNode.appendChild(err);
-                    if (!first) first = input;
-                }
-                if (first) first.focus();
+            if (res.data.errors) {
+                showErrors(res.data.errors);
             } else {
                 showFormError(res.data.message || 'Het versturen is mislukt. Probeer het later opnieuw.');
             }
@@ -622,18 +667,6 @@ document.addEventListener('keydown',function(e){
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
             showFormError('Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.');
         });
-
-        function showFormError(msg) {
-            var el = document.getElementById('form-error');
-            if (!el) {
-                el = document.createElement('p');
-                el.id = 'form-error';
-                el.setAttribute('role', 'alert');
-                el.style.cssText = 'color:var(--color-error,#C0392B);font-size:0.9rem;margin:0 0 1rem;';
-                form.insertBefore(el, form.firstChild);
-            }
-            el.textContent = msg;
-        }
     });
 
     // Sluit modal met ESC
@@ -648,6 +681,7 @@ document.addEventListener('keydown',function(e){
     });
 })();
 </script>
+
 
 
 <script src="/assets/brand/accessibility.js" defer></script>
