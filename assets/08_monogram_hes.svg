@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+<defs><linearGradient id="brand" x1="0%" y1="15%" x2="100%" y2="85%"><stop offset="0%" stop-color="#0F3D23"/><stop offset="40%" stop-color="#2E7032"/><stop offset="75%" stop-color="#7FBF3A"/><stop offset="100%" stop-color="#B7E08A"/></linearGradient></defs>
+
+<text x="200.00" y="190.00" font-family="Montserrat, sans-serif" font-weight="700" font-size="180" letter-spacing="3.60" text-anchor="middle" fill="url(#brand)">HES</text>
+<text x="200.00" y="250.00" font-family="Montserrat, sans-serif" font-weight="300" font-size="26" letter-spacing="7.80" text-anchor="middle" fill="#2E7032">ENERGY SOLUTIONS</text>
+</svg>

@@ -1,0 +1,16 @@
+[
+  {"key": "maxbelasting.h1", "tag": "h1", "contains": "Maximum belasting & pieksnijden"},
+  {"key": "maxbelasting.intro", "tag": "p", "contains": "Tussen 17:00 en 21:00 piekt het verbruik in hotels"},
+  {"key": "maxbelasting.s1label", "tag": "p", "contains": "Het probleem", "attrs": "section-label"},
+  {"key": "maxbelasting.s1h", "tag": "h2", "contains": "Pieken die je geld kosten"},
+  {"key": "maxbelasting.s1p", "tag": "p", "contains": "Tussen 17:00 en 21:00 komen alle energieslurpers tegelijk online"},
+  {"key": "maxbelasting.c1h", "tag": "h4", "contains": "Pieksnijden met batterij"},
+  {"key": "maxbelasting.c1p", "tag": "p", "contains": "De Lemnion-accu laadt op tijdens goedkope daluren"},
+  {"key": "maxbelasting.c2h", "tag": "h4", "contains": "Slim EMS"},
+  {"key": "maxbelasting.c2p", "tag": "p", "contains": "Het Energy Management System leert jouw verbruikspatroon"},
+  {"key": "maxbelasting.c3h", "tag": "h4", "contains": "Real-time monitoring"},
+  {"key": "maxbelasting.c3p", "tag": "p", "contains": "Zie live waar elke kilowatt naartoe gaat"},
+  {"key": "maxbelasting.ctah", "tag": "h2", "contains": "Klaar om jouw hotel te bevrijden van netcongestie?"},
+  {"key": "maxbelasting.ctap", "tag": "p", "contains": "Bereken binnen 1 minuut wat jouw hotel kan besparen"},
+  {"key": "maxbelasting.cta", "tag": "a", "contains": "Doe de configurator", "attrs": "configurator.html"}
+]

@@ -259,12 +259,17 @@ h2{font-size:1.1rem}
     .nav-logo { gap: 0.5rem; }
 }
 
-</style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
+        .lang-switch{display:flex;align-items:center;gap:0.45rem;margin-left:0.75rem;white-space:nowrap}
+        .lang-switch .lang-link{font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:0.9rem;color:var(--text-muted);text-decoration:none;line-height:1.65}
+        .lang-switch .lang-link:hover{color:var(--green-accent)}
+        .lang-switch .lang-link[aria-current="true"]{color:var(--green-secondary)}
+        .lang-switch .lang-sep{color:var(--border);font-size:0.9rem}
+        </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
     <link rel="stylesheet" href="/assets/brand/accessibility.css">
 </head>
 <body>
 
-<a href="#content" class="skip-link">Direct naar inhoud</a>
+<a data-i18n="nav.skip" href="#content" class="skip-link">Direct naar inhoud</a>
         
 <nav>
     <div class="container">
@@ -293,55 +298,51 @@ h2{font-size:1.1rem}
                         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">
-                <a href="oplossingen.html">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="oplossingen.html">Oplossingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Oplossingen</h4>
-                        <a href="netcongestie.html">Netcongestie</a>
-                        <a href="verduurzamen.html">Verduurzamen</a>
-                        <a href="maximum-belasting.html">Maximum belasting</a>
-                        <a href="stroom-overschot.html">Stroom (zon) overschot</a>
-                        <a href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                        <h4 data-i18n="nav.oplossingen_h">Oplossingen</h4>
+                        <a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a>
+                        <a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a>
+                        <a data-i18n="nav.maxbelasting" href="maximum-belasting.html">Maximum belasting</a>
+                        <a data-i18n="nav.stroomoverschot" href="stroom-overschot.html">Stroom (zon) overschot</a>
+                        <a data-i18n="nav.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
                     </div>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a href="voordelen.html">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="voordelen.html">Voordelen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Voordelen</h4>
-                        <a href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a href="voordelen.html">Verdienmodellen</a>
-                        <a href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <h4 data-i18n="nav.voordelen_h">Voordelen</h4>
+                        <a data-i18n="nav.usp" href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a>
+                        <a data-i18n="nav.configurator" href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.vergelijk" href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a href="producten.html">Producten</a></li>
-            <li><a href="subsidies.html">Subsidies</a></li>
-            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a data-i18n="nav.producten" href="producten.html">Producten</a></li>
+            <li><a data-i18n="nav.subsidies" href="subsidies.html">Subsidies</a></li>
+            <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
             <li class="nav-dropdown">
-                <a href="nieuws.html">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="nieuws.html">Nieuws ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Nieuws</h4>
-                        <a href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
-                        <a href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                        <h4 data-i18n="nav.nieuws_h">Nieuws</h4>
+                        <a data-i18n="nav.nieuws_all" href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a data-i18n="nav.blog" href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
                     </div>
                 </div>
             </li>
-            <li><a href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
-<li style="position:relative;">
-                <a href="#" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;" style="text-decoration:none;font-size:1.1rem;" title="Vertalen">🌐</a>
-                <div style="display:none;position:absolute;top:110%;right:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:130px;z-index:200;overflow:hidden;">
-                    <a href="#" onclick="window.top.location.href='https://jacobdegraaff.github.io/hes-website/usp-veiligheid.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇳🇱</span> Nederlands</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=en&amp;sl=nl&amp;tl=en&amp;u=https://jacobdegraaff.github.io/hes-website/usp-veiligheid.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇬🇧</span> English</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=fr&amp;sl=nl&amp;tl=fr&amp;u=https://jacobdegraaff.github.io/hes-website/usp-veiligheid.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇫🇷</span> Francais</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=es&amp;sl=nl&amp;tl=es&amp;u=https://jacobdegraaff.github.io/hes-website/usp-veiligheid.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇪🇸</span> Espanol</a>
-                </div>
+            <li><a data-i18n="nav.contact" href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li class="lang-switch" aria-label="Taal / Language">
+                <a href="/usp-veiligheid.html" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
+                <span class="lang-sep" aria-hidden="true">/</span>
+                <a href="/en/usp-veiligheid.html" class="lang-link" lang="en" hreflang="en">EN</a>
             </li>
         </ul>
     </div>
@@ -351,19 +352,19 @@ h2{font-size:1.1rem}
 
 
 <div class="page-header" id="content">
-    <h1>USP's &amp; Veiligheid</h1>
-    <p>Wat Lemnion écht anders maakt, van directe fabrieksdistributie tot gecertificeerde veiligheid. Ontdek waarom geen enkele concurrent dit complete plaatje biedt.</p>
+    <h1 data-i18n="usp-veiligheid.h1">USP's &amp; Veiligheid</h1>
+    <p data-i18n="usp-veiligheid.intro">Wat Lemnion écht anders maakt, van directe fabrieksdistributie tot gecertificeerde veiligheid. Ontdek waarom geen enkele concurrent dit complete plaatje biedt.</p>
 </div>
 
 <!-- INTRO -->
 <section style="padding:4rem 0;background:white;">
     <div class="container">
-        <p class="section-label">De bottom line</p>
-        <h2>Niemand doet wat Lemnion doet</h2>
-        <p style="max-width:750px;margin-top:0.75rem;color:var(--text-muted);font-size:1.05rem;">
+        <p data-i18n="usp-veiligheid.label" class="section-label">De bottom line</p>
+        <h2 data-i18n="usp-veiligheid.h2">Niemand doet wat Lemnion doet</h2>
+        <p data-i18n="usp-veiligheid.p1" style="max-width:750px;margin-top:0.75rem;color:var(--text-muted);font-size:1.05rem;">
             Lemnion is het énige bedrijf in deze markt dat directe fabrieksdistributeur is met een volledig geïntegreerd, programmeerbaar en veiligheid-gecertificeerd ecosysteem: batterij, EMS (Energy Management System), EV-laden én DC-gekoppelde zon in één platform. Met onderdelen op voorraad in Nederland.
         </p>
-        <p style="max-width:750px;margin-top:1rem;color:var(--text-muted);">
+        <p data-i18n="usp-veiligheid.p2" style="max-width:750px;margin-top:1rem;color:var(--text-muted);">
             Elke andere partij verkoopt hardware van derden door, gebruikt losse softwarepakketten die niet met elkaar praten, mist de juiste veiligheidscertificeringen, of dwingt klanten in langetermijncontracten met te grote systemen. Lemnion niet.
         </p>
     </div>
@@ -372,38 +373,38 @@ h2{font-size:1.1rem}
 <!-- UNIEKE POSITIE -->
 <section style="padding:4rem 0;background:#E8F2DC;">
     <div class="container">
-        <p class="section-label" style="color:#0F3D23;">Onze Unieke Positie</p>
-        <h2 style="color:#0F3D23;">Wat Lemnion écht anders maakt (USP)</h2>
+        <p data-i18n="usp-veiligheid.usp-label" class="section-label" style="color:#0F3D23;">Onze Unieke Positie</p>
+        <h2 data-i18n="usp-veiligheid.usp-h2" style="color:#0F3D23;">Wat Lemnion écht anders maakt (USP)</h2>
         <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:2rem;">
             <div class="problem-card fade-in">
                 <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="3" stroke="#7FBF3A" stroke-width="2"/><line x1="18" y1="20" x2="30" y2="20" stroke="#7FBF3A" stroke-width="1.5"/><line x1="18" y1="26" x2="30" y2="26" stroke="#7FBF3A" stroke-width="1.5"/><path d="M36 18l4 4-4 4" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <h4>Directe fabrieksdistributie</h4>
-                <p>Wij importeren hardware direct van de fabriek | geen tussenpersonen. Onderdelen staan op voorraad in Nederland. <strong>Levertijd: 2 tot 4 weken</strong> vanuit voorraad. Geen maanden wachten op containers uit Azië.</p>
+                <h4 data-i18n="usp-veiligheid.c1h">Directe fabrieksdistributie</h4>
+                <p data-i18n="usp-veiligheid.c1p">Wij importeren hardware direct van de fabriek | geen tussenpersonen. Onderdelen staan op voorraad in Nederland. <strong>Levertijd: 2 tot 4 weken</strong> vanuit voorraad. Geen maanden wachten op containers uit Azië.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="12" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="6" fill="#7FBF3A"/></svg></div>
-                <h4>Eén geïntegreerd ecosysteem</h4>
-                <p>Batterij + EMS + OCPP (Open Charge Point Protocol) 2.0.1 laden + 25 kW DC-gekoppelde zon in <strong>één platform.</strong> Één contract, één factuur, één telefoonnummer. Alles uit één hand | geen gedoe met losse partijen.</p>
+                <h4 data-i18n="usp-veiligheid.c2h">Eén geïntegreerd ecosysteem</h4>
+                <p data-i18n="usp-veiligheid.c2p">Batterij + EMS + OCPP (Open Charge Point Protocol) 2.0.1 laden + 25 kW DC-gekoppelde zon in <strong>één platform.</strong> Één contract, één factuur, één telefoonnummer. Alles uit één hand | geen gedoe met losse partijen.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="#7FBF3A" stroke-width="2"/><line x1="14" y1="16" x2="34" y2="16" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="22" x2="30" y2="22" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="28" x2="34" y2="28" stroke="#7FBF3A" stroke-width="1.5"/></svg></div>
-                <h4>Programmeerbaar EMS</h4>
-                <p>Het énige <strong>programmeerbare</strong> Energy Management System. Geen vaste profielen, geen gesloten cloudplatforms. Onze engineers schrijven per locatie op maat gemaakte strategieën | volledig afgestemd op jouw bedrijf.</p>
+                <h4 data-i18n="usp-veiligheid.c3h">Programmeerbaar EMS</h4>
+                <p data-i18n="usp-veiligheid.c3p">Het énige <strong>programmeerbare</strong> Energy Management System. Geen vaste profielen, geen gesloten cloudplatforms. Onze engineers schrijven per locatie op maat gemaakte strategieën | volledig afgestemd op jouw bedrijf.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="6" x2="24" y2="16" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="32" x2="24" y2="42" stroke="#7FBF3A" stroke-width="2"/><line x1="6" y1="24" x2="16" y2="24" stroke="#7FBF3A" stroke-width="2"/><line x1="32" y1="24" x2="42" y2="24" stroke="#7FBF3A" stroke-width="2"/><path d="M14 14l-6-6M34 14l6-6" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-                <h4>DC-gekoppelde zonne-energie</h4>
-                <p>25 kW+ MPPT (Maximum Power Point Tracking) direct op de DC-bus. <strong>Geen conversieverlies.</strong> Maximaal rendement | elke opgewekte kilowattuur gaat direct je accu in. Geen enkele concurrent biedt dit.</p>
+                <h4 data-i18n="usp-veiligheid.c4h">DC-gekoppelde zonne-energie</h4>
+                <p data-i18n="usp-veiligheid.c4p">25 kW+ MPPT (Maximum Power Point Tracking) direct op de DC-bus. <strong>Geen conversieverlies.</strong> Maximaal rendement | elke opgewekte kilowattuur gaat direct je accu in. Geen enkele concurrent biedt dit.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#7FBF3A" stroke-width="2"/><path d="M16 24l6 6 12-12" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <h4>Turnkey oplevering</h4>
-                <p>Engineering, installatie, inbedrijfstelling, 24/7 monitoring, onderdelen en support. <strong>Alles inbegrepen</strong> in één transparante prijs. Geen verborgen kosten achteraf. Wat op de offerte staat, is wat je betaalt.</p>
+                <h4 data-i18n="usp-veiligheid.c5h">Turnkey oplevering</h4>
+                <p data-i18n="usp-veiligheid.c5p">Engineering, installatie, inbedrijfstelling, 24/7 monitoring, onderdelen en support. <strong>Alles inbegrepen</strong> in één transparante prijs. Geen verborgen kosten achteraf. Wat op de offerte staat, is wat je betaalt.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="10" stroke="#7FBF3A" stroke-width="1.5"/><path d="M16 24l6 6 12-12" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <h4>Eigen OCPP 2.0.1 implementatie</h4>
-                <p>Custom OCPP-laadsoftware, niet ingekocht bij derden. Volledige controle over laadsessies, load balancing en koppeling met het EMS. <strong>Geen vendor lock-in</strong> | jij bepaalt, niet de laadpaalleverancier.</p>
+                <h4 data-i18n="usp-veiligheid.c6h">Eigen OCPP 2.0.1 implementatie</h4>
+                <p data-i18n="usp-veiligheid.c6p">Custom OCPP-laadsoftware, niet ingekocht bij derden. Volledige controle over laadsessies, load balancing en koppeling met het EMS. <strong>Geen vendor lock-in</strong> | jij bepaalt, niet de laadpaalleverancier.</p>
             </div>
         </div>
     </div>
@@ -412,29 +413,29 @@ h2{font-size:1.1rem}
 <!-- VERGELIJKINGSTABEL -->
 <section style="padding:4rem 0;background:white;">
     <div class="container">
-        <p class="section-label">Vergelijking</p>
-        <h2>Lemnion versus de rest</h2>
-        <p style="max-width:700px;margin-top:0.75rem;color:var(--text-muted);">
+        <p data-i18n="usp-veiligheid.vergelijk-label" class="section-label">Vergelijking</p>
+        <h2 data-i18n="usp-veiligheid.vergelijk-h2">Lemnion versus de rest</h2>
+        <p data-i18n="usp-veiligheid.vergelijk-intro" style="max-width:700px;margin-top:0.75rem;color:var(--text-muted);">
             Eén blik op deze tabel en je ziet het verschil. Lemnion is de énige partij die op álle fronten scoort.
         </p>
         <div style="overflow-x:auto;margin-top:2rem;">
             <table style="width:100%;border-collapse:collapse;background:white;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 4px 24px rgba(15,61,35,0.06);">
                 <thead>
                     <tr style="background:var(--green-primary);color:white;">
-                        <th style="padding:1rem;text-align:left;font-family:Montserrat,sans-serif;">Functionaliteit</th>
-                        <th style="padding:1rem;text-align:center;font-family:Montserrat,sans-serif;background:#1a5a33;">Lemnion</th>
-                        <th style="padding:1rem;text-align:center;font-family:Montserrat,sans-serif;">Andere aanbieders</th>
+                        <th data-i18n="usp-veiligheid.th1" style="padding:1rem;text-align:left;font-family:Montserrat,sans-serif;">Functionaliteit</th>
+                        <th data-i18n="usp-veiligheid.th2" style="padding:1rem;text-align:center;font-family:Montserrat,sans-serif;background:#1a5a33;">Lemnion</th>
+                        <th data-i18n="usp-veiligheid.th3" style="padding:1rem;text-align:center;font-family:Montserrat,sans-serif;">Andere aanbieders</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.85rem 1rem;"><strong>Directe fabrieksdistributeur</strong></td><td style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td style="padding:0.85rem 1rem;text-align:center;">Wederverkopers</td></tr>
-                    <tr style="border-bottom:1px solid var(--border);background:#F9FAF7;"><td style="padding:0.85rem 1rem;"><strong>Onderdelen op voorraad in NL</strong></td><td style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓ 2-4 weken</td><td style="padding:0.85rem 1rem;text-align:center;">8-16 weken</td></tr>
-                    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.85rem 1rem;"><strong>Programmeerbaar EMS</strong></td><td style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td style="padding:0.85rem 1rem;text-align:center;">Vaste profielen</td></tr>
-                    <tr style="border-bottom:1px solid var(--border);background:#F9FAF7;"><td style="padding:0.85rem 1rem;"><strong>Eigen OCPP 2.0.1 laadsoftware</strong></td><td style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td style="padding:0.85rem 1rem;text-align:center;">Ingekocht bij derden</td></tr>
-                    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.85rem 1rem;"><strong>DC-gekoppelde zon (25 kW+)</strong></td><td style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td style="padding:0.85rem 1rem;text-align:center;">✕ Nergens beschikbaar</td></tr>
-                    <tr style="border-bottom:1px solid var(--border);background:#F9FAF7;"><td style="padding:0.85rem 1rem;"><strong>UL + IEC veiligheidscertificering</strong></td><td style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓ UL 9540A, 1973, 1642</td><td style="padding:0.85rem 1rem;text-align:center;">Vaak alleen CE</td></tr>
-                    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.85rem 1rem;"><strong>6-laags veiligheid</strong></td><td style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td style="padding:0.85rem 1rem;text-align:center;">Meestal 2-3 lagen</td></tr>
-                    <tr style="background:#F9FAF7;"><td style="padding:0.85rem 1rem;"><strong>All-in prijs (geen verborgen kosten)</strong></td><td style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td style="padding:0.85rem 1rem;text-align:center;">Hardware-only offertes</td></tr>
+                    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.85rem 1rem;"><strong data-i18n="usp-veiligheid.r1a">Directe fabrieksdistributeur</strong></td><td data-i18n="usp-veiligheid.vink" style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td data-i18n="usp-veiligheid.r1c" style="padding:0.85rem 1rem;text-align:center;">Wederverkopers</td></tr>
+                    <tr style="border-bottom:1px solid var(--border);background:#F9FAF7;"><td style="padding:0.85rem 1rem;"><strong data-i18n="usp-veiligheid.r2a">Onderdelen op voorraad in NL</strong></td><td data-i18n="usp-veiligheid.r2b" style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓ 2-4 weken</td><td data-i18n="usp-veiligheid.r2c" style="padding:0.85rem 1rem;text-align:center;">8-16 weken</td></tr>
+                    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.85rem 1rem;"><strong data-i18n="usp-veiligheid.r3a">Programmeerbaar EMS</strong></td><td data-i18n="usp-veiligheid.vink" style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td data-i18n="usp-veiligheid.r3c" style="padding:0.85rem 1rem;text-align:center;">Vaste profielen</td></tr>
+                    <tr style="border-bottom:1px solid var(--border);background:#F9FAF7;"><td style="padding:0.85rem 1rem;"><strong data-i18n="usp-veiligheid.r4a">Eigen OCPP 2.0.1 laadsoftware</strong></td><td data-i18n="usp-veiligheid.vink" style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td data-i18n="usp-veiligheid.r4c" style="padding:0.85rem 1rem;text-align:center;">Ingekocht bij derden</td></tr>
+                    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.85rem 1rem;"><strong data-i18n="usp-veiligheid.r5a">DC-gekoppelde zon (25 kW+)</strong></td><td data-i18n="usp-veiligheid.vink" style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td data-i18n="usp-veiligheid.r5c" style="padding:0.85rem 1rem;text-align:center;">✕ Nergens beschikbaar</td></tr>
+                    <tr style="border-bottom:1px solid var(--border);background:#F9FAF7;"><td style="padding:0.85rem 1rem;"><strong data-i18n="usp-veiligheid.r6a">UL + IEC veiligheidscertificering</strong></td><td data-i18n="usp-veiligheid.r6b" style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓ UL 9540A, 1973, 1642</td><td data-i18n="usp-veiligheid.r6c" style="padding:0.85rem 1rem;text-align:center;">Vaak alleen CE</td></tr>
+                    <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.85rem 1rem;"><strong data-i18n="usp-veiligheid.r7a">6-laags veiligheid</strong></td><td data-i18n="usp-veiligheid.vink" style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td data-i18n="usp-veiligheid.r7c" style="padding:0.85rem 1rem;text-align:center;">Meestal 2-3 lagen</td></tr>
+                    <tr style="background:#F9FAF7;"><td style="padding:0.85rem 1rem;"><strong data-i18n="usp-veiligheid.r8a">All-in prijs (geen verborgen kosten)</strong></td><td data-i18n="usp-veiligheid.vink" style="padding:0.85rem 1rem;text-align:center;color:#27ae60;font-weight:600;">✓</td><td data-i18n="usp-veiligheid.r8c" style="padding:0.85rem 1rem;text-align:center;">Hardware-only offertes</td></tr>
                 </tbody>
             </table>
         </div>
@@ -444,62 +445,62 @@ h2{font-size:1.1rem}
 <!-- VEILIGHEID -->
 <section style="padding:4rem 0;background:var(--off-white);">
     <div class="container">
-        <p class="section-label">Veiligheid</p>
-        <h2>6-laags veiligheidsarchitectuur</h2>
-        <p style="max-width:700px;margin-top:0.75rem;color:var(--text-muted);">
+        <p data-i18n="usp-veiligheid.veiligheid-label" class="section-label">Veiligheid</p>
+        <h2 data-i18n="usp-veiligheid.veiligheid-h2">6-laags veiligheidsarchitectuur</h2>
+        <p data-i18n="usp-veiligheid.veiligheid-intro" style="max-width:700px;margin-top:0.75rem;color:var(--text-muted);">
             Veiligheid staat op de eerste plaats, zeker in en nabij hotels waar gasten, personeel en eigendommen beschermd moeten worden. Daarom hanteren wij een veiligheidsmodel met 6 lagen dat verder gaat dan wat de wet vereist.
         </p>
         <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:2rem;">
             <div class="problem-card fade-in">
                 <div class="icon"><span style="font-family:Montserrat;font-size:2rem;color:#7FBF3A;">01</span></div>
-                <h4>LFP-celchemie</h4>
-                <p>Lithium-IJzer-Fosfaat (LFP) is de veiligste lithium-chemie. Geen thermal runaway zoals bij NMC-cellen. Zelfs bij doorboring geen brandgevaar.</p>
+                <h4 data-i18n="usp-veiligheid.l1h">LFP-celchemie</h4>
+                <p data-i18n="usp-veiligheid.l1p">Lithium-IJzer-Fosfaat (LFP) is de veiligste lithium-chemie. Geen thermal runaway zoals bij NMC-cellen. Zelfs bij doorboring geen brandgevaar.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><span style="font-family:Montserrat;font-size:2rem;color:#7FBF3A;">02</span></div>
-                <h4>Per-cel BMS-monitoring</h4>
-                <p>Elke cel wordt continu gemonitord op spanning, temperatuur en interne weerstand. Het BMS (Battery Management System) grijpt in milliseconden in bij afwijkingen.</p>
+                <h4 data-i18n="usp-veiligheid.l2h">Per-cel BMS-monitoring</h4>
+                <p data-i18n="usp-veiligheid.l2p">Elke cel wordt continu gemonitord op spanning, temperatuur en interne weerstand. Het BMS (Battery Management System) grijpt in milliseconden in bij afwijkingen.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><span style="font-family:Montserrat;font-size:2rem;color:#7FBF3A;">03</span></div>
-                <h4>Actieve vloeistofkoeling</h4>
-                <p>Actieve vloeistofkoeling in plaats van passieve luchtkoeling. Houdt cellen op optimale temperatuur (20-25°C), verlengt de levensduur en voorkomt hotspots.</p>
+                <h4 data-i18n="usp-veiligheid.l3h">Actieve vloeistofkoeling</h4>
+                <p data-i18n="usp-veiligheid.l3p">Actieve vloeistofkoeling in plaats van passieve luchtkoeling. Houdt cellen op optimale temperatuur (20-25°C), verlengt de levensduur en voorkomt hotspots.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><span style="font-family:Montserrat;font-size:2rem;color:#7FBF3A;">04</span></div>
-                <h4>Ingebouwde brandonderdrukking</h4>
-                <p>Aerosol-blussysteem volledig geïntegreerd in de behuizing. Detecteert en blust automatisch. Getest volgens UL 9540A (4e + 5e editie, celniveau).</p>
+                <h4 data-i18n="usp-veiligheid.l4h">Ingebouwde brandonderdrukking</h4>
+                <p data-i18n="usp-veiligheid.l4p">Aerosol-blussysteem volledig geïntegreerd in de behuizing. Detecteert en blust automatisch. Getest volgens UL 9540A (4e + 5e editie, celniveau).</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><span style="font-family:Montserrat;font-size:2rem;color:#7FBF3A;">05</span></div>
-                <h4>Noodstop met AC-contactor</h4>
-                <p>Fysieke noodstop scheidt het systeem galvanisch van het net. Hard-wired veiligheidscircuit, geen software-afhankelijke uitschakeling.</p>
+                <h4 data-i18n="usp-veiligheid.l5h">Noodstop met AC-contactor</h4>
+                <p data-i18n="usp-veiligheid.l5p">Fysieke noodstop scheidt het systeem galvanisch van het net. Hard-wired veiligheidscircuit, geen software-afhankelijke uitschakeling.</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><span style="font-family:Montserrat;font-size:2rem;color:#7FBF3A;">06</span></div>
-                <h4>Brandmeldpaneelintegratie</h4>
-                <p>Directe koppeling met het bestaande brandmeldpaneel van het pand. Bij alarm: automatische uitschakeling + melding aan de brandweer.</p>
+                <h4 data-i18n="usp-veiligheid.l6h">Brandmeldpaneelintegratie</h4>
+                <p data-i18n="usp-veiligheid.l6p">Directe koppeling met het bestaande brandmeldpaneel van het pand. Bij alarm: automatische uitschakeling + melding aan de brandweer.</p>
             </div>
         </div>
         
         <div style="background:white;border-radius:var(--radius-lg);padding:2rem;margin-top:2rem;border:1px solid var(--border);">
-            <h3 style="margin-bottom:0.75rem;">Certificeringen</h3>
+            <h3 data-i18n="usp-veiligheid.cert-h3" style="margin-bottom:0.75rem;">Certificeringen</h3>
             <div class="problem-grid" style="grid-template-columns: repeat(4, 1fr); margin-top:1rem;">
                 <div class="problem-card fade-in" style="text-align:center;">
                     <strong style="color:var(--green-primary);font-size:1.1rem;">UL 9540A</strong>
-                    <p style="font-size:0.85rem;">Brandtest celniveau (4e + 5e editie)</p>
+                    <p data-i18n="usp-veiligheid.cert1" style="font-size:0.85rem;">Brandtest celniveau (4e + 5e editie)</p>
                 </div>
                 <div class="problem-card fade-in" style="text-align:center;">
                     <strong style="color:var(--green-primary);font-size:1.1rem;">UL 1973</strong>
-                    <p style="font-size:0.85rem;">Veiligheid stationaire batterijen</p>
+                    <p data-i18n="usp-veiligheid.cert2" style="font-size:0.85rem;">Veiligheid stationaire batterijen</p>
                 </div>
                 <div class="problem-card fade-in" style="text-align:center;">
                     <strong style="color:var(--green-primary);font-size:1.1rem;">UL 1642</strong>
-                    <p style="font-size:0.85rem;">Lithium-cel veiligheid</p>
+                    <p data-i18n="usp-veiligheid.cert3" style="font-size:0.85rem;">Lithium-cel veiligheid</p>
                 </div>
                 <div class="problem-card fade-in" style="text-align:center;">
                     <strong style="color:var(--green-primary);font-size:1.1rem;">IEC 62933-5-2</strong>
-                    <p style="font-size:0.85rem;">Internationale standaard voor EES</p>
+                    <p data-i18n="usp-veiligheid.cert4" style="font-size:0.85rem;">Internationale standaard voor EES</p>
                 </div>
             </div>
         </div>
@@ -508,8 +509,8 @@ h2{font-size:1.1rem}
 
 <section style="padding:4rem 0;background:var(--green-primary);color:white;text-align:center;">
     <div class="container">
-        <h2 style="color:white;margin-bottom:1rem;">Klaar om jouw hotel veilig energie-onafhankelijk te maken?</h2>
-        <a href="configurator.html" class="btn-primary" style="display:inline-block;padding:1rem 2.5rem;font-size:1rem;">Doe de configurator →</a>
+        <h2 data-i18n="usp-veiligheid.cta-h2" style="color:white;margin-bottom:1rem;">Klaar om jouw hotel veilig energie-onafhankelijk te maken?</h2>
+        <a data-i18n="usp-veiligheid.cta-btn" href="configurator.html" class="btn-primary" style="display:inline-block;padding:1rem 2.5rem;font-size:1rem;">Doe de configurator →</a>
         <p style="margin-top:1rem;opacity:0.85;"><a href="mailto:info@lemnion.nl" style="color:var(--green-light);">info@lemnion.nl</a></p>
     </div>
 </section>
@@ -517,42 +518,42 @@ h2{font-size:1.1rem}
     <div class="container">
         <div>
             <h3 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h3>
-            <p style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
+            <p data-i18n="footer.desc" style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
             <h3>Oplossingen</h3>
             <ul>
-                <li><a href="netcongestie.html">Netcongestie</a></li>
-                <li><a href="verduurzamen.html">Verduurzamen</a></li>
-                <li><a href="maximum-belasting.html">Maximum belasting</a></li>
-                <li><a href="stroom-overschot.html">Stroom overschot</a></li>
-                <li><a href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+                <li><a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a></li>
+                <li><a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a></li>
+                <li><a data-i18n="footer.maxbelasting" href="maximum-belasting.html">Maximum belasting</a></li>
+                <li><a data-i18n="footer.stroomoverschot" href="stroom-overschot.html">Stroom overschot</a></li>
+                <li><a data-i18n="footer.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
             </ul>
         </div>
         <div>
-            <h3>Producten &amp; Diensten</h3>
+            <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a href="producten.html">Batterijopslag</a></li>
-                <li><a href="producten.html">Laadpalen &amp; snelladers</a></li>
-                <li><a href="producten.html">EMS &amp; monitoring</a></li>
-                <li><a href="configurator.html">Energieconfigurator</a></li>
-                <li><a href="subsidies.html">Subsidies &amp; regelingen</a></li>
+                <li><a data-i18n="footer.batterij" href="producten.html">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="producten.html">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="producten.html">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.configurator" href="configurator.html">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.subsidies" href="subsidies.html">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
-            <h3>Informatie</h3>
+            <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a href="voordelen.html">Verdienmodellen</a></li>
-                <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
-                <li><a href="over-ons.html">Over ons</a></li>
-                <li><a href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
+                <li><a data-i18n="footer.nieuwsblog" href="nieuws.html">Nieuws &amp; blog</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
-            <p style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
     </footer>
@@ -566,46 +567,46 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
     <div class="contact-modal-content">
         <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
-        <h3>Vrijblijvend contact</h3>
-        <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
+        <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
+        <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
         <form id="contact-form" novalidate>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.voornaam" for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
                 </div>
                 <div class="form-group">
-                    <label for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.achternaam" for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.bedrijf" for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
-                    <label for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.functie" for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.email" for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
                     <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
                 </div>
                 <div class="form-group">
-                    <label for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.mobiel" for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
                     <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
-                <label for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
+                <label data-i18n="modal.bericht" for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
                 <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
-                <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
+                <button data-i18n="modal.submit" type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
             </div>
         </form>
     </div>
@@ -685,14 +686,30 @@ document.addEventListener('keydown',function(e){
     honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;';
     form.appendChild(honeypot);
 
+    var LANG = (document.documentElement.lang || 'nl').split('-')[0];
+
     var requiredLabels = {
-        voornaam: 'voornaam',
-        achternaam: 'achternaam',
-        bedrijfsnaam: 'bedrijfsnaam',
-        functie: 'functie',
-        email: 'e-mailadres',
-        mobiel: 'mobiel nummer',
-        bericht: 'bericht'
+        voornaam: LANG === 'en' ? 'first name' : 'voornaam',
+        achternaam: LANG === 'en' ? 'last name' : 'achternaam',
+        bedrijfsnaam: LANG === 'en' ? 'company name' : 'bedrijfsnaam',
+        functie: LANG === 'en' ? 'job title' : 'functie',
+        email: LANG === 'en' ? 'email address' : 'e-mailadres',
+        mobiel: LANG === 'en' ? 'mobile number' : 'mobiel nummer',
+        bericht: LANG === 'en' ? 'message' : 'bericht'
+    };
+
+    var T = (LANG === 'en') ? {
+        vul: 'Please fill in your ', in: '.', email: 'Please enter a valid email address.',
+        sending: 'Sending...', thanks: 'Thank you for your message!',
+        soon: 'We will contact you within 24 hours.',
+        fail: 'Sending failed. Please try again later.',
+        netfail: 'Sending failed. Check your internet connection and try again.'
+    } : {
+        vul: 'Vul je ', in: ' in.', email: 'Vul een geldig e-mailadres in.',
+        sending: 'Versturen...', thanks: 'Bedankt voor je bericht!',
+        soon: 'We nemen binnen 24 uur contact met je op.',
+        fail: 'Het versturen is mislukt. Probeer het later opnieuw.',
+        netfail: 'Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.'
     };
 
     function clearErrors() {
@@ -740,16 +757,17 @@ document.addEventListener('keydown',function(e){
             email: document.getElementById('email').value.trim(),
             mobiel: document.getElementById('mobiel').value.trim(),
             bericht: document.getElementById('bericht').value.trim(),
-            website: honeypot.value
+            website: honeypot.value,
+            lang: LANG
         };
 
-        // Client-side validatie (Nederlands, onafhankelijk van browsertaal)
+        // Client-side validatie (taalafhankelijk via <html lang>)
         var errors = {};
         for (var key in requiredLabels) {
-            if (!payload[key]) errors[key] = 'Vul je ' + requiredLabels[key] + ' in.';
+            if (!payload[key]) errors[key] = T.vul + requiredLabels[key] + T.in;
         }
         if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) {
-            errors.email = 'Vul een geldig e-mailadres in.';
+            errors.email = T.email;
         }
         if (Object.keys(errors).length > 0) {
             showErrors(errors);
@@ -758,7 +776,7 @@ document.addEventListener('keydown',function(e){
 
         var btn = form.querySelector('button[type="submit"]');
         var orig = btn ? btn.innerHTML : '';
-        if (btn) { btn.disabled = true; btn.innerHTML = 'Versturen...'; }
+        if (btn) { btn.disabled = true; btn.innerHTML = T.sending; }
 
         fetch('/api/contact', {
             method: 'POST',
@@ -770,19 +788,19 @@ document.addEventListener('keydown',function(e){
             if (res.ok && res.data.success) {
                 form.innerHTML = '<div style="text-align:center;padding:2rem;">' +
                     '<div style="font-size:3rem;margin-bottom:1rem;">✓</div>' +
-                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3>' +
-                    '<p style="color:var(--text-muted);">We nemen binnen 24 uur contact met je op.</p></div>';
+                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">' + T.thanks + '</h3>' +
+                    '<p style="color:var(--text-muted);">' + T.soon + '</p></div>';
                 return;
             }
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
             if (res.data.errors) {
                 showErrors(res.data.errors);
             } else {
-                showFormError(res.data.message || 'Het versturen is mislukt. Probeer het later opnieuw.');
+                showFormError(res.data.message || T.fail);
             }
         }).catch(function(){
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
-            showFormError('Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.');
+            showFormError(T.netfail);
         });
     });
 

@@ -1,0 +1,21 @@
+[
+  {"key": "stroomuitval.h1", "tag": "h1", "contains": "Stroomuitval & noodaggregaat"},
+  {"key": "stroomuitval.intro", "tag": "p", "contains": "Veel hotels hebben een dieselaggregaat voor noodsituaties"},
+  {"key": "stroomuitval.s1label", "tag": "p", "contains": "De oplossing", "attrs": "section-label"},
+  {"key": "stroomuitval.s1h", "tag": "h2", "contains": "Noodstroom zonder diesel"},
+  {"key": "stroomuitval.s1p", "tag": "p", "contains": "Een dieselaggregaat lijkt een veilige backup"},
+  {"key": "stroomuitval.c1h", "tag": "h4", "contains": "261 kWh LFP-opslag"},
+  {"key": "stroomuitval.c1p", "tag": "p", "contains": "Met 261 kWh aan LFP-batterijcapaciteit blijven"},
+  {"key": "stroomuitval.c2h", "tag": "h4", "contains": "Directe omschakeling"},
+  {"key": "stroomuitval.c2p", "tag": "p", "contains": "Bij netuitval schakelt het systeem binnen milliseconden"},
+  {"key": "stroomuitval.c3h", "tag": "h4", "contains": "100% emissievrij"},
+  {"key": "stroomuitval.c3p", "tag": "p", "contains": "Geen diesel, geen CO2-uitstoot, geen roetdeeltjes"},
+  {"key": "stroomuitval.f1h", "tag": "h3", "contains": "Dieselaggregaat"},
+  {"key": "stroomuitval.f1p", "tag": "p", "contains": "Onderhoud nodig, brandstof veroudert"},
+  {"key": "stroomuitval.f2h", "tag": "h3", "contains": "Batterij backup"},
+  {"key": "stroomuitval.f2p", "tag": "p", "contains": "Altijd opgeladen, milliseconde omschakeling"},
+  {"key": "stroomuitval.tip", "tag": "p", "contains": "Tip:"},
+  {"key": "stroomuitval.ctah", "tag": "h2", "contains": "Klaar om jouw hotel te bevrijden van netcongestie?"},
+  {"key": "stroomuitval.ctap", "tag": "p", "contains": "Bereken binnen 1 minuut wat jouw hotel kan besparen"},
+  {"key": "stroomuitval.cta", "tag": "a", "contains": "Doe de configurator", "attrs": "configurator.html"}
+]

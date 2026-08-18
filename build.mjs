@@ -35,14 +35,23 @@ function pageUrl(page, lang) {
 }
 
 function loadDict(lang) {
-  const p = join(ROOT, 'translations', `${lang}.json`);
-  if (!existsSync(p)) return null;
-  try {
-    return JSON.parse(readFileSync(p, 'utf8'));
-  } catch (e) {
-    console.error(`[build] FOUT: translations/${lang}.json is geen geldige JSON: ${e.message}`);
-    process.exit(1);
+  // merge translations/<lang>.json + alle translations/<lang>.*.json (per-pagina woordenboeken)
+  const dict = {};
+  let any = false;
+  for (const f of readdirSync(join(ROOT, 'translations'))) {
+    if (!f.startsWith(lang + '.') || !f.endsWith('.json')) continue;
+    const p = join(ROOT, 'translations', f);
+    if (!statSync(p).isFile()) continue;
+    any = true;
+    try {
+      Object.assign(dict, JSON.parse(readFileSync(p, 'utf8')));
+    } catch (e) {
+      console.error(`[build] FOUT: translations/${f} is geen geldige JSON: ${e.message}`);
+      process.exit(1);
+    }
   }
+  if (!any) return null;
+  return dict;
 }
 
 function injectHead(html, page, lang) {

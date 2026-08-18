@@ -86,6 +86,11 @@
         .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;grid-column:3}
         .nav-links a { text-decoration: none; color: var(--dark-grey); font-size: 0.9rem; font-weight: 500; }
         .nav-links a:hover { color: var(--green-accent); }
+        .lang-switch{display:flex;align-items:center;gap:0.45rem;margin-left:0.75rem;white-space:nowrap}
+        .lang-switch .lang-link{font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:0.9rem;color:var(--text-muted);text-decoration:none;line-height:1.65}
+        .lang-switch .lang-link:hover{color:var(--green-accent)}
+        .lang-switch .lang-link[aria-current="true"]{color:var(--green-secondary)}
+        .lang-switch .lang-sep{color:var(--border);font-size:0.9rem}
         /* Mega Menu */
         .nav-dropdown{position:relative}.nav-dropdown>a{cursor:pointer}
         .nav-dropdown-panel{display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,0.12);border:1px solid #D4DDD0;z-index:99;padding:1.5rem;min-width:260px;transition:opacity 0.15s ease-in-out}
@@ -482,7 +487,7 @@ h2{font-size:1.1rem}
 </head>
 <body>
 
-<a href="#content" class="skip-link">Direct naar inhoud</a>
+<a data-i18n="nav.skip" href="#content" class="skip-link">Direct naar inhoud</a>
         
 
 <nav>
@@ -512,55 +517,51 @@ h2{font-size:1.1rem}
                         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">
-                <a href="oplossingen.html">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="oplossingen.html">Oplossingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Oplossingen</h4>
-                        <a href="netcongestie.html">Netcongestie</a>
-                        <a href="verduurzamen.html">Verduurzamen</a>
-                        <a href="maximum-belasting.html">Maximum belasting</a>
-                        <a href="stroom-overschot.html">Stroom (zon) overschot</a>
-                        <a href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                        <h4 data-i18n="nav.oplossingen_h">Oplossingen</h4>
+                        <a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a>
+                        <a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a>
+                        <a data-i18n="nav.maxbelasting" href="maximum-belasting.html">Maximum belasting</a>
+                        <a data-i18n="nav.stroomoverschot" href="stroom-overschot.html">Stroom (zon) overschot</a>
+                        <a data-i18n="nav.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
                     </div>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a href="voordelen.html">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="voordelen.html">Voordelen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Voordelen</h4>
-                        <a href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a href="voordelen.html">Verdienmodellen</a>
-                        <a href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <h4 data-i18n="nav.voordelen_h">Voordelen</h4>
+                        <a data-i18n="nav.usp" href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a>
+                        <a data-i18n="nav.configurator" href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.vergelijk" href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a href="producten.html">Producten</a></li>
-            <li><a href="subsidies.html">Subsidies</a></li>
-            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a data-i18n="nav.producten" href="producten.html">Producten</a></li>
+            <li><a data-i18n="nav.subsidies" href="subsidies.html">Subsidies</a></li>
+            <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
             <li class="nav-dropdown">
-                <a href="nieuws.html">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="nieuws.html">Nieuws ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Nieuws</h4>
-                        <a href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
-                        <a href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                        <h4 data-i18n="nav.nieuws_h">Nieuws</h4>
+                        <a data-i18n="nav.nieuws_all" href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a data-i18n="nav.blog" href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
                     </div>
                 </div>
             </li>
-            <li><a href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
-<li style="position:relative;">
-                <a href="#" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;" style="text-decoration:none;font-size:1.1rem;" title="Vertalen">🌐</a>
-                <div style="display:none;position:absolute;top:110%;right:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:130px;z-index:200;overflow:hidden;">
-                    <a href="#" onclick="window.top.location.href='https://jacobdegraaff.github.io/hes-website/configurator.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇳🇱</span> Nederlands</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=en&amp;sl=nl&amp;tl=en&amp;u=https://jacobdegraaff.github.io/hes-website/configurator.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇬🇧</span> English</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=fr&amp;sl=nl&amp;tl=fr&amp;u=https://jacobdegraaff.github.io/hes-website/configurator.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇫🇷</span> Francais</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=es&amp;sl=nl&amp;tl=es&amp;u=https://jacobdegraaff.github.io/hes-website/configurator.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇪🇸</span> Espanol</a>
-                </div>
+            <li><a data-i18n="nav.contact" href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li class="lang-switch" aria-label="Taal / Language">
+                <a href="/configurator.html" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
+                <span class="lang-sep" aria-hidden="true">/</span>
+                <a href="/en/configurator.html" class="lang-link" lang="en" hreflang="en">EN</a>
             </li>
         </ul>
     </div>
@@ -570,91 +571,91 @@ h2{font-size:1.1rem}
 
 
 <div class="page-header" id="content">
-    <h1>Configureer de Energiefuture van Uw Hotel</h1>
-    <p>Stel je hotelprofiel in en activeer de componenten die je wilt. Alle cijfers worden direct bijgewerkt. Het zijn indicatieve schattingen op basis van typische Nederlandse marktomstandigheden.</p>
+    <h1 data-i18n="configurator.h1">Configureer de Energiefuture van Uw Hotel</h1>
+    <p data-i18n="configurator.intro">Stel je hotelprofiel in en activeer de componenten die je wilt. Alle cijfers worden direct bijgewerkt. Het zijn indicatieve schattingen op basis van typische Nederlandse marktomstandigheden.</p>
 </div>
 
-<div class="container">
+<div data-i18n="configurator.rooms_hint" class="container">
     <div class="config-grid">
         <!-- Left column: Inputs -->
         <div>
             <!-- Hotel Profile -->
             <div class="panel">
-                <h3 style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42V14l18-10 18 10v28"/><path d="M12 42V18l12-7 12 7v24"/><path d="M20 42V30h8v12"/></svg> Uw Hotelprofiel</h3>
+                <h3 data-i18n="configurator.profile_h" style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42V14l18-10 18 10v28"/><path d="M12 42V18l12-7 12 7v24"/><path d="M20 42V30h8v12"/></svg> Uw Hotelprofiel</h3>
                 <div class="slider-group">
-                    <label>Aantal kamers <span class="value" id="roomsVal">80</span></label>
+                    <label data-i18n="configurator.rooms">Aantal kamers <span class="value" id="roomsVal">80</span></label>
                     <input type="range" min="10" max="500" value="80" step="5" id="rooms" oninput="updateAll()">
                     <div class="slider-hint">Van boutique tot groot resort</div>
                 </div>
-                <div class="slider-group">
-                    <label>Jaarverbruik <span class="value" id="consumptionVal">250.000 kWh</span></label>
+                <div data-i18n="configurator.consumption_hint" class="slider-group">
+                    <label data-i18n="configurator.consumption">Jaarverbruik <span class="value" id="consumptionVal">250.000 kWh</span></label>
                     <input type="range" min="50000" max="2000000" value="250000" step="10000" id="consumption" oninput="updateAll()">
                     <div class="slider-hint">50.000 tot 2.000.000 kWh/jaar</div>
                 </div>
-                <div class="slider-group">
-                    <label>Piekbelasting <span class="value" id="peakVal">100 kW</span></label>
+                <div data-i18n="configurator.peak_hint" class="slider-group">
+                    <label data-i18n="configurator.peak">Piekbelasting <span class="value" id="peakVal">100 kW</span></label>
                     <input type="range" min="20" max="500" value="100" step="5" id="peak" oninput="updateAll()">
                     <div class="slider-hint">Uw hoogste 15-minuten gemiddelde belasting</div>
                 </div>
-                <div class="slider-group">
-                    <label>Energietarief <span class="value" id="rateVal">€0,30/kWh</span></label>
+                <div data-i18n="configurator.rate_hint" class="slider-group">
+                    <label data-i18n="configurator.rate">Energietarief <span class="value" id="rateVal">€0,30/kWh</span></label>
                     <input type="range" min="0.1" max="0.6" value="0.3" step="0.01" id="rate" oninput="updateAll()">
                     <div class="slider-hint">All-in commercieel tarief in EUR</div>
                 </div>
-                <div class="slider-group">
-                    <label>Netcapaciteit <span class="value" id="gridVal">150 kW</span></label>
+                <div data-i18n="configurator.grid_hint" class="slider-group">
+                    <label data-i18n="configurator.grid">Netcapaciteit <span class="value" id="gridVal">150 kW</span></label>
                     <input type="range" min="50" max="1000" value="150" step="10" id="gridCapacity" oninput="updateAll()">
                     <div class="slider-hint">Uw gecontracteerde aansluitcapaciteit</div>
                 </div>
                 <div class="checkbox-group">
                     <input type="checkbox" id="hasSolar" onchange="updateAll()">
-                    <label for="hasSolar">Bestaande zonnepanelen aanwezig</label>
+                    <label data-i18n="configurator.hasSolar" for="hasSolar">Bestaande zonnepanelen aanwezig</label>
                 </div>
                 <div class="checkbox-group">
                     <input type="checkbox" id="dynamicContract" onchange="updateAll()">
-                    <label for="dynamicContract">Dynamisch energiecontract</label>
+                    <label data-i18n="configurator.dynamic" for="dynamicContract">Dynamisch energiecontract</label>
                 </div>
             </div>
 
             <!-- Components -->
             <div class="panel" style="margin-top:1.5rem;">
-                <h3 style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="16" height="16" rx="2"/><rect x="26" y="6" width="16" height="16" rx="2"/><rect x="6" y="26" width="16" height="16" rx="2"/><rect x="26" y="26" width="16" height="16" rx="2"/></svg> Bouw Uw Systeem</h3>
-                <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Activeer elke component om de financiële impact te zien. Bouw op van opslag naar een compleet ecosysteem.</p>
+                <h3 data-i18n="configurator.build_h" style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="16" height="16" rx="2"/><rect x="26" y="6" width="16" height="16" rx="2"/><rect x="6" y="26" width="16" height="16" rx="2"/><rect x="26" y="26" width="16" height="16" rx="2"/></svg> Bouw Uw Systeem</h3>
+                <p data-i18n="configurator.build_p" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Activeer elke component om de financiële impact te zien. Bouw op van opslag naar een compleet ecosysteem.</p>
                 
                 <div class="component-card" id="card-battery">
                     <div class="component-card-header">
                         <span style="display:inline-flex;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="14" width="32" height="20" rx="3"/><path d="M36 20v8M40 20v8"/><rect x="9" y="19" width="8" height="10" rx="1"/><rect x="19" y="19" width="8" height="10" rx="1"/></svg></span>
-                        <h4>ESS-accuopslag</h4>
+                        <h4 data-i18n="configurator.c1h">ESS-accuopslag</h4>
                         <div class="toggle" id="toggle-battery"></div>
                     </div>
-                    <p>Laad tegen goedkope daluren, ontlaad tijdens dure piekuren. 261 kWh LFP per eenheid met 125 kW PCS.</p>
+                    <p data-i18n="configurator.c1p">Laad tegen goedkope daluren, ontlaad tijdens dure piekuren. 261 kWh LFP per eenheid met 125 kW PCS.</p>
                 </div>
                 
                 <div class="component-card" id="card-ems">
                     <div class="component-card-header">
                         <span style="display:inline-flex;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="28" height="28" rx="3"/><rect x="17" y="17" width="14" height="14" rx="2"/><path d="M10 20H4M10 28H4M38 20h6M38 28h6M20 10V4M28 10V4M20 44v-6M28 44v-6"/></svg></span>
-                        <h4>EMS-software</h4>
+                        <h4 data-i18n="configurator.c2h">EMS-software</h4>
                         <div class="toggle" id="toggle-ems"></div>
                     </div>
-                    <p>Geautomatiseerde optimalisatie, dynamische tariefrespons en real-time monitoring. Waardevoller met ESS.</p>
+                    <p data-i18n="configurator.c2p">Geautomatiseerde optimalisatie, dynamische tariefrespons en real-time monitoring. Waardevoller met ESS.</p>
                 </div>
                 
                 <div class="component-card" id="card-solar">
                     <div class="component-card-header">
                         <span style="display:inline-flex;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.5 9.5l4 4M34.5 34.5l4 4M38.5 9.5l-4 4M13.5 34.5l-4 4"/></svg></span>
-                        <h4>Zonnepanelen / PV</h4>
+                        <h4 data-i18n="configurator.c3h">Zonnepanelen / PV</h4>
                         <div class="toggle" id="toggle-solar"></div>
                     </div>
-                    <p>Genereer schone energie en sla het overschot op in de accu. Maximale waarde gerealiseerd met ESS.</p>
+                    <p data-i18n="configurator.c3p">Genereer schone energie en sla het overschot op in de accu. Maximale waarde gerealiseerd met ESS.</p>
                 </div>
                 
                 <div class="component-card" id="card-ev">
                     <div class="component-card-header">
                         <span style="display:inline-flex;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6v14M30 6v14"/><rect x="8" y="20" width="28" height="10" rx="2"/><path d="M14 30v6M30 30v6M18 36h8"/></svg></span>
-                        <h4>EV-laden</h4>
+                        <h4 data-i18n="configurator.c4h">EV-laden</h4>
                         <div class="toggle" id="toggle-ev"></div>
                     </div>
-                    <p>Genereer inkomsten uit gast-EV-laden, aangedreven door opgeslagen zonne-energie. Vereist EMS voor lastbeheer.</p>
+                    <p data-i18n="configurator.c4p">Genereer inkomsten uit gast-EV-laden, aangedreven door opgeslagen zonne-energie. Vereist EMS voor lastbeheer.</p>
                 </div>
             </div>
         </div>
@@ -662,51 +663,51 @@ h2{font-size:1.1rem}
         <!-- Right column: Results -->
         <div>
             <div class="panel" style="position:sticky;top:80px;">
-                <h3 style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 42h40"/><rect x="8" y="26" width="8" height="12" rx="1"/><rect x="20" y="16" width="8" height="22" rx="1"/><rect x="32" y="8" width="8" height="30" rx="1"/></svg> LIVE RESULTATEN</h3>
+                <h3 data-i18n="configurator.results_h" style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 42h40"/><rect x="8" y="26" width="8" height="12" rx="1"/><rect x="20" y="16" width="8" height="22" rx="1"/><rect x="32" y="8" width="8" height="30" rx="1"/></svg> LIVE RESULTATEN</h3>
                 
                 <div class="summary-bar">
                     <div>
                         <div class="big-number" id="totalBenefit">€0</div>
-                        <div class="label">Totaal jaarlijks voordeel</div>
+                        <div data-i18n="configurator.total_label" class="label">Totaal jaarlijks voordeel</div>
                     </div>
-                    <div style="font-size:0.75rem;opacity:0.6;">indicatief</div>
+                    <div data-i18n="configurator.indicative" style="font-size:0.75rem;opacity:0.6;">indicatief</div>
                 </div>
                 
                 <div class="results-grid">
                     <div class="result-card">
                         <div class="big-number" id="annualSavings">€0</div>
-                        <div class="label">Jaarlijkse besparing</div>
+                        <div data-i18n="configurator.savings_label" class="label">Jaarlijkse besparing</div>
                     </div>
                     <div class="result-card highlight">
                         <div class="big-number" id="newRevenue">€0</div>
-                        <div class="label">Nieuwe inkomsten</div>
+                        <div data-i18n="configurator.revenue_label" class="label">Nieuwe inkomsten</div>
                     </div>
                     <div class="result-card">
                         <div class="big-number" id="co2Reduction">0</div>
-                        <div class="label">CO₂-reductie (ton/jaar)</div>
+                        <div data-i18n="configurator.co2_label" class="label">CO₂-reductie (ton/jaar)</div>
                     </div>
                     <div class="result-card">
                         <div class="big-number" id="independence">0%</div>
-                        <div class="label">Energie-onafhankelijkheid</div>
+                        <div data-i18n="configurator.independence_label" class="label">Energie-onafhankelijkheid</div>
                     </div>
                     <div class="result-card">
                         <div class="big-number" id="systemValue">€0</div>
-                        <div class="label">Systeemwaarde / jaar</div>
+                        <div data-i18n="configurator.systemvalue_label" class="label">Systeemwaarde / jaar</div>
                     </div>
                     <div class="result-card">
                         <div class="big-number" id="peakReduction">0%</div>
-                        <div class="label">Piekreductie</div>
+                        <div data-i18n="configurator.peak_label" class="label">Piekreductie</div>
                     </div>
                 </div>
 
                 <table class="projection-table">
                     <thead>
-                        <tr><th>Periode</th><th>Totaal voordeel</th></tr>
+                        <tr><th data-i18n="configurator.period">Periode</th><th data-i18n="configurator.total_benefit">Totaal voordeel</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Jaar 1</td><td class="positive" id="proj-y1">€0</td></tr>
-                        <tr><td>Jaar 5</td><td class="positive" id="proj-y5">€0</td></tr>
-                        <tr><td>Jaar 10</td><td class="positive" id="proj-y10">€0</td></tr>
+                        <tr><td data-i18n="configurator.y1">Jaar 1</td><td class="positive" id="proj-y1">€0</td></tr>
+                        <tr><td data-i18n="configurator.y5">Jaar 5</td><td class="positive" id="proj-y5">€0</td></tr>
+                        <tr><td data-i18n="configurator.y10">Jaar 10</td><td class="positive" id="proj-y10">€0</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -715,43 +716,43 @@ h2{font-size:1.1rem}
 
     <!-- Safety -->
     <div class="panel" style="margin-top:2rem;">
-        <h3 style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4l16 5v14c0 10-6.5 17-16 21-9.5-4-16-11-16-21V9l16-5z"/><path d="M16 24l6 6 12-12"/></svg> Veiligheid: Ontworpen voor Hospitality</h3>
-        <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">Hotels ontvangen elke nacht honderden gasten. Onze energiesystemen zijn gebouwd met meerdere onafhankelijke veiligheidslagen, want in hospitality is veiligheid de enige aanvaardbare standaard.</p>
+        <h3 data-i18n="configurator.safety_h" style="display:flex;align-items:center;gap:0.6rem;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4l16 5v14c0 10-6.5 17-16 21-9.5-4-16-11-16-21V9l16-5z"/><path d="M16 24l6 6 12-12"/></svg> Veiligheid: Ontworpen voor Hospitality</h3>
+        <p data-i18n="configurator.safety_p" style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">Hotels ontvangen elke nacht honderden gasten. Onze energiesystemen zijn gebouwd met meerdere onafhankelijke veiligheidslagen, want in hospitality is veiligheid de enige aanvaardbare standaard.</p>
         <div class="safety-grid">
             <div class="safety-item">
                 <div class="icon-text"><svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="14" width="32" height="20" rx="3"/><path d="M36 20v8M40 20v8"/><rect x="9" y="19" width="8" height="10" rx="1"/><rect x="19" y="19" width="8" height="10" rx="1"/></svg></div>
-                <h4>LFP-celchemie</h4>
+                <h4 data-i18n="configurator.s1">LFP-celchemie</h4>
             </div>
             <div class="safety-item">
                 <div class="icon-text"><svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 42h40"/><rect x="8" y="26" width="8" height="12" rx="1"/><rect x="20" y="16" width="8" height="22" rx="1"/><rect x="32" y="8" width="8" height="30" rx="1"/></svg></div>
-                <h4>Battery Management Systeem</h4>
+                <h4 data-i18n="configurator.s2">Battery Management Systeem</h4>
             </div>
             <div class="safety-item">
                 <div class="icon-text"><svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4c7 9 12 15 12 20a12 12 0 11-24 0c0-5 5-11 12-20z"/></svg></div>
-                <h4>Actieve Vloeistofkoeling</h4>
+                <h4 data-i18n="configurator.s3">Actieve Vloeistofkoeling</h4>
             </div>
             <div class="safety-item">
                 <div class="icon-text"><svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h12v6H16z"/><rect x="13" y="10" width="18" height="32" rx="3"/><path d="M10 14a4 4 0 014-4"/><path d="M13 22h18"/></svg></div>
-                <h4>Aerosol Brandonderdrukking</h4>
+                <h4 data-i18n="configurator.s4">Aerosol Brandonderdrukking</h4>
             </div>
             <div class="safety-item">
                 <div class="icon-text"><svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="40" height="28" rx="2"/><path d="M16 42h16M24 34v8"/></svg></div>
-                <h4>Guardian Software Controller</h4>
+                <h4 data-i18n="configurator.s5">Guardian Software Controller</h4>
             </div>
             <div class="safety-item">
                 <div class="icon-text"><svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l18 32H6L24 6z"/><path d="M24 18v10M24 32v2"/></svg></div>
-                <h4>Brandmeldpaneelintegratie</h4>
+                <h4 data-i18n="configurator.s6">Brandmeldpaneelintegratie</h4>
             </div>
         </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-bar">
-        <h2>Klaar om de energie van jouw hotel te transformeren?</h2>
-        <p style="color:var(--text-muted);margin-bottom:1.5rem;">Dit is een indicatieve schatting. Voor een exacte berekening op maat van jouw pand staan wij klaar.</p>
+        <h2 data-i18n="configurator.ctah">Klaar om de energie van jouw hotel te transformeren?</h2>
+        <p data-i18n="configurator.ctap" style="color:var(--text-muted);margin-bottom:1.5rem;">Dit is een indicatieve schatting. Voor een exacte berekening op maat van jouw pand staan wij klaar.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a href="mailto:info@lemnion.nl?subject=Configuratie%20aanvraag%20Lemnion" class="btn btn-green"><svg width="18" height="18" style="vertical-align:-3px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l40 12L4 36l6-12-6-12z"/><path d="M10 24h34"/></svg> Verstuur deze configuratie →</a>
-            <a href="index.html" class="btn" style="background:transparent;border:2px solid var(--green-primary);color:var(--green-primary);">← Terug naar home</a>
+            <a data-i18n="configurator.cta_send" href="mailto:info@lemnion.nl?subject=Configuratie%20aanvraag%20Lemnion" class="btn btn-green"><svg width="18" height="18" style="vertical-align:-3px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l40 12L4 36l6-12-6-12z"/><path d="M10 24h34"/></svg> Verstuur deze configuratie →</a>
+            <a data-i18n="configurator.cta_back" href="index.html" class="btn" style="background:transparent;border:2px solid var(--green-primary);color:var(--green-primary);">← Terug naar home</a>
         </div>
     </div>
 </div>
@@ -760,42 +761,42 @@ h2{font-size:1.1rem}
     <div class="container">
         <div>
             <h3 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h3>
-            <p style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
+            <p data-i18n="footer.desc" style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
             <h3>Oplossingen</h3>
             <ul>
-                <li><a href="netcongestie.html">Netcongestie</a></li>
-                <li><a href="verduurzamen.html">Verduurzamen</a></li>
-                <li><a href="maximum-belasting.html">Maximum belasting</a></li>
-                <li><a href="stroom-overschot.html">Stroom overschot</a></li>
-                <li><a href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+                <li><a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a></li>
+                <li><a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a></li>
+                <li><a data-i18n="footer.maxbelasting" href="maximum-belasting.html">Maximum belasting</a></li>
+                <li><a data-i18n="footer.stroomoverschot" href="stroom-overschot.html">Stroom overschot</a></li>
+                <li><a data-i18n="footer.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
             </ul>
         </div>
         <div>
-            <h3>Producten &amp; Diensten</h3>
+            <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a href="producten.html">Batterijopslag</a></li>
-                <li><a href="producten.html">Laadpalen &amp; snelladers</a></li>
-                <li><a href="producten.html">EMS &amp; monitoring</a></li>
-                <li><a href="configurator.html">Energieconfigurator</a></li>
-                <li><a href="subsidies.html">Subsidies &amp; regelingen</a></li>
+                <li><a data-i18n="footer.batterij" href="producten.html">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="producten.html">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="producten.html">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.configurator" href="configurator.html">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.subsidies" href="subsidies.html">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
-            <h3>Informatie</h3>
+            <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a href="voordelen.html">Verdienmodellen</a></li>
-                <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
-                <li><a href="over-ons.html">Over ons</a></li>
-                <li><a href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
+                <li><a data-i18n="footer.nieuwsblog" href="nieuws.html">Nieuws &amp; blog</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
-            <p style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
     </footer>
@@ -935,46 +936,46 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
     <div class="contact-modal-content">
         <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
-        <h3>Vrijblijvend contact</h3>
-        <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
+        <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
+        <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
         <form id="contact-form" novalidate>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.voornaam" for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
                 </div>
                 <div class="form-group">
-                    <label for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.achternaam" for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.bedrijf" for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
-                    <label for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.functie" for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.email" for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
                     <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
                 </div>
                 <div class="form-group">
-                    <label for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.mobiel" for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
                     <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
-                <label for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
+                <label data-i18n="modal.bericht" for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
                 <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
-                <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
+                <button data-i18n="modal.submit" type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
             </div>
         </form>
     </div>
@@ -1054,14 +1055,30 @@ document.addEventListener('keydown',function(e){
     honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;';
     form.appendChild(honeypot);
 
+    var LANG = (document.documentElement.lang || 'nl').split('-')[0];
+
     var requiredLabels = {
-        voornaam: 'voornaam',
-        achternaam: 'achternaam',
-        bedrijfsnaam: 'bedrijfsnaam',
-        functie: 'functie',
-        email: 'e-mailadres',
-        mobiel: 'mobiel nummer',
-        bericht: 'bericht'
+        voornaam: LANG === 'en' ? 'first name' : 'voornaam',
+        achternaam: LANG === 'en' ? 'last name' : 'achternaam',
+        bedrijfsnaam: LANG === 'en' ? 'company name' : 'bedrijfsnaam',
+        functie: LANG === 'en' ? 'job title' : 'functie',
+        email: LANG === 'en' ? 'email address' : 'e-mailadres',
+        mobiel: LANG === 'en' ? 'mobile number' : 'mobiel nummer',
+        bericht: LANG === 'en' ? 'message' : 'bericht'
+    };
+
+    var T = (LANG === 'en') ? {
+        vul: 'Please fill in your ', in: '.', email: 'Please enter a valid email address.',
+        sending: 'Sending...', thanks: 'Thank you for your message!',
+        soon: 'We will contact you within 24 hours.',
+        fail: 'Sending failed. Please try again later.',
+        netfail: 'Sending failed. Check your internet connection and try again.'
+    } : {
+        vul: 'Vul je ', in: ' in.', email: 'Vul een geldig e-mailadres in.',
+        sending: 'Versturen...', thanks: 'Bedankt voor je bericht!',
+        soon: 'We nemen binnen 24 uur contact met je op.',
+        fail: 'Het versturen is mislukt. Probeer het later opnieuw.',
+        netfail: 'Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.'
     };
 
     function clearErrors() {
@@ -1109,16 +1126,17 @@ document.addEventListener('keydown',function(e){
             email: document.getElementById('email').value.trim(),
             mobiel: document.getElementById('mobiel').value.trim(),
             bericht: document.getElementById('bericht').value.trim(),
-            website: honeypot.value
+            website: honeypot.value,
+            lang: LANG
         };
 
-        // Client-side validatie (Nederlands, onafhankelijk van browsertaal)
+        // Client-side validatie (taalafhankelijk via <html lang>)
         var errors = {};
         for (var key in requiredLabels) {
-            if (!payload[key]) errors[key] = 'Vul je ' + requiredLabels[key] + ' in.';
+            if (!payload[key]) errors[key] = T.vul + requiredLabels[key] + T.in;
         }
         if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) {
-            errors.email = 'Vul een geldig e-mailadres in.';
+            errors.email = T.email;
         }
         if (Object.keys(errors).length > 0) {
             showErrors(errors);
@@ -1127,7 +1145,7 @@ document.addEventListener('keydown',function(e){
 
         var btn = form.querySelector('button[type="submit"]');
         var orig = btn ? btn.innerHTML : '';
-        if (btn) { btn.disabled = true; btn.innerHTML = 'Versturen...'; }
+        if (btn) { btn.disabled = true; btn.innerHTML = T.sending; }
 
         fetch('/api/contact', {
             method: 'POST',
@@ -1139,19 +1157,19 @@ document.addEventListener('keydown',function(e){
             if (res.ok && res.data.success) {
                 form.innerHTML = '<div style="text-align:center;padding:2rem;">' +
                     '<div style="font-size:3rem;margin-bottom:1rem;">✓</div>' +
-                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3>' +
-                    '<p style="color:var(--text-muted);">We nemen binnen 24 uur contact met je op.</p></div>';
+                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">' + T.thanks + '</h3>' +
+                    '<p style="color:var(--text-muted);">' + T.soon + '</p></div>';
                 return;
             }
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
             if (res.data.errors) {
                 showErrors(res.data.errors);
             } else {
-                showFormError(res.data.message || 'Het versturen is mislukt. Probeer het later opnieuw.');
+                showFormError(res.data.message || T.fail);
             }
         }).catch(function(){
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
-            showFormError('Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.');
+            showFormError(T.netfail);
         });
     });
 

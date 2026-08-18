@@ -1,0 +1,16 @@
+[
+  {"key": "verduurzamen.h1", "tag": "h1", "contains": "Verduurzamen zonder netverzwaring"},
+  {"key": "verduurzamen.sub", "tag": "p", "contains": "De overstap van gas naar elektrisch"},
+  {"key": "verduurzamen.label", "tag": "p", "contains": "De uitdaging", "attrs": "section-label"},
+  {"key": "verduurzamen.h2", "tag": "h2", "contains": "Gas-loos = meer stroom"},
+  {"key": "verduurzamen.lead", "tag": "p", "contains": "De hotellerie wil verduurzamen"},
+  {"key": "verduurzamen.c1h", "tag": "h4", "contains": "Warmtepompen"},
+  {"key": "verduurzamen.c1p", "tag": "p", "contains": "Een warmtepomp vervangt je gas-cv"},
+  {"key": "verduurzamen.c2h", "tag": "h4", "contains": "Inductie koken"},
+  {"key": "verduurzamen.c2p", "tag": "p", "contains": "Van gasfornuis naar inductie"},
+  {"key": "verduurzamen.c3h", "tag": "h4", "contains": "Elektrische boilers"},
+  {"key": "verduurzamen.c3p", "tag": "p", "contains": "Gasgestookte warmwaterbuffers"},
+  {"key": "verduurzamen.ctah", "tag": "h2", "contains": "Klaar om jouw hotel te bevrijden"},
+  {"key": "verduurzamen.ctap", "tag": "p", "contains": "Bereken binnen 1 minuut"},
+  {"key": "verduurzamen.cta", "tag": "a", "contains": "Doe de configurator"}
+]

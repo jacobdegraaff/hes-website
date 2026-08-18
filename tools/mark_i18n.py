@@ -38,9 +38,11 @@ def main():
     html = page_path.read_text(encoding="utf-8")
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
 
-    # Load dictionary to validate keys
-    dict_path = ROOT / "translations" / "en.json"
-    en = json.loads(dict_path.read_text(encoding="utf-8")) if dict_path.exists() else {}
+    # Load dictionary to validate keys (merge en.json + alle en.*.json per-pagina-bestanden)
+    en = {}
+    for f in sorted((ROOT / "translations").iterdir()):
+        if f.is_file() and f.name.startswith("en.") and f.name.endswith(".json"):
+            en.update(json.loads(f.read_text(encoding="utf-8")))
 
     missing_keys = [e["key"] for e in spec if e["key"] not in en]
     if missing_keys:

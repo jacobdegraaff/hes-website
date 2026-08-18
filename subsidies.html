@@ -249,12 +249,17 @@ h2{font-size:1.1rem}
     .nav-logo { gap: 0.5rem; }
 }
 
-</style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
+        .lang-switch{display:flex;align-items:center;gap:0.45rem;margin-left:0.75rem;white-space:nowrap}
+        .lang-switch .lang-link{font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:0.9rem;color:var(--text-muted);text-decoration:none;line-height:1.65}
+        .lang-switch .lang-link:hover{color:var(--green-accent)}
+        .lang-switch .lang-link[aria-current="true"]{color:var(--green-secondary)}
+        .lang-switch .lang-sep{color:var(--border);font-size:0.9rem}
+        </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
     <link rel="stylesheet" href="/assets/brand/accessibility.css">
 </head>
 <body>
 
-<a href="#content" class="skip-link">Direct naar inhoud</a>
+<a data-i18n="nav.skip" href="#content" class="skip-link">Direct naar inhoud</a>
 <nav>
     <div class="container">
         <a href="index.html" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
@@ -283,55 +288,51 @@ h2{font-size:1.1rem}
                 <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">
-                <a href="oplossingen.html">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="oplossingen.html">Oplossingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Oplossingen</h4>
-                        <a href="netcongestie.html">Netcongestie</a>
-                        <a href="verduurzamen.html">Verduurzamen</a>
-                        <a href="maximum-belasting.html">Maximum belasting</a>
-                        <a href="stroom-overschot.html">Stroom (zon) overschot</a>
-                        <a href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                        <h4 data-i18n="nav.oplossingen_h">Oplossingen</h4>
+                        <a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a>
+                        <a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a>
+                        <a data-i18n="nav.maxbelasting" href="maximum-belasting.html">Maximum belasting</a>
+                        <a data-i18n="nav.stroomoverschot" href="stroom-overschot.html">Stroom (zon) overschot</a>
+                        <a data-i18n="nav.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
                     </div>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a href="voordelen.html">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="voordelen.html">Voordelen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Voordelen</h4>
-                        <a href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a href="voordelen.html">Verdienmodellen</a>
-                        <a href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <h4 data-i18n="nav.voordelen_h">Voordelen</h4>
+                        <a data-i18n="nav.usp" href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a>
+                        <a data-i18n="nav.configurator" href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.vergelijk" href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a href="producten.html">Producten</a></li>
-            <li><a href="subsidies.html">Subsidies</a></li>
-            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a data-i18n="nav.producten" href="producten.html">Producten</a></li>
+            <li><a data-i18n="nav.subsidies" href="subsidies.html">Subsidies</a></li>
+            <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
             <li class="nav-dropdown">
-                <a href="nieuws.html">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="nieuws.html">Nieuws ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Nieuws</h4>
-                        <a href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
-                        <a href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                        <h4 data-i18n="nav.nieuws_h">Nieuws</h4>
+                        <a data-i18n="nav.nieuws_all" href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a data-i18n="nav.blog" href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
                     </div>
                 </div>
             </li>
-            <li><a href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
-<li style="position:relative;">
-                <a href="#" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;" style="text-decoration:none;font-size:1.1rem;" title="Vertalen">🌐</a>
-                <div style="display:none;position:absolute;top:110%;right:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:130px;z-index:200;overflow:hidden;">
-                    <a href="#" onclick="window.top.location.href='https://jacobdegraaff.github.io/hes-website/subsidies.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇳🇱</span> Nederlands</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=en&amp;sl=nl&amp;tl=en&amp;u=https://jacobdegraaff.github.io/hes-website/subsidies.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇬🇧</span> English</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=fr&amp;sl=nl&amp;tl=fr&amp;u=https://jacobdegraaff.github.io/hes-website/subsidies.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇫🇷</span> Francais</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=es&amp;sl=nl&amp;tl=es&amp;u=https://jacobdegraaff.github.io/hes-website/subsidies.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇪🇸</span> Espanol</a>
-                </div>
+            <li><a data-i18n="nav.contact" href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li class="lang-switch" aria-label="Taal / Language">
+                <a href="/subsidies.html" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
+                <span class="lang-sep" aria-hidden="true">/</span>
+                <a href="/en/subsidies.html" class="lang-link" lang="en" hreflang="en">EN</a>
             </li>
         </ul>
     </div>
@@ -341,153 +342,153 @@ h2{font-size:1.1rem}
 
 
 <div class="page-header" id="content">
-    <h1>Subsidies & Regelingen</h1>
-    <p>De overheid stimuleert energieopslag en verduurzaming met forse subsidies. Lemnion helpt jouw hotel om maximaal te profiteren, van aanvraag tot uitbetaling.</p>
+    <h1 data-i18n="subsidies.h1">Subsidies & Regelingen</h1>
+    <p data-i18n="subsidies.intro">De overheid stimuleert energieopslag en verduurzaming met forse subsidies. Lemnion helpt jouw hotel om maximaal te profiteren, van aanvraag tot uitbetaling.</p>
 </div>
 
 <section>
     <div class="container">
-        <p class="section-label">Landelijke regelingen</p>
-        <h2>Tot 60% subsidie op jouw investering</h2>
-        <p style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
+        <p data-i18n="subsidies.label" class="section-label">Landelijke regelingen</p>
+        <h2 data-i18n="subsidies.h2">Tot 60% subsidie op jouw investering</h2>
+        <p data-i18n="subsidies.intro2" style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
             Nederland kent meerdere subsidieregelingen die specifiek gericht zijn op energie-investeringen voor bedrijven. 
             Door slim te combineren kan jouw hotel tot wel 60% van de investering terugkrijgen.
         </p>
         <div class="subsidy-grid">
             <div class="subsidy-card">
-                <p class="section-label" style="margin-bottom:0.25rem;">Energie-investeringsaftrek</p>
+                <p data-i18n="subsidies.eia-label" class="section-label" style="margin-bottom:0.25rem;">Energie-investeringsaftrek</p>
                 <h3>EIA</h3>
                 <p class="percentage">40%</p>
-                <p>Extra aftrek op de fiscale winst voor energiebesparende bedrijfsmiddelen. Batterijopslag, EMS en laadinfrastructuur komen in aanmerking.</p>
+                <p data-i18n="subsidies.eia-p">Extra aftrek op de fiscale winst voor energiebesparende bedrijfsmiddelen. Batterijopslag, EMS en laadinfrastructuur komen in aanmerking.</p>
                 <ul>
-                    <li>40% extra aftrek op investeringskosten</li>
-                    <li>Gemiddeld 10% netto belastingvoordeel</li>
-                    <li>Totaal budget 2026: € 460 miljoen</li>
-                    <li>Minimaal €2.500 per bedrijfsmiddel</li>
+                    <li data-i18n="subsidies.eia-li1">40% extra aftrek op investeringskosten</li>
+                    <li data-i18n="subsidies.eia-li2">Gemiddeld 10% netto belastingvoordeel</li>
+                    <li data-i18n="subsidies.eia-li3">Totaal budget 2026: € 460 miljoen</li>
+                    <li data-i18n="subsidies.eia-li4">Minimaal €2.500 per bedrijfsmiddel</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> Rekenvoorbeeld</strong><br>
-                    Hotel investeert €120.000 in een accusysteem.<br>
-                    EIA-aftrek: <strong>40% × €120.000 = €48.000</strong> extra aftrek.<br>
-                    Bij 25,8% VPB: <strong>€12.384 netto belastingvoordeel</strong>.<br>
-                    Plus reguliere afschrijving op resterende €72.000.
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
+                    <span data-i18n="subsidies.eia-reken1">Hotel investeert €120.000 in een accusysteem.<br></span>
+                    <span data-i18n="subsidies.eia-reken2">EIA-aftrek: <strong>40% × €120.000 = €48.000</strong> extra aftrek.<br></span>
+                    <span data-i18n="subsidies.eia-reken3">Bij 25,8% VPB: <strong>€12.384 netto belastingvoordeel</strong>.<br></span>
+                    <span data-i18n="subsidies.eia-reken4">Plus reguliere afschrijving op resterende €72.000.</span>
                 </div>
             </div>
             <div class="subsidy-card">
-                <p class="section-label" style="margin-bottom:0.25rem;">Milieu-investeringsaftrek</p>
+                <p data-i18n="subsidies.mia-label" class="section-label" style="margin-bottom:0.25rem;">Milieu-investeringsaftrek</p>
                 <h3>MIA + Vamil</h3>
                 <p class="percentage">tot 45%</p>
-                <p>MIA: tot 36% extra aftrek op milieu-investeringen. Vamil: 75% willekeurig afschrijven, zodat jij het tempo bepaalt.</p>
+                <p data-i18n="subsidies.mia-p">MIA: tot 36% extra aftrek op milieu-investeringen. Vamil: 75% willekeurig afschrijven, zodat jij het tempo bepaalt.</p>
                 <ul>
-                    <li>MIA: tot 36% investeringsaftrek</li>
-                    <li>Vamil: vrije afschrijving op 75% van investering</li>
-                    <li>Combineerbaar met EIA voor maximaal voordeel</li>
+                    <li data-i18n="subsidies.mia-li1">MIA: tot 36% investeringsaftrek</li>
+                    <li data-i18n="subsidies.mia-li2">Vamil: vrije afschrijving op 75% van investering</li>
+                    <li data-i18n="subsidies.mia-li3">Combineerbaar met EIA voor maximaal voordeel</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> Rekenvoorbeeld</strong><br>
-                    Hotel investeert €180.000 in batterij + zonnepanelen.<br>
-                    MIA: <strong>36% × €180.000 = €64.800</strong> extra aftrek.<br>
-                    Vamil: <strong>75% × €180.000 = €135.000</strong> vrij afschrijven in jaar 1.<br>
-                    Netto voordeel jaar 1: <strong>~€28.000</strong> aan lagere belastingdruk.
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
+                    <span data-i18n="subsidies.mia-reken1">Hotel investeert €180.000 in batterij + zonnepanelen.<br></span>
+                    <span data-i18n="subsidies.mia-reken2">MIA: <strong>36% × €180.000 = €64.800</strong> extra aftrek.<br></span>
+                    <span data-i18n="subsidies.mia-reken3">Vamil: <strong>75% × €180.000 = €135.000</strong> vrij afschrijven in jaar 1.<br></span>
+                    <span data-i18n="subsidies.mia-reken4">Netto voordeel jaar 1: <strong>~€28.000</strong> aan lagere belastingdruk.</span>
                 </div>
             </div>
             <div class="subsidy-card">
-                <p class="section-label" style="margin-bottom:0.25rem;">Subsidie duurzame energie</p>
+                <p data-i18n="subsidies.isde-label" class="section-label" style="margin-bottom:0.25rem;">Subsidie duurzame energie</p>
                 <h3>ISDE (zakelijk)</h3>
                 <p class="percentage">tot 30%</p>
-                <p>Investeringssubsidie Duurzame Energie voor zakelijke gebruikers. Specifiek voor zonnepanelen, warmtepompen en zonneboilers.</p>
+                <p data-i18n="subsidies.isde-p">Investeringssubsidie Duurzame Energie voor zakelijke gebruikers. Specifiek voor zonnepanelen, warmtepompen en zonneboilers.</p>
                 <ul>
-                    <li>Subsidie op zonnepanelen (ook zakelijk)</li>
-                    <li>Vast bedrag per kWp geïnstalleerd vermogen</li>
-                    <li>Aanvraag vooraf indienen</li>
+                    <li data-i18n="subsidies.isde-li1">Subsidie op zonnepanelen (ook zakelijk)</li>
+                    <li data-i18n="subsidies.isde-li2">Vast bedrag per kWp geïnstalleerd vermogen</li>
+                    <li data-i18n="subsidies.isde-li3">Aanvraag vooraf indienen</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> Rekenvoorbeeld</strong><br>
-                    Hotel plaatst 200 panelen (80 kWp) | investering €72.000.<br>
-                    ISDE-subsidie: <strong>~€65 per kWp × 80 = €5.200</strong>.<br>
-                    Combineer met EIA: <strong>40% × €72.000 = €28.800</strong> extra aftrek.<br>
-                    Totaal voordeel: <strong>€5.200 + €7.430 (EIA) = €12.630</strong>.
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
+                    <span data-i18n="subsidies.isde-reken1">Hotel plaatst 200 panelen (80 kWp) | investering €72.000.<br></span>
+                    <span data-i18n="subsidies.isde-reken2">ISDE-subsidie: <strong>~€65 per kWp × 80 = €5.200</strong>.<br></span>
+                    <span data-i18n="subsidies.isde-reken3">Combineer met EIA: <strong>40% × €72.000 = €28.800</strong> extra aftrek.<br></span>
+                    <span data-i18n="subsidies.isde-reken4">Totaal voordeel: <strong>€5.200 + €7.430 (EIA) = €12.630</strong>.</span>
                 </div>
             </div>
             <div class="subsidy-card">
-                <p class="section-label" style="margin-bottom:0.25rem;">Subsidieregeling Private Laadinfrastructuur bij bedrijven</p>
+                <p data-i18n="subsidies.sprila-label" class="section-label" style="margin-bottom:0.25rem;">Subsidieregeling Private Laadinfrastructuur bij bedrijven</p>
                 <h3>SPRILA</h3>
-                <p class="percentage">subsidie per laadstation</p>
-                <p>Subsidieregeling voor <strong>private</strong> laadinfrastructuur bij bedrijven: laadpalen op eigen of gehuurd terrein voor gasten en personeel. Ideaal voor hotels.</p>
+                <p data-i18n="subsidies.per-station" class="percentage">subsidie per laadstation</p>
+                <p data-i18n="subsidies.sprila-p">Subsidieregeling voor <strong>private</strong> laadinfrastructuur bij bedrijven: laadpalen op eigen of gehuurd terrein voor gasten en personeel. Ideaal voor hotels.</p>
                 <ul>
-                    <li>AC-laadstation ≥11 kW of DC-laadstation ≥20 kW</li>
-                    <li>Eigen of gehuurd terrein, ook voor gasten</li>
-                    <li>Slimme laadfunctionaliteit verplicht</li>
+                    <li data-i18n="subsidies.sprila-li1">AC-laadstation ≥11 kW of DC-laadstation ≥20 kW</li>
+                    <li data-i18n="subsidies.sprila-li2">Eigen of gehuurd terrein, ook voor gasten</li>
+                    <li data-i18n="subsidies.sprila-li3">Slimme laadfunctionaliteit verplicht</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> Rekenvoorbeeld</strong><br>
-                    Hotel plaatst 4 duopalen (8 laadpunten) | AC vanaf 11 kW.<br>
-                    Subsidie: <strong>~€800 per duopaal × 4 = €3.200</strong> (of DC ≥20 kW: ~€1.950 per station).<br>
-                    Plus EIA: <strong>40% × investering</strong> extra aftrek.<br>
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
+                    <span data-i18n="subsidies.sprila-reken1">Hotel plaatst 4 duopalen (8 laadpunten) | AC vanaf 11 kW.<br></span>
+                    <span data-i18n="subsidies.sprila-reken2">Subsidie: <strong>~€800 per duopaal × 4 = €3.200</strong> (of DC ≥20 kW: ~€1.950 per station).<br></span>
+                    <span data-i18n="subsidies.sprila-reken3">Plus EIA: <strong>40% × investering</strong> extra aftrek.<br></span>
                     <!-- SPRILA_STATUS_START -->
-                    <span style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 17-08-2026 · <strong>Open voor aanvragen</strong> · Budget €122,5 mln · Aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
+                    <span data-i18n="subsidies.sprila-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 17-08-2026 · <strong>Open voor aanvragen</strong> · Budget €122,5 mln · Aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
                     <!-- SPRILA_STATUS_END -->
                 </div>
             </div>
             <div class="subsidy-card">
-                <p class="section-label" style="margin-bottom:0.25rem;">Verhandelbare emissie-eenheden</p>
+                <p data-i18n="subsidies.ere-label" class="section-label" style="margin-bottom:0.25rem;">Verhandelbare emissie-eenheden</p>
                 <h3>ERE's</h3>
                 <p class="percentage">per kWh</p>
-                <p>Geen subsidie, maar een extra inkomstenstroom: EmissieReductie-Eenheden (ERE's) die je spaart per geleverde kWh groene stroom aan laadpalen. Vanaf 2026 de opvolger van HBE's. Verhandelbaar aan brandstofleveranciers.</p>
+                <p data-i18n="subsidies.ere-p">Geen subsidie, maar een extra inkomstenstroom: EmissieReductie-Eenheden (ERE's) die je spaart per geleverde kWh groene stroom aan laadpalen. Vanaf 2026 de opvolger van HBE's. Verhandelbaar aan brandstofleveranciers.</p>
                 <ul>
-                    <li>1 ERE = 1 kg CO₂eq-emissiereductie</li>
-                    <li>Spaar per kWh groene stroom aan EV's</li>
-                    <li><strong>Geldt voor alle laden: personeel én gasten</strong></li>
-                    <li>Verhandelbaar: brandstofleveranciers moeten ze inleveren vóór 1 april</li>
-                    <li>Register: NEa Register Energie voor Vervoer (REV)</li>
+                    <li data-i18n="subsidies.ere-li1">1 ERE = 1 kg CO₂eq-emissiereductie</li>
+                    <li data-i18n="subsidies.ere-li2">Spaar per kWh groene stroom aan EV's</li>
+                    <li data-i18n="subsidies.ere-li3"><strong>Geldt voor alle laden: personeel én gasten</strong></li>
+                    <li data-i18n="subsidies.ere-li4">Verhandelbaar: brandstofleveranciers moeten ze inleveren vóór 1 april</li>
+                    <li data-i18n="subsidies.ere-li5">Register: NEa Register Energie voor Vervoer (REV)</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> Rekenvoorbeeld</strong><br>
-                    Hotel met 4 laadpalen × 200 kWh/maand groene stroom.<br>
-                    Jaarlijks: <strong>4 × 200 × 12 = 9.600 kWh</strong> aan EV's.<br>
-                    Bij ~0,5 kg CO₂eq-reductie per kWh: <strong>~4.800 ERE's per jaar</strong>.<br>
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
+                    <span data-i18n="subsidies.ere-reken1">Hotel met 4 laadpalen × 200 kWh/maand groene stroom.<br></span>
+                    <span data-i18n="subsidies.ere-reken2">Jaarlijks: <strong>4 × 200 × 12 = 9.600 kWh</strong> aan EV's.<br></span>
+                    <span data-i18n="subsidies.ere-reken3">Bij ~0,5 kg CO₂eq-reductie per kWh: <strong>~4.800 ERE's per jaar</strong>.<br></span>
                     <!-- ERE_PRIJS_START -->
-                    Actuele marktprijs (juni 2026): <strong>€0,480 per ERE</strong> → <strong>~€2.304 extra per jaar</strong>.<br>
-                    <span style="font-size:0.72rem;color:var(--text-muted);">26-29 juni 2026 · Bron: Joulo via Duurzaam Ondernemen</span><br>
+                    <span data-i18n="subsidies.ere-reken4">Actuele marktprijs (juni 2026): <strong>€0,480 per ERE</strong> → <strong>~€2.304 extra per jaar</strong>.<br></span>
+                    <span data-i18n="subsidies.ere-status" style="font-size:0.72rem;color:var(--text-muted);">26-29 juni 2026 · Bron: Joulo via Duurzaam Ondernemen</span><br>
                     <!-- ERE_PRIJS_END -->
-                    Verkoopwaarde fluctueert | extra marge naast de kWh-prijs.<br>
-                    <span style="font-size:0.72rem;color:var(--text-muted);">💡 <strong>Niet automatisch:</strong> registreer de laadpalen via een inboekdienstverlener (bijv. ere-registratie.nl of Earnergy) | die regelt de NEa-registratie, audit en verkoop. Eisen: MID-meter + groene stroom aantoonbaar.</span>
+                    <span data-i18n="subsidies.ere-reken5">Verkoopwaarde fluctueert | extra marge naast de kWh-prijs.<br></span>
+                    <span data-i18n="subsidies.ere-tip" style="font-size:0.72rem;color:var(--text-muted);">💡 <strong>Niet automatisch:</strong> registreer de laadpalen via een inboekdienstverlener (bijv. ere-registratie.nl of Earnergy) | die regelt de NEa-registratie, audit en verkoop. Eisen: MID-meter + groene stroom aantoonbaar.</span>
                 </div>
             </div>
             <div class="subsidy-card">
-                <p class="section-label" style="margin-bottom:0.25rem;">Subsidie Publieke Laadinfrastructuur zwaar vervoer</p>
+                <p data-i18n="subsidies.spula-label" class="section-label" style="margin-bottom:0.25rem;">Subsidie Publieke Laadinfrastructuur zwaar vervoer</p>
                 <h3>SPULA</h3>
-                <p class="percentage">subsidie per laadstation</p>
-                <p>Subsidieregeling voor <strong>publieke</strong> laadinfrastructuur in de openbare ruimte, specifiek voor <strong>zware voertuigen</strong> (trucks, vrachtverkeer). Voor hotels doorgaans minder relevant | de hotelregeling is SPRILA.</p>
+                <p data-i18n="subsidies.per-station" class="percentage">subsidie per laadstation</p>
+                <p data-i18n="subsidies.spula-p">Subsidieregeling voor <strong>publieke</strong> laadinfrastructuur in de openbare ruimte, specifiek voor <strong>zware voertuigen</strong> (trucks, vrachtverkeer). Voor hotels doorgaans minder relevant | de hotelregeling is SPRILA.</p>
                 <ul>
-                    <li>Laadinfrastructuur in de openbare ruimte</li>
-                    <li>Voor zware voertuigen (vrachtverkeer)</li>
-                    <li>Aanvragen t/m 18-12-2026</li>
+                    <li data-i18n="subsidies.spula-li1">Laadinfrastructuur in de openbare ruimte</li>
+                    <li data-i18n="subsidies.spula-li2">Voor zware voertuigen (vrachtverkeer)</li>
+                    <li data-i18n="subsidies.spula-li3">Aanvragen t/m 18-12-2026</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> Voor wie?</strong><br>
-                    Bedrijven die laadinfrastructuur aanleggen in de openbare ruimte voor zware voertuigen.<br>
-                    Hotels die gasten laten laden op eigen terrein: gebruik <strong>SPRILA</strong>.<br>
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.voorwie-h">Voor wie?</span></strong><br>
+                    <span data-i18n="subsidies.spula-reken1">Bedrijven die laadinfrastructuur aanleggen in de openbare ruimte voor zware voertuigen.<br></span>
+                    <span data-i18n="subsidies.spula-reken2">Hotels die gasten laten laden op eigen terrein: gebruik <strong>SPRILA</strong>.<br></span>
                     <!-- SPULA_STATUS_START -->
-                    <span style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 17-08-2026 · Open voor aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
+                    <span data-i18n="subsidies.spula-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 17-08-2026 · Open voor aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
                     <!-- SPULA_STATUS_END -->
                 </div>
             </div>
         </div>
         <!-- BUDGET_STATUS_START -->
         <div id="budget-status" style="background:white; border-radius:var(--radius-lg); padding:1.5rem 2rem; box-shadow:0 4px 24px rgba(15,61,35,0.06); border:1px solid var(--border); margin-top:2rem; text-align:center;">
-            <p class="section-label" style="margin-bottom:0.25rem;">Beschikbare budgetten</p>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Peildatum: 17-08-2026 · Dagelijks bijgewerkt · Bron: <a href="https://www.rvo.nl/subsidies-financiering/eia/ondernemers" style="color:var(--green-secondary);">RVO.nl</a></p>
+            <p data-i18n="subsidies.budget-label" class="section-label" style="margin-bottom:0.25rem;">Beschikbare budgetten</p>
+            <p data-i18n="subsidies.budget-sub" style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Peildatum: 17-08-2026 · Dagelijks bijgewerkt · Bron: <a href="https://www.rvo.nl/subsidies-financiering/eia/ondernemers" style="color:var(--green-secondary);">RVO.nl</a></p>
             <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1rem;">
                 <div>
                     <span style="font-family:'Montserrat',system-ui,sans-serif; font-weight:600; color:var(--green-primary);">EIA</span>
-                    <span style="font-size:1.3rem; font-weight:600; color:var(--green-secondary); display:block;">€460 miljoen*</span>
-                    <span style="font-size:0.8rem; color:var(--text-muted);">40% aftrek op fiscale winst</span>
+                    <span data-i18n="subsidies.budget-eia-amount" style="font-size:1.3rem; font-weight:600; color:var(--green-secondary); display:block;">€460 miljoen*</span>
+                    <span data-i18n="subsidies.budget-eia-desc" style="font-size:0.8rem; color:var(--text-muted);">40% aftrek op fiscale winst</span>
                 </div>
                 <div>
                     <span style="font-family:'Montserrat',system-ui,sans-serif; font-weight:600; color:var(--green-primary);">MIA / Vamil</span>
-                    <span style="font-size:1.3rem; font-weight:600; color:var(--green-secondary); display:block;">€150 miljoen*</span>
-                    <span style="font-size:0.8rem; color:var(--text-muted);">tot 45% aftrek + 75% vrije afschrijving</span>
+                    <span data-i18n="subsidies.budget-mia-amount" style="font-size:1.3rem; font-weight:600; color:var(--green-secondary); display:block;">€150 miljoen*</span>
+                    <span data-i18n="subsidies.budget-mia-desc" style="font-size:0.8rem; color:var(--text-muted);">tot 45% aftrek + 75% vrije afschrijving</span>
                 </div>
             </div>
         </div>
@@ -497,27 +498,27 @@ h2{font-size:1.1rem}
 
 <section class="alt">
     <div class="container">
-        <p class="section-label">Hoe Lemnion helpt</p>
-        <h2>Van aanvraag tot uitbetaling, volledig ontzorgd</h2>
-        <p style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
+        <p data-i18n="subsidies.help-label" class="section-label">Hoe Lemnion helpt</p>
+        <h2 data-i18n="subsidies.help-h2">Van aanvraag tot uitbetaling, volledig ontzorgd</h2>
+        <p data-i18n="subsidies.help-intro" style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
             Subsidies aanvragen is specialistisch werk. Lemnion werkt samen met subsidie-experts die de complete aanvraag voor jouw hotel verzorgen. 
             Geen gedoe met formulieren, geen gemiste deadlines | wij zorgen dat je krijgt waar je recht op hebt.
         </p>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;">
             <div style="background:white;border-radius:var(--radius-lg);padding:1.75rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);text-align:center;">
                 <div style="margin-bottom:0.75rem;"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="6" width="28" height="36" rx="3"/><rect x="16" y="2" width="16" height="8" rx="2"/><path d="M16 18h16M16 26h16M16 34h10"/></svg></div>
-                <h4 style="color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.5rem;">1. Subsidiescan</h4>
-                <p style="font-size:0.85rem;color:#3D4F40;">Wij analyseren jouw beoogde investering en bepalen welke regelingen van toepassing zijn, inclusief combinaties voor maximaal rendement.</p>
+                <h4 data-i18n="subsidies.help-s1h" style="color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.5rem;">1. Subsidiescan</h4>
+                <p data-i18n="subsidies.help-s1p" style="font-size:0.85rem;color:#3D4F40;">Wij analyseren jouw beoogde investering en bepalen welke regelingen van toepassing zijn, inclusief combinaties voor maximaal rendement.</p>
             </div>
             <div style="background:white;border-radius:var(--radius-lg);padding:1.75rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);text-align:center;">
                 <div style="margin-bottom:0.75rem;"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 40l4-12L28 8a4 4 0 016 6L14 34l-12 4z"/><path d="M24 12l8 8"/></svg></div>
-                <h4 style="color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.5rem;">2. Aanvraag & indiening</h4>
-                <p style="font-size:0.85rem;color:#3D4F40;">Onze experts stellen de complete aanvraag op en dienen deze in bij de juiste instanties. Jij hoeft alleen maar akkoord te geven.</p>
+                <h4 data-i18n="subsidies.help-s2h" style="color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.5rem;">2. Aanvraag & indiening</h4>
+                <p data-i18n="subsidies.help-s2p" style="font-size:0.85rem;color:#3D4F40;">Onze experts stellen de complete aanvraag op en dienen deze in bij de juiste instanties. Jij hoeft alleen maar akkoord te geven.</p>
             </div>
             <div style="background:white;border-radius:var(--radius-lg);padding:1.75rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);text-align:center;">
                 <div style="margin-bottom:0.75rem;"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M16 24l6 6 12-12"/></svg></div>
-                <h4 style="color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.5rem;">3. Uitbetaling</h4>
-                <p style="font-size:0.85rem;color:#3D4F40;">Wij monitoren de status en zorgen dat de beschikking wordt omgezet in daadwerkelijke uitbetaling, tot de laatste euro.</p>
+                <h4 data-i18n="subsidies.help-s3h" style="color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.5rem;">3. Uitbetaling</h4>
+                <p data-i18n="subsidies.help-s3p" style="font-size:0.85rem;color:#3D4F40;">Wij monitoren de status en zorgen dat de beschikking wordt omgezet in daadwerkelijke uitbetaling, tot de laatste euro.</p>
             </div>
         </div>
     </div>
@@ -525,10 +526,10 @@ h2{font-size:1.1rem}
 
 <section class="cta-section">
     <div class="container">
-        <h2>Benieuwd wat jouw hotel kan besparen?</h2>
-        <p style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Doe de configurator en ontdek binnen 1 minuut hoeveel subsidie jouw hotel kan ontvangen.</p>
+        <h2 data-i18n="subsidies.cta-h2">Benieuwd wat jouw hotel kan besparen?</h2>
+        <p data-i18n="subsidies.cta-p" style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Doe de configurator en ontdek binnen 1 minuut hoeveel subsidie jouw hotel kan ontvangen.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a href="configurator.html" class="btn-outline">Bereken je subsidie →</a>
+            <a data-i18n="subsidies.cta-btn" href="configurator.html" class="btn-outline">Bereken je subsidie →</a>
             <a href="mailto:info@lemnion.nl" class="btn-green">info@lemnion.nl</a>
         </div>
     </div>
@@ -538,42 +539,42 @@ h2{font-size:1.1rem}
     <div class="container">
         <div>
             <h3 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h3>
-            <p style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
+            <p data-i18n="footer.desc" style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
             <h3>Oplossingen</h3>
             <ul>
-                <li><a href="netcongestie.html">Netcongestie</a></li>
-                <li><a href="verduurzamen.html">Verduurzamen</a></li>
-                <li><a href="maximum-belasting.html">Maximum belasting</a></li>
-                <li><a href="stroom-overschot.html">Stroom overschot</a></li>
-                <li><a href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+                <li><a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a></li>
+                <li><a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a></li>
+                <li><a data-i18n="footer.maxbelasting" href="maximum-belasting.html">Maximum belasting</a></li>
+                <li><a data-i18n="footer.stroomoverschot" href="stroom-overschot.html">Stroom overschot</a></li>
+                <li><a data-i18n="footer.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
             </ul>
         </div>
         <div>
-            <h3>Producten &amp; Diensten</h3>
+            <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a href="producten.html">Batterijopslag</a></li>
-                <li><a href="producten.html">Laadpalen &amp; snelladers</a></li>
-                <li><a href="producten.html">EMS &amp; monitoring</a></li>
-                <li><a href="configurator.html">Energieconfigurator</a></li>
-                <li><a href="subsidies.html">Subsidies &amp; regelingen</a></li>
+                <li><a data-i18n="footer.batterij" href="producten.html">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="producten.html">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="producten.html">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.configurator" href="configurator.html">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.subsidies" href="subsidies.html">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
-            <h3>Informatie</h3>
+            <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a href="voordelen.html">Verdienmodellen</a></li>
-                <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
-                <li><a href="over-ons.html">Over ons</a></li>
-                <li><a href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
+                <li><a data-i18n="footer.nieuwsblog" href="nieuws.html">Nieuws &amp; blog</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
-            <p style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
     </footer>
@@ -588,46 +589,46 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
     <div class="contact-modal-content">
         <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
-        <h3>Vrijblijvend contact</h3>
-        <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
+        <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
+        <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
         <form id="contact-form" novalidate>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.voornaam" for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
                 </div>
                 <div class="form-group">
-                    <label for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.achternaam" for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.bedrijf" for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
-                    <label for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.functie" for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.email" for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
                     <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
                 </div>
                 <div class="form-group">
-                    <label for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.mobiel" for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
                     <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
-                <label for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
+                <label data-i18n="modal.bericht" for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
                 <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
-                <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
+                <button data-i18n="modal.submit" type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
             </div>
         </form>
     </div>
@@ -707,14 +708,30 @@ document.addEventListener('keydown',function(e){
     honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;';
     form.appendChild(honeypot);
 
+    var LANG = (document.documentElement.lang || 'nl').split('-')[0];
+
     var requiredLabels = {
-        voornaam: 'voornaam',
-        achternaam: 'achternaam',
-        bedrijfsnaam: 'bedrijfsnaam',
-        functie: 'functie',
-        email: 'e-mailadres',
-        mobiel: 'mobiel nummer',
-        bericht: 'bericht'
+        voornaam: LANG === 'en' ? 'first name' : 'voornaam',
+        achternaam: LANG === 'en' ? 'last name' : 'achternaam',
+        bedrijfsnaam: LANG === 'en' ? 'company name' : 'bedrijfsnaam',
+        functie: LANG === 'en' ? 'job title' : 'functie',
+        email: LANG === 'en' ? 'email address' : 'e-mailadres',
+        mobiel: LANG === 'en' ? 'mobile number' : 'mobiel nummer',
+        bericht: LANG === 'en' ? 'message' : 'bericht'
+    };
+
+    var T = (LANG === 'en') ? {
+        vul: 'Please fill in your ', in: '.', email: 'Please enter a valid email address.',
+        sending: 'Sending...', thanks: 'Thank you for your message!',
+        soon: 'We will contact you within 24 hours.',
+        fail: 'Sending failed. Please try again later.',
+        netfail: 'Sending failed. Check your internet connection and try again.'
+    } : {
+        vul: 'Vul je ', in: ' in.', email: 'Vul een geldig e-mailadres in.',
+        sending: 'Versturen...', thanks: 'Bedankt voor je bericht!',
+        soon: 'We nemen binnen 24 uur contact met je op.',
+        fail: 'Het versturen is mislukt. Probeer het later opnieuw.',
+        netfail: 'Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.'
     };
 
     function clearErrors() {
@@ -762,16 +779,17 @@ document.addEventListener('keydown',function(e){
             email: document.getElementById('email').value.trim(),
             mobiel: document.getElementById('mobiel').value.trim(),
             bericht: document.getElementById('bericht').value.trim(),
-            website: honeypot.value
+            website: honeypot.value,
+            lang: LANG
         };
 
-        // Client-side validatie (Nederlands, onafhankelijk van browsertaal)
+        // Client-side validatie (taalafhankelijk via <html lang>)
         var errors = {};
         for (var key in requiredLabels) {
-            if (!payload[key]) errors[key] = 'Vul je ' + requiredLabels[key] + ' in.';
+            if (!payload[key]) errors[key] = T.vul + requiredLabels[key] + T.in;
         }
         if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) {
-            errors.email = 'Vul een geldig e-mailadres in.';
+            errors.email = T.email;
         }
         if (Object.keys(errors).length > 0) {
             showErrors(errors);
@@ -780,7 +798,7 @@ document.addEventListener('keydown',function(e){
 
         var btn = form.querySelector('button[type="submit"]');
         var orig = btn ? btn.innerHTML : '';
-        if (btn) { btn.disabled = true; btn.innerHTML = 'Versturen...'; }
+        if (btn) { btn.disabled = true; btn.innerHTML = T.sending; }
 
         fetch('/api/contact', {
             method: 'POST',
@@ -792,19 +810,19 @@ document.addEventListener('keydown',function(e){
             if (res.ok && res.data.success) {
                 form.innerHTML = '<div style="text-align:center;padding:2rem;">' +
                     '<div style="font-size:3rem;margin-bottom:1rem;">✓</div>' +
-                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3>' +
-                    '<p style="color:var(--text-muted);">We nemen binnen 24 uur contact met je op.</p></div>';
+                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">' + T.thanks + '</h3>' +
+                    '<p style="color:var(--text-muted);">' + T.soon + '</p></div>';
                 return;
             }
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
             if (res.data.errors) {
                 showErrors(res.data.errors);
             } else {
-                showFormError(res.data.message || 'Het versturen is mislukt. Probeer het later opnieuw.');
+                showFormError(res.data.message || T.fail);
             }
         }).catch(function(){
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
-            showFormError('Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.');
+            showFormError(T.netfail);
         });
     });
 
