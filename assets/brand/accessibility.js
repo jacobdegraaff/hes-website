@@ -53,8 +53,9 @@
     document.querySelectorAll('.nav-dropdown > a').forEach(function (link) {
         link.setAttribute('aria-haspopup', 'true');
         link.setAttribute('aria-expanded', 'false');
-        link.addEventListener('click', function () {
+        link.addEventListener('click', function (e) {
             if (window.innerWidth <= 768) {
+                e.preventDefault();
                 var open = this.parentElement.classList.toggle('open');
                 this.setAttribute('aria-expanded', open ? 'true' : 'false');
             }
