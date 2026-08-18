@@ -556,6 +556,107 @@ document.addEventListener('keydown',function(e){
 });
 </script>
 
+<script>
+/* Contact modal | verstuur via /api/contact (Resend) */
+(function(){
+    var form = document.getElementById('contact-form');
+    if (!form || form.dataset.contactWired) return;
+    form.dataset.contactWired = '1';
+
+    var honeypot = document.createElement('input');
+    honeypot.type = 'text';
+    honeypot.name = 'website';
+    honeypot.setAttribute('tabindex', '-1');
+    honeypot.setAttribute('aria-hidden', 'true');
+    honeypot.autocomplete = 'off';
+    honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;';
+    form.appendChild(honeypot);
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        var orig = btn ? btn.innerHTML : '';
+        if (btn) { btn.disabled = true; btn.innerHTML = 'Versturen...'; }
+
+        form.querySelectorAll('[id^="error-"], #form-error').forEach(function(el){ el.remove(); });
+        form.querySelectorAll('[aria-invalid]').forEach(function(el){ el.removeAttribute('aria-invalid'); });
+
+        var payload = {
+            voornaam: document.getElementById('voornaam').value.trim(),
+            achternaam: document.getElementById('achternaam').value.trim(),
+            bedrijfsnaam: document.getElementById('bedrijfsnaam').value.trim(),
+            functie: document.getElementById('functie').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            mobiel: document.getElementById('mobiel').value.trim(),
+            bericht: document.getElementById('bericht').value.trim(),
+            website: honeypot.value
+        };
+
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }).then(function(r){
+            return r.json().then(function(d){ return { ok: r.ok, data: d }; });
+        }).then(function(res){
+            if (res.ok && res.data.success) {
+                form.innerHTML = '<div style="text-align:center;padding:2rem;">' +
+                    '<div style="font-size:3rem;margin-bottom:1rem;">✓</div>' +
+                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3>' +
+                    '<p style="color:var(--text-muted);">We nemen binnen 24 uur contact met je op.</p></div>';
+                return;
+            }
+            if (btn) { btn.disabled = false; btn.innerHTML = orig; }
+            var errors = res.data.errors;
+            if (errors) {
+                var first = null;
+                for (var key in errors) {
+                    var input = document.getElementById(key);
+                    if (!input) continue;
+                    input.setAttribute('aria-invalid', 'true');
+                    var err = document.createElement('p');
+                    err.id = 'error-' + key;
+                    err.style.cssText = 'color:var(--color-error,#C0392B);font-size:0.8rem;margin:0.25rem 0 0;';
+                    err.textContent = errors[key];
+                    input.parentNode.appendChild(err);
+                    if (!first) first = input;
+                }
+                if (first) first.focus();
+            } else {
+                showFormError(res.data.message || 'Het versturen is mislukt. Probeer het later opnieuw.');
+            }
+        }).catch(function(){
+            if (btn) { btn.disabled = false; btn.innerHTML = orig; }
+            showFormError('Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.');
+        });
+
+        function showFormError(msg) {
+            var el = document.getElementById('form-error');
+            if (!el) {
+                el = document.createElement('p');
+                el.id = 'form-error';
+                el.setAttribute('role', 'alert');
+                el.style.cssText = 'color:var(--color-error,#C0392B);font-size:0.9rem;margin:0 0 1rem;';
+                form.insertBefore(el, form.firstChild);
+            }
+            el.textContent = msg;
+        }
+    });
+
+    // Sluit modal met ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var modal = document.getElementById('contact-modal');
+            if (modal && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
+    });
+})();
+</script>
+
+
 <script src="/assets/brand/accessibility.js" defer></script>
 </body>
 </html> 
