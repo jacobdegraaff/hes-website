@@ -139,7 +139,7 @@ nav .container{padding:0 .75rem;width:100%;max-width:100%}
 .nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
 .nav-dropdown.open>a::after{transform:rotate(180deg)}
 .nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
-.nav-dropdown.open>.nav-dropdown-panel{display:block}
+.nav-dropdown.open>.nav-dropdown-panel{display:block}.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}
 .nav-backdrop{display:none!important}
 .nav-mega-col h4{display:none}
 .nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
@@ -560,7 +560,21 @@ h2{font-size:1.1rem}
 
 <script>
 
-document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
+</script>
+<script>
+/* Mobile: dropdown taps toggle .open (tap again to collapse) */
+document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
+    a.addEventListener('click', function(e){
+        if (window.innerWidth <= 768) {
+            var li = a.parentElement;
+            var wasOpen = li.classList.contains('open');
+            document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); });
+            if (!wasOpen) li.classList.add('open');
+            e.preventDefault();
+        }
+    });
+});
 </script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">

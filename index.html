@@ -544,6 +544,8 @@
                 background: transparent;
             }
             .nav-dropdown.open > .nav-dropdown-panel { display: block; }
+            .nav-dropdown:hover .nav-dropdown-panel,
+            .nav-dropdown:hover .nav-backdrop { display: none; }
             .nav-backdrop { display: none !important; }
             .nav-mega-col h4 { display: none; }
             .nav-mega-col a { 
@@ -1407,7 +1409,7 @@
 
 <script>
 /* Close menu when clicking a non-dropdown link */
-document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(link => {
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(link => {
     link.addEventListener('click', function() {
         if (window.innerWidth <= 768) {
             var m = document.querySelector('.mobile-menu-panel');
@@ -1435,6 +1437,20 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
+<script>
+/* Mobile: dropdown taps toggle .open (tap again to collapse) */
+document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
+    a.addEventListener('click', function(e){
+        if (window.innerWidth <= 768) {
+            var li = a.parentElement;
+            var wasOpen = li.classList.contains('open');
+            document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); });
+            if (!wasOpen) li.classList.add('open');
+            e.preventDefault();
+        }
+    });
+});
+</script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
