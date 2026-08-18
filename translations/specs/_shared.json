@@ -250,5 +250,10 @@
   "key": "footer.ems",
   "tag": "a",
   "contains": "EMS &amp; monitoring"
+ },
+ {
+  "key": "footer.h_solutions",
+  "tag": "h3",
+  "contains": "Oplossingen"
  }
 ]
