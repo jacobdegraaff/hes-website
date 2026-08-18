@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260">
+  <defs>
+    <linearGradient id="lemnion-signature" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7FBF3A"/>
+      <stop offset="50%" stop-color="#B7E08A"/>
+      <stop offset="100%" stop-color="#7FBF3A"/>
+    </linearGradient>
+  </defs>
+  <!-- Lemniscaat symbool, gecentreerd -->
+  <path d="M140 120 C100 120 100 40 140 40 C180 40 180 120 220 120 C260 120 260 40 220 40 C180 40 180 120 140 120 Z"
+    fill="none" stroke="url(#lemnion-signature)" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="140" cy="40" r="6" fill="#B7E08A"/>
+  <circle cx="220" cy="120" r="6" fill="#7FBF3A"/>
+  <!-- Woordmerk -->
+  <text x="200" y="205" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="46" fill="#0F3D23" letter-spacing="-1">lemnion</text>
+  <!-- Descriptor -->
+  <text x="200" y="232" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="13" fill="#2E7032" letter-spacing="4">HOSPITALITY ENERGY SOLUTIONS</text>
+  <!-- Tagline -->
+  <text x="200" y="254" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="400" font-size="13" fill="#556B58" letter-spacing="1">Optimizing Every Watt</text>
+</svg>
