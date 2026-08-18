@@ -534,7 +534,7 @@ h2{font-size:1.1rem}
 <script>
 
 <script>
-document.querySelectorAll('.nav-dropdown > a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open')}})});
+
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
 </script>
 <!-- CONTACT MODAL -->
@@ -616,12 +616,6 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
 </script>
 
 <script>
-/* Mobile dropdown toggle */
-document.querySelectorAll('.nav-dropdown > a').forEach(function(l){
-  l.addEventListener('click',function(e){
-    if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open')}
-  })
-});
 /* Close menu when clicking a non-dropdown link */
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){
   l.addEventListener('click',function(){
