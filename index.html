@@ -1437,20 +1437,6 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
-<script>
-/* Mobile: dropdown taps toggle .open (tap again to collapse) */
-document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
-    a.addEventListener('click', function(e){
-        if (window.innerWidth <= 768) {
-            var li = a.parentElement;
-            var wasOpen = li.classList.contains('open');
-            document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); });
-            if (!wasOpen) li.classList.add('open');
-            e.preventDefault();
-        }
-    });
-});
-</script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
