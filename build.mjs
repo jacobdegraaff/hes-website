@@ -23,6 +23,26 @@ const OUT = join(ROOT, 'dist');
 const BASE_URL = 'https://lemnion.nl';
 const LANGS = ['en']; // add 'fr', 'es' later (same mechanism)
 
+// EN pages get English URL slugs (NL filenames stay as-is).
+const SLUGS = {
+  'index.html': 'index.html',
+  'oplossingen.html': 'solutions.html',
+  'producten.html': 'products.html',
+  'over-ons.html': 'about-us.html',
+  'voordelen.html': 'benefits.html',
+  'verduurzamen.html': 'sustainability.html',
+  'usp-veiligheid.html': 'safety.html',
+  'nieuws.html': 'news.html',
+  'subsidies.html': 'grants.html',
+  'blog.html': 'blog.html',
+  'blog-epbd-iv-laadinfra.html': 'blog-epbd-iv-ev-charging-infrastructure.html',
+  'netcongestie.html': 'grid-congestion.html',
+  'maximum-belasting.html': 'peak-load.html',
+  'stroom-overschot.html': 'solar-surplus.html',
+  'stroomuitval-noodaggregaat.html': 'power-outage.html',
+  'configurator.html': 'configurator.html',
+};
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -30,7 +50,8 @@ const NL_TAG = /<html([^>]*)>/;
 const DATA_I18N = /<([a-zA-Z][a-zA-Z0-9]*)(?![a-zA-Z0-9])([^>]*?)\bdata-i18n="([^"]+)"([^>]*)>([\s\S]*?)<\/\1>/g;
 
 function pageUrl(page, lang) {
-  const base = page === 'index.html' ? '/' : '/' + page;
+  const slug = lang === 'nl' ? page : (SLUGS[page] || page);
+  const base = slug === 'index.html' ? '/' : '/' + slug;
   return lang === 'nl' ? `${BASE_URL}${base}` : `${BASE_URL}/${lang}${base}`;
 }
 
@@ -83,6 +104,8 @@ function translatePage(source, dict, page) {
 }
 
 function finalizeHtml(html, page, lang) {
+  // EN pages: rewrite internal links to /en/<slug>, relative assets to root-absolute
+  html = rewriteLinks(html, lang);
   // lang attribute (replace existing or add)
   html = html.replace(NL_TAG, (m, attrs) => {
     const cleaned = attrs.replace(/\slang="[^"]*"/, '');
@@ -109,6 +132,21 @@ function finalizeHtml(html, page, lang) {
     );
   }
   return injectHead(html, page, lang);
+}
+
+function rewriteLinks(html, lang) {
+  if (lang !== 'nl') {
+    // 1) internal page links → /en/<slug>[#anchor]
+    html = html.replace(/(href=")(index\.html|[a-z0-9-]+\.html)(#[^"]*)?"/g, (m, pre, target, anchor = '') => {
+      return `${pre}/en/${SLUGS[target] || target}${anchor}"`;
+    });
+    // 2) relative asset paths → root-absolute, so they resolve under /en/…
+    html = html.replace(/(src=")(?!https?:|data:|#|\/)([^"]+)"/g, (m, pre, src) => `${pre}/${src}"`);
+    html = html.replace(/(href=")(?!https?:|mailto:|tel:|data:|#|\/)([^"]+)"/g, (m, pre, h) => `${pre}/${h}"`);
+  }
+  // 3) switcher EN link always points to the EN slug (both NL and EN output)
+  html = html.replace(/href="\/en\/([a-z0-9-]+\.html)"/g, (m, p) => `href="/en/${SLUGS[p] || p}"`);
+  return html;
 }
 
 // ---------------------------------------------------------------------------
@@ -160,7 +198,8 @@ for (const page of pages) {
     const { html, missing } = translatePage(source, dicts[lang], page);
     totalMissing += missing;
     if (missing > 0) console.log(`  [${page}] ${lang}: ${missing} key(s) ontbreken (fallback NL)`);
-    writeFileSync(join(OUT, lang, page), finalizeHtml(html, page, lang));
+    const slug = SLUGS[page] || page;
+    writeFileSync(join(OUT, lang, slug), finalizeHtml(html, page, lang));
   }
 }
 if (totalMissing > 0) console.log(`[build] ⚠️ totaal ${totalMissing} ontbrekende vertaalsleutels (vallen terug op NL)`);
