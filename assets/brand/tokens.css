@@ -1,0 +1,258 @@
+/* ============================================================================
+   LEMNION — Design Tokens (single source of truth)
+   ----------------------------------------------------------------------------
+   Extracted from the live lemnion.nl site (repo jacobdegraaff/hes-website).
+   Every value below is either (a) already used on the site, or (b) a formalised
+   token for a colour/value that was previously hardcoded (drift), or (c) an
+   explicitly marked PROPOSED token that is not yet in use.
+
+   RULE: components must reference these tokens. Do NOT hardcode brand values.
+   See /docs/BRAND_GUIDELINES.md and /docs/AI_BRAND_RULES.md.
+
+   Legacy aliases (--green-*, --off-white, --radius, --radius-lg, --shadow,
+   --shadow-lg, --max-width) are preserved so existing inline styles keep
+   working during migration.
+   ============================================================================ */
+
+:root {
+
+  /* ============================================================
+     1. BRAND COLOURS
+     ============================================================ */
+
+  /* Primary green — brand core, dark backgrounds, headings on light */
+  --lemnion-primary: #0F3D23;
+  --green-primary: var(--lemnion-primary); /* legacy alias */
+
+  /* Secondary green — descriptors, "optimal" states, secondary accents */
+  --lemnion-secondary: #2E7032;
+  --green-secondary: var(--lemnion-secondary); /* legacy alias */
+
+  /* Accent green — CTAs, focus rings, active states, energy accents */
+  --lemnion-accent: #7FBF3A;
+  --green-accent: var(--lemnion-accent); /* legacy alias */
+
+  /* Accent hover — previously hardcoded as #6FAA2E (btn-primary:hover) */
+  --lemnion-accent-hover: #6FAA2E;
+
+  /* Light green — logo gradient, highlights, footer hover */
+  --lemnion-light: #B7E08A;
+  --green-light: var(--lemnion-light); /* legacy alias */
+
+  /* Deep greens — hero gradient endpoints (previously hardcoded) */
+  --lemnion-deep-0: #0A2E1A; /* hero gradient start */
+  --lemnion-deep-1: #163D26; /* hero gradient end + section gradients */
+
+  /* ============================================================
+     2. NEUTRAL SCALE (grey-greens, derived from actual values)
+     ============================================================ */
+
+  --neutral-white: #FFFFFF;
+  --neutral-off-white: #F5F7F2;           /* page background */
+  --neutral-50: #F5F7F2;                  /* = off-white */
+  --neutral-100: #F0F5EA;                 /* light green tint (highlights) */
+  --neutral-200: #EFF3EC;                 /* near-duplicate of 100 — consolidate */
+  --neutral-300: #D4DDD0;                 /* borders */
+  --neutral-400: #A0AEA0;                 /* placeholders, disabled text */
+  --neutral-500: #556B58;                 /* muted text */
+  --neutral-700: #3D4F40;                 /* card body text (darker muted) */
+  --neutral-900: #2F3437;                 /* primary text (dark grey) */
+
+  /* Legacy aliases */
+  --off-white: #F5F7F2;
+  --dark-grey: #2F3437;
+  --text-muted: #556B58;
+  --border: #D4DDD0;
+
+  /* Semantic mapping (see BRAND_GUIDELINES.md section 6) */
+  --color-text-primary: var(--neutral-900);
+  --color-text-secondary: var(--neutral-500);
+  --color-background: var(--neutral-off-white);
+  --color-surface: #FFFFFF;
+  --color-border: var(--neutral-300);
+
+  /* ============================================================
+     3. SEMANTIC COLOURS (state colours)
+     ============================================================ */
+
+  --color-success: #27AE60;               /* used sparingly (admin) */
+  --color-warning: #E67E22;               /* used sparingly */
+  --color-error: #C0392B;                 /* used sparingly */
+  --color-error-soft-bg: #FFF3F0;         /* warning callout background */
+  --color-error-soft-border: #E8A090;     /* warning callout border/text */
+  --color-info: #33658A;                  /* PROPOSED — not yet in use */
+
+  /* ============================================================
+     4. TYPOGRAPHY
+     ============================================================ */
+
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Heading scale (desktop, responsive via clamp) */
+  --text-hero: clamp(2rem, 5vw, 3.5rem);         /* h1 — letter-spacing -0.02em */
+  --text-h2: clamp(1.5rem, 3.5vw, 2.5rem);       /* h2 — letter-spacing -0.01em */
+  --text-h3: clamp(1.1rem, 2vw, 1.5rem);         /* h3 */
+  --text-h4: 1.1rem;                              /* h4 — weight 500 */
+
+  /* Body scale */
+  --text-body-lg: 1.15rem;                        /* hero lead, CTA lead */
+  --text-body: 1rem;                              /* base, html font-size 16px */
+  --text-body-sm: 0.95rem;                        /* buttons, card intro */
+  --text-small: 0.9rem;                           /* nav, card text */
+  --text-xs: 0.85rem;                             /* footer, scenario text */
+  --text-caption: 0.8rem;                         /* section labels, meta */
+
+  --line-height-body: 1.65;
+  --line-height-heading: 1.2;
+
+  /* ============================================================
+     5. SPACING (8px base)
+     ============================================================ */
+
+  --space-0: 0;
+  --space-1: 0.25rem;   /*  4px */
+  --space-2: 0.5rem;    /*  8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px — desktop section padding */
+  --space-24: 6rem;     /* 96px — CTA section padding */
+
+  /* Section rhythm */
+  --section-padding-desktop: var(--space-20);   /* 5rem */
+  --section-padding-mobile: var(--space-8);     /* 2rem */
+
+  /* ============================================================
+     6. BORDER RADIUS
+     ============================================================ */
+
+  --radius-xs: 2px;         /* hamburger lines, slider dots */
+  --radius-sm: 8px;         /* form inputs, skip-link */
+  --radius-md: 12px;        /* inner cards, dropdowns */
+  --radius-lg: 20px;        /* cards, tables, modal */
+  --radius-modal: 16px;     /* contact modal (consolidate -> lg if possible) */
+  --radius-pill: 50px;      /* buttons */
+  --radius-circle: 50%;     /* avatars, hero glow */
+
+  /* Legacy aliases */
+  --radius: var(--radius-md);
+  --radius-lg: 20px; /* preserved as-is: existing token maps to card radius */
+
+  /* ============================================================
+     7. SHADOWS (restrained, green-tinted — no SaaS floaty shadows)
+     ============================================================ */
+
+  --shadow-subtle: 0 4px 24px rgba(15, 61, 35, 0.06);   /* cards (actual) */
+  --shadow-card: 0 4px 24px rgba(15, 61, 35, 0.08);     /* legacy --shadow */
+  --shadow-elevated: 0 20px 60px rgba(15, 61, 35, 0.12); /* dropdowns */
+  --shadow-overlay: 0 20px 60px rgba(15, 61, 35, 0.2);  /* modal */
+  --shadow-focus: 0 0 0 3px rgba(127, 191, 58, 0.15);   /* focus ring */
+  --shadow-cta: 0 6px 20px rgba(127, 191, 58, 0.35);    /* btn hover glow */
+  --shadow-mobile-menu: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+  /* Legacy aliases */
+  --shadow: var(--shadow-card);
+  --shadow-lg: 0 12px 48px rgba(15, 61, 35, 0.12); /* preserved as-is */
+
+  /* ============================================================
+     8. GRADIENTS
+     ============================================================ */
+
+  --gradient-hero: linear-gradient(160deg, #0A2E1A 0%, var(--lemnion-primary) 40%, #163D26 100%);
+  --gradient-section: linear-gradient(135deg, var(--lemnion-primary), #163D26);
+  --gradient-accent-glow: radial-gradient(circle, rgba(127, 191, 58, 0.1) 0%, transparent 70%);
+
+  /* ============================================================
+     9. BREAKPOINTS
+     ============================================================ */
+
+  --bp-sm: 480px;    /* large mobile */
+  --bp-md: 768px;    /* tablet */
+  --bp-lg: 1024px;   /* laptop */
+  /* NOTE: stray 600/640/800/900px breakpoints exist in source — consolidate. */
+
+  /* ============================================================
+     10. CONTAINER
+     ============================================================ */
+
+  --container-max: 1200px;
+  --container-pad: 1.5rem;   /* desktop */
+  --container-pad-mobile: 1rem;
+
+  /* Legacy alias */
+  --max-width: var(--container-max);
+
+  /* ============================================================
+     11. Z-INDEX SCALE
+     ============================================================ */
+
+  --z-base: 1;
+  --z-above: 2;
+  --z-nav-backdrop: 98;
+  --z-dropdown: 99;
+  --z-sticky-nav: 100;
+  --z-nav-logo: 101;
+  --z-menu-toggle: 102;
+  --z-skip-link: 200;
+  --z-modal: 200;
+  --z-mobile-menu: 999;
+  /* NOTE: a 99999 value exists in source — replace with --z-mobile-menu. */
+
+  /* ============================================================
+     12. TRANSITIONS & EASING
+     ============================================================ */
+
+  --transition-fast: 0.15s;
+  --transition-base: 0.2s;
+  --transition-slow: 0.25s;
+  --transition-slower: 0.3s;
+  --transition-reveal: 0.6s;
+  --ease-standard: ease;
+  --ease-in-out: ease-in-out;
+
+  /* ============================================================
+     13. BUTTON TOKENS
+     ============================================================ */
+
+  --btn-min-height: 44px;                     /* min touch target */
+  --btn-padding: 0.85rem 2rem;
+  --btn-padding-sm: 0.5rem 0.85rem;           /* 480px-and-below */
+  --btn-radius: var(--radius-pill);
+  --btn-font-family: var(--font-display);
+  --btn-font-weight: var(--font-weight-medium);
+  --btn-font-size: 0.95rem;
+
+  /* ============================================================
+     14. FORM TOKENS
+     ============================================================ */
+
+  --input-padding: 0.75rem 1rem;
+  --input-border: 1.5px solid var(--neutral-300);
+  --input-border-radius: var(--radius-sm);
+  --input-font-size: 0.95rem;
+  --input-bg: #FFFFFF;
+  --input-focus-border: var(--lemnion-accent);
+  --input-focus-ring: 0 0 0 3px rgba(127, 191, 58, 0.15);
+  --input-placeholder: var(--neutral-400);
+
+  /* ============================================================
+     15. CARD TOKENS
+     ============================================================ */
+
+  --card-bg: #FFFFFF;
+  --card-border: 1px solid var(--neutral-300);
+  --card-radius: var(--radius-lg);
+  --card-padding: 2rem;
+  --card-shadow: var(--shadow-subtle);
+}
