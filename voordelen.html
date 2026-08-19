@@ -292,7 +292,26 @@ h2{font-size:1.1rem}
                 <span class="nav-logo-desc">Hospitality Energy Solutions</span>
             </span>
         </a>
-        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
+        <script>
+/* Scroll-lock die de scrollpositie bewaart (geen sprong naar boven op iOS) */
+var __lemLockY = 0;
+function lockScroll(on) {
+    if (on) {
+        __lemLockY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + __lemLockY + 'px';
+        document.body.style.left = '0';
+        document.body.style.width = '100%';
+    } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.width = '';
+        window.scrollTo(0, __lemLockY);
+    }
+}
+</script>
+<button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');lockScroll(false)}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');lockScroll(true)}">
             <span></span><span></span><span></span>
         </button>
 
@@ -451,7 +470,7 @@ h2{font-size:1.1rem}
                 <li><a data-i18n="footer.usp" href="/usp-veiligheid">USP &amp; veiligheid</a></li>
                 <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
                 <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
-                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
@@ -463,13 +482,13 @@ h2{font-size:1.1rem}
 
 <script>
 
-document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};lockScroll(false)}})});
 </script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
-    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
+    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -553,7 +572,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
       if(m){m.classList.remove('active');m.style.display=''}
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
       var cm=document.getElementById('contact-modal');
-      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
+      if(!cm||cm.style.display!=='flex'){lockScroll(false)}
     }
   })
 });
@@ -567,7 +586,7 @@ document.addEventListener('keydown',function(e){
       m.classList.remove('active');
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
       var cm=document.getElementById('contact-modal');
-      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
+      if(!cm||cm.style.display!=='flex'){lockScroll(false)}
     }
   }
 });
@@ -713,7 +732,7 @@ document.addEventListener('keydown',function(e){
             var modal = document.getElementById('contact-modal');
             if (modal && modal.style.display === 'flex') {
                 modal.style.display = 'none';
-                document.body.style.overflow = '';
+                lockScroll(false)
             }
         }
     });
