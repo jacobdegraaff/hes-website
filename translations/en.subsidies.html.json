@@ -3,7 +3,7 @@
   "meta.subsidies.html.description": "Discover all subsidies for energy solutions in hotels: EIA, MIA/Vamil, ISDE and SPRILA. Lemnion helps with applications and maximises your benefit.",
   "subsidies.h1": "Subsidies &amp; Schemes",
   "subsidies.intro": "The government encourages energy storage and sustainability with substantial subsidies. Lemnion helps your hotel benefit to the full, from application to payout.",
-  "subsidies.label": "National schemes",
+  "subsidies.label": "Keep reading",
   "subsidies.h2": "Up to 60% subsidy on your investment",
   "subsidies.intro2": "The Netherlands has several subsidy schemes specifically aimed at energy investments for businesses. By combining them smartly, your hotel can recoup up to 60% of the investment.",
   "subsidies.eia-label": "Energy Investment Allowance",
@@ -85,5 +85,7 @@
   "subsidies.ere-reken4": "Current market price (June 2026): <strong>€0.480 per ERE</strong> → <strong>~€2,304 extra per year</strong>.<br>",
   "subsidies.ere-reken5": "Resale value fluctuates | extra margin on top of the kWh price.",
   "subsidies.spula-reken1": "Companies building charging infrastructure in public spaces for heavy vehicles.<br>",
-  "subsidies.spula-reken2": "Hotels letting guests charge on their own premises: use <strong>SPRILA</strong>.<br>"
+  "subsidies.spula-reken2": "Hotels letting guests charge on their own premises: use <strong>SPRILA</strong>.<br>",
+  "subsidies.rl1": "Explore our charging products",
+  "subsidies.rl2": "Calculate your savings"
 }
