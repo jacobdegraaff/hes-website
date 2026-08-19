@@ -50,14 +50,21 @@
     }
 
     /* ── Mobile dropdowns: expose state via aria-expanded ─────────────── */
+    // Werkt op elke touch-omgeving (telefoon én tablet >768px) én op
+    // <=768px: de klik togglet het submenu i.p.v. te navigeren. De href
+    // blijft staan (SEO/crawlers, middenklik/open-in-nieuw-tab).
+    var touchDevice = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
     document.querySelectorAll('.nav-dropdown > a').forEach(function (link) {
         link.setAttribute('aria-haspopup', 'true');
         link.setAttribute('aria-expanded', 'false');
         link.addEventListener('click', function (e) {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 768 || touchDevice) {
                 e.preventDefault();
                 var open = this.parentElement.classList.toggle('open');
                 this.setAttribute('aria-expanded', open ? 'true' : 'false');
+                // houd de trigger in beeld, zodat het submenu altijd weer kan
+                // worden ingeklapt (voorkomt 'menu schuift weg' in het paneel)
+                if (open) this.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
             }
         });
     });
