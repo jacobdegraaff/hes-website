@@ -136,7 +136,7 @@ nav .container{padding:0 .75rem;width:100%;max-width:100%}
 .nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
 .nav-dropdown.open>a::after{transform:rotate(180deg)}
 .nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
-.nav-dropdown.open>.nav-dropdown-panel{display:block}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block}
 .nav-backdrop{display:none!important}
 .nav-mega-col h4{display:none}
 .nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
@@ -256,12 +256,17 @@ h2{font-size:1.1rem}
     .nav-logo { gap: 0.5rem; }
 }
 
-</style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
+        .lang-switch{display:flex;align-items:center;gap:0.45rem;margin-left:0.75rem;white-space:nowrap}
+        .lang-switch .lang-link{font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:0.9rem;color:var(--text-muted);text-decoration:none;line-height:1.65}
+        .lang-switch .lang-link:hover{color:var(--green-accent)}
+        .lang-switch .lang-link[aria-current="true"]{color:var(--green-secondary)}
+        .lang-switch .lang-sep{color:var(--border);font-size:0.9rem}
+        </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
     <link rel="stylesheet" href="/assets/brand/accessibility.css">
 </head>
 <body>
 
-<a href="#content" class="skip-link">Direct naar inhoud</a>
+<a data-i18n="nav.skip" href="#content" class="skip-link">Direct naar inhoud</a>
         
 <nav>
     <div class="container">
@@ -290,55 +295,51 @@ h2{font-size:1.1rem}
                         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">
-                <a href="oplossingen.html">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="oplossingen.html">Oplossingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Oplossingen</h4>
-                        <a href="netcongestie.html">Netcongestie</a>
-                        <a href="verduurzamen.html">Verduurzamen</a>
-                        <a href="maximum-belasting.html">Maximum belasting</a>
-                        <a href="stroom-overschot.html">Stroom (zon) overschot</a>
-                        <a href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                        <h4 data-i18n="nav.oplossingen_h">Oplossingen</h4>
+                        <a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a>
+                        <a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a>
+                        <a data-i18n="nav.maxbelasting" href="maximum-belasting.html">Maximum belasting</a>
+                        <a data-i18n="nav.stroomoverschot" href="stroom-overschot.html">Stroom (zon) overschot</a>
+                        <a data-i18n="nav.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
                     </div>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a href="voordelen.html">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="voordelen.html">Voordelen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Voordelen</h4>
-                        <a href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a href="voordelen.html">Verdienmodellen</a>
-                        <a href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <h4 data-i18n="nav.voordelen_h">Voordelen</h4>
+                        <a data-i18n="nav.usp" href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a>
+                        <a data-i18n="nav.configurator" href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.vergelijk" href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a href="producten.html">Producten</a></li>
-            <li><a href="subsidies.html">Subsidies</a></li>
-            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a data-i18n="nav.producten" href="producten.html">Producten</a></li>
+            <li><a data-i18n="nav.subsidies" href="subsidies.html">Subsidies</a></li>
+            <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
             <li class="nav-dropdown">
-                <a href="nieuws.html">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="nieuws.html">Nieuws ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4>Nieuws</h4>
-                        <a href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
-                        <a href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                        <h4 data-i18n="nav.nieuws_h">Nieuws</h4>
+                        <a data-i18n="nav.nieuws_all" href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a data-i18n="nav.blog" href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
                     </div>
                 </div>
             </li>
-            <li><a href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
-<li style="position:relative;">
-                <a href="#" onclick="var d=this.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';return false;" style="text-decoration:none;font-size:1.1rem;" title="Vertalen">🌐</a>
-                <div style="display:none;position:absolute;top:110%;right:0;background:white;border-radius:12px;box-shadow:0 12px 48px rgba(15,61,35,0.12);border:1px solid #D4DDD0;min-width:130px;z-index:200;overflow:hidden;">
-                    <a href="#" onclick="window.top.location.href='https://jacobdegraaff.github.io/hes-website/verduurzamen.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇳🇱</span> Nederlands</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=en&amp;sl=nl&amp;tl=en&amp;u=https://jacobdegraaff.github.io/hes-website/verduurzamen.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇬🇧</span> English</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=fr&amp;sl=nl&amp;tl=fr&amp;u=https://jacobdegraaff.github.io/hes-website/verduurzamen.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇫🇷</span> Francais</a>
-                    <a href="#" onclick="window.top.location.href='https://translate.google.com/translate?hl=es&amp;sl=nl&amp;tl=es&amp;u=https://jacobdegraaff.github.io/hes-website/verduurzamen.html';return false;" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;text-decoration:none;color:#2F3437;font-size:0.85rem;"><span>🇪🇸</span> Espanol</a>
-                </div>
+            <li><a data-i18n="nav.contact" href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li class="lang-switch" aria-label="Taal / Language">
+                <a href="/verduurzamen.html" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
+                <span class="lang-sep" aria-hidden="true">/</span>
+                <a href="/en/verduurzamen.html" class="lang-link" lang="en" hreflang="en">EN</a>
             </li>
         </ul>
     </div>
@@ -348,39 +349,39 @@ h2{font-size:1.1rem}
 
 
 <div class="page-header" id="content">
-    <h1>Verduurzamen zonder netverzwaring</h1>
-    <p>De overstap van gas naar elektrisch vraagt extra vermogen, maar de netbeheerder kan vaak niet leveren. Lemnion combineert verduurzaming met batterijopslag, zodat je gas-loos kunt zonder het net extra te belasten.</p>
+    <h1 data-i18n="verduurzamen.h1">Verduurzamen zonder netverzwaring</h1>
+    <p data-i18n="verduurzamen.sub">De overstap van gas naar elektrisch vraagt extra vermogen, maar de netbeheerder kan vaak niet leveren. Lemnion combineert verduurzaming met batterijopslag, zodat je gas-loos kunt zonder het net extra te belasten.</p>
 </div>
 
 <section>
     <div class="container">
-        <p class="section-label">De uitdaging</p>
-        <h2>Gas-loos = meer stroom, maar het net zit vol</h2>
-        <p style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
+        <p data-i18n="verduurzamen.label" class="section-label">De uitdaging</p>
+        <h2 data-i18n="verduurzamen.h2">Gas-loos = meer stroom, maar het net zit vol</h2>
+        <p data-i18n="verduurzamen.lead" style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
             De hotellerie wil verduurzamen. Gas-cv’s vervangen door warmtepompen, gasfornuizen door inductie, gasgestookte boilers door elektrische warmwaterbuffers. 
             Maar elke stap vraagt extra elektrisch vermogen | en de netbeheerder kan vaak geen zwaardere aansluiting leveren. 
             Hotels blijven noodgedwongen op gas stoken, terwijl de CO2-doelstellingen dichterbij komen en de gasprijs blijft stijgen.
         </p>
         <div class="info-grid">
             <div class="info-card">
-                <h4>Warmtepompen</h4>
-                <p>Een warmtepomp vervangt je gas-cv en kan tot 75% op je gasrekening besparen. Maar een warmtepomp vraagt 3-fase stroom, precies wat de netbeheerder vaak niet kan leveren. Lemnion combineert de warmtepomp met batterijopslag: de accu vangt de piekvraag op, je blijft binnen je aansluitcapaciteit.</p>
+                <h4 data-i18n="verduurzamen.c1h">Warmtepompen</h4>
+                <p data-i18n="verduurzamen.c1p">Een warmtepomp vervangt je gas-cv en kan tot 75% op je gasrekening besparen. Maar een warmtepomp vraagt 3-fase stroom, precies wat de netbeheerder vaak niet kan leveren. Lemnion combineert de warmtepomp met batterijopslag: de accu vangt de piekvraag op, je blijft binnen je aansluitcapaciteit.</p>
             </div>
             <div class="info-card">
-                <h4>Inductie koken</h4>
-                <p>Van gasfornuis naar inductie: veiliger, nauwkeuriger en beter voor het klimaat. Maar een professionele keuken met inductie trekt piekstromen waar je netaansluiting niet op berekend is. Met batterijopslag lever je die pieken uit je accu, niet uit het net.</p>
+                <h4 data-i18n="verduurzamen.c2h">Inductie koken</h4>
+                <p data-i18n="verduurzamen.c2p">Van gasfornuis naar inductie: veiliger, nauwkeuriger en beter voor het klimaat. Maar een professionele keuken met inductie trekt piekstromen waar je netaansluiting niet op berekend is. Met batterijopslag lever je die pieken uit je accu, niet uit het net.</p>
             </div>
             <div class="info-card">
-                <h4>Elektrische boilers</h4>
-                <p>Gasgestookte warmwaterbuffers verbruiken continu gas, ook als er geen gasten zijn. Elektrische boilers in combinatie met een slimme accu laden tijdens goedkope daluren en leveren warm water precies wanneer jouw gasten het nodig hebben.</p>
+                <h4 data-i18n="verduurzamen.c3h">Elektrische boilers</h4>
+                <p data-i18n="verduurzamen.c3p">Gasgestookte warmwaterbuffers verbruiken continu gas, ook als er geen gasten zijn. Elektrische boilers in combinatie met een slimme accu laden tijdens goedkope daluren en leveren warm water precies wanneer jouw gasten het nodig hebben.</p>
             </div>
         </div>
     </div></section><section class="cta-section">
     <div class="container">
-        <h2>Klaar om jouw hotel te bevrijden van netcongestie?</h2>
-        <p style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Bereken binnen 1 minuut wat jouw hotel kan besparen met een eigen energie-systeem.</p>
+        <h2 data-i18n="verduurzamen.ctah">Klaar om jouw hotel te bevrijden van netcongestie?</h2>
+        <p data-i18n="verduurzamen.ctap" style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Bereken binnen 1 minuut wat jouw hotel kan besparen met een eigen energie-systeem.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a href="configurator.html" class="btn-outline">Doe de configurator →</a>
+            <a data-i18n="verduurzamen.cta" href="configurator.html" class="btn-outline">Doe de configurator →</a>
             <a href="mailto:info@lemnion.nl" class="btn-green">info@lemnion.nl</a>
         </div>
     </div>
@@ -390,42 +391,42 @@ h2{font-size:1.1rem}
     <div class="container">
         <div>
             <h3 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h3>
-            <p style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
+            <p data-i18n="footer.desc" style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h3>Oplossingen</h3>
+            <h3 data-i18n="footer.h_solutions">Oplossingen</h3>
             <ul>
-                <li><a href="netcongestie.html">Netcongestie</a></li>
-                <li><a href="verduurzamen.html">Verduurzamen</a></li>
-                <li><a href="maximum-belasting.html">Maximum belasting</a></li>
-                <li><a href="stroom-overschot.html">Stroom overschot</a></li>
-                <li><a href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+                <li><a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a></li>
+                <li><a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a></li>
+                <li><a data-i18n="footer.maxbelasting" href="maximum-belasting.html">Maximum belasting</a></li>
+                <li><a data-i18n="footer.stroomoverschot" href="stroom-overschot.html">Stroom overschot</a></li>
+                <li><a data-i18n="footer.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
             </ul>
         </div>
         <div>
-            <h3>Producten &amp; Diensten</h3>
+            <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a href="producten.html">Batterijopslag</a></li>
-                <li><a href="producten.html">Laadpalen &amp; snelladers</a></li>
-                <li><a href="producten.html">EMS &amp; monitoring</a></li>
-                <li><a href="configurator.html">Energieconfigurator</a></li>
-                <li><a href="subsidies.html">Subsidies &amp; regelingen</a></li>
+                <li><a data-i18n="footer.batterij" href="producten.html">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="producten.html">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="producten.html">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.configurator" href="configurator.html">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.subsidies" href="subsidies.html">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
-            <h3>Informatie</h3>
+            <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a href="voordelen.html">Verdienmodellen</a></li>
-                <li><a href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
-                <li><a href="over-ons.html">Over ons</a></li>
-                <li><a href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
+                <li><a data-i18n="footer.nieuwsblog" href="nieuws.html">Nieuws &amp; blog</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
-            <p style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
     </footer>
@@ -433,53 +434,53 @@ h2{font-size:1.1rem}
 
 <script>
 
-document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
 </script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
     <div class="contact-modal-content">
         <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
-        <h3>Vrijblijvend contact</h3>
-        <p class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
+        <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
+        <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
         <form id="contact-form" novalidate>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.voornaam" for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
                 </div>
                 <div class="form-group">
-                    <label for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.achternaam" for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.bedrijf" for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
-                    <label for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.functie" for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
                     <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.email" for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
                     <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
                 </div>
                 <div class="form-group">
-                    <label for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
+                    <label data-i18n="modal.mobiel" for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
                     <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
-                <label for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
+                <label data-i18n="modal.bericht" for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
                 <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
-                <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
+                <button data-i18n="modal.submit" type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
             </div>
         </form>
     </div>
@@ -559,14 +560,30 @@ document.addEventListener('keydown',function(e){
     honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;';
     form.appendChild(honeypot);
 
+    var LANG = (document.documentElement.lang || 'nl').split('-')[0];
+
     var requiredLabels = {
-        voornaam: 'voornaam',
-        achternaam: 'achternaam',
-        bedrijfsnaam: 'bedrijfsnaam',
-        functie: 'functie',
-        email: 'e-mailadres',
-        mobiel: 'mobiel nummer',
-        bericht: 'bericht'
+        voornaam: LANG === 'en' ? 'first name' : 'voornaam',
+        achternaam: LANG === 'en' ? 'last name' : 'achternaam',
+        bedrijfsnaam: LANG === 'en' ? 'company name' : 'bedrijfsnaam',
+        functie: LANG === 'en' ? 'job title' : 'functie',
+        email: LANG === 'en' ? 'email address' : 'e-mailadres',
+        mobiel: LANG === 'en' ? 'mobile number' : 'mobiel nummer',
+        bericht: LANG === 'en' ? 'message' : 'bericht'
+    };
+
+    var T = (LANG === 'en') ? {
+        vul: 'Please fill in your ', in: '.', email: 'Please enter a valid email address.',
+        sending: 'Sending...', thanks: 'Thank you for your message!',
+        soon: 'We will contact you within 24 hours.',
+        fail: 'Sending failed. Please try again later.',
+        netfail: 'Sending failed. Check your internet connection and try again.'
+    } : {
+        vul: 'Vul je ', in: ' in.', email: 'Vul een geldig e-mailadres in.',
+        sending: 'Versturen...', thanks: 'Bedankt voor je bericht!',
+        soon: 'We nemen binnen 24 uur contact met je op.',
+        fail: 'Het versturen is mislukt. Probeer het later opnieuw.',
+        netfail: 'Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.'
     };
 
     function clearErrors() {
@@ -614,16 +631,17 @@ document.addEventListener('keydown',function(e){
             email: document.getElementById('email').value.trim(),
             mobiel: document.getElementById('mobiel').value.trim(),
             bericht: document.getElementById('bericht').value.trim(),
-            website: honeypot.value
+            website: honeypot.value,
+            lang: LANG
         };
 
-        // Client-side validatie (Nederlands, onafhankelijk van browsertaal)
+        // Client-side validatie (taalafhankelijk via <html lang>)
         var errors = {};
         for (var key in requiredLabels) {
-            if (!payload[key]) errors[key] = 'Vul je ' + requiredLabels[key] + ' in.';
+            if (!payload[key]) errors[key] = T.vul + requiredLabels[key] + T.in;
         }
         if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) {
-            errors.email = 'Vul een geldig e-mailadres in.';
+            errors.email = T.email;
         }
         if (Object.keys(errors).length > 0) {
             showErrors(errors);
@@ -632,7 +650,7 @@ document.addEventListener('keydown',function(e){
 
         var btn = form.querySelector('button[type="submit"]');
         var orig = btn ? btn.innerHTML : '';
-        if (btn) { btn.disabled = true; btn.innerHTML = 'Versturen...'; }
+        if (btn) { btn.disabled = true; btn.innerHTML = T.sending; }
 
         fetch('/api/contact', {
             method: 'POST',
@@ -644,19 +662,19 @@ document.addEventListener('keydown',function(e){
             if (res.ok && res.data.success) {
                 form.innerHTML = '<div style="text-align:center;padding:2rem;">' +
                     '<div style="font-size:3rem;margin-bottom:1rem;">✓</div>' +
-                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">Bedankt voor je bericht!</h3>' +
-                    '<p style="color:var(--text-muted);">We nemen binnen 24 uur contact met je op.</p></div>';
+                    '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">' + T.thanks + '</h3>' +
+                    '<p style="color:var(--text-muted);">' + T.soon + '</p></div>';
                 return;
             }
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
             if (res.data.errors) {
                 showErrors(res.data.errors);
             } else {
-                showFormError(res.data.message || 'Het versturen is mislukt. Probeer het later opnieuw.');
+                showFormError(res.data.message || T.fail);
             }
         }).catch(function(){
             if (btn) { btn.disabled = false; btn.innerHTML = orig; }
-            showFormError('Het versturen is mislukt. Controleer je internetverbinding en probeer het opnieuw.');
+            showFormError(T.netfail);
         });
     });
 

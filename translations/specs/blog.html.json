@@ -1,0 +1,8 @@
+[
+  {"key": "blog.h1", "tag": "h1", "contains": "Blog"},
+  {"key": "blog.intro", "tag": "p", "contains": "Verdiepende artikelen"},
+  {"key": "blog.card1-date", "tag": "span", "contains": "10 augustus 2026", "attrs": "blog-date"},
+  {"key": "blog.card1-title", "tag": "h3", "contains": "EPBD IV: verplichte laadinfra"},
+  {"key": "blog.card1-desc", "tag": "p", "contains": "Vanaf 2027 moeten bestaande hotels"},
+  {"key": "blog.card1-read", "tag": "span", "contains": "Lees het artikel", "attrs": "blog-read"}
+]

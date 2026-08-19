@@ -1,0 +1,22 @@
+[
+  {"key": "producten.h1", "tag": "h1", "contains": "Producten"},
+  {"key": "producten.sub", "tag": "p", "contains": "Een compleet ecosysteem van hardware"},
+  {"key": "producten.label", "tag": "p", "contains": "Onze hardware", "attrs": "section-label"},
+  {"key": "producten.h2", "tag": "h2", "contains": "Alles wat je hotel nodig heeft"},
+  {"key": "producten.lead", "tag": "p", "contains": "Lemnion levert een compleet geïntegreerd energiesysteem"},
+  {"key": "producten.c1h", "tag": "h4", "contains": "LFP-batterijopslag (ESS)"},
+  {"key": "producten.c1p", "tag": "p", "contains": "De veiligste batterijtechnologie op de markt"},
+  {"key": "producten.c2h", "tag": "h4", "contains": "Energy Management System (EMS)"},
+  {"key": "producten.c2p", "tag": "p", "contains": "Het enige programmeerbare EMS specifiek voor hotels"},
+  {"key": "producten.c3h", "tag": "h4", "contains": "DC-snelladers (40-120 kW)"},
+  {"key": "producten.c3p", "tag": "p", "contains": "Toekomstbestendige laadpalen met OCPP 2.0.1"},
+  {"key": "producten.c4h", "tag": "h4", "contains": "DC-gekoppelde zonnepanelen"},
+  {"key": "producten.c4p", "tag": "p", "contains": "25 kW+ MPPT direct op de DC-bus"},
+  {"key": "producten.c5h", "tag": "h4", "contains": "DC-AC omvormers"},
+  {"key": "producten.c5p", "tag": "p", "contains": "Industriële bidirectionele omvormers"},
+  {"key": "producten.c6h", "tag": "h4", "contains": "Monitoring & support"},
+  {"key": "producten.c6p", "tag": "p", "contains": "24/7 remote monitoring van alle componenten"},
+  {"key": "producten.ctah", "tag": "h2", "contains": "Klaar om jouw hotel te bevrijden"},
+  {"key": "producten.ctap", "tag": "p", "contains": "Bereken binnen 1 minuut"},
+  {"key": "producten.cta", "tag": "a", "contains": "Doe de configurator"}
+]

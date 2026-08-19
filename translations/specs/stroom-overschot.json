@@ -1,0 +1,22 @@
+[
+  {"key": "stroomoverschot.h1", "tag": "h1", "contains": "Stroom (zon) overschot"},
+  {"key": "stroomoverschot.intro", "tag": "p", "contains": "Wat moet je doen met overtollige zonne-energie?"},
+  {"key": "stroomoverschot.s1label", "tag": "p", "contains": "De uitdaging", "attrs": "section-label"},
+  {"key": "stroomoverschot.s1h", "tag": "h2", "contains": "Zonnepanelen leveren te veel op en dat kost geld"},
+  {"key": "stroomoverschot.s1p", "tag": "p", "contains": "Hotels met grote dakoppervlaktes wekken vaak meer"},
+  {"key": "stroomoverschot.f1h", "tag": "h3", "contains": "Opwek"},
+  {"key": "stroomoverschot.f1p", "tag": "p", "contains": "Jouw zonnepanelen wekken overdag volop stroom op"},
+  {"key": "stroomoverschot.f2h", "tag": "h3", "contains": "Terugleveren?"},
+  {"key": "stroomoverschot.f2p", "tag": "p", "contains": "Terugleveren aan het net kost steeds vaker geld"},
+  {"key": "stroomoverschot.f3h", "tag": "h3", "contains": "Opslaan!"},
+  {"key": "stroomoverschot.f3p", "tag": "p", "contains": "Sla het overschot op in je Lemnion-accu"},
+  {"key": "stroomoverschot.c1h", "tag": "h4", "contains": "25 kW DC-gekoppelde zon"},
+  {"key": "stroomoverschot.c1p", "tag": "p", "contains": "Lemnion koppelt zonnepanelen direct op de DC-bus"},
+  {"key": "stroomoverschot.c2h", "tag": "h4", "contains": "Slimme aansturing"},
+  {"key": "stroomoverschot.c2p", "tag": "p", "contains": "Het EMS beslist in real-time"},
+  {"key": "stroomoverschot.c3h", "tag": "h4", "contains": "60-80% zelfvoorzienend"},
+  {"key": "stroomoverschot.c3p", "tag": "p", "contains": "Met zon en opslag samen dekken typische hotels"},
+  {"key": "stroomoverschot.ctah", "tag": "h2", "contains": "Klaar om jouw hotel te bevrijden van netcongestie?"},
+  {"key": "stroomoverschot.ctap", "tag": "p", "contains": "Bereken binnen 1 minuut wat jouw hotel kan besparen"},
+  {"key": "stroomoverschot.cta", "tag": "a", "contains": "Doe de configurator", "attrs": "configurator.html"}
+]

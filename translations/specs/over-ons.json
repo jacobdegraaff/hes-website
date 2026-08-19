@@ -1,0 +1,22 @@
+[
+  {"key": "overons.h1", "tag": "h1", "contains": "Over ons"},
+  {"key": "overons.sub", "tag": "p", "contains": "Twee hoteliers die de energiecrisis"},
+  {"key": "overons.label1", "tag": "p", "contains": "Het verhaal", "attrs": "section-label"},
+  {"key": "overons.h2_1", "tag": "h2", "contains": "Van hotelier naar energiepionier"},
+  {"key": "overons.p1", "tag": "p", "contains": "Jacob de Graaff en Melle Pegman kennen"},
+  {"key": "overons.p2", "tag": "p", "contains": "In de afgelopen periode"},
+  {"key": "overons.p3", "tag": "p", "contains": "De conclusie was helder"},
+  {"key": "overons.label2", "tag": "p", "contains": "Oprichters", "attrs": "section-label"},
+  {"key": "overons.h2_2", "tag": "h2", "contains": "De mannen achter Lemnion"},
+  {"key": "overons.jacobp", "tag": "p", "contains": "Bouwde het grootste hospitality-netwerk"},
+  {"key": "overons.mellep", "tag": "p", "contains": "Expert in hospitality operations"},
+  {"key": "overons.label3", "tag": "p", "contains": "Onze partner", "attrs": "section-label"},
+  {"key": "overons.h2_3", "tag": "h2", "contains": "Technische kracht van Stroomlijnen"},
+  {"key": "overons.partnerp", "tag": "p", "contains": "Lemnion werkt exclusief samen met Stroomlijnen"},
+  {"key": "overons.ignaciop", "tag": "p", "contains": "Technisch brein achter het Stroomlijnen-platform"},
+  {"key": "overons.jaccop", "tag": "p", "contains": "Commercieel brein met diepgaande kennis"},
+  {"key": "overons.bottom", "tag": "p", "contains": "Lemnion verkoopt. Stroomlijnen bouwt"},
+  {"key": "overons.ctah", "tag": "h2", "contains": "Klaar om kennis te maken"},
+  {"key": "overons.ctap", "tag": "p", "contains": "Plan een vrijblijvend gesprek"},
+  {"key": "overons.cta", "tag": "a", "contains": "Doe de configurator"}
+]
