@@ -1,7 +1,7 @@
 {
   "verduurzamen.h1": "Becoming more sustainable without grid reinforcement",
   "verduurzamen.sub": "The switch from gas to electric requires extra capacity, but the grid operator often cannot deliver. Lemnion combines sustainability with battery storage, so you can go gas-free without putting extra strain on the grid.",
-  "verduurzamen.label": "The challenge",
+  "verduurzamen.label": "Keep reading",
   "verduurzamen.h2": "Gas-free = more power, but the grid is full",
   "verduurzamen.lead": "Hospitality wants to become more sustainable. Replacing gas boilers with heat pumps, gas stoves with induction, gas-fired boilers with electric hot water buffers. But every step requires extra electrical capacity | and the grid operator often cannot deliver a heavier connection. Hotels are forced to keep burning gas, while CO₂ targets get closer and the gas price keeps rising.",
   "verduurzamen.c1h": "Heat pumps",
@@ -14,5 +14,7 @@
   "verduurzamen.ctap": "Calculate in 1 minute what your hotel can save with its own energy system.",
   "verduurzamen.cta": "Try the configurator →",
   "meta.verduurzamen.html.title": "Becoming more sustainable without grid reinforcement | Lemnion · Hospitality Energy Solutions | Gas-free · Heat pumps",
-  "meta.verduurzamen.html.description": "Going gas-free without extra grid capacity? Lemnion makes it possible. Combine heat pumps and induction cooking with battery storage, sustainability without getting stuck on the power grid."
+  "meta.verduurzamen.html.description": "Going gas-free without extra grid capacity? Lemnion makes it possible. Combine heat pumps and induction cooking with battery storage, sustainability without getting stuck on the power grid.",
+  "verduurzamen.rl1": "Discover which grants accelerate your sustainability plans",
+  "verduurzamen.rl2": "Explore our products for going green"
 }

@@ -24,23 +24,26 @@ const BASE_URL = 'https://lemnion.nl';
 const LANGS = ['en']; // add 'fr', 'es' later (same mechanism)
 
 // EN pages get English URL slugs (NL filenames stay as-is).
+// Waarden zijn extensionless: de live site serveert /oplossingen (Cloudflare
+// redirect 308: .html -> extensionless). Sitemap, canonical, hreflang en
+// interne links gebruiken dus de extensionless vorm.
 const SLUGS = {
-  'index.html': 'index.html',
-  'oplossingen.html': 'solutions.html',
-  'producten.html': 'products.html',
-  'over-ons.html': 'about-us.html',
-  'voordelen.html': 'benefits.html',
-  'verduurzamen.html': 'sustainability.html',
-  'usp-veiligheid.html': 'safety.html',
-  'nieuws.html': 'news.html',
-  'subsidies.html': 'grants.html',
-  'blog.html': 'blog.html',
-  'blog-epbd-iv-laadinfra.html': 'blog-epbd-iv-ev-charging-infrastructure.html',
-  'netcongestie.html': 'grid-congestion.html',
-  'maximum-belasting.html': 'peak-load.html',
-  'stroom-overschot.html': 'solar-surplus.html',
-  'stroomuitval-noodaggregaat.html': 'power-outage.html',
-  'configurator.html': 'configurator.html',
+  'index.html': '',
+  'oplossingen.html': 'solutions',
+  'producten.html': 'products',
+  'over-ons.html': 'about-us',
+  'voordelen.html': 'benefits',
+  'verduurzamen.html': 'sustainability',
+  'usp-veiligheid.html': 'safety',
+  'nieuws.html': 'news',
+  'subsidies.html': 'grants',
+  'blog.html': 'blog',
+  'blog-epbd-iv-laadinfra.html': 'blog-epbd-iv-ev-charging-infrastructure',
+  'netcongestie.html': 'grid-congestion',
+  'maximum-belasting.html': 'peak-load',
+  'stroom-overschot.html': 'solar-surplus',
+  'stroomuitval-noodaggregaat.html': 'power-outage',
+  'configurator.html': 'configurator',
 };
 
 // ---------------------------------------------------------------------------
@@ -51,7 +54,7 @@ const DATA_I18N = /<([a-zA-Z][a-zA-Z0-9]*)(?![a-zA-Z0-9])([^>]*?)\bdata-i18n="([
 
 function pageUrl(page, lang) {
   const slug = lang === 'nl' ? page : (SLUGS[page] || page);
-  const base = slug === 'index.html' ? '/' : '/' + slug;
+  const base = slug === 'index.html' || slug === '' ? '/' : '/' + slug.replace(/\.html$/, '');
   return lang === 'nl' ? `${BASE_URL}${base}` : `${BASE_URL}/${lang}${base}`;
 }
 
@@ -136,16 +139,24 @@ function finalizeHtml(html, page, lang) {
 
 function rewriteLinks(html, lang) {
   if (lang !== 'nl') {
-    // 1) internal page links → /en/<slug>[#anchor]
-    html = html.replace(/(href=")(index\.html|[a-z0-9-]+\.html)(#[^"]*)?"/g, (m, pre, target, anchor = '') => {
-      return `${pre}/en/${SLUGS[target] || target}${anchor}"`;
+    // 1) home-link "/" en "/#anker" → "/en/" resp. "/en/#anker"
+    html = html.replace(/href="\/(#)"/g, 'href="/en/#"');
+    html = html.replace(/href="\/"/g, 'href="/en/"');
+    // 2) interne paginalinks "/<nl-slug>[#anker]" → "/en/<en-slug>[#anker]"
+    html = html.replace(/href="\/([a-z0-9-]+)(#[^"]*)?"/g, (m, slug, anchor = '') => {
+      const en = SLUGS[slug + '.html'];
+      if (en === undefined) return m; // geen bekende pagina (bv. /assets/…)
+      return `href="/en/${en}${anchor}"`;
     });
-    // 2) relative asset paths → root-absolute, so they resolve under /en/…
+    // 3) taalwissel: "/en/<nl-slug>" → "/en/<en-slug>" (bron gebruikt NL-slugs)
+    html = html.replace(/href="\/en\/([a-z0-9-]+)"/g, (m, slug) => {
+      const en = SLUGS[slug + '.html'];
+      return en !== undefined && en !== '' ? `href="/en/${en}"` : m;
+    });
+    // 4) relatieve asset-paden → root-absoluut, zodat ze onder /en/… resolven
     html = html.replace(/(src=")(?!https?:|data:|#|\/)([^"]+)"/g, (m, pre, src) => `${pre}/${src}"`);
     html = html.replace(/(href=")(?!https?:|mailto:|tel:|data:|#|\/)([^"]+)"/g, (m, pre, h) => `${pre}/${h}"`);
   }
-  // 3) switcher EN link always points to the EN slug (both NL and EN output)
-  html = html.replace(/href="\/en\/([a-z0-9-]+\.html)"/g, (m, p) => `href="/en/${SLUGS[p] || p}"`);
   return html;
 }
 
@@ -199,7 +210,8 @@ for (const page of pages) {
     totalMissing += missing;
     if (missing > 0) console.log(`  [${page}] ${lang}: ${missing} key(s) ontbreken (fallback NL)`);
     const slug = SLUGS[page] || page;
-    writeFileSync(join(OUT, lang, slug), finalizeHtml(html, page, lang));
+    const outName = slug === '' ? 'index.html' : slug.replace(/\.html$/, '') + '.html';
+    writeFileSync(join(OUT, lang, outName), finalizeHtml(html, page, lang));
   }
 }
 if (totalMissing > 0) console.log(`[build] ⚠️ totaal ${totalMissing} ontbrekende vertaalsleutels (vallen terug op NL)`);
