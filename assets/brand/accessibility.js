@@ -61,9 +61,6 @@
             e.preventDefault();
             var open = this.parentElement.classList.toggle('open');
             this.setAttribute('aria-expanded', open ? 'true' : 'false');
-            // houd de trigger in beeld, zodat het submenu altijd weer kan
-            // worden ingeklapt
-            if (open) this.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         });
     });
 
