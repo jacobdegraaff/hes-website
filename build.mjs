@@ -117,17 +117,6 @@ function injectBreadcrumbs(html, page, lang) {
   if (items && html === before) {
     html = html.replace('</head>', ld + '\n</head>');
   }
-
-  // Zichtbare trail bovenaan de page-header (alleen subpagina's met .page-header)
-  if (items) {
-    const links = items.map((it, i) => {
-      const label = it.name;
-      if (i === items.length - 1) return `      <span aria-current="page">${label}</span>`;
-      return `      <a href="${it.url.replace(BASE_URL, '')}">${label}</a><span aria-hidden="true">›</span>`;
-    }).join('\n');
-    const nav = `<nav class="breadcrumb" aria-label="Breadcrumb">\n${links}\n    </nav>`;
-    html = html.replace(/(<div class="page-header"[^>]*>)/, `$1\n    ${nav}`);
-  }
   return html;
 }
 

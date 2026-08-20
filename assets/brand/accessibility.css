@@ -135,29 +135,3 @@ footer a:focus-visible {
         color: var(--green-primary);
     }
 }
-
-/* ── Zichtbare breadcrumb (build-generated, in de page-header) ──────── */
-.breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.75rem;
-    color: rgba(245, 247, 242, 0.7);
-    margin-bottom: 0.75rem;
-}
-.breadcrumb a {
-    color: rgba(245, 247, 242, 0.7);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.breadcrumb a:hover,
-.breadcrumb a:focus-visible {
-    color: var(--green-light) !important;
-}
-.breadcrumb span[aria-current="page"] {
-    color: var(--green-light);
-    font-weight: 600;
-}
