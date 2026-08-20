@@ -102,6 +102,9 @@ summary:focus-visible,
 .nav-links a:not(.btn):focus-visible {
     color: var(--green-accent) !important;
 }
+footer a {
+    color: rgba(245, 247, 242, 0.6) !important;
+}
 footer a:hover,
 footer a:focus-visible {
     color: var(--green-light) !important;
