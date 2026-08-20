@@ -58,6 +58,79 @@ function pageUrl(page, lang) {
   return lang === 'nl' ? `${BASE_URL}${base}` : `${BASE_URL}/${lang}${base}`;
 }
 
+// ---------------------------------------------------------------------------
+// Breadcrumbs: BreadcrumbList structured data + zichtbare trail
+// (typische gebruikersroute conform de nav; platte URLs blijven gehandhaafd)
+// ---------------------------------------------------------------------------
+const TRAIL = {
+  'oplossingen.html':   { parent: null,               nl: 'Oplossingen',            en: 'Solutions' },
+  'netcongestie.html':  { parent: 'oplossingen.html', nl: 'Netcongestie',           en: 'Grid congestion' },
+  'verduurzamen.html':  { parent: 'oplossingen.html', nl: 'Verduurzamen',           en: 'Sustainability' },
+  'maximum-belasting.html': { parent: 'oplossingen.html', nl: 'Maximum belasting',  en: 'Peak capacity' },
+  'stroom-overschot.html':  { parent: 'oplossingen.html', nl: 'Stroom (zon) overschot', en: 'Solar (surplus) power' },
+  'stroomuitval-noodaggregaat.html': { parent: 'oplossingen.html', nl: 'Stroomuitval / noodaggregaat', en: 'Power outage / backup' },
+  'voordelen.html':     { parent: null,               nl: 'Voordelen',              en: 'Benefits' },
+  'usp-veiligheid.html': { parent: 'voordelen.html',  nl: 'USP en veiligheid',      en: 'USP & safety' },
+  'configurator.html':  { parent: 'voordelen.html',   nl: 'Energieconfigurateur',   en: 'Energy configurator' },
+  'nieuws.html':        { parent: null,               nl: 'Nieuws',                 en: 'News' },
+  'blog.html':          { parent: 'nieuws.html',      nl: 'Blog',                   en: 'Blog' },
+  'blog-epbd-iv-laadinfra.html': { parent: 'nieuws.html', nl: 'Blog',               en: 'Blog' },
+  'producten.html':     { parent: null,               nl: 'Producten',              en: 'Products' },
+  'subsidies.html':     { parent: null,               nl: 'Subsidies',              en: 'Subsidies' },
+  'over-ons.html':      { parent: null,               nl: 'Over ons',               en: 'About us' },
+};
+
+function crumbName(entry, lang) {
+  return lang === 'nl' ? entry.nl : entry.en;
+}
+
+function crumbItems(page, lang) {
+  const trail = TRAIL[page];
+  if (!trail) return null; // home e.d.: geen breadcrumb
+  const items = [];
+  items.push({ name: 'Home', url: pageUrl('index.html', lang) });
+  if (trail.parent) {
+    const p = TRAIL[trail.parent];
+    items.push({ name: crumbName(p, lang), url: pageUrl(trail.parent, lang) });
+  }
+  items.push({ name: crumbName(trail, lang), url: pageUrl(page, lang) });
+  return items;
+}
+
+function injectBreadcrumbs(html, page, lang) {
+  const items = crumbItems(page, lang);
+  let ld = '';
+  if (items) {
+    const json = items.map((it, i) =>
+      `    { "@type": "ListItem", "position": ${i + 1}, "name": ${JSON.stringify(it.name)}, "item": ${JSON.stringify(it.url)} }`
+    ).join(',\n');
+    ld = `\n<!-- Breadcrumb (build) -->\n<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "BreadcrumbList",\n  "itemListElement": [\n${json}\n  ]\n}\n</script>`;
+  }
+  // Bestaand BreadcrumbList-blok vervangen (oude platte variant), of toevoegen als
+  // het ontbreekt. Bij items=null (home) wordt het oude blok juist VERWIJDERD:
+  // een 1-item breadcrumb voldoet niet aan Google's eis (minimaal 2 ListItems).
+  const before = html;
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, (block) => {
+    if (!block.includes('BreadcrumbList')) return block;
+    return ld;
+  });
+  if (items && html === before) {
+    html = html.replace('</head>', ld + '\n</head>');
+  }
+
+  // Zichtbare trail bovenaan de page-header (alleen subpagina's met .page-header)
+  if (items) {
+    const links = items.map((it, i) => {
+      const label = it.name;
+      if (i === items.length - 1) return `      <span aria-current="page">${label}</span>`;
+      return `      <a href="${it.url.replace(BASE_URL, '')}">${label}</a><span aria-hidden="true">›</span>`;
+    }).join('\n');
+    const nav = `<nav class="breadcrumb" aria-label="Breadcrumb">\n${links}\n    </nav>`;
+    html = html.replace(/(<div class="page-header"[^>]*>)/, `$1\n    ${nav}`);
+  }
+  return html;
+}
+
 function loadDict(lang) {
   // merge translations/<lang>.json + alle translations/<lang>.*.json (per-pagina woordenboeken)
   const dict = {};
@@ -134,6 +207,8 @@ function finalizeHtml(html, page, lang) {
       }
     );
   }
+  // Breadcrumbs: JSON-LD (structured data) + zichtbare trail in de page-header
+  html = injectBreadcrumbs(html, page, lang);
   return injectHead(html, page, lang);
 }
 
