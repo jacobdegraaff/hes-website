@@ -49,17 +49,42 @@
         });
     }
 
-    /* ── Mobile dropdowns: expose state via aria-expanded ─────────────── */
+    /* ── Dropdowns: klik togglet altijd (alle apparaten) ─────────────── */
+    // Een klik op een dropdown-trigger opent/klapt het submenu en navigeert
+    // nooit ('verspringen' voorkomen). De href blijft staan voor SEO/crawlers
+    // en voor middenklik/open-in-nieuw-tab. De pagina zelf blijft bereikbaar
+    // via de sub-items, footer en gerelateerde links.
+    function closeAllDropdowns(except) {
+        document.querySelectorAll('.nav-dropdown.open').forEach(function (li) {
+            if (except && li === except) return;
+            li.classList.remove('open');
+            var a = li.querySelector(':scope > a');
+            if (a) a.setAttribute('aria-expanded', 'false');
+        });
+    }
+
     document.querySelectorAll('.nav-dropdown > a').forEach(function (link) {
         link.setAttribute('aria-haspopup', 'true');
         link.setAttribute('aria-expanded', 'false');
         link.addEventListener('click', function (e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                var open = this.parentElement.classList.toggle('open');
-                this.setAttribute('aria-expanded', open ? 'true' : 'false');
-            }
+            e.preventDefault();
+            var li = this.parentElement;
+            var wasOpen = li.classList.contains('open');
+            // accordion: een ander menu openen sluit alle andere
+            closeAllDropdowns();
+            var open = !wasOpen;
+            li.classList.toggle('open', open);
+            this.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
+    });
+
+    // Klik buiten een dropdown (of ESC) sluit alle open menu's
+    document.addEventListener('click', function (e) {
+        if (e.target.closest && e.target.closest('.nav-dropdown')) return;
+        closeAllDropdowns();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
     });
 
     /* ── Hero slider dots: accessible name on the radio inputs ────────── */

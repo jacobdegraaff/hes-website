@@ -1,7 +1,7 @@
 {
   "producten.h1": "Products",
   "producten.sub": "A complete ecosystem of hardware that works together seamlessly. From battery to charger, everything from one partner, one contract, one invoice.",
-  "producten.label": "Our hardware",
+  "producten.label": "Keep reading",
   "producten.h2": "Everything your hotel needs",
   "producten.lead": "Lemnion delivers a fully integrated energy system. Every component is designed to work together seamlessly. No compatibility issues, no finger-pointing between suppliers.",
   "producten.c1h": "LFP battery storage (ESS)",
@@ -20,5 +20,7 @@
   "producten.ctap": "Calculate in 1 minute what your hotel can save with its own energy system.",
   "producten.cta": "Try the configurator →",
   "meta.producten.html.title": "Products | Lemnion · Hospitality Energy Solutions | Battery Storage · EMS · Chargers · Solar Panels",
-  "meta.producten.html.description": "Discover Lemnion's products: LFP battery storage, programmable EMS, DC fast chargers and DC-coupled solar panels. Everything from one partner."
+  "meta.producten.html.description": "Discover Lemnion's products: LFP battery storage, programmable EMS, DC fast chargers and DC-coupled solar panels. Everything from one partner.",
+  "producten.rl1": "Calculate your savings with the configurator",
+  "producten.rl2": "Discover which grants apply"
 }

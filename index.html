@@ -75,6 +75,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     
     <style>
+/* hover opent niet meer */
         :root {
             --green-primary: #0F3D23;
             --green-secondary: #2E7032;
@@ -132,7 +133,7 @@
         }
         .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;margin-right:auto;z-index:101}.nav-logo-icon{height:46px;width:46px;flex-shrink:0;position:relative;z-index:1;display:block}.nav-logo-text{display:flex;flex-direction:column;justify-content:center;line-height:1.1;position:relative;z-index:1}.nav-logo-word{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:1.4rem;color:var(--green-primary);letter-spacing:-0.5px;white-space:nowrap}.nav-logo-desc{font-family:'Inter',system-ui,sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-secondary);white-space:nowrap;margin-top:2px}.mobile-logo{display:none}
         .nav-links { 
-            display: flex; gap: 2rem; list-style: none; align-items: center;
+            display: flex; gap: 1.25rem; list-style: none; align-items: center;
             grid-column: 3;
             margin-left: auto;
         }
@@ -176,7 +177,8 @@
         }
         
         .nav-dropdown:hover .nav-dropdown-panel,
-        .nav-dropdown:hover .nav-backdrop { display: block; }
+        .nav-dropdown:hover .nav-backdrop { display: block; }.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}
+            .nav-dropdown:hover .nav-dropdown-panel, .nav-dropdown:hover .nav-backdrop { display: none; }
         
         /* Skip link */
         .skip-link { position: absolute; top: -100px; left: 0; background: var(--green-primary); color: white; padding: 0.75rem 1.5rem; z-index: 200; font-weight: 600; border-radius: 0 0 8px 0; text-decoration: none; font-family: 'Inter',sans-serif; font-size: 0.9rem; }
@@ -545,7 +547,7 @@
             }
             .nav-dropdown:hover .nav-dropdown-panel,
             .nav-dropdown:hover .nav-backdrop { display: none; }
-            .nav-dropdown.open > .nav-dropdown-panel { display: block; }
+            .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
             .nav-backdrop { display: none !important; }
             .nav-mega-col h4 { display: none; }
             .nav-mega-col a { 
@@ -646,6 +648,112 @@
             .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
             .form-row { grid-template-columns: 1fr; }
         }
+@media (min-width: 769px) and (max-width: 1180px) {
+/* ── NAV ── */
+            nav { 
+                position: sticky; top: 0; z-index: 100;
+                padding: 0; 
+                height: 56px;
+                display: flex; align-items: center;
+            }
+            nav .container { 
+                padding: 0 0.75rem; 
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            /* Logo */
+            .nav-logo { margin: 0; display: flex; align-items: center; }
+            .nav-logo-icon { height: 38px; width: auto; }
+
+            .mobile-logo { 
+                display: flex; align-items: center; gap: 0.35rem;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600; font-size: 0.85rem; 
+                color: var(--green-primary);
+                position: relative; z-index: 2;
+                white-space: nowrap;
+            }
+            .mobile-logo svg { width: 50px; height: 50px; flex-shrink: 0; }
+            .mobile-logo img { width: auto; height: 28px; flex-shrink: 0; }
+
+            /* Hamburger button */
+            .menu-toggle { 
+                display: flex; flex-direction: column;
+                align-items: center; justify-content: center;
+                width: 44px; height: 44px;
+                margin-left: auto; 
+                padding: 0;
+                background: none; border: none; cursor: pointer;
+                z-index: 103;
+                position: relative;
+            }
+            .menu-toggle span { 
+                display: block; width: 22px; height: 2.5px; 
+                background: var(--green-primary); border-radius: 2px; 
+                transition: 0.2s ease;
+                position: absolute;
+            }
+            .menu-toggle span:nth-child(1) { transform: translateY(-7px); }
+            .menu-toggle span:nth-child(3) { transform: translateY(7px); }
+            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg); }
+            .menu-toggle.active span:nth-child(2) { opacity: 0; }
+            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg); }
+
+            /* Mobile menu panel | standalone, outside nav stacking context */
+            .mobile-menu-panel { display: none; position: fixed; top: 56px; left: 0; right: 0; bottom: 0; background: white; flex-direction: column; padding: 0.5rem 1.25rem 2rem; gap: 0; overflow-y: auto; z-index: 99999; border-top: 4px solid #7FBF3A; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+            .mobile-menu-panel.active { display: flex !important; }
+            .mobile-menu-panel .nav-links { display: flex; flex-direction: column; gap: 0; list-style: none; width: 100%; }
+            .nav-links > li { 
+                padding: 0.5rem 0; 
+                border-bottom: 1px solid var(--border);
+            }
+            .nav-links > li:last-child { border-bottom: none; }
+            .nav-links > li > a { 
+                font-size: 1rem; min-height: 46px;
+                display: flex; align-items: center;
+            }
+            .nav-links > li[style] { border-bottom: none; padding: 0.25rem 0; }
+
+            /* Dropdowns */
+            .nav-dropdown > a { 
+                display: flex; align-items: center; justify-content: space-between;
+                min-height: 46px;
+            }
+            .nav-dropdown > a::after {
+                content: '▾'; font-size: 0.8rem; 
+                transition: transform 0.2s;
+            }
+            .nav-dropdown.open > a::after { transform: rotate(180deg); }
+            .nav-dropdown-panel {
+                display: none;
+                position: static !important;
+                box-shadow: none; border: none;
+                padding: 0.25rem 0 0.5rem 1rem;
+                min-width: auto;
+                background: transparent;
+            }
+            .nav-dropdown:hover .nav-dropdown-panel,
+            .nav-dropdown:hover .nav-backdrop { display: none; }
+            .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
+            .nav-backdrop { display: none !important; }
+            .nav-mega-col h4 { display: none; }
+            .nav-mega-col a { 
+                font-size: 0.9rem; padding: 0.4rem 0;
+                min-height: 44px;
+                display: flex; align-items: center;
+            }
+            .nav-mega-col .mega-desc { display: none; }
+
+            /* Contact button in nav */
+            .nav-links .btn-primary { 
+                display: inline-flex !important; 
+                margin-top: 0.5rem; width: auto; min-height: 44px;
+                align-items: center; justify-content: center;
+            }
+}
+
+
 @media (max-width: 480px) {
             #valueprop p { font-size: 0.95rem !important; }
             #valueprop .container { padding: 0 1.25rem; }
@@ -659,8 +767,11 @@
             .page-header h1 { font-size: 1.3rem; }
         }
 
+
+/* Dropdown: open-state toont het paneel ook zonder hover (alle apparaten) */
+.nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
 </style>
-    <link rel="stylesheet" href="/assets/brand/accessibility.css">
+    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=4">
 </head>
 <body>
 
@@ -687,56 +798,75 @@
                 <span class="nav-logo-desc">Hospitality Energy Solutions</span>
             </span>
         </a>
-        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
+        <script>
+/* Scroll-lock die de scrollpositie bewaart (geen sprong naar boven op iOS) */
+var __lemLockY = 0;
+function lockScroll(on) {
+    if (on) {
+        __lemLockY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + __lemLockY + 'px';
+        document.body.style.left = '0';
+        document.body.style.width = '100%';
+    } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.width = '';
+        window.scrollTo(0, __lemLockY);
+    }
+}
+</script>
+<button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');lockScroll(false)}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');lockScroll(true)}">
             <span></span><span></span><span></span>
         </button>
                 <ul class="nav-links">
             <li class="nav-dropdown">
-                <a data-i18n="nav.oplossingen" href="oplossingen.html">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="/oplossingen">Oplossingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.oplossingen_h">Oplossingen</h4>
-                        <a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a>
-                        <a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a>
-                        <a data-i18n="nav.maxbelasting" href="maximum-belasting.html">Maximum belasting</a>
-                        <a data-i18n="nav.stroomoverschot" href="stroom-overschot.html">Stroom (zon) overschot</a>
-                        <a data-i18n="nav.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Oplossingen</a></h4>
+                        <a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a>
+                        <a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a>
+                        <a data-i18n="nav.maxbelasting" href="/maximum-belasting">Maximum belasting</a>
+                        <a data-i18n="nav.stroomoverschot" href="/stroom-overschot">Stroom (zon) overschot</a>
+                        <a data-i18n="nav.stroomuitval" href="/stroomuitval-noodaggregaat">Stroomuitval / noodaggregaat</a>
                     </div>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.voordelen" href="voordelen.html">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="/voordelen">Voordelen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.voordelen_h">Voordelen</h4>
-                        <a data-i18n="nav.usp" href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a>
-                        <a data-i18n="nav.configurator" href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a data-i18n="nav.vergelijk" href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <h4><a data-i18n="nav.voordelen_h" href="/voordelen">Voordelen</a></h4>
+                        <a data-i18n="nav.usp" href="/usp-veiligheid">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a>
+                        <a data-i18n="nav.configurator" href="/configurator">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="producten.html">Producten</a></li>
-            <li><a data-i18n="nav.subsidies" href="subsidies.html">Subsidies</a></li>
-                        <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
+            <li><a data-i18n="nav.producten" href="/producten">Producten</a></li>
+            <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
+                        <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.nieuws" href="nieuws.html">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="/nieuws">Nieuws ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.nieuws_h">Nieuws</h4>
-                        <a data-i18n="nav.nieuws_all" href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
-                        <a data-i18n="nav.blog" href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                        <h4><a data-i18n="nav.nieuws_h" href="/nieuws">Nieuws</a></h4>
+                        <a data-i18n="nav.nieuws_all" href="/nieuws">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a data-i18n="nav.blog" href="/blog">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.contact" href="#" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+            <li><a data-i18n="nav.contact" href="#" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             <li class="lang-switch" aria-label="Taal / Language">
                 <a href="/" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
                 <span class="lang-sep" aria-hidden="true">/</span>
-                <a href="/en/index.html" class="lang-link" lang="en" hreflang="en">EN</a>
+                <a href="/en/" class="lang-link" lang="en" hreflang="en">EN</a>
             </li>
         </ul>
     </div>
@@ -773,7 +903,7 @@
                         <h1 data-i18n="hero.h2_1" style="text-align:center;max-width:100%;">Energie-onafhankelijk.<br>Zonder zorgen.</h1>
                         <p data-i18n="hero.p1" style="text-align:center;max-width:100%;">Lemnion bouwt samen met Stroomlijnen één totaaloplossing waarmee jouw hotel bespaart, verdient én verduurzaamt, van batterijopslag tot slimme laadpalen.</p>
                         <div class="hero-cta">
-                            <a data-i18n="hero.cta1a" href="configurator.html" class="btn btn-primary">Bereken je besparing →</a>
+                            <a data-i18n="hero.cta1a" href="/configurator" class="btn btn-primary">Bereken je besparing →</a>
                             <a data-i18n="hero.cta1b" href="#probleem" class="btn btn-ghost">Ontdek hoe het werkt</a>
                         </div>
                     </div>
@@ -790,7 +920,7 @@
                         <h2 data-i18n="hero.h2_2" style="text-align:center;max-width:100%;">File<br>op het stroomnet</h2>
                         <p data-i18n="hero.p2" style="text-align:center;max-width:100%;">Tussen 17:00 en 21:00 piekt het verbruik van een hotel. De batterij van Lemnion vangt deze piek af, waardoor je niet boven je contractvermogen komt en boetes voorkomt.</p>
                         <div class="hero-cta">
-                            <a data-i18n="hero.cta2a" href="netcongestie.html" class="btn btn-primary">Lees meer over netcongestie →</a>
+                            <a data-i18n="hero.cta2a" href="/netcongestie" class="btn btn-primary">Lees meer over netcongestie →</a>
                             <a data-i18n="hero.cta2b" href="#probleem" class="btn btn-ghost">Bekijk de problemen</a>
                         </div>
                     </div>
@@ -807,8 +937,8 @@
                         <h2 data-i18n="hero.h2_3" style="text-align:center;max-width:100%;">Tot 60% subsidie<br>op batterijen</h2>
                         <p data-i18n="hero.p3" style="text-align:center;max-width:100%;">De overheid stimuleert energieopslag met forse subsidies. Combineer dit met inkomsten uit laadsessies en een lagere energierekening. Zo verdient jouw investering zich razendsnel terug.</p>
                         <div class="hero-cta">
-                            <a data-i18n="hero.cta3a" href="subsidies.html" class="btn btn-primary">Bekijk alle subsidies →</a>
-                            <a data-i18n="hero.cta3b" href="nieuws.html" class="btn btn-ghost">Lees het laatste nieuws</a>
+                            <a data-i18n="hero.cta3a" href="/subsidies" class="btn btn-primary">Bekijk alle subsidies →</a>
+                            <a data-i18n="hero.cta3b" href="/nieuws" class="btn btn-ghost">Lees het laatste nieuws</a>
                         </div>
                     </div>
                     <div class="hero-illustration">
@@ -849,7 +979,7 @@
                     </div>
                     <h3 data-i18n="probleem.c1h">Stokkende uitbreiding en nieuwbouw</h3>
                     <p data-i18n="probleem.c1p">Wil een hotel 50 kamers, een wellnessruimte of een congreszaal bouwen? Dan zegt de netbeheerder: geen zwaardere aansluiting beschikbaar. De bouwtekeningen liggen klaar, maar de stekker mag er letterlijk niet in. Ook laadpleinen voor gasten blijven hierdoor onmogelijk, omdat de aansluitcapaciteit volledig is vergeven.</p>
-                    <a data-i18n="probleem.c1a" href="netcongestie.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over netcongestie →</a>
+                    <a data-i18n="probleem.c1a" href="/netcongestie" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over netcongestie →</a>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon">
@@ -857,7 +987,7 @@
                     </div>
                     <h3 data-i18n="probleem.c2h">Knelpunten bij 'Gas-los' en verduurzamen</h3>
                     <p data-i18n="probleem.c2p">De overstap van gas-cv's naar warmtepompen, of van gasfornuizen naar inductie, vraagt enorm veel elektrisch vermogen. Zonder zwaardere aansluiting moeten hotels noodgedwongen op gas blijven stoken.</p>
-                    <a data-i18n="probleem.c2a" href="verduurzamen.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over verduurzamen →</a>
+                    <a data-i18n="probleem.c2a" href="/verduurzamen" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over verduurzamen →</a>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon">
@@ -865,7 +995,7 @@
                     </div>
                     <h3 data-i18n="probleem.c3h">Extreme verbruikspieken en maximale belasting</h3>
                     <p data-i18n="probleem.c3p">Tussen 17:00 en 21:00 piekt het verbruik: keukens, sauna's, liften, honderden douchende gasten. Overschrijd je het contractvermogen? Dan volgen torenhoge boetes van de netbeheerder.</p>
-                    <a data-i18n="probleem.c3a" href="maximum-belasting.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over maximum belasting →</a>
+                    <a data-i18n="probleem.c3a" href="/maximum-belasting" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over maximum belasting →</a>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon">
@@ -873,7 +1003,7 @@
                     </div>
                     <h3 data-i18n="probleem.c4h">Stroom (zon) overschot</h3>
                     <p data-i18n="probleem.c4p">Wat moet je doen met overschot aan energie? Terugleveren lukt of mag niet altijd meer. Terugleveren kan zelfs geld kosten. Sla je eigen zonne-energie op en gebruik het wanneer jij het nodig hebt.</p>
-                    <a data-i18n="probleem.c4a" href="stroom-overschot.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over stroomoverschot →</a>
+                    <a data-i18n="probleem.c4a" href="/stroom-overschot" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over stroomoverschot →</a>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon">
@@ -881,7 +1011,7 @@
                     </div>
                     <h3 data-i18n="probleem.c5h">Dieselaggregaat vervangen? Stroomuitval managen</h3>
                     <p data-i18n="probleem.c5p">Veel hotels hebben een dieselaggregaat voor noodsituaties. Wil je hiervan af en deze vervangen door een batterij? Dat kan. Met een slim accusysteem beschik je altijd over noodstroom, zonder uitstoot en zonder onderhoud.</p>
-                    <a data-i18n="probleem.c5a" href="stroomuitval-noodaggregaat.html" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over stroomuitval →</a>
+                    <a data-i18n="probleem.c5a" href="/stroomuitval-noodaggregaat" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over stroomuitval →</a>
                 </div>
             </div>
         </div>
@@ -918,7 +1048,7 @@
                 </div>
             </div>
             <div style="text-align:right;margin-top:1.5rem;">
-                <a data-i18n="voordelen.more" href="voordelen.html" class="btn btn-ghost">Lees meer over de verdienmodellen →</a>
+                <a data-i18n="voordelen.more" href="/voordelen" class="btn btn-ghost">Lees meer over de verdienmodellen →</a>
             </div>
         </div>
     </section>
@@ -961,7 +1091,7 @@
                 </div>
             </div>
             <div style="text-align:right;margin-top:1.5rem;">
-                <a data-i18n="usp.more" href="usp-veiligheid.html" class="btn" style="background:var(--green-primary);color:white;padding:0.65rem 1.5rem;font-size:0.85rem;border-radius:50px;">Lees verder over USP's en veiligheid →</a>
+                <a data-i18n="usp.more" href="/usp-veiligheid" class="btn" style="background:var(--green-primary);color:white;padding:0.65rem 1.5rem;font-size:0.85rem;border-radius:50px;">Lees verder over USP's en veiligheid →</a>
             </div>
         </div>
     </section>
@@ -1268,7 +1398,7 @@
                 </table>
             </div>
             <div style="text-align:center;margin-top:2rem;">
-                <a data-i18n="vergelijk.cta" href="configurator.html" class="btn btn-primary">Bereken jouw configuratie →</a>
+                <a data-i18n="vergelijk.cta" href="/configurator" class="btn btn-primary">Bereken jouw configuratie →</a>
             </div>
         </div>
     </section>
@@ -1300,7 +1430,7 @@
             <h2 data-i18n="cta.h2">Klaar om jouw hotel energie-onafhankelijk te maken?</h2>
             <p data-i18n="cta.p">Elk hotel is uniek. In een vrijblijvend gesprek kijken we naar jouw situatie en schetsen we wat er mogelijk is, zonder verplichtingen.</p>
             <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-                <a data-i18n="cta.config" href="configurator.html" class="btn btn-primary">Doe de configurator →</a>
+                <a data-i18n="cta.config" href="/configurator" class="btn btn-primary">Doe de configurator →</a>
                 <a href="mailto:info@lemnion.nl" class="btn btn-outline">info@lemnion.nl</a>
             </div>
         </div>
@@ -1317,31 +1447,31 @@
         <div>
             <h3 data-i18n="footer.h_solutions">Oplossingen</h3>
             <ul>
-                <li><a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a></li>
-                <li><a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a></li>
-                <li><a data-i18n="footer.maxbelasting" href="maximum-belasting.html">Maximum belasting</a></li>
-                <li><a data-i18n="footer.stroomoverschot" href="stroom-overschot.html">Stroom overschot</a></li>
-                <li><a data-i18n="footer.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+                <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
+                <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
+                <li><a data-i18n="footer.maxbelasting" href="/maximum-belasting">Maximum belasting</a></li>
+                <li><a data-i18n="footer.stroomoverschot" href="/stroom-overschot">Stroom overschot</a></li>
+                <li><a data-i18n="footer.stroomuitval" href="/stroomuitval-noodaggregaat">Stroomuitval &amp; noodaggregaat</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a data-i18n="footer.batterij" href="producten.html">Batterijopslag</a></li>
-                <li><a data-i18n="footer.laadpalen" href="producten.html">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="producten.html">EMS &amp; monitoring</a></li>
-                <li><a data-i18n="footer.configurator" href="configurator.html">Energieconfigurator</a></li>
-                <li><a data-i18n="footer.subsidies" href="subsidies.html">Subsidies &amp; regelingen</a></li>
+                <li><a data-i18n="footer.batterij" href="/producten">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="/producten">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="/producten">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.configurator" href="/configurator">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
-                <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
-                <li><a data-i18n="footer.nieuwsblog" href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="/usp-veiligheid">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
+                <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
@@ -1390,7 +1520,7 @@
     if (!panel || !links) return;
     
     function moveMenu() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1180) {
             if (links.parentNode !== panel) {
                 panel.appendChild(links);
             }
@@ -1411,19 +1541,19 @@
 /* Close menu when clicking a non-dropdown link */
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(link => {
     link.addEventListener('click', function() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1180) {
             var m = document.querySelector('.mobile-menu-panel');
             var btn = document.querySelector('.menu-toggle');
             if (m) { m.classList.remove('active'); m.style.display = ''; }
             if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded','false'); }
             var cm = document.getElementById('contact-modal');
-            if (!cm || cm.style.display !== 'flex') { document.body.style.overflow = ''; }
+            if (!cm || cm.style.display !== 'flex') { lockScroll(false) }
         }
     });
 });
 /* Close menu on ESC */
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && window.innerWidth <= 768) {
+    if (e.key === 'Escape' && window.innerWidth <= 1180) {
         var m = document.querySelector('.mobile-menu-panel');
         var btn = document.querySelector('.menu-toggle');
         if (m && m.classList.contains('active')) {
@@ -1431,7 +1561,7 @@ document.addEventListener('keydown', function(e) {
             m.classList.remove('active');
             if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded','false'); }
             var cm = document.getElementById('contact-modal');
-            if (!cm || cm.style.display !== 'flex') { document.body.style.overflow = ''; }
+            if (!cm || cm.style.display !== 'flex') { lockScroll(false) }
         }
     }
 });
@@ -1439,9 +1569,9 @@ document.addEventListener('keydown', function(e) {
 
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
-    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
+    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -1627,7 +1757,7 @@ document.addEventListener('keydown', function(e) {
             var modal = document.getElementById('contact-modal');
             if (modal && modal.style.display === 'flex') {
                 modal.style.display = 'none';
-                document.body.style.overflow = '';
+                lockScroll(false)
             }
         }
     });
@@ -1636,6 +1766,6 @@ document.addEventListener('keydown', function(e) {
 
 
 
-<script src="/assets/brand/accessibility.js" defer></script>
+<script src="/assets/brand/accessibility.js?v=4" defer></script>
 </body>
 </html>

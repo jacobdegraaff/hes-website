@@ -1,7 +1,7 @@
 {
   "oplossingen.h1": "Solutions for your hotel",
   "oplossingen.sub": "Every hotel is different. That is why Lemnion offers a complete range of solutions, from grid congestion to sustainability. Choose where you want to start.",
-  "oplossingen.label": "Our solutions",
+  "oplossingen.label": "Keep reading",
   "oplossingen.h2": "Five challenges, one integrated approach",
   "oplossingen.lead": "Hotels face unique energy challenges. Lemnion tackles all of them, not with loose products but with an integrated system that grows with your hotel.",
   "oplossingen.c1h": "Grid congestion",
@@ -23,5 +23,7 @@
   "oplossingen.ctap": "Calculate in 1 minute what your hotel can save with its own energy system.",
   "oplossingen.cta": "Try the configurator →",
   "meta.oplossingen.html.title": "Solutions for Hotels | Lemnion · Hospitality Energy Solutions | Grid Congestion · Sustainability · Energy Storage",
-  "meta.oplossingen.html.description": "From grid congestion to sustainability: discover all Lemnion energy solutions for hotels. Battery storage, EMS, EV chargers, solar panels and more."
+  "meta.oplossingen.html.description": "From grid congestion to sustainability: discover all Lemnion energy solutions for hotels. Battery storage, EMS, EV chargers, solar panels and more.",
+  "oplossingen.rl1": "Explore our products",
+  "oplossingen.rl2": "Discover current grants"
 }
