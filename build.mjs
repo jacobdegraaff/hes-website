@@ -203,6 +203,14 @@ function finalizeHtml(html, page, lang) {
 
 function rewriteLinks(html, lang) {
   if (lang !== 'nl') {
+    // 0) De taalwissel BESCHERMEN: die bevat al de correcte per-taal URLs
+    //    (NL-link -> NL-pagina, EN-link -> EN-pagina). Zonder bescherming
+    //    herschrijft stap 1/2 de NL-link naar de EN-URL ("NL klikken blijft EN").
+    let langSwitch = null;
+    html = html.replace(/(<li class="lang-switch"[^>]*>[\s\S]*?<\/li>)/, (m) => {
+      langSwitch = m;
+      return '@@LANGSWITCH@@';
+    });
     // 1) home-link "/" en "/#anker" → "/en/" resp. "/en/#anker"
     html = html.replace(/href="\/(#)"/g, 'href="/en/#"');
     html = html.replace(/href="\/"/g, 'href="/en/"');
@@ -220,6 +228,8 @@ function rewriteLinks(html, lang) {
     // 4) relatieve asset-paden → root-absoluut, zodat ze onder /en/… resolven
     html = html.replace(/(src=")(?!https?:|data:|#|\/)([^"]+)"/g, (m, pre, src) => `${pre}/${src}"`);
     html = html.replace(/(href=")(?!https?:|mailto:|tel:|data:|#|\/)([^"]+)"/g, (m, pre, h) => `${pre}/${h}"`);
+    // herstel de taalwissel
+    if (langSwitch) html = html.replace('@@LANGSWITCH@@', () => langSwitch);
   }
   return html;
 }
