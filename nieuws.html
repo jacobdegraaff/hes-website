@@ -69,6 +69,7 @@
         .page-header h1{color:var(--off-white);margin-bottom:0.5rem}.page-header p{opacity:0.85}
         .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;margin-right:auto;z-index:101}.nav-logo-icon{height:46px;width:46px;flex-shrink:0;position:relative;z-index:1;display:block}.nav-logo-text{display:flex;flex-direction:column;justify-content:center;line-height:1.1;position:relative;z-index:1}.nav-logo-word{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:1.4rem;color:var(--green-primary);letter-spacing:-0.5px;white-space:nowrap}.nav-logo-desc{font-family:'Inter',system-ui,sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-secondary);white-space:nowrap;margin-top:2px}.mobile-logo{display:none}
         .news-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2.5rem 0;align-items:start}
+        .news-column{display:flex;flex-direction:column}
         .news-column h2{font-size:1.2rem;margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:3px solid var(--green-accent);display:inline-block}
         .news-grid{display:grid;gap:1.25rem}
         .news-card{background:white;border-radius:var(--radius-lg);padding:1.5rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border)}
@@ -306,7 +307,7 @@ h2{font-size:1.1rem}
 /* Dropdown: open-state toont het paneel ook zonder hover (alle apparaten) */
 .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
 </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
-    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=6">
+    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=7">
 </head>
 <body>
 
@@ -412,7 +413,7 @@ function lockScroll(on) {
 
 <div class="page-header" id="content">
     <h1 data-i18n="nieuws.h1">Nieuws & Ontwikkelingen</h1>
-    <p data-i18n="nieuws.intro" style="max-width:780px;margin:0.75rem auto 0;color:#3D4F40;">Dagelijks bijgewerkt. Links: algemeen energienieuws voor hotels - <a href="/subsidies">subsidies</a> (EIA, ISDE, SPRILA), laadinfrastructuur, batterijopslag en netcongestie. Rechts: hotelspecifiek nieuws over energiekosten en <a href="/verduurzamen">verduurzaming</a>.</p>
+    <p data-i18n="nieuws.intro" style="max-width:780px;margin:0.75rem auto 0;">Dagelijks bijgewerkt. Links: algemeen energienieuws voor hotels - <a href="/subsidies">subsidies</a> (EIA, ISDE, SPRILA), laadinfrastructuur, batterijopslag en netcongestie. Rechts: hotelspecifiek nieuws over energiekosten en <a href="/verduurzamen">verduurzaming</a>.</p>
 </div>
 <div class="container">
     <div class="news-layout">
@@ -583,13 +584,16 @@ function lockScroll(on) {
                     <p data-i18n="nieuws.h6p">Woede over de eindeloze wachtlijsten voor een stroomaansluiting maakt plaats voor creativiteit. De Telegraaf portretteert ondernemers die met batterijopslag en energiehubs tóch van start gaan. Een voorbeeld voor hoteliers die geen aansluiting kunnen krijgen.</p>
                     <p class="source"><a data-i18n="nieuws.h6src" href="https://www.telegraaf.nl/financieel/ondernemen">Bron: De Telegraaf, 4 mei 2026</a></p>
                 </div>
-                <div class="news-archive">
+                                <div class="news-card">
+                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
+                    <h3><a data-i18n="nieuws.h7t" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bouw Van der Valk-hotel loopt vertraging op door stroomtekort</a></h3>
+                    <p data-i18n="nieuws.h7p">De bouw van een nieuw Van der Valk-hotel loopt vertraging op door een tekort aan stroomcapaciteit op het net. Een concreet voorbeeld van hoe netcongestie ook nieuwbouw in de hotellerie raakt - en waarom energie-onafhankelijkheid voor hotels steeds belangrijker wordt.</p>
+                    <p class="source"><a data-i18n="nieuws.h7src" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bron: AD.nl, 29-05-2026</a></p>
+                </div>
+<div class="news-archive">
                     <h3 data-i18n="nieuws.ouder-h3">Ouder nieuws</h3>
                     <ul>
-<li>
-                            <a data-i18n="nieuws.ha1" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bouw Van der Valk-hotel loopt vertraging op door stroomtekort</a>
-                            <span class="archive-source"><a href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">AD.nl, 29-05-2026</a></span>
-                        </li>
+
 <li>
                             <a data-i18n="nieuws.ha3" href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">Geen stroomaansluiting, maar McDonald’s-ondernemer vond oplossing</a>
                             <span class="archive-source"><a href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">AD.nl, 28-05-2026</a></span>

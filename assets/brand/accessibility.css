@@ -135,3 +135,7 @@ footer a:focus-visible {
         color: var(--green-primary);
     }
 }
+
+/* Groene page-header: subtitel wit i.p.v. vaag grijs; links lichtgroen (Jacob, 20-8-2026) */
+.page-header p{opacity:1!important;color:var(--off-white)!important}
+.page-header p a{color:var(--green-light)!important;text-decoration:underline}
