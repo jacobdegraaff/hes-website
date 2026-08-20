@@ -188,7 +188,40 @@ footer a{font-size:.72rem}
 .footer-bottom{grid-column:1/-1;text-align:center;font-size:.7rem;padding-top:.75rem}
 section img,.problem-card img,.info-card img,.chart-wrap img{max-width:100%!important;height:auto}
 div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important}
+}@media (min-width: 769px) and (max-width: 1180px) {
+nav{position:sticky;top:0;z-index:100;padding:0;height:56px;display:flex;align-items:center}
+nav .container{padding:0 .75rem;width:100%;max-width:100%}
+.nav-logo{margin:0;display:flex;align-items:center}
+.nav-logo-icon{height:38px;width:auto}
+
+.mobile-logo{display:flex;align-items:center;gap:.35rem;font-family:Montserrat,sans-serif;font-weight:600;font-size:.85rem;color:var(--green-primary);position:relative;z-index:2;white-space:nowrap}
+.mobile-logo svg{width:40px;height:40px;flex-shrink:0}.mobile-logo img{width:auto;height:28px;flex-shrink:0}
+.menu-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;padding:0;background:none;border:none;cursor:pointer;z-index:103;position:relative}
+.menu-toggle span{display:block;width:22px;height:2.5px;background:var(--green-primary);border-radius:2px;transition:.2s ease;position:absolute}
+.menu-toggle span:nth-child(1){transform:translateY(-7px)}
+.menu-toggle span:nth-child(3){transform:translateY(7px)}
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg)}
+.mobile-menu-panel{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:#fff;flex-direction:column;padding:.5rem 1.25rem 2rem;gap:0;overflow-y:auto;z-index:99999;border-top:4px solid #7FBF3A;box-shadow:0 10px 40px rgba(0,0,0,.2)}.mobile-menu-panel .nav-links{display:flex;flex-direction:column;gap:0;list-style:none;width:100%}
+.mobile-menu-panel.active{display:flex!important}
+.nav-links>li{padding:.5rem 0;border-bottom:1px solid var(--border)}
+.nav-links>li:last-child{border-bottom:none}
+.nav-links>li>a{font-size:1rem;min-height:46px;display:flex;align-items:center}
+.nav-links>li[style]{border-bottom:none;padding:.25rem 0}
+.nav-dropdown>a{display:flex;align-items:center;justify-content:space-between;min-height:46px}
+.nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
+.nav-dropdown.open>a::after{transform:rotate(180deg)}
+.nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block!important}
+.nav-backdrop{display:none!important}
+.nav-mega-col h4{display:none}
+.nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
+.nav-mega-col .mega-desc{display:none}
+.nav-links .btn-primary{display:inline-flex!important;margin-top:.5rem;width:auto;min-height:44px;align-items:center;justify-content:center}
 }
+
+
 /* ── CONTACT MODAL ── */
             .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
             .form-row { grid-template-columns: 1fr; }
@@ -468,7 +501,7 @@ function lockScroll(on) {
 
 <script>
 
-document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};lockScroll(false)}})});
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=1180){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};lockScroll(false)}})});
 </script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
@@ -531,7 +564,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
     if (!panel || !links) return;
     
     function moveMenu() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1180) {
             if (links.parentNode !== panel) {
                 panel.appendChild(links);
             }
@@ -552,7 +585,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
 /* Close menu when clicking a non-dropdown link */
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){
   l.addEventListener('click',function(){
-    if(window.innerWidth<=768){
+    if(window.innerWidth<=1180){
       var m=document.querySelector('.mobile-menu-panel');
       var b=document.querySelector('.menu-toggle');
       if(m){m.classList.remove('active');m.style.display=''}
@@ -564,7 +597,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(func
 });
 /* Close menu on ESC */
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'&&window.innerWidth<=768){
+  if(e.key==='Escape'&&window.innerWidth<=1180){
     var m=document.querySelector('.mobile-menu-panel');
     var b=document.querySelector('.menu-toggle');
     if(m&&m.classList.contains('active')){
