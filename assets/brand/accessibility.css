@@ -94,3 +94,15 @@ summary:focus-visible,
 @media (min-width: 769px) {
     .hero h1 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
 }
+
+/* ── Uniforme link-hover op élke pagina (nav + footer) ─────────────────
+   Zorgt dat hover overal dezelfde kleur heeft, ongeacht per-pagina CSS.
+   Nav = accentgroen (#7FBF3A), footer = lichtgroen (#B7E08A).          */
+.nav-links a:not(.btn):hover,
+.nav-links a:not(.btn):focus-visible {
+    color: var(--green-accent) !important;
+}
+footer a:hover,
+footer a:focus-visible {
+    color: var(--green-light) !important;
+}
