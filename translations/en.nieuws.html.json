@@ -1,8 +1,8 @@
 {
   "meta.nieuws.html.title": "News | Lemnion · Hospitality Energy Solutions | EV subsidies &amp; energy for hotels",
-  "meta.nieuws.html.description": "The latest news on EV subsidies, energy solutions, grid congestion and sustainability for the hotel industry. Updated daily by Lemnion.",
+  "meta.nieuws.html.description": "The latest energy news for hotels: subsidies (EIA, ISDE, SPRILA), EV charging, battery storage, grid congestion and energy costs. Updated daily.",
   "nieuws.h1": "News &amp; Developments",
-  "nieuws.intro": "Updated daily. General energy news on the left, hotel-specific news on the right",
+  "nieuws.intro": "Updated daily. Left: general energy news for hotels - <a href=\"/en/subsidies\">subsidies</a> (EIA, ISDE, SPRILA), charging infrastructure, battery storage and grid congestion. Right: hotel-specific news on energy costs and <a href=\"/en/sustainability\">sustainability</a>.",
   "nieuws.algemeen-h2": "General",
   "nieuws.hotels-h2": "Hotels",
   "nieuws.tag-subsidie": "Subsidy",
