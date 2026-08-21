@@ -856,12 +856,26 @@ document.addEventListener('keydown',function(e){
 (function () {
   'use strict';
   var STATUS = {
-    3: { kort: 'Tekort', kleur: 'red', label: 'Tekort aan transportcapaciteit met wachtrij', uitleg: 'Er is momenteel te weinig transportcapaciteit op het elektriciteitsnet in jouw regio. Een nieuwe aansluiting of uitbreiding kan lang op zich laten wachten. Een energieopslagsysteem kan jouw hotel helpen om toch te groeien of verduurzamen.' },
-    2: { kort: 'In onderzoek', kleur: 'orange', label: 'Gebied is in onderzoek met wachtrij', uitleg: 'De netbeheerder onderzoekt dit gebied en er geldt een wachtrij voor transportcapaciteit. De kans is reëel dat jouw regio binnen afzienbare tijd congestieproblemen krijgt. Tijdig voorbereiden loont.' },
-    1: { kort: 'Beperkt', kleur: 'yellow', label: 'Transportcapaciteit beperkt beschikbaar zonder wachtrij', uitleg: 'Transportcapaciteit is beperkt beschikbaar, maar er is nog geen wachtrij. Er kunnen beperkingen gelden voor nieuwe of grotere aansluitingen. Slim energiebeheer helpt om binnen de beschikbare capaciteit te blijven.' },
-    0: { kort: 'Beschikbaar', kleur: 'green', label: 'Transportcapaciteit beschikbaar zonder wachtrij', uitleg: 'Er is op dit moment voldoende transportcapaciteit in jouw regio. Goede basis om te verduurzamen, al kan de situatie in de komende jaren veranderen.' }
+    3: { kort: 'Tekort', kleur: 'red', label: 'Tekort aan transportcapaciteit met wachtrij', impact: 'Er is nu te weinig transportcapaciteit in jouw regio. Nieuwe of zwaardere aansluitingen kunnen jaren op zich laten wachten.' },
+    2: { kort: 'In onderzoek', kleur: 'orange', label: 'Gebied is in onderzoek met wachtrij', impact: 'De netbeheerder onderzoekt dit gebied en er geldt een wachtrij. Nu is er nog geen acuut probleem, maar binnen afzienbare tijd kan congestie ontstaan.' },
+    1: { kort: 'Beperkt', kleur: 'yellow', label: 'Transportcapaciteit beperkt beschikbaar zonder wachtrij', impact: 'Er is beperkt capaciteit beschikbaar, nog zonder wachtrij. Voor nieuwe of grotere aansluitingen kunnen beperkingen gelden.' },
+    0: { kort: 'Beschikbaar', kleur: 'green', label: 'Transportcapaciteit beschikbaar zonder wachtrij', impact: 'Er is voldoende transportcapaciteit in jouw regio. Goede basis om te verduurzamen, al kan de situatie in de komende jaren veranderen.' }
   };
-  var ONBEKEND = { kort: 'Onbekend', kleur: 'gray', label: 'Kleur wordt later toegevoegd', uitleg: 'Voor deze postcode is nog geen actuele netcongestie-status bekend. Kijk voor de meest actuele situatie op de officiële capaciteitskaart.' };
+  var ONBEKEND = { kort: 'Onbekend', kleur: 'gray', label: 'Kleur wordt later toegevoegd', impact: 'Voor deze postcode is nog geen actuele netcongestie-status bekend. Kijk voor de meest actuele situatie op de officiële capaciteitskaart.' };
+  var GEVOLG = {
+    afname: {
+      3: 'Je kunt nu geen extra vermogen krijgen. Uitbreiden, laadpalen of een warmtepomp moeten wachten op netverzwaring.',
+      2: 'Vraag tijdig extra vermogen aan of plan je uitbreiding nu, voordat de wachtrij ontstaat.',
+      1: 'Voor nieuwe of grotere aansluitingen kunnen beperkingen gelden. Plan je aanvraag op tijd.',
+      0: 'Je kunt voorlopig extra vermogen aanvragen als dat nodig is.'
+    },
+    opwek: {
+      3: 'Je kunt zonne-energie niet terugleveren aan het net. Een batterij vangt het overschot op.',
+      2: 'Terugleveren kan nu nog, maar de situatie verslechtert. Een batterij beschermt je tegen terugleverkosten.',
+      1: 'Terugleveren is beperkt mogelijk. Een batterij zorgt dat je zelf meer van je opgewekte stroom gebruikt.',
+      0: 'Je kunt zonne-energie gewoon terugleveren aan het net.'
+    }
+  };
 
   var form = document.getElementById('nc-form');
   var input = document.getElementById('nc-postcode');
@@ -875,7 +889,7 @@ document.addEventListener('keydown',function(e){
     var nb = hit && hit.netbeheerder ? ' · ' + hit.netbeheerder : '';
     el.innerHTML = '<div class="nc-row"><span class="nc-dot ' + s.kleur + '"></span>' +
       '<span class="nc-label">' + titel + '</span>' +
-      '<span class="nc-detail"><strong>' + s.kort + '</strong>' + nb + '</span></div>';
+      '<span class="nc-detail"><strong>' + s.label + '</strong>' + nb + '</span></div>';
     return s;
   }
 
@@ -915,7 +929,11 @@ document.addEventListener('keydown',function(e){
     var ws = STATUS[worst] || ONBEKEND;
     var uitleg = document.getElementById('nc-uitleg');
     uitleg.className = 'nc-uitleg ' + ws.kleur;
-    uitleg.textContent = ws.uitleg;
+    var gevolgen = [];
+    if (d.afname && GEVOLG.afname[d.afname.code]) gevolgen.push('Afname (verbruik): ' + GEVOLG.afname[d.afname.code]);
+    if (d.opwek && GEVOLG.opwek[d.opwek.code]) gevolgen.push('Teruglevering (zon): ' + GEVOLG.opwek[d.opwek.code]);
+    uitleg.innerHTML = '<strong>Wat dit betekent:</strong> ' + ws.impact +
+      (gevolgen.length ? '<br><br><strong>Gevolg voor jouw hotel:</strong><br>• ' + gevolgen.join('<br>• ') : '');
     var cta = document.getElementById('nc-cta');
     if (worst >= 2) {
       cta.innerHTML = '<a href="producten.html">Bekijk Lemnion oplossingen</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
