@@ -55,6 +55,10 @@
     bar.appendChild(btnAll);
     chips.push(btnAll);
 
+    var counter = document.createElement('span');
+    counter.className = 'news-filter-count';
+    bar.appendChild(counter);
+
     tags.forEach(function (name) {
       var b = makeChip(name, false);
       b.addEventListener('click', function () { setFilter(name); });
@@ -74,11 +78,26 @@
         card.classList.toggle('is-filtered', !show);
       });
       // 'Ouder nieuws'-archief: filteren op data-tag (zelfde sleutel als de kaart-tag)
-      col.querySelectorAll('.news-archive li').forEach(function (li) {
+      var archItems = Array.prototype.slice.call(col.querySelectorAll('.news-archive li'));
+      var archVisible = 0;
+      archItems.forEach(function (li) {
         var key = li.getAttribute('data-tag') || '';
         var show = name === '' || (key && tagKeys[name] === key);
         li.classList.toggle('is-filtered', !show);
+        if (show) archVisible++;
       });
+      // resultaten-teller
+      var cardVisible = cards.filter(function (c) { return !c.classList.contains('is-filtered'); }).length;
+      var hasArchTags = archItems.length > 0 && archItems.every(function (li) { return li.getAttribute('data-tag'); });
+      if (counter) {
+        if (archItems.length === 0) {
+          counter.textContent = '';
+        } else if (!hasArchTags) {
+          counter.textContent = isEn ? ' (' + cardVisible + ' articles - archive tags missing)' : ' (' + cardVisible + ' artikelen - archief-tags ontbreken)';
+        } else {
+          counter.textContent = isEn ? ' (' + cardVisible + ' + ' + archVisible + ' from archive)' : ' (' + cardVisible + ' + ' + archVisible + ' uit archief)';
+        }
+      }
     }
 
     btnAll.addEventListener('click', function () { setFilter(''); });
