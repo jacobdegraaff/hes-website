@@ -17,12 +17,12 @@
     return t.textContent.replace(/\s+/g, ' ').trim();
   }
 
-  function promoteLi(li, tagText) {
+  function promoteLi(li, tagText, tagClass) {
     var card = document.createElement('article');
     card.className = 'news-card news-card--promoted';
 
     var tag = document.createElement('span');
-    tag.className = 'tag';
+    tag.className = 'tag ' + (tagClass || 'tag-subsidy');
     tag.textContent = tagText;
     card.appendChild(tag);
 
@@ -39,9 +39,10 @@
     var src = li.querySelector('.archive-source a') || li.querySelector('span a');
     if (src) {
       var p = document.createElement('p');
+      p.className = 'source';
       var sa = document.createElement('a');
       sa.href = src.href;
-      sa.textContent = src.textContent;
+      sa.textContent = (isEn ? 'Source: ' : 'Bron: ') + src.textContent;
       p.appendChild(sa);
       card.appendChild(p);
     }
@@ -52,16 +53,19 @@
     var cards = Array.prototype.slice.call(col.querySelectorAll('.news-card:not(.news-card--promoted)'));
     if (cards.length < 2) return;
 
-    // unieke tags uit de kaarten halen (tekst + data-i18n-sleutel)
+    // unieke tags uit de kaarten halen (tekst + data-i18n-sleutel + tag-class)
     var tags = [];
     var tagKeys = {};
+    var tagClasses = {};
     cards.forEach(function (card) {
       var t = card.querySelector('.tag');
       if (t) {
         var name = cleanTag(t);
         var key = t.getAttribute('data-i18n') || '';
+        var cls = (t.className.match(/tag-[a-z]+/) || ['tag-subsidy'])[0];
         if (name) {
           if (tagKeys[name] === undefined) tagKeys[name] = key;
+          if (tagClasses[key] === undefined) tagClasses[key] = cls;
           if (tags.indexOf(name) === -1) tags.push(name);
         }
       }
@@ -123,7 +127,7 @@
       col.querySelectorAll('.news-archive li').forEach(function (li) {
         var key = li.getAttribute('data-tag') || '';
         if (key && tagKeys[name] === key) {
-          var card = promoteLi(li, name);
+          var card = promoteLi(li, name, tagClasses[key]);
           if (lastVisible) lastVisible.insertAdjacentElement('afterend', card);
           else if (archive) archive.parentNode.insertBefore(card, archive);
           lastVisible = card;
