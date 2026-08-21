@@ -172,5 +172,6 @@
   "subsidies.faq-q5": "How do I combine subsidies with EREs?",
   "subsidies.faq-a5": "Subsidies lower the investment upfront; EREs generate annual income per charged kWh. With solar panels and a battery, you double that ERE revenue, because own solar power counts for 100%. The combination makes the business case for charging infrastructure strong: a lower investment, a higher annual return.",
   "subsidies.faq-q6": "Does my hotel need an energy label?",
-  "subsidies.faq-a6": "For utility buildings larger than 1,000 m², including hotels, a minimum energy label C has applied since 2023. In addition, the EPBD IV directive obliges many hotels to install charging infrastructure. <a href=\"/blog-epbd-iv-laadinfra\">Read everything about the EPBD IV obligation.</a> Lemnion can determine with an energy scan where your hotel stands and which route leads to the label."
+  "subsidies.faq-a6": "For utility buildings larger than 1,000 m², including hotels, a minimum energy label C has applied since 2023. In addition, the EPBD IV directive obliges many hotels to install charging infrastructure. <a href=\"/blog-epbd-iv-laadinfra\">Read everything about the EPBD IV obligation.</a> Lemnion can determine with an energy scan where your hotel stands and which route leads to the label.",
+  "subsidies.mia-link": "View the 2026 environmental energy list &#8594;"
 }
