@@ -171,6 +171,15 @@ function translatePage(source, dict, page) {
 function finalizeHtml(html, page, lang) {
   // EN pages: rewrite internal links to /en/<slug>, relative assets to root-absolute
   html = rewriteLinks(html, lang);
+  // Alle echte links: target=_blank + rel=noopener nofollow (Jacob, 21-8-2026).
+  // Anker-, mailto- en tel-links slaan we over (kunnen niet zinvol in een tabblad).
+  html = html.replace(/<a([^>]*?)href=\"([^\"]*)\"([^>]*)>/g, (m, before, href, after) => {
+    if (/^#/.test(href) || /^mailto:/.test(href) || /^tel:/.test(href)) return m;
+    let b = before, a = after;
+    if (!/\btarget=/.test(b + a)) a = a + ' target="_blank"';
+    if (!/\brel=/.test(b + a)) a = a + ' rel="noopener nofollow"';
+    return `<a${b}href="${href}"${a}>`;
+  });
   // lang attribute (replace existing or add)
   html = html.replace(NL_TAG, (m, attrs) => {
     const cleaned = attrs.replace(/\slang="[^"]*"/, '');

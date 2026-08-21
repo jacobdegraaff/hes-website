@@ -106,3 +106,7 @@ summary:focus-visible,
 /* Inhoudslinken op de subsidies-pagina groen (Lemnion) - Jacob, 21-8-2026 */
 .subsidy-card a,#ere-artikel a,#subsidie-faq a{color:var(--green-primary,#0F3D23)!important;font-weight:600}
 .subsidy-card a:hover,#ere-artikel a:hover,#subsidie-faq a:hover{color:var(--green-accent,#7FBF3A)!important}
+
+/* Groene page-header: subtitel wit i.p.v. vaag grijs; links lichtgroen (Jacob, 20-8-2026) */
+.page-header p{opacity:1!important;color:var(--off-white)!important}
+.page-header p a{color:var(--green-light)!important;text-decoration:underline}
