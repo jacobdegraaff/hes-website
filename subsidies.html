@@ -411,7 +411,7 @@ function lockScroll(on) {
         <h2 data-i18n="subsidies.h2">Tot 60% subsidie op jouw investering</h2>
         <p data-i18n="subsidies.intro2" style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
             Nederland kent meerdere subsidieregelingen die specifiek gericht zijn op energie-investeringen voor bedrijven. 
-            Door slim te combineren kan jouw hotel tot wel 60% van de investering terugkrijgen.
+            Door subsidies en fiscale aftrek slim te combineren kan jouw hotel tot wel 60% van de investering terugverdienen.
         </p>
         <div class="subsidy-grid">
             <div class="subsidy-card">
@@ -437,9 +437,9 @@ function lockScroll(on) {
                 <p data-i18n="subsidies.mia-label" class="section-label" style="margin-bottom:0.25rem;">Milieu-investeringsaftrek</p>
                 <h3>MIA + Vamil</h3>
                 <p class="percentage">tot 45%</p>
-                <p data-i18n="subsidies.mia-p">MIA: tot 36% extra aftrek op milieu-investeringen. Vamil: 75% willekeurig afschrijven, zodat jij het tempo bepaalt.</p>
+                <p data-i18n="subsidies.mia-p">MIA: tot 45% extra aftrek op milieu-investeringen (afhankelijk van de rang op de milieulijst). Vamil: 75% willekeurig afschrijven, zodat jij het tempo bepaalt.</p>
                 <ul>
-                    <li data-i18n="subsidies.mia-li1">MIA: tot 36% investeringsaftrek</li>
+                    <li data-i18n="subsidies.mia-li1">MIA: tot 45% investeringsaftrek (milieulijst)</li>
                     <li data-i18n="subsidies.mia-li2">Vamil: vrije afschrijving op 75% van investering</li>
                     <li data-i18n="subsidies.mia-li3">Combineerbaar met EIA voor maximaal voordeel</li>
                 </ul>
@@ -455,18 +455,18 @@ function lockScroll(on) {
                 <p data-i18n="subsidies.isde-label" class="section-label" style="margin-bottom:0.25rem;">Subsidie duurzame energie</p>
                 <h3>ISDE (zakelijk)</h3>
                 <p class="percentage">tot 30%</p>
-                <p data-i18n="subsidies.isde-p">Investeringssubsidie Duurzame Energie voor zakelijke gebruikers. Specifiek voor zonnepanelen, warmtepompen en zonneboilers.</p>
+                <p data-i18n="subsidies.isde-p">Investeringssubsidie Duurzame Energie voor zakelijke gebruikers: (hybride) warmtepompen, zonneboilers en kleine windturbines. Zonnepanelen vallen hier niet onder; daarvoor geldt de EIA.</p>
                 <ul>
-                    <li data-i18n="subsidies.isde-li1">Subsidie op zonnepanelen (ook zakelijk)</li>
-                    <li data-i18n="subsidies.isde-li2">Vast bedrag per kWp geïnstalleerd vermogen</li>
+                    <li data-i18n="subsidies.isde-li1">Subsidie op warmtepompen, zonneboilers en kleine windturbines</li>
+                    <li data-i18n="subsidies.isde-li2">Vast subsidiebedrag per maatregel</li>
                     <li data-i18n="subsidies.isde-li3">Aanvraag vooraf indienen</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
-                    <span data-i18n="subsidies.isde-reken1">Hotel plaatst 200 panelen (80 kWp) | investering €72.000.<br></span>
-                    <span data-i18n="subsidies.isde-reken2">ISDE-subsidie: <strong>~€65 per kWp × 80 = €5.200</strong>.<br></span>
-                    <span data-i18n="subsidies.isde-reken3">Combineer met EIA: <strong>40% × €72.000 = €28.800</strong> extra aftrek.<br></span>
-                    <span data-i18n="subsidies.isde-reken4">Totaal voordeel: <strong>€5.200 + €7.430 (EIA) = €12.630</strong>.</span>
+                    <span data-i18n="subsidies.isde-reken1">Hotel investeert €25.000 in een hybride warmtepomp.<br></span>
+                    <span data-i18n="subsidies.isde-reken2">ISDE-dekking: afhankelijk van type en vermogen, zie RVO.nl.<br></span>
+                    <span data-i18n="subsidies.isde-reken3">Combineer met EIA: <strong>40% × €25.000 = €10.000</strong> extra aftrek.<br></span>
+                    <span data-i18n="subsidies.isde-reken4">Netto belastingvoordeel EIA: <strong>€10.000 × 25,8% ≈ €2.580</strong>.</span>
                 </div>
             </div>
             <div class="subsidy-card">
@@ -482,7 +482,7 @@ function lockScroll(on) {
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
                     <span data-i18n="subsidies.sprila-reken1">Hotel plaatst 4 duopalen (8 laadpunten) | AC vanaf 11 kW.<br></span>
-                    <span data-i18n="subsidies.sprila-reken2">Subsidie: <strong>~€800 per duopaal × 4 = €3.200</strong> (of DC ≥20 kW: ~€1.950 per station).<br></span>
+                    <span data-i18n="subsidies.sprila-reken2">Subsidie (mkb-tarieven): <strong>~€800 per duopaal × 4 = €3.200</strong>; DC ≥20 kW: ~€3.900 per station (groot bedrijf: €1.950).<br></span>
                     <span data-i18n="subsidies.sprila-reken3">Plus EIA: <strong>40% × investering</strong> extra aftrek.<br></span>
                     <!-- SPRILA_STATUS_START -->
                     <span data-i18n="subsidies.sprila-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 17-08-2026 · <strong>Open voor aanvragen</strong> · Budget €122,5 mln · Aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
@@ -572,7 +572,7 @@ function lockScroll(on) {
         <h2 data-i18n="subsidies.artikel-h2">ERE's voor hotels: de inkomstenstroom achter jouw laadpalen</h2>
 
         <h3 data-i18n="subsidies.artikel-h3-1" style="margin-top:1.75rem;">Jouw laadpalen kosten geld. Sinds 2026 kunnen ze ook geld opleveren.</h3>
-        <p data-i18n="subsidies.artikel-p1">Elk hotel dat laadpalen plaatst, maakt dezelfde rekensom: de investering is fors, de terugverdientijd is lang en de vraag van gasten groeit sneller dan het budget. Sinds 1 januari 2026 is daar een nieuwe factor bijgekomen die die rekensom verandert: ERE's. EmissieReductie-Eenheden, verhandelbare certificaten die ontstaan bij elke geladen kWh. Voor hotels met laadinfrastructuur betekent dit een terugkerende inkomstenstroom van ruwweg <strong>€0,12 per geladen kWh</strong>, voor heel 2026 vastgelegd. Bij 100.000 kWh per jaar komt dat neer op <strong>€13.000</strong>; met een eigen zonnepaneleninstallatie loopt dat op tot bijna <strong>€20.000</strong>.</p>
+        <p data-i18n="subsidies.artikel-p1">Elk hotel dat laadpalen plaatst, maakt dezelfde rekensom: de investering is fors, de terugverdientijd is lang en de vraag van gasten groeit sneller dan het budget. Sinds 1 januari 2026 is daar een nieuwe factor bijgekomen die die rekensom verandert: ERE's. EmissieReductie-Eenheden, verhandelbare certificaten die ontstaan bij elke geladen kWh. Voor hotels met laadinfrastructuur betekent dit een terugkerende inkomstenstroom van ruwweg <strong>€0,12 per geladen kWh</strong>, voor heel 2026 vastgelegd. Bij 100.000 kWh per jaar komt dat neer op <strong>circa €12.000 tot €13.000</strong>; met een eigen zonnepaneleninstallatie loopt dat op tot circa <strong>€20.000</strong>.</p>
         <p data-i18n="subsidies.artikel-p2">Dit artikel geeft je het complete beeld: wat ERE's zijn, hoe de regeling in elkaar zit, wanneer je wordt uitbetaald en waarom de combinatie met zonnepanelen voor hotels extra aantrekkelijk is.</p>
 
         <h3 data-i18n="subsidies.artikel-h3-2" style="margin-top:1.75rem;">Wat ERE's zijn, uitgelegd voor een hotelier</h3>
@@ -606,8 +606,8 @@ function lockScroll(on) {
         <p data-i18n="subsidies.artikel-p10">De relevante cijfers op een rij:</p>
         <ul>
             <li data-i18n="subsidies.artikel-li10"><strong>Eén ERE noteert rond €0,46 tot €0,50.</strong> De laatst geverifieerde transacties (juni 2026) lagen op €0,4775 en €0,481.</li>
-            <li data-i18n="subsidies.artikel-li11">Een geladen kWh vertegenwoordigt daarmee ongeveer €0,23 aan marktwaarde.</li>
-            <li data-i18n="subsidies.artikel-li12">Na aftrek van de commissie van de dienstverlener (doorgaans 13% tot 19%) resteert <strong>netto circa €0,12 per kWh</strong>; voor 2026 is dat niveau door ten minste één grote dienstverlener gegarandeerd.</li>
+            <li data-i18n="subsidies.artikel-li11">Een geladen kWh vertegenwoordigt bruto circa €0,23 aan marktwaarde (0,5 ERE per kWh × circa €0,46, op basis van 100% meetelling).</li>
+            <li data-i18n="subsidies.artikel-li12">Op netstroom telt 50,5% van elke kWh mee; na aftrek van de commissie (doorgaans 13% tot 19%) resteert daardoor circa €0,10 tot €0,13 per kWh. Voor 2026 is een niveau van circa €0,12 per kWh door ten minste één grote dienstverlener gegarandeerd.</li>
             <li data-i18n="subsidies.artikel-li13">De verplichtingen van brandstofleveranciers lopen op tot 2030, wat de vraagstructuur op termijn ondersteunt.</li>
         </ul>
         <p data-i18n="subsidies.artikel-p11">Omdat er geen openbare notering is, houden wij de geverifieerde transactieprijzen bij. Zodra er nieuwe transacties bekend zijn, publiceren we die op deze pagina.</p>
@@ -635,10 +635,10 @@ function lockScroll(on) {
         <h3 data-i18n="subsidies.artikel-h3-8" style="margin-top:1.75rem;">Rekenvoorbeeld: een hotel met zestien laadpunten</h3>
         <p data-i18n="subsidies.artikel-p16">Een realistisch beeld: zestien AC-laadpunten (11 of 22 kW), gemiddeld één laadsessie van 25 kWh per laadpunt per werkdag. Dat komt neer op <strong>100.000 kWh per jaar</strong>.</p>
         <ul>
-            <li data-i18n="subsidies.artikel-li19"><strong>ERE-opbrengst:</strong> circa 33.300 ERE's per jaar.</li>
-            <li data-i18n="subsidies.artikel-li20"><strong>Zonder zonnepanelen</strong> (50,5% telt mee, netto na commissie): circa <strong>€13.300 per jaar</strong>.</li>
-            <li data-i18n="subsidies.artikel-li21"><strong>Met zonnepanelen en GvO's</strong> (100% telt mee): circa <strong>€20.000 per jaar</strong>, bijna het dubbele.</li>
-            <li data-i18n="subsidies.artikel-li22">Per 1.000 geladen kWh: circa <strong>€130 netto</strong> op netstroom, circa <strong>€200</strong> op eigen zonnestroom.</li>
+            <li data-i18n="subsidies.artikel-li19"><strong>ERE-opbrengst:</strong> circa 25.000 tot 33.000 ERE's per jaar (afhankelijk van de meetelfactor: de NEa-methodiek met 50,5% meetelling geeft circa 25.000 ERE's, sommige dienstverleners rekenen met een hogere factor).</li>
+            <li data-i18n="subsidies.artikel-li20"><strong>Zonder zonnepanelen</strong> (50,5% telt mee, netto na commissie): circa <strong>€10.000 tot €13.000 per jaar</strong>.</li>
+            <li data-i18n="subsidies.artikel-li21"><strong>Met zonnepanelen en GvO's</strong> (100% telt mee): circa <strong>€20.000 per jaar</strong>, tot twee keer zoveel als op netstroom.</li>
+            <li data-i18n="subsidies.artikel-li22">Per 1.000 geladen kWh: circa <strong>€100 tot €130 netto</strong> op netstroom, circa <strong>€200</strong> op eigen zonnestroom.</li>
         </ul>
         <p data-i18n="subsidies.artikel-p17">Voor hotels die laadinfrastructuur toch al moeten plaatsen (de EPBD IV-richtlijn verplicht dat steeds vaker), is dit geen bijzaak: de ERE-opbrengst financiert een substantieel deel van de investering terug.</p>
 
