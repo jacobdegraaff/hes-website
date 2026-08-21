@@ -171,10 +171,13 @@ function translatePage(source, dict, page) {
 function finalizeHtml(html, page, lang) {
   // EN pages: rewrite internal links to /en/<slug>, relative assets to root-absolute
   html = rewriteLinks(html, lang);
-  // Alle echte links: target=_blank + rel=noopener nofollow (Jacob, 21-8-2026).
-  // Anker-, mailto- en tel-links slaan we over (kunnen niet zinvol in een tabblad).
+  // ALLEEN externe links (naar andere domeinen): target=_blank + rel=noopener nofollow
+  // (Jacob, 21-8-2026, verduidelijkt). Interne links (eigen domein of relatief) en
+  // anker-/mailto-/tel-links blijven normaal in hetzelfde tabblad.
   html = html.replace(/<a([^>]*?)href=\"([^\"]*)\"([^>]*)>/g, (m, before, href, after) => {
     if (/^#/.test(href) || /^mailto:/.test(href) || /^tel:/.test(href)) return m;
+    const extern = /^https?:\/\//.test(href) && !/^https?:\/\/(www\.)?lemnion\.nl/.test(href);
+    if (!extern) return m; // interne link: normaal, zelfde tabblad
     let b = before, a = after;
     if (!/\btarget=/.test(b + a)) a = a + ' target="_blank"';
     if (!/\brel=/.test(b + a)) a = a + ' rel="noopener nofollow"';
