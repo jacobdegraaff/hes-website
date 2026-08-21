@@ -139,3 +139,10 @@ footer a:focus-visible {
 /* Groene page-header: subtitel wit i.p.v. vaag grijs; links lichtgroen (Jacob, 20-8-2026) */
 .page-header p{opacity:1!important;color:var(--off-white)!important}
 .page-header p a{color:var(--green-light)!important;text-decoration:underline}
+
+/* Nieuws-pagina: tag-filter (wolkjes) - Jacob, 21-8-2026 */
+.news-filter{display:flex;flex-wrap:wrap;gap:0.5rem;margin:0 0 1.25rem}
+.news-filter-chip{background:var(--off-white,#F5F7F2);border:1px solid var(--border,#D4DDD0);border-radius:50px;padding:0.35rem 0.95rem;font-size:0.75rem;font-weight:600;font-family:inherit;color:var(--green-primary,#0F3D23);cursor:pointer;transition:all 0.15s}
+.news-filter-chip:hover,.news-filter-chip:focus-visible{border-color:var(--green-accent,#7FBF3A);outline:none}
+.news-filter-chip.is-active,.news-filter-chip[aria-pressed="true"]{background:var(--green-primary,#0F3D23);border-color:var(--green-primary,#0F3D23);color:var(--off-white,#F5F7F2)}
+.news-card.is-filtered{display:none}
