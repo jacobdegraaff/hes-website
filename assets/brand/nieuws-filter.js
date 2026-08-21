@@ -2,7 +2,7 @@
    Genereert de filterbalk automatisch uit de tags op de .news-card items,
    zodat de dagelijkse nieuws-cron het filter nooit kan breken.
    - Alleen actief op pagina's met .news-column (de nieuws-pagina)
-   - 'Alle' reset; archief (.news-archive) blijft altijd zichtbaar
+   - 'Alle' reset; het 'Ouder nieuws'-archief filtert mee via data-tag
    - Taalbewust: 'Alle' / 'All' op basis van <html lang> */
 (function () {
   'use strict';
@@ -19,13 +19,18 @@
     var cards = Array.prototype.slice.call(col.querySelectorAll('.news-card'));
     if (cards.length < 2) return;
 
-    // unieke tags uit de kaarten halen
+    // unieke tags uit de kaarten halen (tekst + data-i18n-sleutel)
     var tags = [];
+    var tagKeys = {};
     cards.forEach(function (card) {
       var t = card.querySelector('.tag');
       if (t) {
         var name = cleanTag(t);
-        if (name && tags.indexOf(name) === -1) tags.push(name);
+        var key = t.getAttribute('data-i18n') || '';
+        if (name) {
+          if (tagKeys[name] === undefined) tagKeys[name] = key;
+          if (tags.indexOf(name) === -1) tags.push(name);
+        }
       }
     });
     if (tags.length < 2) return;
@@ -67,6 +72,12 @@
         var t = card.querySelector('.tag');
         var show = name === '' || (t && cleanTag(t) === name);
         card.classList.toggle('is-filtered', !show);
+      });
+      // 'Ouder nieuws'-archief: filteren op data-tag (zelfde sleutel als de kaart-tag)
+      col.querySelectorAll('.news-archive li').forEach(function (li) {
+        var key = li.getAttribute('data-tag') || '';
+        var show = name === '' || (key && tagKeys[name] === key);
+        li.classList.toggle('is-filtered', !show);
       });
     }
 
