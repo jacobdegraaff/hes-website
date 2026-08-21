@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <title>Nieuws | Lemnion · Hospitality Energy Solutions | EV subsidies &amp; energie voor hotels</title>
-    <meta name="description" content="Het laatste nieuws over EV-subsidies, energieoplossingen, netcongestie en verduurzaming voor de hotellerie. Dagelijks bijgewerkt door Lemnion.">
+    <meta name="description" content="Het laatste nieuws voor hotels over energie: subsidies (EIA, ISDE, SPRILA), laadpalen, batterijopslag, netcongestie en energiekosten. Dagelijks bijgewerkt.">
     <link rel="canonical" href="https://lemnion.nl/nieuws">
     <meta property="og:title" content="Nieuws | EV subsidies &amp; energie voor hotels | Lemnion">
     <meta property="og:description" content="Het laatste nieuws over EV-subsidies, energieoplossingen en netcongestie voor hotels.">
@@ -69,6 +69,7 @@
         .page-header h1{color:var(--off-white);margin-bottom:0.5rem}.page-header p{opacity:0.85}
         .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;margin-right:auto;z-index:101}.nav-logo-icon{height:46px;width:46px;flex-shrink:0;position:relative;z-index:1;display:block}.nav-logo-text{display:flex;flex-direction:column;justify-content:center;line-height:1.1;position:relative;z-index:1}.nav-logo-word{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:1.4rem;color:var(--green-primary);letter-spacing:-0.5px;white-space:nowrap}.nav-logo-desc{font-family:'Inter',system-ui,sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-secondary);white-space:nowrap;margin-top:2px}.mobile-logo{display:none}
         .news-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2.5rem 0;align-items:start}
+        .news-column{display:flex;flex-direction:column}
         .news-column h2{font-size:1.2rem;margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:3px solid var(--green-accent);display:inline-block}
         .news-grid{display:grid;gap:1.25rem}
         .news-card{background:white;border-radius:var(--radius-lg);padding:1.5rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border)}
@@ -306,7 +307,7 @@ h2{font-size:1.1rem}
 /* Dropdown: open-state toont het paneel ook zonder hover (alle apparaten) */
 .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
 </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
-    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=4">
+    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
 </head>
 <body>
 
@@ -412,7 +413,7 @@ function lockScroll(on) {
 
 <div class="page-header" id="content">
     <h1 data-i18n="nieuws.h1">Nieuws & Ontwikkelingen</h1>
-    <p data-i18n="nieuws.intro">Dagelijks bijgewerkt. Links algemeen energienieuws, rechts hotelspecifiek nieuws</p>
+    <p data-i18n="nieuws.intro" style="max-width:780px;margin:0.75rem auto 0;">Dagelijks bijgewerkt. Links: algemeen energienieuws voor hotels - <a href="/subsidies">subsidies</a> (EIA, ISDE, SPRILA), laadinfrastructuur, batterijopslag en netcongestie. Rechts: hotelspecifiek nieuws over energiekosten en <a href="/verduurzamen">verduurzaming</a>.</p>
 </div>
 <div class="container">
     <div class="news-layout">
@@ -462,170 +463,142 @@ function lockScroll(on) {
                     <p data-i18n="nieuws.n1p">De Nederlandse fabrikant Qurmit brengt vier nieuwe modellen op de markt met opslagcapaciteiten van 57 tot 101 kWh. De loodgelaccu's zijn niet-ontvlambaar en vallen daardoor buiten de PGS 37-veiligheidsregels — een interessante optie voor hotels die netcongestie willen omzeilen zonder zware brandveiligheidseisen.</p>
                     <p class="source"><a data-i18n="nieuws.n1src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44536/qurmit-lanceert-nieuwe-thuisbatterijen-met-opslagcapaciteit-tot-101-kilowattuur">Bron: Solar &amp; Storage Magazine, 19 augustus 2026</a></p>
                 </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-subsidie" class="tag tag-subsidy">Subsidie</span>
-                    <h3><a data-i18n="nieuws.n2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44534/energiebedrijf-moet-verborgen-terugleverkosten-terugbetalen-aan-eigenaar-zonnepanelen">Energiebedrijf moet verborgen terugleverkosten terugbetalen aan zonnepaneel-eigenaar</a></h3>
-                    <p data-i18n="nieuws.n2p">De Geschillencommissie Energie oordeelt dat terugleverkosten die in de kleine lettertjes stonden niet rechtsgeldig zijn. Een energiebedrijf moet de kosten terugbetalen. Voor hotels met zonnepanelen een signaal om het contract na te lopen op onterechte terugleverkosten.</p>
-                    <p class="source"><a data-i18n="nieuws.n2src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44534/energiebedrijf-moet-verborgen-terugleverkosten-terugbetalen-aan-eigenaar-zonnepanelen">Bron: Solar &amp; Storage Magazine, 18 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-zonnepanelen" class="tag tag-battery">Zonnepanelen</span>
-                    <h3><a data-i18n="nieuws.n3t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44533/nieuw-record-zonnepanelen-dekken-10-procent-wereldwijd-stroomverbruik">Zonnepanelen dekken voor het eerst 10 procent van de wereldwijde stroomvraag</a></h3>
-                    <p data-i18n="nieuws.n3p">In de eerste helft van 2026 leverde zonne-energie een record van 10 procent van alle stroom wereldwijd. Denktank Ember concludeert dat batterijen het mogelijk maken die zonne-energie ook buiten de zonuren te benutten — precies de combinatie waar hotels met eigen opwek van profiteren.</p>
-                    <p class="source"><a data-i18n="nieuws.n3src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44533/nieuw-record-zonnepanelen-dekken-10-procent-wereldwijd-stroomverbruik">Bron: Solar &amp; Storage Magazine, 18 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-energiebeleid" class="tag tag-subsidy">Energiebeleid</span>
-                    <h3><a data-i18n="nieuws.n4t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44540/energiesector-pleit-voor-sterke-nationale-investeringsinstelling">Energiesector pleit voor sterke Nationale Investeringsinstelling</a></h3>
-                    <p data-i18n="nieuws.n4p">Een brede coalitie van energie- en klimaatorganisaties roept de Taskforce Toekomstige Welvaart op om de geplande Nationale Investeringsinstelling te richten op energie, klimaat en circulaire economie. Meer publiek kapitaal kan de financiering van verduurzaming voor bedrijven en vastgoed versnellen.</p>
-                    <p class="source"><a data-i18n="nieuws.n4src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44540/energiesector-pleit-voor-sterke-nationale-investeringsinstelling">Bron: Solar &amp; Storage Magazine, 19 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-batterij" class="tag tag-battery">Batterijopslag</span>
-                    <h3><a data-i18n="nieuws.n5t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44543/belgische-regulator-schrapt-definitief-vrijstelling-grote-batterijen-van-nettarieven">Belgische regulator schrapt definitief nettarief-vrijstelling voor grote batterijen</a></h3>
-                    <p data-i18n="nieuws.n5p">De Belgische energieregulator CREG bouwt de vrijstelling van nettarieven voor grootschalige batterijopslag definitief af; bestaande projecten blijven onder voorwaarden beschermd. Een signaal voor de Nederlandse markt over de richting waarin nettarieven voor batterijen zich ontwikkelen.</p>
-                    <p class="source"><a data-i18n="nieuws.n5src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44543/belgische-regulator-schrapt-definitief-vrijstelling-grote-batterijen-van-nettarieven">Bron: Solar &amp; Storage Magazine, 19 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-batterij" class="tag tag-battery">Batterijopslag</span>
-                    <h3><a data-i18n="nieuws.n6t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44528/plug-in-thuisbatterij-in-belgie-prima-product-gebrek-aan-regulerend-kader">Plug-in thuisbatterij: prima product, maar gebrek aan regels</a></h3>
-                    <p data-i18n="nieuws.n6p">De opkomst van de plug-in batterij (stekker in het stopcontact) roept vragen op over veiligheid en netbeheer. Branchevereniging Techlink pleit voor duidelijke spelregels. Relevant voor ondernemers die laagdrempelig willen starten met energieopslag.</p>
-                    <p class="source"><a data-i18n="nieuws.n6src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44528/plug-in-thuisbatterij-in-belgie-prima-product-gebrek-aan-regulerend-kader">Bron: Solar &amp; Storage Magazine, 18 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-subsidie" class="tag tag-subsidy">Subsidie</span>
-                    <h3><a data-i18n="nieuws.s1t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44507/einde-subsidie-jaagt-zakelijke-zonnepanelen-vroegtijdig-van-het-dak">Einde SDE-subsidie jaagt zakelijke zonnepanelen vroegtijdig van het dak</a></h3>
-                    <p data-i18n="nieuws.s1p">Een groeiend aantal zakelijke zonne-installaties bereikt het einde van de 15-jarige SDE-subsidieperiode. Onderzoek van Copper8 laat zien dat economische druk vroegtijdige verwijdering steeds aantrekkelijker maakt — terwijl de technische levensduur nog 25 jaar bedraagt. Belangrijk voor eigenaren die hun opwek- en opslagstrategie willen herijken.</p>
-                    <p class="source"><a data-i18n="nieuws.s1src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44507/einde-subsidie-jaagt-zakelijke-zonnepanelen-vroegtijdig-van-het-dak">Bron: Solar &amp; Storage Magazine, 14 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-subsidie" class="tag tag-subsidy">Subsidie</span>
-                    <h3><a data-i18n="nieuws.s2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44490/zuid-holland-lanceert-actieplan-voor-meer-zon-op-dak-subsidie-voor-circulaire-zonnepanelen">Zuid-Holland lanceert actieplan voor meer zon op dak, subsidie voor circulaire zonnepanelen</a></h3>
-                    <p data-i18n="nieuws.s2p">De provincie Zuid-Holland komt met het ActiePlan Zon: 18 maatregelen om de stagnerende groei van zon-op-dak te keren, inclusief subsidie voor circulaire zonnepanelen. Het plan mikt op grote daken, gevels en parkeerterreinen vanaf 15 kWp — direct relevant voor hotels met geschikt dakoppervlak.</p>
-                    <p class="source"><a data-i18n="nieuws.s2src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44490/zuid-holland-lanceert-actieplan-voor-meer-zon-op-dak-subsidie-voor-circulaire-zonnepanelen">Bron: Solar &amp; Storage Magazine, 13 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-prijzen" class="tag tag-subsidy">Energieprijzen</span>
-                    <h3><a data-i18n="nieuws.s3t" href="https://www.denieuwsbode.nl/nieuws/zakelijk-nieuws-landelijk/1298973/grip-op-je-energierekening-in-zeist-begint-met-goed-vergelijken">Grip op je energierekening in Zeist begint met goed vergelijken</a></h3>
-                    <p data-i18n="nieuws.s3p">De energiemarkt blijft volop in beweging en zakelijke afnemers doen er goed aan hun contract kritisch te vergelijken. De Nieuwsbode geeft praktische tips voor ondernemers die willen besparen op hun energiekosten. Ook relevant voor hoteliers die op zoek zijn naar de beste deal.</p>
-                    <p class="source"><a data-i18n="nieuws.s3src" href="https://www.denieuwsbode.nl/nieuws/zakelijk-nieuws-landelijk/1298973/grip-op-je-energierekening-in-zeist-begint-met-goed-vergelijken">Bron: De Nieuwsbode, 6 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-laadinfra" class="tag tag-battery">Laadinfrastructuur</span>
-                    <h3><a data-i18n="nieuws.s4t" href="https://www.autovisie.nl/nieuws/laadpaal-met-blokkeertarief-binnenkort-mogelijk-verleden-tijd-evs-moeten-juist-langer-aan-de-paal-hangen/">Blokkeertarief bij laadpalen mogelijk verleden tijd: EV's moeten juist langer laden</a></h3>
-                    <p data-i18n="nieuws.s4p">Het gangbare blokkeertarief dat laadpaalaanbieders rekenen staat op de tocht. Nieuwe inzichten wijzen uit dat EV's juist baat hebben bij langer aan de paal staan voor netbalancering. Voor hotels betekent dit mogelijk een heel ander verdienmodel rond gasten die 's nachts laden.</p>
-                    <p class="source"><a data-i18n="nieuws.s4src" href="https://www.autovisie.nl/nieuws/laadpaal-met-blokkeertarief-binnenkort-mogelijk-verleden-tijd-evs-moeten-juist-langer-aan-de-paal-hangen/">Bron: Autovisie, 5 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-regelgeving" class="tag tag-subsidy">Regelgeving</span>
-                    <h3><a data-i18n="nieuws.s5t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iv">Europese EPBD IV-richtlijn scherpt energieprestatie-eisen voor gebouwen aan</a></h3>
-                    <p data-i18n="nieuws.s5p">De nieuwe Europese EPBD IV-richtlijn stelt strengere eisen aan de energieprestatie van utiliteitsgebouwen, inclusief hotels. RVO licht toe wat de nieuwe regels betekenen voor gebouweigenaren en welke stappen je nu al kunt zetten richting compliance.</p>
-                    <p class="source"><a data-i18n="nieuws.s5src" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iv">Bron: RVO.nl, 4 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-prijzen" class="tag tag-subsidy">Energieprijzen</span>
-                    <h3><a data-i18n="nieuws.s6t" href="https://www.autogids.be/autonieuws/mobiliteit/hogere-verplaatsingskosten-door-stijging-energieprijzen-compenseren-werkgevers-hun-personeel.html">Stijgende energieprijzen drijven verplaatsingskosten op: compenseren werkgevers?</a></h3>
-                    <p data-i18n="nieuws.s6p">Hogere stroom- en brandstofprijzen jagen ook de mobiliteitskosten van personeel omhoog. AutoGids onderzoekt of werkgevers deze kosten moeten compenseren. Direct relevant voor hotels die personeel én gasten met laadinfrastructuur faciliteren.</p>
-                    <p class="source"><a data-i18n="nieuws.s6src" href="https://www.autogids.be/autonieuws/mobiliteit/hogere-verplaatsingskosten-door-stijging-energieprijzen-compenseren-werkgevers-hun-personeel.html">Bron: AutoGids, 31 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-laadinfra" class="tag tag-battery">Laadinfrastructuur</span>
-                    <h3><a data-i18n="nieuws.s7t" href="https://www.autovisie.nl/nieuws/met-elektrische-auto-op-vakantie-pas-op-voor-extreme-laadtarieven-500-euro-voor-een-laadbeurt/">Met de EV op vakantie? Pas op voor extreme laadtarieven: €500 per laadbeurt</a></h3>
-                    <p data-i18n="nieuws.s7p">Automobilisten die met een elektrische auto op vakantie gaan, lopen risico op torenhoge laadkosten. In extreme gevallen gaat het om wel €500 per laadbeurt. Autovisie waarschuwt voor de wildgroei aan dure roaming-tarieven en geeft tips om dit te vermijden.</p>
-                    <p class="source"><a data-i18n="nieuws.s7src" href="https://www.autovisie.nl/nieuws/met-elektrische-auto-op-vakantie-pas-op-voor-extreme-laadtarieven-500-euro-voor-een-laadbeurt/">Bron: Autovisie, 22 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-besparing" class="tag tag-battery">Energiebesparing</span>
-                    <h3><a data-i18n="nieuws.s8t" href="https://www.change.inc/transities/energie-transitie/dit-bedrijf-bespaart-extreem-veel-stroom-met-contactloze-magneetkoppeling-voor-industriele-pompen">Zytec bespaart veel stroom met contactloze magneetkoppeling voor pompen</a></h3>
-                    <p data-i18n="nieuws.s8p">Zytec rust industriële pompen uit met een contactloze magneetkoppeling en bespaart daarmee fors op stroom. Het laat zien hoe gerichte technische innovatie het energieverbruik omlaag brengt zonder in te leveren op capaciteit.</p>
-                    <p class="source"><a data-i18n="nieuws.s8src" href="https://www.change.inc/transities/energie-transitie/dit-bedrijf-bespaart-extreem-veel-stroom-met-contactloze-magneetkoppeling-voor-industriele-pompen">Bron: Change Inc., 20 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-prijzen" class="tag tag-subsidy">Energieprijzen</span>
-                    <h3><a data-i18n="nieuws.s9t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44317/negatieve-energieprijzen-in-belgie-prosumenten-moeten-echte-flexumers-worden">Negatieve energieprijzen in België: prosumenten moeten echte flexumers worden</a></h3>
-                    <p data-i18n="nieuws.s9p">In België duiken steeds vaker negatieve stroomprijzen op. De les voor bedrijven met eigen opwek: word van pure afnemer een flexumer die stuurt op prijsmomenten. Batterijopslag is daarvoor het sluitstuk.</p>
-                    <p class="source"><a data-i18n="nieuws.s9src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44317/negatieve-energieprijzen-in-belgie-prosumenten-moeten-echte-flexumers-worden">Bron: Solar & Storage Magazine, 17 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-regelgeving" class="tag tag-congestion">Regelgeving</span>
-                    <h3><a data-i18n="nieuws.s10t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">EPBD-III verplicht laadinfrastructuur bij utiliteitsgebouwen, ook voor hotels</a></h3>
-                    <p data-i18n="nieuws.s10p">De EPBD-III richtlijn verplicht laadinfrastructuur bij nieuwbouw en grootschalige renovatie van utiliteitsgebouwen. Voor hotels met parkeervoorzieningen betekent dit concrete laadpaalnormen. RVO zet op een rij wat er nu al geldt en wat de komende jaren bijkomt.</p>
-                    <p class="source"><a data-i18n="nieuws.src-rvo-epbd" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">Bron: RVO.nl, 17 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-batterij" class="tag tag-battery">Batterijopslag</span>
-                    <h3><a data-i18n="nieuws.s11t" href="https://www.duurzaam-ondernemen.nl/recycling-van-li-ion-batterijen-in-nederland-grote-ambities-kleine-volumes/">Recycling Li-ion batterijen in Nederland: grote ambities, kleine volumes</a></h3>
-                    <p data-i18n="nieuws.s11p">De Nederlandse batterijrecycling-markt staat nog in de kinderschoenen. Duurzaam Ondernemen schetst de kloof tussen ambitieuze beleidsdoelen en de realiteit van kleine verwerkingsvolumes. Vooruitlopend op strengere EU-regelgeving groeit de urgentie voor een volwassen recyclingketen.</p>
-                    <p class="source"><a data-i18n="nieuws.s11src" href="https://www.duurzaam-ondernemen.nl/recycling-van-li-ion-batterijen-in-nederland-grote-ambities-kleine-volumes/">Bron: Duurzaam Ondernemen, 16 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-prijzen" class="tag tag-subsidy">Energieprijzen</span>
-                    <h3><a data-i18n="nieuws.s12t" href="https://www.nu.nl/economie/6403197/duitse-regering-trekt-miljarden-uit-voor-energiesteun-voor-inwoners-en-bedrijven.html">Duitse regering trekt miljarden uit voor energiesteun aan bedrijven</a></h3>
-                    <p data-i18n="nieuws.s12p">Duitsland trekt miljarden uit om inwoners en bedrijven te compenseren voor hoge energiekosten. Een signaal dat onze oosterburen de energierekening serieus nemen — een ontwikkeling die ook Nederlandse ondernemers op de voet volgen.</p>
-                    <p class="source"><a data-i18n="nieuws.s12src" href="https://www.nu.nl/economie/6403197/duitse-regering-trekt-miljarden-uit-voor-energiesteun-voor-inwoners-en-bedrijven.html">Bron: NU.nl, 15 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-subsidie" class="tag tag-subsidy">Subsidie</span>
-                    <h3><a data-i18n="nieuws.s13t" href="https://www.ewmagazine.nl/economie/achtergrond/2026/07/salderingsregeling-zonnepanelen-2027-eerste-kamer-akkoord-bidirectioneel-laden-stedin-pro-renault-kamervragen-1577873/">Salderingsregeling stopt in 2027: Kamer zet in op bidirectioneel laden</a></h3>
-                    <p data-i18n="nieuws.s13p">De Eerste Kamer is akkoord met het afbouwen van de salderingsregeling per 2027. Tegelijk kiest de politiek voor stimulering van bidirectioneel laden als slimme opvolger. Die technologie ontsluit voor hotels met zonnepanelen en laadpalen extra verdienpotentieel.</p>
-                    <p class="source"><a data-i18n="nieuws.s13src" href="https://www.ewmagazine.nl/economie/achtergrond/2026/07/salderingsregeling-zonnepanelen-2027-eerste-kamer-akkoord-bidirectioneel-laden-stedin-pro-renault-kamervragen-1577873/">Bron: EWmagazine.nl, 9 juli 2026</a></p>
-                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <div class="news-archive">
                     <h3 data-i18n="nieuws.ouder-h3">Ouder nieuws</h3>
                     <ul>
-                        <li>
+<li data-tag="nieuws.tag-energiebeleid">
+                            <a data-i18n="nieuws.n4t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44540/energiesector-pleit-voor-sterke-nationale-investeringsinstelling">Energiesector pleit voor sterke Nationale Investeringsinstelling</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44540/energiesector-pleit-voor-sterke-nationale-investeringsinstelling">Solar & Storage Magazine, 19-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-batterij">
+                            <a data-i18n="nieuws.n5t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44543/belgische-regulator-schrapt-definitief-vrijstelling-grote-batterijen-van-nettarieven">Belgische regulator schrapt definitief nettarief-vrijstelling voor grote batterijen</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44543/belgische-regulator-schrapt-definitief-vrijstelling-grote-batterijen-van-nettarieven">Solar & Storage Magazine, 19-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-subsidie">
+                            <a data-i18n="nieuws.n2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44534/energiebedrijf-moet-verborgen-terugleverkosten-terugbetalen-aan-eigenaar-zonnepanelen">Energiebedrijf moet verborgen terugleverkosten terugbetalen aan zonnepaneel-eigenaar</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44534/energiebedrijf-moet-verborgen-terugleverkosten-terugbetalen-aan-eigenaar-zonnepanelen">Solar & Storage Magazine, 18-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-zonnepanelen">
+                            <a data-i18n="nieuws.n3t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44533/nieuw-record-zonnepanelen-dekken-10-procent-wereldwijd-stroomverbruik">Zonnepanelen dekken voor het eerst 10 procent van de wereldwijde stroomvraag</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44533/nieuw-record-zonnepanelen-dekken-10-procent-wereldwijd-stroomverbruik">Solar & Storage Magazine, 18-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-batterij">
+                            <a data-i18n="nieuws.n6t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44528/plug-in-thuisbatterij-in-belgie-prima-product-gebrek-aan-regulerend-kader">Plug-in thuisbatterij: prima product, maar gebrek aan regels</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44528/plug-in-thuisbatterij-in-belgie-prima-product-gebrek-aan-regulerend-kader">Solar & Storage Magazine, 18-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-subsidie">
+                            <a data-i18n="nieuws.s1t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44507/einde-subsidie-jaagt-zakelijke-zonnepanelen-vroegtijdig-van-het-dak">Einde SDE-subsidie jaagt zakelijke zonnepanelen vroegtijdig van het dak</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44507/einde-subsidie-jaagt-zakelijke-zonnepanelen-vroegtijdig-van-het-dak">Solar & Storage Magazine, 14-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-subsidie">
+                            <a data-i18n="nieuws.s2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44490/zuid-holland-lanceert-actieplan-voor-meer-zon-op-dak-subsidie-voor-circulaire-zonnepanelen">Zuid-Holland lanceert actieplan voor meer zon op dak, subsidie voor circulaire zonnepanelen</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44490/zuid-holland-lanceert-actieplan-voor-meer-zon-op-dak-subsidie-voor-circulaire-zonnepanelen">Solar & Storage Magazine, 13-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.s3t" href="https://www.denieuwsbode.nl/nieuws/zakelijk-nieuws-landelijk/1298973/grip-op-je-energierekening-in-zeist-begint-met-goed-vergelijken">Grip op je energierekening in Zeist begint met goed vergelijken</a>
+                            <span class="archive-source"><a href="https://www.denieuwsbode.nl/nieuws/zakelijk-nieuws-landelijk/1298973/grip-op-je-energierekening-in-zeist-begint-met-goed-vergelijken">De Nieuwsbode, 06-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-laadinfra">
+                            <a data-i18n="nieuws.s4t" href="https://www.autovisie.nl/nieuws/laadpaal-met-blokkeertarief-binnenkort-mogelijk-verleden-tijd-evs-moeten-juist-langer-aan-de-paal-hangen/">Blokkeertarief bij laadpalen mogelijk verleden tijd: EV's moeten juist langer laden</a>
+                            <span class="archive-source"><a href="https://www.autovisie.nl/nieuws/laadpaal-met-blokkeertarief-binnenkort-mogelijk-verleden-tijd-evs-moeten-juist-langer-aan-de-paal-hangen/">Autovisie, 05-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
+                            <a data-i18n="nieuws.s5t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iv">Europese EPBD IV-richtlijn scherpt energieprestatie-eisen voor gebouwen aan</a>
+                            <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iv">RVO.nl, 04-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.s6t" href="https://www.autogids.be/autonieuws/mobiliteit/hogere-verplaatsingskosten-door-stijging-energieprijzen-compenseren-werkgevers-hun-personeel.html">Stijgende energieprijzen drijven verplaatsingskosten op: compenseren werkgevers?</a>
+                            <span class="archive-source"><a href="https://www.autogids.be/autonieuws/mobiliteit/hogere-verplaatsingskosten-door-stijging-energieprijzen-compenseren-werkgevers-hun-personeel.html">AutoGids, 31-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-laadinfra">
+                            <a data-i18n="nieuws.s7t" href="https://www.autovisie.nl/nieuws/met-elektrische-auto-op-vakantie-pas-op-voor-extreme-laadtarieven-500-euro-voor-een-laadbeurt/">Met de EV op vakantie? Pas op voor extreme laadtarieven: €500 per laadbeurt</a>
+                            <span class="archive-source"><a href="https://www.autovisie.nl/nieuws/met-elektrische-auto-op-vakantie-pas-op-voor-extreme-laadtarieven-500-euro-voor-een-laadbeurt/">Autovisie, 22-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.a1" href="https://www.duurzaam-ondernemen.nl/europese-commissie-keurt-een-nederlandse-staatssteunregeling-van-e-780-miljoen-goed-ter-ondersteuning-van-de-productie-van-hernieuwbare-waterstof/">EU keurt €780 miljoen Nederlandse staatssteun voor waterstof goed</a>
                             <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/europese-commissie-keurt-een-nederlandse-staatssteunregeling-van-e-780-miljoen-goed-ter-ondersteuning-van-de-productie-van-hernieuwbare-waterstof/">Duurzaam Ondernemen, 06-08-2026</a></span>
                         </li>
-                        <li>
-                            <a data-i18n="nieuws.a2" href="https://www.change.inc/energie/nieuwsupdate-shell-verkoopt-alle-europese-zonne-en-windparken-op-land-en-zonne-energie-breekt-ongemerkt-record">Shell verkoopt álle Europese zonne- en windparken op land</a>
-                            <span class="archive-source"><a href="https://www.change.inc/energie/nieuwsupdate-shell-verkoopt-alle-europese-zonne-en-windparken-op-land-en-zonne-energie-breekt-ongemerkt-record">Change Inc., 04-08-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.a3" href="https://www.change.inc/mobiliteit/de-race-om-de-solid-state-batterij-is-losgebarsten-deze-autofabrikanten-strijden-om-de-hoofdprijs">Race om solid-state batterij losgebarsten: autofabrikanten strijden om hoofdprijs</a>
-                            <span class="archive-source"><a href="https://www.change.inc/mobiliteit/de-race-om-de-solid-state-batterij-is-losgebarsten-deze-autofabrikanten-strijden-om-de-hoofdprijs">Change Inc., 03-08-2026</a></span>
-                        </li>
-                        <li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.a4" href="https://www.duurzaam-ondernemen.nl/coalitie-pleit-voor-nii-investeringen-in-klimaat-energie-en-circulariteit/">Coalitie pleit voor forse NII-investeringen in klimaat en energie</a>
                             <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/coalitie-pleit-voor-nii-investeringen-in-klimaat-energie-en-circulariteit/">Duurzaam Ondernemen, 06-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-laadinfra">
                             <a data-i18n="nieuws.a5" href="https://www.change.inc/transities/mobiliteit-transitie/5-positieve-trends-die-de-groei-van-elektrisch-rijden-laten-zien">5 positieve trends die de groei van elektrisch rijden laten zien</a>
                             <span class="archive-source"><a href="https://www.change.inc/transities/mobiliteit-transitie/5-positieve-trends-die-de-groei-van-elektrisch-rijden-laten-zien">Change Inc., 06-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-laadinfra">
                             <a data-i18n="nieuws.a6" href="https://www.duurzaam-ondernemen.nl/elektrische-vakantierijder-komt-laadstress-nauwelijks-tegen-twee-derde-vindt-onderweg-eenvoudig-een-laadplek/">Elektrische vakantierijder ervaart nauwelijks laadstress: laadnetwerk dekkend</a>
                             <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/elektrische-vakantierijder-komt-laadstress-nauwelijks-tegen-twee-derde-vindt-onderweg-eenvoudig-een-laadplek/">Duurzaam Ondernemen, 06-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.a2" href="https://www.change.inc/energie/nieuwsupdate-shell-verkoopt-alle-europese-zonne-en-windparken-op-land-en-zonne-energie-breekt-ongemerkt-record">Shell verkoopt álle Europese zonne- en windparken op land</a>
+                            <span class="archive-source"><a href="https://www.change.inc/energie/nieuwsupdate-shell-verkoopt-alle-europese-zonne-en-windparken-op-land-en-zonne-energie-breekt-ongemerkt-record">Change Inc., 04-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-batterij">
                             <a data-i18n="nieuws.a7" href="https://www.change.inc/transities/energie-transitie/de-ijzer-luchtbatterij-van-ore-energy-levert-wel-honderd-uur-stroom-dat-is-cruciaal-om-groene-stroom-effectief-te-benutten">€38 miljoen voor ijzer-luchtbatterij van Ore Energy</a>
                             <span class="archive-source"><a href="https://www.change.inc/transities/energie-transitie/de-ijzer-luchtbatterij-van-ore-energy-levert-wel-honderd-uur-stroom-dat-is-cruciaal-om-groene-stroom-effectief-te-benutten">Change Inc., 04-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-batterij">
                             <a data-i18n="nieuws.a8" href="https://www.entreemagazine.nl/ondernemen/horecaondernemers-omzeilen-vol-stroomnet-met-eigen-batterijopslag">Energieopslag helpt Dordtse ondernemers door netcongestie heen</a>
                             <span class="archive-source">DordtCentraal, 04-08-2026</span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-batterij">
+                            <a data-i18n="nieuws.a3" href="https://www.change.inc/mobiliteit/de-race-om-de-solid-state-batterij-is-losgebarsten-deze-autofabrikanten-strijden-om-de-hoofdprijs">Race om solid-state batterij losgebarsten: autofabrikanten strijden om hoofdprijs</a>
+                            <span class="archive-source"><a href="https://www.change.inc/mobiliteit/de-race-om-de-solid-state-batterij-is-losgebarsten-deze-autofabrikanten-strijden-om-de-hoofdprijs">Change Inc., 03-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.a9" href="https://www.bnr.nl/nieuws/duurzaamheid/10567890/netbeheer-nederland-overspoeld-met-aanvragen-vijf-keer-zoveel-op-wachtlijst">Netbeheer Nederland overspoeld met aanvragen: vijf keer zoveel op wachtlijst</a>
                             <span class="archive-source"><a href="https://www.bnr.nl/nieuws/duurzaamheid/10567890/netbeheer-nederland-overspoeld-met-aanvragen-vijf-keer-zoveel-op-wachtlijst">BNR.nl, 24-07-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.s8t" href="https://www.change.inc/transities/energie-transitie/dit-bedrijf-bespaart-extreem-veel-stroom-met-contactloze-magneetkoppeling-voor-industriele-pompen">Zytec bespaart veel stroom met contactloze magneetkoppeling voor pompen</a>
+                            <span class="archive-source"><a href="https://www.change.inc/transities/energie-transitie/dit-bedrijf-bespaart-extreem-veel-stroom-met-contactloze-magneetkoppeling-voor-industriele-pompen">Change Inc., 20-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.s9t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44317/negatieve-energieprijzen-in-belgie-prosumenten-moeten-echte-flexumers-worden">Negatieve energieprijzen in België: prosumenten moeten echte flexumers worden</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44317/negatieve-energieprijzen-in-belgie-prosumenten-moeten-echte-flexumers-worden">Solar & Storage Magazine, 17-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
+                            <a data-i18n="nieuws.s10t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">EPBD-III verplicht laadinfrastructuur bij utiliteitsgebouwen, ook voor hotels</a>
+                            <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">RVO.nl, 17-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-batterij">
+                            <a data-i18n="nieuws.s11t" href="https://www.duurzaam-ondernemen.nl/recycling-van-li-ion-batterijen-in-nederland-grote-ambities-kleine-volumes/">Recycling Li-ion batterijen in Nederland: grote ambities, kleine volumes</a>
+                            <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/recycling-van-li-ion-batterijen-in-nederland-grote-ambities-kleine-volumes/">Duurzaam Ondernemen, 16-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-subsidie">
+                            <a data-i18n="nieuws.s12t" href="https://www.nu.nl/economie/6403197/duitse-regering-trekt-miljarden-uit-voor-energiesteun-voor-inwoners-en-bedrijven.html">Duitse regering trekt miljarden uit voor energiesteun aan bedrijven</a>
+                            <span class="archive-source"><a href="https://www.nu.nl/economie/6403197/duitse-regering-trekt-miljarden-uit-voor-energiesteun-voor-inwoners-en-bedrijven.html">NU.nl, 15-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
+                            <a data-i18n="nieuws.s13t" href="https://www.ewmagazine.nl/economie/achtergrond/2026/07/salderingsregeling-zonnepanelen-2027-eerste-kamer-akkoord-bidirectioneel-laden-stedin-pro-renault-kamervragen-1577873/">Salderingsregeling stopt in 2027: Kamer zet in op bidirectioneel laden</a>
+                            <span class="archive-source"><a href="https://www.ewmagazine.nl/economie/achtergrond/2026/07/salderingsregeling-zonnepanelen-2027-eerste-kamer-akkoord-bidirectioneel-laden-stedin-pro-renault-kamervragen-1577873/">EWmagazine.nl, 09-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.a10" href="https://www.bnr.nl/nieuws/economie/10567789/buitenlandse-bedrijven-mijden-nederland-door-dreiging-netcongestie">Buitenlandse bedrijven mijden Nederland door dreiging netcongestie</a>
                             <span class="archive-source"><a href="https://www.bnr.nl/nieuws/economie/10567789/buitenlandse-bedrijven-mijden-nederland-door-dreiging-netcongestie">BNR.nl, 06-07-2026</a></span>
                         </li>
-                        <li>
-                            <a data-i18n="nieuws.a11" href="https://www.duurzaam-ondernemen.nl/defensie-en-ai-zetten-nederlandse-ems-bedrijven-op-scherp">Defensie en AI zetten Nederlandse EMS-bedrijven op scherp</a>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.a11" href="https://linkmagazine.nl/defensie-en-ai-zetten-nederlandse-ems-bedrijven-op-scherp/">Defensie en AI zetten Nederlandse EMS-bedrijven op scherp</a>
                             <span class="archive-source">Link Magazine, 17-06-2026</span>
                         </li>
-                        <li>
-                            <a data-i18n="nieuws.a12" href="https://www.rvo.nl/onderwerpen/investeren-in-duurzame-energie">Bedrijven investeren opnieuw bijna €4 miljard in duurzame technieken in 2025</a>
-                            <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/investeren-in-duurzame-energie">RVO.nl, 13-05-2026</a></span>
-                        </li>
-                        <li>
+
+<li data-tag="nieuws.tag-batterij">
                             <a data-i18n="nieuws.a13" href="https://www.rvo.nl/onderwerpen/energieopslag">Onderzoek: overbelast elektriciteitsnet biedt kansen voor batterijopslag</a>
                             <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/energieopslag">RVO.nl, 01-05-2026</a></span>
-                        </li>
-                    </ul>
+                        </li></ul>
                 </div>
             </div>
         </div>
@@ -653,9 +626,9 @@ function lockScroll(on) {
                 </div>
                 <div class="news-card">
                     <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
-                    <h3><a data-i18n="nieuws.h4t" href="https://www.missethoreca.nl/ondernemen/artikel/pelles-investeert-in-thuisbatterij-oplossing-voor-stijgende-energiekosten">Pelle's investeert in eigen batterij: oplossing voor stijgende energiekosten</a></h3>
-                    <p data-i18n="nieuws.h4p">Het bekende horecabedrijf Pelle's installeert een grote batterij om de stijgende energiekosten het hoofd te bieden. Het systeem slaat goedkope stroom op voor piekmomenten. Een oplossing die navolging vindt in de hotellerie, waar marges steeds verder onder druk staan.</p>
-                    <p class="source"><a data-i18n="nieuws.h4src" href="https://www.missethoreca.nl/ondernemen/artikel/pelles-investeert-in-thuisbatterij-oplossing-voor-stijgende-energiekosten">Bron: Misset Horeca, 18 juni 2026</a></p>
+                    <h3><a data-i18n="nieuws.h4t" href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">Geen stroomaansluiting, maar McDonald's-ondernemer vond oplossing: kijk wat er wél mogelijk is</a></h3>
+                    <p data-i18n="nieuws.h4p">Een McDonald's-ondernemer zonder stroomaansluiting laat zien wat er wél kan: met een energiehub en slimme opslag tóch van start gaan. Een inspirerend voorbeeld voor hoteliers die geen aansluiting kunnen krijgen.</p>
+                    <p class="source"><a data-i18n="nieuws.h4src" href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">Bron: AD.nl, 28 mei 2026</a></p>
                 </div>
                 <div class="news-card">
                     <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
@@ -669,35 +642,13 @@ function lockScroll(on) {
                     <p data-i18n="nieuws.h6p">Woede over de eindeloze wachtlijsten voor een stroomaansluiting maakt plaats voor creativiteit. De Telegraaf portretteert ondernemers die met batterijopslag en energiehubs tóch van start gaan. Een voorbeeld voor hoteliers die geen aansluiting kunnen krijgen.</p>
                     <p class="source"><a data-i18n="nieuws.h6src" href="https://www.telegraaf.nl/financieel/ondernemen">Bron: De Telegraaf, 4 mei 2026</a></p>
                 </div>
-                <div class="news-archive">
-                    <h3 data-i18n="nieuws.ouder-h3">Ouder nieuws</h3>
-                    <ul>
-                        <li>
-                            <a data-i18n="nieuws.ha1" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bouw Van der Valk-hotel loopt vertraging op door stroomtekort</a>
-                            <span class="archive-source"><a href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">AD.nl, 29-05-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.ha2" href="https://www.missethoreca.nl/406756/overvol-stroomnet-zorgt-voor-spanning-in-de-horeca">Overvol stroomnet zorgt voor spanning in de horeca</a>
-                            <span class="archive-source"><a href="https://www.missethoreca.nl/406756/overvol-stroomnet-zorgt-voor-spanning-in-de-horeca">Misset Horeca, 20-03-2025</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.ha3" href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">Geen stroomaansluiting, maar McDonald’s-ondernemer vond oplossing</a>
-                            <span class="archive-source"><a href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">AD.nl, 28-05-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.ha4" href="https://www.missethoreca.nl/411376/tot-1000-euro-per-maand-besparen-met-energiezuinige-horecakeuken">Restaurant Latinos bespaart tot 1000 euro per maand door energiezuinige keuken</a>
-                            <span class="archive-source"><a href="https://www.missethoreca.nl/411376/tot-1000-euro-per-maand-besparen-met-energiezuinige-horecakeuken">Misset Horeca, 01-10-2025</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.ha5" href="https://www.denieuwestermaastricht.nl/hotel-van-oys-maastricht-retreat-krijgt-eerder-stroom/">Hotel Van Oys Maastricht Retreat krijgt eerder stroom</a>
-                            <span class="archive-source"><a href="https://www.denieuwestermaastricht.nl/hotel-van-oys-maastricht-retreat-krijgt-eerder-stroom/">De Nieuwe Ster Maastricht, 12-08-2025</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.ha6" href="https://www.duurzaam-ondernemen.nl/one-villa-hotel-domburg-maakt-mogelijk-een-nieuwe-start-groene-waterstof-als-unieke-en-duurzame-energievoorziening/">ONE Villa Hotel Domburg: groene waterstof als duurzame energievoorziening</a>
-                            <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/one-villa-hotel-domburg-maakt-mogelijk-een-nieuwe-start-groene-waterstof-als-unieke-en-duurzame-energievoorziening/">Duurzaam Ondernemen, 13-03-2025</a></span>
-                        </li>
-                    </ul>
+                                <div class="news-card">
+                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
+                    <h3><a data-i18n="nieuws.h7t" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bouw Van der Valk-hotel loopt vertraging op door stroomtekort</a></h3>
+                    <p data-i18n="nieuws.h7p">De bouw van een nieuw Van der Valk-hotel loopt vertraging op door een tekort aan stroomcapaciteit op het net. Een concreet voorbeeld van hoe netcongestie ook nieuwbouw in de hotellerie raakt - en waarom energie-onafhankelijkheid voor hotels steeds belangrijker wordt.</p>
+                    <p class="source"><a data-i18n="nieuws.h7src" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bron: AD.nl, 29-05-2026</a></p>
                 </div>
+
             </div>
         </div>
     </div>
@@ -1016,6 +967,7 @@ document.addEventListener('keydown',function(e){
 
 
 <script src="/assets/brand/accessibility.js?v=4" defer></script>
+<script src="/assets/brand/nieuws-filter.js?v=6" defer></script>
 </body>
 </html>
 <!-- E2E-schoon 1786775729 -->
