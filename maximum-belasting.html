@@ -35,6 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <style>
+/* hover opent niet meer */
         :root{--green-primary:#0F3D23;--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#556B58;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;scroll-padding-top:56px;font-size:16px;overflow-y:scroll}
@@ -46,7 +47,7 @@
         nav{position:sticky;top:0;z-index:100;background:rgba(245,247,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.5rem 0}
         nav .container{display:grid;grid-template-columns:auto 1fr auto;align-items:center;position:relative;padding-top:0.5rem;padding-bottom:0.5rem}
         
-        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;grid-column:3}
+        .nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;grid-column:3}
         .nav-links a{text-decoration:none;color:var(--dark-grey);font-size:0.9rem;font-weight:500}
         .nav-links a:hover,.nav-links a.active{color:var(--green-secondary)}
 
@@ -55,7 +56,7 @@
         .nav-dropdown{position:relative}.nav-dropdown>a{cursor:pointer}
         .nav-dropdown-panel{display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,0.12);border:1px solid #D4DDD0;z-index:99;padding:1.5rem;min-width:260px;transition:opacity 0.15s ease-in-out}
         .nav-backdrop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,61,35,0.08);z-index:98;pointer-events:none}
-        .nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:block}
+        .nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:block}.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}
         .nav-mega-col h4{font-family:'Montserrat',sans-serif;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin:0 0 0.75rem}
         .nav-mega-col a{display:block;padding:0.4rem 0;text-decoration:none;color:#2F3437;font-size:0.88rem;font-weight:500;transition:color 0.15s}
         .nav-mega-col a:hover{color:var(--green-secondary)}
@@ -92,7 +93,6 @@ footer ul li{margin-bottom:.5rem}
 footer a{color:rgba(245,247,242,.6);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--green-light)}
 .footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:1rem;text-align:center}
-footer a{color:var(--green-light)}
         @media(max-width:768px){
             .flow-grid{grid-template-columns:1fr;gap:0.75rem}
             .arrow{transform:rotate(90deg)}
@@ -136,7 +136,7 @@ nav .container{padding:0 .75rem;width:100%;max-width:100%}
 .nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
 .nav-dropdown.open>a::after{transform:rotate(180deg)}
 .nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
-.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block!important}
 .nav-backdrop{display:none!important}
 .nav-mega-col h4{display:none}
 .nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
@@ -187,7 +187,40 @@ footer a{font-size:.72rem}
 .footer-bottom{grid-column:1/-1;text-align:center;font-size:.7rem;padding-top:.75rem}
 section img,.problem-card img,.info-card img,.chart-wrap img{max-width:100%!important;height:auto}
 div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important}
+}@media (min-width: 769px) and (max-width: 1180px) {
+nav{position:sticky;top:0;z-index:100;padding:0;height:56px;display:flex;align-items:center}
+nav .container{padding:0 .75rem;width:100%;max-width:100%}
+.nav-logo{margin:0;display:flex;align-items:center}
+.nav-logo-icon{height:38px;width:auto}
+
+.mobile-logo{display:flex;align-items:center;gap:.35rem;font-family:Montserrat,sans-serif;font-weight:600;font-size:.85rem;color:var(--green-primary);position:relative;z-index:2;white-space:nowrap}
+.mobile-logo svg{width:40px;height:40px;flex-shrink:0}.mobile-logo img{width:auto;height:28px;flex-shrink:0}
+.menu-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;padding:0;background:none;border:none;cursor:pointer;z-index:103;position:relative}
+.menu-toggle span{display:block;width:22px;height:2.5px;background:var(--green-primary);border-radius:2px;transition:.2s ease;position:absolute}
+.menu-toggle span:nth-child(1){transform:translateY(-7px)}
+.menu-toggle span:nth-child(3){transform:translateY(7px)}
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg)}
+.mobile-menu-panel{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:#fff;flex-direction:column;padding:.5rem 1.25rem 2rem;gap:0;overflow-y:auto;z-index:99999;border-top:4px solid #7FBF3A;box-shadow:0 10px 40px rgba(0,0,0,.2)}.mobile-menu-panel .nav-links{display:flex;flex-direction:column;gap:0;list-style:none;width:100%}
+.mobile-menu-panel.active{display:flex!important}
+.nav-links>li{padding:.5rem 0;border-bottom:1px solid var(--border)}
+.nav-links>li:last-child{border-bottom:none}
+.nav-links>li>a{font-size:1rem;min-height:46px;display:flex;align-items:center}
+.nav-links>li[style]{border-bottom:none;padding:.25rem 0}
+.nav-dropdown>a{display:flex;align-items:center;justify-content:space-between;min-height:46px}
+.nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
+.nav-dropdown.open>a::after{transform:rotate(180deg)}
+.nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block!important}
+.nav-backdrop{display:none!important}
+.nav-mega-col h4{display:none}
+.nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
+.nav-mega-col .mega-desc{display:none}
+.nav-links .btn-primary{display:inline-flex!important;margin-top:.5rem;width:auto;min-height:44px;align-items:center;justify-content:center}
 }
+
+
 /* ── CONTACT MODAL ── */
             .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
             .form-row { grid-template-columns: 1fr; }
@@ -261,8 +294,15 @@ h2{font-size:1.1rem}
         .lang-switch .lang-link:hover{color:var(--green-accent)}
         .lang-switch .lang-link[aria-current="true"]{color:var(--green-secondary)}
         .lang-switch .lang-sep{color:var(--border);font-size:0.9rem}
-        </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
-    <link rel="stylesheet" href="/assets/brand/accessibility.css">
+        /* Verder lezen (interne linkbuilding) */
+.related-links{margin:2.5rem 0 1rem;padding:1.6rem 2rem;background:#F5F7F2;border:1px solid #D4DDD0;border-radius:16px;display:flex;gap:0.9rem;flex-wrap:wrap;align-items:center}
+.related-links .section-label{margin:0;flex-basis:100%}
+.related-links .btn{margin:0}
+
+/* Dropdown: open-state toont het paneel ook zonder hover (alle apparaten) */
+.nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
+</style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
+    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
 </head>
 <body>
 
@@ -270,7 +310,7 @@ h2{font-size:1.1rem}
         
 <nav>
     <div class="container">
-        <a href="index.html" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
+        <a href="/" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
             <svg class="nav-logo-icon" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <defs>
                     <linearGradient id="lemnion-mark-e2a27f" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -289,57 +329,76 @@ h2{font-size:1.1rem}
                 <span class="nav-logo-desc">Hospitality Energy Solutions</span>
             </span>
         </a>
-        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
+        <script>
+/* Scroll-lock die de scrollpositie bewaart (geen sprong naar boven op iOS) */
+var __lemLockY = 0;
+function lockScroll(on) {
+    if (on) {
+        __lemLockY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + __lemLockY + 'px';
+        document.body.style.left = '0';
+        document.body.style.width = '100%';
+    } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.width = '';
+        window.scrollTo(0, __lemLockY);
+    }
+}
+</script>
+<button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');lockScroll(false)}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');lockScroll(true)}">
             <span></span><span></span><span></span>
         </button>
                         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.oplossingen" href="oplossingen.html">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="/oplossingen">Oplossingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.oplossingen_h">Oplossingen</h4>
-                        <a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a>
-                        <a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a>
-                        <a data-i18n="nav.maxbelasting" href="maximum-belasting.html">Maximum belasting</a>
-                        <a data-i18n="nav.stroomoverschot" href="stroom-overschot.html">Stroom (zon) overschot</a>
-                        <a data-i18n="nav.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Oplossingen</a></h4>
+                        <a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a>
+                        <a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a>
+                        <a data-i18n="nav.maxbelasting" href="/maximum-belasting">Maximum belasting</a>
+                        <a data-i18n="nav.stroomoverschot" href="/stroom-overschot">Stroom (zon) overschot</a>
+                        <a data-i18n="nav.stroomuitval" href="/stroomuitval-noodaggregaat">Stroomuitval / noodaggregaat</a>
                     </div>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.voordelen" href="voordelen.html">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="/voordelen">Voordelen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.voordelen_h">Voordelen</h4>
-                        <a data-i18n="nav.usp" href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a>
-                        <a data-i18n="nav.configurator" href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a data-i18n="nav.vergelijk" href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <h4><a data-i18n="nav.voordelen_h" href="/voordelen">Voordelen</a></h4>
+                        <a data-i18n="nav.usp" href="/usp-veiligheid">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a>
+                        <a data-i18n="nav.configurator" href="/configurator">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="producten.html">Producten</a></li>
-            <li><a data-i18n="nav.subsidies" href="subsidies.html">Subsidies</a></li>
-            <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
+            <li><a data-i18n="nav.producten" href="/producten">Producten</a></li>
+            <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
+            <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.nieuws" href="nieuws.html">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="/nieuws">Nieuws ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.nieuws_h">Nieuws</h4>
-                        <a data-i18n="nav.nieuws_all" href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
-                        <a data-i18n="nav.blog" href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                        <h4><a data-i18n="nav.nieuws_h" href="/nieuws">Nieuws</a></h4>
+                        <a data-i18n="nav.nieuws_all" href="/nieuws">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a data-i18n="nav.blog" href="/blog">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.contact" href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li><a data-i18n="nav.contact" href="/#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
             <li class="lang-switch" aria-label="Taal / Language">
-                <a href="/maximum-belasting.html" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
+                <a href="/maximum-belasting" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
                 <span class="lang-sep" aria-hidden="true">/</span>
-                <a href="/en/maximum-belasting.html" class="lang-link" lang="en" hreflang="en">EN</a>
+                <a href="/en/peak-load" class="lang-link" lang="en" hreflang="en">EN</a>
             </li>
         </ul>
     </div>
@@ -384,11 +443,18 @@ h2{font-size:1.1rem}
         <h2 data-i18n="maxbelasting.ctah">Klaar om jouw hotel te bevrijden van netcongestie?</h2>
         <p data-i18n="maxbelasting.ctap" style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Bereken binnen 1 minuut wat jouw hotel kan besparen met een eigen energie-systeem.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a data-i18n="maxbelasting.cta" href="configurator.html" class="btn-outline">Doe de configurator →</a>
+            <a data-i18n="maxbelasting.cta" href="/configurator" class="btn-outline">Doe de configurator →</a>
             <a href="mailto:info@lemnion.nl" class="btn-green">info@lemnion.nl</a>
         </div>
     </div>
 </section>
+
+<!-- Verder lezen (interne linkbuilding) -->
+<aside class="related-links">
+  <span class="section-label" data-i18n="maximum-belasting.label">Verder lezen</span>
+    <a class="btn btn-primary" href="/configurator" data-i18n="maximum-belasting.rl1">Bereken uw besparing met de configurator</a>
+    <a class="btn btn-primary" href="/producten" data-i18n="maximum-belasting.rl2">Bekijk hoe wij pieken snijden</a>
+</aside>
 
 <footer>
     <div class="container">
@@ -400,31 +466,31 @@ h2{font-size:1.1rem}
         <div>
             <h3 data-i18n="footer.h_solutions">Oplossingen</h3>
             <ul>
-                <li><a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a></li>
-                <li><a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a></li>
-                <li><a data-i18n="footer.maxbelasting" href="maximum-belasting.html">Maximum belasting</a></li>
-                <li><a data-i18n="footer.stroomoverschot" href="stroom-overschot.html">Stroom overschot</a></li>
-                <li><a data-i18n="footer.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+                <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
+                <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
+                <li><a data-i18n="footer.maxbelasting" href="/maximum-belasting">Maximum belasting</a></li>
+                <li><a data-i18n="footer.stroomoverschot" href="/stroom-overschot">Stroom overschot</a></li>
+                <li><a data-i18n="footer.stroomuitval" href="/stroomuitval-noodaggregaat">Stroomuitval &amp; noodaggregaat</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a data-i18n="footer.batterij" href="producten.html">Batterijopslag</a></li>
-                <li><a data-i18n="footer.laadpalen" href="producten.html">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="producten.html">EMS &amp; monitoring</a></li>
-                <li><a data-i18n="footer.configurator" href="configurator.html">Energieconfigurator</a></li>
-                <li><a data-i18n="footer.subsidies" href="subsidies.html">Subsidies &amp; regelingen</a></li>
+                <li><a data-i18n="footer.batterij" href="/producten">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="/producten">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="/producten">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.configurator" href="/configurator">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
-                <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
-                <li><a data-i18n="footer.nieuwsblog" href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="/usp-veiligheid">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
+                <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
@@ -437,13 +503,13 @@ h2{font-size:1.1rem}
 
 <script>
 
-document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=1180){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};lockScroll(false)}})});
 </script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
-    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
+    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -500,7 +566,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
     if (!panel || !links) return;
     
     function moveMenu() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1180) {
             if (links.parentNode !== panel) {
                 panel.appendChild(links);
             }
@@ -521,19 +587,19 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
 /* Close menu when clicking a non-dropdown link */
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){
   l.addEventListener('click',function(){
-    if(window.innerWidth<=768){
+    if(window.innerWidth<=1180){
       var m=document.querySelector('.mobile-menu-panel');
       var b=document.querySelector('.menu-toggle');
       if(m){m.classList.remove('active');m.style.display=''}
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
       var cm=document.getElementById('contact-modal');
-      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
+      if(!cm||cm.style.display!=='flex'){lockScroll(false)}
     }
   })
 });
 /* Close menu on ESC */
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'&&window.innerWidth<=768){
+  if(e.key==='Escape'&&window.innerWidth<=1180){
     var m=document.querySelector('.mobile-menu-panel');
     var b=document.querySelector('.menu-toggle');
     if(m&&m.classList.contains('active')){
@@ -541,7 +607,7 @@ document.addEventListener('keydown',function(e){
       m.classList.remove('active');
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
       var cm=document.getElementById('contact-modal');
-      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
+      if(!cm||cm.style.display!=='flex'){lockScroll(false)}
     }
   }
 });
@@ -687,7 +753,7 @@ document.addEventListener('keydown',function(e){
             var modal = document.getElementById('contact-modal');
             if (modal && modal.style.display === 'flex') {
                 modal.style.display = 'none';
-                document.body.style.overflow = '';
+                lockScroll(false)
             }
         }
     });
@@ -696,6 +762,6 @@ document.addEventListener('keydown',function(e){
 
 
 
-<script src="/assets/brand/accessibility.js" defer></script>
+<script src="/assets/brand/accessibility.js?v=4" defer></script>
 </body>
 </html> 

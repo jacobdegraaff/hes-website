@@ -24,23 +24,26 @@ const BASE_URL = 'https://lemnion.nl';
 const LANGS = ['en']; // add 'fr', 'es' later (same mechanism)
 
 // EN pages get English URL slugs (NL filenames stay as-is).
+// Waarden zijn extensionless: de live site serveert /oplossingen (Cloudflare
+// redirect 308: .html -> extensionless). Sitemap, canonical, hreflang en
+// interne links gebruiken dus de extensionless vorm.
 const SLUGS = {
-  'index.html': 'index.html',
-  'oplossingen.html': 'solutions.html',
-  'producten.html': 'products.html',
-  'over-ons.html': 'about-us.html',
-  'voordelen.html': 'benefits.html',
-  'verduurzamen.html': 'sustainability.html',
-  'usp-veiligheid.html': 'safety.html',
-  'nieuws.html': 'news.html',
-  'subsidies.html': 'grants.html',
-  'blog.html': 'blog.html',
-  'blog-epbd-iv-laadinfra.html': 'blog-epbd-iv-ev-charging-infrastructure.html',
-  'netcongestie.html': 'grid-congestion.html',
-  'maximum-belasting.html': 'peak-load.html',
-  'stroom-overschot.html': 'solar-surplus.html',
-  'stroomuitval-noodaggregaat.html': 'power-outage.html',
-  'configurator.html': 'configurator.html',
+  'index.html': '',
+  'oplossingen.html': 'solutions',
+  'producten.html': 'products',
+  'over-ons.html': 'about-us',
+  'voordelen.html': 'benefits',
+  'verduurzamen.html': 'sustainability',
+  'usp-veiligheid.html': 'safety',
+  'nieuws.html': 'news',
+  'subsidies.html': 'grants',
+  'blog.html': 'blog',
+  'blog-epbd-iv-laadinfra.html': 'blog-epbd-iv-ev-charging-infrastructure',
+  'netcongestie.html': 'grid-congestion',
+  'maximum-belasting.html': 'peak-load',
+  'stroom-overschot.html': 'solar-surplus',
+  'stroomuitval-noodaggregaat.html': 'power-outage',
+  'configurator.html': 'configurator',
 };
 
 // ---------------------------------------------------------------------------
@@ -51,8 +54,70 @@ const DATA_I18N = /<([a-zA-Z][a-zA-Z0-9]*)(?![a-zA-Z0-9])([^>]*?)\bdata-i18n="([
 
 function pageUrl(page, lang) {
   const slug = lang === 'nl' ? page : (SLUGS[page] || page);
-  const base = slug === 'index.html' ? '/' : '/' + slug;
+  const base = slug === 'index.html' || slug === '' ? '/' : '/' + slug.replace(/\.html$/, '');
   return lang === 'nl' ? `${BASE_URL}${base}` : `${BASE_URL}/${lang}${base}`;
+}
+
+// ---------------------------------------------------------------------------
+// Breadcrumbs: BreadcrumbList structured data + zichtbare trail
+// (typische gebruikersroute conform de nav; platte URLs blijven gehandhaafd)
+// ---------------------------------------------------------------------------
+const TRAIL = {
+  'oplossingen.html':   { parent: null,               nl: 'Oplossingen',            en: 'Solutions' },
+  'netcongestie.html':  { parent: 'oplossingen.html', nl: 'Netcongestie',           en: 'Grid congestion' },
+  'verduurzamen.html':  { parent: 'oplossingen.html', nl: 'Verduurzamen',           en: 'Sustainability' },
+  'maximum-belasting.html': { parent: 'oplossingen.html', nl: 'Maximum belasting',  en: 'Peak capacity' },
+  'stroom-overschot.html':  { parent: 'oplossingen.html', nl: 'Stroom (zon) overschot', en: 'Solar (surplus) power' },
+  'stroomuitval-noodaggregaat.html': { parent: 'oplossingen.html', nl: 'Stroomuitval / noodaggregaat', en: 'Power outage / backup' },
+  'voordelen.html':     { parent: null,               nl: 'Voordelen',              en: 'Benefits' },
+  'usp-veiligheid.html': { parent: 'voordelen.html',  nl: 'USP en veiligheid',      en: 'USP & safety' },
+  'configurator.html':  { parent: 'voordelen.html',   nl: 'Energieconfigurateur',   en: 'Energy configurator' },
+  'nieuws.html':        { parent: null,               nl: 'Nieuws',                 en: 'News' },
+  'blog.html':          { parent: 'nieuws.html',      nl: 'Blog',                   en: 'Blog' },
+  'blog-epbd-iv-laadinfra.html': { parent: 'nieuws.html', nl: 'Blog',               en: 'Blog' },
+  'producten.html':     { parent: null,               nl: 'Producten',              en: 'Products' },
+  'subsidies.html':     { parent: null,               nl: 'Subsidies',              en: 'Subsidies' },
+  'over-ons.html':      { parent: null,               nl: 'Over ons',               en: 'About us' },
+};
+
+function crumbName(entry, lang) {
+  return lang === 'nl' ? entry.nl : entry.en;
+}
+
+function crumbItems(page, lang) {
+  const trail = TRAIL[page];
+  if (!trail) return null; // home e.d.: geen breadcrumb
+  const items = [];
+  items.push({ name: 'Home', url: pageUrl('index.html', lang) });
+  if (trail.parent) {
+    const p = TRAIL[trail.parent];
+    items.push({ name: crumbName(p, lang), url: pageUrl(trail.parent, lang) });
+  }
+  items.push({ name: crumbName(trail, lang), url: pageUrl(page, lang) });
+  return items;
+}
+
+function injectBreadcrumbs(html, page, lang) {
+  const items = crumbItems(page, lang);
+  let ld = '';
+  if (items) {
+    const json = items.map((it, i) =>
+      `    { "@type": "ListItem", "position": ${i + 1}, "name": ${JSON.stringify(it.name)}, "item": ${JSON.stringify(it.url)} }`
+    ).join(',\n');
+    ld = `\n<!-- Breadcrumb (build) -->\n<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "BreadcrumbList",\n  "itemListElement": [\n${json}\n  ]\n}\n</script>`;
+  }
+  // Bestaand BreadcrumbList-blok vervangen (oude platte variant), of toevoegen als
+  // het ontbreekt. Bij items=null (home) wordt het oude blok juist VERWIJDERD:
+  // een 1-item breadcrumb voldoet niet aan Google's eis (minimaal 2 ListItems).
+  const before = html;
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, (block) => {
+    if (!block.includes('BreadcrumbList')) return block;
+    return ld;
+  });
+  if (items && html === before) {
+    html = html.replace('</head>', ld + '\n</head>');
+  }
+  return html;
 }
 
 function loadDict(lang) {
@@ -106,6 +171,18 @@ function translatePage(source, dict, page) {
 function finalizeHtml(html, page, lang) {
   // EN pages: rewrite internal links to /en/<slug>, relative assets to root-absolute
   html = rewriteLinks(html, lang);
+  // ALLEEN externe links (naar andere domeinen): target=_blank + rel=noopener nofollow
+  // (Jacob, 21-8-2026, verduidelijkt). Interne links (eigen domein of relatief) en
+  // anker-/mailto-/tel-links blijven normaal in hetzelfde tabblad.
+  html = html.replace(/<a([^>]*?)href=\"([^\"]*)\"([^>]*)>/g, (m, before, href, after) => {
+    if (/^#/.test(href) || /^mailto:/.test(href) || /^tel:/.test(href)) return m;
+    const extern = /^https?:\/\//.test(href) && !/^https?:\/\/(www\.)?lemnion\.nl/.test(href);
+    if (!extern) return m; // interne link: normaal, zelfde tabblad
+    let b = before, a = after;
+    if (!/\btarget=/.test(b + a)) a = a + ' target="_blank"';
+    if (!/\brel=/.test(b + a)) a = a + ' rel="noopener nofollow"';
+    return `<a${b}href="${href}"${a}>`;
+  });
   // lang attribute (replace existing or add)
   html = html.replace(NL_TAG, (m, attrs) => {
     const cleaned = attrs.replace(/\slang="[^"]*"/, '');
@@ -131,21 +208,41 @@ function finalizeHtml(html, page, lang) {
       }
     );
   }
+  // Breadcrumbs: JSON-LD (structured data) + zichtbare trail in de page-header
+  html = injectBreadcrumbs(html, page, lang);
   return injectHead(html, page, lang);
 }
 
 function rewriteLinks(html, lang) {
   if (lang !== 'nl') {
-    // 1) internal page links → /en/<slug>[#anchor]
-    html = html.replace(/(href=")(index\.html|[a-z0-9-]+\.html)(#[^"]*)?"/g, (m, pre, target, anchor = '') => {
-      return `${pre}/en/${SLUGS[target] || target}${anchor}"`;
+    // 0) De taalwissel BESCHERMEN: die bevat al de correcte per-taal URLs
+    //    (NL-link -> NL-pagina, EN-link -> EN-pagina). Zonder bescherming
+    //    herschrijft stap 1/2 de NL-link naar de EN-URL ("NL klikken blijft EN").
+    let langSwitch = null;
+    html = html.replace(/(<li class="lang-switch"[^>]*>[\s\S]*?<\/li>)/, (m) => {
+      langSwitch = m;
+      return '@@LANGSWITCH@@';
     });
-    // 2) relative asset paths → root-absolute, so they resolve under /en/…
+    // 1) home-link "/" en "/#anker" → "/en/" resp. "/en/#anker"
+    html = html.replace(/href="\/(#)"/g, 'href="/en/#"');
+    html = html.replace(/href="\/"/g, 'href="/en/"');
+    // 2) interne paginalinks "/<nl-slug>[#anker]" → "/en/<en-slug>[#anker]"
+    html = html.replace(/href="\/([a-z0-9-]+)(#[^"]*)?"/g, (m, slug, anchor = '') => {
+      const en = SLUGS[slug + '.html'];
+      if (en === undefined) return m; // geen bekende pagina (bv. /assets/…)
+      return `href="/en/${en}${anchor}"`;
+    });
+    // 3) taalwissel: "/en/<nl-slug>" → "/en/<en-slug>" (bron gebruikt NL-slugs)
+    html = html.replace(/href="\/en\/([a-z0-9-]+)"/g, (m, slug) => {
+      const en = SLUGS[slug + '.html'];
+      return en !== undefined && en !== '' ? `href="/en/${en}"` : m;
+    });
+    // 4) relatieve asset-paden → root-absoluut, zodat ze onder /en/… resolven
     html = html.replace(/(src=")(?!https?:|data:|#|\/)([^"]+)"/g, (m, pre, src) => `${pre}/${src}"`);
     html = html.replace(/(href=")(?!https?:|mailto:|tel:|data:|#|\/)([^"]+)"/g, (m, pre, h) => `${pre}/${h}"`);
+    // herstel de taalwissel
+    if (langSwitch) html = html.replace('@@LANGSWITCH@@', () => langSwitch);
   }
-  // 3) switcher EN link always points to the EN slug (both NL and EN output)
-  html = html.replace(/href="\/en\/([a-z0-9-]+\.html)"/g, (m, p) => `href="/en/${SLUGS[p] || p}"`);
   return html;
 }
 
@@ -199,7 +296,8 @@ for (const page of pages) {
     totalMissing += missing;
     if (missing > 0) console.log(`  [${page}] ${lang}: ${missing} key(s) ontbreken (fallback NL)`);
     const slug = SLUGS[page] || page;
-    writeFileSync(join(OUT, lang, slug), finalizeHtml(html, page, lang));
+    const outName = slug === '' ? 'index.html' : slug.replace(/\.html$/, '') + '.html';
+    writeFileSync(join(OUT, lang, outName), finalizeHtml(html, page, lang));
   }
 }
 if (totalMissing > 0) console.log(`[build] ⚠️ totaal ${totalMissing} ontbrekende vertaalsleutels (vallen terug op NL)`);

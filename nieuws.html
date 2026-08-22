@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <title>Nieuws | Lemnion · Hospitality Energy Solutions | EV subsidies &amp; energie voor hotels</title>
-    <meta name="description" content="Het laatste nieuws over EV-subsidies, energieoplossingen, netcongestie en verduurzaming voor de hotellerie. Dagelijks bijgewerkt door Lemnion.">
+    <meta name="description" content="Het laatste nieuws voor hotels over energie: subsidies (EIA, ISDE, SPRILA), laadpalen, batterijopslag, netcongestie en energiekosten. Dagelijks bijgewerkt.">
     <link rel="canonical" href="https://lemnion.nl/nieuws">
     <meta property="og:title" content="Nieuws | EV subsidies &amp; energie voor hotels | Lemnion">
     <meta property="og:description" content="Het laatste nieuws over EV-subsidies, energieoplossingen en netcongestie voor hotels.">
@@ -35,6 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <style>
+/* hover opent niet meer */
         :root {
             --green-primary: #0F3D23; --green-secondary: #2E7032; --green-accent: #7FBF3A;
             --green-light: #B7E08A; --off-white: #F5F7F2; --dark-grey: #2F3437;
@@ -49,7 +50,7 @@
         nav{position:sticky;top:0;z-index:100;background:rgba(245,247,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.5rem 0}
         nav .container{display:grid;grid-template-columns:auto 1fr auto;align-items:center;position:relative;padding-top:0.5rem;padding-bottom:0.5rem}
         
-        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;grid-column:3}
+        .nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;grid-column:3}
         .nav-links a{text-decoration:none;color:var(--dark-grey);font-size:0.9rem;font-weight:500}
         .nav-links a:hover,.nav-links a.active{color:var(--green-secondary)}
 
@@ -58,7 +59,7 @@
         .nav-dropdown{position:relative}.nav-dropdown>a{cursor:pointer}
         .nav-dropdown-panel{display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,0.12);border:1px solid #D4DDD0;z-index:99;padding:1.5rem;min-width:260px;transition:opacity 0.15s ease-in-out}
         .nav-backdrop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,61,35,0.08);z-index:98;pointer-events:none}
-        .nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:block}
+        .nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:block}.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}
         .nav-mega-col h4{font-family:'Montserrat',sans-serif;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin:0 0 0.75rem}
         .nav-mega-col a{display:block;padding:0.4rem 0;text-decoration:none;color:#2F3437;font-size:0.88rem;font-weight:500;transition:color 0.15s}
         .nav-mega-col a:hover{color:var(--green-secondary)}
@@ -68,6 +69,7 @@
         .page-header h1{color:var(--off-white);margin-bottom:0.5rem}.page-header p{opacity:0.85}
         .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;margin-right:auto;z-index:101}.nav-logo-icon{height:46px;width:46px;flex-shrink:0;position:relative;z-index:1;display:block}.nav-logo-text{display:flex;flex-direction:column;justify-content:center;line-height:1.1;position:relative;z-index:1}.nav-logo-word{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:1.4rem;color:var(--green-primary);letter-spacing:-0.5px;white-space:nowrap}.nav-logo-desc{font-family:'Inter',system-ui,sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-secondary);white-space:nowrap;margin-top:2px}.mobile-logo{display:none}
         .news-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2.5rem 0;align-items:start}
+        .news-column{display:flex;flex-direction:column}
         .news-column h2{font-size:1.2rem;margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:3px solid var(--green-accent);display:inline-block}
         .news-grid{display:grid;gap:1.25rem}
         .news-card{background:white;border-radius:var(--radius-lg);padding:1.5rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border)}
@@ -101,7 +103,6 @@ footer ul li{margin-bottom:.5rem}
 footer a{color:rgba(245,247,242,.6);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--green-light)}
 .footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:1rem;text-align:center}
-footer a{color:var(--green-light)}
         @media(max-width:800px){.news-layout{grid-template-columns:1fr}.nav-links{gap:0.75rem;font-size:0.75rem}.page-header{padding-top:5rem}.nav-logo{margin-top:-20px;margin-bottom:-20px}.nav-logo-icon{height:38px;width:auto}
 .mobile-logo{display:flex;align-items:center;gap:0.4rem;font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:0.9rem;color:var(--green-primary);position:relative;z-index:2}.mobile-logo svg{width:32px;height:32px;flex-shrink:0}}
     
@@ -140,7 +141,7 @@ nav .container{padding:0 .75rem;width:100%;max-width:100%}
 .nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
 .nav-dropdown.open>a::after{transform:rotate(180deg)}
 .nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
-.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block!important}
 .nav-backdrop{display:none!important}
 .nav-mega-col h4{display:none}
 .nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
@@ -191,7 +192,40 @@ footer a{font-size:.72rem}
 .footer-bottom{grid-column:1/-1;text-align:center;font-size:.7rem;padding-top:.75rem}
 section img,.problem-card img,.info-card img,.chart-wrap img{max-width:100%!important;height:auto}
 div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important}
+}@media (min-width: 769px) and (max-width: 1180px) {
+nav{position:sticky;top:0;z-index:100;padding:0;height:56px;display:flex;align-items:center}
+nav .container{padding:0 .75rem;width:100%;max-width:100%}
+.nav-logo{margin:0;display:flex;align-items:center}
+.nav-logo-icon{height:38px;width:auto}
+
+.mobile-logo{display:flex;align-items:center;gap:.35rem;font-family:Montserrat,sans-serif;font-weight:600;font-size:.85rem;color:var(--green-primary);position:relative;z-index:2;white-space:nowrap}
+.mobile-logo svg{width:40px;height:40px;flex-shrink:0}.mobile-logo img{width:auto;height:28px;flex-shrink:0}
+.menu-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;padding:0;background:none;border:none;cursor:pointer;z-index:103;position:relative}
+.menu-toggle span{display:block;width:22px;height:2.5px;background:var(--green-primary);border-radius:2px;transition:.2s ease;position:absolute}
+.menu-toggle span:nth-child(1){transform:translateY(-7px)}
+.menu-toggle span:nth-child(3){transform:translateY(7px)}
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg)}
+.mobile-menu-panel{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:#fff;flex-direction:column;padding:.5rem 1.25rem 2rem;gap:0;overflow-y:auto;z-index:99999;border-top:4px solid #7FBF3A;box-shadow:0 10px 40px rgba(0,0,0,.2)}.mobile-menu-panel .nav-links{display:flex;flex-direction:column;gap:0;list-style:none;width:100%}
+.mobile-menu-panel.active{display:flex!important}
+.nav-links>li{padding:.5rem 0;border-bottom:1px solid var(--border)}
+.nav-links>li:last-child{border-bottom:none}
+.nav-links>li>a{font-size:1rem;min-height:46px;display:flex;align-items:center}
+.nav-links>li[style]{border-bottom:none;padding:.25rem 0}
+.nav-dropdown>a{display:flex;align-items:center;justify-content:space-between;min-height:46px}
+.nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
+.nav-dropdown.open>a::after{transform:rotate(180deg)}
+.nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block!important}
+.nav-backdrop{display:none!important}
+.nav-mega-col h4{display:none}
+.nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
+.nav-mega-col .mega-desc{display:none}
+.nav-links .btn-primary{display:inline-flex!important;margin-top:.5rem;width:auto;min-height:44px;align-items:center;justify-content:center}
 }
+
+
 /* ── CONTACT MODAL ── */
             .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
             .form-row { grid-template-columns: 1fr; }
@@ -265,8 +299,15 @@ h2{font-size:1.1rem}
         .lang-switch .lang-link:hover{color:var(--green-accent)}
         .lang-switch .lang-link[aria-current="true"]{color:var(--green-secondary)}
         .lang-switch .lang-sep{color:var(--border);font-size:0.9rem}
-        </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
-    <link rel="stylesheet" href="/assets/brand/accessibility.css">
+        /* Verder lezen (interne linkbuilding) */
+.related-links{margin:2.5rem 0 1rem;padding:1.6rem 2rem;background:#F5F7F2;border:1px solid #D4DDD0;border-radius:16px;display:flex;gap:0.9rem;flex-wrap:wrap;align-items:center}
+.related-links .section-label{margin:0;flex-basis:100%}
+.related-links .btn{margin:0}
+
+/* Dropdown: open-state toont het paneel ook zonder hover (alle apparaten) */
+.nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
+</style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
+    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
 </head>
 <body>
 
@@ -274,7 +315,7 @@ h2{font-size:1.1rem}
         
 <nav>
     <div class="container">
-        <a href="index.html" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
+        <a href="/" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
             <svg class="nav-logo-icon" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <defs>
                     <linearGradient id="lemnion-mark-774939" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -293,57 +334,76 @@ h2{font-size:1.1rem}
                 <span class="nav-logo-desc">Hospitality Energy Solutions</span>
             </span>
         </a>
-        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
+        <script>
+/* Scroll-lock die de scrollpositie bewaart (geen sprong naar boven op iOS) */
+var __lemLockY = 0;
+function lockScroll(on) {
+    if (on) {
+        __lemLockY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + __lemLockY + 'px';
+        document.body.style.left = '0';
+        document.body.style.width = '100%';
+    } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.width = '';
+        window.scrollTo(0, __lemLockY);
+    }
+}
+</script>
+<button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');lockScroll(false)}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');lockScroll(true)}">
             <span></span><span></span><span></span>
         </button>
                         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.oplossingen" href="oplossingen.html">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="/oplossingen">Oplossingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.oplossingen_h">Oplossingen</h4>
-                        <a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a>
-                        <a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a>
-                        <a data-i18n="nav.maxbelasting" href="maximum-belasting.html">Maximum belasting</a>
-                        <a data-i18n="nav.stroomoverschot" href="stroom-overschot.html">Stroom (zon) overschot</a>
-                        <a data-i18n="nav.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Oplossingen</a></h4>
+                        <a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a>
+                        <a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a>
+                        <a data-i18n="nav.maxbelasting" href="/maximum-belasting">Maximum belasting</a>
+                        <a data-i18n="nav.stroomoverschot" href="/stroom-overschot">Stroom (zon) overschot</a>
+                        <a data-i18n="nav.stroomuitval" href="/stroomuitval-noodaggregaat">Stroomuitval / noodaggregaat</a>
                     </div>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.voordelen" href="voordelen.html">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="/voordelen">Voordelen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.voordelen_h">Voordelen</h4>
-                        <a data-i18n="nav.usp" href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a>
-                        <a data-i18n="nav.configurator" href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a data-i18n="nav.vergelijk" href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <h4><a data-i18n="nav.voordelen_h" href="/voordelen">Voordelen</a></h4>
+                        <a data-i18n="nav.usp" href="/usp-veiligheid">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a>
+                        <a data-i18n="nav.configurator" href="/configurator">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="producten.html">Producten</a></li>
-            <li><a data-i18n="nav.subsidies" href="subsidies.html">Subsidies</a></li>
-            <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
+            <li><a data-i18n="nav.producten" href="/producten">Producten</a></li>
+            <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
+            <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.nieuws" href="nieuws.html">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="/nieuws">Nieuws ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.nieuws_h">Nieuws</h4>
-                        <a data-i18n="nav.nieuws_all" href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
-                        <a data-i18n="nav.blog" href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                        <h4><a data-i18n="nav.nieuws_h" href="/nieuws">Nieuws</a></h4>
+                        <a data-i18n="nav.nieuws_all" href="/nieuws">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a data-i18n="nav.blog" href="/blog">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.contact" href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li><a data-i18n="nav.contact" href="/#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
             <li class="lang-switch" aria-label="Taal / Language">
-                <a href="/nieuws.html" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
+                <a href="/nieuws" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
                 <span class="lang-sep" aria-hidden="true">/</span>
-                <a href="/en/nieuws.html" class="lang-link" lang="en" hreflang="en">EN</a>
+                <a href="/en/news" class="lang-link" lang="en" hreflang="en">EN</a>
             </li>
         </ul>
     </div>
@@ -353,37 +413,37 @@ h2{font-size:1.1rem}
 
 <div class="page-header" id="content">
     <h1 data-i18n="nieuws.h1">Nieuws & Ontwikkelingen</h1>
-    <p data-i18n="nieuws.intro">Dagelijks bijgewerkt. Links algemeen energienieuws, rechts hotelspecifiek nieuws</p>
+    <p data-i18n="nieuws.intro" style="max-width:780px;margin:0.75rem auto 0;">Dagelijks bijgewerkt. Links: algemeen energienieuws voor hotels - <a href="/subsidies">subsidies</a> (EIA, ISDE, SPRILA), laadinfrastructuur, batterijopslag en netcongestie. Rechts: hotelspecifiek nieuws over energiekosten en <a href="/verduurzamen">verduurzaming</a>.</p>
 </div>
 <div class="container">
     <div class="news-layout">
         <div class="news-column">
             <h2><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-4px;margin-right:0.4rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg><span data-i18n="nieuws.algemeen-h2">Algemeen</span></h2>
             <div class="news-grid" id="newsGeneral">
-                <!-- AUTO-UPDATED BY CRON | 2026-08-21 -->
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-prijzen" class="tag tag-subsidy">Energieprijzen</span>
-                    <h3><a data-i18n="nieuws.s14t" href="https://businessam.be/europese-gasmarkt-wankelt-prijzen-stijgen-120-procent-en-winterreserves-slinken/">Europese gasmarkt wankelt: prijzen stijgen 120 procent, winterreserves slinken</a></h3>
-                    <p data-i18n="nieuws.s14p">De Europese gasprijzen zijn in korte tijd met 120 procent gestegen en de winterreserves slinken sneller dan verwacht. Voor hotels hét signaal om energiecontracten nu tegen het licht te houden, vóór de winterpiek begint.</p>
-                    <p class="source"><a data-i18n="nieuws.s14src" href="https://businessam.be/europese-gasmarkt-wankelt-prijzen-stijgen-120-procent-en-winterreserves-slinken/">Bron: Business AM, 20 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-laadinfra" class="tag tag-battery">Laadinfrastructuur</span>
-                    <h3><a data-i18n="nieuws.s15t" href="https://autobahn.eu/artikel/693667/nederland-china-laadnet-snelladers">Nederland staat vol laadpalen, maar in China werkt opladen volgens een heel ander principe</a></h3>
-                    <p data-i18n="nieuws.s15p">Nederland telt meer laadpalen dan ooit, maar China kiest voor een ander concept: grote laadstations met snelladers in plaats van palen op straat. Een interessante vergelijking voor hotels die de laadervaring van hun gasten willen verbeteren.</p>
-                    <p class="source"><a data-i18n="nieuws.s15src" href="https://autobahn.eu/artikel/693667/nederland-china-laadnet-snelladers">Bron: autobahn.eu, 19 augustus 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-subsidie" class="tag tag-subsidy">Subsidie</span>
-                    <h3><a data-i18n="nieuws.s16t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44514/de-harde-cijfers-aangevraagde-isde-subsidie-bereikt-in-juli-hoogste-punt-van-2026">De harde cijfers | Aangevraagde ISDE-subsidie bereikt in juli hoogste punt van 2026</a></h3>
-                    <p data-i18n="nieuws.s16p">Juli was de beste ISDE-maand van 2026: particulieren vroegen 37 miljoen euro subsidie aan en het zakelijk aangevraagde bedrag voor warmtepompen verdubbelde bijna. Ook voor hotels die willen verduurzamen: de regeling loopt volop.</p>
-                    <p class="source"><a data-i18n="nieuws.s16src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44514/de-harde-cijfers-aangevraagde-isde-subsidie-bereikt-in-juli-hoogste-punt-van-2026">Bron: Solar &amp; Storage Magazine, 15 augustus 2026</a></p>
-                </div>
+                <!-- AUTO-UPDATED BY CRON | 2026-08-20 -->
                 <div class="news-card">
                     <span data-i18n="nieuws.tag-batterij" class="tag tag-battery">Batterijopslag</span>
                     <h3><a data-i18n="nieuws.u1t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44552/omzet-alfen-groeit-bijna-een-kwart-dankzij-batterijen-en-smart-grids">Omzet Alfen groeit bijna een kwart dankzij batterijen en smart grids</a></h3>
                     <p data-i18n="nieuws.u1p">Alfen boekte in de eerste helft van 2026 een omzetgroei van 23,6 procent naar €261,5 miljoen. De groei in energieopslag en smart grids compenseert de teruglopende verkoop van laadpalen — een signaal dat batterijopslag voor bedrijven volwassen wordt.</p>
                     <p class="source"><a data-i18n="nieuws.u1src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44552/omzet-alfen-groeit-bijna-een-kwart-dankzij-batterijen-en-smart-grids">Bron: Solar &amp; Storage Magazine, 20 augustus 2026</a></p>
+                </div>
+                <div class="news-card">
+                    <span data-i18n="nieuws.tag-batterij" class="tag tag-battery">Batterijopslag</span>
+                    <h3><a data-i18n="nieuws.u2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44556/ecoflow-lanceert-thuisbatterij-stream-ac-5000-voor-nederlandse-huishoudens-die-al-zonnepanelen-hebben">EcoFlow lanceert thuisbatterij STREAM AC 5000 voor bestaande zonnepanelen</a></h3>
+                    <p data-i18n="nieuws.u2p">EcoFlow brengt de AC-gekoppelde thuisbatterij STREAM AC 5000 naar Nederland, ontworpen om toe te voegen aan bestaande zonnepaneelinstallaties. Het systeem werkt samen met de huidige omvormer en P1-meter, zonder ingrijpende ombouw.</p>
+                    <p class="source"><a data-i18n="nieuws.u2src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44556/ecoflow-lanceert-thuisbatterij-stream-ac-5000-voor-nederlandse-huishoudens-die-al-zonnepanelen-hebben">Bron: Solar &amp; Storage Magazine, 20 augustus 2026</a></p>
+                </div>
+                <div class="news-card">
+                    <span data-i18n="nieuws.tag-batterij" class="tag tag-battery">Batterijopslag</span>
+                    <h3><a data-i18n="nieuws.u3t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44550/energieopslagbedrijven-halen-bijna-9-miljard-dollar-kapitaal-op-in-eerste-helft-2026">Energieopslagsector haalt bijna $9 miljard op in eerste helft 2026</a></h3>
+                    <p data-i18n="nieuws.u3p">Bedrijven in de energieopslagsector haalden in de eerste zes maanden van 2026 wereldwijd $8,9 miljard aan kapitaal op, blijkt uit cijfers van Mercom Capital Group. Het onderstreept het momentum achter batterijopslag als kern van de energietransitie.</p>
+                    <p class="source"><a data-i18n="nieuws.u3src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44550/energieopslagbedrijven-halen-bijna-9-miljard-dollar-kapitaal-op-in-eerste-helft-2026">Bron: Solar &amp; Storage Magazine, 20 augustus 2026</a></p>
+                </div>
+                <div class="news-card">
+                    <span data-i18n="nieuws.tag-subsidie" class="tag tag-subsidy">Subsidie</span>
+                    <h3><a data-i18n="nieuws.u4t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44549/gemeenten-krijgen-197-miljoen-voor-verbeteren-leefkwaliteit-bij-nieuwe-stroomstations">Kabinet trekt €197 miljoen uit voor gemeenten rond nieuwe stroomstations</a></h3>
+                    <p data-i18n="nieuws.u4p">Gemeenten rond uitbreidingen van het hoogspanningsnet kunnen aanspraak maken op bijna €197 miljoen voor leefkwaliteit en omgevingsmaatregelen. Aanvragen kan vanaf 15 oktober; de eerste uitkeringen volgen begin 2027.</p>
+                    <p class="source"><a data-i18n="nieuws.u4src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44549/gemeenten-krijgen-197-miljoen-voor-verbeteren-leefkwaliteit-bij-nieuwe-stroomstations">Bron: Solar &amp; Storage Magazine, 20 augustus 2026</a></p>
                 </div>
                 <div class="news-card">
                     <span data-i18n="nieuws.tag-laadinfra" class="tag tag-battery">Laadinfrastructuur</span>
@@ -398,188 +458,159 @@ h2{font-size:1.1rem}
                     <p class="source"><a data-i18n="nieuws.u6src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44554/staatssecretaris-de-bat-stroomstoring-tilburg-bewijst-niets-over-toestand-stroomnet">Bron: Solar &amp; Storage Magazine, 20 augustus 2026</a></p>
                 </div>
                 <div class="news-card">
-                    <span data-i18n="nieuws.tag-subsidie" class="tag tag-subsidy">Subsidie</span>
-                    <h3><a data-i18n="nieuws.n2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44534/energiebedrijf-moet-verborgen-terugleverkosten-terugbetalen-aan-eigenaar-zonnepanelen">Energiebedrijf moet verborgen terugleverkosten terugbetalen aan zonnepaneel-eigenaar</a></h3>
-                    <p data-i18n="nieuws.n2p">De Geschillencommissie Energie oordeelt dat terugleverkosten die in de kleine lettertjes stonden niet rechtsgeldig zijn. Een energiebedrijf moet de kosten terugbetalen. Voor hotels met zonnepanelen een signaal om het contract na te lopen op onterechte terugleverkosten.</p>
-                    <p class="source"><a data-i18n="nieuws.n2src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44534/energiebedrijf-moet-verborgen-terugleverkosten-terugbetalen-aan-eigenaar-zonnepanelen">Bron: Solar &amp; Storage Magazine, 18 augustus 2026</a></p>
+                    <span data-i18n="nieuws.tag-batterij" class="tag tag-battery">Batterijopslag</span>
+                    <h3><a data-i18n="nieuws.n1t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44536/qurmit-lanceert-nieuwe-thuisbatterijen-met-opslagcapaciteit-tot-101-kilowattuur">Qurmit lanceert vier nieuwe batterijen met opslag tot 101 kWh</a></h3>
+                    <p data-i18n="nieuws.n1p">De Nederlandse fabrikant Qurmit brengt vier nieuwe modellen op de markt met opslagcapaciteiten van 57 tot 101 kWh. De loodgelaccu's zijn niet-ontvlambaar en vallen daardoor buiten de PGS 37-veiligheidsregels — een interessante optie voor hotels die netcongestie willen omzeilen zonder zware brandveiligheidseisen.</p>
+                    <p class="source"><a data-i18n="nieuws.n1src" href="https://solarmagazine.nl/nieuws-zonne-energie/i44536/qurmit-lanceert-nieuwe-thuisbatterijen-met-opslagcapaciteit-tot-101-kilowattuur">Bron: Solar &amp; Storage Magazine, 19 augustus 2026</a></p>
                 </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <div class="news-archive">
                     <h3 data-i18n="nieuws.ouder-h3">Ouder nieuws</h3>
                     <ul>
-                        <li>
-                            <a data-i18n="nieuws.u2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44556/ecoflow-lanceert-thuisbatterij-stream-ac-5000-voor-nederlandse-huishoudens-die-al-zonnepanelen-hebben">EcoFlow lanceert thuisbatterij STREAM AC 5000 voor bestaande zonnepanelen</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44556/ecoflow-lanceert-thuisbatterij-stream-ac-5000-voor-nederlandse-huishoudens-die-al-zonnepanelen-hebben">Solar &amp; Storage Magazine, 20-08-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.u3t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44550/energieopslagbedrijven-halen-bijna-9-miljard-dollar-kapitaal-op-in-eerste-helft-2026">Energieopslagsector haalt bijna $9 miljard op in eerste helft 2026</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44550/energieopslagbedrijven-halen-bijna-9-miljard-dollar-kapitaal-op-in-eerste-helft-2026">Solar &amp; Storage Magazine, 20-08-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.u4t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44549/gemeenten-krijgen-197-miljoen-voor-verbeteren-leefkwaliteit-bij-nieuwe-stroomstations">Kabinet trekt €197 miljoen uit voor gemeenten rond nieuwe stroomstations</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44549/gemeenten-krijgen-197-miljoen-voor-verbeteren-leefkwaliteit-bij-nieuwe-stroomstations">Solar &amp; Storage Magazine, 20-08-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.n1t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44536/qurmit-lanceert-nieuwe-thuisbatterijen-met-opslagcapaciteit-tot-101-kilowattuur">Qurmit lanceert vier nieuwe batterijen met opslag tot 101 kWh</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44536/qurmit-lanceert-nieuwe-thuisbatterijen-met-opslagcapaciteit-tot-101-kilowattuur">Solar &amp; Storage Magazine, 19-08-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.n3t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44533/nieuw-record-zonnepanelen-dekken-10-procent-wereldwijd-stroomverbruik">Zonnepanelen dekken voor het eerst 10 procent van de wereldwijde stroomvraag</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44533/nieuw-record-zonnepanelen-dekken-10-procent-wereldwijd-stroomverbruik">Solar &amp; Storage Magazine, 18-08-2026</a></span>
-                        </li>
-                        <li>
+<li data-tag="nieuws.tag-energiebeleid">
                             <a data-i18n="nieuws.n4t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44540/energiesector-pleit-voor-sterke-nationale-investeringsinstelling">Energiesector pleit voor sterke Nationale Investeringsinstelling</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44540/energiesector-pleit-voor-sterke-nationale-investeringsinstelling">Solar &amp; Storage Magazine, 19-08-2026</a></span>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44540/energiesector-pleit-voor-sterke-nationale-investeringsinstelling">Solar & Storage Magazine, 19-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-batterij">
                             <a data-i18n="nieuws.n5t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44543/belgische-regulator-schrapt-definitief-vrijstelling-grote-batterijen-van-nettarieven">Belgische regulator schrapt definitief nettarief-vrijstelling voor grote batterijen</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44543/belgische-regulator-schrapt-definitief-vrijstelling-grote-batterijen-van-nettarieven">Solar &amp; Storage Magazine, 19-08-2026</a></span>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44543/belgische-regulator-schrapt-definitief-vrijstelling-grote-batterijen-van-nettarieven">Solar & Storage Magazine, 19-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-subsidie">
+                            <a data-i18n="nieuws.n2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44534/energiebedrijf-moet-verborgen-terugleverkosten-terugbetalen-aan-eigenaar-zonnepanelen">Energiebedrijf moet verborgen terugleverkosten terugbetalen aan zonnepaneel-eigenaar</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44534/energiebedrijf-moet-verborgen-terugleverkosten-terugbetalen-aan-eigenaar-zonnepanelen">Solar & Storage Magazine, 18-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-zonnepanelen">
+                            <a data-i18n="nieuws.n3t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44533/nieuw-record-zonnepanelen-dekken-10-procent-wereldwijd-stroomverbruik">Zonnepanelen dekken voor het eerst 10 procent van de wereldwijde stroomvraag</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44533/nieuw-record-zonnepanelen-dekken-10-procent-wereldwijd-stroomverbruik">Solar & Storage Magazine, 18-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-batterij">
                             <a data-i18n="nieuws.n6t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44528/plug-in-thuisbatterij-in-belgie-prima-product-gebrek-aan-regulerend-kader">Plug-in thuisbatterij: prima product, maar gebrek aan regels</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44528/plug-in-thuisbatterij-in-belgie-prima-product-gebrek-aan-regulerend-kader">Solar &amp; Storage Magazine, 18-08-2026</a></span>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44528/plug-in-thuisbatterij-in-belgie-prima-product-gebrek-aan-regulerend-kader">Solar & Storage Magazine, 18-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-subsidie">
                             <a data-i18n="nieuws.s1t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44507/einde-subsidie-jaagt-zakelijke-zonnepanelen-vroegtijdig-van-het-dak">Einde SDE-subsidie jaagt zakelijke zonnepanelen vroegtijdig van het dak</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44507/einde-subsidie-jaagt-zakelijke-zonnepanelen-vroegtijdig-van-het-dak">Solar &amp; Storage Magazine, 14-08-2026</a></span>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44507/einde-subsidie-jaagt-zakelijke-zonnepanelen-vroegtijdig-van-het-dak">Solar & Storage Magazine, 14-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-subsidie">
                             <a data-i18n="nieuws.s2t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44490/zuid-holland-lanceert-actieplan-voor-meer-zon-op-dak-subsidie-voor-circulaire-zonnepanelen">Zuid-Holland lanceert actieplan voor meer zon op dak, subsidie voor circulaire zonnepanelen</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44490/zuid-holland-lanceert-actieplan-voor-meer-zon-op-dak-subsidie-voor-circulaire-zonnepanelen">Solar &amp; Storage Magazine, 13-08-2026</a></span>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44490/zuid-holland-lanceert-actieplan-voor-meer-zon-op-dak-subsidie-voor-circulaire-zonnepanelen">Solar & Storage Magazine, 13-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-prijzen">
                             <a data-i18n="nieuws.s3t" href="https://www.denieuwsbode.nl/nieuws/zakelijk-nieuws-landelijk/1298973/grip-op-je-energierekening-in-zeist-begint-met-goed-vergelijken">Grip op je energierekening in Zeist begint met goed vergelijken</a>
                             <span class="archive-source"><a href="https://www.denieuwsbode.nl/nieuws/zakelijk-nieuws-landelijk/1298973/grip-op-je-energierekening-in-zeist-begint-met-goed-vergelijken">De Nieuwsbode, 06-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-laadinfra">
                             <a data-i18n="nieuws.s4t" href="https://www.autovisie.nl/nieuws/laadpaal-met-blokkeertarief-binnenkort-mogelijk-verleden-tijd-evs-moeten-juist-langer-aan-de-paal-hangen/">Blokkeertarief bij laadpalen mogelijk verleden tijd: EV's moeten juist langer laden</a>
                             <span class="archive-source"><a href="https://www.autovisie.nl/nieuws/laadpaal-met-blokkeertarief-binnenkort-mogelijk-verleden-tijd-evs-moeten-juist-langer-aan-de-paal-hangen/">Autovisie, 05-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.s5t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iv">Europese EPBD IV-richtlijn scherpt energieprestatie-eisen voor gebouwen aan</a>
                             <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iv">RVO.nl, 04-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-prijzen">
                             <a data-i18n="nieuws.s6t" href="https://www.autogids.be/autonieuws/mobiliteit/hogere-verplaatsingskosten-door-stijging-energieprijzen-compenseren-werkgevers-hun-personeel.html">Stijgende energieprijzen drijven verplaatsingskosten op: compenseren werkgevers?</a>
                             <span class="archive-source"><a href="https://www.autogids.be/autonieuws/mobiliteit/hogere-verplaatsingskosten-door-stijging-energieprijzen-compenseren-werkgevers-hun-personeel.html">AutoGids, 31-07-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-laadinfra">
                             <a data-i18n="nieuws.s7t" href="https://www.autovisie.nl/nieuws/met-elektrische-auto-op-vakantie-pas-op-voor-extreme-laadtarieven-500-euro-voor-een-laadbeurt/">Met de EV op vakantie? Pas op voor extreme laadtarieven: €500 per laadbeurt</a>
                             <span class="archive-source"><a href="https://www.autovisie.nl/nieuws/met-elektrische-auto-op-vakantie-pas-op-voor-extreme-laadtarieven-500-euro-voor-een-laadbeurt/">Autovisie, 22-07-2026</a></span>
                         </li>
-                        <li>
-                            <a data-i18n="nieuws.s8t" href="https://www.change.inc/transities/energie-transitie/dit-bedrijf-bespaart-extreem-veel-stroom-met-contactloze-magneetkoppeling-voor-industriele-pompen">Zytec bespaart veel stroom met contactloze magneetkoppeling voor pompen</a>
-                            <span class="archive-source"><a href="https://www.change.inc/transities/energie-transitie/dit-bedrijf-bespaart-extreem-veel-stroom-met-contactloze-magneetkoppeling-voor-industriele-pompen">Change Inc., 20-07-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.s9t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44317/negatieve-energieprijzen-in-belgie-prosumenten-moeten-echte-flexumers-worden">Negatieve energieprijzen in België: prosumenten moeten echte flexumers worden</a>
-                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44317/negatieve-energieprijzen-in-belgie-prosumenten-moeten-echte-flexumers-worden">Solar &amp; Storage Magazine, 17-07-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.s10t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">EPBD-III verplicht laadinfrastructuur bij utiliteitsgebouwen, ook voor hotels</a>
-                            <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">RVO.nl, 17-07-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.s11t" href="https://www.duurzaam-ondernemen.nl/recycling-van-li-ion-batterijen-in-nederland-grote-ambities-kleine-volumes/">Recycling Li-ion batterijen in Nederland: grote ambities, kleine volumes</a>
-                            <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/recycling-van-li-ion-batterijen-in-nederland-grote-ambities-kleine-volumes/">Duurzaam Ondernemen, 16-07-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.s12t" href="https://www.nu.nl/economie/6403197/duitse-regering-trekt-miljarden-uit-voor-energiesteun-voor-inwoners-en-bedrijven.html">Duitse regering trekt miljarden uit voor energiesteun aan bedrijven</a>
-                            <span class="archive-source"><a href="https://www.nu.nl/economie/6403197/duitse-regering-trekt-miljarden-uit-voor-energiesteun-voor-inwoners-en-bedrijven.html">NU.nl, 15-07-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.s13t" href="https://www.ewmagazine.nl/economie/achtergrond/2026/07/salderingsregeling-zonnepanelen-2027-eerste-kamer-akkoord-bidirectioneel-laden-stedin-pro-renault-kamervragen-1577873/">Salderingsregeling stopt in 2027: Kamer zet in op bidirectioneel laden</a>
-                            <span class="archive-source"><a href="https://www.ewmagazine.nl/economie/achtergrond/2026/07/salderingsregeling-zonnepanelen-2027-eerste-kamer-akkoord-bidirectioneel-laden-stedin-pro-renault-kamervragen-1577873/">EWmagazine.nl, 09-07-2026</a></span>
-                        </li>
-
-                        <li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.a1" href="https://www.duurzaam-ondernemen.nl/europese-commissie-keurt-een-nederlandse-staatssteunregeling-van-e-780-miljoen-goed-ter-ondersteuning-van-de-productie-van-hernieuwbare-waterstof/">EU keurt €780 miljoen Nederlandse staatssteun voor waterstof goed</a>
                             <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/europese-commissie-keurt-een-nederlandse-staatssteunregeling-van-e-780-miljoen-goed-ter-ondersteuning-van-de-productie-van-hernieuwbare-waterstof/">Duurzaam Ondernemen, 06-08-2026</a></span>
                         </li>
-                        <li>
-                            <a data-i18n="nieuws.a2" href="https://www.change.inc/energie/nieuwsupdate-shell-verkoopt-alle-europese-zonne-en-windparken-op-land-en-zonne-energie-breekt-ongemerkt-record">Shell verkoopt álle Europese zonne- en windparken op land</a>
-                            <span class="archive-source"><a href="https://www.change.inc/energie/nieuwsupdate-shell-verkoopt-alle-europese-zonne-en-windparken-op-land-en-zonne-energie-breekt-ongemerkt-record">Change Inc., 04-08-2026</a></span>
-                        </li>
-                        <li>
-                            <a data-i18n="nieuws.a3" href="https://www.change.inc/mobiliteit/de-race-om-de-solid-state-batterij-is-losgebarsten-deze-autofabrikanten-strijden-om-de-hoofdprijs">Race om solid-state batterij losgebarsten: autofabrikanten strijden om hoofdprijs</a>
-                            <span class="archive-source"><a href="https://www.change.inc/mobiliteit/de-race-om-de-solid-state-batterij-is-losgebarsten-deze-autofabrikanten-strijden-om-de-hoofdprijs">Change Inc., 03-08-2026</a></span>
-                        </li>
-                        <li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.a4" href="https://www.duurzaam-ondernemen.nl/coalitie-pleit-voor-nii-investeringen-in-klimaat-energie-en-circulariteit/">Coalitie pleit voor forse NII-investeringen in klimaat en energie</a>
                             <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/coalitie-pleit-voor-nii-investeringen-in-klimaat-energie-en-circulariteit/">Duurzaam Ondernemen, 06-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-laadinfra">
                             <a data-i18n="nieuws.a5" href="https://www.change.inc/transities/mobiliteit-transitie/5-positieve-trends-die-de-groei-van-elektrisch-rijden-laten-zien">5 positieve trends die de groei van elektrisch rijden laten zien</a>
                             <span class="archive-source"><a href="https://www.change.inc/transities/mobiliteit-transitie/5-positieve-trends-die-de-groei-van-elektrisch-rijden-laten-zien">Change Inc., 06-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-laadinfra">
                             <a data-i18n="nieuws.a6" href="https://www.duurzaam-ondernemen.nl/elektrische-vakantierijder-komt-laadstress-nauwelijks-tegen-twee-derde-vindt-onderweg-eenvoudig-een-laadplek/">Elektrische vakantierijder ervaart nauwelijks laadstress: laadnetwerk dekkend</a>
                             <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/elektrische-vakantierijder-komt-laadstress-nauwelijks-tegen-twee-derde-vindt-onderweg-eenvoudig-een-laadplek/">Duurzaam Ondernemen, 06-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.a2" href="https://www.change.inc/energie/nieuwsupdate-shell-verkoopt-alle-europese-zonne-en-windparken-op-land-en-zonne-energie-breekt-ongemerkt-record">Shell verkoopt álle Europese zonne- en windparken op land</a>
+                            <span class="archive-source"><a href="https://www.change.inc/energie/nieuwsupdate-shell-verkoopt-alle-europese-zonne-en-windparken-op-land-en-zonne-energie-breekt-ongemerkt-record">Change Inc., 04-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-batterij">
                             <a data-i18n="nieuws.a7" href="https://www.change.inc/transities/energie-transitie/de-ijzer-luchtbatterij-van-ore-energy-levert-wel-honderd-uur-stroom-dat-is-cruciaal-om-groene-stroom-effectief-te-benutten">€38 miljoen voor ijzer-luchtbatterij van Ore Energy</a>
                             <span class="archive-source"><a href="https://www.change.inc/transities/energie-transitie/de-ijzer-luchtbatterij-van-ore-energy-levert-wel-honderd-uur-stroom-dat-is-cruciaal-om-groene-stroom-effectief-te-benutten">Change Inc., 04-08-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-batterij">
                             <a data-i18n="nieuws.a8" href="https://www.entreemagazine.nl/ondernemen/horecaondernemers-omzeilen-vol-stroomnet-met-eigen-batterijopslag">Energieopslag helpt Dordtse ondernemers door netcongestie heen</a>
                             <span class="archive-source">DordtCentraal, 04-08-2026</span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-batterij">
+                            <a data-i18n="nieuws.a3" href="https://www.change.inc/mobiliteit/de-race-om-de-solid-state-batterij-is-losgebarsten-deze-autofabrikanten-strijden-om-de-hoofdprijs">Race om solid-state batterij losgebarsten: autofabrikanten strijden om hoofdprijs</a>
+                            <span class="archive-source"><a href="https://www.change.inc/mobiliteit/de-race-om-de-solid-state-batterij-is-losgebarsten-deze-autofabrikanten-strijden-om-de-hoofdprijs">Change Inc., 03-08-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.a9" href="https://www.bnr.nl/nieuws/duurzaamheid/10567890/netbeheer-nederland-overspoeld-met-aanvragen-vijf-keer-zoveel-op-wachtlijst">Netbeheer Nederland overspoeld met aanvragen: vijf keer zoveel op wachtlijst</a>
                             <span class="archive-source"><a href="https://www.bnr.nl/nieuws/duurzaamheid/10567890/netbeheer-nederland-overspoeld-met-aanvragen-vijf-keer-zoveel-op-wachtlijst">BNR.nl, 24-07-2026</a></span>
                         </li>
-                        <li>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.s8t" href="https://www.change.inc/transities/energie-transitie/dit-bedrijf-bespaart-extreem-veel-stroom-met-contactloze-magneetkoppeling-voor-industriele-pompen">Zytec bespaart veel stroom met contactloze magneetkoppeling voor pompen</a>
+                            <span class="archive-source"><a href="https://www.change.inc/transities/energie-transitie/dit-bedrijf-bespaart-extreem-veel-stroom-met-contactloze-magneetkoppeling-voor-industriele-pompen">Change Inc., 20-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.s9t" href="https://solarmagazine.nl/nieuws-zonne-energie/i44317/negatieve-energieprijzen-in-belgie-prosumenten-moeten-echte-flexumers-worden">Negatieve energieprijzen in België: prosumenten moeten echte flexumers worden</a>
+                            <span class="archive-source"><a href="https://solarmagazine.nl/nieuws-zonne-energie/i44317/negatieve-energieprijzen-in-belgie-prosumenten-moeten-echte-flexumers-worden">Solar & Storage Magazine, 17-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
+                            <a data-i18n="nieuws.s10t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">EPBD-III verplicht laadinfrastructuur bij utiliteitsgebouwen, ook voor hotels</a>
+                            <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">RVO.nl, 17-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-batterij">
+                            <a data-i18n="nieuws.s11t" href="https://www.duurzaam-ondernemen.nl/recycling-van-li-ion-batterijen-in-nederland-grote-ambities-kleine-volumes/">Recycling Li-ion batterijen in Nederland: grote ambities, kleine volumes</a>
+                            <span class="archive-source"><a href="https://www.duurzaam-ondernemen.nl/recycling-van-li-ion-batterijen-in-nederland-grote-ambities-kleine-volumes/">Duurzaam Ondernemen, 16-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-subsidie">
+                            <a data-i18n="nieuws.s12t" href="https://www.nu.nl/economie/6403197/duitse-regering-trekt-miljarden-uit-voor-energiesteun-voor-inwoners-en-bedrijven.html">Duitse regering trekt miljarden uit voor energiesteun aan bedrijven</a>
+                            <span class="archive-source"><a href="https://www.nu.nl/economie/6403197/duitse-regering-trekt-miljarden-uit-voor-energiesteun-voor-inwoners-en-bedrijven.html">NU.nl, 15-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
+                            <a data-i18n="nieuws.s13t" href="https://www.ewmagazine.nl/economie/achtergrond/2026/07/salderingsregeling-zonnepanelen-2027-eerste-kamer-akkoord-bidirectioneel-laden-stedin-pro-renault-kamervragen-1577873/">Salderingsregeling stopt in 2027: Kamer zet in op bidirectioneel laden</a>
+                            <span class="archive-source"><a href="https://www.ewmagazine.nl/economie/achtergrond/2026/07/salderingsregeling-zonnepanelen-2027-eerste-kamer-akkoord-bidirectioneel-laden-stedin-pro-renault-kamervragen-1577873/">EWmagazine.nl, 09-07-2026</a></span>
+                        </li>
+<li data-tag="nieuws.tag-regelgeving">
                             <a data-i18n="nieuws.a10" href="https://www.bnr.nl/nieuws/economie/10567789/buitenlandse-bedrijven-mijden-nederland-door-dreiging-netcongestie">Buitenlandse bedrijven mijden Nederland door dreiging netcongestie</a>
                             <span class="archive-source"><a href="https://www.bnr.nl/nieuws/economie/10567789/buitenlandse-bedrijven-mijden-nederland-door-dreiging-netcongestie">BNR.nl, 06-07-2026</a></span>
                         </li>
-                        <li>
-                            <a data-i18n="nieuws.a11" href="https://www.duurzaam-ondernemen.nl/defensie-en-ai-zetten-nederlandse-ems-bedrijven-op-scherp">Defensie en AI zetten Nederlandse EMS-bedrijven op scherp</a>
+<li data-tag="nieuws.tag-prijzen">
+                            <a data-i18n="nieuws.a11" href="https://linkmagazine.nl/defensie-en-ai-zetten-nederlandse-ems-bedrijven-op-scherp/">Defensie en AI zetten Nederlandse EMS-bedrijven op scherp</a>
                             <span class="archive-source">Link Magazine, 17-06-2026</span>
                         </li>
-                        <li>
-                            <a data-i18n="nieuws.a12" href="https://www.rvo.nl/onderwerpen/investeren-in-duurzame-energie">Bedrijven investeren opnieuw bijna €4 miljard in duurzame technieken in 2025</a>
-                            <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/investeren-in-duurzame-energie">RVO.nl, 13-05-2026</a></span>
-                        </li>
-                        <li>
+
+<li data-tag="nieuws.tag-batterij">
                             <a data-i18n="nieuws.a13" href="https://www.rvo.nl/onderwerpen/energieopslag">Onderzoek: overbelast elektriciteitsnet biedt kansen voor batterijopslag</a>
                             <span class="archive-source"><a href="https://www.rvo.nl/onderwerpen/energieopslag">RVO.nl, 01-05-2026</a></span>
-                        </li>
-                    </ul>
+                        </li></ul>
                 </div>
             </div>
         </div>
         <div class="news-column">
             <h2><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-4px;margin-right:0.4rem;"><path d="M3 21h18"/><path d="M3 7v1a4 4 0 0 0 8 0V7"/><path d="M13 7v1a4 4 0 0 0 8 0V7"/><rect x="1" y="9" width="22" height="12" rx="2"/></svg><span data-i18n="nieuws.hotels-h2">Hotels</span></h2>
             <div class="news-grid" id="newsHotels">
-                <!-- AUTO-UPDATED BY CRON | 2026-08-21 -->
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
-                    <h3><a data-i18n="nieuws.h8t" href="https://www.ed.nl/eindhoven/eindhovens-woonhotel-the-social-hub-krijgt-na-jaren-vertraging-eindelijk-zijn-energiefabriek-op-het-dak~a832bd5f/">Eindhovens woonhotel The Social Hub krijgt na jaren vertraging eindelijk zijn 'energiefabriek' op het dak</a></h3>
-                    <p data-i18n="nieuws.h8p">Na jaren vertraging krijgt woonhotel The Social Hub in Eindhoven eindelijk zijn 'energiefabriek' op het dak. Een voorbeeld van hoe hotelvastgoed met eigen opwek de energiekosten structureel aanpakt — al laat het ook zien dat zulke trajecten tijd kosten.</p>
-                    <p class="source"><a data-i18n="nieuws.h8src" href="https://www.ed.nl/eindhoven/eindhovens-woonhotel-the-social-hub-krijgt-na-jaren-vertraging-eindelijk-zijn-energiefabriek-op-het-dak~a832bd5f/">Bron: Eindhovens Dagblad, 17 augustus 2026</a></p>
-                </div>
+                <!-- AUTO-UPDATED BY CRON | 2026-08-14 -->
                 <div class="news-card">
                     <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
                     <h3><a data-i18n="nieuws.h1t" href="https://www.deondernemer.nl/innovatie/energietransitie/bouwbedrijf-hendriks-oss-enexis-stroomaansluiting-bedrijfspanden-netcongestie~7b78a9b">Ondernemers in Oss slaan stroom op in megabatterij en maken ruimte vrij op overvol stroomnet</a></h3>
                     <p data-i18n="nieuws.h1p">Ondernemers in Oss zetten een megabatterij in om collectief de netcongestie te lijf te gaan. Door lokaal stroom op te slaan houden ze ruimte over op het overvolle stroomnet. Een schoolvoorbeeld van hoe bedrijventerreinen en hotels het heft in eigen handen kunnen nemen.</p>
                     <p class="source"><a data-i18n="nieuws.h1src" href="https://www.deondernemer.nl/innovatie/energietransitie/bouwbedrijf-hendriks-oss-enexis-stroomaansluiting-bedrijfspanden-netcongestie~7b78a9b">Bron: De Ondernemer, 24 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
-                    <h3><a data-i18n="nieuws.h3t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">EPBD verplicht laadinfrastructuur bij utiliteitsgebouwen, ook hotels</a></h3>
-                    <p data-i18n="nieuws.h3p">De herziene Europese EPBD-richtlijn stelt harde eisen aan laadinfrastructuur bij utiliteitsgebouwen, inclusief hotels met parkeervoorzieningen. De RVO licht toe welke verplichtingen eraan komen en wat hoteliers nu al kunnen doen om voorbereid te zijn.</p>
-                    <p class="source"><a data-i18n="nieuws.src-rvo-epbd" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">Bron: RVO.nl, 17 juli 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
-                    <h3><a data-i18n="nieuws.h4t" href="https://www.missethoreca.nl/ondernemen/artikel/pelles-investeert-in-thuisbatterij-oplossing-voor-stijgende-energiekosten">Pelle's investeert in eigen batterij: oplossing voor stijgende energiekosten</a></h3>
-                    <p data-i18n="nieuws.h4p">Het bekende horecabedrijf Pelle's installeert een grote batterij om de stijgende energiekosten het hoofd te bieden. Het systeem slaat goedkope stroom op voor piekmomenten. Een oplossing die navolging vindt in de hotellerie, waar marges steeds verder onder druk staan.</p>
-                    <p class="source"><a data-i18n="nieuws.h4src" href="https://www.missethoreca.nl/ondernemen/artikel/pelles-investeert-in-thuisbatterij-oplossing-voor-stijgende-energiekosten">Bron: Misset Horeca, 18 juni 2026</a></p>
-                </div>
-                <div class="news-card">
-                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
-                    <h3><a data-i18n="nieuws.h6t" href="https://www.telegraaf.nl/financieel/ondernemen">Ondernemers vinden creatieve uitwegen bij jarenlange wachtlijst stroomnet</a></h3>
-                    <p data-i18n="nieuws.h6p">Woede over de eindeloze wachtlijsten voor een stroomaansluiting maakt plaats voor creativiteit. De Telegraaf portretteert ondernemers die met batterijopslag en energiehubs tóch van start gaan. Een voorbeeld voor hoteliers die geen aansluiting kunnen krijgen.</p>
-                    <p class="source"><a data-i18n="nieuws.h6src" href="https://www.telegraaf.nl/financieel/ondernemen">Bron: De Telegraaf, 4 mei 2026</a></p>
                 </div>
                 <div class="news-card">
                     <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
@@ -589,31 +620,46 @@ h2{font-size:1.1rem}
                 </div>
                 <div class="news-card">
                     <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
+                    <h3><a data-i18n="nieuws.h3t" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">EPBD verplicht laadinfrastructuur bij utiliteitsgebouwen, ook hotels</a></h3>
+                    <p data-i18n="nieuws.h3p">De herziene Europese EPBD-richtlijn stelt harde eisen aan laadinfrastructuur bij utiliteitsgebouwen, inclusief hotels met parkeervoorzieningen. De RVO licht toe welke verplichtingen eraan komen en wat hoteliers nu al kunnen doen om voorbereid te zijn.</p>
+                    <p class="source"><a data-i18n="nieuws.src-rvo-epbd" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">Bron: RVO.nl, 17 juli 2026</a></p>
+                </div>
+                <div class="news-card">
+                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
+                    <h3><a data-i18n="nieuws.h4t" href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">Geen stroomaansluiting, maar McDonald's-ondernemer vond oplossing: kijk wat er wél mogelijk is</a></h3>
+                    <p data-i18n="nieuws.h4p">Een McDonald's-ondernemer zonder stroomaansluiting laat zien wat er wél kan: met een energiehub en slimme opslag tóch van start gaan. Een inspirerend voorbeeld voor hoteliers die geen aansluiting kunnen krijgen.</p>
+                    <p class="source"><a data-i18n="nieuws.h4src" href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">Bron: AD.nl, 28 mei 2026</a></p>
+                </div>
+                <div class="news-card">
+                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
                     <h3><a data-i18n="nieuws.h5t" href="https://www.entreemagazine.nl/ondernemen/vol-netstroom-zorgt-voor-frustratie-hoe-ga-je-hier-als-horeca-mee-om">Vol netstroom zorgt voor frustratie: hoe ga je hier als horeca mee om?</a></h3>
                     <p data-i18n="nieuws.h5p">Entree Magazine onderzoekt hoe horeca- en hotelondernemers omgaan met de realiteit van een overvol stroomnet. De sector zoekt steeds creatievere manieren om operationeel te blijven ondanks netcongestie, van batterijopslag tot slimme laadoplossingen.</p>
                     <p class="source"><a data-i18n="nieuws.h5src" href="https://www.entreemagazine.nl/ondernemen/vol-netstroom-zorgt-voor-frustratie-hoe-ga-je-hier-als-horeca-mee-om">Bron: Entree Magazine, 22 april 2026</a></p>
                 </div>
-                <div class="news-archive">
-                    <h3 data-i18n="nieuws.ouder-h3">Ouder nieuws</h3>
-                    <ul>
-                        <li>
-                            <a data-i18n="nieuws.ha1" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bouw Van der Valk-hotel loopt vertraging op door stroomtekort</a>
-                            <span class="archive-source"><a href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">AD.nl, 29-05-2026</a></span>
-                        </li>
-                        
-                        <li>
-                            <a data-i18n="nieuws.ha3" href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">Geen stroomaansluiting, maar McDonald’s-ondernemer vond oplossing</a>
-                            <span class="archive-source"><a href="https://www.ad.nl/utrecht/geen-stroomaansluiting-maar-mcdonalds-ondernemer-vond-oplossing-kijk-wat-er-wel-mogelijk-is~a148b78cc/">AD.nl, 28-05-2026</a></span>
-                        </li>
-                        
-                        
-                        
-                    </ul>
+                <div class="news-card">
+                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
+                    <h3><a data-i18n="nieuws.h6t" href="https://www.telegraaf.nl/financieel/ondernemen">Ondernemers vinden creatieve uitwegen bij jarenlange wachtlijst stroomnet</a></h3>
+                    <p data-i18n="nieuws.h6p">Woede over de eindeloze wachtlijsten voor een stroomaansluiting maakt plaats voor creativiteit. De Telegraaf portretteert ondernemers die met batterijopslag en energiehubs tóch van start gaan. Een voorbeeld voor hoteliers die geen aansluiting kunnen krijgen.</p>
+                    <p class="source"><a data-i18n="nieuws.h6src" href="https://www.telegraaf.nl/financieel/ondernemen">Bron: De Telegraaf, 4 mei 2026</a></p>
                 </div>
+                                <div class="news-card">
+                    <span data-i18n="nieuws.tag-hotel" class="tag tag-hotel">Hotel</span>
+                    <h3><a data-i18n="nieuws.h7t" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bouw Van der Valk-hotel loopt vertraging op door stroomtekort</a></h3>
+                    <p data-i18n="nieuws.h7p">De bouw van een nieuw Van der Valk-hotel loopt vertraging op door een tekort aan stroomcapaciteit op het net. Een concreet voorbeeld van hoe netcongestie ook nieuwbouw in de hotellerie raakt - en waarom energie-onafhankelijkheid voor hotels steeds belangrijker wordt.</p>
+                    <p class="source"><a data-i18n="nieuws.h7src" href="https://www.ad.nl/alphen-aan-den-rijn/bouw-van-der-valk-hotel-loopt-vertraging-op-door-stroomtekort-deuren-op-zijn-vroegst-in-2029-open~aefb0998/">Bron: AD.nl, 29-05-2026</a></p>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
+<!-- Verder lezen (interne linkbuilding) -->
+<aside class="related-links">
+  <span class="section-label" data-i18n="nieuws.label">Verder lezen</span>
+    <a class="btn btn-primary" href="/subsidies" data-i18n="nieuws.rl1">Bekijk de actuele subsidies op een rij</a>
+    <a class="btn btn-primary" href="/oplossingen" data-i18n="nieuws.rl2">Ontdek onze oplossingen</a>
+</aside>
+
 <footer>
     <div class="container">
         <div>
@@ -624,31 +670,31 @@ h2{font-size:1.1rem}
         <div>
             <h3 data-i18n="footer.h_solutions">Oplossingen</h3>
             <ul>
-                <li><a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a></li>
-                <li><a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a></li>
-                <li><a data-i18n="footer.maxbelasting" href="maximum-belasting.html">Maximum belasting</a></li>
-                <li><a data-i18n="footer.stroomoverschot" href="stroom-overschot.html">Stroom overschot</a></li>
-                <li><a data-i18n="footer.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+                <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
+                <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
+                <li><a data-i18n="footer.maxbelasting" href="/maximum-belasting">Maximum belasting</a></li>
+                <li><a data-i18n="footer.stroomoverschot" href="/stroom-overschot">Stroom overschot</a></li>
+                <li><a data-i18n="footer.stroomuitval" href="/stroomuitval-noodaggregaat">Stroomuitval &amp; noodaggregaat</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a data-i18n="footer.batterij" href="producten.html">Batterijopslag</a></li>
-                <li><a data-i18n="footer.laadpalen" href="producten.html">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="producten.html">EMS &amp; monitoring</a></li>
-                <li><a data-i18n="footer.configurator" href="configurator.html">Energieconfigurator</a></li>
-                <li><a data-i18n="footer.subsidies" href="subsidies.html">Subsidies &amp; regelingen</a></li>
+                <li><a data-i18n="footer.batterij" href="/producten">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="/producten">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="/producten">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.configurator" href="/configurator">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
-                <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
-                <li><a data-i18n="footer.nieuwsblog" href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="/usp-veiligheid">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
+                <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
@@ -661,13 +707,13 @@ h2{font-size:1.1rem}
 
 <script>
 
-document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=1180){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};lockScroll(false)}})});
 </script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
-    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
+    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -724,7 +770,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
     if (!panel || !links) return;
     
     function moveMenu() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1180) {
             if (links.parentNode !== panel) {
                 panel.appendChild(links);
             }
@@ -745,19 +791,19 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
 /* Close menu when clicking a non-dropdown link */
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){
   l.addEventListener('click',function(){
-    if(window.innerWidth<=768){
+    if(window.innerWidth<=1180){
       var m=document.querySelector('.mobile-menu-panel');
       var b=document.querySelector('.menu-toggle');
       if(m){m.classList.remove('active');m.style.display=''}
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
       var cm=document.getElementById('contact-modal');
-      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
+      if(!cm||cm.style.display!=='flex'){lockScroll(false)}
     }
   })
 });
 /* Close menu on ESC */
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'&&window.innerWidth<=768){
+  if(e.key==='Escape'&&window.innerWidth<=1180){
     var m=document.querySelector('.mobile-menu-panel');
     var b=document.querySelector('.menu-toggle');
     if(m&&m.classList.contains('active')){
@@ -765,7 +811,7 @@ document.addEventListener('keydown',function(e){
       m.classList.remove('active');
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
       var cm=document.getElementById('contact-modal');
-      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
+      if(!cm||cm.style.display!=='flex'){lockScroll(false)}
     }
   }
 });
@@ -911,7 +957,7 @@ document.addEventListener('keydown',function(e){
             var modal = document.getElementById('contact-modal');
             if (modal && modal.style.display === 'flex') {
                 modal.style.display = 'none';
-                document.body.style.overflow = '';
+                lockScroll(false)
             }
         }
     });
@@ -920,7 +966,8 @@ document.addEventListener('keydown',function(e){
 
 
 
-<script src="/assets/brand/accessibility.js" defer></script>
+<script src="/assets/brand/accessibility.js?v=4" defer></script>
+<script src="/assets/brand/nieuws-filter.js?v=6" defer></script>
 </body>
 </html>
 <!-- E2E-schoon 1786775729 -->

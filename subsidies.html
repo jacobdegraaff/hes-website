@@ -9,8 +9,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Subsidies voor hotels | Lemnion · Hospitality Energy Solutions | EIA · MIA · ISDE · SPRILA</title>
-    <meta name="description" content="Ontdek alle subsidies voor energieoplossingen in hotels: EIA, MIA/Vamil, ISDE en SPRILA. Lemnion helpt met aanvragen en maximaliseert je voordeel.">
+    <title>Subsidies voor hotels | Lemnion · Hospitality Energy Solutions | EIA · MIA · ISDE · SPRILA · ERE</title>
+    <meta name="description" content="Subsidies voor hotels: EIA, MIA/Vamil, ISDE en SPRILA voor laadpalen, batterijen en zonnepanelen. Plus ERE-inkomsten per geladen kWh. Lemnion verzorgt de aanvraag.">
     <link rel="canonical" href="https://lemnion.nl/subsidies">
     <meta property="og:title" content="Subsidies voor hotels | EIA · MIA · ISDE · SPRILA | Lemnion">
     <meta property="og:description" content="EIA, MIA/Vamil, ISDE en SPRILA | Lemnion helpt hotels maximale subsidie te krijgen.">
@@ -35,6 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <style>
+/* hover opent niet meer */
         :root{--green-primary:#0F3D23;--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#556B58;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;scroll-padding-top:56px;font-size:16px;overflow-y:scroll}
@@ -46,7 +47,7 @@
         nav{position:sticky;top:0;z-index:100;background:rgba(245,247,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.5rem 0}
         nav .container{display:grid;grid-template-columns:auto 1fr auto;align-items:center;position:relative;padding-top:0.5rem;padding-bottom:0.5rem}
         
-        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;grid-column:3}
+        .nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;grid-column:3}
         .nav-links a{text-decoration:none;color:var(--dark-grey);font-size:0.9rem;font-weight:500}
         .nav-links a:hover,.nav-links a.active{color:var(--green-secondary)}
 
@@ -55,7 +56,7 @@
         .nav-dropdown{position:relative}.nav-dropdown>a{cursor:pointer}
         .nav-dropdown-panel{display:none;position:absolute;top:100%;left:0;background:white;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,0.12);border:1px solid #D4DDD0;z-index:99;padding:1.5rem;min-width:260px;transition:opacity 0.15s ease-in-out}
         .nav-backdrop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,61,35,0.08);z-index:98;pointer-events:none}
-        .nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:block}
+        .nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:block}.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}
         .nav-mega-col h4{font-family:'Montserrat',sans-serif;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin:0 0 0.75rem}
         .nav-mega-col a{display:block;padding:0.4rem 0;text-decoration:none;color:#2F3437;font-size:0.88rem;font-weight:500;transition:color 0.15s}
         .nav-mega-col a:hover{color:var(--green-secondary)}
@@ -88,7 +89,6 @@ footer ul li{margin-bottom:.5rem}
 footer a{color:rgba(245,247,242,.6);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--green-light)}
 .footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:1rem;text-align:center}
-footer a{color:var(--green-light)}
         @media(max-width:768px){
             .subsidy-grid{grid-template-columns:1fr}
             .nav-links{gap:0.75rem;font-size:0.75rem}
@@ -129,7 +129,7 @@ nav .container{padding:0 .75rem;width:100%;max-width:100%}
 .nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
 .nav-dropdown.open>a::after{transform:rotate(180deg)}
 .nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
-.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block!important}
 .nav-backdrop{display:none!important}
 .nav-mega-col h4{display:none}
 .nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
@@ -180,7 +180,39 @@ footer a{font-size:.72rem}
 .footer-bottom{grid-column:1/-1;text-align:center;font-size:.7rem;padding-top:.75rem}
 section img,.problem-card img,.info-card img,.chart-wrap img{max-width:100%!important;height:auto}
 div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important}
+}@media (min-width: 769px) and (max-width: 1180px) {
+nav{position:sticky;top:0;z-index:100;padding:0;height:56px;display:flex;align-items:center}
+nav .container{padding:0 .75rem;width:100%;max-width:100%}
+.nav-logo{margin:0;display:flex;align-items:center}
+.nav-logo-icon{height:38px;width:auto}
+
+.mobile-logo{display:flex;align-items:center;gap:.35rem;font-family:Montserrat,sans-serif;font-weight:600;font-size:.85rem;color:var(--green-primary);position:relative;z-index:2;white-space:nowrap}
+.mobile-logo svg{width:40px;height:40px;flex-shrink:0}.mobile-logo img{width:auto;height:28px;flex-shrink:0}
+.menu-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;padding:0;background:none;border:none;cursor:pointer;z-index:103;position:relative}
+.menu-toggle span{display:block;width:22px;height:2.5px;background:var(--green-primary);border-radius:2px;transition:.2s ease;position:absolute}
+.menu-toggle span:nth-child(1){transform:translateY(-7px)}
+.menu-toggle span:nth-child(3){transform:translateY(7px)}
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg)}
+.mobile-menu-panel{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:#fff;flex-direction:column;padding:.5rem 1.25rem 2rem;gap:0;overflow-y:auto;z-index:99999;border-top:4px solid #7FBF3A;box-shadow:0 10px 40px rgba(0,0,0,.2)}.mobile-menu-panel .nav-links{display:flex;flex-direction:column;gap:0;list-style:none;width:100%}
+.mobile-menu-panel.active{display:flex!important}
+.nav-links>li{padding:.5rem 0;border-bottom:1px solid var(--border)}
+.nav-links>li:last-child{border-bottom:none}
+.nav-links>li>a{font-size:1rem;min-height:46px;display:flex;align-items:center}
+.nav-links>li[style]{border-bottom:none;padding:.25rem 0}
+.nav-dropdown>a{display:flex;align-items:center;justify-content:space-between;min-height:46px}
+.nav-dropdown>a::after{content:'\25be';font-size:.8rem;transition:transform .2s}
+.nav-dropdown.open>a::after{transform:rotate(180deg)}
+.nav-dropdown-panel{display:none;position:static!important;box-shadow:none;border:none;padding:.25rem 0 .5rem 1rem;min-width:auto;background:0 0}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:hover .nav-backdrop{display:none}.nav-dropdown.open>.nav-dropdown-panel{display:block!important}
+.nav-backdrop{display:none!important}
+.nav-mega-col h4{display:none}
+.nav-mega-col a{font-size:.9rem;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
+.nav-mega-col .mega-desc{display:none}
+.nav-links .btn-primary{display:inline-flex!important;margin-top:.5rem;width:auto;min-height:44px;align-items:center;justify-content:center}
 }
+
 /* ── CONTACT MODAL ── */
             .contact-modal-content { padding: 1.5rem; width: 95%; border-radius: 12px; }
             .form-row { grid-template-columns: 1fr; }
@@ -256,15 +288,22 @@ h2{font-size:1.1rem}
         .lang-switch .lang-sep{color:var(--border);font-size:0.9rem}
         .subsidy-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
         @media(max-width:768px){.subsidy-steps{grid-template-columns:1fr}}
-        </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
-    <link rel="stylesheet" href="/assets/brand/accessibility.css">
+        /* Verder lezen (interne linkbuilding) */
+.related-links{margin:2.5rem 0 1rem;padding:1.6rem 2rem;background:#F5F7F2;border:1px solid #D4DDD0;border-radius:16px;display:flex;gap:0.9rem;flex-wrap:wrap;align-items:center}
+.related-links .section-label{margin:0;flex-basis:100%}
+.related-links .btn{margin:0}
+
+/* Dropdown: open-state toont het paneel ook zonder hover (alle apparaten) */
+.nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
+</style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
+    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
 </head>
 <body>
 
 <a data-i18n="nav.skip" href="#content" class="skip-link">Direct naar inhoud</a>
 <nav>
     <div class="container">
-        <a href="index.html" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
+        <a href="/" class="nav-logo" aria-label="Lemnion Hospitality Energy Solutions">
             <svg class="nav-logo-icon" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <defs>
                     <linearGradient id="lemnion-mark-1defda" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -283,65 +322,83 @@ h2{font-size:1.1rem}
                 <span class="nav-logo-desc">Hospitality Energy Solutions</span>
             </span>
         </a>
-        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');document.body.style.overflow=''}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}">
+        <script>
+/* Scroll-lock die de scrollpositie bewaart (geen sprong naar boven op iOS) */
+var __lemLockY = 0;
+function lockScroll(on) {
+    if (on) {
+        __lemLockY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + __lemLockY + 'px';
+        document.body.style.left = '0';
+        document.body.style.width = '100%';
+    } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.width = '';
+        window.scrollTo(0, __lemLockY);
+    }
+}
+</script>
+<button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu-panel');var o=m.classList.contains('active');if(o){m.classList.remove('active');m.style.display='';this.classList.remove('active');this.setAttribute('aria-expanded','false');lockScroll(false)}else{m.classList.add('active');m.style.display='flex';this.classList.add('active');this.setAttribute('aria-expanded','true');lockScroll(true)}">
             <span></span><span></span><span></span>
         </button>
 
                 <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.oplossingen" href="oplossingen.html">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="/oplossingen">Oplossingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.oplossingen_h">Oplossingen</h4>
-                        <a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a>
-                        <a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a>
-                        <a data-i18n="nav.maxbelasting" href="maximum-belasting.html">Maximum belasting</a>
-                        <a data-i18n="nav.stroomoverschot" href="stroom-overschot.html">Stroom (zon) overschot</a>
-                        <a data-i18n="nav.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval / noodaggregaat</a>
+                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Oplossingen</a></h4>
+                        <a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a>
+                        <a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a>
+                        <a data-i18n="nav.maxbelasting" href="/maximum-belasting">Maximum belasting</a>
+                        <a data-i18n="nav.stroomoverschot" href="/stroom-overschot">Stroom (zon) overschot</a>
+                        <a data-i18n="nav.stroomuitval" href="/stroomuitval-noodaggregaat">Stroomuitval / noodaggregaat</a>
                     </div>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.voordelen" href="voordelen.html">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="/voordelen">Voordelen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.voordelen_h">Voordelen</h4>
-                        <a data-i18n="nav.usp" href="usp-veiligheid.html">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a>
-                        <a data-i18n="nav.configurator" href="configurator.html">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a data-i18n="nav.vergelijk" href="index.html#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <h4><a data-i18n="nav.voordelen_h" href="/voordelen">Voordelen</a></h4>
+                        <a data-i18n="nav.usp" href="/usp-veiligheid">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a>
+                        <a data-i18n="nav.configurator" href="/configurator">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="producten.html">Producten</a></li>
-            <li><a data-i18n="nav.subsidies" href="subsidies.html">Subsidies</a></li>
-            <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
+            <li><a data-i18n="nav.producten" href="/producten">Producten</a></li>
+            <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
+            <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.nieuws" href="nieuws.html">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="/nieuws">Nieuws ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4 data-i18n="nav.nieuws_h">Nieuws</h4>
-                        <a data-i18n="nav.nieuws_all" href="nieuws.html">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
-                        <a data-i18n="nav.blog" href="blog.html">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
+                        <h4><a data-i18n="nav.nieuws_h" href="/nieuws">Nieuws</a></h4>
+                        <a data-i18n="nav.nieuws_all" href="/nieuws">Branche nieuws<span class="mega-desc">Alle nieuwsartikelen</span></a>
+                        <a data-i18n="nav.blog" href="/blog">Blog<span class="mega-desc">Bekijk hier alle blogs</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.contact" href="index.html#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li><a data-i18n="nav.contact" href="/#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
             <li class="lang-switch" aria-label="Taal / Language">
-                <a href="/subsidies.html" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
+                <a href="/subsidies" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
                 <span class="lang-sep" aria-hidden="true">/</span>
-                <a href="/en/subsidies.html" class="lang-link" lang="en" hreflang="en">EN</a>
+                <a href="/en/grants" class="lang-link" lang="en" hreflang="en">EN</a>
             </li>
         </ul>
     </div>
 </nav>
     <!-- Mobile menu panel (outside nav stacking context) -->
     <div id="mobile-menu-panel" class="mobile-menu-panel"></div>
-
 
 <div class="page-header" id="content">
     <h1 data-i18n="subsidies.h1">Subsidies & Regelingen</h1>
@@ -354,7 +411,7 @@ h2{font-size:1.1rem}
         <h2 data-i18n="subsidies.h2">Tot 60% subsidie op jouw investering</h2>
         <p data-i18n="subsidies.intro2" style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
             Nederland kent meerdere subsidieregelingen die specifiek gericht zijn op energie-investeringen voor bedrijven. 
-            Door slim te combineren kan jouw hotel tot wel 60% van de investering terugkrijgen.
+            Door subsidies en fiscale aftrek slim te combineren kan jouw hotel tot wel 60% van de investering terugverdienen.
         </p>
         <div class="subsidy-grid">
             <div class="subsidy-card">
@@ -380,12 +437,13 @@ h2{font-size:1.1rem}
                 <p data-i18n="subsidies.mia-label" class="section-label" style="margin-bottom:0.25rem;">Milieu-investeringsaftrek</p>
                 <h3>MIA + Vamil</h3>
                 <p class="percentage">tot 45%</p>
-                <p data-i18n="subsidies.mia-p">MIA: tot 36% extra aftrek op milieu-investeringen. Vamil: 75% willekeurig afschrijven, zodat jij het tempo bepaalt.</p>
+                <p data-i18n="subsidies.mia-p">MIA: tot 45% extra aftrek op milieu-investeringen (afhankelijk van de rang op de milieulijst). Vamil: 75% willekeurig afschrijven, zodat jij het tempo bepaalt.</p>
                 <ul>
-                    <li data-i18n="subsidies.mia-li1">MIA: tot 36% investeringsaftrek</li>
+                    <li data-i18n="subsidies.mia-li1">MIA: tot 45% investeringsaftrek (milieulijst)</li>
                     <li data-i18n="subsidies.mia-li2">Vamil: vrije afschrijving op 75% van investering</li>
                     <li data-i18n="subsidies.mia-li3">Combineerbaar met EIA voor maximaal voordeel</li>
                 </ul>
+                <p style="margin-top:0.9rem;"><a data-i18n="subsidies.mia-link" href="https://www.rvo.nl/milieu-energielijst-2026?sortBy=title&amp;sortOrder=ASC">Bekijk de milieulijst 2026 &#8594;</a></p>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
                     <span data-i18n="subsidies.mia-reken1">Hotel investeert €180.000 in batterij + zonnepanelen.<br></span>
@@ -398,18 +456,18 @@ h2{font-size:1.1rem}
                 <p data-i18n="subsidies.isde-label" class="section-label" style="margin-bottom:0.25rem;">Subsidie duurzame energie</p>
                 <h3>ISDE (zakelijk)</h3>
                 <p class="percentage">tot 30%</p>
-                <p data-i18n="subsidies.isde-p">Investeringssubsidie Duurzame Energie voor zakelijke gebruikers. Specifiek voor zonnepanelen, warmtepompen en zonneboilers.</p>
+                <p data-i18n="subsidies.isde-p">Investeringssubsidie Duurzame Energie voor zakelijke gebruikers: (hybride) warmtepompen, zonneboilers en kleine windturbines. Zonnepanelen vallen hier niet onder; daarvoor geldt de EIA.</p>
                 <ul>
-                    <li data-i18n="subsidies.isde-li1">Subsidie op zonnepanelen (ook zakelijk)</li>
-                    <li data-i18n="subsidies.isde-li2">Vast bedrag per kWp geïnstalleerd vermogen</li>
+                    <li data-i18n="subsidies.isde-li1">Subsidie op warmtepompen, zonneboilers en kleine windturbines</li>
+                    <li data-i18n="subsidies.isde-li2">Vast subsidiebedrag per maatregel</li>
                     <li data-i18n="subsidies.isde-li3">Aanvraag vooraf indienen</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
-                    <span data-i18n="subsidies.isde-reken1">Hotel plaatst 200 panelen (80 kWp) | investering €72.000.<br></span>
-                    <span data-i18n="subsidies.isde-reken2">ISDE-subsidie: <strong>~€65 per kWp × 80 = €5.200</strong>.<br></span>
-                    <span data-i18n="subsidies.isde-reken3">Combineer met EIA: <strong>40% × €72.000 = €28.800</strong> extra aftrek.<br></span>
-                    <span data-i18n="subsidies.isde-reken4">Totaal voordeel: <strong>€5.200 + €7.430 (EIA) = €12.630</strong>.</span>
+                    <span data-i18n="subsidies.isde-reken1">Hotel investeert €25.000 in een hybride warmtepomp.<br></span>
+                    <span data-i18n="subsidies.isde-reken2">ISDE-dekking: afhankelijk van type en vermogen, zie RVO.nl.<br></span>
+                    <span data-i18n="subsidies.isde-reken3">Combineer met EIA: <strong>40% × €25.000 = €10.000</strong> extra aftrek.<br></span>
+                    <span data-i18n="subsidies.isde-reken4">Netto belastingvoordeel EIA: <strong>€10.000 × 25,8% ≈ €2.580</strong>.</span>
                 </div>
             </div>
             <div class="subsidy-card">
@@ -425,7 +483,7 @@ h2{font-size:1.1rem}
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
                     <span data-i18n="subsidies.sprila-reken1">Hotel plaatst 4 duopalen (8 laadpunten) | AC vanaf 11 kW.<br></span>
-                    <span data-i18n="subsidies.sprila-reken2">Subsidie: <strong>~€800 per duopaal × 4 = €3.200</strong> (of DC ≥20 kW: ~€1.950 per station).<br></span>
+                    <span data-i18n="subsidies.sprila-reken2">Subsidie (mkb-tarieven): <strong>~€800 per duopaal × 4 = €3.200</strong>; DC ≥20 kW: ~€3.900 per station (groot bedrijf: €1.950).<br></span>
                     <span data-i18n="subsidies.sprila-reken3">Plus EIA: <strong>40% × investering</strong> extra aftrek.<br></span>
                     <!-- SPRILA_STATUS_START -->
                     <span data-i18n="subsidies.sprila-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 22-08-2026 · <strong>Open voor aanvragen</strong> · Budget €122,5 mln · Aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
@@ -446,36 +504,19 @@ h2{font-size:1.1rem}
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
-                    <span data-i18n="subsidies.ere-reken1">Hotel met 4 laadpalen × 200 kWh/maand groene stroom.<br></span>
-                    <span data-i18n="subsidies.ere-reken2">Jaarlijks: <strong>4 × 200 × 12 = 9.600 kWh</strong> aan EV's.<br></span>
-                    <span data-i18n="subsidies.ere-reken3">Bij ~0,5 kg CO₂eq-reductie per kWh: <strong>~4.800 ERE's per jaar</strong>.<br></span>
+                    <span data-i18n="subsidies.ere-reken1">1 laadpaal (11 kW), 4 uur per dag.<br></span>
+                    <span data-i18n="subsidies.ere-reken2">Per jaar: <strong>±16.000 kWh</strong> aan EV's.<br></span>
+                    <span data-i18n="subsidies.ere-reken3">Bij ~0,5 kg CO₂eq-reductie per kWh: <strong>±8.000 ERE's per jaar</strong>.<br></span>
                     <!-- ERE_PRIJS_START -->
-                    <span data-i18n="subsidies.ere-reken4">Actuele marktprijs (juni 2026): <strong>€0,480 per ERE</strong> → <strong>~€2.304 extra per jaar</strong>.<br></span>
+                    <span data-i18n="subsidies.ere-reken4">Actuele marktprijs (juni 2026): <strong>€0,480 per ERE</strong> → <strong>~€3.840 marktwaarde per laadpaal per jaar</strong>.<br></span>
                     <span data-i18n="subsidies.ere-status" style="font-size:0.72rem;color:var(--text-muted);">26-29 juni 2026 · Bron: Joulo via Duurzaam Ondernemen</span><br>
                     <!-- ERE_PRIJS_END -->
-                    <span data-i18n="subsidies.ere-reken5">Verkoopwaarde fluctueert | extra marge naast de kWh-prijs.<br></span>
-                    <span data-i18n="subsidies.ere-tip" style="font-size:0.72rem;color:var(--text-muted);">💡 <strong>Niet automatisch:</strong> registreer de laadpalen via een inboekdienstverlener (bijv. ere-registratie.nl of Earnergy) | die regelt de NEa-registratie, audit en verkoop. Eisen: MID-meter + groene stroom aantoonbaar.</span>
+                    <span data-i18n="subsidies.ere-reken5"><strong>Netto na commissie:</strong> ±€1.900 per jaar op netstroom, ±€3.200 met zonnepanelen + GvO's.<br></span>
+                    <span data-i18n="subsidies.ere-tip" style="font-size:0.72rem;color:var(--text-muted);">💡 <strong>Niet automatisch:</strong> registreer de laadpalen via een door de NEa erkende inboekdienstverlener | die regelt de NEa-registratie, audit en verkoop. Eisen: MID-meter + groene stroom aantoonbaar.</span>
                 </div>
-            </div>
-            <div class="subsidy-card">
-                <p data-i18n="subsidies.spula-label" class="section-label" style="margin-bottom:0.25rem;">Subsidie Publieke Laadinfrastructuur zwaar vervoer</p>
-                <h3>SPULA</h3>
-                <p data-i18n="subsidies.per-station" class="percentage">subsidie per laadstation</p>
-                <p data-i18n="subsidies.spula-p">Subsidieregeling voor <strong>publieke</strong> laadinfrastructuur in de openbare ruimte, specifiek voor <strong>zware voertuigen</strong> (trucks, vrachtverkeer). Voor hotels doorgaans minder relevant | de hotelregeling is SPRILA.</p>
-                <ul>
-                    <li data-i18n="subsidies.spula-li1">Laadinfrastructuur in de openbare ruimte</li>
-                    <li data-i18n="subsidies.spula-li2">Voor zware voertuigen (vrachtverkeer)</li>
-                    <li data-i18n="subsidies.spula-li3">Aanvragen t/m 18-12-2026</li>
-                </ul>
-                <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.voorwie-h">Voor wie?</span></strong><br>
-                    <span data-i18n="subsidies.spula-reken1">Bedrijven die laadinfrastructuur aanleggen in de openbare ruimte voor zware voertuigen.<br></span>
-                    <span data-i18n="subsidies.spula-reken2">Hotels die gasten laten laden op eigen terrein: gebruik <strong>SPRILA</strong>.<br></span>
-                    <!-- SPULA_STATUS_START -->
-                    <span data-i18n="subsidies.spula-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 22-08-2026 · Open voor aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
-                    <!-- SPULA_STATUS_END -->
-                </div>
-            </div>
+           
+                <p style="margin-top:1rem;"><a data-i18n="subsidies.ere-lees-meer" href="#ere-artikel" style="font-weight:600;color:var(--green-accent);">Lees het volledige artikel over ERE&rsquo;s voor hotels &rarr;</a></p> </div>
+            
         </div>
         <!-- BUDGET_STATUS_START -->
         <div id="budget-status" style="background:white; border-radius:var(--radius-lg); padding:1.5rem 2rem; box-shadow:0 4px 24px rgba(15,61,35,0.06); border:1px solid var(--border); margin-top:2rem; text-align:center;">
@@ -526,16 +567,163 @@ h2{font-size:1.1rem}
     </div>
 </section>
 
+<section id="ere-artikel" style="margin-top:3rem;">
+    <div class="container">
+        <p class="section-label" data-i18n="subsidies.artikel-label" style="margin-bottom:0.25rem;">Extra inkomstenstroom</p>
+        <h2 data-i18n="subsidies.artikel-h2">ERE's voor hotels: de inkomstenstroom achter jouw laadpalen</h2>
+
+        <h3 data-i18n="subsidies.artikel-h3-1" style="margin-top:1.75rem;">Jouw laadpalen kosten geld. Sinds 2026 kunnen ze ook geld opleveren.</h3>
+        <p data-i18n="subsidies.artikel-p1">Elk hotel dat laadpalen plaatst, maakt dezelfde rekensom: de investering is fors, de terugverdientijd is lang en de vraag van gasten groeit sneller dan het budget. Sinds 1 januari 2026 is daar een nieuwe factor bijgekomen die die rekensom verandert: ERE's. EmissieReductie-Eenheden, verhandelbare certificaten die ontstaan bij elke geladen kWh. Voor hotels met laadinfrastructuur betekent dit een terugkerende inkomstenstroom van ruwweg <strong>€0,12 per geladen kWh</strong>, voor heel 2026 vastgelegd. Bij 100.000 kWh per jaar komt dat neer op <strong>circa €12.000 tot €13.000</strong>; met een eigen zonnepaneleninstallatie loopt dat op tot circa <strong>€20.000</strong>.</p>
+        <p data-i18n="subsidies.artikel-p2">Dit artikel geeft je het complete beeld: wat ERE's zijn, hoe de regeling in elkaar zit, wanneer je wordt uitbetaald en waarom de combinatie met zonnepanelen voor hotels extra aantrekkelijk is.</p>
+
+        <h3 data-i18n="subsidies.artikel-h3-2" style="margin-top:1.75rem;">Wat ERE's zijn, uitgelegd voor een hotelier</h3>
+        <p data-i18n="subsidies.artikel-p3">ERE staat voor EmissieReductie-Eenheid. Het systeem is in Nederland opgezet door de Nederlandse Emissieautoriteit (NEa) en is op 1 januari 2026 van start gegaan als opvolger van de oudere HBE-regeling.</p>
+        <p data-i18n="subsidies.artikel-p4">De werking in vijf stappen:</p>
+        <ol>
+            <li data-i18n="subsidies.artikel-li1">Je laadpaal levert stroom aan een elektrische auto. De <strong>MID-meter</strong> in de paal registreert elke kWh nauwkeurig.</li>
+            <li data-i18n="subsidies.artikel-li2">Een erkende <strong>inboekdienstverlener</strong> meldt die kWh's aan bij de NEa. Het systeem rekent ze om naar ERE's.</li>
+            <li data-i18n="subsidies.artikel-li3">Eén ERE staat voor één kilogram vermeden CO₂; een geladen kWh staat voor ongeveer 0,5 ERE.</li>
+            <li data-i18n="subsidies.artikel-li4">Brandstofleveranciers zijn wettelijk verplicht om ERE's in te leveren voor de fossiele brandstof die zij verkopen. Die verplichting loopt op: 14,4% in 2026, 28,4% in 2030. Zij kopen de ERE's dus op.</li>
+            <li data-i18n="subsidies.artikel-li5">De opbrengst gaat naar de partij die het energiecontract van de aansluiting heeft: bij een hotel is dat het hotel.</li>
+        </ol>
+        <p data-i18n="subsidies.artikel-p5">Het systeem is daarmee helder: de fossiele sector financiert de vergroening van het vervoer, en hotels die elektrisch laden mogelijk maken, ontvangen de waarde daarvan.</p>
+
+        <h3 data-i18n="subsidies.artikel-h3-3" style="margin-top:1.75rem;">Voor wie de regeling openstaat</h3>
+        <p data-i18n="subsidies.artikel-p6">De regeling is bewust laagdrempelig gehouden:</p>
+        <ul>
+            <li data-i18n="subsidies.artikel-li6"><strong>Elke laadpaal telt mee</strong>, of hij nu voor gasten, personeel of passanten is. Ook een enkele paal komt in aanmerking.</li>
+            <li data-i18n="subsidies.artikel-li7">De vroegere minimumdrempel van circa 200.000 kWh per jaar is komen te vervallen. Voor mkb en hotels geldt geen ondergrens meer.</li>
+            <li data-i18n="subsidies.artikel-li8">De harde voorwaarde is een <strong>MID-meter in de laadpaal zelf</strong>: een officieel gekeurde meter die meet wat er werkelijk in de auto gaat. Een losse meter in de meterkast voldoet niet.</li>
+            <li data-i18n="subsidies.artikel-li9">Aanmelden en inboeken loopt uitsluitend via door de NEa erkende inboekdienstverleners. Het hotel hoeft zelf geen administratie te voeren; wel is er jaarlijks een verplichte controle.</li>
+        </ul>
+
+        <h3 data-i18n="subsidies.artikel-h3-4" style="margin-top:1.75rem;">Hoe en wanneer de uitbetaling plaatsvindt</h3>
+        <p data-i18n="subsidies.artikel-p7">Het hotel machtigt een inboekdienstverlener voor minimaal één kalenderjaar. Die partij verzorgt de rest: het uitlezen van de laadpaal (automatisch via OCPP of via jaarlijkse meterstanden), het inboeken bij de NEa, de verkoop op de emissiemarkt en de uitbetaling. De meeste dienstverleners betalen <strong>per kwartaal</strong> uit, na controle van de cijfers; sommige jaarlijks.</p>
+        <p data-i18n="subsidies.artikel-p8">De eerste uitbetalingen zijn inmiddels een feit: over het eerste kwartaal van 2026 werd in juli een voorschot van 50% uitbetaald. Belangrijk detail voor hotels die zich nog niet hebben aangemeld: <strong>de regeling werkt met terugwerkende kracht tot 1 januari 2026.</strong> Ook kWh's die vóór je aanmelding zijn geladen, tellen mee. Er is geen maximum aan het aantal deelnemers.</p>
+        <div data-i18n="subsidies.artikel-callout1" style="background:var(--off-white);border-left:3px solid var(--green-accent);border-radius:var(--radius);padding:0.85rem 1rem;margin:1rem 0;font-size:0.9rem;color:#3D4F40;line-height:1.5;"><strong>Reken wel op een jaarlijkse controle</strong>, die verplicht is. De kosten daarvan liggen doorgaans tussen de <strong>€150 en €750</strong>, afhankelijk van of een inspectie ter plaatse nodig is.</div>
+
+        <h3 data-i18n="subsidies.artikel-h3-5" style="margin-top:1.75rem;">Hoe de marktwaarde tot stand komt</h3>
+        <p data-i18n="subsidies.artikel-p9">ERE's worden niet op een openbare beurs verhandeld. De prijs is een zogeheten OTC-prijs: hij ontstaat in onderhandelde transacties tussen verkopende inboekdienstverleners en kopende brandstofleveranciers.</p>
+        <p data-i18n="subsidies.artikel-p10">De relevante cijfers op een rij:</p>
+        <ul>
+            <li data-i18n="subsidies.artikel-li10"><strong>Eén ERE noteert rond €0,46 tot €0,50.</strong> De laatst geverifieerde transacties (juni 2026) lagen op €0,4775 en €0,481.</li>
+            <li data-i18n="subsidies.artikel-li11">Een geladen kWh vertegenwoordigt bruto circa €0,23 aan marktwaarde (0,5 ERE per kWh × circa €0,46, op basis van 100% meetelling).</li>
+            <li data-i18n="subsidies.artikel-li12">Op netstroom telt 50,5% van elke kWh mee; na aftrek van de commissie (doorgaans 13% tot 19%) resteert daardoor circa €0,10 tot €0,13 per kWh. Voor 2026 is een niveau van circa €0,12 per kWh door ten minste één grote dienstverlener gegarandeerd.</li>
+            <li data-i18n="subsidies.artikel-li13">De verplichtingen van brandstofleveranciers lopen op tot 2030, wat de vraagstructuur op termijn ondersteunt.</li>
+        </ul>
+        <p data-i18n="subsidies.artikel-p11">Omdat er geen openbare notering is, houden wij de geverifieerde transactieprijzen bij. Zodra er nieuwe transacties bekend zijn, publiceren we die op deze pagina.</p>
+
+        <h3 data-i18n="subsidies.artikel-h3-6" style="margin-top:1.75rem;">Waarom zonnepanelen het verschil maken</h3>
+        <p data-i18n="subsidies.artikel-p12">Hier zit het meest interessante deel voor hotels die al hebben geïnvesteerd in zonnepanelen. Het aantal ERE's wordt namelijk niet over alle stroom gelijk berekend:</p>
+        <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin:1rem 0 1.25rem;max-width:640px;">
+            <tr data-i18n="subsidies.artikel-t1-head" style="background:var(--green-primary);color:var(--off-white);"><th style="padding:0.5rem 0.75rem;text-align:left;">Energiebron</th><th style="padding:0.5rem 0.75rem;text-align:left;">Aandeel dat meetelt</th><th style="padding:0.5rem 0.75rem;text-align:left;">Opbrengst per 1.000 kWh</th></tr>
+            <tr data-i18n="subsidies.artikel-t1-r1" style="border-bottom:1px solid var(--line,#D4DDD0);"><td style="padding:0.5rem 0.75rem;">Stroom uit het net</td><td style="padding:0.5rem 0.75rem;"><strong>50,5%</strong> (gemiddeld groen aandeel, 2026)</td><td style="padding:0.5rem 0.75rem;">circa €130</td></tr>
+            <tr data-i18n="subsidies.artikel-t1-r2" style="border-bottom:1px solid var(--line,#D4DDD0);"><td style="padding:0.5rem 0.75rem;">Eigen zonnestroom met GvO's</td><td style="padding:0.5rem 0.75rem;"><strong>100%</strong></td><td style="padding:0.5rem 0.75rem;">circa €200</td></tr>
+        </table>
+        <p data-i18n="subsidies.artikel-p13">De achtergrond: voor netstroom hanteert de NEa het gemiddelde groene aandeel van het Nederlandse stroomnet. In 2026 is dat 50,5%, ongeacht of het hotel een groen of grijs contract heeft. Stroom van de eigen zonnepanelen is anders: met Garanties van Oorsprong (GvO's) is die aantoonbaar groen en telt <strong>volledig</strong> mee. Het verschil is een factor twee in ERE-opbrengst per geladen kWh.</p>
+        <p data-i18n="subsidies.artikel-p14">Voor een hotel betekent dit een concrete businesscase: de zonnestroom die overdag wordt opgewekt, 's avonds via een batterij beschikbaar houden voor laden, levert per kWh het dubbele aan ERE's op. Het energiemanagementsysteem speelt daarin een sturende rol. Wie deze combinatie goed inricht, laat de zonnepanelen op twee manieren terugverdienen: op de energierekening én op de ERE-opbrengst.</p>
+
+        <h3 data-i18n="subsidies.artikel-h3-7" style="margin-top:1.75rem;">Hoe de verkoop van ERE's is georganiseerd</h3>
+        <p data-i18n="subsidies.artikel-p15">Hotels kunnen ERE's niet zelf verhandelen; alleen door de NEa erkende inboekdienstverleners mogen inboeken en verkopen. In Nederland zijn daar inmiddels tientallen partijen voor actief. Bij de keuze van een partij zijn een paar criteria bepalend (wij noemen bewust geen namen):</p>
+        <ul>
+            <li data-i18n="subsidies.artikel-li14"><strong>Erkenning door de NEa</strong> als inboekdienstverlener.</li>
+            <li data-i18n="subsidies.artikel-li15"><strong>Commissie op de opbrengst</strong>, doorgaans 13% tot 19%, soms aflopend over de jaren.</li>
+            <li data-i18n="subsidies.artikel-li16"><strong>Uitbetalingsritme</strong>: per kwartaal of per jaar, en of er een gegarandeerd minimum per kWh geldt.</li>
+            <li data-i18n="subsidies.artikel-li17"><strong>Contractvorm</strong>: veelal een kalenderjaarcontract met een korte opzegtermijn.</li>
+            <li data-i18n="subsidies.artikel-li18"><strong>Transparantie</strong>: rapportage over verkochte volumes en gerealiseerde prijs, plus heldere auditkosten.</li>
+        </ul>
+
+        <h3 data-i18n="subsidies.artikel-h3-8" style="margin-top:1.75rem;">Rekenvoorbeeld: een hotel met zestien laadpunten</h3>
+        <p data-i18n="subsidies.artikel-p16">Een realistisch beeld: zestien AC-laadpunten (11 of 22 kW), gemiddeld één laadsessie van 25 kWh per laadpunt per werkdag. Dat komt neer op <strong>100.000 kWh per jaar</strong>.</p>
+        <ul>
+            <li data-i18n="subsidies.artikel-li19"><strong>ERE-opbrengst:</strong> circa 25.000 tot 33.000 ERE's per jaar (afhankelijk van de meetelfactor: de NEa-methodiek met 50,5% meetelling geeft circa 25.000 ERE's, sommige dienstverleners rekenen met een hogere factor).</li>
+            <li data-i18n="subsidies.artikel-li20"><strong>Zonder zonnepanelen</strong> (50,5% telt mee, netto na commissie): circa <strong>€10.000 tot €13.000 per jaar</strong>.</li>
+            <li data-i18n="subsidies.artikel-li21"><strong>Met zonnepanelen en GvO's</strong> (100% telt mee): circa <strong>€20.000 per jaar</strong>, tot twee keer zoveel als op netstroom.</li>
+            <li data-i18n="subsidies.artikel-li22">Per 1.000 geladen kWh: circa <strong>€100 tot €130 netto</strong> op netstroom, circa <strong>€200</strong> op eigen zonnestroom.</li>
+        </ul>
+        <p data-i18n="subsidies.artikel-p17">Voor hotels die laadinfrastructuur toch al moeten plaatsen (de EPBD IV-richtlijn verplicht dat steeds vaker), is dit geen bijzaak: de ERE-opbrengst financiert een substantieel deel van de investering terug.</p>
+
+        <h3 data-i18n="subsidies.artikel-h3-9" style="margin-top:1.75rem;">Het simpele rekensommetje: één laadpaal, vier uur per dag</h3>
+        <p data-i18n="subsidies.artikel-p18">Voor een eerste inschatting volstaat een eenvoudige som. Eén laadpaal van 11 kW die gemiddeld vier uur per dag in gebruik is:</p>
+        <ul>
+            <li data-i18n="subsidies.artikel-li23"><strong>Per dag:</strong> 4 uur × 11 kW = 44 kWh</li>
+            <li data-i18n="subsidies.artikel-li24"><strong>Per jaar:</strong> circa 16.000 kWh</li>
+            <li data-i18n="subsidies.artikel-li25"><strong>ERE's:</strong> circa 8.000 per jaar</li>
+        </ul>
+        <p data-i18n="subsidies.artikel-p19">De jaaropbrengst per laadpaal:</p>
+        <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin:1rem 0 1.25rem;max-width:640px;">
+            <tr data-i18n="subsidies.artikel-t2-head" style="background:var(--green-primary);color:var(--off-white);"><th style="padding:0.5rem 0.75rem;text-align:left;">Situatie</th><th style="padding:0.5rem 0.75rem;text-align:left;">Opbrengst per jaar</th><th style="padding:0.5rem 0.75rem;text-align:left;">Per dag</th></tr>
+            <tr data-i18n="subsidies.artikel-t2-r1" style="border-bottom:1px solid var(--line,#D4DDD0);"><td style="padding:0.5rem 0.75rem;">Netstroom (50,5% telt mee)</td><td style="padding:0.5rem 0.75rem;"><strong>circa €1.900</strong></td><td style="padding:0.5rem 0.75rem;">circa €5,30</td></tr>
+            <tr data-i18n="subsidies.artikel-t2-r2" style="border-bottom:1px solid var(--line,#D4DDD0);"><td style="padding:0.5rem 0.75rem;">Met zonnepanelen en GvO's (100%)</td><td style="padding:0.5rem 0.75rem;"><strong>circa €3.200</strong></td><td style="padding:0.5rem 0.75rem;">circa €8,80</td></tr>
+        </table>
+        <div data-i18n="subsidies.artikel-callout2" style="background:var(--off-white);border-left:3px solid var(--green-accent);border-radius:var(--radius);padding:0.85rem 1rem;margin:1rem 0;font-size:0.9rem;color:#3D4F40;line-height:1.5;"><strong>De vuistregel:</strong> reken <strong>€0,12 netto per geladen kWh</strong> op netstroom en <strong>€0,20</strong> op eigen zonnestroom. Een hotel met tien laadpalen komt daarmee uit op <strong>€19.000 tot €32.000 per jaar</strong>, afhankelijk van de energiebron.</div>
+
+        <h3 data-i18n="subsidies.artikel-h3-10" style="margin-top:1.75rem;">Bronnen en verificatie</h3>
+        <p data-i18n="subsidies.artikel-p20">De cijfers in dit artikel zijn geverifieerd per 20 augustus 2026:</p>
+        <ul>
+            <li data-i18n="subsidies.artikel-li26">Nederlandse Emissieautoriteit (NEa), emissieautoriteit.nl: Register Energie Vervoer (geopend 14 augustus 2026) en de lijst van erkende inboekdienstverleners</li>
+            <li data-i18n="subsidies.artikel-li27">ANWB, uitleg over ERE-certificaten (1 mei 2026)</li>
+            <li data-i18n="subsidies.artikel-li28">Vereniging Elektrische Rijders, achtergrondartikel over emissiereductie-eenheden (14 januari 2026)</li>
+            <li data-i18n="subsidies.artikel-li29">Geverifieerde transactieprijzen juni 2026 (€0,4775 en €0,481 per ERE): branchepublicatie Joulo via Duurzaam Ondernemen</li>
+        </ul>
+        <p data-i18n="subsidies.artikel-note" style="font-size:0.78rem;color:var(--text-muted);">ERE-prijzen zijn OTC-prijzen en kunnen wijzigen. De actuele marktprijs staat in de ERE-kaart hierboven en wordt dagelijks bijgewerkt.</p>
+    </div>
+</section>
+
+<section id="subsidie-faq" style="margin-top:2rem;background:var(--off-white);">
+    <div class="container" style="padding-top:3rem;padding-bottom:3rem;">
+        <p class="section-label" data-i18n="subsidies.faq-label" style="margin-bottom:0.25rem;">Subsidies voor hotels</p>
+        <h2 data-i18n="subsidies.faq-h2">Veelgestelde vragen over subsidies voor jouw hotel</h2>
+
+        <details style="margin-top:1rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
+            <summary data-i18n="subsidies.faq-q1" style="cursor:pointer;font-weight:600;color:var(--green-primary);">Hoeveel subsidie kan mijn hotel krijgen?</summary>
+            <p data-i18n="subsidies.faq-a1" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Dat hangt af van de maatregel: EIA geeft 40% fiscale aftrek op energie-investeringen, MIA/Vamil geeft extra aftrek en vrije afschrijving op de milieulijst, ISDE subsidieert warmtepompen en SPRILA betaalt mee aan laadpalen op eigen terrein. Daarbovenop levert elke geladen kWh via ERE's een terugkerende inkomstenstroom op. <a href="/configurator">Bereken in de energieconfigurator wat jouw hotel kan besparen.</a></p>
+        </details>
+
+        <details style="margin-top:0.75rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
+            <summary data-i18n="subsidies.faq-q2" style="cursor:pointer;font-weight:600;color:var(--green-primary);">Subsidie voor een batterij in mijn hotel?</summary>
+            <p data-i18n="subsidies.faq-a2" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Een bedrijfsbatterij (ESS) komt in aanmerking voor EIA en, als het systeem op de milieulijst staat, voor MIA/Vamil. De batterij slaat zonnestroom op, snijdt pieken en houdt stroom beschikbaar voor laden. <a href="/producten">Bekijk de batterijoplossingen van Lemnion.</a></p>
+        </details>
+
+        <details style="margin-top:0.75rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
+            <summary data-i18n="subsidies.faq-q3" style="cursor:pointer;font-weight:600;color:var(--green-primary);">Subsidie voor laadpalen in mijn hotel?</summary>
+            <p data-i18n="subsidies.faq-a3" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">De hotelregeling is SPRILA: subsidie per laadstation op eigen of gehuurd terrein, voor gasten én personeel. Daarbovenop genereert elke geladen kWh ERE's. <a href="#ere-artikel">Lees hoe ERE's jouw laadpalen laten terugverdienen.</a></p>
+        </details>
+
+        <details style="margin-top:0.75rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
+            <summary data-i18n="subsidies.faq-q4" style="cursor:pointer;font-weight:600;color:var(--green-primary);">Subsidie voor zonnepanelen in mijn hotel?</summary>
+            <p data-i18n="subsidies.faq-a4" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Zonnepanelen komen fiscaal in aanmerking via EIA en MIA/Vamil. Let op: ISDE subsidieert zakelijk geen zonnepanelen, maar wel warmtepompen en zonneboilers. <a href="/verduurzamen">Lees hoe je gasloos wordt zonder netverzwaring.</a></p>
+        </details>
+
+        <details style="margin-top:0.75rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
+            <summary data-i18n="subsidies.faq-q5" style="cursor:pointer;font-weight:600;color:var(--green-primary);">Hoe combineer ik subsidies met ERE's?</summary>
+            <p data-i18n="subsidies.faq-a5" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Subsidies verlagen de investering vooraf; ERE's leveren jaarlijks inkomsten op per geladen kWh. Met zonnepanelen en een batterij verdubbel je die ERE-opbrengst, omdat eigen zonnestroom voor 100% meetelt. De combinatie maakt de businesscase van laadinfrastructuur sterk: lagere investering, hoger jaarlijks rendement.</p>
+        </details>
+
+        <details style="margin-top:0.75rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
+            <summary data-i18n="subsidies.faq-q6" style="cursor:pointer;font-weight:600;color:var(--green-primary);">Moet mijn hotel een energielabel hebben?</summary>
+            <p data-i18n="subsidies.faq-a6" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Voor utiliteitsgebouwen groter dan 1.000 m², waaronder hotels, geldt sinds 2023 een minimale eis van energielabel C. Daarnaast verplicht de EPBD IV-richtlijn veel hotels tot laadinfrastructuur. <a href="/blog-epbd-iv-laadinfra">Lees alles over de EPBD IV-plicht.</a> Lemnion kan met een energiescan bepalen waar jouw hotel staat en welke route naar het label leidt.</p>
+        </details>
+    </div>
+</section>
+
 <section class="cta-section">
     <div class="container">
         <h2 data-i18n="subsidies.cta-h2">Benieuwd wat jouw hotel kan besparen?</h2>
         <p data-i18n="subsidies.cta-p" style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Doe de configurator en ontdek binnen 1 minuut hoeveel subsidie jouw hotel kan ontvangen.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a data-i18n="subsidies.cta-btn" href="configurator.html" class="btn-outline">Bereken je subsidie →</a>
+            <a data-i18n="subsidies.cta-btn" href="/configurator" class="btn-outline">Bereken je subsidie →</a>
             <a href="mailto:info@lemnion.nl" class="btn-green">info@lemnion.nl</a>
         </div>
     </div>
 </section>
+
+<!-- Verder lezen (interne linkbuilding) -->
+<aside class="related-links">
+  <span class="section-label" data-i18n="subsidies.label">Verder lezen</span>
+    <a class="btn btn-primary" href="/producten" data-i18n="subsidies.rl1">Bekijk onze producten voor laadinfra</a>
+    <a class="btn btn-primary" href="/configurator" data-i18n="subsidies.rl2">Bereken uw besparing</a>
+</aside>
 
 <footer>
     <div class="container">
@@ -547,31 +735,31 @@ h2{font-size:1.1rem}
         <div>
             <h3 data-i18n="footer.h_solutions">Oplossingen</h3>
             <ul>
-                <li><a data-i18n="nav.netcongestie" href="netcongestie.html">Netcongestie</a></li>
-                <li><a data-i18n="nav.verduurzamen" href="verduurzamen.html">Verduurzamen</a></li>
-                <li><a data-i18n="footer.maxbelasting" href="maximum-belasting.html">Maximum belasting</a></li>
-                <li><a data-i18n="footer.stroomoverschot" href="stroom-overschot.html">Stroom overschot</a></li>
-                <li><a data-i18n="footer.stroomuitval" href="stroomuitval-noodaggregaat.html">Stroomuitval &amp; noodaggregaat</a></li>
+                <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
+                <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
+                <li><a data-i18n="footer.maxbelasting" href="/maximum-belasting">Maximum belasting</a></li>
+                <li><a data-i18n="footer.stroomoverschot" href="/stroom-overschot">Stroom overschot</a></li>
+                <li><a data-i18n="footer.stroomuitval" href="/stroomuitval-noodaggregaat">Stroomuitval &amp; noodaggregaat</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a data-i18n="footer.batterij" href="producten.html">Batterijopslag</a></li>
-                <li><a data-i18n="footer.laadpalen" href="producten.html">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="producten.html">EMS &amp; monitoring</a></li>
-                <li><a data-i18n="footer.configurator" href="configurator.html">Energieconfigurator</a></li>
-                <li><a data-i18n="footer.subsidies" href="subsidies.html">Subsidies &amp; regelingen</a></li>
+                <li><a data-i18n="footer.batterij" href="/producten">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="/producten">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="/producten">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.configurator" href="/configurator">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a data-i18n="nav.verdienmodellen" href="voordelen.html">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="usp-veiligheid.html">USP &amp; veiligheid</a></li>
-                <li><a data-i18n="nav.overons" href="over-ons.html">Over ons</a></li>
-                <li><a data-i18n="footer.nieuwsblog" href="nieuws.html">Nieuws &amp; blog</a></li>
-                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Contact</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="/usp-veiligheid">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
+                <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
+                <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
@@ -584,13 +772,13 @@ h2{font-size:1.1rem}
 
 <script>
 
-document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=768){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};document.body.style.overflow=''}})});
+document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown-panel a').forEach(function(l){l.addEventListener('click',function(){if(window.innerWidth<=1180){var m=document.querySelector('.mobile-menu-panel');var b=document.querySelector('.menu-toggle');if(m)m.classList.remove('active');if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')};lockScroll(false)}})});
 </script>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="contact-modal" style="display:none;">
-    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';"></div>
+    <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';document.body.style.overflow='';">✕</button>
+        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -636,8 +824,6 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
     </div>
 </div>
 
-
-
 <script>
 /* Mobile menu: move nav-links outside nav stacking context */
 (function(){
@@ -647,7 +833,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
     if (!panel || !links) return;
     
     function moveMenu() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1180) {
             if (links.parentNode !== panel) {
                 panel.appendChild(links);
             }
@@ -668,19 +854,19 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
 /* Close menu when clicking a non-dropdown link */
 document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a').forEach(function(l){
   l.addEventListener('click',function(){
-    if(window.innerWidth<=768){
+    if(window.innerWidth<=1180){
       var m=document.querySelector('.mobile-menu-panel');
       var b=document.querySelector('.menu-toggle');
       if(m){m.classList.remove('active');m.style.display=''}
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
       var cm=document.getElementById('contact-modal');
-      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
+      if(!cm||cm.style.display!=='flex'){lockScroll(false)}
     }
   })
 });
 /* Close menu on ESC */
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'&&window.innerWidth<=768){
+  if(e.key==='Escape'&&window.innerWidth<=1180){
     var m=document.querySelector('.mobile-menu-panel');
     var b=document.querySelector('.menu-toggle');
     if(m&&m.classList.contains('active')){
@@ -688,7 +874,7 @@ document.addEventListener('keydown',function(e){
       m.classList.remove('active');
       if(b){b.classList.remove('active');b.setAttribute('aria-expanded','false')}
       var cm=document.getElementById('contact-modal');
-      if(!cm||cm.style.display!=='flex'){document.body.style.overflow=''}
+      if(!cm||cm.style.display!=='flex'){lockScroll(false)}
     }
   }
 });
@@ -834,15 +1020,13 @@ document.addEventListener('keydown',function(e){
             var modal = document.getElementById('contact-modal');
             if (modal && modal.style.display === 'flex') {
                 modal.style.display = 'none';
-                document.body.style.overflow = '';
+                lockScroll(false)
             }
         }
     });
 })();
 </script>
 
-
-
-<script src="/assets/brand/accessibility.js" defer></script>
+<script src="/assets/brand/accessibility.js?v=4" defer></script>
 </body>
 </html>
