@@ -84,6 +84,8 @@
         .info-card{background:white;border-radius:var(--radius-lg);padding:1.75rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border)}
         .info-card h4{color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.5rem}
         .info-card p{font-size:0.9rem;color:#3D4F40}
+        .photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem}
+        .photo-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 4px 24px rgba(15,61,35,0.06)}
         .cta-section{text-align:center;padding:4rem 0;background:white}
         footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:3rem 0 2rem;font-size:0.85rem}
         footer .container{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}
@@ -97,6 +99,7 @@ footer a:hover{color:var(--green-light)}
             .flow-grid{grid-template-columns:1fr;gap:0.75rem}
             .arrow{transform:rotate(90deg)}
             .info-grid{grid-template-columns:1fr}
+            .photo-grid{grid-template-columns:1fr}
             .nav-links{gap:0.75rem;font-size:0.75rem}
             .page-header{padding-top:5rem}
         }
@@ -445,7 +448,14 @@ function lockScroll(on) {
                 <p data-i18n="producten.c6p">24/7 remote monitoring van alle componenten. Automatische alerts, maandelijkse rapportages en preventief onderhoud. Wij houden alles in de gaten.</p>
             </div>
         </div>
-    </div></section><section class="cta-section">
+    </div></section><section>
+    <div class="container">
+        <div class="photo-grid">
+            <img src="/assets/producten-foto22.jpg" alt="Lemnion energiesysteem in de praktijk" width="1200" height="849" loading="lazy">
+            <img src="/assets/producten-foto42.jpg" alt="Lemnion energiesysteem in de praktijk" width="1080" height="764" loading="lazy">
+        </div>
+    </div>
+</section><section class="cta-section">
     <div class="container">
         <h2 data-i18n="producten.ctah">Klaar om jouw hotel te bevrijden van netcongestie?</h2>
         <p data-i18n="producten.ctap" style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Bereken binnen 1 minuut wat jouw hotel kan besparen met een eigen energie-systeem.</p>
