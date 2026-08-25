@@ -453,24 +453,6 @@ function lockScroll(on) {
                 </div>
             </div>
             <div class="subsidy-card">
-                <p data-i18n="subsidies.isde-label" class="section-label" style="margin-bottom:0.25rem;">Subsidie duurzame energie</p>
-                <h3>ISDE (zakelijk)</h3>
-                <p class="percentage">tot 30%</p>
-                <p data-i18n="subsidies.isde-p">Investeringssubsidie Duurzame Energie voor zakelijke gebruikers: (hybride) warmtepompen, zonneboilers en kleine windturbines. Zonnepanelen vallen hier niet onder; daarvoor geldt de EIA.</p>
-                <ul>
-                    <li data-i18n="subsidies.isde-li1">Subsidie op warmtepompen, zonneboilers en kleine windturbines</li>
-                    <li data-i18n="subsidies.isde-li2">Vast subsidiebedrag per maatregel</li>
-                    <li data-i18n="subsidies.isde-li3">Aanvraag vooraf indienen</li>
-                </ul>
-                <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
-                    <span data-i18n="subsidies.isde-reken1">Hotel investeert €25.000 in een hybride warmtepomp.<br></span>
-                    <span data-i18n="subsidies.isde-reken2">ISDE-dekking: afhankelijk van type en vermogen, zie RVO.nl.<br></span>
-                    <span data-i18n="subsidies.isde-reken3">Combineer met EIA: <strong>40% × €25.000 = €10.000</strong> extra aftrek.<br></span>
-                    <span data-i18n="subsidies.isde-reken4">Netto belastingvoordeel EIA: <strong>€10.000 × 25,8% ≈ €2.580</strong>.</span>
-                </div>
-            </div>
-            <div class="subsidy-card">
                 <p data-i18n="subsidies.sprila-label" class="section-label" style="margin-bottom:0.25rem;">Subsidieregeling Private Laadinfrastructuur bij bedrijven</p>
                 <h3>SPRILA</h3>
                 <p data-i18n="subsidies.per-station" class="percentage">subsidie per laadstation</p>
@@ -478,16 +460,32 @@ function lockScroll(on) {
                 <ul>
                     <li data-i18n="subsidies.sprila-li1">AC-laadstation ≥11 kW of DC-laadstation ≥20 kW</li>
                     <li data-i18n="subsidies.sprila-li2">Eigen of gehuurd terrein, ook voor gasten</li>
-                    <li data-i18n="subsidies.sprila-li3">Slimme laadfunctionaliteit verplicht</li>
+                    <li data-i18n="subsidies.sprila-li3">Slimme laadfunctionaliteit verplicht (OCPP 1.6 of hoger)</li>
+                    <li data-i18n="subsidies.sprila-li4">Niet openbaar toegankelijk: alleen voor gasten en personeel</li>
                 </ul>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
-                    <span data-i18n="subsidies.sprila-reken1">Hotel plaatst 4 duopalen (8 laadpunten) | AC vanaf 11 kW.<br></span>
-                    <span data-i18n="subsidies.sprila-reken2">Subsidie (mkb-tarieven): <strong>~€800 per duopaal × 4 = €3.200</strong>; DC ≥20 kW: ~€3.900 per station (groot bedrijf: €1.950).<br></span>
-                    <span data-i18n="subsidies.sprila-reken3">Plus EIA: <strong>40% × investering</strong> extra aftrek.<br></span>
+                    <span data-i18n="subsidies.sprila-reken1">Maximale subsidie per AC 11 kW laadpaal (1 laadpunt):<br></span>
+                    <span data-i18n="subsidies.sprila-reken2">Mkb: <strong>€800</strong> | groot bedrijf: <strong>€400</strong>.<br></span>
+                    <span data-i18n="subsidies.sprila-reken3">Bekijk de officiële voorwaarden: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/sprila-aanschaf" style="color:var(--green-secondary);">SPRILA aanschaf (RVO.nl)</a>.<br></span>
+                </div>
+                <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:0.6rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.sprila-batterij-h">Ook interessant: batterijsubsidie</span></strong><br>
+                    <span data-i18n="subsidies.sprila-batterij">SPRILA subsidieert ook stationaire batterijen: <strong>€85 per kWh (mkb)</strong> of €60 per kWh (groot bedrijf), tot maximaal 1.000 kWh. Minimale subsidie: €25.000 in combinatie met nieuw aan te leggen laadinfra. Combineer met de <a href="configurator.html" style="color:var(--green-secondary);">Lemnion-accu in de configurator</a>.</span>
+                </div>
+                <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:0.6rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.sprila-info-h">Belangrijk vóór je aanvraagt</span></strong><br>
+                    <span data-i18n="subsidies.sprila-info1" style="display:block;margin-top:0.25rem;">Minimale subsidie per locatie: <strong>€2.500</strong> (mkb: minimaal 4 AC-stations van 11 kW).</span>
+                    <span data-i18n="subsidies.sprila-info2" style="display:block;">Onder €25.000 subsidie: aanvragen <strong>na</strong> de aanleg, in hetzelfde kalenderjaar of binnen 13 weken.</span>
+                    <span data-i18n="subsidies.sprila-info3" style="display:block;">Boven €25.000: aanvragen <strong>vóór</strong> de opdracht, met een niet-ondertekende offerte. Een getekende offerte telt als gegeven opdracht.</span>
+                    <span data-i18n="subsidies.sprila-info4" style="display:block;">Mkb-verklaring meesturen voor de hogere bedragen.</span>
+                    <span data-i18n="subsidies.sprila-info5" style="display:block;">Check eerst of jouw regio last heeft van <a href="netcongestie.html" style="color:var(--green-secondary);">netcongestie</a>.</span>
+                </div>
+                <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:0.6rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <!-- SPRILA_STATUS_START -->
                     <span data-i18n="subsidies.sprila-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 25-08-2026 · <strong>Open voor aanvragen</strong> · Budget €122,5 mln · Aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
                     <!-- SPRILA_STATUS_END -->
+                    <span data-i18n="subsidies.sprila-links" style="font-size:0.72rem;color:var(--text-muted);">Meer informatie: <a href="https://www.rvo.nl/subsidies-financiering/sprila-en-spula/sprila-veelgestelde-vragen" style="color:var(--green-secondary);">veelgestelde vragen</a> · <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/rekenvoorbeelden-sprila" style="color:var(--green-secondary);">rekenvoorbeelden</a> · <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/sprila-aanschaf#rekentool-en-rekenvoorbeelden" style="color:var(--green-secondary);">rekentool</a> · <a href="https://www.rvo.nl/onderwerpen/subsidiespelregels/ez/mkb-verklaring" style="color:var(--green-secondary);">mkb-verklaring</a></span><br>
                 </div>
             </div>
             <div class="subsidy-card">
@@ -518,6 +516,26 @@ function lockScroll(on) {
                 <p style="margin-top:1rem;"><a data-i18n="subsidies.ere-lees-meer" href="#ere-artikel" style="font-weight:600;color:var(--green-accent);">Lees het volledige artikel over ERE&rsquo;s voor hotels &rarr;</a></p> </div>
             
         </div>
+
+            <div class="subsidy-card">
+                <p data-i18n="subsidies.isde-label" class="section-label" style="margin-bottom:0.25rem;">Subsidie duurzame energie</p>
+                <h3>ISDE (zakelijk)</h3>
+                <p class="percentage">tot 30%</p>
+                <p data-i18n="subsidies.isde-p">Investeringssubsidie Duurzame Energie voor zakelijke gebruikers: (hybride) warmtepompen, zonneboilers en kleine windturbines. Zonnepanelen vallen hier niet onder; daarvoor geldt de EIA.</p>
+                <ul>
+                    <li data-i18n="subsidies.isde-li1">Subsidie op warmtepompen, zonneboilers en kleine windturbines</li>
+                    <li data-i18n="subsidies.isde-li2">Vast subsidiebedrag per maatregel</li>
+                    <li data-i18n="subsidies.isde-li3">Aanvraag vooraf indienen</li>
+                </ul>
+                <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
+                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
+                    <span data-i18n="subsidies.isde-reken1">Hotel investeert €25.000 in een hybride warmtepomp.<br></span>
+                    <span data-i18n="subsidies.isde-reken2">ISDE-dekking: afhankelijk van type en vermogen, zie RVO.nl.<br></span>
+                    <span data-i18n="subsidies.isde-reken3">Combineer met EIA: <strong>40% × €25.000 = €10.000</strong> extra aftrek.<br></span>
+                    <span data-i18n="subsidies.isde-reken4">Netto belastingvoordeel EIA: <strong>€10.000 × 25,8% ≈ €2.580</strong>.</span>
+                </div>
+            </div>
+
         <!-- BUDGET_STATUS_START -->
         <div id="budget-status" style="background:white; border-radius:var(--radius-lg); padding:1.5rem 2rem; box-shadow:0 4px 24px rgba(15,61,35,0.06); border:1px solid var(--border); margin-top:2rem; text-align:center;">
             <p data-i18n="subsidies.budget-label" class="section-label" style="margin-bottom:0.25rem;">Beschikbare budgetten</p>
@@ -763,7 +781,7 @@ function lockScroll(on) {
             </ul>
         </div>
         <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Lemnion. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
             <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
