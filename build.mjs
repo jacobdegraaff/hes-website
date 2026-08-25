@@ -155,9 +155,37 @@ function injectHead(html, page, lang) {
   return html; // no head? leave as-is
 }
 
+function translateAttributes(html, dict) {
+  // Vertaalt attributen via data-i18n-placeholder="key" / data-i18n-aria-label="key".
+  // Elementen zonder het betreffende attribuut krijgen het erbij; bestaande
+  // waarden worden overschreven. Ontbrekende sleutel = NL-fallback (attribuut
+  // blijft staan, waarde wordt niet aangeraakt).
+  let missing = 0;
+  const MAP = [
+    ['data-i18n-placeholder', 'placeholder'],
+    ['data-i18n-aria-label', 'aria-label'],
+  ];
+  for (const [from, to] of MAP) {
+    const re = new RegExp(`<([a-zA-Z][a-zA-Z0-9]*)(?![a-zA-Z0-9])([^>]*?)\\b${from}="([^"]+)"([^>]*)>`, 'g');
+    html = html.replace(re, (m, tag, before, key, after) => {
+      const t = dict[key];
+      if (t === undefined) {
+        missing += 1;
+        return m;
+      }
+      let attrs = before + after;
+      const targetRe = new RegExp(`(\\b${to}=")[^"]*(")`);
+      if (targetRe.test(attrs)) attrs = attrs.replace(targetRe, `$1${t}$2`);
+      else attrs += ` ${to}="${t}"`;
+      return `<${tag}${attrs}>`;
+    });
+  }
+  return { html, missing };
+}
+
 function translatePage(source, dict, page) {
   let missing = 0;
-  const out = source.replace(DATA_I18N, (m, tag, before, key, after, inner) => {
+  let out = source.replace(DATA_I18N, (m, tag, before, key, after, inner) => {
     const t = dict[key];
     if (t !== undefined) {
       return `<${tag}${before}data-i18n="${key}"${after}>${t}</${tag}>`;
@@ -165,6 +193,9 @@ function translatePage(source, dict, page) {
     missing += 1; // fallback: keep NL text
     return m;
   });
+  const attr = translateAttributes(out, dict);
+  out = attr.html;
+  missing += attr.missing;
   return { html: out, missing };
 }
 

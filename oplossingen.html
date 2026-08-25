@@ -517,7 +517,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
+        <button class="contact-modal-close" data-i18n-aria-label="modal.close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -525,36 +525,36 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.voornaam" for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
+                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required data-i18n-placeholder="modal.ph.voornaam" placeholder="Jan">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.achternaam" for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
+                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required data-i18n-placeholder="modal.ph.achternaam" placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.bedrijf" for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
+                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required data-i18n-placeholder="modal.ph.bedrijf" placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.functie" for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
+                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required data-i18n-placeholder="modal.ph.functie" placeholder="Directeur / Facility Manager">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.email" for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
-                    <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                    <input type="email" id="email" autocomplete="email" name="email" required data-i18n-placeholder="modal.ph.email" placeholder="jan@hoteldevoorbeeldhoeve.nl">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.mobiel" for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
-                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
+                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required data-i18n-placeholder="modal.ph.mobiel" placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
                 <label data-i18n="modal.bericht" for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
-                <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
+                <textarea id="bericht" name="bericht" rows="4" required data-i18n-placeholder="modal.ph.bericht" placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
                 <button data-i18n="modal.submit" type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
