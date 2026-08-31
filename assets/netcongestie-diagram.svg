@@ -1,7 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" role="img" aria-label="Netcongestie: piek tussen 17:00 en 21:00, Met Lemnion batterijopslag houdt de stroomvraag onder de netcapaciteit">
+  <defs>
+    <clipPath id="plotClip">
+      <rect x="70" y="45" width="710" height="385"/>
+    </clipPath>
+  </defs>
   <rect width="980" height="520" fill="#FFFFFF"/>
 
-  <rect x="619" y="45" width="129" height="385" fill="#7FBF3A" opacity="0.08"/>
+  <rect x="619" y="45" width="129" height="385" fill="#F4D9D9" opacity="0.55"/>
 
   <g stroke="#E3E9E2" stroke-width="1">
     <line x1="70" y1="353" x2="780" y2="353"/>
@@ -34,12 +39,19 @@
 
   <text x="24" y="238" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" fill="#2F3437" transform="rotate(-90 24 238)" text-anchor="middle">Vermogen (kW)</text>
 
-  <line x1="70" y1="180" x2="780" y2="180" stroke="#94A098" stroke-width="3" stroke-dasharray="10 8"/>
-  <path d="M 70.0 295.2 L 134.5 306.8 L 199.1 314.5 L 263.6 276.0 L 328.2 199.0 L 392.7 237.5 L 457.3 199.0 L 521.8 237.5 L 586.4 160.5 L 618.6 64.2 L 650.9 -1.2 L 683.2 -24.3 L 715.5 21.9 L 747.7 98.9 L 780.0 199.0" fill="none" stroke="#2F3437" stroke-width="3.5" stroke-linejoin="round"/>
-  <path d="M 70.0 295.2 L 134.5 306.8 L 199.1 314.5 L 263.6 276.0 L 328.2 218.2 L 392.7 245.2 L 457.3 218.2 L 521.8 237.5 L 586.4 199.0 L 618.6 187.4 L 650.9 179.8 L 683.2 179.8 L 715.5 191.3 L 747.7 210.6 L 780.0 229.8" fill="none" stroke="#2E7032" stroke-width="4" stroke-linejoin="round"/>
+  <g clip-path="url(#plotClip)">
+    <line x1="70" y1="180" x2="780" y2="180" stroke="#94A098" stroke-width="3" stroke-dasharray="10 8"/>
+    <path d="M 70.0 295.2 L 134.5 306.8 L 199.1 314.5 L 263.6 276.0 L 328.2 199.0 L 392.7 237.5 L 457.3 199.0 L 521.8 237.5 L 586.4 160.5 L 618.6 64.2 L 650.9 -1.2 L 683.2 -24.3 L 715.5 21.9 L 747.7 98.9 L 780.0 199.0" fill="none" stroke="#2F3437" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M 70.0 295.2 L 134.5 306.8 L 199.1 314.5 L 263.6 276.0 L 328.2 218.2 L 392.7 245.2 L 457.3 218.2 L 521.8 237.5 L 586.4 199.0 L 618.6 187.4 L 650.9 179.8 L 683.2 179.8 L 715.5 191.3 L 747.7 210.6 L 780.0 229.8" fill="none" stroke="#2E7032" stroke-width="4" stroke-linejoin="round"/>
+  </g>
 
-  <text x="683" y="-36" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="17" font-weight="600" fill="#B03030">Netcongestie</text>
-  <text x="683" y="-16" text-anchor="middle" font-size="14" fill="#556B58">17:00-21:00</text>
+  
+  <g>
+    <rect x="596" y="52" width="184" height="104" rx="14" fill="#FBE3E3"/>
+    <path d="M 688 152 L 672 168 L 704 168 Z" fill="#FBE3E3"/>
+    <text x="688" y="92" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="600" fill="#B03327">Netcongestie</text>
+    <text x="688" y="122" text-anchor="middle" font-size="15" font-weight="500" fill="#B03327">17:00-21:00</text>
+  </g>
 
   
   <g font-size="16">
