@@ -341,6 +341,27 @@
         }
         @media (prefers-reduced-motion: reduce) { .news-ticker-card:hover { transform: none; } }
 
+        /* Home oplossingen & producten */
+        #aanbod { background: var(--off-white); }
+        .aanbod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+        .aanbod-card {
+            background: #FFFFFF; border: 1px solid var(--border); border-radius: var(--radius-lg);
+            padding: 1.5rem; box-shadow: 0 4px 24px rgba(15, 61, 35, 0.06);
+            text-decoration: none; display: block;
+            transition: box-shadow 0.15s ease, transform 0.15s ease;
+        }
+        .aanbod-card:hover { box-shadow: 0 12px 32px rgba(15, 61, 35, 0.12); transform: translateY(-2px); }
+        .aanbod-card:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: var(--radius-lg); }
+        .aanbod-icon {
+            display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center;
+            background: rgba(127, 191, 58, 0.12); border-radius: 12px; margin-bottom: 1rem;
+        }
+        .aanbod-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--green-primary); }
+        .aanbod-card p { font-size: 0.85rem; color: #3D4F40; margin: 0; }
+        @media (max-width: 900px) { .aanbod-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .aanbod-grid { grid-template-columns: 1fr; } }
+        @media (prefers-reduced-motion: reduce) { .aanbod-card:hover { transform: none; } }
+
         /* Problem grid */
         .problem-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
@@ -1172,314 +1193,52 @@ function lockScroll(on) {
     </section>
 
     <!-- SCENARIOS -->
-    <section id="scenarios" style="background:var(--off-white);">
+        <!-- OPLOSSINGEN & PRODUCTEN -->
+    <section id="aanbod">
         <div class="container">
-            <p data-i18n="scenarios.label" class="section-label">Waar begin ik</p>
-            <h2 data-i18n="scenarios.h2">Bouw stap voor stap<br>naar energie-onafhankelijkheid</h2>
-            <p data-i18n="scenarios.intro" style="margin-top:0.75rem;color:var(--text-muted);max-width:700px;">
-                Elk hotel is anders. Daarom bouwt Lemnion jouw energiesysteem modulair op, van eenvoudige batterijopslag tot een compleet ecosysteem met zonnepanelen, EMS en EV-laadpalen. Begin waar jij wilt, breid uit wanneer jij klaar bent.
-            </p>
-
-            <!-- Scenario 1 -->
-            <div class="scenario">
-                <div class="fade-in">
-                    <p data-i18n="scenarios.step1" class="scenario-number">Stap 1</p>
-                    <h3 data-i18n="scenarios.s1h">Begin met Opslag</h3>
-                    <p data-i18n="scenarios.s1p" style="margin-top:0.5rem;opacity:0.85;">Een accusysteem dat goedkope nachtenergie opslaat en overdag vrijgeeft, met noodstroom als het net uitvalt.</p>
-                    <div class="scenario-benefits">
-                        <div class="scenario-benefit">
-                            <span class="num">01</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s1b1h" style="color:var(--green-primary);">Besparing door pieksnijden</h4>
-                                <p data-i18n="scenarios.s1b1p">Laad van het net tijdens goedkope daluren (40-60% lager tarief) en gebruik opgeslagen stroom tijdens dure piekuren.</p>
-                            </div>
-                        </div>
-                        <div class="scenario-benefit">
-                            <span class="num">02</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s1b2h" style="color:var(--green-primary);">Stroomzekerheid</h4>
-                                <p data-i18n="scenarios.s1b2p">261 kWh LFP-opslag houdt kritische systemen draaiend tijdens netuitval, zodat gasten er niets van merken.</p>
-                            </div>
-                        </div>
-                        <div class="scenario-benefit">
-                            <span class="num">03</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s1b3h" style="color:var(--green-primary);">Lagere transportkosten</h4>
-                                <p data-i18n="scenarios.s1b3p">Accu vangt piekbelasting af, waardoor de transportkostencomponent op je energierekening direct daalt.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="scenario-visual fade-in">
-                    <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="g1"><feGaussianBlur stdDeviation="2.5"/></filter>
-                        </defs>
-                        <rect width="360" height="300" rx="14" fill="white" stroke="#D4DDD0" stroke-width="1"/>
-                        <!-- Divider -->
-                        <line x1="180" y1="15" x2="180" y2="285" stroke="#D4DDD0" stroke-width="1" stroke-dasharray="4 6"/>
-                        <!-- Headers -->
-                        <text data-i18n="diagram.nacht" x="90" y="28" text-anchor="middle" fill="#0F3D23" font-size="11" font-weight="700" font-family="Inter,sans-serif" letter-spacing="1">NACHT | DALUREN LADEN</text>
-                        <text data-i18n="diagram.dag" x="270" y="28" text-anchor="middle" fill="#0F3D23" font-size="11" font-weight="700" font-family="Inter,sans-serif" letter-spacing="1">DAG | PIEK ONTLADEN</text>
-                        <!-- Night: Grid box -->
-                        <rect x="25" y="55" width="130" height="52" rx="10" fill="rgba(127,191,58,0.1)" stroke="#7FBF3A" stroke-width="1.5"/>
-                        <text data-i18n="diagram.net" x="90" y="78" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Net</text>
-                        <text data-i18n="diagram.daluur" x="90" y="96" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Daluurtarief laden</text>
-                        <!-- Night: Battery box -->
-                        <rect x="25" y="145" width="130" height="52" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
-                        <text data-i18n="diagram.accu" x="90" y="168" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text data-i18n="diagram.opladen" x="90" y="186" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Opladen 23:00-07:00</text>
-                        <!-- Night flow -->
-                        <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5 4" d="M90 107 L90 143"/>
-                        <circle class="energy-dot" color="#7FBF3A" r="4" style="--fp:path('M90 107 L90 143');--fd:2s"/>
-                        <!-- Day: Battery box -->
-                        <rect x="205" y="55" width="130" height="52" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
-                        <text data-i18n="diagram.accu" x="270" y="78" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text data-i18n="diagram.ontladen" x="270" y="96" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Ontladen 07:00-23:00</text>
-                        <!-- Day: Hotel box -->
-                        <rect x="205" y="170" width="130" height="52" rx="10" fill="rgba(127,191,58,0.08)" stroke="#7FBF3A" stroke-width="1.5"/>
-                        <text data-i18n="diagram.hotel" x="270" y="193" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
-                        <text data-i18n="diagram.piekvoorziening" x="270" y="211" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Piekvoorziening</text>
-                        <!-- Day flow -->
-                        <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5 4" d="M270 107 L270 168"/>
-                        <circle class="energy-dot" color="#2E7032" r="4" style="--fp:path('M270 107 L270 168');--fd:2.5s"/>
-                        <!-- Labels -->
-                        <text data-i18n="diagram.inkoop" x="90" y="245" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Inkoop tegen laag tarief</text>
-                        <text data-i18n="diagram.piekboetes" x="270" y="245" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Voorkomt piekboetes</text>
-                        <text data-i18n="diagram.besparing" x="180" y="280" text-anchor="middle" fill="#2E7032" font-size="11" font-weight="600" font-family="Inter,sans-serif">Besparing: 40-60% op energiekosten</text>
-                    </svg>
-                </div>
+            <p data-i18n="aanbod.label" class="section-label">Oplossingen &amp; producten</p>
+            <h2 data-i18n="aanbod.h2">Oplossingen en producten voor jouw hotel</h2>
+            <p data-i18n="aanbod.intro" style="color:var(--text-muted);max-width:700px;margin-top:0.75rem;">Van batterijopslag tot slim laden: Lemnion levert alles wat jouw hotel nodig heeft om energie-onafhankelijk te worden.</p>
+            <div class="aanbod-grid">
+                <a class="aanbod-card" href="/producten">
+                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="16" height="18" rx="2"/><path d="M10 11l3 4-3 4M16 11l3 4-3 4"/></svg></span>
+                    <h3 data-i18n="aanbod.p1h">Batterijopslag (ESS)</h3>
+                    <p data-i18n="aanbod.p1p">Slaat goedkope stroom op en levert noodstroom als het net uitvalt.</p>
+                </a>
+                <a class="aanbod-card" href="/producten">
+                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h4l2-6 4 12 3-9 2 3h5"/></svg></span>
+                    <h3 data-i18n="aanbod.p2h">Energy Management System (EMS)</h3>
+                    <p data-i18n="aanbod.p2p">Slim platform dat opslag, laden en opwek automatisch aanstuurt.</p>
+                </a>
+                <a class="aanbod-card" href="/producten">
+                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v7M15 3v7M7 10h10v3a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4v-3zM12 17v5"/></svg></span>
+                    <h3 data-i18n="aanbod.p3h">Laadpalen (DC-snelladers)</h3>
+                    <p data-i18n="aanbod.p3p">Voor gasten en een nieuw verdienmodel met slimme laadsturing.</p>
+                </a>
+                <a class="aanbod-card" href="/producten">
+                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="4"/><path d="M14 3v3M14 22v3M3 14h3M22 14h3M6.3 6.3l2.1 2.1M19.6 19.6l2.1 2.1M21.7 6.3l-2.1 2.1M8.4 19.6l-2.1 2.1"/></svg></span>
+                    <h3 data-i18n="aanbod.p4h">Zonnepanelen</h3>
+                    <p data-i18n="aanbod.p4p">Eigen opwek, gekoppeld aan je opslag en verbruik.</p>
+                </a>
+                <a class="aanbod-card" href="/producten">
+                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="11" width="6" height="10" rx="1"/><rect x="16" y="7" width="6" height="14" rx="1"/><path d="M12 16h4"/></svg></span>
+                    <h3 data-i18n="aanbod.p5h">Omvormers</h3>
+                    <p data-i18n="aanbod.p5p">DC-gekoppeld, efficiënt en naadloos in het systeem.</p>
+                </a>
+                <a class="aanbod-card" href="/producten">
+                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h22M5 20v-5h3v5M11 20V9h3v11M17 20v-7h3v7"/></svg></span>
+                    <h3 data-i18n="aanbod.p6h">Monitoring &amp; support</h3>
+                    <p data-i18n="aanbod.p6p">Realtime inzicht, onderhoud en advies op afstand.</p>
+                </a>
             </div>
-
-            <!-- Scenario 2 -->
-            <div class="scenario">
-                <div class="fade-in">
-                    <p data-i18n="scenarios.step2" class="scenario-number">Stap 2</p>
-                    <h3 data-i18n="scenarios.s2h">Voeg Intelligentie Toe</h3>
-                    <p data-i18n="scenarios.s2p" style="margin-top:0.5rem;opacity:0.85;">Het Energy Management System is het brein dat alles automatisch optimaliseert. Het leert jouw hotel kennen, reageert op prijzen en geeft volledig inzicht.</p>
-                    <div class="scenario-benefits">
-                        <div class="scenario-benefit">
-                            <span class="num">01</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s2b1h" style="color:var(--green-primary);">Hands-free optimalisatie</h4>
-                                <p data-i18n="scenarios.s2b1p">Het EMS leert de verbruikspatronen van jouw hotel en optimaliseert laden en ontladen, zonder dat jij een vinger uitsteekt.</p>
-                            </div>
-                        </div>
-                        <div class="scenario-benefit">
-                            <span class="num">02</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s2b2h" style="color:var(--green-primary);">Real-time dashboard</h4>
-                                <p data-i18n="scenarios.s2b2p">Zie precies waar elke kilowatt naartoe gaat. Live verbruik, accustatus, netimport en export, en besparing in één overzicht.</p>
-                            </div>
-                        </div>
-                        <div class="scenario-benefit">
-                            <span class="num">03</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s2b3h" style="color:var(--green-primary);">Automatische tariefresponse</h4>
-                                <p data-i18n="scenarios.s2b3p">Met dynamische energieprijzen reageert het EMS in real-time. Het ontlaadt tijdens dure uren en laadt wanneer tarieven dalen.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="scenario-visual fade-in">
-                    <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
-                        <defs><filter id="g2"><feGaussianBlur stdDeviation="2.5"/></filter></defs>
-                        <rect width="360" height="300" rx="14" fill="white" stroke="#D4DDD0" stroke-width="1"/>
-                        <!-- Top row: Grid + Hotel -->
-                        <rect x="20" y="20" width="120" height="52" rx="10" fill="rgba(127,191,58,0.1)" stroke="#7FBF3A" stroke-width="1.5"/>
-                        <text data-i18n="diagram.net" x="80" y="43" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Net</text>
-                        <text data-i18n="diagram.prijzen" x="80" y="61" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Real-time prijzen</text>
-                        <rect x="220" y="20" width="120" height="52" rx="10" fill="rgba(127,191,58,0.08)" stroke="#B7E08A" stroke-width="1.5"/>
-                        <text data-i18n="diagram.hotel" x="280" y="43" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
-                        <text data-i18n="diagram.geoptimaliseerd" x="280" y="61" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Geoptimaliseerd</text>
-                        <!-- Center: EMS hub -->
-                        <circle cx="180" cy="160" r="55" fill="rgba(46,112,50,0.05)" stroke="#2E7032" stroke-width="1.5" filter="url(#g2)"/>
-                        <circle cx="180" cy="160" r="42" fill="none" stroke="rgba(46,112,50,0.15)" stroke-width="1" stroke-dasharray="3 4"/>
-                        <circle cx="180" cy="160" r="46" fill="none" stroke="rgba(46,112,50,0.06)" stroke-width="2" class="energy-glow"/>
-                        <text x="180" y="155" text-anchor="middle" fill="#0F3D23" font-size="20" font-weight="800" font-family="Inter,sans-serif">EMS</text>
-                        <text data-i18n="diagram.energiemanagement" x="180" y="171" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Energiemanagement</text>
-                        <!-- Bottom: Battery -->
-                        <rect x="110" y="240" width="140" height="44" rx="10" fill="rgba(46,112,50,0.12)" stroke="#2E7032" stroke-width="1.5"/>
-                        <text data-i18n="diagram.accu" x="180" y="263" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text data-i18n="diagram.opslagbuffering" x="180" y="278" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Opslag &amp; buffering</text>
-                        <!-- Flow lines: Grid → EMS -->
-                        <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5 4" d="M80 72 L150 118"/>
-                        <circle class="energy-dot" color="#7FBF3A" r="3.5" style="--fp:path('M80 72 L150 118');--fd:2.5s"/>
-                        <!-- Hotel → EMS -->
-                        <path class="energy-flow" stroke="#B7E08A" stroke-dasharray="5 4" d="M280 72 L210 118"/>
-                        <circle class="energy-dot energy-dot-delayed" color="#7FBF3A" r="3.5" style="--fp:path('M280 72 L210 118');--fd:2.5s;--fdl:1.2s"/>
-                        <!-- EMS → Battery -->
-                        <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5 4" d="M180 215 L180 238"/>
-                        <circle class="energy-dot" color="#2E7032" r="3.5" style="--fp:path('M180 215 L180 238');--fd:3s"/>
-                    </svg>
-                </div>
-            </div>
-
-            <!-- Scenario 3 -->
-            <div class="scenario">
-                <div class="fade-in">
-                    <p data-i18n="scenarios.step3" class="scenario-number">Stap 3</p>
-                    <h3 data-i18n="scenarios.s3h">Benut de Zon</h3>
-                    <p data-i18n="scenarios.s3p" style="margin-top:0.5rem;opacity:0.85;">Gebruik je bestaande zonnepanelen of laat nieuwe installeren. Sla elke kilowatt op in plaats van terug te leveren tegen ongunstige tarieven.</p>
-                    <div class="scenario-benefits">
-                        <div class="scenario-benefit">
-                            <span class="num">01</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s3b1h" style="color:var(--green-primary);">Maximaliseer zonne-ROI</h4>
-                                <p data-i18n="scenarios.s3b1p">Sla overtollige zonne-energie op in je accu en gebruik het wanneer jouw hotel het nodig heeft of wanneer de prijzen het hoogst zijn.</p>
-                            </div>
-                        </div>
-                        <div class="scenario-benefit">
-                            <span class="num">02</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s3b2h" style="color:var(--green-primary);">60-80% zelfvoorzienend</h4>
-                                <p data-i18n="scenarios.s3b2p">Met zon en opslag samen dekken typische hotels het grootste deel van hun dagelijkse elektriciteitsbehoefte uit eigen installatie.</p>
-                            </div>
-                        </div>
-                        <div class="scenario-benefit">
-                            <span class="num">03</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s3b3h" style="color:var(--green-primary);">Lagere CO₂-voetafdruk</h4>
-                                <p data-i18n="scenarios.s3b3p">Elke kilowatt van je eigen dak verlaagt de CO₂-uitstoot. Dat wordt steeds belangrijker voor gasten, ketens en regelgeving.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="scenario-visual fade-in">
-                    <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg">
-                        <defs><filter id="g3"><feGaussianBlur stdDeviation="2.5"/></filter></defs>
-                        <rect width="360" height="280" rx="14" fill="white" stroke="#D4DDD0" stroke-width="1"/>
-                        <!-- Solar panels top -->
-                        <rect x="80" y="15" width="200" height="48" rx="10" fill="rgba(245,158,11,0.06)" stroke="#F59E0B" stroke-width="1.5" filter="url(#g3)"/>
-                        <text data-i18n="diagram.zonnepanelen" x="180" y="44" text-anchor="middle" fill="#0F3D23" font-size="15" font-weight="700" font-family="Inter,sans-serif">Zonnepanelen</text>
-                        <!-- Battery left -->
-                        <rect x="15" y="120" width="150" height="52" rx="10" fill="rgba(46,112,50,0.1)" stroke="#2E7032" stroke-width="1.5"/>
-                        <text data-i18n="diagram.accu" x="90" y="143" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text data-i18n="diagram.overschot" x="90" y="161" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Slaat overschot op</text>
-                        <!-- Hotel right -->
-                        <rect x="195" y="120" width="150" height="52" rx="10" fill="rgba(127,191,58,0.08)" stroke="#7FBF3A" stroke-width="1.5"/>
-                        <text data-i18n="diagram.hotel" x="270" y="143" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Hotel</text>
-                        <text data-i18n="diagram.directverbruik" x="270" y="161" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Direct verbruik</text>
-                        <!-- Flows -->
-                        <path class="energy-flow" stroke="#F59E0B" stroke-dasharray="5 4" d="M120 63 L100 118"/>
-                        <circle class="energy-dot" color="#F59E0B" r="3.5" style="--fp:path('M120 63 L100 118');--fd:2.2s"/>
-                        <path class="energy-flow" stroke="#F59E0B" stroke-dasharray="5 4" d="M240 63 L250 118"/>
-                        <circle class="energy-dot energy-dot-delayed" color="#F59E0B" r="3.5" style="--fp:path('M240 63 L250 118');--fd:2.2s;--fdl:1s"/>
-                        <path class="energy-flow" stroke="#2E7032" stroke-dasharray="5 4" d="M165 146 L193 146"/>
-                        <circle class="energy-dot" color="#2E7032" r="3.5" style="--fp:path('M165 146 L193 146');--fd:3s"/>
-                        <!-- Labels -->
-                        <text data-i18n="diagram.prioriteit" x="180" y="210" text-anchor="middle" fill="#556B58" font-size="12" font-family="Inter,sans-serif">Prioriteit: zon → accu → hotel</text>
-                        <text data-i18n="diagram.zelfvoorzienend" x="180" y="235" text-anchor="middle" fill="#0F3D23" font-size="12" font-weight="700" font-family="Inter,sans-serif">Tot 80% zelfvoorzienend</text>
-                    </svg>
-                </div>
-            </div>
-
-            <!-- Scenario 4 -->
-            <div class="scenario">
-                <div class="scenario-visual fade-in">
-                    <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
-                        <defs><filter id="g4"><feGaussianBlur stdDeviation="2.5"/></filter></defs>
-                        <rect width="360" height="260" rx="14" fill="white" stroke="#D4DDD0" stroke-width="1"/>
-                        <!-- Accu left -->
-                        <rect x="20" y="70" width="130" height="52" rx="10" fill="rgba(46,112,50,0.1)" stroke="#2E7032" stroke-width="1.5"/>
-                        <text data-i18n="diagram.accu" x="85" y="93" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">Accu (ESS)</text>
-                        <text data-i18n="diagram.opgeslagen" x="85" y="111" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Opgeslagen energie</text>
-                        <!-- Solar panel left-top -->
-                        <rect x="40" y="15" width="90" height="36" rx="8" fill="rgba(245,158,11,0.06)" stroke="#F59E0B" stroke-width="1.2"/>
-                        <text data-i18n="diagram.zon" x="85" y="38" text-anchor="middle" fill="#0F3D23" font-size="12" font-weight="600" font-family="Inter,sans-serif">☀ Zon</text>
-                        <path class="energy-flow" stroke="#F59E0B" stroke-dasharray="4 3" d="M85 51 L85 68"/>
-                        <circle class="energy-dot" color="#F59E0B" r="3" style="--fp:path('M85 51 L85 68');--fd:2s"/>
-                        <!-- EV charger center -->
-                        <rect x="210" y="70" width="130" height="52" rx="10" fill="rgba(14,165,233,0.06)" stroke="#0EA5E9" stroke-width="1.5"/>
-                        <text data-i18n="diagram.ev" x="275" y="93" text-anchor="middle" fill="#0F3D23" font-size="16" font-weight="700" font-family="Inter,sans-serif">EV Laadpalen</text>
-                        <text data-i18n="diagram.dc" x="275" y="111" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">40-120 kW DC</text>
-                        <!-- Flow battery → EV -->
-                        <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5 4" d="M150 96 L208 96"/>
-                        <circle class="energy-dot" color="#7FBF3A" r="3.5" style="--fp:path('M150 96 L208 96');--fd:2.5s"/>
-                        <!-- Revenue indicator -->
-                        <rect x="100" y="170" width="160" height="40" rx="10" fill="rgba(127,191,58,0.08)" stroke="#7FBF3A" stroke-width="1.5" filter="url(#g4)"/>
-                        <text data-i18n="diagram.omzet" x="180" y="195" text-anchor="middle" fill="#0F3D23" font-size="13" font-weight="700" font-family="Inter,sans-serif">€ Omzet per kWh</text>
-                        <!-- Flow EV → revenue -->
-                        <path class="energy-flow" stroke="#7FBF3A" stroke-dasharray="5 4" d="M275 122 L220 168"/>
-                        <circle class="energy-dot energy-dot-delayed" color="#7FBF3A" r="3.5" style="--fp:path('M275 122 L220 168');--fd:2.5s;--fdl:1.2s"/>
-                        <!-- Labels -->
-                        <text data-i18n="diagram.inkomsten" x="180" y="232" text-anchor="middle" fill="#0F3D23" font-size="12" font-weight="700" font-family="Inter,sans-serif">Nieuwe inkomstenbron voor je hotel</text>
-                        <text data-i18n="diagram.verdient" x="180" y="250" text-anchor="middle" fill="#556B58" font-size="11" font-family="Inter,sans-serif">Gasten laden | jij verdient, 24/7</text>
-                    </svg>
-                </div>
-                <div class="fade-in">
-                    <p data-i18n="scenarios.step4" class="scenario-number">Stap 4</p>
-                    <h3 data-i18n="scenarios.s4h">Laad Vooruit</h3>
-                    <p data-i18n="scenarios.s4p" style="margin-top:0.5rem;opacity:0.85;">Voeg snelle DC-laadpalen toe, aangedreven door jouw opgeslagen zonne-energie. Het EMS beheert de belasting dynamisch. Gasten laden, jij verdient.</p>
-                    <div class="scenario-benefits">
-                        <div class="scenario-benefit">
-                            <span class="num">01</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s4b1h" style="color:var(--green-primary);">Nieuwe inkomstenbron</h4>
-                                <p data-i18n="scenarios.s4b1p">Reken gasten voor laadsessies. Eén lader kan een significante extra omzet per jaar genereren, direct op je bottom line.</p>
-                            </div>
-                        </div>
-                        <div class="scenario-benefit">
-                            <span class="num">02</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s4b2h" style="color:var(--green-primary);">Premium voorziening</h4>
-                                <p data-i18n="scenarios.s4b2p">Bied snelladen als onderscheidende service. Gasten vertrekken volgeladen en jouw hotel wordt de voorkeur van EV-rijders.</p>
-                            </div>
-                        </div>
-                        <div class="scenario-benefit">
-                            <span class="num">03</span>
-                            <div>
-                                <h4 data-i18n="scenarios.s4b3h" style="color:var(--green-primary);">Toekomstbestendig</h4>
-                                <p data-i18n="scenarios.s4b3p">Met de snelle adoptie van EV's in Europa positioneer jij je hotel klaar voor het komende decennium.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div style="text-align:center;margin-top:2.5rem;">
+                <a data-i18n="aanbod.oplossingen" href="/oplossingen" class="btn btn-ghost">Bekijk alle oplossingen</a>
+                <a data-i18n="aanbod.producten" href="/producten" class="btn btn-primary">Bekijk alle producten →</a>
             </div>
         </div>
     </section>
 
-    <!-- VERGELIJK -->
-    <section id="vergelijk">
-        <div class="container">
-            <p data-i18n="vergelijk.label" class="section-label">Vergelijk</p>
-            <h2 data-i18n="vergelijk.h2">Elke stap bouwt verder</h2>
-            <p data-i18n="vergelijk.intro" style="color:var(--text-muted);margin-top:0.5rem;">Van simpele opslag tot een compleet energie-ecosysteem: elke stap voegt functionaliteit toe zonder dat de basis verandert.</p>
-            <div class="table-wrap">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th data-i18n="vergelijk.functionaliteit">Functionaliteit</th>
-                            <th data-i18n="vergelijk.opslag">1 | OPSLAG</th>
-                            <th data-i18n="vergelijk.ems">2 | + EMS</th>
-                            <th data-i18n="vergelijk.zon">3 | + ZON</th>
-                            <th data-i18n="vergelijk.ev">4 | + EV</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td data-i18n="vergelijk.pieksnijden">Pieksnijden</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.noodstroom">Noodstroom</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.transportkosten">Lagere transportkosten</td><td class="check">✓</td><td data-i18n="vergelijk.optimaal" class="optimal">Optimaal</td><td data-i18n="vergelijk.optimaal" class="optimal">Optimaal</td><td data-i18n="vergelijk.optimaal" class="optimal">Optimaal</td></tr>
-                        <tr><td data-i18n="vergelijk.optimalisatie">Automatische optimalisatie</td><td class="dash">✗</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.monitoring">Real-time monitoring</td><td class="dash">✗</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.tariefresponse">Dynamische tariefresponse</td><td class="dash">✗</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.zonintegratie">Zonne-integratie</td><td class="dash">✗</td><td class="dash">✗</td><td class="check">✓</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.zonroi">Maximale zonne-ROI</td><td class="dash">✗</td><td class="dash">✗</td><td class="check">✓</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.evinkomsten">EV-laadinkomsten</td><td class="dash">✗</td><td class="dash">✗</td><td class="dash">✗</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.lastbeheer">Dynamisch lastbeheer</td><td class="dash">✗</td><td class="dash">✗</td><td class="dash">✗</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.gastenladen">Gasten laden (premium service)</td><td class="dash">✗</td><td class="dash">✗</td><td class="dash">✗</td><td class="check">✓</td></tr>
-                        <tr><td data-i18n="vergelijk.componenten"><strong>Componenten</strong></td><td data-i18n="vergelijk.alleenaccu">Alleen accu</td><td data-i18n="vergelijk.accuems">Accu + EMS</td><td data-i18n="vergelijk.accuemszon">Accu + EMS + Zon</td><td data-i18n="vergelijk.allevier"><strong>Alle vier</strong></td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div style="text-align:center;margin-top:2rem;">
-                <a data-i18n="vergelijk.cta" href="/configurator" class="btn btn-primary">Bereken jouw configuratie →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- OVER ONS -->
-    <section id="over-ons" class="dark">
+<section id="over-ons" class="dark">
         <div class="container">
             <p data-i18n="overons.label" class="section-label">Over ons</p>
             <h2 data-i18n="overons.h2">Samen sterk in hospitality</h2>
