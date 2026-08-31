@@ -6,8 +6,8 @@
   </defs>
   <rect width="980" height="520" fill="#FFFFFF"/>
 
-  <rect x="619" y="45" width="129" height="385" fill="#F4D9D9" opacity="0.6"/>
-  <text transform="rotate(-90 683.2 237.5)" x="683.2" y="237.5" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" fill="#B03327">Netcongestie · 17:00-21:00</text>
+  <rect x="619" y="45" width="129" height="385" fill="#F4D9D9" opacity="0.55"/>
+  <text x="683.2" y="300" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" fill="#B03327">Netcongestie · 17:00-21:00</text>
 
   <g stroke="#E9EEE8" stroke-width="1.2">
     <line x1="70" y1="366" x2="780" y2="366"/>
