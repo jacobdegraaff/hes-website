@@ -213,7 +213,5 @@
   {"key": "news.all", "tag": "a", "contains": "Bekijk alle blogartikelen"},
   {"key": "news.tag", "tag": "span", "contains": "Blog"},
   {"key": "news.b1date", "tag": "span", "contains": "10 augustus 2026"},
-  {"key": "news.b1", "tag": "h3", "contains": "EPBD IV"},
-  {"key": "news.b1d", "tag": "p", "contains": "Vanaf 2027"},
-  {"key": "news.read", "tag": "span", "contains": "Lees het artikel"}
+  {"key": "news.b1", "tag": "h3", "contains": "EPBD IV"}
 ]

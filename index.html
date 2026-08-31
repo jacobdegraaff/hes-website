@@ -318,26 +318,23 @@
         .news-ticker-card {
             background: #FFFFFF; border: 1px solid var(--border);
             border-radius: var(--radius-lg); box-shadow: 0 2px 12px rgba(15, 61, 35, 0.05);
-            height: 100%; display: flex; flex-direction: column;
-            padding: 1.25rem; text-decoration: none;
+            height: 100%; display: flex; flex-direction: column; justify-content: center;
+            padding: 0.9rem 1rem; text-decoration: none;
             transition: box-shadow 0.15s ease, transform 0.15s ease;
         }
         .news-ticker-card:hover { box-shadow: 0 6px 18px rgba(15, 61, 35, 0.10); transform: translateY(-2px); }
         .news-ticker-card:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: var(--radius-lg); }
-        .news-ticker-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+        .news-ticker-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem; }
         .news-ticker-tag {
-            font-family: 'Montserrat', system-ui, sans-serif; font-size: 0.62rem; font-weight: 600;
+            font-family: 'Montserrat', system-ui, sans-serif; font-size: 0.6rem; font-weight: 600;
             letter-spacing: 0.09em; text-transform: uppercase; color: var(--green-primary);
-            background: var(--green-light); border-radius: 50px; padding: 0.22rem 0.7rem;
+            background: var(--green-light); border-radius: 50px; padding: 0.18rem 0.6rem;
         }
         .news-ticker-date {
-            font-family: 'Montserrat', system-ui, sans-serif; font-size: 0.7rem; font-weight: 500;
+            font-family: 'Montserrat', system-ui, sans-serif; font-size: 0.68rem; font-weight: 500;
             letter-spacing: 0.05em; text-transform: uppercase; color: var(--green-secondary);
         }
-        .news-ticker-card h3 { margin: 0 0 0.4rem; font-size: 1rem; line-height: 1.35; color: var(--green-primary); max-width: 620px; }
-        .news-ticker-card p { font-size: 0.85rem; color: #3D4F40; line-height: 1.5; margin: 0 0 0.9rem; max-width: 640px; }
-        .news-ticker-read { margin-top: auto; font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500; font-size: 0.82rem; color: var(--green-secondary); }
-        .news-ticker-card:hover .news-ticker-read { color: var(--green-primary); }
+        .news-ticker-card h3 { margin: 0; font-size: 0.92rem; line-height: 1.35; color: var(--green-primary); max-width: 620px; }
         @media (max-width: 560px) {
             .news-ticker-grid { grid-template-columns: 1fr; }
             .news-ticker-head { align-items: flex-start; }
@@ -1035,8 +1032,6 @@ function lockScroll(on) {
                                 <span class="news-ticker-date" data-i18n="news.b1date">10 augustus 2026</span>
                             </span>
                             <h3 data-i18n="news.b1">EPBD IV: verplichte laadinfra voor hotels</h3>
-                            <p data-i18n="news.b1d">Vanaf 2027 moeten bestaande hotels met meer dan 20 parkeerplaatsen laadpunten hebben. Waarom is nu investeren slim?</p>
-                            <span class="news-ticker-read" data-i18n="news.read">Lees het artikel →</span>
                         </a>
                     </article>
                 </li>
