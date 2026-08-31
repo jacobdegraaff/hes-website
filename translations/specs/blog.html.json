@@ -4,5 +4,9 @@
   {"key": "blog.card1-date", "tag": "span", "contains": "10 augustus 2026", "attrs": "blog-date"},
   {"key": "blog.card1-title", "tag": "h3", "contains": "EPBD IV: verplichte laadinfra"},
   {"key": "blog.card1-desc", "tag": "p", "contains": "Vanaf 2027 moeten bestaande hotels"},
-  {"key": "blog.card1-read", "tag": "span", "contains": "Lees het artikel", "attrs": "blog-read"}
+  {"key": "blog.card1-read", "tag": "span", "contains": "Lees het artikel", "attrs": "blog-read"},
+  {"key": "blog.card2-date", "tag": "span", "contains": "31 augustus 2026"},
+  {"key": "blog.card2-title", "tag": "h3", "contains": "Extra belasting op zakelijke auto's met uitstoot"},
+  {"key": "blog.card2-desc", "tag": "p", "contains": "Vanaf 2027 komt er een extra belasting"},
+  {"key": "blog.card2-read", "tag": "span", "contains": "Lees het artikel"}
 ]
