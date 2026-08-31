@@ -1,5 +1,5 @@
 {
- "voordelen.h1": "What can Hospitality Energy Solutions do for you",
+ "voordelen.h1": "What can Lemnion do for your hotel",
  "voordelen.sub": "With our roots in hospitality, we understand like no other what a hotel needs. Tailor-made, thinking along and full support. That is what Lemnion stands for.",
  "voordelen.s1h": "Mapping your energy needs",
  "voordelen.s1p": "Every hotel has a unique energy profile. We analyse your consumption, peak moments and growth ambitions. Based on that, we map out exactly what energy needs there are, now and in the future.",
@@ -28,5 +28,10 @@
  "meta.voordelen.html.description": "What Lemnion can mean for your hotel: energy advice, subsidy guidance, charging infrastructure, smart software and tailor-made solutions.",
  "voordelen.label": "Keep reading",
  "voordelen.rl1": "Calculate your savings with the configurator",
- "voordelen.rl2": "Explore our products"
+ "voordelen.rl2": "Explore our products",
+ "voordelen.s3x-intro": "A few concrete insights from the subsidies page:",
+ "voordelen.s3x1": "Every charged kWh can generate income through the ERE scheme: roughly <strong>€0.10 to €0.13 per kWh</strong> (grid power).",
+ "voordelen.s3x2": "The scheme works <strong>retroactively to 1 January 2026</strong>: kWh charged before you signed up also count.",
+ "voordelen.s3x3": "For SMEs and hotels there is <strong>no minimum threshold</strong> anymore; even a single charge point with a MID meter qualifies.",
+ "voordelen.s3x4": "Fuel suppliers' obligations rise up to 2030, keeping the revenues <strong>stable in the long term</strong>."
 }
