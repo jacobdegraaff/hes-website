@@ -352,9 +352,9 @@
         }
         .aanbod-card:hover { box-shadow: 0 12px 32px rgba(15, 61, 35, 0.12); transform: translateY(-2px); }
         .aanbod-card:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: var(--radius-lg); }
-        .aanbod-icon {
-            display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center;
-            background: rgba(127, 191, 58, 0.12); border-radius: 12px; margin-bottom: 1rem;
+        .aanbod-card img {
+            width: 100%; height: 130px; object-fit: cover; border-radius: 8px;
+            margin-bottom: 1rem; display: block; background: var(--off-white);
         }
         .aanbod-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--green-primary); }
         .aanbod-card p { font-size: 0.85rem; color: #3D4F40; margin: 0; }
@@ -1070,41 +1070,31 @@ function lockScroll(on) {
             </p>
             <div class="problem-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <div class="problem-card fade-in">
-                    <div class="icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="3" stroke="#7FBF3A" stroke-width="2"/><path d="M14 14h20M14 22h20M14 30h12" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/></svg>
-                    </div>
+                    
                     <h3 data-i18n="probleem.c1h">Stokkende uitbreiding en nieuwbouw</h3>
                     <p data-i18n="probleem.c1p">Wil een hotel 50 kamers, een wellnessruimte of een congreszaal bouwen? Dan zegt de netbeheerder: geen zwaardere aansluiting beschikbaar. De bouwtekeningen liggen klaar, maar de stekker mag er letterlijk niet in. Ook laadpleinen voor gasten blijven hierdoor onmogelijk, omdat de aansluitcapaciteit volledig is vergeven.</p>
                     <a data-i18n="probleem.c1a" href="/netcongestie" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over netcongestie →</a>
                 </div>
                 <div class="problem-card fade-in">
-                    <div class="icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 6v8M24 34v8M8 24h8M32 24h8" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="24" r="10" stroke="#7FBF3A" stroke-width="2"/></svg>
-                    </div>
+                    
                     <h3 data-i18n="probleem.c2h">Knelpunten bij 'Gas-los' en verduurzamen</h3>
                     <p data-i18n="probleem.c2p">De overstap van gas-cv's naar warmtepompen, of van gasfornuizen naar inductie, vraagt enorm veel elektrisch vermogen. Zonder zwaardere aansluiting moeten hotels noodgedwongen op gas blijven stoken.</p>
                     <a data-i18n="probleem.c2a" href="/verduurzamen" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over verduurzamen →</a>
                 </div>
                 <div class="problem-card fade-in">
-                    <div class="icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M12 36V20l12-12 12 12v16H12z" stroke="#7FBF3A" stroke-width="2"/><path d="M20 36V26h8v10" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><rect x="18" y="14" width="12" height="3" rx="1" fill="#7FBF3A" opacity="0.3"/></svg>
-                    </div>
+                    
                     <h3 data-i18n="probleem.c3h">Extreme verbruikspieken en maximale belasting</h3>
                     <p data-i18n="probleem.c3p">Tussen 17:00 en 21:00 piekt het verbruik: keukens, sauna's, liften, honderden douchende gasten. Overschrijd je het contractvermogen? Dan volgen torenhoge boetes van de netbeheerder.</p>
                     <a data-i18n="probleem.c3a" href="/maximum-belasting" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over maximum belasting →</a>
                 </div>
                 <div class="problem-card fade-in">
-                    <div class="icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#7FBF3A" stroke-width="2"/><path d="M24 6v4M24 38v4M6 24h4M38 24h4" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="6" fill="#7FBF3A" opacity="0.2"/></svg>
-                    </div>
+                    
                     <h3 data-i18n="probleem.c4h">Stroom (zon) overschot</h3>
                     <p data-i18n="probleem.c4p">Wat moet je doen met overschot aan energie? Terugleveren lukt of mag niet altijd meer. Terugleveren kan zelfs geld kosten. Sla je eigen zonne-energie op en gebruik het wanneer jij het nodig hebt.</p>
                     <a data-i18n="probleem.c4a" href="/stroom-overschot" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over stroomoverschot →</a>
                 </div>
                 <div class="problem-card fade-in">
-                    <div class="icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#7FBF3A" stroke-width="2"/><path d="M24 10v28M14 24h20" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round"/><rect x="16" y="16" width="16" height="16" rx="3" stroke="#7FBF3A" stroke-width="1.5" opacity="0.5"/></svg>
-                    </div>
+                    
                     <h3 data-i18n="probleem.c5h">Dieselaggregaat vervangen? Stroomuitval managen</h3>
                     <p data-i18n="probleem.c5p">Veel hotels hebben een dieselaggregaat voor noodsituaties. Wil je hiervan af en deze vervangen door een batterij? Dat kan. Met een slim accusysteem beschik je altijd over noodstroom, zonder uitstoot en zonder onderhoud.</p>
                     <a data-i18n="probleem.c5a" href="/stroomuitval-noodaggregaat" style="display:inline-block;margin-top:0.6rem;color:var(--green-accent);font-weight:500;font-size:0.85rem;text-decoration:none;">Lees verder over stroomuitval →</a>
@@ -1201,33 +1191,39 @@ function lockScroll(on) {
             <p data-i18n="aanbod.intro" style="color:var(--text-muted);max-width:700px;margin-top:0.75rem;">Van batterijopslag tot slim laden: Lemnion levert alles wat jouw hotel nodig heeft om energie-onafhankelijk te worden.</p>
             <div class="aanbod-grid">
                 <a class="aanbod-card" href="/producten">
-                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="16" height="18" rx="2"/><path d="M10 11l3 4-3 4M16 11l3 4-3 4"/></svg></span>
-                    <h3 data-i18n="aanbod.p1h">Batterijopslag (ESS)</h3>
+                    
+                    <img src="/assets/producten-foto22.jpg" alt="Batterijopslagsysteem van Lemnion" loading="lazy">
+<h3 data-i18n="aanbod.p1h">Batterijopslag (ESS)</h3>
                     <p data-i18n="aanbod.p1p">Slaat goedkope stroom op en levert noodstroom als het net uitvalt.</p>
                 </a>
                 <a class="aanbod-card" href="/producten">
-                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h4l2-6 4 12 3-9 2 3h5"/></svg></span>
-                    <h3 data-i18n="aanbod.p2h">Energy Management System (EMS)</h3>
+                    
+                    <img src="/assets/ems.jpg" alt="Energiemanagement systeem" loading="lazy">
+<h3 data-i18n="aanbod.p2h">Energy Management System (EMS)</h3>
                     <p data-i18n="aanbod.p2p">Slim platform dat opslag, laden en opwek automatisch aanstuurt.</p>
                 </a>
                 <a class="aanbod-card" href="/producten">
-                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v7M15 3v7M7 10h10v3a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4v-3zM12 17v5"/></svg></span>
-                    <h3 data-i18n="aanbod.p3h">Laadpalen (DC-snelladers)</h3>
+                    
+                    <img src="/assets/producten-foto42.jpg" alt="Laadpaal systeem van Lemnion" loading="lazy">
+<h3 data-i18n="aanbod.p3h">Laadpalen (DC-snelladers)</h3>
                     <p data-i18n="aanbod.p3p">Voor gasten en een nieuw verdienmodel met slimme laadsturing.</p>
                 </a>
                 <a class="aanbod-card" href="/producten">
-                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="4"/><path d="M14 3v3M14 22v3M3 14h3M22 14h3M6.3 6.3l2.1 2.1M19.6 19.6l2.1 2.1M21.7 6.3l-2.1 2.1M8.4 19.6l-2.1 2.1"/></svg></span>
-                    <h3 data-i18n="aanbod.p4h">Zonnepanelen</h3>
+                    
+                    <img src="/assets/zonnepanelen.jpg" alt="Zonnepanelen op een dak" loading="lazy">
+<h3 data-i18n="aanbod.p4h">Zonnepanelen</h3>
                     <p data-i18n="aanbod.p4p">Eigen opwek, gekoppeld aan je opslag en verbruik.</p>
                 </a>
                 <a class="aanbod-card" href="/producten">
-                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="11" width="6" height="10" rx="1"/><rect x="16" y="7" width="6" height="14" rx="1"/><path d="M12 16h4"/></svg></span>
-                    <h3 data-i18n="aanbod.p5h">Omvormers</h3>
+                    
+                    <img src="/assets/omvormer.jpg" alt="Zonne-omvormer" loading="lazy">
+<h3 data-i18n="aanbod.p5h">Omvormers</h3>
                     <p data-i18n="aanbod.p5p">DC-gekoppeld, efficiënt en naadloos in het systeem.</p>
                 </a>
                 <a class="aanbod-card" href="/producten">
-                    <span class="aanbod-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h22M5 20v-5h3v5M11 20V9h3v11M17 20v-7h3v7"/></svg></span>
-                    <h3 data-i18n="aanbod.p6h">Monitoring &amp; support</h3>
+                    
+                    <img src="/assets/monitoring.jpg" alt="Energiemonitoring scherm" loading="lazy">
+<h3 data-i18n="aanbod.p6h">Monitoring &amp; support</h3>
                     <p data-i18n="aanbod.p6p">Realtime inzicht, onderhoud en advies op afstand.</p>
                 </a>
             </div>
