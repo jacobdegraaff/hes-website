@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="400" height="160" role="img" aria-label="EMS regelt het energie-ecosysteem van het hotel">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A2E1A"/>
+      <stop offset="1" stop-color="#163D26"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="160" rx="14" fill="url(#bg)"/>
+
+  <!-- connecting lines: EMS (centre) to the four nodes -->
+  <path d="M120 70 L200 80" stroke="#B7E08A" stroke-width="3" opacity="0.85"/>
+  <path d="M120 118 L200 86" stroke="#B7E08A" stroke-width="3" opacity="0.85"/>
+  <path d="M280 70 L200 80" stroke="#B7E08A" stroke-width="3" opacity="0.85"/>
+  <path d="M280 118 L200 86" stroke="#B7E08A" stroke-width="3" opacity="0.85"/>
+
+  <!-- node dots -->
+  <circle cx="120" cy="70" r="5" fill="#7FBF3A"/>
+  <circle cx="120" cy="118" r="5" fill="#7FBF3A"/>
+  <circle cx="280" cy="70" r="5" fill="#7FBF3A"/>
+  <circle cx="280" cy="118" r="5" fill="#7FBF3A"/>
+
+  <!-- EMS brain node -->
+  <g>
+    <circle cx="200" cy="83" r="36" fill="#7FBF3A"/>
+    <circle cx="200" cy="76" r="20" fill="#0F3D23"/>
+    <path d="M192 76 l4 -14 5 8 6 -3 2 9" stroke="#B7E08A" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+  </g>
+  <text x="200" y="92" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">EMS</text>
+
+  <!-- labels -->
+  <text x="120" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">NET</text>
+  <text x="120" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">ACCU</text>
+  <text x="280" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">ZON</text>
+  <text x="280" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">EV / HOTEL</text>
+</svg>
