@@ -53,9 +53,14 @@
   "contains": "Voordelen"
  },
  {
-  "key": "nav.usp",
-  "tag": "a",
-  "contains": "USP en veiligheid"
+   "key": "nav.usp",
+   "tag": "a",
+   "contains": "USP"
+ },
+ {
+   "key": "nav.veiligheid",
+   "tag": "a",
+   "contains": "Veiligheid"
  },
  {
   "key": "nav.verdienmodellen",
