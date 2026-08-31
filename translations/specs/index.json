@@ -167,5 +167,5 @@
   {"key": "aanbod.oplossingen", "tag": "a", "contains": "Bekijk alle oplossingen"},
   {"key": "aanbod.producten", "tag": "a", "contains": "Bekijk alle producten"},
   {"key": "news.b2date", "tag": "span", "contains": "31 augustus 2026"},
-  {"key": "news.b2", "tag": "h3", "contains": "Extra belasting op zakelijke auto's met uitstoot"}
+  {"key": "news.b2", "tag": "h3", "contains": "Wetgeving versnelt elektrisch"}
 ]
