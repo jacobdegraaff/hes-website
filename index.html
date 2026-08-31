@@ -292,6 +292,49 @@
             margin-bottom: 0.75rem;
         }
 
+        /* Home nieuws ticker */
+        .news-ticker { background: var(--off-white); }
+        .news-ticker-head {
+            display: flex; align-items: flex-end; justify-content: space-between;
+            gap: 1.25rem; flex-wrap: wrap;
+        }
+        .news-ticker-head h2 { max-width: 560px; }
+        .news-ticker-all {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            font-family: 'Inter', system-ui, sans-serif; font-weight: 500;
+            font-size: 0.95rem; color: var(--green-secondary);
+            text-decoration: none; white-space: nowrap;
+            padding: 0.5rem 0.4rem; min-height: 44px;
+        }
+        .news-ticker-all:hover { color: var(--green-accent); text-decoration: underline; }
+        .news-ticker-all:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: 6px; }
+        .news-ticker-grid {
+            list-style: none; display: grid;
+            grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.5rem;
+        }
+        .news-ticker-grid li { height: 100%; }
+        .news-ticker-card {
+            background: #FFFFFF; border: 1px solid var(--border);
+            border-radius: var(--radius-lg); box-shadow: 0 4px 24px rgba(15, 61, 35, 0.06);
+            height: 100%; transition: box-shadow 0.15s ease, transform 0.15s ease;
+        }
+        .news-ticker-card a {
+            display: flex; align-items: center; height: 100%;
+            padding: 1.5rem 1.25rem; text-decoration: none;
+            font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600;
+            font-size: 0.95rem; line-height: 1.4; color: var(--green-primary);
+        }
+        .news-ticker-card:hover { box-shadow: 0 12px 32px rgba(15, 61, 35, 0.12); transform: translateY(-2px); }
+        .news-ticker-card a:hover { color: var(--green-secondary); }
+        .news-ticker-card a:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: var(--radius-lg); }
+        @media (max-width: 900px) { .news-ticker-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) {
+            .news-ticker-grid { grid-template-columns: 1fr; }
+            .news-ticker-card a { padding: 1.25rem; }
+            .news-ticker-head { align-items: flex-start; }
+        }
+        @media (prefers-reduced-motion: reduce) { .news-ticker-card:hover { transform: none; } }
+
         /* Problem grid */
         .problem-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
@@ -951,6 +994,41 @@ function lockScroll(on) {
             <label for="hs1"></label>
             <label for="hs2"></label>
             <label for="hs3"></label>
+        </div>
+    </section>
+
+    <!-- NIEUWS TICKER -->
+    <section class="news-ticker" aria-labelledby="news-h2">
+        <div class="container">
+            <div class="news-ticker-head">
+                <div>
+                    <p data-i18n="news.label" class="section-label">Actueel</p>
+                    <h2 id="news-h2" data-i18n="news.h2">Nieuws &amp; Ontwikkelingen</h2>
+                </div>
+                <a data-i18n="news.all" class="news-ticker-all" href="/nieuws">Bekijk alle nieuwsberichten →</a>
+            </div>
+            <ul class="news-ticker-grid">
+                <li>
+                    <article class="news-ticker-card">
+                        <a data-i18n="news.i1" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">EPBD verplicht laadinfrastructuur bij utiliteitsgebouwen, ook hotels</a>
+                    </article>
+                </li>
+                <li>
+                    <article class="news-ticker-card">
+                        <a data-i18n="news.i2" href="https://www.entreemagazine.nl/ondernemen/horecaondernemers-omzeilen-vol-stroomnet-met-eigen-batterijopslag">Horecaondernemers omzeilen vol stroomnet met eigen batterijopslag</a>
+                    </article>
+                </li>
+                <li>
+                    <article class="news-ticker-card">
+                        <a data-i18n="news.i3" href="https://solarmagazine.nl/nieuws-zonne-energie/i44553/slim-laden-elektrische-auto-bijna-7-keer-goedkoper-dan-rijden-op-benzine">Slim laden maakt elektrisch rijden bijna 7 keer goedkoper dan benzine</a>
+                    </article>
+                </li>
+                <li>
+                    <article class="news-ticker-card">
+                        <a data-i18n="news.i4" href="https://solarmagazine.nl/nieuws-zonne-energie/i44549/gemeenten-krijgen-197-miljoen-voor-verbeteren-leefkwaliteit-bij-nieuwe-stroomstations">Kabinet trekt €197 miljoen uit voor gemeenten rond nieuwe stroomstations</a>
+                    </article>
+                </li>
+            </ul>
         </div>
     </section>
 

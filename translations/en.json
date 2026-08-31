@@ -220,5 +220,12 @@
  "meta.index.html.description": "Lemnion makes hotels energy independent with battery storage, EMS, solar panels and EV chargers. Lower energy costs, new revenue streams, fully managed by Stroomlijnen.",
  "nav.home": "Home",
  "footer.ems": "EMS &amp; monitoring",
- "footer.h_solutions": "Solutions"
+ "footer.h_solutions": "Solutions",
+ "news.label": "News",
+ "news.h2": "News & Developments",
+ "news.all": "View all news articles →",
+ "news.i1": "EPBD requires EV charging infrastructure at utility buildings, including hotels",
+ "news.i2": "Hospitality entrepreneurs bypass the full power grid with their own battery storage",
+ "news.i3": "Smart charging makes EV driving almost 7 times cheaper than petrol",
+ "news.i4": "Government allocates €197 million to municipalities around new power stations"
 }
