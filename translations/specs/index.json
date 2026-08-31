@@ -33,7 +33,7 @@
   {"key": "hero.cta3b", "tag": "a", "contains": "Lees het laatste nieuws"},
   {"key": "hero.h2_1", "tag": "h1", "contains": "Energie-onafhankelijk"},
   {"key": "hero.p1", "tag": "p", "contains": "Lemnion bouwt samen met Stroomlijnen"},
-  {"key": "hero.cta1a", "tag": "a", "contains": "Bereken je besparing"},
+  {"key": "hero.cta1a", "tag": "a", "contains": "USP's Lemnion"},
   {"key": "hero.cta1b", "tag": "a", "contains": "Ontdek hoe het werkt"},
   {"key": "vp.text", "tag": "p", "contains": "Wij leveren één slim platform"},
   {"key": "probleem.label", "tag": "p", "contains": "Het probleem"},
