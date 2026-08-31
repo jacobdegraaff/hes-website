@@ -1,169 +1,849 @@
 [
-  {"key": "nav.skip", "tag": "a", "contains": "Direct naar inhoud"},
-  {"key": "nav.oplossingen", "tag": "a", "contains": "Oplossingen ▾"},
-  {"key": "nav.oplossingen_h", "tag": "h4", "contains": "Oplossingen", "all": true},
-  {"key": "nav.netcongestie", "tag": "a", "contains": "Netcongestie", "all": true},
-  {"key": "nav.verduurzamen", "tag": "a", "contains": "Verduurzamen", "all": true},
-  {"key": "nav.maxbelasting", "tag": "a", "contains": "Maximum belasting"},
-  {"key": "nav.stroomoverschot", "tag": "a", "contains": "Stroom (zon) overschot"},
-  {"key": "nav.stroomuitval", "tag": "a", "contains": "Stroomuitval / noodaggregaat"},
-  {"key": "nav.voordelen", "tag": "a", "contains": "Voordelen ▾"},
-  {"key": "nav.voordelen_h", "tag": "h4", "contains": "Voordelen"},
-  {"key": "nav.usp", "tag": "a", "contains": "USP en veiligheid"},
-  {"key": "nav.verdienmodellen", "tag": "a", "contains": "Verdienmodellen", "all": true},
-  {"key": "nav.configurator", "tag": "a", "contains": "Energieconfigurateur"},
-  {"key": "nav.vergelijk", "tag": "a", "contains": "Vergelijk"},
-  {"key": "nav.producten", "tag": "a", "contains": "Producten"},
-  {"key": "nav.subsidies", "tag": "a", "contains": "Subsidies"},
-  {"key": "nav.overons", "tag": "a", "contains": "Over ons", "all": true},
-  {"key": "nav.nieuws", "tag": "a", "contains": "Nieuws ▾"},
-  {"key": "nav.nieuws_h", "tag": "h4", "contains": "Nieuws"},
-  {"key": "nav.nieuws_all", "tag": "a", "contains": "Branche nieuws"},
-  {"key": "nav.blog", "tag": "a", "contains": "Blog"},
-  {"key": "nav.contact", "tag": "a", "contains": "Contact", "attrs": "btn btn-primary"},
-  {"key": "hero.label2", "tag": "p", "contains": "Netcongestie &", "attrs": "section-label"},
-  {"key": "hero.h2_2", "tag": "h2", "contains": "File"},
-  {"key": "hero.p2", "tag": "p", "contains": "Tussen 17:00 en 21:00"},
-  {"key": "hero.cta2a", "tag": "a", "contains": "Lees meer over netcongestie"},
-  {"key": "hero.cta2b", "tag": "a", "contains": "Bekijk de problemen"},
-  {"key": "hero.label3", "tag": "p", "contains": "Subsidies &", "attrs": "section-label"},
-  {"key": "hero.h2_3", "tag": "h2", "contains": "Tot 60% subsidie"},
-  {"key": "hero.p3", "tag": "p", "contains": "De overheid stimuleert energieopslag"},
-  {"key": "hero.cta3a", "tag": "a", "contains": "Bekijk alle subsidies"},
-  {"key": "hero.cta3b", "tag": "a", "contains": "Lees het laatste nieuws"},
-  {"key": "hero.h2_1", "tag": "h1", "contains": "Energie-onafhankelijk"},
-  {"key": "hero.p1", "tag": "p", "contains": "Lemnion bouwt samen met Stroomlijnen"},
-  {"key": "hero.cta1a", "tag": "a", "contains": "USP's Lemnion"},
-  {"key": "hero.cta1b", "tag": "a", "contains": "Ontdek hoe het werkt"},
-  {"key": "vp.text", "tag": "p", "contains": "Wij leveren één slim platform"},
-  {"key": "probleem.label", "tag": "p", "contains": "Het probleem"},
-  {"key": "probleem.h2", "tag": "h2", "contains": "Je hotel groeit"},
-  {"key": "probleem.intro", "tag": "p", "contains": "Hotels willen verduurzamen, uitbreiden"},
-  {"key": "probleem.c1h", "tag": "h3", "contains": "Stokkende uitbreiding"},
-  {"key": "probleem.c1p", "tag": "p", "contains": "Wil een hotel 50 kamers"},
-  {"key": "probleem.c1a", "tag": "a", "contains": "Lees verder over netcongestie"},
-  {"key": "probleem.c2h", "tag": "h3", "contains": "Knelpunten bij"},
-  {"key": "probleem.c2p", "tag": "p", "contains": "De overstap van gas-cv"},
-  {"key": "probleem.c2a", "tag": "a", "contains": "Lees verder over verduurzamen"},
-  {"key": "probleem.c3h", "tag": "h3", "contains": "Extreme verbruikspieken"},
-  {"key": "probleem.c3p", "tag": "p", "contains": "piekt het verbruik: keukens"},
-  {"key": "probleem.c3a", "tag": "a", "contains": "Lees verder over maximum belasting"},
-  {"key": "probleem.c4h", "tag": "h3", "contains": "Stroom (zon) overschot"},
-  {"key": "probleem.c4p", "tag": "p", "contains": "Wat moet je doen met overschot"},
-  {"key": "probleem.c4a", "tag": "a", "contains": "Lees verder over stroomoverschot"},
-  {"key": "probleem.c5h", "tag": "h3", "contains": "Dieselaggregaat vervangen"},
-  {"key": "probleem.c5p", "tag": "p", "contains": "Veel hotels hebben een dieselaggregaat"},
-  {"key": "probleem.c5a", "tag": "a", "contains": "Lees verder over stroomuitval"},
-  {"key": "voordelen.home-label", "tag": "p", "contains": "Waarom Lemnion"},
-  {"key": "voordelen.h2", "tag": "h2", "contains": "Meer dan alleen energie"},
-  {"key": "voordelen.intro", "tag": "p", "contains": "Lemnion levert niet alleen batterijen"},
-  {"key": "voordelen.c1h", "tag": "h3", "contains": "Extra omzet via laadpalen"},
-  {"key": "voordelen.c1p", "tag": "p", "contains": "Plaats laadpalen of snelladers"},
-  {"key": "voordelen.c2h", "tag": "h3", "contains": "Upsell bij kamerreservering"},
-  {"key": "voordelen.c2p", "tag": "p", "contains": "Bied bij de boeking"},
-  {"key": "voordelen.c3h", "tag": "h3", "contains": "Marketing op laaddisplays"},
-  {"key": "voordelen.c3p", "tag": "p", "contains": "Snelladers hebben grote schermen"},
-  {"key": "voordelen.c4h", "tag": "h3", "contains": "Flexibel EMS"},
-  {"key": "voordelen.c4p", "tag": "p", "contains": "Het EMS van Lemnion koppelt via API"},
-  {"key": "voordelen.more", "tag": "a", "contains": "Lees meer over de verdienmodellen"},
-  {"key": "usp.label", "tag": "p", "contains": "Onze Unieke Positie"},
-  {"key": "usp.h2", "tag": "h2", "contains": "Wat Lemnion écht anders maakt"},
-  {"key": "usp.c1h", "tag": "h3", "contains": "Directe fabrieksdistributie"},
-  {"key": "usp.c1p", "tag": "p", "contains": "Onze partner importeert hardware direct"},
-  {"key": "usp.c2h", "tag": "h3", "contains": "Eén geïntegreerd ecosysteem"},
-  {"key": "usp.c2p", "tag": "p", "contains": "Batterij + EMS + OCPP"},
-  {"key": "usp.c3h", "tag": "h3", "contains": "Programmeerbaar EMS"},
-  {"key": "usp.c3p", "tag": "p", "contains": "enige programmeerbare"},
-  {"key": "usp.c4h", "tag": "h3", "contains": "6-laags veiligheidsarchitectuur"},
-  {"key": "usp.c4p", "tag": "p", "contains": "LFP-chemie"},
-  {"key": "usp.c5h", "tag": "h3", "contains": "DC-gekoppelde zonne-energie"},
-  {"key": "usp.c5p", "tag": "p", "contains": "25 kW+ MPPT"},
-  {"key": "usp.c6h", "tag": "h3", "contains": "Turnkey oplevering"},
-  {"key": "usp.c6p", "tag": "p", "contains": "Engineering, installatie, inbedrijfstelling"},
-  {"key": "usp.more", "tag": "a", "contains": "Lees verder over USP"},
-  {"key": "diagram.nacht", "tag": "text", "contains": "NACHT | DALUREN LADEN"},
-  {"key": "diagram.dag", "tag": "text", "contains": "DAG | PIEK ONTLADEN"},
-  {"key": "diagram.net", "tag": "text", "contains": "Net", "all": true},
-  {"key": "diagram.daluur", "tag": "text", "contains": "Daluurtarief laden"},
-  {"key": "diagram.accu", "tag": "text", "contains": "Accu (ESS)", "all": true},
-  {"key": "diagram.opladen", "tag": "text", "contains": "Opladen 23:00-07:00"},
-  {"key": "diagram.ontladen", "tag": "text", "contains": "Ontladen 07:00-23:00"},
-  {"key": "diagram.hotel", "tag": "text", "contains": "Hotel", "all": true},
-  {"key": "diagram.piekvoorziening", "tag": "text", "contains": "Piekvoorziening"},
-  {"key": "diagram.inkoop", "tag": "text", "contains": "Inkoop tegen laag tarief"},
-  {"key": "diagram.piekboetes", "tag": "text", "contains": "Voorkomt piekboetes"},
-  {"key": "diagram.besparing", "tag": "text", "contains": "Besparing: 40-60%"},
-  {"key": "diagram.prijzen", "tag": "text", "contains": "Real-time prijzen"},
-  {"key": "diagram.geoptimaliseerd", "tag": "text", "contains": "Geoptimaliseerd"},
-  {"key": "diagram.energiemanagement", "tag": "text", "contains": "Energiemanagement"},
-  {"key": "diagram.opslagbuffering", "tag": "text", "contains": "Opslag &"},
-  {"key": "diagram.zonnepanelen", "tag": "text", "contains": "Zonnepanelen"},
-  {"key": "diagram.overschot", "tag": "text", "contains": "Slaat overschot op"},
-  {"key": "diagram.directverbruik", "tag": "text", "contains": "Direct verbruik"},
-  {"key": "diagram.prioriteit", "tag": "text", "contains": "Prioriteit: zon"},
-  {"key": "diagram.zelfvoorzienend", "tag": "text", "contains": "Tot 80% zelfvoorzienend"},
-  {"key": "diagram.opgeslagen", "tag": "text", "contains": "Opgeslagen energie"},
-  {"key": "diagram.zon", "tag": "text", "contains": "☀ Zon"},
-  {"key": "diagram.ev", "tag": "text", "contains": "EV Laadpalen"},
-  {"key": "diagram.dc", "tag": "text", "contains": "40-120 kW DC"},
-  {"key": "diagram.omzet", "tag": "text", "contains": "€ Omzet per kWh"},
-  {"key": "diagram.inkomsten", "tag": "text", "contains": "Nieuwe inkomstenbron voor je hotel"},
-  {"key": "diagram.verdient", "tag": "text", "contains": "Gasten laden | jij verdient"},
-  {"key": "overons.label", "tag": "p", "contains": "Over ons"},
-  {"key": "overons.h2", "tag": "h2", "contains": "Samen sterk in hospitality"},
-  {"key": "overons.l1p", "tag": "p", "contains": "Hospitality Energy Solutions is jouw aanspreekpunt"},
-  {"key": "overons.l2p", "tag": "p", "contains": "Onze technische partner met 25+ jaar"},
-  {"key": "overons.readmore", "tag": "a", "contains": "Lees meer over ons"},
-  {"key": "overons.bottom", "tag": "p", "contains": "Lemnion verkoopt. Stroomlijnen bouwt"},
-  {"key": "cta.h2", "tag": "h2", "contains": "Klaar om jouw hotel energie-onafhankelijk"},
-  {"key": "cta.p", "tag": "p", "contains": "Elk hotel is uniek"},
-  {"key": "cta.config", "tag": "a", "contains": "Doe de configurator"},
-  {"key": "footer.desc", "tag": "p", "contains": "Lemnion maakt hotels energie-onafhankelijk met batterijopslag"},
-  {"key": "footer.maxbelasting", "tag": "a", "contains": "Maximum belasting"},
-  {"key": "footer.stroomoverschot", "tag": "a", "contains": "Stroom overschot"},
-  {"key": "footer.stroomuitval", "tag": "a", "contains": "Stroomuitval &"},
-  {"key": "footer.h_products", "tag": "h3", "contains": "Producten &"},
-  {"key": "footer.batterij", "tag": "a", "contains": "Batterijopslag"},
-  {"key": "footer.laadpalen", "tag": "a", "contains": "Laadpalen &"},
-  {"key": "footer.configurator", "tag": "a", "contains": "Energieconfigurator"},
-  {"key": "footer.subsidies", "tag": "a", "contains": "Subsidies &"},
-  {"key": "footer.h_info", "tag": "h3", "contains": "Informatie"},
-  {"key": "footer.usp", "tag": "a", "contains": "USP &"},
-  {"key": "footer.nieuwsblog", "tag": "a", "contains": "Nieuws &"},
-  {"key": "footer.contact", "tag": "a", "contains": "Contact", "attrs": "contact-modal"},
-  {"key": "footer.copyright", "tag": "p", "contains": "In partnership met"},
-  {"key": "footer.wcag", "tag": "p", "contains": "WCAG 2.2 compliant"},
-  {"key": "modal.title", "tag": "h3", "contains": "Vrijblijvend contact"},
-  {"key": "modal.sub", "tag": "p", "contains": "Vul het formulier in"},
-  {"key": "modal.voornaam", "tag": "label", "contains": "Voornaam"},
-  {"key": "modal.achternaam", "tag": "label", "contains": "Achternaam"},
-  {"key": "modal.bedrijf", "tag": "label", "contains": "Bedrijfsnaam"},
-  {"key": "modal.functie", "tag": "label", "contains": "Functie"},
-  {"key": "modal.email", "tag": "label", "contains": "E-mailadres"},
-  {"key": "modal.mobiel", "tag": "label", "contains": "Mobiel nummer"},
-  {"key": "modal.bericht", "tag": "label", "contains": "Je bericht"},
-  {"key": "modal.submit", "tag": "button", "contains": "Verstuur bericht"},
-  {"key": "news.label", "tag": "p", "contains": "Actueel"},
-  {"key": "news.h2", "tag": "h2", "contains": "Urgente ontwikkelingen"},
-  {"key": "news.all", "tag": "a", "contains": "Bekijk alle blogartikelen"},
-  {"key": "news.tag", "tag": "span", "contains": "Blog"},
-  {"key": "news.b1date", "tag": "span", "contains": "10 augustus 2026"},
-  {"key": "news.b1", "tag": "h3", "contains": "EPBD IV"},
-  {"key": "aanbod.label", "tag": "p", "contains": "Oplossingen"},
-  {"key": "aanbod.h2", "tag": "h2", "contains": "voor jouw hotel"},
-  {"key": "aanbod.intro", "tag": "p", "contains": "Van batterijopslag"},
-  {"key": "aanbod.p1h", "tag": "h3", "contains": "Batterijopslag"},
-  {"key": "aanbod.p1p", "tag": "p", "contains": "goedkope stroom"},
-  {"key": "aanbod.p2h", "tag": "h3", "contains": "EMS"},
-  {"key": "aanbod.p2p", "tag": "p", "contains": "automatisch aanstuurt"},
-  {"key": "aanbod.p3h", "tag": "h3", "contains": "Laadpalen"},
-  {"key": "aanbod.p3p", "tag": "p", "contains": "verdienmodel"},
-  {"key": "aanbod.p4h", "tag": "h3", "contains": "Zonnepanelen"},
-  {"key": "aanbod.p4p", "tag": "p", "contains": "Eigen opwek"},
-  {"key": "aanbod.p5h", "tag": "h3", "contains": "Omvormers"},
-  {"key": "aanbod.p5p", "tag": "p", "contains": "DC-gekoppeld"},
-  {"key": "aanbod.p6h", "tag": "h3", "contains": "Monitoring"},
-  {"key": "aanbod.p6p", "tag": "p", "contains": "Realtime inzicht"},
-  {"key": "aanbod.oplossingen", "tag": "a", "contains": "Bekijk alle oplossingen"},
-  {"key": "aanbod.producten", "tag": "a", "contains": "Bekijk alle producten"}
+ {
+  "key": "nav.skip",
+  "tag": "a",
+  "contains": "Direct naar inhoud"
+ },
+ {
+  "key": "nav.oplossingen",
+  "tag": "a",
+  "contains": "Oplossingen ▾"
+ },
+ {
+  "key": "nav.oplossingen_h",
+  "tag": "h4",
+  "contains": "Oplossingen",
+  "all": true
+ },
+ {
+  "key": "nav.netcongestie",
+  "tag": "a",
+  "contains": "Netcongestie",
+  "all": true
+ },
+ {
+  "key": "nav.verduurzamen",
+  "tag": "a",
+  "contains": "Verduurzamen",
+  "all": true
+ },
+ {
+  "key": "nav.maxbelasting",
+  "tag": "a",
+  "contains": "Maximum belasting"
+ },
+ {
+  "key": "nav.stroomoverschot",
+  "tag": "a",
+  "contains": "Stroom (zon) overschot"
+ },
+ {
+  "key": "nav.stroomuitval",
+  "tag": "a",
+  "contains": "Stroomuitval / noodaggregaat"
+ },
+ {
+  "key": "nav.voordelen",
+  "tag": "a",
+  "contains": "Voordelen ▾"
+ },
+ {
+  "key": "nav.voordelen_h",
+  "tag": "h4",
+  "contains": "Voordelen"
+ },
+ {
+  "key": "nav.usp",
+  "tag": "a",
+  "contains": "USP en veiligheid"
+ },
+ {
+  "key": "nav.verdienmodellen",
+  "tag": "a",
+  "contains": "Verdienmodellen",
+  "all": true
+ },
+ {
+  "key": "nav.configurator",
+  "tag": "a",
+  "contains": "Energieconfigurateur"
+ },
+ {
+  "key": "nav.vergelijk",
+  "tag": "a",
+  "contains": "Vergelijk"
+ },
+ {
+  "key": "nav.producten",
+  "tag": "a",
+  "contains": "Producten"
+ },
+ {
+  "key": "nav.subsidies",
+  "tag": "a",
+  "contains": "Subsidies"
+ },
+ {
+  "key": "nav.overons",
+  "tag": "a",
+  "contains": "Over ons",
+  "all": true
+ },
+ {
+  "key": "nav.nieuws",
+  "tag": "a",
+  "contains": "Nieuws ▾"
+ },
+ {
+  "key": "nav.nieuws_h",
+  "tag": "h4",
+  "contains": "Nieuws"
+ },
+ {
+  "key": "nav.nieuws_all",
+  "tag": "a",
+  "contains": "Branche nieuws"
+ },
+ {
+  "key": "nav.blog",
+  "tag": "a",
+  "contains": "Blog"
+ },
+ {
+  "key": "nav.contact",
+  "tag": "a",
+  "contains": "Contact",
+  "attrs": "btn btn-primary"
+ },
+ {
+  "key": "hero.label2",
+  "tag": "p",
+  "contains": "Netcongestie &",
+  "attrs": "section-label"
+ },
+ {
+  "key": "hero.h2_2",
+  "tag": "h2",
+  "contains": "File"
+ },
+ {
+  "key": "hero.p2",
+  "tag": "p",
+  "contains": "Tussen 17:00 en 21:00"
+ },
+ {
+  "key": "hero.cta2a",
+  "tag": "a",
+  "contains": "Lees meer over netcongestie"
+ },
+ {
+  "key": "hero.cta2b",
+  "tag": "a",
+  "contains": "Bekijk de problemen"
+ },
+ {
+  "key": "hero.label3",
+  "tag": "p",
+  "contains": "Subsidies &",
+  "attrs": "section-label"
+ },
+ {
+  "key": "hero.h2_3",
+  "tag": "h2",
+  "contains": "Tot 60% subsidie"
+ },
+ {
+  "key": "hero.p3",
+  "tag": "p",
+  "contains": "De overheid stimuleert energieopslag"
+ },
+ {
+  "key": "hero.cta3a",
+  "tag": "a",
+  "contains": "Bekijk alle subsidies"
+ },
+ {
+  "key": "hero.cta3b",
+  "tag": "a",
+  "contains": "Lees het laatste nieuws"
+ },
+ {
+  "key": "hero.h2_1",
+  "tag": "h1",
+  "contains": "Energie-onafhankelijk"
+ },
+ {
+  "key": "hero.p1",
+  "tag": "p",
+  "contains": "Lemnion bouwt samen met Stroomlijnen"
+ },
+ {
+  "key": "hero.cta1a",
+  "tag": "a",
+  "contains": "USP's Lemnion"
+ },
+ {
+  "key": "hero.cta1b",
+  "tag": "a",
+  "contains": "Ontdek hoe het werkt"
+ },
+ {
+  "key": "vp.text",
+  "tag": "p",
+  "contains": "Wij leveren één slim platform"
+ },
+ {
+  "key": "probleem.label",
+  "tag": "p",
+  "contains": "Het probleem"
+ },
+ {
+  "key": "probleem.h2",
+  "tag": "h2",
+  "contains": "Je hotel groeit"
+ },
+ {
+  "key": "probleem.intro",
+  "tag": "p",
+  "contains": "Hotels willen verduurzamen, uitbreiden"
+ },
+ {
+  "key": "probleem.c1h",
+  "tag": "h3",
+  "contains": "Stokkende uitbreiding"
+ },
+ {
+  "key": "probleem.c1p",
+  "tag": "p",
+  "contains": "Wil een hotel 50 kamers"
+ },
+ {
+  "key": "probleem.c1a",
+  "tag": "a",
+  "contains": "Lees verder over netcongestie"
+ },
+ {
+  "key": "probleem.c2h",
+  "tag": "h3",
+  "contains": "Knelpunten bij"
+ },
+ {
+  "key": "probleem.c2p",
+  "tag": "p",
+  "contains": "De overstap van gas-cv"
+ },
+ {
+  "key": "probleem.c2a",
+  "tag": "a",
+  "contains": "Lees verder over verduurzamen"
+ },
+ {
+  "key": "probleem.c3h",
+  "tag": "h3",
+  "contains": "Extreme verbruikspieken"
+ },
+ {
+  "key": "probleem.c3p",
+  "tag": "p",
+  "contains": "piekt het verbruik: keukens"
+ },
+ {
+  "key": "probleem.c3a",
+  "tag": "a",
+  "contains": "Lees verder over maximum belasting"
+ },
+ {
+  "key": "probleem.c4h",
+  "tag": "h3",
+  "contains": "Stroom (zon) overschot"
+ },
+ {
+  "key": "probleem.c4p",
+  "tag": "p",
+  "contains": "Wat moet je doen met overschot"
+ },
+ {
+  "key": "probleem.c4a",
+  "tag": "a",
+  "contains": "Lees verder over stroomoverschot"
+ },
+ {
+  "key": "probleem.c5h",
+  "tag": "h3",
+  "contains": "Dieselaggregaat vervangen"
+ },
+ {
+  "key": "probleem.c5p",
+  "tag": "p",
+  "contains": "Veel hotels hebben een dieselaggregaat"
+ },
+ {
+  "key": "probleem.c5a",
+  "tag": "a",
+  "contains": "Lees verder over stroomuitval"
+ },
+ {
+  "key": "voordelen.home-label",
+  "tag": "p",
+  "contains": "Waarom Lemnion"
+ },
+ {
+  "key": "voordelen.h2",
+  "tag": "h2",
+  "contains": "Meer dan alleen energie"
+ },
+ {
+  "key": "voordelen.intro",
+  "tag": "p",
+  "contains": "Lemnion levert niet alleen batterijen"
+ },
+ {
+  "key": "voordelen.c1h",
+  "tag": "h3",
+  "contains": "Extra omzet via laadpalen"
+ },
+ {
+  "key": "voordelen.c1p",
+  "tag": "p",
+  "contains": "Plaats laadpalen of snelladers"
+ },
+ {
+  "key": "voordelen.c2h",
+  "tag": "h3",
+  "contains": "Upsell bij kamerreservering"
+ },
+ {
+  "key": "voordelen.c2p",
+  "tag": "p",
+  "contains": "Bied bij de boeking"
+ },
+ {
+  "key": "voordelen.c3h",
+  "tag": "h3",
+  "contains": "Marketing op laaddisplays"
+ },
+ {
+  "key": "voordelen.c3p",
+  "tag": "p",
+  "contains": "Snelladers hebben grote schermen"
+ },
+ {
+  "key": "voordelen.c4h",
+  "tag": "h3",
+  "contains": "Flexibel EMS"
+ },
+ {
+  "key": "voordelen.c4p",
+  "tag": "p",
+  "contains": "Het EMS van Lemnion koppelt via API"
+ },
+ {
+  "key": "voordelen.more",
+  "tag": "a",
+  "contains": "Lees meer over de verdienmodellen"
+ },
+ {
+  "key": "usp.label",
+  "tag": "p",
+  "contains": "Onze Unieke Positie"
+ },
+ {
+  "key": "usp.h2",
+  "tag": "h2",
+  "contains": "Wat Lemnion écht anders maakt"
+ },
+ {
+  "key": "usp.c1h",
+  "tag": "h3",
+  "contains": "Directe fabrieksdistributie"
+ },
+ {
+  "key": "usp.c1p",
+  "tag": "p",
+  "contains": "Onze partner importeert hardware direct"
+ },
+ {
+  "key": "usp.c2h",
+  "tag": "h3",
+  "contains": "Eén geïntegreerd ecosysteem"
+ },
+ {
+  "key": "usp.c2p",
+  "tag": "p",
+  "contains": "Batterij + EMS + OCPP"
+ },
+ {
+  "key": "usp.c3h",
+  "tag": "h3",
+  "contains": "Programmeerbaar EMS"
+ },
+ {
+  "key": "usp.c3p",
+  "tag": "p",
+  "contains": "enige programmeerbare"
+ },
+ {
+  "key": "usp.c4h",
+  "tag": "h3",
+  "contains": "6-laags veiligheidsarchitectuur"
+ },
+ {
+  "key": "usp.c4p",
+  "tag": "p",
+  "contains": "LFP-chemie"
+ },
+ {
+  "key": "usp.c5h",
+  "tag": "h3",
+  "contains": "DC-gekoppelde zonne-energie"
+ },
+ {
+  "key": "usp.c5p",
+  "tag": "p",
+  "contains": "25 kW+ MPPT"
+ },
+ {
+  "key": "usp.c6h",
+  "tag": "h3",
+  "contains": "Turnkey oplevering"
+ },
+ {
+  "key": "usp.c6p",
+  "tag": "p",
+  "contains": "Engineering, installatie, inbedrijfstelling"
+ },
+ {
+  "key": "usp.more",
+  "tag": "a",
+  "contains": "Lees verder over USP"
+ },
+ {
+  "key": "diagram.nacht",
+  "tag": "text",
+  "contains": "NACHT · DALUREN LADEN"
+ },
+ {
+  "key": "diagram.dag",
+  "tag": "text",
+  "contains": "DAG · PIEK ONTLADEN"
+ },
+ {
+  "key": "diagram.net",
+  "tag": "text",
+  "contains": "Net",
+  "all": true
+ },
+ {
+  "key": "diagram.daluur",
+  "tag": "text",
+  "contains": "Daluurtarief laden"
+ },
+ {
+  "key": "diagram.accu",
+  "tag": "text",
+  "contains": "Accu (ESS)",
+  "all": true
+ },
+ {
+  "key": "diagram.opladen",
+  "tag": "text",
+  "contains": "Opladen 23:00-07:00"
+ },
+ {
+  "key": "diagram.ontladen",
+  "tag": "text",
+  "contains": "Ontladen 07:00-23:00"
+ },
+ {
+  "key": "diagram.hotel",
+  "tag": "text",
+  "contains": "Hotel",
+  "all": true
+ },
+ {
+  "key": "diagram.piekvoorziening",
+  "tag": "text",
+  "contains": "Piekvoorziening"
+ },
+ {
+  "key": "diagram.inkoop",
+  "tag": "text",
+  "contains": "Inkoop tegen laag tarief"
+ },
+ {
+  "key": "diagram.piekboetes",
+  "tag": "text",
+  "contains": "Voorkomt piekboetes"
+ },
+ {
+  "key": "diagram.besparing",
+  "tag": "text",
+  "contains": "Besparing: 40-60%"
+ },
+ {
+  "key": "diagram.prijzen",
+  "tag": "text",
+  "contains": "Real-time prijzen"
+ },
+ {
+  "key": "diagram.geoptimaliseerd",
+  "tag": "text",
+  "contains": "Geoptimaliseerd"
+ },
+ {
+  "key": "diagram.energiemanagement",
+  "tag": "text",
+  "contains": "Energiemanagement"
+ },
+ {
+  "key": "diagram.opslagbuffering",
+  "tag": "text",
+  "contains": "Opslag &"
+ },
+ {
+  "key": "diagram.zonnepanelen",
+  "tag": "text",
+  "contains": "Zonnepanelen"
+ },
+ {
+  "key": "diagram.overschot",
+  "tag": "text",
+  "contains": "Slaat overschot op"
+ },
+ {
+  "key": "diagram.directverbruik",
+  "tag": "text",
+  "contains": "Direct verbruik"
+ },
+ {
+  "key": "diagram.prioriteit",
+  "tag": "text",
+  "contains": "Prioriteit: zon"
+ },
+ {
+  "key": "diagram.zelfvoorzienend",
+  "tag": "text",
+  "contains": "Tot 80% zelfvoorzienend"
+ },
+ {
+  "key": "diagram.opgeslagen",
+  "tag": "text",
+  "contains": "Opgeslagen energie"
+ },
+ {
+  "key": "diagram.zon",
+  "tag": "text",
+  "contains": "☀ Zon"
+ },
+ {
+  "key": "diagram.ev",
+  "tag": "text",
+  "contains": "EV Laadpalen"
+ },
+ {
+  "key": "diagram.dc",
+  "tag": "text",
+  "contains": "40-120 kW DC"
+ },
+ {
+  "key": "diagram.omzet",
+  "tag": "text",
+  "contains": "€ Omzet per kWh"
+ },
+ {
+  "key": "diagram.inkomsten",
+  "tag": "text",
+  "contains": "Nieuwe inkomstenbron voor je hotel"
+ },
+ {
+  "key": "diagram.verdient",
+  "tag": "text",
+  "contains": "Gasten laden · jij verdient"
+ },
+ {
+  "key": "overons.label",
+  "tag": "p",
+  "contains": "Over ons"
+ },
+ {
+  "key": "overons.h2",
+  "tag": "h2",
+  "contains": "Samen sterk in hospitality"
+ },
+ {
+  "key": "overons.l1p",
+  "tag": "p",
+  "contains": "Hospitality Energy Solutions is jouw aanspreekpunt"
+ },
+ {
+  "key": "overons.l2p",
+  "tag": "p",
+  "contains": "Onze technische partner met 25+ jaar"
+ },
+ {
+  "key": "overons.readmore",
+  "tag": "a",
+  "contains": "Lees meer over ons"
+ },
+ {
+  "key": "overons.bottom",
+  "tag": "p",
+  "contains": "Lemnion verkoopt. Stroomlijnen bouwt"
+ },
+ {
+  "key": "cta.h2",
+  "tag": "h2",
+  "contains": "Klaar om jouw hotel energie-onafhankelijk"
+ },
+ {
+  "key": "cta.p",
+  "tag": "p",
+  "contains": "Elk hotel is uniek"
+ },
+ {
+  "key": "cta.config",
+  "tag": "a",
+  "contains": "Doe de configurator"
+ },
+ {
+  "key": "footer.desc",
+  "tag": "p",
+  "contains": "Lemnion maakt hotels energie-onafhankelijk met batterijopslag"
+ },
+ {
+  "key": "footer.maxbelasting",
+  "tag": "a",
+  "contains": "Maximum belasting"
+ },
+ {
+  "key": "footer.stroomoverschot",
+  "tag": "a",
+  "contains": "Stroom overschot"
+ },
+ {
+  "key": "footer.stroomuitval",
+  "tag": "a",
+  "contains": "Stroomuitval &"
+ },
+ {
+  "key": "footer.h_products",
+  "tag": "h3",
+  "contains": "Producten &"
+ },
+ {
+  "key": "footer.batterij",
+  "tag": "a",
+  "contains": "Batterijopslag"
+ },
+ {
+  "key": "footer.laadpalen",
+  "tag": "a",
+  "contains": "Laadpalen &"
+ },
+ {
+  "key": "footer.configurator",
+  "tag": "a",
+  "contains": "Energieconfigurator"
+ },
+ {
+  "key": "footer.subsidies",
+  "tag": "a",
+  "contains": "Subsidies &"
+ },
+ {
+  "key": "footer.h_info",
+  "tag": "h3",
+  "contains": "Informatie"
+ },
+ {
+  "key": "footer.usp",
+  "tag": "a",
+  "contains": "USP &"
+ },
+ {
+  "key": "footer.nieuwsblog",
+  "tag": "a",
+  "contains": "Nieuws &"
+ },
+ {
+  "key": "footer.contact",
+  "tag": "a",
+  "contains": "Contact",
+  "attrs": "contact-modal"
+ },
+ {
+  "key": "footer.copyright",
+  "tag": "p",
+  "contains": "In partnership met"
+ },
+ {
+  "key": "footer.wcag",
+  "tag": "p",
+  "contains": "WCAG 2.2 compliant"
+ },
+ {
+  "key": "modal.title",
+  "tag": "h3",
+  "contains": "Vrijblijvend contact"
+ },
+ {
+  "key": "modal.sub",
+  "tag": "p",
+  "contains": "Vul het formulier in"
+ },
+ {
+  "key": "modal.voornaam",
+  "tag": "label",
+  "contains": "Voornaam"
+ },
+ {
+  "key": "modal.achternaam",
+  "tag": "label",
+  "contains": "Achternaam"
+ },
+ {
+  "key": "modal.bedrijf",
+  "tag": "label",
+  "contains": "Bedrijfsnaam"
+ },
+ {
+  "key": "modal.functie",
+  "tag": "label",
+  "contains": "Functie"
+ },
+ {
+  "key": "modal.email",
+  "tag": "label",
+  "contains": "E-mailadres"
+ },
+ {
+  "key": "modal.mobiel",
+  "tag": "label",
+  "contains": "Mobiel nummer"
+ },
+ {
+  "key": "modal.bericht",
+  "tag": "label",
+  "contains": "Je bericht"
+ },
+ {
+  "key": "modal.submit",
+  "tag": "button",
+  "contains": "Verstuur bericht"
+ },
+ {
+  "key": "news.label",
+  "tag": "p",
+  "contains": "Actueel"
+ },
+ {
+  "key": "news.h2",
+  "tag": "h2",
+  "contains": "Urgente ontwikkelingen"
+ },
+ {
+  "key": "news.all",
+  "tag": "a",
+  "contains": "Bekijk alle blogartikelen"
+ },
+ {
+  "key": "news.tag",
+  "tag": "span",
+  "contains": "Blog"
+ },
+ {
+  "key": "news.b1date",
+  "tag": "span",
+  "contains": "10 augustus 2026"
+ },
+ {
+  "key": "news.b1",
+  "tag": "h3",
+  "contains": "EPBD IV"
+ },
+ {
+  "key": "aanbod.label",
+  "tag": "p",
+  "contains": "Oplossingen"
+ },
+ {
+  "key": "aanbod.h2",
+  "tag": "h2",
+  "contains": "voor jouw hotel"
+ },
+ {
+  "key": "aanbod.intro",
+  "tag": "p",
+  "contains": "Van batterijopslag"
+ },
+ {
+  "key": "aanbod.p1h",
+  "tag": "h3",
+  "contains": "Batterijopslag"
+ },
+ {
+  "key": "aanbod.p1p",
+  "tag": "p",
+  "contains": "goedkope stroom"
+ },
+ {
+  "key": "aanbod.p2h",
+  "tag": "h3",
+  "contains": "EMS"
+ },
+ {
+  "key": "aanbod.p2p",
+  "tag": "p",
+  "contains": "automatisch aanstuurt"
+ },
+ {
+  "key": "aanbod.p3h",
+  "tag": "h3",
+  "contains": "Laadpalen"
+ },
+ {
+  "key": "aanbod.p3p",
+  "tag": "p",
+  "contains": "verdienmodel"
+ },
+ {
+  "key": "aanbod.p4h",
+  "tag": "h3",
+  "contains": "Zonnepanelen"
+ },
+ {
+  "key": "aanbod.p4p",
+  "tag": "p",
+  "contains": "Eigen opwek"
+ },
+ {
+  "key": "aanbod.p5h",
+  "tag": "h3",
+  "contains": "Omvormers"
+ },
+ {
+  "key": "aanbod.p5p",
+  "tag": "p",
+  "contains": "DC-gekoppeld"
+ },
+ {
+  "key": "aanbod.p6h",
+  "tag": "h3",
+  "contains": "Monitoring"
+ },
+ {
+  "key": "aanbod.p6p",
+  "tag": "p",
+  "contains": "Realtime inzicht"
+ },
+ {
+  "key": "aanbod.oplossingen",
+  "tag": "a",
+  "contains": "Bekijk alle oplossingen"
+ },
+ {
+  "key": "aanbod.producten",
+  "tag": "a",
+  "contains": "Bekijk alle producten"
+ }
 ]

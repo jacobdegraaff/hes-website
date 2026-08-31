@@ -1,13 +1,13 @@
 {
-  "meta.blog.html.title": "Blog | Lemnion · Hospitality Energy Solutions | Energy insights for hotels",
-  "meta.blog.html.description": "Blog by Hospitality Energy Solutions. Insights on energy solutions, grid congestion, subsidies and sustainability for the hotel industry.",
-  "blog.h1": "Blog",
-  "blog.intro": "In-depth articles about energy independence, battery storage, EMS, charging infrastructure and subsidies, specifically for hoteliers.",
-  "blog.card1-date": "10 August 2026",
-  "blog.card1-title": "EPBD IV: mandatory charging infrastructure for hotels",
-  "blog.card1-desc": "From 2027, existing hotels with more than 20 parking spaces must have charging points. What does this mean for your hotel, and why is investing now smart?",
-  "blog.card1-read": "Read the article →",
-  "blog.label": "Keep reading",
-  "blog.rl1": "Explore our solutions for hotels",
-  "blog.rl2": "Discover current grants and subsidies"
+ "meta.blog.html.title": "Blog · Lemnion · Hospitality Energy Solutions · Energy insights for hotels",
+ "meta.blog.html.description": "Blog by Hospitality Energy Solutions. Insights on energy solutions, grid congestion, subsidies and sustainability for the hotel industry.",
+ "blog.h1": "Blog",
+ "blog.intro": "In-depth articles about energy independence, battery storage, EMS, charging infrastructure and subsidies, specifically for hoteliers.",
+ "blog.card1-date": "10 August 2026",
+ "blog.card1-title": "EPBD IV: mandatory charging infrastructure for hotels",
+ "blog.card1-desc": "From 2027, existing hotels with more than 20 parking spaces must have charging points. What does this mean for your hotel, and why is investing now smart?",
+ "blog.card1-read": "Read the article →",
+ "blog.label": "Keep reading",
+ "blog.rl1": "Explore our solutions for hotels",
+ "blog.rl2": "Discover current grants and subsidies"
 }
