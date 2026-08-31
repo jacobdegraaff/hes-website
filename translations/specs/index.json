@@ -209,10 +209,11 @@
   {"key": "modal.bericht", "tag": "label", "contains": "Je bericht"},
   {"key": "modal.submit", "tag": "button", "contains": "Verstuur bericht"},
   {"key": "news.label", "tag": "p", "contains": "Actueel"},
-  {"key": "news.h2", "tag": "h2", "contains": "Nieuws & Ontwikkelingen"},
-  {"key": "news.all", "tag": "a", "contains": "Bekijk alle nieuwsberichten"},
-  {"key": "news.i1", "tag": "a", "contains": "EPBD verplicht laadinfrastructuur"},
-  {"key": "news.i2", "tag": "a", "contains": "Horecaondernemers omzeilen vol stroomnet"},
-  {"key": "news.i3", "tag": "a", "contains": "Slim laden maakt elektrisch rijden"},
-  {"key": "news.i4", "tag": "a", "contains": "Kabinet trekt €197 miljoen"}
+  {"key": "news.h2", "tag": "h2", "contains": "Urgente ontwikkelingen"},
+  {"key": "news.all", "tag": "a", "contains": "Bekijk alle blogartikelen"},
+  {"key": "news.tag", "tag": "span", "contains": "Blog"},
+  {"key": "news.b1date", "tag": "span", "contains": "10 augustus 2026"},
+  {"key": "news.b1", "tag": "h3", "contains": "EPBD IV"},
+  {"key": "news.b1d", "tag": "p", "contains": "Vanaf 2027"},
+  {"key": "news.read", "tag": "span", "contains": "Lees het artikel"}
 ]

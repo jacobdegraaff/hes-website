@@ -292,7 +292,7 @@
             margin-bottom: 0.75rem;
         }
 
-        /* Home nieuws ticker */
+        /* Home blog / urgent developments */
         .news-ticker { background: var(--off-white); padding: 2.5rem 0; }
         .news-ticker-head {
             display: flex; align-items: baseline; justify-content: space-between;
@@ -311,29 +311,38 @@
         .news-ticker-all:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: 6px; }
         .news-ticker-grid {
             list-style: none; display: grid;
-            grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.25rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem; margin-top: 1.25rem;
         }
-        .news-ticker-grid li { height: 100%; }
+        .news-ticker-grid li { height: 100%; min-width: 0; }
         .news-ticker-card {
             background: #FFFFFF; border: 1px solid var(--border);
             border-radius: var(--radius-lg); box-shadow: 0 2px 12px rgba(15, 61, 35, 0.05);
-            height: 100%; transition: box-shadow 0.15s ease;
+            height: 100%; display: flex; flex-direction: column;
+            padding: 1.25rem; text-decoration: none;
+            transition: box-shadow 0.15s ease, transform 0.15s ease;
         }
-        .news-ticker-card a {
-            display: flex; align-items: center; height: 100%;
-            padding: 1rem 0.9rem; text-decoration: none;
-            font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600;
-            font-size: 0.85rem; line-height: 1.4; color: var(--green-primary);
+        .news-ticker-card:hover { box-shadow: 0 6px 18px rgba(15, 61, 35, 0.10); transform: translateY(-2px); }
+        .news-ticker-card:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: var(--radius-lg); }
+        .news-ticker-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+        .news-ticker-tag {
+            font-family: 'Montserrat', system-ui, sans-serif; font-size: 0.62rem; font-weight: 600;
+            letter-spacing: 0.09em; text-transform: uppercase; color: var(--green-primary);
+            background: var(--green-light); border-radius: 50px; padding: 0.22rem 0.7rem;
         }
-        .news-ticker-card:hover { box-shadow: 0 6px 18px rgba(15, 61, 35, 0.10); }
-        .news-ticker-card a:hover { color: var(--green-secondary); }
-        .news-ticker-card a:focus-visible { outline: 2px solid var(--green-accent); outline-offset: 2px; border-radius: var(--radius-lg); }
-        @media (max-width: 900px) { .news-ticker-grid { grid-template-columns: repeat(2, 1fr); } }
+        .news-ticker-date {
+            font-family: 'Montserrat', system-ui, sans-serif; font-size: 0.7rem; font-weight: 500;
+            letter-spacing: 0.05em; text-transform: uppercase; color: var(--green-secondary);
+        }
+        .news-ticker-card h3 { margin: 0 0 0.4rem; font-size: 1rem; line-height: 1.35; color: var(--green-primary); max-width: 620px; }
+        .news-ticker-card p { font-size: 0.85rem; color: #3D4F40; line-height: 1.5; margin: 0 0 0.9rem; max-width: 640px; }
+        .news-ticker-read { margin-top: auto; font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500; font-size: 0.82rem; color: var(--green-secondary); }
+        .news-ticker-card:hover .news-ticker-read { color: var(--green-primary); }
         @media (max-width: 560px) {
             .news-ticker-grid { grid-template-columns: 1fr; }
-            .news-ticker-card a { padding: 0.9rem 0.85rem; }
             .news-ticker-head { align-items: flex-start; }
         }
+        @media (prefers-reduced-motion: reduce) { .news-ticker-card:hover { transform: none; } }
 
         /* Problem grid */
         .problem-grid {
@@ -1013,29 +1022,22 @@ function lockScroll(on) {
             <div class="news-ticker-head">
                 <div>
                     <p data-i18n="news.label" class="section-label">Actueel</p>
-                    <h2 id="news-h2" data-i18n="news.h2">Nieuws &amp; Ontwikkelingen</h2>
+                    <h2 id="news-h2" data-i18n="news.h2">Urgente ontwikkelingen</h2>
                 </div>
-                <a data-i18n="news.all" class="news-ticker-all" href="/nieuws">Bekijk alle nieuwsberichten →</a>
+                <a data-i18n="news.all" class="news-ticker-all" href="/blog">Bekijk alle blogartikelen →</a>
             </div>
             <ul class="news-ticker-grid">
                 <li>
-                    <article class="news-ticker-card">
-                        <a data-i18n="news.i1" href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/epbd-iii/laadinfrastructuur-elektrisch-vervoer">EPBD verplicht laadinfrastructuur bij utiliteitsgebouwen, ook hotels</a>
-                    </article>
-                </li>
-                <li>
-                    <article class="news-ticker-card">
-                        <a data-i18n="news.i2" href="https://www.entreemagazine.nl/ondernemen/horecaondernemers-omzeilen-vol-stroomnet-met-eigen-batterijopslag">Horecaondernemers omzeilen vol stroomnet met eigen batterijopslag</a>
-                    </article>
-                </li>
-                <li>
-                    <article class="news-ticker-card">
-                        <a data-i18n="news.i3" href="https://solarmagazine.nl/nieuws-zonne-energie/i44553/slim-laden-elektrische-auto-bijna-7-keer-goedkoper-dan-rijden-op-benzine">Slim laden maakt elektrisch rijden bijna 7 keer goedkoper dan benzine</a>
-                    </article>
-                </li>
-                <li>
-                    <article class="news-ticker-card">
-                        <a data-i18n="news.i4" href="https://solarmagazine.nl/nieuws-zonne-energie/i44549/gemeenten-krijgen-197-miljoen-voor-verbeteren-leefkwaliteit-bij-nieuwe-stroomstations">Kabinet trekt €197 miljoen uit voor gemeenten rond nieuwe stroomstations</a>
+                    <article>
+                        <a class="news-ticker-card" href="/blog-epbd-iv-laadinfra">
+                            <span class="news-ticker-meta">
+                                <span class="news-ticker-tag" data-i18n="news.tag">Blog</span>
+                                <span class="news-ticker-date" data-i18n="news.b1date">10 augustus 2026</span>
+                            </span>
+                            <h3 data-i18n="news.b1">EPBD IV: verplichte laadinfra voor hotels</h3>
+                            <p data-i18n="news.b1d">Vanaf 2027 moeten bestaande hotels met meer dan 20 parkeerplaatsen laadpunten hebben. Waarom is nu investeren slim?</p>
+                            <span class="news-ticker-read" data-i18n="news.read">Lees het artikel →</span>
+                        </a>
                     </article>
                 </li>
             </ul>
