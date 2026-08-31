@@ -6,25 +6,27 @@
   </defs>
   <rect width="980" height="520" fill="#FFFFFF"/>
 
-  <rect x="619" y="45" width="129" height="385" fill="#F4D9D9" opacity="0.55"/>
+  <rect x="619" y="45" width="129" height="385" fill="#F4D9D9" opacity="0.5"/>
 
-  <g stroke="#E3E9E2" stroke-width="1">
-    <line x1="70" y1="353" x2="780" y2="353"/>
-    <line x1="70" y1="276" x2="780" y2="276"/>
-    <line x1="70" y1="199" x2="780" y2="199"/>
-    <line x1="70" y1="122" x2="780" y2="122"/>
-    <line x1="70" y1="45" x2="780" y2="45"/>
+  <g stroke="#E9EEE8" stroke-width="1.2">
+    <line x1="70" y1="366" x2="780" y2="366"/>
+<line x1="70" y1="302" x2="780" y2="302"/>
+<line x1="70" y1="238" x2="780" y2="238"/>
+<line x1="70" y1="173" x2="780" y2="173"/>
+<line x1="70" y1="109" x2="780" y2="109"/>
+<line x1="70" y1="45" x2="780" y2="45"/>
   </g>
 
   <line x1="70" y1="430" x2="780" y2="430" stroke="#C7D0C6" stroke-width="2"/>
   <line x1="70" y1="45" x2="70" y2="430" stroke="#C7D0C6" stroke-width="2"/>
 
   <text x="58" y="435" text-anchor="end" font-size="15" fill="#556B58">0</text>
-<text x="58" y="358" text-anchor="end" font-size="15" fill="#556B58">20</text>
-<text x="58" y="281" text-anchor="end" font-size="15" fill="#556B58">40</text>
-<text x="58" y="204" text-anchor="end" font-size="15" fill="#556B58">60</text>
-<text x="58" y="127" text-anchor="end" font-size="15" fill="#556B58">80</text>
-<text x="58" y="50" text-anchor="end" font-size="15" fill="#556B58">100</text>
+<text x="58" y="371" text-anchor="end" font-size="15" fill="#556B58">20</text>
+<text x="58" y="307" text-anchor="end" font-size="15" fill="#556B58">40</text>
+<text x="58" y="242" text-anchor="end" font-size="15" fill="#556B58">60</text>
+<text x="58" y="178" text-anchor="end" font-size="15" fill="#556B58">80</text>
+<text x="58" y="114" text-anchor="end" font-size="15" fill="#556B58">100</text>
+<text x="58" y="50" text-anchor="end" font-size="15" fill="#556B58">120</text>
   <text x="135" y="452" text-anchor="middle" font-size="15" fill="#556B58">02:00</text>
 <text x="199" y="452" text-anchor="middle" font-size="15" fill="#556B58">04:00</text>
 <text x="264" y="452" text-anchor="middle" font-size="15" fill="#556B58">06:00</text>
@@ -40,26 +42,27 @@
   <text x="24" y="238" font-family="Montserrat, Arial, sans-serif" font-size="15" font-weight="600" fill="#2F3437" transform="rotate(-90 24 238)" text-anchor="middle">Vermogen (kW)</text>
 
   <g clip-path="url(#plotClip)">
-    <line x1="70" y1="180" x2="780" y2="180" stroke="#94A098" stroke-width="3" stroke-dasharray="10 8"/>
-    <path d="M 70.0 295.2 L 134.5 306.8 L 199.1 314.5 L 263.6 276.0 L 328.2 199.0 L 392.7 237.5 L 457.3 199.0 L 521.8 237.5 L 586.4 160.5 L 618.6 64.2 L 650.9 -1.2 L 683.2 -24.3 L 715.5 21.9 L 747.7 98.9 L 780.0 199.0" fill="none" stroke="#2F3437" stroke-width="3.5" stroke-linejoin="round"/>
-    <path d="M 70.0 295.2 L 134.5 306.8 L 199.1 314.5 L 263.6 276.0 L 328.2 218.2 L 392.7 245.2 L 457.3 218.2 L 521.8 237.5 L 586.4 199.0 L 618.6 187.4 L 650.9 179.8 L 683.2 179.8 L 715.5 191.3 L 747.7 210.6 L 780.0 229.8" fill="none" stroke="#2E7032" stroke-width="4" stroke-linejoin="round"/>
+    <line x1="70" y1="231" x2="780" y2="231" stroke="#94A098" stroke-width="3.5" stroke-dasharray="11 9"/>
+    <path d="M 70.0 317.7 L 134.5 327.3 L 199.1 333.8 L 263.6 301.7 L 328.2 243.9 L 392.7 269.6 L 457.3 243.9 L 521.8 269.6 L 586.4 211.8 L 618.6 147.7 L 650.9 102.8 L 683.2 83.5 L 715.5 122.0 L 747.7 173.3 L 780.0 237.5" fill="none" stroke="#2F3437" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 70.0 317.7 L 134.5 327.3 L 199.1 333.8 L 263.6 308.1 L 328.2 263.2 L 392.7 282.4 L 457.3 263.2 L 521.8 276.0 L 586.4 250.3 L 618.6 243.9 L 650.9 231.1 L 683.2 227.9 L 715.5 237.5 L 747.7 253.5 L 780.0 269.6" fill="none" stroke="#2E7032" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="683.2" cy="83.5" r="5" fill="#B03327"/>
   </g>
 
   
   <g>
-    <rect x="596" y="52" width="184" height="104" rx="14" fill="#FBE3E3"/>
-    <path d="M 688 152 L 672 168 L 704 168 Z" fill="#FBE3E3"/>
-    <text x="688" y="92" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="600" fill="#B03327">Netcongestie</text>
-    <text x="688" y="122" text-anchor="middle" font-size="15" font-weight="500" fill="#B03327">17:00-21:00</text>
+    <rect x="600" y="50" width="180" height="98" rx="14" fill="#FBE3E3"/>
+    <path d="M 690 146 L 674 162 L 706 162 Z" fill="#FBE3E3"/>
+    <text x="690" y="86" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="600" fill="#B03327">Netcongestie</text>
+    <text x="690" y="114" text-anchor="middle" font-size="15" font-weight="500" fill="#B03327">17:00-21:00</text>
   </g>
 
   
   <g font-size="16">
-    <line x1="90" y1="494" x2="130" y2="494" stroke="#2F3437" stroke-width="5"/>
+    <line x1="90" y1="494" x2="130" y2="494" stroke="#2F3437" stroke-width="6"/>
     <text x="140" y="499" fill="#2F3437">Stroomvraag hotel</text>
-    <line x1="380" y1="494" x2="420" y2="494" stroke="#2E7032" stroke-width="5"/>
+    <line x1="380" y1="494" x2="420" y2="494" stroke="#2E7032" stroke-width="6"/>
     <text x="430" y="499" fill="#2E7032">Met Lemnion batterijopslag</text>
-    <line x1="700" y1="494" x2="740" y2="494" stroke="#94A098" stroke-width="5" stroke-dasharray="9 7"/>
+    <line x1="700" y1="494" x2="740" y2="494" stroke="#94A098" stroke-width="6" stroke-dasharray="10 7"/>
     <text x="750" y="499" fill="#556B58">Netcapaciteit (aansluitlimiet)</text>
   </g>
 </svg>
