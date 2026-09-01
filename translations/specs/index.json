@@ -114,7 +114,7 @@
   {"key": "overons.l1p", "tag": "p", "contains": "Hospitality Energy Solutions is jouw aanspreekpunt"},
   {"key": "overons.l2p", "tag": "p", "contains": "Onze technische partner met 25+ jaar"},
   {"key": "overons.readmore", "tag": "a", "contains": "Lees meer over ons"},
-  {"key": "overons.bottom", "tag": "p", "contains": "Lemnion verkoopt. Stroomlijnen bouwt"},
+  {"key": "overons.samen", "tag": "p", "contains": "Lemnion verkoopt. Stroomlijnen bouwt"},
   {"key": "cta.h2", "tag": "h2", "contains": "Klaar om jouw hotel energie-onafhankelijk"},
   {"key": "cta.p", "tag": "p", "contains": "Elk hotel is uniek"},
   {"key": "cta.config", "tag": "a", "contains": "Doe de configurator"},
