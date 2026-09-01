@@ -1,5 +1,5 @@
 [
-  {"key": "voordelen.h1", "tag": "h1", "contains": "Wat kan Hospitality Energy Solutions"},
+  {"key": "voordelen.h1", "tag": "h1", "contains": "Wat kan Lemnion"},
   {"key": "voordelen.sub", "tag": "p", "contains": "Vanuit onze roots in de hotellerie"},
   {"key": "voordelen.s1h", "tag": "h3", "contains": "Energiebehoefte in kaart"},
   {"key": "voordelen.s1p", "tag": "p", "contains": "Ieder hotel heeft een uniek energieprofiel"},
@@ -20,8 +20,10 @@
   {"key": "voordelen.m3", "tag": "li", "contains": "<strong>Fiscale urgentie</strong>"},
   {"key": "voordelen.m4", "tag": "li", "contains": "<strong>Slimme tariefsturing</strong>"},
   {"key": "voordelen.m5", "tag": "li", "contains": "<strong>24/7 monitoring</strong>"},
-  {"key": "voordelen.factlabel", "tag": "p", "contains": "Wist u dat", "attrs": "section-label"},
+  {"key": "voordelen.factlabel", "tag": "p", "contains": "Wist je dat?", "attrs": "section-label"},
   {"key": "voordelen.facth2", "tag": "h2", "contains": "Extra belasting op uitstotende"},
   {"key": "voordelen.factp", "tag": "p", "contains": "extra belasting geheven op zakelijke"},
-  {"key": "voordelen.factlink", "tag": "a", "contains": "Lees meer op ondernemersplein"}
+  {"key": "voordelen.factlink", "tag": "a", "contains": "Lees het hele artikel"},
+  {"key": "voordelen.s3x-intro", "tag": "p", "contains": "Enkele concrete inzichten"},
+  {"key": "voordelen.factintro", "tag": "p", "contains": "In onze blog van 31 augustus"}
 ]

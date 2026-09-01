@@ -9,11 +9,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Subsidies voor hotels | Lemnion · Hospitality Energy Solutions | EIA · MIA · ISDE · SPRILA · ERE</title>
+    <title>Subsidies voor hotels · Lemnion · Hospitality Energy Solutions · EIA · MIA · ISDE · SPRILA · ERE</title>
     <meta name="description" content="Subsidies voor hotels: EIA, MIA/Vamil, ISDE en SPRILA voor laadpalen, batterijen en zonnepanelen. Plus ERE-inkomsten per geladen kWh. Lemnion verzorgt de aanvraag.">
     <link rel="canonical" href="https://lemnion.nl/subsidies">
-    <meta property="og:title" content="Subsidies voor hotels | EIA · MIA · ISDE · SPRILA | Lemnion">
-    <meta property="og:description" content="EIA, MIA/Vamil, ISDE en SPRILA | Lemnion helpt hotels maximale subsidie te krijgen.">
+    <meta property="og:title" content="Subsidies voor hotels · EIA · MIA · ISDE · SPRILA · Lemnion">
+    <meta property="og:description" content="EIA, MIA/Vamil, ISDE en SPRILA · Lemnion helpt hotels maximale subsidie te krijgen.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lemnion.nl/subsidies">
     <meta property="og:image" content="https://lemnion.nl/assets/logo-og.png">
@@ -22,8 +22,8 @@
     <meta property="og:locale" content="nl_NL">
     <meta property="og:site_name" content="Lemnion · Hospitality Energy Solutions">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Subsidies voor hotels | EIA · MIA · ISDE · SPRILA | Lemnion">
-    <meta name="twitter:description" content="EIA, MIA/Vamil, ISDE en SPRILA | maximale subsidie voor jouw hotel.">
+    <meta name="twitter:title" content="Subsidies voor hotels · EIA · MIA · ISDE · SPRILA · Lemnion">
+    <meta name="twitter:description" content="EIA, MIA/Vamil, ISDE en SPRILA · maximale subsidie voor jouw hotel.">
     <meta name="twitter:image" content="https://lemnion.nl/assets/logo-og.png">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"Hospitality Energy Solutions","alternateName":"Lemnion","url":"https://lemnion.nl/","logo":"https://lemnion.nl/assets/logo-og.png","description":"Lemnion maakt hotels energie-onafhankelijk.","foundingDate":"2025","contactPoint":{"@type":"ContactPoint","email":"info@lemnion.nl","contactType":"sales"},"sameAs":[]}
@@ -36,7 +36,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <style>
 /* hover opent niet meer */
-        :root{--green-primary:#0F3D23;--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#556B58;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
+        :root{--green-primary:#0F3D23;
+        .nav-links > li > a{white-space:nowrap}--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#556B58;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;scroll-padding-top:56px;font-size:16px;overflow-y:scroll}
         body{font-family:'Inter',system-ui,sans-serif;color:var(--dark-grey);background:var(--off-white);line-height:1.7}
@@ -297,6 +298,25 @@ h2{font-size:1.1rem}
 .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
 </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
     <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
+<style>
+/* Nav: desktop hover opent de dropdown, mobiel accordion via chevron-togle */
+.nav-dropdown:hover .nav-dropdown-panel{display:block!important}
+.nav-dd-toggle{display:none}
+@media(max-width:1180px){
+  .nav-dropdown .nav-backdrop{display:none!important}
+  .nav-mega-col h4{display:none!important}
+  .nav-dropdown > a::after{content:none}
+  .nav-dropdown > a{padding-right:2.75rem}
+  .nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
+  .nav-dd-toggle::after{content:"\25be"}
+  .nav-dropdown.open > .nav-dd-toggle::after{content:"\25b4"}
+  .nav-dropdown.open > .nav-dropdown-panel{display:block!important}
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(li.querySelector(".nav-dd-toggle")){return;}var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");t.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();var open=li.classList.toggle("open");t.setAttribute("aria-expanded",open?"true":"false");});li.appendChild(t);});});
+</script>
+<!-- data-navfix -->
 </head>
 <body>
 
@@ -346,13 +366,12 @@ function lockScroll(on) {
         </button>
 
                 <ul class="nav-links">
-            <li><a href="/">Home</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.oplossingen" href="/oplossingen">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="/energie-uitdagingen">Energie uitdagingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Oplossingen</a></h4>
+                        <h4><a data-i18n="nav.oplossingen_h" href="/energie-uitdagingen">Energie uitdagingen</a></h4>
                         <a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a>
                         <a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a>
                         <a data-i18n="nav.maxbelasting" href="/maximum-belasting">Maximum belasting</a>
@@ -367,14 +386,14 @@ function lockScroll(on) {
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
                         <h4><a data-i18n="nav.voordelen_h" href="/voordelen">Voordelen</a></h4>
-                        <a data-i18n="nav.usp" href="/usp-veiligheid">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a>
-                        <a data-i18n="nav.configurator" href="/configurator">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
+                        <a data-i18n="nav.usp" href="/usp">USP<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.veiligheid" href="/veiligheid">Veiligheid<span class="mega-desc">6-laags veiligheidsarchitectuur</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a>
                         <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="/producten">Producten</a></li>
+            <li><a data-i18n="nav.producten" href="/oplossingen">Oplossingen</a></li>
             <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
             <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
@@ -466,12 +485,12 @@ function lockScroll(on) {
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
                     <span data-i18n="subsidies.sprila-reken1">Maximale subsidie per AC 11 kW laadpaal (1 laadpunt):<br></span>
-                    <span data-i18n="subsidies.sprila-reken2">Mkb: <strong>€800</strong> | groot bedrijf: <strong>€400</strong>.<br></span>
+                    <span data-i18n="subsidies.sprila-reken2">Mkb: <strong>€800</strong> · groot bedrijf: <strong>€400</strong>.<br></span>
                     <span data-i18n="subsidies.sprila-reken3">Bekijk de officiële voorwaarden: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/sprila-aanschaf" style="color:var(--green-secondary);">SPRILA aanschaf (RVO.nl)</a>.<br></span>
                 </div>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:0.6rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.sprila-batterij-h">Ook interessant: batterijsubsidie</span></strong><br>
-                    <span data-i18n="subsidies.sprila-batterij">SPRILA subsidieert ook stationaire batterijen: <strong>€85 per kWh (mkb)</strong> of €60 per kWh (groot bedrijf), tot maximaal 1.000 kWh. Minimale subsidie: €25.000 in combinatie met nieuw aan te leggen laadinfra. Combineer met de <a href="configurator.html" style="color:var(--green-secondary);">Lemnion-accu in de configurator</a>.</span>
+                    <span data-i18n="subsidies.sprila-batterij">SPRILA subsidieert ook stationaire batterijen: <strong>€85 per kWh (mkb)</strong> of €60 per kWh (groot bedrijf), tot maximaal 1.000 kWh. Minimale subsidie: €25.000 in combinatie met nieuw aan te leggen laadinfra. Combineer met de Lemnion-accu.</span>
                 </div>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:0.6rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.sprila-info-h">Belangrijk vóór je aanvraagt</span></strong><br>
@@ -529,7 +548,7 @@ function lockScroll(on) {
                     <span data-i18n="subsidies.ere-status" style="font-size:0.72rem;color:var(--text-muted);">26-29 juni 2026 · Bron: Joulo via Duurzaam Ondernemen</span><br>
                     <!-- ERE_PRIJS_END -->
                     <span data-i18n="subsidies.ere-reken5"><strong>Netto na commissie:</strong> ±€1.900 per jaar op netstroom, ±€3.200 met zonnepanelen + GvO's.<br></span>
-                    <span data-i18n="subsidies.ere-tip" style="font-size:0.72rem;color:var(--text-muted);">💡 <strong>Niet automatisch:</strong> registreer de laadpalen via een door de NEa erkende inboekdienstverlener | die regelt de NEa-registratie, audit en verkoop. Eisen: MID-meter + groene stroom aantoonbaar.</span>
+                    <span data-i18n="subsidies.ere-tip" style="font-size:0.72rem;color:var(--text-muted);">💡 <strong>Niet automatisch:</strong> registreer de laadpalen via een door de NEa erkende inboekdienstverlener · die regelt de NEa-registratie, audit en verkoop. Eisen: MID-meter + groene stroom aantoonbaar.</span>
                 </div>
            
                 <p style="margin-top:1rem;"><a data-i18n="subsidies.ere-lees-meer" href="#ere-artikel" style="font-weight:600;color:var(--green-accent);">Lees het volledige artikel over ERE&rsquo;s voor hotels &rarr;</a></p> </div>
@@ -582,7 +601,7 @@ function lockScroll(on) {
         <h2 data-i18n="subsidies.help-h2">Van aanvraag tot uitbetaling, volledig ontzorgd</h2>
         <p data-i18n="subsidies.help-intro" style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
             Subsidies aanvragen is specialistisch werk. Lemnion werkt samen met subsidie-experts die de complete aanvraag voor jouw hotel verzorgen. 
-            Geen gedoe met formulieren, geen gemiste deadlines | wij zorgen dat je krijgt waar je recht op hebt.
+            Geen gedoe met formulieren, geen gemiste deadlines · wij zorgen dat je krijgt waar je recht op hebt.
         </p>
         <div class="subsidy-steps">
             <div style="background:white;border-radius:var(--radius-lg);padding:1.75rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);text-align:center;">
@@ -658,6 +677,8 @@ function lockScroll(on) {
             <tr data-i18n="subsidies.artikel-t1-r2" style="border-bottom:1px solid var(--line,#D4DDD0);"><td style="padding:0.5rem 0.75rem;">Eigen zonnestroom met GvO's</td><td style="padding:0.5rem 0.75rem;"><strong>100%</strong></td><td style="padding:0.5rem 0.75rem;">circa €200</td></tr>
         </table>
         <p data-i18n="subsidies.artikel-p13">De achtergrond: voor netstroom hanteert de NEa het gemiddelde groene aandeel van het Nederlandse stroomnet. In 2026 is dat 50,5%, ongeacht of het hotel een groen of grijs contract heeft. Stroom van de eigen zonnepanelen is anders: met Garanties van Oorsprong (GvO's) is die aantoonbaar groen en telt <strong>volledig</strong> mee. Het verschil is een factor twee in ERE-opbrengst per geladen kWh.</p>
+        <p data-i18n="subsidies.artikel-p13b">Daar zit één belangrijke voorwaarde aan vast, die hotels vaak over het hoofd zien. De NEa accepteert geen jaarsaldo: per uur moet aantoonbaar zijn dat hernieuwbare stroom daadwerkelijk in de auto is gegaan. Laadt een gast 's avonds of 's nachts, dan rekent de NEa die kWh als netstroom, ook al wekt het hotel overdag op jaarbasis ruim voldoende zon op. Zonder batterij betekent dit: 100% meetelling alleen voor het laden tijdens zonne-uren, de rest telt voor 50,5%.</p>
+        <p data-i18n="subsidies.artikel-p13c">Met een batterij draait dat anders. De NEa erkent opslag in een accu expliciet als tussenopslag: zolang het meetprotocol per uur aantoont dat de stroom uit hernieuwbare opwek komt, mag die eerst in de batterij en daarna aan de laadpalen. De batterij vangt overdag de zonnestroom op en geeft die 's avonds vrij, precies wanneer hotelgasten laden. De uur-regel blijft de rekenbasis, maar werkt nu vóór het hotel in plaats van tegen. Voorwaarde is dat opwek en batterij zijn bemeterd en het meetprotocol de gelijktijdigheid op uurbasis aantoont; precies daarvoor zorgt het energiemanagementsysteem.</p>
         <p data-i18n="subsidies.artikel-p14">Voor een hotel betekent dit een concrete businesscase: de zonnestroom die overdag wordt opgewekt, 's avonds via een batterij beschikbaar houden voor laden, levert per kWh het dubbele aan ERE's op. Het energiemanagementsysteem speelt daarin een sturende rol. Wie deze combinatie goed inricht, laat de zonnepanelen op twee manieren terugverdienen: op de energierekening én op de ERE-opbrengst.</p>
 
         <h3 data-i18n="subsidies.artikel-h3-7" style="margin-top:1.75rem;">Hoe de verkoop van ERE's is georganiseerd</h3>
@@ -702,6 +723,7 @@ function lockScroll(on) {
             <li data-i18n="subsidies.artikel-li27">ANWB, uitleg over ERE-certificaten (1 mei 2026)</li>
             <li data-i18n="subsidies.artikel-li28">Vereniging Elektrische Rijders, achtergrondartikel over emissiereductie-eenheden (14 januari 2026)</li>
             <li data-i18n="subsidies.artikel-li29">Geverifieerde transactieprijzen juni 2026 (€0,4775 en €0,481 per ERE): branchepublicatie Joulo via Duurzaam Ondernemen</li>
+            <li data-i18n="subsidies.artikel-li30">NEa, veelgestelde vragen over hernieuwbare elektriciteit voor vervoer: gelijktijdigheid van opwek en laden, minimaal op uurbasis, geen jaarsaldering (geraadpleegd 25 augustus 2026)</li>
         </ul>
         <p data-i18n="subsidies.artikel-note" style="font-size:0.78rem;color:var(--text-muted);">ERE-prijzen zijn OTC-prijzen en kunnen wijzigen. De actuele marktprijs staat in de ERE-kaart hierboven en wordt dagelijks bijgewerkt.</p>
     </div>
@@ -714,12 +736,12 @@ function lockScroll(on) {
 
         <details style="margin-top:1rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
             <summary data-i18n="subsidies.faq-q1" style="cursor:pointer;font-weight:600;color:var(--green-primary);">Hoeveel subsidie kan mijn hotel krijgen?</summary>
-            <p data-i18n="subsidies.faq-a1" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Dat hangt af van de maatregel: EIA geeft 40% fiscale aftrek op energie-investeringen, MIA/Vamil geeft extra aftrek en vrije afschrijving op de milieulijst, ISDE subsidieert warmtepompen en SPRILA betaalt mee aan laadpalen op eigen terrein. Daarbovenop levert elke geladen kWh via ERE's een terugkerende inkomstenstroom op. <a href="/configurator">Bereken in de energieconfigurator wat jouw hotel kan besparen.</a></p>
+            <p data-i18n="subsidies.faq-a1" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Dat hangt af van de maatregel: EIA geeft 40% fiscale aftrek op energie-investeringen, MIA/Vamil geeft extra aftrek en vrije afschrijving op de milieulijst, ISDE subsidieert warmtepompen en SPRILA betaalt mee aan laadpalen op eigen terrein. Daarbovenop levert elke geladen kWh via ERE's een terugkerende inkomstenstroom op. <a data-i18n="cta.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Laat ons berekenen wat jouw hotel kan besparen.</a></p>
         </details>
 
         <details style="margin-top:0.75rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
             <summary data-i18n="subsidies.faq-q2" style="cursor:pointer;font-weight:600;color:var(--green-primary);">Subsidie voor een batterij in mijn hotel?</summary>
-            <p data-i18n="subsidies.faq-a2" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Een bedrijfsbatterij (ESS) komt in aanmerking voor EIA en, als het systeem op de milieulijst staat, voor MIA/Vamil. De batterij slaat zonnestroom op, snijdt pieken en houdt stroom beschikbaar voor laden. <a href="/producten">Bekijk de batterijoplossingen van Lemnion.</a></p>
+            <p data-i18n="subsidies.faq-a2" style="margin-top:0.75rem;color:#3D4F40;line-height:1.6;">Een bedrijfsbatterij (ESS) komt in aanmerking voor EIA en, als het systeem op de milieulijst staat, voor MIA/Vamil. De batterij slaat zonnestroom op, snijdt pieken en houdt stroom beschikbaar voor laden. <a href="/oplossingen">Bekijk de batterijoplossingen van Lemnion.</a></p>
         </details>
 
         <details style="margin-top:0.75rem;background:white;border:1px solid var(--line,#D4DDD0);border-radius:var(--radius);padding:1rem 1.25rem;">
@@ -747,10 +769,10 @@ function lockScroll(on) {
 <section class="cta-section">
     <div class="container">
         <h2 data-i18n="subsidies.cta-h2">Benieuwd wat jouw hotel kan besparen?</h2>
-        <p data-i18n="subsidies.cta-p" style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Doe de configurator en ontdek binnen 1 minuut hoeveel subsidie jouw hotel kan ontvangen.</p>
+        <p data-i18n="subsidies.cta-p" style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Ontdek binnen 1 minuut hoeveel subsidie jouw hotel kan ontvangen.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a data-i18n="subsidies.cta-btn" href="/configurator" class="btn-outline">Bereken je subsidie →</a>
-            <a href="mailto:info@lemnion.nl" class="btn-green">info@lemnion.nl</a>
+            
+            <a data-i18n="cta.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;" class="btn-green">Neem contact op →</a>
         </div>
     </div>
 </section>
@@ -758,8 +780,8 @@ function lockScroll(on) {
 <!-- Verder lezen (interne linkbuilding) -->
 <aside class="related-links">
   <span class="section-label" data-i18n="subsidies.label">Verder lezen</span>
-    <a class="btn btn-primary" href="/producten" data-i18n="subsidies.rl1">Bekijk onze producten voor laadinfra</a>
-    <a class="btn btn-primary" href="/configurator" data-i18n="subsidies.rl2">Bereken uw besparing</a>
+    <a class="btn btn-primary" href="/oplossingen" data-i18n="subsidies.rl1">Bekijk onze producten voor laadinfra</a>
+    <a data-i18n="cta.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;" class="btn btn-primary">Neem contact op →</a>
 </aside>
 
 <footer>
@@ -770,7 +792,7 @@ function lockScroll(on) {
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h3 data-i18n="footer.h_solutions">Oplossingen</h3>
+            <h3 data-i18n="footer.h_solutions">Energie uitdagingen</h3>
             <ul>
                 <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
                 <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
@@ -782,18 +804,17 @@ function lockScroll(on) {
         <div>
             <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
             <ul>
-                <li><a data-i18n="footer.batterij" href="/producten">Batterijopslag</a></li>
-                <li><a data-i18n="footer.laadpalen" href="/producten">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="/producten">EMS &amp; monitoring</a></li>
-                <li><a data-i18n="footer.configurator" href="/configurator">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.batterij" href="/oplossingen">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="/oplossingen">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="/oplossingen">EMS &amp; monitoring</a></li>
                 <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="/usp-veiligheid">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="/usp">USP &amp; veiligheid</a></li>
                 <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
                 <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
                 <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
@@ -815,7 +836,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
+        <button class="contact-modal-close" data-i18n-aria-label="modal.close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -823,36 +844,36 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.voornaam" for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
+                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required data-i18n-placeholder="modal.ph.voornaam" placeholder="Jan">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.achternaam" for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
+                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required data-i18n-placeholder="modal.ph.achternaam" placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.bedrijf" for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
+                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required data-i18n-placeholder="modal.ph.bedrijf" placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.functie" for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
+                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required data-i18n-placeholder="modal.ph.functie" placeholder="Directeur / Facility Manager">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.email" for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
-                    <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                    <input type="email" id="email" autocomplete="email" name="email" required data-i18n-placeholder="modal.ph.email" placeholder="jan@hoteldevoorbeeldhoeve.nl">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.mobiel" for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
-                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
+                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required data-i18n-placeholder="modal.ph.mobiel" placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
                 <label data-i18n="modal.bericht" for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
-                <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
+                <textarea id="bericht" name="bericht" rows="4" required data-i18n-placeholder="modal.ph.bericht" placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
                 <button data-i18n="modal.submit" type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
@@ -918,7 +939,7 @@ document.addEventListener('keydown',function(e){
 </script>
 
 <script>
-/* Contact modal | verstuur via /api/contact (Resend) */
+/* Contact modal · verstuur via /api/contact (Resend) */
 (function(){
     var form = document.getElementById('contact-form');
     if (!form || form.dataset.contactWired) return;

@@ -18,5 +18,9 @@
   {"key": "stroomoverschot.c3p", "tag": "p", "contains": "Met zon en opslag samen dekken typische hotels"},
   {"key": "stroomoverschot.ctah", "tag": "h2", "contains": "Klaar om jouw hotel te bevrijden van netcongestie?"},
   {"key": "stroomoverschot.ctap", "tag": "p", "contains": "Bereken binnen 1 minuut wat jouw hotel kan besparen"},
-  {"key": "stroomoverschot.cta", "tag": "a", "contains": "Doe de configurator", "attrs": "configurator.html"}
+  {"key": "stroomoverschot.cta", "tag": "a", "contains": "Doe de configurator", "attrs": "configurator.html"},
+  {"key": "stroomoverschot.bloglabel", "tag": "p", "contains": "Wist je dat?"},
+  {"key": "stroomoverschot.blogh2", "tag": "h2", "contains": "De salderingsregeling stopt"},
+  {"key": "stroomoverschot.blogp", "tag": "p", "contains": "Vanaf 2027 kun je je zelf"},
+  {"key": "stroomoverschot.bloglink", "tag": "a", "contains": "Lees het artikel in onze blog"}
 ]
