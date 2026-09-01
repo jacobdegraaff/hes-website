@@ -27,24 +27,10 @@ const LANGS = ['en']; // add 'fr', 'es' later (same mechanism)
 // Waarden zijn extensionless: de live site serveert /oplossingen (Cloudflare
 // redirect 308: .html -> extensionless). Sitemap, canonical, hreflang en
 // interne links gebruiken dus de extensionless vorm.
-const SLUGS = {
-  'index.html': '',
-  'oplossingen.html': 'solutions',
-  'producten.html': 'products',
-  'over-ons.html': 'about-us',
-  'voordelen.html': 'benefits',
-  'verduurzamen.html': 'sustainability',
-  'usp-veiligheid.html': 'safety',
-  'nieuws.html': 'news',
-  'subsidies.html': 'grants',
-  'blog.html': 'blog',
-  'blog-epbd-iv-laadinfra.html': 'blog-epbd-iv-ev-charging-infrastructure',
-  'netcongestie.html': 'grid-congestion',
-  'maximum-belasting.html': 'peak-load',
-  'stroom-overschot.html': 'solar-surplus',
-  'stroomuitval-noodaggregaat.html': 'power-outage',
-  'configurator.html': 'configurator',
-};
+// EN-page slugs uit een centrale bron (translations/specs/_slugs.json).
+// Zelfde kaart voor: interne link-herschrijving, lang-switch, sitemap en
+// breadcrumbs -> kan nooit meer verdrift (alle pagina's blijven in de gekozen taal).
+const SLUGS = JSON.parse(readFileSync(join(ROOT, 'translations/specs/_slugs.json'), 'utf8'));
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -277,6 +263,21 @@ function rewriteLinks(html, lang) {
   return html;
 }
 
+
+function guardEnLinks(html) {
+  // Build-guard: een gegenereerde EN-pagina mag GEEN interne link naar een
+  // NL-slug bevatten (behalve de taalwissel, die bewust de NL-link toont).
+  // Zo blijft de gebruiker na een klik in de gekozen taal. Anders: build faalt.
+  const body = html.replace(/<li class="lang-switch"[\s\S]*?<\/li>/, '');
+  const bad = new Set();
+  for (const m of body.matchAll(/href="\/(?!#)([a-z][a-z0-9-]*)(#[^"]*)?"/g)) {
+    if (m[1] === 'en') continue;
+    const f = m[1] + '.html';
+    if (f === 'admin.html' || f === 'netcongestie-check.html') continue;
+    if (existsSync(join(ROOT, f))) bad.add(m[1]);
+  }
+  return [...bad];
+}
 // ---------------------------------------------------------------------------
 // Sitemap
 // ---------------------------------------------------------------------------
@@ -328,7 +329,13 @@ for (const page of pages) {
     if (missing > 0) console.log(`  [${page}] ${lang}: ${missing} key(s) ontbreken (fallback NL)`);
     const slug = SLUGS[page] || page;
     const outName = slug === '' ? 'index.html' : slug.replace(/\.html$/, '') + '.html';
-    writeFileSync(join(OUT, lang, outName), finalizeHtml(html, page, lang));
+    const finalHtml = finalizeHtml(html, page, lang);
+    writeFileSync(join(OUT, lang, outName), finalHtml);
+    const leaked = guardEnLinks(finalHtml);
+    if (leaked.length) {
+      console.error(`[build] \u274c EN-pagina ${outName} bevat NL-links die taal breken: /${leaked.join(', /')}`);
+      process.exitCode = 1;
+    }
   }
 }
 if (totalMissing > 0) console.log(`[build] ⚠️ totaal ${totalMissing} ontbrekende vertaalsleutels (vallen terug op NL)`);
