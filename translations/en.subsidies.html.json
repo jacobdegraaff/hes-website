@@ -167,7 +167,7 @@
  "subsidies.faq-q1": "How much subsidy can my hotel get?",
  "subsidies.faq-a1": "It depends on the measure: EIA gives a 40% fiscal deduction on energy investments, MIA/Vamil gives extra deduction and free depreciation on the environmental list, ISDE subsidises heat pumps, and SPRILA contributes to chargers on your own grounds. On top of that, every charged kWh generates a recurring income stream through EREs. <a href=\"#\" onclick=\"document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;\">Let us calculate what your hotel can save.</a>",
  "subsidies.faq-q2": "Subsidy for a battery in my hotel?",
- "subsidies.faq-a2": "A commercial battery (ESS) qualifies for EIA and, if the system is on the environmental list, for MIA/Vamil. The battery stores solar power, cuts peaks and keeps power available for charging. <a href=\"/producten\">Explore Lemnion's battery solutions.</a>",
+ "subsidies.faq-a2": "A commercial battery (ESS) qualifies for EIA and, if the system is on the environmental list, for MIA/Vamil. The battery stores solar power, cuts peaks and keeps power available for charging. <a href=\"/oplossingen\">Explore Lemnion's battery solutions.</a>",
  "subsidies.faq-q3": "Subsidy for EV chargers in my hotel?",
  "subsidies.faq-a3": "The hotel scheme is SPRILA: subsidy per charge point on own or leased grounds, for guests and staff. On top of that, every charged kWh generates EREs. <a href=\"#ere-artikel\">Read how EREs let your chargers pay themselves back.</a>",
  "subsidies.faq-q4": "Subsidy for solar panels in my hotel?",
