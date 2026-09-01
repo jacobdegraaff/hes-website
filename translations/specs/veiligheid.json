@@ -41,5 +41,5 @@
   {"key": "cta.contact", "tag": "a", "contains": "Neem contact op →"},
   {"key": "veiligheid.label", "tag": "span", "contains": "Verder lezen"},
   {"key": "veiligheid.rl1", "tag": "a", "contains": "Waarom Lemnion anders is"},
-  {"key": "veiligheid.rl2", "tag": "a", "contains": "Bekijk onze producten"}
+  {"key": "veiligheid.rl2", "tag": "a", "contains": "Bekijk onze oplossingen"}
 ]

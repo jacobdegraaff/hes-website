@@ -26,13 +26,13 @@
   {"key": "footer.maxbelasting", "tag": "a", "contains": "Maximum belasting"},
   {"key": "footer.stroomoverschot", "tag": "a", "contains": "Stroom overschot"},
   {"key": "footer.stroomuitval", "tag": "a", "contains": "Stroomuitval &"},
-  {"key": "footer.h_products", "tag": "h3", "contains": "Producten &"},
+  {"key": "footer.h_products", "tag": "h3", "contains": "Oplossingen"},
   {"key": "footer.batterij", "tag": "a", "contains": "Batterijopslag"},
   {"key": "footer.laadpalen", "tag": "a", "contains": "Laadpalen &"},
   {"key": "footer.configurator", "tag": "a", "contains": "Energieconfigurator"},
   {"key": "footer.subsidies", "tag": "a", "contains": "Subsidies &"},
   {"key": "footer.h_info", "tag": "h3", "contains": "Informatie"},
-  {"key": "footer.usp", "tag": "a", "contains": "USP &"},
+  {"key": "footer.usp", "tag": "a", "contains": "USP"},
   {"key": "footer.nieuwsblog", "tag": "a", "contains": "Nieuws &"},
   {"key": "footer.contact", "tag": "a", "contains": "Contact", "attrs": "contact-modal"},
   {"key": "footer.copyright", "tag": "p", "contains": "In partnership met"},
@@ -49,5 +49,6 @@
   {"key": "modal.bericht", "tag": "label", "contains": "Je bericht"},
   {"key": "modal.submit", "tag": "button", "contains": "Verstuur bericht"},
   {"key": "footer.ems", "tag": "a", "contains": "EMS &amp; monitoring"},
-  {"key": "footer.h_solutions", "tag": "h3", "contains": "Oplossingen"}
+  {"key": "footer.h_solutions", "tag": "h3", "contains": "Oplossingen"},
+  {"key": "footer.veiligheid", "tag": "a", "contains": "Veiligheid", "href": "/veiligheid"}
 ]
