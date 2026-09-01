@@ -168,5 +168,8 @@
   {"key": "aanbod.producten", "tag": "a", "contains": "Bekijk alle producten"},
   {"key": "news.b2date", "tag": "span", "contains": "31 augustus 2026"},
   {"key": "news.b2", "tag": "h3", "contains": "Wetgeving versnelt elektrisch"},
-  {"key": "news.b3", "tag": "h3", "contains": "Salderingsregeling stopt"}
+  {"key": "news.b3", "tag": "h3", "contains": "Salderingsregeling stopt"},
+  {"key": "news.b1ingang", "tag": "p", "contains": "Ingangsdatum regelgeving: 29 mei 2026"},
+  {"key": "news.b2ingang", "tag": "p", "contains": "Ingangsdatum regelgeving: 1 januari 2027"},
+  {"key": "news.b3ingang", "tag": "p", "contains": "Ingangsdatum regelgeving: 1 januari 2027"}
 ]
