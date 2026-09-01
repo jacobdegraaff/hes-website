@@ -48,5 +48,6 @@
   {"key": "cta.contact", "tag": "a", "contains": "Neem contact op →"},
   {"key": "usp.label", "tag": "span", "contains": "Verder lezen"},
   {"key": "usp.rl1", "tag": "a", "contains": "Lees over onze 6-laags veiligheid"},
-  {"key": "usp.rl2", "tag": "a", "contains": "Ontdek de verdienmodellen"}
+  {"key": "usp.rl2", "tag": "a", "contains": "Ontdek de verdienmodellen"},
+  {"key": "usp-veiligheid.c3a", "tag": "a", "href": "/energie-management-systeem", "contains": "Meer over ons EMS"}
 ]
