@@ -1,6 +1,6 @@
 [
   {"key": "oplossingen.h1", "tag": "h1", "contains": "Energie uitdagingen"},
-  {"key": "oplossingen.sub", "tag": "p", "contains": "Elk hotel is anders"},
+  {"key": "oplossingen.sub", "tag": "p", "contains": "Elk hotel heeft zijn eigen energie-uitdagingen"},
   {"key": "oplossingen.label", "tag": "p", "contains": "Onze oplossingen", "attrs": "section-label"},
   {"key": "oplossingen.h2", "tag": "h2", "contains": "Vijf uitdagingen, een integrale aanpak"},
   {"key": "oplossingen.lead", "tag": "p", "contains": "Hotels staan voor unieke energie-uitdagingen"},
