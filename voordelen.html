@@ -301,6 +301,16 @@ h2{font-size:1.1rem}
 .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
 </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
     <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
+<style>
+/* Nav: desktop dropdown opent bij hover/focus, mobiel submenu altijd zichtbaar */
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:focus-within .nav-dropdown-panel{display:block!important}
+@media(max-width:1180px){
+  .nav-dropdown .nav-dropdown-panel{display:block!important;position:static!important;box-shadow:none;border:none;padding:0.25rem 0 0.5rem 1.25rem;background:transparent;min-width:auto}
+  .nav-dropdown .nav-backdrop{display:none!important}
+  .nav-mega-col h4{display:none!important}
+}
+</style>
+<!-- data-navfix -->
 </head>
 <body>
 
@@ -355,7 +365,7 @@ function lockScroll(on) {
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Oplossingen</a></h4>
+                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Energie uitdagingen</a></h4>
                         <a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a>
                         <a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a>
                         <a data-i18n="nav.maxbelasting" href="/maximum-belasting">Maximum belasting</a>

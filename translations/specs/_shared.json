@@ -1,7 +1,7 @@
 [
   {"key": "nav.skip", "tag": "a", "contains": "Direct naar inhoud"},
-  {"key": "nav.oplossingen", "tag": "a", "contains": "Oplossingen ▾"},
-  {"key": "nav.oplossingen_h", "tag": "h4", "contains": "Oplossingen", "all": true},
+  {"key": "nav.oplossingen", "tag": "a", "contains": "Energie uitdagingen ▾"},
+  {"key": "nav.oplossingen_h", "tag": "h4", "contains": "Energie uitdagingen", "all": true},
   {"key": "nav.netcongestie", "tag": "a", "contains": "Netcongestie", "all": true},
   {"key": "nav.verduurzamen", "tag": "a", "contains": "Verduurzamen", "all": true},
   {"key": "nav.maxbelasting", "tag": "a", "contains": "Maximum belasting"},
