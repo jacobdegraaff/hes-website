@@ -69,7 +69,7 @@
   {"key": "usp.label", "tag": "p", "contains": "Onze Unieke Positie"},
   {"key": "usp.h2", "tag": "h2", "contains": "Wat Lemnion écht anders maakt"},
   {"key": "usp.c1h", "tag": "h3", "contains": "Directe fabrieksdistributie"},
-  {"key": "usp.c1p", "tag": "p", "contains": "Onze partner importeert hardware direct"},
+  {"key": "usp.c1p", "tag": "p", "contains": "eigen driver"},
   {"key": "usp.c2h", "tag": "h3", "contains": "Eén geïntegreerd ecosysteem"},
   {"key": "usp.c2p", "tag": "p", "contains": "Batterij + EMS + OCPP"},
   {"key": "usp.c3h", "tag": "h3", "contains": "Programmeerbaar EMS"},
