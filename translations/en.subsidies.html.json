@@ -185,6 +185,6 @@
  "subsidies.sprila-info2": "Below €25,000 subsidy: apply <strong>after</strong> installation, in the same calendar year or within 13 weeks.",
  "subsidies.sprila-info3": "Above €25,000: apply <strong>before</strong> placing the order, with an unsigned quote. A signed quote counts as a placed order.",
  "subsidies.sprila-info4": "SME declaration required for the higher amounts.",
- "subsidies.sprila-info5": "First check whether your region is affected by <a href=\"netcongestie.html\" style=\"color:var(--green-secondary);\">grid congestion</a>.",
+ "subsidies.sprila-info5": "First check whether your region is affected by <a href=\"/netcongestie\" style=\"color:var(--green-secondary);\">grid congestion</a>.",
  "subsidies.sprila-links": "More information: <a href=\"https://www.rvo.nl/subsidies-financiering/sprila-en-spula/sprila-veelgestelde-vragen\" style=\"color:var(--green-secondary);\">frequently asked questions</a> · <a href=\"https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/rekenvoorbeelden-sprila\" style=\"color:var(--green-secondary);\">worked examples</a> · <a href=\"https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/sprila-aanschaf#rekentool-en-rekenvoorbeelden\" style=\"color:var(--green-secondary);\">calculation tool</a> · <a href=\"https://www.rvo.nl/onderwerpen/subsidiespelregels/ez/mkb-verklaring\" style=\"color:var(--green-secondary);\">SME declaration</a>"
 }

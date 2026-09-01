@@ -958,9 +958,9 @@ document.addEventListener('keydown',function(e){
       (gevolgen.length ? '<br><br><strong>Gevolg voor jouw hotel:</strong><br>• ' + gevolgen.join('<br>• ') : '');
     var cta = document.getElementById('nc-cta');
     if (worst >= 2) {
-      cta.innerHTML = '<a href="/oplossingen">Bekijk Lemnion oplossingen</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
+      cta.innerHTML = '<a href="'+(location.pathname.indexOf('/en')===0?'/en/solutions':'/oplossingen')+'">Bekijk Lemnion oplossingen</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
     } else {
-      cta.innerHTML = '<a href="verduurzamen.html">Verduurzaam zonder netverzwaring</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
+      cta.innerHTML = '<a href="'+(location.pathname.indexOf('/en')===0?'/en/sustainability':'/verduurzamen')+'">Verduurzaam zonder netverzwaring</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
     }
     document.getElementById('nc-meta').innerHTML =
       'Peildatum: ' + (d.peildatum || 'onbekend') + ' · Gegevens: <a href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Capaciteitskaart Netbeheer Nederland</a> · Postcode: <a href="https://www.pdok.nl/" target="_blank" rel="noopener">PDOK/BAG</a> · <a href="https://www.rvo.nl/onderwerpen/netcongestie" target="_blank" rel="noopener">Wat is netcongestie? (RVO)</a>';

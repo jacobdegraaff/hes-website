@@ -241,10 +241,10 @@ function rewriteLinks(html, lang) {
       return '@@LANGSWITCH@@';
     });
     // 1) home-link "/" en "/#anker" → "/en/" resp. "/en/#anker"
-    html = html.replace(/href="\/(#)"/g, 'href="/en/#"');
+    html = html.replace(/href="\/#([^"]*)"/g, 'href="/en/#$1"');
     html = html.replace(/href="\/"/g, 'href="/en/"');
     // 2) interne paginalinks "/<nl-slug>[#anker]" → "/en/<en-slug>[#anker]"
-    html = html.replace(/href="\/([a-z0-9-]+)(#[^"]*)?"/g, (m, slug, anchor = '') => {
+    html = html.replace(/href="\/([a-z0-9-]+)(?:\.html)?(#[^"]*)?"/g, (m, slug, anchor = '') => {
       const en = SLUGS[slug + '.html'];
       if (en === undefined) return m; // geen bekende pagina (bv. /assets/…)
       return `href="/en/${en}${anchor}"`;
@@ -300,7 +300,7 @@ function buildSitemap(pages) {
 // Main
 // ---------------------------------------------------------------------------
 const allHtml = readdirSync(ROOT).filter((f) => f.endsWith('.html'));
-const pages = allHtml.filter((f) => f !== 'admin.html'); // admin = internal tool, NL only
+const pages = allHtml.filter((f) => f !== 'admin.html' && f !== 'netcongestie-check.html'); // admin/netcongestie-check = intern/onderzoek, NL only
 
 const dicts = {};
 for (const lang of LANGS) {
