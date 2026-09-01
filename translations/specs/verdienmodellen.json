@@ -14,6 +14,6 @@
   {"key": "verdienmodellen.cta-p", "tag": "p", "contains": "Laadpalen zijn meer dan een voorziening"},
   {"key": "verdienmodellen.cta-btn", "tag": "a", "contains": "Bereken jouw besparing"},
   {"key": "verdienmodellen.label", "tag": "span", "contains": "Verder lezen"},
-  {"key": "verdienmodellen.rl1", "tag": "a", "contains": "Bekijk onze producten"},
+  {"key": "verdienmodellen.rl1", "tag": "a", "contains": "Bekijk onze oplossingen"},
   {"key": "verdienmodellen.rl2", "tag": "a", "contains": "Alle voordelen op een rij"}
 ]

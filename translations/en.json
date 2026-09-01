@@ -122,13 +122,13 @@
  "footer.maxbelasting": "Peak capacity",
  "footer.stroomoverschot": "Solar surplus",
  "footer.stroomuitval": "Power outage &amp; backup generator",
- "footer.h_products": "Products &amp; Services",
+ "footer.h_products": "Solutions",
  "footer.batterij": "Battery storage",
  "footer.laadpalen": "Chargers &amp; fast chargers",
  "footer.configurator": "Energy configurator",
  "footer.subsidies": "Subsidies &amp; schemes",
  "footer.h_info": "Information",
- "footer.usp": "USP &amp; safety",
+ "footer.usp": "USP",
  "footer.nieuwsblog": "News &amp; blog",
  "footer.contact": "Contact",
  "footer.copyright": "&copy; 2026 Lemnion. In partnership with Stroomlijnen B.V. <span style=\"font-size:9px;opacity:0.8;\">[v2026.08.04-mobfix]</span>",
@@ -197,5 +197,6 @@
  "news.b3date": "1 September 2026",
  "news.b1ingang": "Legislation effective from: 29 May 2026",
  "news.b2ingang": "Legislation effective from: 1 January 2027",
- "news.b3ingang": "Legislation effective from: 1 January 2027"
+ "news.b3ingang": "Legislation effective from: 1 January 2027",
+ "footer.veiligheid": "Safety"
 }

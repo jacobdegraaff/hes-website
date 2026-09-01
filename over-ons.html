@@ -353,7 +353,10 @@ h2{font-size:1.1rem}
 }
 </style>
 <script>
-document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(li.querySelector(".nav-dd-toggle")){return;}var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");t.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();var open=li.classList.toggle("open");t.setAttribute("aria-expanded",open?"true":"false");});li.appendChild(t);});});
+function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(tog){e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");return;}if(window.innerWidth<=1180){var a=(t.closest?t.closest(".nav-dropdown > a"):null);if(a){e.preventDefault();var li2=a.closest(".nav-dropdown");var open2=li2.classList.toggle("open");var tg=li2.querySelector(".nav-dd-toggle");if(tg)tg.setAttribute("aria-expanded",open2?"true":"false");}}}
+function ddnavInit(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(!li.querySelector(".nav-dd-toggle")){var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");li.appendChild(t);}});}
+document.addEventListener("click",ddnavClick);
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
 </script>
 <!-- data-navfix -->
 </head>
@@ -429,7 +432,6 @@ function lockScroll(on) {
                         <a data-i18n="nav.usp" href="/usp">USP<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
                         <a data-i18n="nav.veiligheid" href="/veiligheid">Veiligheid<span class="mega-desc">6-laags veiligheidsarchitectuur</span></a>
                         <a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a>
-                        <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
@@ -507,7 +509,7 @@ function lockScroll(on) {
                 <div class="info">
                     <h3>Melle Pegman</h3>
                     <div class="role">Mede-oprichter · Lemnion</div>
-                    <p data-i18n="overons.mellep">Hotelschool Den Haag · Club Med · Hilton. Expert in hospitality operations en business development. Vertaalt complexe energievraagstukken naar heldere oplossingen voor hoteliers.</p>
+                    <p data-i18n="overons.mellep">Hotelschool Den Haag · Hilton. Expert in hospitality operations en business development. Vertaalt complexe energievraagstukken naar heldere oplossingen voor hoteliers.</p>
                     <div class="links">
                         <a href="https://www.linkedin.com/in/mellepegman/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -528,7 +530,7 @@ function lockScroll(on) {
         <p data-i18n="overons.label3" class="section-label">Onze partner</p>
         <h2 data-i18n="overons.h2_3">Technische kracht van Stroomlijnen</h2>
         <p data-i18n="overons.partnerp" style="color:#3D4F40;max-width:700px;margin-top:0.75rem;">
-            Lemnion werkt exclusief samen met Stroomlijnen, het technische brein achter onze energieoplossingen. Met 25 jaar ervaring in laadinfrastructuur en een team van specialisten zorgt Stroomlijnen dat elk systeem feilloos werkt. Van hardware tot monitoring, van installatie tot 24/7 support.
+            Lemnion werkt exclusief samen met Stroomlijnen, het technische brein achter onze energieoplossingen. Met ruime ervaring in laadinfrastructuur en een team van specialisten zorgt Stroomlijnen dat elk systeem feilloos werkt. Van hardware tot monitoring, van installatie tot 24/7 support.
         </p>
         <div class="partner-grid">
             <div class="partner-card">
@@ -570,7 +572,7 @@ function lockScroll(on) {
 <aside class="related-links">
   <span class="section-label" data-i18n="over-ons.label">Verder lezen</span>
     <a class="btn btn-primary" href="/voordelen" data-i18n="over-ons.rl1">Ontdek de voordelen voor uw hotel</a>
-    <a class="btn btn-primary" href="/oplossingen" data-i18n="over-ons.rl2">Bekijk onze producten</a>
+    <a class="btn btn-primary" href="/oplossingen" data-i18n="over-ons.rl2">Bekijk onze oplossingen</a>
 </aside>
 
 <footer>
@@ -591,7 +593,7 @@ function lockScroll(on) {
             </ul>
         </div>
         <div>
-            <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
+            <h3 data-i18n="footer.h_products">Oplossingen</h3>
             <ul>
                 <li><a data-i18n="footer.batterij" href="/oplossingen">Batterijopslag</a></li>
                 <li><a data-i18n="footer.laadpalen" href="/oplossingen">Laadpalen &amp; snelladers</a></li>
@@ -603,14 +605,15 @@ function lockScroll(on) {
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
                 <li><a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="/usp">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="footer.usp" href="/usp">USP</a></li>
+                <li><a data-i18n="footer.veiligheid" href="/veiligheid">Veiligheid</a></li>
                 <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
                 <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
                 <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2026 Lemnion. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Lemnion B.V. In partnership met Stroomlijnen B.V.</p>
             <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>

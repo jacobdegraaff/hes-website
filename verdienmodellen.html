@@ -317,7 +317,10 @@ h2{font-size:1.1rem}
 }
 </style>
 <script>
-document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(li.querySelector(".nav-dd-toggle")){return;}var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");t.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();var open=li.classList.toggle("open");t.setAttribute("aria-expanded",open?"true":"false");});li.appendChild(t);});});
+function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(tog){e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");return;}if(window.innerWidth<=1180){var a=(t.closest?t.closest(".nav-dropdown > a"):null);if(a){e.preventDefault();var li2=a.closest(".nav-dropdown");var open2=li2.classList.toggle("open");var tg=li2.querySelector(".nav-dd-toggle");if(tg)tg.setAttribute("aria-expanded",open2?"true":"false");}}}
+function ddnavInit(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(!li.querySelector(".nav-dd-toggle")){var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");li.appendChild(t);}});}
+document.addEventListener("click",ddnavClick);
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
 </script>
 <!-- data-navfix -->
 </head>
@@ -392,7 +395,6 @@ function lockScroll(on) {
                         <a data-i18n="nav.usp" href="/usp">USP<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
                         <a data-i18n="nav.veiligheid" href="/veiligheid">Veiligheid<span class="mega-desc">6-laags veiligheidsarchitectuur</span></a>
                         <a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a>
-                        <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
                     </div>
                 </div>
             </li>
@@ -467,7 +469,7 @@ function lockScroll(on) {
 <!-- Verder lezen (interne linkbuilding) -->
 <aside class="related-links">
   <span class="section-label" data-i18n="verdienmodellen.label">Verder lezen</span>
-    <a class="btn btn-primary" href="/oplossingen" data-i18n="verdienmodellen.rl1">Bekijk onze producten</a>
+    <a class="btn btn-primary" href="/oplossingen" data-i18n="verdienmodellen.rl1">Bekijk onze oplossingen</a>
     <a class="btn btn-primary" href="/voordelen" data-i18n="verdienmodellen.rl2">Alle voordelen op een rij</a>
 </aside>
 
@@ -489,7 +491,7 @@ function lockScroll(on) {
             </ul>
         </div>
         <div>
-            <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
+            <h3 data-i18n="footer.h_products">Oplossingen</h3>
             <ul>
                 <li><a data-i18n="footer.batterij" href="/oplossingen">Batterijopslag</a></li>
                 <li><a data-i18n="footer.laadpalen" href="/oplossingen">Laadpalen &amp; snelladers</a></li>
@@ -501,14 +503,15 @@ function lockScroll(on) {
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
                 <li><a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="/usp">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="footer.usp" href="/usp">USP</a></li>
+                <li><a data-i18n="footer.veiligheid" href="/veiligheid">Veiligheid</a></li>
                 <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
                 <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
                 <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2026 Lemnion. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Lemnion B.V. In partnership met Stroomlijnen B.V.</p>
             <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
