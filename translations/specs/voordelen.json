@@ -20,9 +20,10 @@
   {"key": "voordelen.m3", "tag": "li", "contains": "<strong>Fiscale urgentie</strong>"},
   {"key": "voordelen.m4", "tag": "li", "contains": "<strong>Slimme tariefsturing</strong>"},
   {"key": "voordelen.m5", "tag": "li", "contains": "<strong>24/7 monitoring</strong>"},
-  {"key": "voordelen.factlabel", "tag": "p", "contains": "Wist u dat", "attrs": "section-label"},
+  {"key": "voordelen.factlabel", "tag": "p", "contains": "Wist je dat?", "attrs": "section-label"},
   {"key": "voordelen.facth2", "tag": "h2", "contains": "Extra belasting op uitstotende"},
   {"key": "voordelen.factp", "tag": "p", "contains": "extra belasting geheven op zakelijke"},
-  {"key": "voordelen.factlink", "tag": "a", "contains": "Lees meer op ondernemersplein"},
-  {"key": "voordelen.s3x-intro", "tag": "p", "contains": "Enkele concrete inzichten"}
+  {"key": "voordelen.factlink", "tag": "a", "contains": "Lees het hele artikel"},
+  {"key": "voordelen.s3x-intro", "tag": "p", "contains": "Enkele concrete inzichten"},
+  {"key": "voordelen.factintro", "tag": "p", "contains": "In onze blog van 31 augustus"}
 ]
