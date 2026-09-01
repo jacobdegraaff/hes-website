@@ -299,14 +299,23 @@ h2{font-size:1.1rem}
 </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
     <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
 <style>
-/* Nav: desktop dropdown opent bij hover/focus, mobiel submenu altijd zichtbaar */
-.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:focus-within .nav-dropdown-panel{display:block!important}
+/* Nav: desktop hover opent de dropdown, mobiel accordion via chevron-togle */
+.nav-dropdown:hover .nav-dropdown-panel{display:block!important}
+.nav-dd-toggle{display:none}
 @media(max-width:1180px){
-  .nav-dropdown .nav-dropdown-panel{display:block!important;position:static!important;box-shadow:none;border:none;padding:0.25rem 0 0.5rem 1.25rem;background:transparent;min-width:auto}
   .nav-dropdown .nav-backdrop{display:none!important}
   .nav-mega-col h4{display:none!important}
+  .nav-dropdown > a::after{content:none}
+  .nav-dropdown > a{padding-right:2.75rem}
+  .nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
+  .nav-dd-toggle::after{content:"\25be"}
+  .nav-dropdown.open > .nav-dd-toggle::after{content:"\25b4"}
+  .nav-dropdown.open > .nav-dropdown-panel{display:block!important}
 }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(li.querySelector(".nav-dd-toggle")){return;}var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");t.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();var open=li.classList.toggle("open");t.setAttribute("aria-expanded",open?"true":"false");});li.appendChild(t);});});
+</script>
 <!-- data-navfix -->
 </head>
 <body>
