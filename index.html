@@ -853,7 +853,8 @@
   .nav-mega-col h4{display:none!important}
   .nav-dropdown > a::after{content:none}
   .nav-dropdown > a{padding-right:2.75rem}
-  .nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
+  footer h3 a{color:inherit;text-decoration:none;transition:color .15s}footer h3 a:hover{color:var(--green-accent);text-decoration:underline}
+.nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
   .nav-dd-toggle::after{content:"\25be"}
   .nav-dropdown.open > .nav-dd-toggle::after{content:"\25b4"}
   .nav-dropdown.open > .nav-dropdown-panel{display:block!important}
@@ -1326,7 +1327,7 @@ function lockScroll(on) {
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h3 data-i18n="footer.h_solutions">Energie uitdagingen</h3>
+            <h3><a data-i18n="footer.h_solutions" href="/energie-uitdagingen">Energie uitdagingen</a></h3>
             <ul>
                 <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
                 <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
@@ -1336,7 +1337,7 @@ function lockScroll(on) {
             </ul>
         </div>
         <div>
-            <h3 data-i18n="footer.h_products">Oplossingen</h3>
+            <h3><a data-i18n="footer.h_products" href="/oplossingen">Oplossingen</a></h3>
             <ul>
                 <li><a data-i18n="footer.batterij" href="/oplossingen">Batterijopslag</a></li>
                 <li><a data-i18n="footer.laadpalen" href="/oplossingen">Laadpalen &amp; snelladers</a></li>
