@@ -23,5 +23,9 @@
  "meta.stroom-overschot.html.description": "What do you do with surplus solar energy? Feeding back to the grid is not always possible anymore and can cost money. Store your surplus in a Lemnion battery and use it when you need it.",
  "stroom-overschot.label": "Keep reading",
  "stroom-overschot.rl1": "Store your solar energy with our batteries",
- "stroom-overschot.rl2": "All solutions for solar surplus"
+ "stroom-overschot.rl2": "All solutions for solar surplus",
+ "stroomoverschot.bloglabel": "Did you know?",
+ "stroomoverschot.blogh2": "The net-metering scheme ends on 1 January 2027",
+ "stroomoverschot.blogp": "From 2027 you can no longer offset your self-generated solar power against your consumption. That makes using your own surplus even more important. In our blog we explain what this means for your hotel and how to make the best use of your solar power.",
+ "stroomoverschot.bloglink": "Read the article in our blog →"
 }
