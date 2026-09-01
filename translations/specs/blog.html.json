@@ -8,5 +8,9 @@
   {"key": "blog.card2-date", "tag": "span", "contains": "31 augustus 2026"},
   {"key": "blog.card2-title", "tag": "h3", "contains": "Wetgeving versnelt elektrisch"},
   {"key": "blog.card2-desc", "tag": "p", "contains": "Vanaf 2027 komt er een extra belasting"},
-  {"key": "blog.card2-read", "tag": "span", "contains": "Lees het artikel"}
+  {"key": "blog.card2-read", "tag": "span", "contains": "Lees het artikel"},
+  {"key": "blog.card3-date", "tag": "span", "contains": "1 september 2026"},
+  {"key": "blog.card3-title", "tag": "h3", "contains": "Salderingsregeling"},
+  {"key": "blog.card3-desc", "tag": "p", "contains": "Vanaf 1 januari 2027 stopt"},
+  {"key": "blog.card3-read", "tag": "span", "contains": "Lees het artikel"}
 ]
