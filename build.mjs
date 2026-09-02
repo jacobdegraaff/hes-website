@@ -254,9 +254,14 @@ function rewriteLinks(html, lang) {
       const en = SLUGS[slug + '.html'];
       return en !== undefined && en !== '' ? `href="/en/${en}"` : m;
     });
-    // 4) relatieve asset-paden → root-absoluut, zodat ze onder /en/… resolven
-    html = html.replace(/(src=")(?!https?:|data:|#|\/)([^"]+)"/g, (m, pre, src) => `${pre}/${src}"`);
-    html = html.replace(/(href=")(?!https?:|mailto:|tel:|data:|#|\/)([^"]+)"/g, (m, pre, h) => `${pre}/${h}"`);
+    // 4) relatieve asset-paden → root-absoluut, zodat ze onder /en/… resolven.
+    //    Belangrijk: NIET binnen <script>/<style> (daar zitten JS-string-hrefs,
+    //    bv. de netcongestie-widget-CTA; een '/'-prefix daar zou //en/... breken).
+    const masks = [];
+    html = html.replace(/<script[^>]*>[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, (m) => { masks.push(m); return `@@MASK${masks.length - 1}@@`; });
+    html = html.replace(/(src=")(?!https?:|data:|#|\/|')([^"]+)"/g, (m, pre, src) => `${pre}/${src}"`);
+    html = html.replace(/(href=")(?!https?:|mailto:|tel:|data:|#|\/|')([^"]+)"/g, (m, pre, h) => `${pre}/${h}"`);
+    html = html.replace(/@@MASK(\d+)@@/g, (m, i) => masks[Number(i)]);
     // herstel de taalwissel
     if (langSwitch) html = html.replace('@@LANGSWITCH@@', () => langSwitch);
   }
