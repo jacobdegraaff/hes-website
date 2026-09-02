@@ -87,6 +87,8 @@
         .info-card p{font-size:0.9rem;color:#3D4F40}
         .photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem}
         .photo-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 4px 24px rgba(15,61,35,0.06)}
+        .photo-grid figure{margin:0;display:flex;flex-direction:column;gap:0.5rem}
+        .photo-grid figcaption{text-align:center;color:var(--text-muted);font-size:0.85rem;margin:0;padding-bottom:0.25rem}
         .cta-section{text-align:center;padding:4rem 0;background:white}
         footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:3rem 0 2rem;font-size:0.85rem}
         footer .container{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}
@@ -486,8 +488,14 @@ function lockScroll(on) {
     </div></section><section>
     <div class="container">
         <div class="photo-grid">
-            <img src="/assets/producten-foto22.jpg" alt="Lemnion energiesysteem in de praktijk" width="1200" height="849" loading="lazy">
-            <img src="/assets/producten-foto42.jpg" alt="Lemnion energiesysteem in de praktijk" width="1080" height="764" loading="lazy">
+            <figure>
+                <img src="/assets/producten-foto22.jpg" alt="DC-snellader van Lemnion in de praktijk" width="1200" height="849" loading="lazy">
+                <figcaption data-i18n="producten.photofig1">DC-snellader in de praktijk</figcaption>
+            </figure>
+            <figure>
+                <img src="/assets/producten-foto42.jpg" alt="261 kWh batterij van Lemnion in de praktijk" width="1080" height="764" loading="lazy">
+                <figcaption data-i18n="producten.photofig2">261 kWh batterij in de praktijk</figcaption>
+            </figure>
         </div>
     </div>
 </section><section class="cta-section">
