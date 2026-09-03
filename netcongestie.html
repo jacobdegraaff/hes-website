@@ -338,14 +338,15 @@ h2{font-size:1.1rem}
   .nav-mega-col h4{display:none!important}
   .nav-dropdown > a::after{content:none}
   .nav-dropdown > a{padding-right:2.75rem}
-  .nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
+  footer h3 a{color:inherit;text-decoration:none;transition:color .15s}footer h3 a:hover{color:var(--green-accent);text-decoration:underline}
+.nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
   .nav-dd-toggle::after{content:"\25be"}
   .nav-dropdown.open > .nav-dd-toggle::after{content:"\25b4"}
   .nav-dropdown.open > .nav-dropdown-panel{display:block!important}
 }
 </style>
 <script>
-function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(tog){e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");return;}if(window.innerWidth<=1180){var a=(t.closest?t.closest(".nav-dropdown > a"):null);if(a){e.preventDefault();var li2=a.closest(".nav-dropdown");var open2=li2.classList.toggle("open");var tg=li2.querySelector(".nav-dd-toggle");if(tg)tg.setAttribute("aria-expanded",open2?"true":"false");}}}
+function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(!tog){return;}e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");}
 function ddnavInit(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(!li.querySelector(".nav-dd-toggle")){var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");li.appendChild(t);}});}
 document.addEventListener("click",ddnavClick);
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
@@ -426,7 +427,16 @@ function lockScroll(on) {
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="/oplossingen">Oplossingen</a></li>
+            <li class="nav-dropdown">
+                <a data-i18n="nav.oplossingen_t" href="/oplossingen">Oplossingen ▾</a>
+                <div class="nav-backdrop"></div>
+                <div class="nav-dropdown-panel">
+                    <div class="nav-mega-col">
+                        <h4><a data-i18n="nav.producten" href="/oplossingen">Oplossingen</a></h4>
+                        <a data-i18n="nav.ems" href="/energie-management-systeem">Energie Management Systeem</a>
+                    </div>
+                </div>
+            </li>
             <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
             <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
@@ -497,7 +507,7 @@ function lockScroll(on) {
                 Vul je postcode in en zie direct of jouw locatie nu of binnenkort te maken krijgt met een overbelast elektriciteitsnet.
             </p>
             <form id="nc-form" autocomplete="off" class="nc-check" style="margin-bottom:0;">
-                <input type="text" id="nc-postcode" class="nc-input" placeholder="Postcode, bijv. 2671 AA" maxlength="7" aria-label="Postcode">
+                <input type="text" id="nc-postcode" class="nc-input" placeholder="Postcode, bijv. 2671 AA" maxlength="7" aria-label="Postcode" data-i18n-placeholder="netcongestie.checkph" data-i18n-aria-label="netcongestie.checkaria">
                 <button type="submit" id="nc-btn" class="nc-btn" data-i18n="netcongestie.checkbtn">Check postcode</button>
             </form>
             <div id="nc-loading" class="nc-loading" style="display:none;" data-i18n="netcongestie.checkloading">Bezig met checken...</div>
@@ -574,7 +584,7 @@ function lockScroll(on) {
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h3 data-i18n="footer.h_solutions">Energie uitdagingen</h3>
+            <h3><a data-i18n="footer.h_solutions" href="/energie-uitdagingen">Energie uitdagingen</a></h3>
             <ul>
                 <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
                 <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
@@ -584,11 +594,11 @@ function lockScroll(on) {
             </ul>
         </div>
         <div>
-            <h3 data-i18n="footer.h_products">Oplossingen</h3>
+            <h3><a data-i18n="footer.h_products" href="/oplossingen">Oplossingen</a></h3>
             <ul>
                 <li><a data-i18n="footer.batterij" href="/oplossingen">Batterijopslag</a></li>
                 <li><a data-i18n="footer.laadpalen" href="/oplossingen">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="/oplossingen">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.ems" href="/energie-management-systeem">EMS &amp; monitoring</a></li>
                 <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
@@ -876,25 +886,26 @@ document.addEventListener('keydown',function(e){
 /* Netcongestie check widget: postcode -> server-side check (Pages Function) */
 (function () {
   'use strict';
+    var EN = location.pathname.indexOf('/en')===0;
   var STATUS = {
-    3: { kort: 'Tekort', kleur: 'red', label: 'Tekort aan transportcapaciteit met wachtrij', impact: 'Er is nu te weinig transportcapaciteit in jouw regio. Nieuwe of zwaardere aansluitingen kunnen jaren op zich laten wachten.' },
-    2: { kort: 'In onderzoek', kleur: 'orange', label: 'Gebied is in onderzoek met wachtrij', impact: 'De netbeheerder onderzoekt dit gebied en er geldt een wachtrij. Nu is er nog geen acuut probleem, maar binnen afzienbare tijd kan congestie ontstaan.' },
-    1: { kort: 'Beperkt', kleur: 'yellow', label: 'Transportcapaciteit beperkt beschikbaar zonder wachtrij', impact: 'Er is beperkt capaciteit beschikbaar, nog zonder wachtrij. Voor nieuwe of grotere aansluitingen kunnen beperkingen gelden.' },
-    0: { kort: 'Beschikbaar', kleur: 'green', label: 'Transportcapaciteit beschikbaar zonder wachtrij', impact: 'Er is voldoende transportcapaciteit in jouw regio. Goede basis om te verduurzamen, al kan de situatie in de komende jaren veranderen.' }
+    3: { kort: (EN?'Shortage':'Tekort'), kleur: 'red', label: (EN?'Capacity shortage with waiting list':'Tekort aan transportcapaciteit met wachtrij'), impact: (EN?'There is currently too little transport capacity in your region. New or larger connections may take years to realise.':'Er is nu te weinig transportcapaciteit in jouw regio. Nieuwe of zwaardere aansluitingen kunnen jaren op zich laten wachten.') },
+    2: { kort: (EN?'Under review':'In onderzoek'), kleur: 'orange', label: (EN?'Area under review with waiting list':'Gebied is in onderzoek met wachtrij'), impact: (EN?'The grid operator is reviewing this area and a waiting list applies. There is no acute problem yet, but congestion may arise in the near future.':'De netbeheerder onderzoekt dit gebied en er geldt een wachtrij. Nu is er nog geen acuut probleem, maar binnen afzienbare tijd kan congestie ontstaan.') },
+    1: { kort: (EN?'Limited':'Beperkt'), kleur: 'yellow', label: (EN?'Transport capacity limited, no waiting list':'Transportcapaciteit beperkt beschikbaar zonder wachtrij'), impact: (EN?'Capacity is limited, without a waiting list for now. Restrictions may apply to new or larger connections.':'Er is beperkt capaciteit beschikbaar, nog zonder wachtrij. Voor nieuwe of grotere aansluitingen kunnen beperkingen gelden.') },
+    0: { kort: (EN?'Available':'Beschikbaar'), kleur: 'green', label: (EN?'Transport capacity available, no waiting list':'Transportcapaciteit beschikbaar zonder wachtrij'), impact: (EN?'There is sufficient transport capacity in your region. A good basis for going green, although the situation may change in the coming years.':'Er is voldoende transportcapaciteit in jouw regio. Goede basis om te verduurzamen, al kan de situatie in de komende jaren veranderen.') }
   };
-  var ONBEKEND = { kort: 'Onbekend', kleur: 'gray', label: 'Kleur wordt later toegevoegd', impact: 'Voor deze postcode is nog geen actuele netcongestie-status bekend. Kijk voor de meest actuele situatie op de officiële capaciteitskaart.' };
+  var ONBEKEND = { kort: (EN?'Unknown':'Onbekend'), kleur: 'gray', label: (EN?'Colour to be added later':'Kleur wordt later toegevoegd'), impact: (EN?'No up-to-date grid congestion status is known for this postcode yet. Check the official capacity map for the latest situation.':'Voor deze postcode is nog geen actuele netcongestie-status bekend. Kijk voor de meest actuele situatie op de officiële capaciteitskaart.') };
   var GEVOLG = {
     afname: {
-      3: 'Je kunt nu geen extra vermogen krijgen. Uitbreiden, laadpalen of een warmtepomp moeten wachten op netverzwaring.',
-      2: 'Vraag tijdig extra vermogen aan of plan je uitbreiding nu, voordat de wachtrij ontstaat.',
-      1: 'Voor nieuwe of grotere aansluitingen kunnen beperkingen gelden. Plan je aanvraag op tijd.',
-      0: 'Je kunt voorlopig extra vermogen aanvragen als dat nodig is.'
+      3: (EN?'You cannot get extra capacity right now. Expansion, chargers or a heat pump must wait for a grid upgrade.':'Je kunt nu geen extra vermogen krijgen. Uitbreiden, laadpalen of een warmtepomp moeten wachten op netverzwaring.'),
+      2: (EN?'Request extra capacity in time or plan your expansion now, before the waiting list builds up.':'Vraag tijdig extra vermogen aan of plan je uitbreiding nu, voordat de wachtrij ontstaat.'),
+      1: (EN?'Restrictions may apply to new or larger connections. Plan your application in time.':'Voor nieuwe of grotere aansluitingen kunnen beperkingen gelden. Plan je aanvraag op tijd.'),
+      0: (EN?'You can for now request extra capacity if needed.':'Je kunt voorlopig extra vermogen aanvragen als dat nodig is.')
     },
     opwek: {
-      3: 'Je kunt zonne-energie niet terugleveren aan het net. Een batterij vangt het overschot op.',
-      2: 'Terugleveren kan nu nog, maar de situatie verslechtert. Een batterij beschermt je tegen terugleverkosten.',
-      1: 'Terugleveren is beperkt mogelijk. Een batterij zorgt dat je zelf meer van je opgewekte stroom gebruikt.',
-      0: 'Je kunt zonne-energie gewoon terugleveren aan het net.'
+      3: (EN?'You cannot feed solar power back to the grid. A battery captures the surplus.':'Je kunt zonne-energie niet terugleveren aan het net. Een batterij vangt het overschot op.'),
+      2: (EN?'Feed-in is still possible, but the situation is worsening. A battery protects you against feed-in costs.':'Terugleveren kan nu nog, maar de situatie verslechtert. Een batterij beschermt je tegen terugleverkosten.'),
+      1: (EN?'Feed-in is limited. A battery lets you use more of your own generated power.':'Terugleveren is beperkt mogelijk. Een batterij zorgt dat je zelf meer van je opgewekte stroom gebruikt.'),
+      0: (EN?'You can simply feed solar power back to the grid.':'Je kunt zonne-energie gewoon terugleveren aan het net.')
     }
   };
 
@@ -919,9 +930,9 @@ document.addEventListener('keydown',function(e){
     errEl.textContent = '';
     result.classList.remove('visible');
     var raw = input.value.trim();
-    if (!raw) { errEl.textContent = 'Vul een postcode in.'; return; }
+    if (!raw) { errEl.textContent = (EN?'Enter a postcode.':'Vul een postcode in.'); return; }
     if (!/^[0-9]{4}\s?[A-Za-z]{2}$/.test(raw)) {
-      errEl.textContent = 'Dit lijkt geen Nederlandse postcode. Gebruik 4 cijfers en 2 letters, bijvoorbeeld 2671 AA.';
+      errEl.textContent = (EN?'This does not look like a Dutch postcode. Use 4 digits and 2 letters, e.g. 2671 AA.':'Dit lijkt geen Nederlandse postcode. Gebruik 4 cijfers en 2 letters, bijvoorbeeld 2671 AA.');
       return;
     }
     var pc6 = raw.replace(/\s+/g, '').toUpperCase();
@@ -943,26 +954,31 @@ document.addEventListener('keydown',function(e){
   });
 
   function render(d) {
-    document.getElementById('nc-result-title').textContent = 'Resultaat voor ' + d.postcode + ' (' + d.weergavenaam + ')';
-    var s1 = row(document.getElementById('nc-afname'), d.afname, 'Afname (verbruik)');
-    var s2 = row(document.getElementById('nc-opwek'), d.opwek, 'Teruglevering (zon)');
+    document.getElementById('nc-result-title').textContent = (EN?'Result for ':'Resultaat voor ') + d.postcode + ' (' + d.weergavenaam + ')';
+    var s1 = row(document.getElementById('nc-afname'), d.afname, (EN?'Consumption (demand)':'Afname (verbruik)'));
+    var s2 = row(document.getElementById('nc-opwek'), d.opwek, (EN?'Feed-in (solar)':'Teruglevering (zon)'));
     var worst = Math.max(d.afname ? d.afname.code : -1, d.opwek ? d.opwek.code : -1);
     var ws = STATUS[worst] || ONBEKEND;
     var uitleg = document.getElementById('nc-uitleg');
     uitleg.className = 'nc-uitleg ' + ws.kleur;
     var gevolgen = [];
-    if (d.afname && GEVOLG.afname[d.afname.code]) gevolgen.push('Afname (verbruik): ' + GEVOLG.afname[d.afname.code]);
-    if (d.opwek && GEVOLG.opwek[d.opwek.code]) gevolgen.push('Teruglevering (zon): ' + GEVOLG.opwek[d.opwek.code]);
-    uitleg.innerHTML = '<strong>Wat dit betekent:</strong> ' + ws.impact +
-      (gevolgen.length ? '<br><br><strong>Gevolg voor jouw hotel:</strong><br>• ' + gevolgen.join('<br>• ') : '');
+    if (d.afname && GEVOLG.afname[d.afname.code]) gevolgen.push((EN?'Consumption (demand): ':'Afname (verbruik): ') + GEVOLG.afname[d.afname.code]);
+    if (d.opwek && GEVOLG.opwek[d.opwek.code]) gevolgen.push((EN?'Feed-in (solar): ':'Teruglevering (zon): ') + GEVOLG.opwek[d.opwek.code]);
+    uitleg.innerHTML = (EN?'<strong>What this means:</strong> ':'<strong>Wat dit betekent:</strong> ') + ws.impact +
+      (gevolgen.length ? (EN?'<br><br><strong>Impact for your hotel:</strong><br>• ':'<br><br><strong>Gevolg voor jouw hotel:</strong><br>• ') + gevolgen.join('<br>• ') : '');
     var cta = document.getElementById('nc-cta');
     if (worst >= 2) {
-      cta.innerHTML = '<a href="/oplossingen">Bekijk Lemnion oplossingen</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
+      cta.innerHTML = '<a href="'+(location.pathname.indexOf('/en')===0?'/en/solutions':'/oplossingen')+'">'+(EN?'View Lemnion solutions':'Bekijk Lemnion oplossingen')+'</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">'+(EN?'Official map':'Officiële kaart')+'</a>';
     } else {
-      cta.innerHTML = '<a href="verduurzamen.html">Verduurzaam zonder netverzwaring</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
+      cta.innerHTML = '<a href="'+(location.pathname.indexOf('/en')===0?'/en/sustainability':'/verduurzamen')+'">'+(EN?'Go green without a grid upgrade':'Verduurzaam zonder netverzwaring')+'</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
     }
-    document.getElementById('nc-meta').innerHTML =
-      'Peildatum: ' + (d.peildatum || 'onbekend') + ' · Gegevens: <a href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Capaciteitskaart Netbeheer Nederland</a> · Postcode: <a href="https://www.pdok.nl/" target="_blank" rel="noopener">PDOK/BAG</a> · <a href="https://www.rvo.nl/onderwerpen/netcongestie" target="_blank" rel="noopener">Wat is netcongestie? (RVO)</a>';
+        document.getElementById('nc-meta').innerHTML =
+      (EN?'Reference date: ':'Peildatum: ') + (d.peildatum || (EN?'unknown':'onbekend')) +
+      (EN?' · Data: ':' · Gegevens: ') +
+      '<a href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">' + (EN?'Capacity map Netbeheer Nederland':'Capaciteitskaart Netbeheer Nederland') + '</a> · ' +
+      (EN?'Postcode':'Postcode') + ': ' +
+      '<a href="https://www.pdok.nl/" target="_blank" rel="noopener">PDOK/BAG</a> · ' +
+      '<a href="https://www.rvo.nl/onderwerpen/netcongestie" target="_blank" rel="noopener">' + (EN?'What is grid congestion? (RVO)':'Wat is netcongestie? (RVO)') + '</a>';
     result.classList.add('visible');
   }
 })();

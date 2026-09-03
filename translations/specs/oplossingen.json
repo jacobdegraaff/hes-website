@@ -21,5 +21,8 @@
   {"key": "oplossingen.c5a", "tag": "a", "contains": "Lees meer", "attrs": "stroomuitval-noodaggregaat.html"},
   {"key": "oplossingen.ctah", "tag": "h2", "contains": "Klaar om jouw hotel te bevrijden"},
   {"key": "oplossingen.ctap", "tag": "p", "contains": "Bereken binnen 1 minuut"},
-  {"key": "oplossingen.cta", "tag": "a", "contains": "Doe de configurator"}
+  {"key": "oplossingen.cta", "tag": "a", "contains": "Doe de configurator"},
+  {"key": "producten.c2a", "tag": "a", "href": "/energie-management-systeem", "contains": "Meer over ons EMS"},
+  {"key": "producten.photofig1", "tag": "figcaption", "contains": "DC-snellader in de praktijk"},
+  {"key": "producten.photofig2", "tag": "figcaption", "contains": "261 kWh batterij in de praktijk"}
 ]
