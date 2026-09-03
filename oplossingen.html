@@ -332,6 +332,26 @@ document.addEventListener("click",ddnavClick);
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
 </script>
 <!-- data-navfix -->
+    <!-- Matomo -->
+    <link rel="dns-prefetch" href="//analytics.lemnion.nl">
+    <link rel="preconnect" href="//analytics.lemnion.nl">
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['disableCookies']);
+        _paq.push(['setDoNotTrack', true]);
+        _paq.push(['setAnonymizeIp', true]);
+        _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
+        _paq.push(['setSiteId', location.hostname.indexOf('dev.') === 0 ? '2' : '1']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = '//analytics.lemnion.nl/';
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
 </head>
 <body>
 
@@ -479,7 +499,7 @@ function lockScroll(on) {
                 <img src="/assets/zonnepanelen.jpg" alt="Zonnepanelen op het dak van een hotel" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:0.75rem;">
                 <h4 data-i18n="producten.c4h">
                 DC-gekoppelde zonnepanelen</h4>
-                <p data-i18n="producten.c4p">25 kW+ MPPT direct op de DC-bus van de batterij. Geen conversieverlies van DC naar AC en terug, dus maximaal rendement uit elke opgewekte kWh.</p>
+                <p data-i18n="producten.c4p">MPPT direct op de DC-bus van de batterij. Geen conversieverlies van DC naar AC en terug, dus maximaal rendement uit elke opgewekte kWh.</p>
             </div>
             <div class="info-card">
                 <img src="/assets/omvormer.jpg" alt="Zonne-omvormer van Lemnion" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:0.75rem;">

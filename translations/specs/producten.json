@@ -11,7 +11,7 @@
   {"key": "producten.c3h", "tag": "h4", "contains": "DC-snelladers (40-120 kW)"},
   {"key": "producten.c3p", "tag": "p", "contains": "Toekomstbestendige laadpalen met OCPP 2.0.1"},
   {"key": "producten.c4h", "tag": "h4", "contains": "DC-gekoppelde zonnepanelen"},
-  {"key": "producten.c4p", "tag": "p", "contains": "25 kW+ MPPT direct op de DC-bus"},
+  {"key": "producten.c4p", "tag": "p", "contains": "MPPT direct op de DC-bus"},
   {"key": "producten.c5h", "tag": "h4", "contains": "DC-AC omvormers"},
   {"key": "producten.c5p", "tag": "p", "contains": "Industriële bidirectionele omvormers"},
   {"key": "producten.c6h", "tag": "h4", "contains": "Monitoring & support"},

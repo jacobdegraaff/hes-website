@@ -35,7 +35,7 @@
   {"key": "usp-veiligheid.r3c", "tag": "td", "contains": "Vaste profielen"},
   {"key": "usp-veiligheid.r4a", "tag": "strong", "contains": "Eigen OCPP 2.0.1 laadsoftware"},
   {"key": "usp-veiligheid.r4c", "tag": "td", "contains": "Ingekocht bij derden"},
-  {"key": "usp-veiligheid.r5a", "tag": "strong", "contains": "DC-gekoppelde zon (25 kW+)"},
+  {"key": "usp-veiligheid.r5a", "tag": "strong", "contains": "DC-gekoppelde zon"},
   {"key": "usp-veiligheid.r5c", "tag": "td", "contains": "✕ Nergens beschikbaar"},
   {"key": "usp-veiligheid.r6a", "tag": "strong", "contains": "UL + IEC veiligheidscertificering"},
   {"key": "usp-veiligheid.r6b", "tag": "td", "contains": "✓ UL 9540A, 1973, 1642"},

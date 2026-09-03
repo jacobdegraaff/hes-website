@@ -867,6 +867,26 @@ document.addEventListener("click",ddnavClick);
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
 </script>
 <!-- data-navfix -->
+    <!-- Matomo -->
+    <link rel="dns-prefetch" href="//analytics.lemnion.nl">
+    <link rel="preconnect" href="//analytics.lemnion.nl">
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['disableCookies']);
+        _paq.push(['setDoNotTrack', true]);
+        _paq.push(['setAnonymizeIp', true]);
+        _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
+        _paq.push(['setSiteId', location.hostname.indexOf('dev.') === 0 ? '2' : '1']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = '//analytics.lemnion.nl/';
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
 </head>
 <body>
 
@@ -1213,7 +1233,7 @@ function lockScroll(on) {
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="12" stroke="#7FBF3A" stroke-width="2"/><circle cx="24" cy="24" r="6" fill="#7FBF3A"/><line x1="24" y1="6" x2="24" y2="18" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="30" x2="24" y2="42" stroke="#7FBF3A" stroke-width="2"/><line x1="6" y1="24" x2="18" y2="24" stroke="#7FBF3A" stroke-width="2"/><line x1="30" y1="24" x2="42" y2="24" stroke="#7FBF3A" stroke-width="2"/></svg></div>
                     <h3 data-i18n="usp.c2h">Eén geïntegreerd ecosysteem</h3>
-                    <p data-i18n="usp.c2p">Batterij + EMS + OCPP 2.0.1 laden + 25 kW DC-gekoppelde zon in <strong>één platform</strong>. Één contract, één factuur, één telefoonnummer. Alles uit één hand · geen gedoe met losse partijen.</p>
+                    <p data-i18n="usp.c2p">Batterij + EMS + OCPP 2.0.1 laden + DC-gekoppelde zon in <strong>één platform</strong>. Één contract, één factuur, één telefoonnummer. Alles uit één hand · geen gedoe met losse partijen.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="#7FBF3A" stroke-width="2"/><line x1="14" y1="16" x2="34" y2="16" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="22" x2="30" y2="22" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="28" x2="34" y2="28" stroke="#7FBF3A" stroke-width="1.5"/><line x1="14" y1="34" x2="26" y2="34" stroke="#7FBF3A" stroke-width="1.5"/><circle cx="38" cy="20" r="1.5" fill="#7FBF3A"/></svg></div>
@@ -1228,7 +1248,7 @@ function lockScroll(on) {
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="6" x2="24" y2="16" stroke="#7FBF3A" stroke-width="2"/><line x1="24" y1="32" x2="24" y2="42" stroke="#7FBF3A" stroke-width="2"/><line x1="6" y1="24" x2="16" y2="24" stroke="#7FBF3A" stroke-width="2"/><line x1="32" y1="24" x2="42" y2="24" stroke="#7FBF3A" stroke-width="2"/><path d="M14 14l-6-6M34 14l6-6M14 34l-6 6M34 34l6 6" stroke="#7FBF3A" stroke-width="1.5" stroke-linecap="round"/></svg></div>
                     <h3 data-i18n="usp.c5h">DC-gekoppelde zonne-energie</h3>
-                    <p data-i18n="usp.c5p">25 kW+ MPPT direct op de DC-bus. <strong>Geen conversieverlies.</strong> Maximaal rendement uit je zonnepanelen · elke opgewekte kWh gaat direct je accu in.</p>
+                    <p data-i18n="usp.c5p">MPPT direct op de DC-bus. <strong>Geen conversieverlies.</strong> Maximaal rendement uit je zonnepanelen · elke opgewekte kWh gaat direct je accu in.</p>
                 </div>
                 <div class="problem-card fade-in">
                     <div class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#7FBF3A" stroke-width="2"/><path d="M16 24l6 6 12-12" stroke="#7FBF3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="3" fill="#7FBF3A"/></svg></div>
