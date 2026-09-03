@@ -188,6 +188,10 @@ function translatePage(source, dict, page) {
 function finalizeHtml(html, page, lang) {
   // EN pages: rewrite internal links to /en/<slug>, relative assets to root-absolute
   html = rewriteLinks(html, lang);
+  // Lang-switch: links structureel regenereren uit de slug-kaart (per taal),
+  // zodat handmatig achtergebleven foute NL-links (kopie-artefacten) nooit
+  // meeliften. Zie fixLangSwitch. Draait voor NL ÈN EN.
+  html = fixLangSwitch(html, page, lang);
   // ALLEEN externe links (naar andere domeinen): target=_blank + rel=noopener nofollow
   // (Jacob, 21-8-2026, verduidelijkt). Interne links (eigen domein of relatief) en
   // anker-/mailto-/tel-links blijven normaal in hetzelfde tabblad.
@@ -268,6 +272,29 @@ function rewriteLinks(html, lang) {
   return html;
 }
 
+
+function fixLangSwitch(html, page, lang) {
+  // Structureel correcte lang-switch: genereer de NL- en EN-links opnieuw uit
+  // slug-kaart i.p.v. de handmatige bron-links te kopiëren (die waren per
+  // pagina na te houden en foutgevoelig; bv. de EMS-pagina verwees nog naar
+  // /energie-uitdagingen). Draait voor NL en EN.
+  const nlSlug = page === 'index.html' ? '' : page.replace(/\.html$/, '');
+  const enSlug = SLUGS[page];
+  const nlHref = nlSlug === '' ? '/' : '/' + nlSlug;
+  const enHref = (enSlug === '' || enSlug === undefined) ? '/en/' : '/en/' + enSlug;
+  return html.replace(/<li class="lang-switch"[^>]*>[\s\S]*?<\/li>/, (ls) => {
+    // De lang-switch bevat exact 2 hrefs: eerst de NL-link, dan de EN-link.
+    const parts = ls.split('href="');
+    if (parts.length >= 3) {
+      const c1 = parts[1].indexOf('"');
+      const c2 = parts[2].indexOf('"');
+      parts[1] = nlHref + parts[1].slice(c1);  // href #1 = NL
+      parts[2] = enHref + parts[2].slice(c2);  // href #2 = EN
+      ls = parts.join('href="');
+    }
+    return ls;
+  });
+}
 
 function guardEnLinks(html) {
   // Build-guard: een gegenereerde EN-pagina mag GEEN interne link naar een
