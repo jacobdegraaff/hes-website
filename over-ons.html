@@ -360,6 +360,26 @@ document.addEventListener("click",ddnavClick);
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
 </script>
 <!-- data-navfix -->
+    <!-- Matomo -->
+    <link rel="dns-prefetch" href="//analytics.lemnion.nl">
+    <link rel="preconnect" href="//analytics.lemnion.nl">
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['disableCookies']);
+        _paq.push(['setDoNotTrack', true]);
+        _paq.push(['setAnonymizeIp', true]);
+        _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
+        _paq.push(['setSiteId', location.hostname.indexOf('dev.') === 0 ? '2' : '1']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = '//analytics.lemnion.nl/';
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
 </head>
 <body>
 
