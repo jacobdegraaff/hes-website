@@ -50,5 +50,7 @@
   {"key": "modal.submit", "tag": "button", "contains": "Verstuur bericht"},
   {"key": "footer.ems", "tag": "a", "contains": "EMS &amp; monitoring"},
   {"key": "footer.h_solutions", "tag": "a", "contains": "Energie uitdagingen", "href": "/energie-uitdagingen"},
-  {"key": "footer.veiligheid", "tag": "a", "contains": "Veiligheid", "href": "/veiligheid"}
+  {"key": "footer.veiligheid", "tag": "a", "contains": "Veiligheid", "href": "/veiligheid"},
+  {"key": "nav.ems", "tag": "a", "href": "/en/energy-management-system", "contains": "Energy Management System"},
+  {"key": "nav.oplossingen_t", "tag": "a", "href": "/en/solutions", "contains": "Solutions ▾"}
 ]
