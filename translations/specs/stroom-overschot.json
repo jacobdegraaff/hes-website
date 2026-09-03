@@ -10,7 +10,7 @@
   {"key": "stroomoverschot.f2p", "tag": "p", "contains": "Terugleveren aan het net kost steeds vaker geld"},
   {"key": "stroomoverschot.f3h", "tag": "h3", "contains": "Opslaan!"},
   {"key": "stroomoverschot.f3p", "tag": "p", "contains": "Sla het overschot op in je Lemnion-accu"},
-  {"key": "stroomoverschot.c1h", "tag": "h4", "contains": "25 kW DC-gekoppelde zon"},
+  {"key": "stroomoverschot.c1h", "tag": "h4", "contains": "DC-gekoppelde zon"},
   {"key": "stroomoverschot.c1p", "tag": "p", "contains": "Lemnion koppelt zonnepanelen direct op de DC-bus"},
   {"key": "stroomoverschot.c2h", "tag": "h4", "contains": "Slimme aansturing"},
   {"key": "stroomoverschot.c2p", "tag": "p", "contains": "Het EMS beslist in real-time"},

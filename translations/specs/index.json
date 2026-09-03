@@ -77,7 +77,7 @@
   {"key": "usp.c4h", "tag": "h3", "contains": "6-laags veiligheidsarchitectuur"},
   {"key": "usp.c4p", "tag": "p", "contains": "LFP-chemie"},
   {"key": "usp.c5h", "tag": "h3", "contains": "DC-gekoppelde zonne-energie"},
-  {"key": "usp.c5p", "tag": "p", "contains": "25 kW+ MPPT"},
+  {"key": "usp.c5p", "tag": "p", "contains": "MPPT"},
   {"key": "usp.c6h", "tag": "h3", "contains": "Turnkey oplevering"},
   {"key": "usp.c6p", "tag": "p", "contains": "Engineering, installatie, inbedrijfstelling"},
   {"key": "usp.more", "tag": "a", "contains": "Lees verder over USP"},
