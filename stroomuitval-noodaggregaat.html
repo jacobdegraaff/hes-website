@@ -345,7 +345,17 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
             g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
         })();
     </script>
-    <!-- End Matomo Code -->
+        <!-- End Matomo Code -->
+    <script>
+        (function () {
+            function fire(cat, val) { if (window._paq) _paq.push(['trackEvent', cat, 'Klik', val]); }
+            document.addEventListener('click', function (e) {
+                var n = e.target && e.target.closest ? e.target.closest('a[href^="tel:"], a[href^="mailto:"]') : null;
+                if (n) fire('Contact', n.getAttribute('href'));
+            });
+        })();
+    </script>
+
 
 </head>
 <body>
@@ -790,7 +800,7 @@ document.addEventListener('keydown',function(e){
         }).then(function(r){
             return r.json().then(function(d){ return { ok: r.ok, data: d }; });
         }).then(function(res){
-            if (res.ok && res.data.success) {
+            if (res.ok && res.data.success) { if (window._paq) { _paq.push(['trackGoal', 1]); _paq.push(['trackEvent', 'Formulier', 'Verzonden']); }
                 form.innerHTML = '<div style="text-align:center;padding:2rem;">' +
                     '<div style="font-size:3rem;margin-bottom:1rem;">✓</div>' +
                     '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">' + T.thanks + '</h3>' +
