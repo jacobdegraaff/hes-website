@@ -9,10 +9,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Wat is netcongestie? | Lemnion · Hospitality Energy Solutions | Oplossingen voor hotels</title>
+    <title>Wat is netcongestie? · Lemnion · Hospitality Energy Solutions · Oplossingen voor hotels</title>
     <meta name="description" content="Netcongestie blokkeert de groei van jouw hotel. Ontdek wat netcongestie is, hoe het jouw hotel raakt, en hoe Lemnion het oplost met batterijopslag, EMS en slimme sturing.">
     <link rel="canonical" href="https://lemnion.nl/netcongestie">
-    <meta property="og:title" content="Wat is netcongestie? | Oplossingen voor hotels | Lemnion">
+    <meta property="og:title" content="Wat is netcongestie? · Oplossingen voor hotels · Lemnion">
     <meta property="og:description" content="Netcongestie blokkeert de groei van jouw hotel. Ontdek hoe Lemnion het oplost.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lemnion.nl/netcongestie">
@@ -22,7 +22,7 @@
     <meta property="og:locale" content="nl_NL">
     <meta property="og:site_name" content="Lemnion · Hospitality Energy Solutions">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wat is netcongestie? | Oplossingen voor hotels | Lemnion">
+    <meta name="twitter:title" content="Wat is netcongestie? · Oplossingen voor hotels · Lemnion">
     <meta name="twitter:description" content="Netcongestie blokkeert de groei van jouw hotel. Ontdek hoe Lemnion het oplost.">
     <meta name="twitter:image" content="https://lemnion.nl/assets/logo-og.png">
     <script type="application/ld+json">
@@ -36,9 +36,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <style>
 /* hover opent niet meer */
-        :root{--green-primary:#0F3D23;--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#556B58;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
+        :root{--green-primary:#0F3D23;
+        .nav-links > li > a{white-space:nowrap}--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#556B58;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        html{scroll-behavior:smooth;scroll-padding-top:56px;font-size:16px;overflow-y:scroll}
+        html{scroll-behavior:smooth;scroll-padding-top:90px;font-size:16px;overflow-y:scroll}
         body{font-family:'Inter',system-ui,sans-serif;color:var(--dark-grey);background:var(--off-white);line-height:1.7}
         h1,h2,h3{font-family:'Montserrat',system-ui,sans-serif;font-weight:600;color:var(--green-primary)}
         h1{font-size:clamp(1.75rem,4vw,2.8rem)}h2{font-size:clamp(1.25rem,3vw,1.8rem)}h3{font-size:clamp(1rem,2vw,1.25rem)}
@@ -301,8 +302,55 @@ h2{font-size:1.1rem}
 
 /* Dropdown: open-state toont het paneel ook zonder hover (alle apparaten) */
 .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
+
+/* ── Netcongestie check widget ── */
+.nc-check{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1.25rem}
+.nc-input{flex:1;min-width:200px;padding:0.8rem 1rem;font-size:1rem;font-family:inherit;border:1px solid var(--border);border-radius:10px;background:#fff;text-transform:uppercase;letter-spacing:0.05em}
+.nc-input:focus{outline:2px solid var(--green-accent);outline-offset:2px}
+.nc-btn{padding:0.8rem 1.4rem;font-size:1rem;font-family:inherit;font-weight:600;background:var(--green-primary);color:#fff;border:none;border-radius:10px;cursor:pointer}
+.nc-btn:hover{background:var(--green-secondary)}
+.nc-btn:disabled{opacity:0.6;cursor:wait}
+.nc-result{display:none;margin-top:1.25rem}
+.nc-result.visible{display:block}
+.nc-row{display:flex;align-items:center;gap:0.8rem;padding:0.9rem 1rem;border-radius:10px;border:1px solid var(--border);background:var(--off-white);margin-bottom:0.6rem}
+.nc-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+.nc-dot.red{background:#C0392B}.nc-dot.orange{background:#E67E22}.nc-dot.yellow{background:#D4AC0D}.nc-dot.green{background:#27AE60}.nc-dot.gray{background:#7F8C8D}
+.nc-label{font-weight:600;min-width:150px}
+.nc-detail{color:var(--text-muted);font-size:0.9rem}
+.nc-uitleg{margin-top:0.8rem;padding:0.9rem 1rem;border-radius:10px;font-size:0.92rem;border-left:4px solid var(--green-accent);background:#fff}
+.nc-uitleg.rood{border-left-color:#C0392B}.nc-uitleg.oranje{border-left-color:#E67E22}.nc-uitleg.geel{border-left-color:#D4AC0D}.nc-uitleg.groen{border-left-color:#27AE60}
+.nc-cta{margin-top:1rem}
+.nc-cta a{display:inline-block;padding:0.7rem 1.3rem;background:var(--green-primary);color:#fff;text-decoration:none;border-radius:10px;font-weight:600;margin-right:0.5rem}
+.nc-cta a.secondary{background:transparent;color:var(--green-primary);border:1px solid var(--green-primary)}
+.nc-meta{font-size:0.78rem;color:var(--text-muted);margin-top:0.8rem}
+.nc-meta a{color:var(--green-secondary)}
+.nc-error{color:#C0392B;font-size:0.92rem;margin-top:0.8rem}
+.nc-loading{color:var(--text-muted);margin-top:0.8rem;font-size:0.92rem}
+@media(max-width:600px){.nc-label{min-width:120px}}
 </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
     <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
+<style>
+/* Nav: desktop hover opent de dropdown, mobiel accordion via chevron-togle */
+.nav-dropdown:hover .nav-dropdown-panel{display:block!important}
+.nav-dd-toggle{display:none}
+@media(max-width:1180px){
+  .nav-dropdown .nav-backdrop{display:none!important}
+  .nav-mega-col h4{display:none!important}
+  .nav-dropdown > a::after{content:none}
+  .nav-dropdown > a{padding-right:2.75rem}
+  .nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
+  .nav-dd-toggle::after{content:"\25be"}
+  .nav-dropdown.open > .nav-dd-toggle::after{content:"\25b4"}
+  .nav-dropdown.open > .nav-dropdown-panel{display:block!important}
+}
+</style>
+<script>
+function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(tog){e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");return;}if(window.innerWidth<=1180){var a=(t.closest?t.closest(".nav-dropdown > a"):null);if(a){e.preventDefault();var li2=a.closest(".nav-dropdown");var open2=li2.classList.toggle("open");var tg=li2.querySelector(".nav-dd-toggle");if(tg)tg.setAttribute("aria-expanded",open2?"true":"false");}}}
+function ddnavInit(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(!li.querySelector(".nav-dd-toggle")){var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");li.appendChild(t);}});}
+document.addEventListener("click",ddnavClick);
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
+</script>
+<!-- data-navfix -->
 </head>
 <body>
 
@@ -352,13 +400,12 @@ function lockScroll(on) {
             <span></span><span></span><span></span>
         </button>
                 <ul class="nav-links">
-            <li><a href="/">Home</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.oplossingen" href="/oplossingen">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="/energie-uitdagingen">Energie uitdagingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Oplossingen</a></h4>
+                        <h4><a data-i18n="nav.oplossingen_h" href="/energie-uitdagingen">Energie uitdagingen</a></h4>
                         <a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a>
                         <a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a>
                         <a data-i18n="nav.maxbelasting" href="/maximum-belasting">Maximum belasting</a>
@@ -373,14 +420,13 @@ function lockScroll(on) {
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
                         <h4><a data-i18n="nav.voordelen_h" href="/voordelen">Voordelen</a></h4>
-                        <a data-i18n="nav.usp" href="/usp-veiligheid">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a>
-                        <a data-i18n="nav.configurator" href="/configurator">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <a data-i18n="nav.usp" href="/usp">USP<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.veiligheid" href="/veiligheid">Veiligheid<span class="mega-desc">6-laags veiligheidsarchitectuur</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="/producten">Producten</a></li>
+            <li><a data-i18n="nav.producten" href="/oplossingen">Oplossingen</a></li>
             <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
             <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
@@ -443,6 +489,28 @@ function lockScroll(on) {
         <p data-i18n="netcongestie.summary" style="text-align:center;margin-top:2rem;font-size:0.9rem;color:var(--text-muted);">
             <strong>Kort gezegd:</strong> netcongestie = file op het stroomnet. Lemnion bouwt een eigen oprit zodat jouw hotel niet in de file staat.
         </p>
+
+        <div id="postcode-check" style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-top:2.5rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);">
+            <p data-i18n="netcongestie.checklabel" class="section-label" style="margin-bottom:0.4rem;">Check jouw regio</p>
+            <h3 data-i18n="netcongestie.checkh" style="margin-bottom:0.5rem;">Heeft jouw hotel last van netcongestie?</h3>
+            <p data-i18n="netcongestie.checkp" style="color:#3D4F40;font-size:0.95rem;max-width:640px;">
+                Vul je postcode in en zie direct of jouw locatie nu of binnenkort te maken krijgt met een overbelast elektriciteitsnet.
+            </p>
+            <form id="nc-form" autocomplete="off" class="nc-check" style="margin-bottom:0;">
+                <input type="text" id="nc-postcode" class="nc-input" placeholder="Postcode, bijv. 2671 AA" maxlength="7" aria-label="Postcode">
+                <button type="submit" id="nc-btn" class="nc-btn" data-i18n="netcongestie.checkbtn">Check postcode</button>
+            </form>
+            <div id="nc-loading" class="nc-loading" style="display:none;" data-i18n="netcongestie.checkloading">Bezig met checken...</div>
+            <div id="nc-error" class="nc-error"></div>
+            <div id="nc-result" class="nc-result">
+                <p id="nc-result-title" style="font-weight:600;margin-bottom:0.4rem;"></p>
+                <div id="nc-afname"></div>
+                <div id="nc-opwek"></div>
+                <div id="nc-uitleg"></div>
+                <div class="nc-cta" id="nc-cta"></div>
+                <div class="nc-meta" id="nc-meta"></div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -454,7 +522,7 @@ function lockScroll(on) {
             Hotels hebben een uitgesproken verbruikspatroon. Tussen 17:00 en 21:00 schiet het verbruik omhoog: keukens draaien op volle toeren, gasten douchen, airco's en liften worden maximaal gebruikt. Dit is precies het moment waarop netcongestie toeslaat.
         </p>
         <div class="chart-wrap">
-            <img src="assets/netcongestie-diagram-v2.jpg" alt="Hotel energieprofiel | 24-uurs verbruik met piekbelasting" style="width:100%; max-width:700px; border-radius:12px;">
+            <img src="assets/netcongestie-diagram.svg?v=5" alt="Hotel energieprofiel · 24-uurs verbruik met piekbelasting" style="width:100%; max-width:700px; border-radius:12px;">
         </div>
     </div>
 </section>
@@ -485,8 +553,8 @@ function lockScroll(on) {
         <h2 data-i18n="netcongestie.ctah">Klaar om jouw hotel te bevrijden van netcongestie?</h2>
         <p data-i18n="netcongestie.ctap" style="color:var(--text-muted);max-width:500px;margin:0.75rem auto 1.5rem;">Bereken binnen 1 minuut wat jouw hotel kan besparen met een eigen energie-systeem.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a data-i18n="netcongestie.cta" href="/configurator" class="btn-outline">Doe de configurator →</a>
-            <a href="mailto:info@lemnion.nl" class="btn-green">info@lemnion.nl</a>
+            
+            <a data-i18n="cta.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;" class="btn-green">Neem contact op →</a>
         </div>
     </div>
 </section>
@@ -494,7 +562,7 @@ function lockScroll(on) {
 <!-- Verder lezen (interne linkbuilding) -->
 <aside class="related-links">
   <span class="section-label" data-i18n="netcongestie.label">Verder lezen</span>
-    <a class="btn btn-primary" href="/producten" data-i18n="netcongestie.rl1">Bekijk hoe batterij en EMS netcongestie oplossen</a>
+    <a class="btn btn-primary" href="/oplossingen" data-i18n="netcongestie.rl1">Bekijk hoe batterij en EMS netcongestie oplossen</a>
     <a class="btn btn-primary" href="/oplossingen" data-i18n="netcongestie.rl2">Alle oplossingen voor netcongestie op een rij</a>
 </aside>
 
@@ -506,7 +574,7 @@ function lockScroll(on) {
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h3 data-i18n="footer.h_solutions">Oplossingen</h3>
+            <h3 data-i18n="footer.h_solutions">Energie uitdagingen</h3>
             <ul>
                 <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
                 <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
@@ -516,27 +584,27 @@ function lockScroll(on) {
             </ul>
         </div>
         <div>
-            <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
+            <h3 data-i18n="footer.h_products">Oplossingen</h3>
             <ul>
-                <li><a data-i18n="footer.batterij" href="/producten">Batterijopslag</a></li>
-                <li><a data-i18n="footer.laadpalen" href="/producten">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="/producten">EMS &amp; monitoring</a></li>
-                <li><a data-i18n="footer.configurator" href="/configurator">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.batterij" href="/oplossingen">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="/oplossingen">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="/oplossingen">EMS &amp; monitoring</a></li>
                 <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="/usp-veiligheid">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="/usp">USP</a></li>
+                <li><a data-i18n="footer.veiligheid" href="/veiligheid">Veiligheid</a></li>
                 <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
                 <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
                 <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Lemnion B.V. In partnership met Stroomlijnen B.V.</p>
             <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
@@ -551,7 +619,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
+        <button class="contact-modal-close" data-i18n-aria-label="modal.close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -559,36 +627,36 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.voornaam" for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
+                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required data-i18n-placeholder="modal.ph.voornaam" placeholder="Jan">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.achternaam" for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
+                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required data-i18n-placeholder="modal.ph.achternaam" placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.bedrijf" for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
+                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required data-i18n-placeholder="modal.ph.bedrijf" placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.functie" for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
+                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required data-i18n-placeholder="modal.ph.functie" placeholder="Directeur / Facility Manager">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.email" for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
-                    <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                    <input type="email" id="email" autocomplete="email" name="email" required data-i18n-placeholder="modal.ph.email" placeholder="jan@hoteldevoorbeeldhoeve.nl">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.mobiel" for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
-                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
+                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required data-i18n-placeholder="modal.ph.mobiel" placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
                 <label data-i18n="modal.bericht" for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
-                <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
+                <textarea id="bericht" name="bericht" rows="4" required data-i18n-placeholder="modal.ph.bericht" placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
                 <button data-i18n="modal.submit" type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
@@ -656,7 +724,7 @@ document.addEventListener('keydown',function(e){
 </script>
 
 <script>
-/* Contact modal | verstuur via /api/contact (Resend) */
+/* Contact modal · verstuur via /api/contact (Resend) */
 (function(){
     var form = document.getElementById('contact-form');
     if (!form || form.dataset.contactWired) return;
@@ -803,6 +871,102 @@ document.addEventListener('keydown',function(e){
 </script>
 
 
+
+<script>
+/* Netcongestie check widget: postcode -> server-side check (Pages Function) */
+(function () {
+  'use strict';
+  var STATUS = {
+    3: { kort: 'Tekort', kleur: 'red', label: 'Tekort aan transportcapaciteit met wachtrij', impact: 'Er is nu te weinig transportcapaciteit in jouw regio. Nieuwe of zwaardere aansluitingen kunnen jaren op zich laten wachten.' },
+    2: { kort: 'In onderzoek', kleur: 'orange', label: 'Gebied is in onderzoek met wachtrij', impact: 'De netbeheerder onderzoekt dit gebied en er geldt een wachtrij. Nu is er nog geen acuut probleem, maar binnen afzienbare tijd kan congestie ontstaan.' },
+    1: { kort: 'Beperkt', kleur: 'yellow', label: 'Transportcapaciteit beperkt beschikbaar zonder wachtrij', impact: 'Er is beperkt capaciteit beschikbaar, nog zonder wachtrij. Voor nieuwe of grotere aansluitingen kunnen beperkingen gelden.' },
+    0: { kort: 'Beschikbaar', kleur: 'green', label: 'Transportcapaciteit beschikbaar zonder wachtrij', impact: 'Er is voldoende transportcapaciteit in jouw regio. Goede basis om te verduurzamen, al kan de situatie in de komende jaren veranderen.' }
+  };
+  var ONBEKEND = { kort: 'Onbekend', kleur: 'gray', label: 'Kleur wordt later toegevoegd', impact: 'Voor deze postcode is nog geen actuele netcongestie-status bekend. Kijk voor de meest actuele situatie op de officiële capaciteitskaart.' };
+  var GEVOLG = {
+    afname: {
+      3: 'Je kunt nu geen extra vermogen krijgen. Uitbreiden, laadpalen of een warmtepomp moeten wachten op netverzwaring.',
+      2: 'Vraag tijdig extra vermogen aan of plan je uitbreiding nu, voordat de wachtrij ontstaat.',
+      1: 'Voor nieuwe of grotere aansluitingen kunnen beperkingen gelden. Plan je aanvraag op tijd.',
+      0: 'Je kunt voorlopig extra vermogen aanvragen als dat nodig is.'
+    },
+    opwek: {
+      3: 'Je kunt zonne-energie niet terugleveren aan het net. Een batterij vangt het overschot op.',
+      2: 'Terugleveren kan nu nog, maar de situatie verslechtert. Een batterij beschermt je tegen terugleverkosten.',
+      1: 'Terugleveren is beperkt mogelijk. Een batterij zorgt dat je zelf meer van je opgewekte stroom gebruikt.',
+      0: 'Je kunt zonne-energie gewoon terugleveren aan het net.'
+    }
+  };
+
+  var form = document.getElementById('nc-form');
+  var input = document.getElementById('nc-postcode');
+  var btn = document.getElementById('nc-btn');
+  var loading = document.getElementById('nc-loading');
+  var errEl = document.getElementById('nc-error');
+  var result = document.getElementById('nc-result');
+
+  function row(el, hit, titel) {
+    var s = hit && STATUS[hit.code] ? STATUS[hit.code] : ONBEKEND;
+    var nb = hit && hit.netbeheerder ? ' · ' + hit.netbeheerder : '';
+    el.innerHTML = '<div class="nc-row"><span class="nc-dot ' + s.kleur + '"></span>' +
+      '<span class="nc-label">' + titel + '</span>' +
+      '<span class="nc-detail"><strong>' + s.label + '</strong>' + nb + '</span></div>';
+    return s;
+  }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    errEl.textContent = '';
+    result.classList.remove('visible');
+    var raw = input.value.trim();
+    if (!raw) { errEl.textContent = 'Vul een postcode in.'; return; }
+    if (!/^[0-9]{4}\s?[A-Za-z]{2}$/.test(raw)) {
+      errEl.textContent = 'Dit lijkt geen Nederlandse postcode. Gebruik 4 cijfers en 2 letters, bijvoorbeeld 2671 AA.';
+      return;
+    }
+    var pc6 = raw.replace(/\s+/g, '').toUpperCase();
+    loading.style.display = 'block';
+    btn.disabled = true;
+    fetch('/api/netcongestie-check?postcode=' + encodeURIComponent(pc6))
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (!res.ok) {
+          if (res.d && res.d.error === 'not_found') throw new Error('Postcode ' + pc6 + ' is niet gevonden. Controleer de postcode of probeer een andere.');
+          if (res.d && res.d.error === 'format') throw new Error('Dit lijkt geen Nederlandse postcode.');
+          if (res.d && res.d.error === 'rate') throw new Error('Te veel verzoeken. Probeer het later opnieuw.');
+          throw new Error('De check is mislukt. Probeer het later opnieuw.');
+        }
+        render(res.d);
+      })
+      .catch(function (e) { errEl.textContent = e.message; })
+      .finally(function () { loading.style.display = 'none'; btn.disabled = false; });
+  });
+
+  function render(d) {
+    document.getElementById('nc-result-title').textContent = 'Resultaat voor ' + d.postcode + ' (' + d.weergavenaam + ')';
+    var s1 = row(document.getElementById('nc-afname'), d.afname, 'Afname (verbruik)');
+    var s2 = row(document.getElementById('nc-opwek'), d.opwek, 'Teruglevering (zon)');
+    var worst = Math.max(d.afname ? d.afname.code : -1, d.opwek ? d.opwek.code : -1);
+    var ws = STATUS[worst] || ONBEKEND;
+    var uitleg = document.getElementById('nc-uitleg');
+    uitleg.className = 'nc-uitleg ' + ws.kleur;
+    var gevolgen = [];
+    if (d.afname && GEVOLG.afname[d.afname.code]) gevolgen.push('Afname (verbruik): ' + GEVOLG.afname[d.afname.code]);
+    if (d.opwek && GEVOLG.opwek[d.opwek.code]) gevolgen.push('Teruglevering (zon): ' + GEVOLG.opwek[d.opwek.code]);
+    uitleg.innerHTML = '<strong>Wat dit betekent:</strong> ' + ws.impact +
+      (gevolgen.length ? '<br><br><strong>Gevolg voor jouw hotel:</strong><br>• ' + gevolgen.join('<br>• ') : '');
+    var cta = document.getElementById('nc-cta');
+    if (worst >= 2) {
+      cta.innerHTML = '<a href="/oplossingen">Bekijk Lemnion oplossingen</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
+    } else {
+      cta.innerHTML = '<a href="verduurzamen.html">Verduurzaam zonder netverzwaring</a><a class="secondary" href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Officiële kaart</a>';
+    }
+    document.getElementById('nc-meta').innerHTML =
+      'Peildatum: ' + (d.peildatum || 'onbekend') + ' · Gegevens: <a href="https://capaciteitskaart.netbeheernederland.nl/" target="_blank" rel="noopener">Capaciteitskaart Netbeheer Nederland</a> · Postcode: <a href="https://www.pdok.nl/" target="_blank" rel="noopener">PDOK/BAG</a> · <a href="https://www.rvo.nl/onderwerpen/netcongestie" target="_blank" rel="noopener">Wat is netcongestie? (RVO)</a>';
+    result.classList.add('visible');
+  }
+})();
+</script>
 
 <script src="/assets/brand/accessibility.js?v=4" defer></script>
 </body>

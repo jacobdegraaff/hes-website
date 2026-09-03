@@ -1,0 +1,19 @@
+[
+  {"key": "verdienmodellen.h1", "tag": "h1", "contains": "Verdienmodellen voor jouw hotel"},
+  {"key": "verdienmodellen.sub", "tag": "p", "contains": "Lemnion levert niet alleen"},
+  {"key": "verdienmodellen.v1h", "tag": "h3", "contains": "Extra omzet via laadpalen"},
+  {"key": "verdienmodellen.v1p", "tag": "p", "contains": "Plaats laadpalen of snelladers"},
+  {"key": "verdienmodellen.v2h", "tag": "h3", "contains": "Upsell bij kamerreservering"},
+  {"key": "verdienmodellen.v2p", "tag": "p", "contains": "Bied bij de boeking"},
+  {"key": "verdienmodellen.v3h", "tag": "h3", "contains": "Marketing op laaddisplays"},
+  {"key": "verdienmodellen.v3p", "tag": "p", "contains": "Snelladers hebben grote schermen"},
+  {"key": "verdienmodellen.v4h", "tag": "h3", "contains": "Flexibel EMS"},
+  {"key": "verdienmodellen.v4p", "tag": "p", "contains": "koppelt via API"},
+  {"key": "verdienmodellen.cta-label", "tag": "p", "contains": "Aan de slag"},
+  {"key": "verdienmodellen.cta-h2", "tag": "h2", "contains": "Breng jouw parkeerplaats tot waarde"},
+  {"key": "verdienmodellen.cta-p", "tag": "p", "contains": "Laadpalen zijn meer dan een voorziening"},
+  {"key": "verdienmodellen.cta-btn", "tag": "a", "contains": "Bereken jouw besparing"},
+  {"key": "verdienmodellen.label", "tag": "span", "contains": "Verder lezen"},
+  {"key": "verdienmodellen.rl1", "tag": "a", "contains": "Bekijk onze oplossingen"},
+  {"key": "verdienmodellen.rl2", "tag": "a", "contains": "Alle voordelen op een rij"}
+]

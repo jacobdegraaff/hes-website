@@ -9,7 +9,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>EPBD IV: verplichte laadinfra voor hotels: wat moet je weten? | Lemnion</title>
+    <title>EPBD IV: verplichte laadinfra voor hotels: wat moet je weten? · Lemnion</title>
     <meta name="description" content="De EPBD IV stelt vanaf 29 mei 2026 eisen aan laadinfrastructuur bij gebouwen met parkeerplaatsen. Wat betekent dit voor jouw hotel? Alle deadlines en eisen op een rij.">
     <link rel="canonical" href="https://lemnion.nl/blog-epbd-iv-laadinfra">
     <meta property="og:title" content="EPBD IV: verplichte laadinfra voor hotels: wat moet je weten?">
@@ -34,14 +34,15 @@
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lemnion.nl/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://lemnion.nl/blog"},{"@type":"ListItem","position":3,"name":"EPBD IV: verplichte laadinfra voor hotels","item":"https://lemnion.nl/blog-epbd-iv-laadinfra"}]}
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"EPBD IV: verplichte laadinfra voor hotels","description":"De EPBD IV stelt vanaf 29 mei 2026 eisen aan laadinfrastructuur bij gebouwen met parkeerplaatsen. Wat betekent dit voor jouw hotel? Alle deadlines en eisen op een rij.","datePublished":"2026-08-10","dateModified":"2026-08-10","author":{"@type":"Person","name":"Jacob de Graaff","url":"https://www.linkedin.com/in/jacobdegraaff/","jobTitle":"Oprichter, Hospitality Energy Solutions"},"publisher":{"@type":"Organization","name":"Hospitality Energy Solutions","logo":{"@type":"ImageObject","url":"https://lemnion.nl/assets/logo-og.png"}},"mainEntityOfPage":"https://lemnion.nl/blog-epbd-iv-laadinfra"}
+    {"@context":"https://schema.org","@type":"Article","headline":"EPBD IV: verplichte laadinfra voor hotels","description":"De EPBD IV stelt vanaf 29 mei 2026 eisen aan laadinfrastructuur bij gebouwen met parkeerplaatsen. Wat betekent dit voor jouw hotel? Alle deadlines en eisen op een rij.","datePublished":"2026-08-10","dateModified":"2026-08-10","author":{"@type":"Person","name":"Jacob de Graaff","url":"https://www.linkedin.com/in/jacobdegraaff/","jobTitle":"Oprichter, Lemnion"},"publisher":{"@type":"Organization","name":"Hospitality Energy Solutions","logo":{"@type":"ImageObject","url":"https://lemnion.nl/assets/logo-og.png"}},"mainEntityOfPage":"https://lemnion.nl/blog-epbd-iv-laadinfra"}
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <style>
 /* hover opent niet meer */
-        :root{--green-primary:#0F3D23;--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#556B58;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
+        :root{--green-primary:#0F3D23;
+        .nav-links > li > a{white-space:nowrap}--green-secondary:#2E7032;--green-accent:#7FBF3A;--green-light:#B7E08A;--off-white:#F5F7F2;--dark-grey:#2F3437;--text-muted:#556B58;--border:#D4DDD0;--radius:12px;--radius-lg:20px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;scroll-padding-top:56px;font-size:16px;overflow-y:scroll}
         body{font-family:'Inter',system-ui,sans-serif;color:var(--dark-grey);background:var(--off-white);line-height:1.7}
@@ -305,6 +306,28 @@ h2{font-size:1.1rem}
 .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
 </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
     <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
+<style>
+/* Nav: desktop hover opent de dropdown, mobiel accordion via chevron-togle */
+.nav-dropdown:hover .nav-dropdown-panel{display:block!important}
+.nav-dd-toggle{display:none}
+@media(max-width:1180px){
+  .nav-dropdown .nav-backdrop{display:none!important}
+  .nav-mega-col h4{display:none!important}
+  .nav-dropdown > a::after{content:none}
+  .nav-dropdown > a{padding-right:2.75rem}
+  .nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
+  .nav-dd-toggle::after{content:"\25be"}
+  .nav-dropdown.open > .nav-dd-toggle::after{content:"\25b4"}
+  .nav-dropdown.open > .nav-dropdown-panel{display:block!important}
+}
+</style>
+<script>
+function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(tog){e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");return;}if(window.innerWidth<=1180){var a=(t.closest?t.closest(".nav-dropdown > a"):null);if(a){e.preventDefault();var li2=a.closest(".nav-dropdown");var open2=li2.classList.toggle("open");var tg=li2.querySelector(".nav-dd-toggle");if(tg)tg.setAttribute("aria-expanded",open2?"true":"false");}}}
+function ddnavInit(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(!li.querySelector(".nav-dd-toggle")){var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");li.appendChild(t);}});}
+document.addEventListener("click",ddnavClick);
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
+</script>
+<!-- data-navfix -->
 </head>
 <body>
 
@@ -354,13 +377,12 @@ function lockScroll(on) {
             <span></span><span></span><span></span>
         </button>
                         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.oplossingen" href="/oplossingen">Oplossingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="/energie-uitdagingen">Energie uitdagingen ▾</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
-                        <h4><a data-i18n="nav.oplossingen_h" href="/oplossingen">Oplossingen</a></h4>
+                        <h4><a data-i18n="nav.oplossingen_h" href="/energie-uitdagingen">Energie uitdagingen</a></h4>
                         <a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a>
                         <a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a>
                         <a data-i18n="nav.maxbelasting" href="/maximum-belasting">Maximum belasting</a>
@@ -375,14 +397,13 @@ function lockScroll(on) {
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
                         <h4><a data-i18n="nav.voordelen_h" href="/voordelen">Voordelen</a></h4>
-                        <a data-i18n="nav.usp" href="/usp-veiligheid">USP en veiligheid<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
-                        <a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a>
-                        <a data-i18n="nav.configurator" href="/configurator">Energieconfigurateur<span class="mega-desc">Bereken je besparing</span></a>
-                        <a data-i18n="nav.vergelijk" href="/#vergelijk">Vergelijk<span class="mega-desc">Elke stap bouwt verder</span></a>
+                        <a data-i18n="nav.usp" href="/usp">USP<span class="mega-desc">Wat Lemnion echt anders maakt</span></a>
+                        <a data-i18n="nav.veiligheid" href="/veiligheid">Veiligheid<span class="mega-desc">6-laags veiligheidsarchitectuur</span></a>
+                        <a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a>
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="/producten">Producten</a></li>
+            <li><a data-i18n="nav.producten" href="/oplossingen">Oplossingen</a></li>
             <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
             <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
@@ -417,18 +438,18 @@ function lockScroll(on) {
         <div style="text-align:left;">
             <p data-i18n="blog-epbd.by" style="font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--green-light);opacity:0.85;margin:0 0 0.15rem;">Geschreven door</p>
             <p style="font-size:0.98rem;font-weight:600;color:white;margin:0;">Jacob de Graaff</p>
-            <p data-i18n="blog-epbd.role" style="font-size:0.8rem;opacity:0.85;color:var(--green-light);margin:0;">Oprichter, Hospitality Energy Solutions</p>
+            <p data-i18n="blog-epbd.role" style="font-size:0.8rem;opacity:0.85;color:var(--green-light);margin:0;">Oprichter, Lemnion</p>
             <p data-i18n="blog-epbd.meta" style="font-size:0.78rem;opacity:0.7;color:white;margin:0;">10 augustus 2026 · 5 min lezen</p>
         </div>
         <a href="https://www.linkedin.com/in/jacobdegraaff/" target="_blank" rel="noopener" aria-label="LinkedIn profiel van Jacob de Graaff" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:white;margin-left:0.25rem;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0F3D23" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
         </a>
     </div>
 </div>
 
 <section style="padding:3rem 0;">
     <div class="container" style="max-width:860px;">
-        <p data-i18n="blog-epbd.intro" style="font-size:1.05rem;line-height:1.8;color:#3D4F40;">De Europese richtlijn energieprestatie van gebouwen (EPBD IV) is op <strong>29 mei 2026</strong> in Nederland ingegaan. Een van de belangrijkste onderdelen voor de hotellerie: <strong>laadinfrastructuur wordt verplicht</strong> bij gebouwen met parkeerplaatsen. Dit is geen ver-van-je-bed-show | het eerste deel geldt al, en voor bestaande hotels volgen de eisen vanaf 1 januari 2027.</p>
+        <p data-i18n="blog-epbd.intro" style="font-size:1.05rem;line-height:1.8;color:#3D4F40;">De Europese richtlijn energieprestatie van gebouwen (EPBD IV) is op <strong>29 mei 2026</strong> in Nederland ingegaan. Een van de belangrijkste onderdelen voor de hotellerie: <strong>laadinfrastructuur wordt verplicht</strong> bij gebouwen met parkeerplaatsen. Dit is geen ver-van-je-bed-show · het eerste deel geldt al, en voor bestaande hotels volgen de eisen vanaf 1 januari 2027.</p>
 
         <div class="highlight-box">
             <h3 data-i18n="blog-epbd.kort-h3">In het kort</h3>
@@ -459,24 +480,24 @@ function lockScroll(on) {
 
         <div class="highlight-box" style="background:var(--off-white);border-color:#D4DDD0;">
             <h3 data-i18n="blog-epbd.h3-reken" style="color:var(--green-primary);">💡 Rekenvoorbeeld</h3>
-            <p data-i18n="blog-epbd.p-reken">Een hotel met <strong>30 parkeerplaatsen</strong> moet vanaf 2027 minimaal <strong>3 laadpunten</strong> hebben (1 per 10). Met een slim systeem | batterij + EMS + load balancing | kun je die laadpunten plaatsen zonder dure netverzwaring, ook in een regio met netcongestie.</p>
+            <p data-i18n="blog-epbd.p-reken">Een hotel met <strong>30 parkeerplaatsen</strong> moet vanaf 2027 minimaal <strong>3 laadpunten</strong> hebben (1 per 10). Met een slim systeem · batterij + EMS + load balancing · kun je die laadpunten plaatsen zonder dure netverzwaring, ook in een regio met netcongestie.</p>
         </div>
 
         <h2 data-i18n="blog-epbd.h2-betekent" style="margin-top:2.5rem;">Wat betekent dit voor jouw hotel?</h2>
         <p data-i18n="blog-epbd.p-drie" style="margin-top:0.5rem;">Drie dingen zijn belangrijk om te weten:</p>
         <ol style="margin-top:0.75rem;margin-left:1.25rem;color:#3D4F40;">
             <li data-i18n="blog-epbd.li9" style="margin-bottom:0.75rem;"><strong>Netcongestie is geen vrijstelling.</strong> Kun je de aansluiting niet verzwaren? Dan moet je alsnog voorzieningen treffen (leidingdoorvoeren, voorbekabeling) óf slim laden inzetten met load balancing.</li>
-            <li data-i18n="blog-epbd.li10" style="margin-bottom:0.75rem;"><strong>Externe partijen mogen het exploiteren.</strong> De verplichting gaat over aanwezigheid, niet over wie de laadpunten runt. Een charge point operator (CPO) kan installeren en exploiteren | jij blijft het aanspreekpunt.</li>
-            <li data-i18n="blog-epbd.li11"><strong>DC-snelladers tellen even zwaar mee.</strong> Voor het aantal laadpunten maakt het niet uit of je AC of DC kiest | je bent vrij in de keuze die past bij je gasten.</li>
+            <li data-i18n="blog-epbd.li10" style="margin-bottom:0.75rem;"><strong>Externe partijen mogen het exploiteren.</strong> De verplichting gaat over aanwezigheid, niet over wie de laadpunten runt. Een charge point operator (CPO) kan installeren en exploiteren · jij blijft het aanspreekpunt.</li>
+            <li data-i18n="blog-epbd.li11"><strong>DC-snelladers tellen even zwaar mee.</strong> Voor het aantal laadpunten maakt het niet uit of je AC of DC kiest · je bent vrij in de keuze die past bij je gasten.</li>
         </ol>
 
         <h2 data-i18n="blog-epbd.h2-meer" style="margin-top:2.5rem;">Meer dan alleen compliance</h2>
         <p data-i18n="blog-epbd.p-meer" style="margin-top:0.5rem;">Wie nú al investeert in laadpalen met slimme energiesturing, gekoppeld aan batterijopslag, is straks niet alleen compliant maar heeft ook voordeel:</p>
         <ul style="margin-top:0.75rem;margin-left:1.25rem;color:#3D4F40;">
             <li data-i18n="blog-epbd.li12"><strong>Operationeel voordeel:</strong> laden op daluren met opgeslagen energie, piekbelasting omlaag, lagere energiekosten</li>
-            <li data-i18n="blog-epbd.li13"><strong>Marketingvoordeel:</strong> EV-laden wordt een verwachting van gasten | een hotel met laadpalen is aantrekkelijker</li>
+            <li data-i18n="blog-epbd.li13"><strong>Marketingvoordeel:</strong> EV-laden wordt een verwachting van gasten · een hotel met laadpalen is aantrekkelijker</li>
             <li data-i18n="blog-epbd.li14"><strong>Inkomsten:</strong> elke geladen kWh kan ERE's (EmissieReductie-Eenheden) opleveren, naast de normale laadmarge</li>
-            <li data-i18n="blog-epbd.li15"><strong>Subsidies:</strong> SPRILA subsidieert private laadinfrastructuur bij bedrijven | tot €3.900 per DC-laadpunt (mkb)</li>
+            <li data-i18n="blog-epbd.li15"><strong>Subsidies:</strong> SPRILA subsidieert private laadinfrastructuur bij bedrijven · tot €3.900 per DC-laadpunt (mkb)</li>
         </ul>
 
         <div class="highlight-box">
@@ -513,7 +534,7 @@ function lockScroll(on) {
 <aside class="related-links">
   <span class="section-label" data-i18n="blog-epbd-iv-laadinfra.label">Verder lezen</span>
     <a class="btn btn-primary" href="/subsidies" data-i18n="blog-epbd-iv-laadinfra.rl1">Bekijk welke subsidies voor laadinfra gelden</a>
-    <a class="btn btn-primary" href="/producten" data-i18n="blog-epbd-iv-laadinfra.rl2">Bekijk onze laadproducten</a>
+    <a class="btn btn-primary" href="/oplossingen" data-i18n="blog-epbd-iv-laadinfra.rl2">Bekijk onze laadproducten</a>
 </aside>
 
 <footer>
@@ -524,7 +545,7 @@ function lockScroll(on) {
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h3 data-i18n="footer.h_solutions">Oplossingen</h3>
+            <h3 data-i18n="footer.h_solutions">Energie uitdagingen</h3>
             <ul>
                 <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
                 <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
@@ -534,27 +555,27 @@ function lockScroll(on) {
             </ul>
         </div>
         <div>
-            <h3 data-i18n="footer.h_products">Producten &amp; Diensten</h3>
+            <h3 data-i18n="footer.h_products">Oplossingen</h3>
             <ul>
-                <li><a data-i18n="footer.batterij" href="/producten">Batterijopslag</a></li>
-                <li><a data-i18n="footer.laadpalen" href="/producten">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="/producten">EMS &amp; monitoring</a></li>
-                <li><a data-i18n="footer.configurator" href="/configurator">Energieconfigurator</a></li>
+                <li><a data-i18n="footer.batterij" href="/oplossingen">Batterijopslag</a></li>
+                <li><a data-i18n="footer.laadpalen" href="/oplossingen">Laadpalen &amp; snelladers</a></li>
+                <li><a data-i18n="footer.ems" href="/oplossingen">EMS &amp; monitoring</a></li>
                 <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
         <div>
             <h3 data-i18n="footer.h_info">Informatie</h3>
             <ul>
-                <li><a data-i18n="nav.verdienmodellen" href="/voordelen">Verdienmodellen</a></li>
-                <li><a data-i18n="footer.usp" href="/usp-veiligheid">USP &amp; veiligheid</a></li>
+                <li><a data-i18n="nav.verdienmodellen" href="/verdienmodellen">Verdienmodellen</a></li>
+                <li><a data-i18n="footer.usp" href="/usp">USP</a></li>
+                <li><a data-i18n="footer.veiligheid" href="/veiligheid">Veiligheid</a></li>
                 <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
                 <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
                 <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2026 Hospitality Energy Solutions. In partnership met Stroomlijnen B.V. <span style="font-size:9px;opacity:0.8;">[v2026.08.04-mobfix]</span></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Lemnion B.V. In partnership met Stroomlijnen B.V.</p>
             <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
@@ -568,7 +589,7 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
 <div id="contact-modal" class="contact-modal" style="display:none;">
     <div class="contact-modal-overlay" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);"></div>
     <div class="contact-modal-content">
-        <button class="contact-modal-close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
+        <button class="contact-modal-close" data-i18n-aria-label="modal.close" aria-label="Sluiten" onclick="document.getElementById('contact-modal').style.display='none';lockScroll(false);">✕</button>
         <h3 data-i18n="modal.title">Vrijblijvend contact</h3>
         <p data-i18n="modal.sub" class="modal-sub">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
 
@@ -576,36 +597,36 @@ document.querySelectorAll('.nav-links > li:not(.nav-dropdown) > a, .nav-dropdown
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.voornaam" for="voornaam">Voornaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required placeholder="Jan">
+                    <input type="text" id="voornaam" autocomplete="given-name" name="voornaam" required data-i18n-placeholder="modal.ph.voornaam" placeholder="Jan">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.achternaam" for="achternaam">Achternaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required placeholder="Jansen">
+                    <input type="text" id="achternaam" autocomplete="family-name" name="achternaam" required data-i18n-placeholder="modal.ph.achternaam" placeholder="Jansen">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.bedrijf" for="bedrijfsnaam">Bedrijfsnaam <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required placeholder="Hotel De Voorbeeldhoeve">
+                    <input type="text" id="bedrijfsnaam" autocomplete="organization" name="bedrijfsnaam" required data-i18n-placeholder="modal.ph.bedrijf" placeholder="Hotel De Voorbeeldhoeve">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.functie" for="functie">Functie <span class="required" aria-hidden="true">*</span></label>
-                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required placeholder="Directeur / Facility Manager">
+                    <input type="text" id="functie" autocomplete="organization-title" name="functie" required data-i18n-placeholder="modal.ph.functie" placeholder="Directeur / Facility Manager">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label data-i18n="modal.email" for="email">E-mailadres <span class="required" aria-hidden="true">*</span></label>
-                    <input type="email" id="email" autocomplete="email" name="email" required placeholder="jan@hoteldevoorbeeldhoeve.nl">
+                    <input type="email" id="email" autocomplete="email" name="email" required data-i18n-placeholder="modal.ph.email" placeholder="jan@hoteldevoorbeeldhoeve.nl">
                 </div>
                 <div class="form-group">
                     <label data-i18n="modal.mobiel" for="mobiel">Mobiel nummer <span class="required" aria-hidden="true">*</span></label>
-                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required placeholder="06 12345678">
+                    <input type="tel" id="mobiel" autocomplete="tel" name="mobiel" required data-i18n-placeholder="modal.ph.mobiel" placeholder="06 12345678">
                 </div>
             </div>
             <div class="form-group" style="grid-column:1/-1;">
                 <label data-i18n="modal.bericht" for="bericht">Je bericht <span class="required" aria-hidden="true">*</span></label>
-                <textarea id="bericht" name="bericht" rows="4" required placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
+                <textarea id="bericht" name="bericht" rows="4" required data-i18n-placeholder="modal.ph.bericht" placeholder="Vertel ons over je hotel, je energie-uitdagingen, of stel een vraag..."></textarea>
             </div>
             <div style="text-align:center;margin-top:1.25rem;">
                 <button data-i18n="modal.submit" type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Verstuur bericht →</button>
@@ -673,7 +694,7 @@ document.addEventListener('keydown',function(e){
 </script>
 
 <script>
-/* Contact modal | verstuur via /api/contact (Resend) */
+/* Contact modal · verstuur via /api/contact (Resend) */
 (function(){
     var form = document.getElementById('contact-form');
     if (!form || form.dataset.contactWired) return;

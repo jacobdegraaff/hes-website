@@ -2,3 +2,6 @@
 
 # gegenereerde build-output (nooit committen)
 dist/
+.hermes/
+docs/matomo*
+netcongestie-check.html

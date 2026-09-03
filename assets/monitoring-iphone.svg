@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="400" height="160" role="img" aria-label="Energiemonitoring app met realtime verbruiksdata">
+  <rect width="400" height="160" rx="14" fill="#E7F0DC"/>
+
+  <!-- left text -->
+  <text x="34" y="62" font-family="Montserrat, sans-serif" font-size="17" font-weight="600" fill="#0F3D23">Realtime</text>
+  <text x="34" y="82" font-family="Montserrat, sans-serif" font-size="17" font-weight="600" fill="#0F3D23">inzicht</text>
+  <text x="34" y="104" font-family="Inter, sans-serif" font-size="11" fill="#556B58">in de energie van</text>
+  <text x="34" y="120" font-family="Inter, sans-serif" font-size="11" fill="#556B58">jouw hotel</text>
+
+  <!-- phone body -->
+  <rect x="252" y="8" width="80" height="144" rx="18" fill="#0F3D23"/>
+  <!-- screen -->
+  <rect x="258" y="14" width="68" height="132" rx="12" fill="#F5F7F2"/>
+  <!-- notch -->
+  <rect x="284" y="17" width="16" height="4" rx="2" fill="#0F3D23" opacity="0.5"/>
+
+  <!-- screen title -->
+  <text x="292" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#2E7032">kWh · vandaag</text>
+
+  <!-- bars -->
+  <g>
+    <rect x="262" y="98" width="4" height="26" rx="2" fill="#B7E08A"/>
+    <rect x="270" y="88" width="4" height="36" rx="2" fill="#7FBF3A"/>
+    <rect x="278" y="102" width="4" height="22" rx="2" fill="#B7E08A"/>
+    <rect x="286" y="82" width="4" height="42" rx="2" fill="#2E7032"/>
+    <rect x="294" y="94" width="4" height="30" rx="2" fill="#7FBF3A"/>
+    <rect x="302" y="78" width="4" height="46" rx="2" fill="#2E7032"/>
+    <rect x="310" y="90" width="4" height="34" rx="2" fill="#7FBF3A"/>
+    <rect x="318" y="84" width="4" height="40" rx="2" fill="#0F3D23"/>
+  </g>
+
+  <!-- baseline -->
+  <line x1="260" y1="124" x2="322" y2="124" stroke="#D4DDD0" stroke-width="1.5"/>
+
+  <!-- live dot -->
+  <circle cx="292" cy="132" r="3.5" fill="#2E7032"/>
+  <text x="300" y="135" font-family="Inter, sans-serif" font-size="9" fill="#556B58">live</text>
+</svg>
