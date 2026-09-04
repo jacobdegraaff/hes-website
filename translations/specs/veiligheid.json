@@ -5,7 +5,7 @@
   {"key": "usp-veiligheid.veiligheid-h2", "tag": "h2", "contains": "6-laags veiligheidsarchitectuur"},
   {"key": "usp-veiligheid.veiligheid-intro", "tag": "p", "contains": "Veiligheid staat op de eerste plaats, zeker in en "},
   {"key": "usp-veiligheid.l1h", "tag": "h4", "contains": "LFP-celchemie"},
-  {"key": "usp-veiligheid.l1p", "tag": "p", "contains": "Lithium-IJzer-Fosfaat (LFP) is de veiligste lithiu"},
+  {"key": "usp-veiligheid.l1p", "tag": "p", "contains": "LFP-chemie heeft een aanzienlijk lagere kans op thermische runaway"},
   {"key": "usp-veiligheid.l2h", "tag": "h4", "contains": "Per-cel BMS-monitoring"},
   {"key": "usp-veiligheid.l2p", "tag": "p", "contains": "Elke cel wordt continu gemonitord op spanning, tem"},
   {"key": "usp-veiligheid.l3h", "tag": "h4", "contains": "Actieve vloeistofkoeling"},
