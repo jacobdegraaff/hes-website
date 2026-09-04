@@ -49,11 +49,135 @@
         });
     }
 
-    /* ── Dropdowns: klik togglet altijd (alle apparaten) ─────────────── */
-    // Een klik op een dropdown-trigger opent/klapt het submenu en navigeert
-    // nooit ('verspringen' voorkomen). De href blijft staan voor SEO/crawlers
-    // en voor middenklik/open-in-nieuw-tab. De pagina zelf blijft bereikbaar
-    // via de sub-items, footer en gerelateerde links.
+    /* ====================================================================
+       Navigatie-dropdowns
+       - Desktop (>1180px): klik op de trigger opent/klapt het mega-menu
+         (accordion: één menu tegelijk open; hover doet niets).
+       - Mobiel (≤1180px): Nike-stijl drilldown. Tik op een rubriek opent
+         een tweede laag met een terug-knop, de rubriekpagina zelf als
+         eerste link en daaronder de subpagina's. Geen ▾/▴-driehoekjes;
+         een subtiel chevron-rechts (Nike) geeft aan dat er een laag zit.
+       ==================================================================== */
+    function isMobileNav() { return window.innerWidth <= 1180; }
+
+    var PANEL = document.getElementById('mobile-menu-panel');
+
+    var CHEVRON_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M8.474 18.966L15.44 12 8.474 5.033" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    var BACK_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M15.526 5.034 8.56 12l6.966 6.967" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    function isEnglish() {
+        var l = (document.documentElement.getAttribute('lang') || 'nl').toLowerCase();
+        return l.indexOf('en') === 0;
+    }
+
+    var mmSub = null;
+    var mmList = null;
+
+    function mmBuild() {
+        if (!PANEL || mmSub) return;
+        mmSub = document.createElement('div');
+        mmSub.className = 'mm-sub';
+        mmSub.setAttribute('hidden', '');
+        var back = document.createElement('button');
+        back.type = 'button';
+        back.className = 'mm-back';
+        back.innerHTML = BACK_SVG + '<span class="mm-back-label"></span>';
+        mmSub.appendChild(back);
+        mmList = document.createElement('div');
+        mmList.className = 'mm-sub-list';
+        mmSub.appendChild(mmList);
+        PANEL.appendChild(mmSub);
+
+        var setBack = function () {
+            back.setAttribute('aria-label', isEnglish() ? 'Back to menu' : 'Terug naar menu');
+            back.querySelector('.mm-back-label').textContent = isEnglish() ? 'Back' : 'Terug';
+        };
+        setBack();
+        back.addEventListener('click', mmBack);
+    }
+
+    function mmPrepareRows() {
+        if (!PANEL) return;
+        document.querySelectorAll('.nav-links .nav-dropdown').forEach(function (li) {
+            var a = li.querySelector(':scope > a');
+            if (!a) return;
+            a.setAttribute('aria-haspopup', 'true');
+            if (!a.querySelector('.mm-chev')) {
+                var s = document.createElement('span');
+                s.className = 'mm-chev';
+                s.innerHTML = CHEVRON_SVG;
+                a.appendChild(s);
+            }
+        });
+    }
+
+    function mmOpen(li) {
+        mmBuild();
+        var a = li.querySelector(':scope > a');
+        if (!a || !mmList || !mmSub) return;
+        var catHref = a.getAttribute('href');
+
+        var ul = li.closest('.nav-links');
+        if (ul) ul.style.display = 'none';
+
+        mmList.innerHTML = '';
+        var cat = a.cloneNode(true);
+        cat.removeAttribute('aria-expanded');
+        var chev = cat.querySelector('.mm-chev');
+        if (chev && chev.parentNode) chev.parentNode.removeChild(chev);
+        cat.className = (cat.className || '') + ' mm-cat';
+        mmList.appendChild(cat);
+
+        li.querySelectorAll('.nav-dropdown-panel a').forEach(function (sub) {
+            if (sub.closest('h4')) return;              // paneel-titel nooit dupliceren
+            if (sub.getAttribute('href') === catHref) return; // zelfde pagina als rubriek overslaan
+            mmList.appendChild(sub.cloneNode(true));
+        });
+
+        a.setAttribute('aria-expanded', 'true');
+        mmSub.removeAttribute('hidden');
+        if (PANEL.scrollTop) PANEL.scrollTop = 0;
+        var back = mmSub.querySelector('.mm-back');
+        if (back && back.focus) back.focus({ preventScroll: true });
+    }
+
+    function mmBack() {
+        mmReset();
+    }
+
+    function mmReset() {
+        if (!mmSub) return;
+        if (!PANEL || !PANEL.contains(mmSub)) return;
+        mmSub.setAttribute('hidden', '');
+        if (mmList) mmList.innerHTML = '';
+        var ul = PANEL.querySelector('.nav-links');
+        if (ul) ul.style.display = '';
+        if (PANEL.contains(mmSub)) {
+            document.querySelectorAll('.nav-links .nav-dropdown.open').forEach(function (li) {
+                var a = li.querySelector(':scope > a');
+                if (a) a.setAttribute('aria-expanded', 'false');
+            });
+        }
+    }
+
+    function closeMobileMenu() {
+        if (!PANEL) return;
+        var btn = document.querySelector('.menu-toggle');
+        if (PANEL.classList.contains('active')) {
+            PANEL.classList.remove('active');
+            if (PANEL.style.display) PANEL.style.display = '';
+        }
+        if (btn) {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+        var cm = document.getElementById('contact-modal');
+        if (!cm || cm.style.display !== 'flex') {
+            if (typeof lockScroll === 'function') lockScroll(false);
+        }
+    }
+
+    /* Desktop: accordion-gedrag (klik togglet altijd, hover doet niets) */
     function closeAllDropdowns(except) {
         document.querySelectorAll('.nav-dropdown.open').forEach(function (li) {
             if (except && li === except) return;
@@ -67,10 +191,14 @@
         link.setAttribute('aria-haspopup', 'true');
         link.setAttribute('aria-expanded', 'false');
         link.addEventListener('click', function (e) {
+            if (isMobileNav()) {
+                e.preventDefault(); // rij opent de tweede laag, navigeert nooit
+                mmOpen(this.parentElement);
+                return;
+            }
             e.preventDefault();
             var li = this.parentElement;
             var wasOpen = li.classList.contains('open');
-            // accordion: een ander menu openen sluit alle andere
             closeAllDropdowns();
             var open = !wasOpen;
             li.classList.toggle('open', open);
@@ -78,7 +206,7 @@
         });
     });
 
-    // Klik buiten een dropdown (of ESC) sluit alle open menu's
+    // Klik buiten een dropdown (of ESC) sluit alle open desktop-menu's
     document.addEventListener('click', function (e) {
         if (e.target.closest && e.target.closest('.nav-dropdown')) return;
         closeAllDropdowns();
@@ -87,18 +215,35 @@
         if (e.key === 'Escape') closeAllDropdowns();
     });
 
-    /* ── Hero slider dots: accessible name on the radio inputs ────────── */
-    var slideNames = ['Energie-onafhankelijk', 'File op het stroomnet', 'Tot 60% subsidie'];
-    for (var i = 1; i <= 3; i++) {
-        var input = document.getElementById('hs' + i);
-        var label = document.querySelector('.hero-dots label[for="hs' + i + '"]');
-        if (input && !input.getAttribute('aria-label')) {
-            input.setAttribute('aria-label', 'Dia ' + i + ': ' + (slideNames[i - 1] || ''));
-        }
-        // the dot <label> is a decorative visual indicator; the input carries the name
-        if (label) {
-            label.setAttribute('aria-hidden', 'true');
-            label.removeAttribute('aria-label');
-        }
+    /* ── Mobiel: drilldown opbouwen en onderhouden ───────────────────── */
+    if (PANEL) {
+        // Menu telkens op niveau 1 laten openen (ook na sluiten met X/ESC)
+        var panelObserver = new MutationObserver(function () {
+            mmReset();
+            mmPrepareRows();
+        });
+        panelObserver.observe(PANEL, { attributes: true, attributeFilter: ['class'] });
+
+        // Sluit het menu na een klik op een echte link in het paneel
+        // (dekt ook de drilldown-rijen; Contact "#" opent alleen de modal).
+        // Uitzondering: de dropdown-trigger zelf (rij met chevron) — die
+        // opent de tweede laag en mag het menu niet sluiten.
+        PANEL.addEventListener('click', function (e) {
+            if (!e.target || !e.target.closest) return;
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href === '#' || href.charAt(0) === '#') return;
+            var isTrigger = a.parentElement && a.parentElement.classList &&
+                a.parentElement.classList.contains('nav-dropdown');
+            if (isTrigger) return;
+            closeMobileMenu();
+        });
     }
+
+    mmPrepareRows();
+
+    window.addEventListener('resize', function () {
+        if (!isMobileNav()) mmReset();
+    });
 })();
