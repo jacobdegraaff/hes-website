@@ -1,284 +1,57 @@
 [
-  {
-    "key": "nav.skip",
-    "tag": "a",
-    "contains": "Direct naar inhoud"
-  },
-  {
-    "key": "nav.oplossingen",
-    "tag": "a",
-    "contains": "Energie uitdagingen"
-  },
-  {
-    "key": "nav.oplossingen_h",
-    "tag": "h4",
-    "contains": "Energie uitdagingen",
-    "all": true
-  },
-  {
-    "key": "nav.netcongestie",
-    "tag": "a",
-    "contains": "Netcongestie",
-    "all": true
-  },
-  {
-    "key": "nav.verduurzamen",
-    "tag": "a",
-    "contains": "Verduurzamen",
-    "all": true
-  },
-  {
-    "key": "nav.maxbelasting",
-    "tag": "a",
-    "contains": "Maximum belasting"
-  },
-  {
-    "key": "nav.stroomoverschot",
-    "tag": "a",
-    "contains": "Stroom (zon) overschot"
-  },
-  {
-    "key": "nav.stroomuitval",
-    "tag": "a",
-    "contains": "Stroomuitval / noodaggregaat"
-  },
-  {
-    "key": "nav.voordelen",
-    "tag": "a",
-    "contains": "Voordelen"
-  },
-  {
-    "key": "nav.voordelen_h",
-    "tag": "h4",
-    "contains": "Voordelen"
-  },
-  {
-    "key": "nav.usp",
-    "tag": "a",
-    "contains": "USP"
-  },
-  {
-    "key": "nav.veiligheid",
-    "tag": "a",
-    "contains": "Veiligheid"
-  },
-  {
-    "key": "nav.verdienmodellen",
-    "tag": "a",
-    "contains": "Verdienmodellen",
-    "all": true
-  },
-  {
-    "key": "nav.configurator",
-    "tag": "a",
-    "contains": "Energieconfigurateur"
-  },
-  {
-    "key": "nav.vergelijk",
-    "tag": "a",
-    "contains": "Vergelijk"
-  },
-  {
-    "key": "nav.producten",
-    "tag": "a",
-    "contains": "Oplossingen"
-  },
-  {
-    "key": "nav.subsidies",
-    "tag": "a",
-    "contains": "Subsidies"
-  },
-  {
-    "key": "nav.overons",
-    "tag": "a",
-    "contains": "Over ons",
-    "all": true
-  },
-  {
-    "key": "nav.nieuws",
-    "tag": "a",
-    "contains": "Nieuws"
-  },
-  {
-    "key": "nav.nieuws_h",
-    "tag": "h4",
-    "contains": "Nieuws"
-  },
-  {
-    "key": "nav.nieuws_all",
-    "tag": "a",
-    "contains": "Branche nieuws"
-  },
-  {
-    "key": "nav.blog",
-    "tag": "a",
-    "contains": "Blog"
-  },
-  {
-    "key": "nav.contact",
-    "tag": "a",
-    "contains": "Contact",
-    "attrs": "btn btn-primary"
-  },
-  {
-    "key": "footer.desc",
-    "tag": "p",
-    "contains": "Lemnion maakt hotels energie-onafhankelijk met batterijopslag"
-  },
-  {
-    "key": "footer.maxbelasting",
-    "tag": "a",
-    "contains": "Maximum belasting"
-  },
-  {
-    "key": "footer.stroomoverschot",
-    "tag": "a",
-    "contains": "Stroom overschot"
-  },
-  {
-    "key": "footer.stroomuitval",
-    "tag": "a",
-    "contains": "Stroomuitval &"
-  },
-  {
-    "key": "footer.h_products",
-    "tag": "a",
-    "contains": "Oplossingen",
-    "href": "/oplossingen"
-  },
-  {
-    "key": "footer.batterij",
-    "tag": "a",
-    "contains": "Batterijopslag"
-  },
-  {
-    "key": "footer.laadpalen",
-    "tag": "a",
-    "contains": "Laadpalen &"
-  },
-  {
-    "key": "footer.configurator",
-    "tag": "a",
-    "contains": "Energieconfigurator"
-  },
-  {
-    "key": "footer.subsidies",
-    "tag": "a",
-    "contains": "Subsidies &"
-  },
-  {
-    "key": "footer.h_info",
-    "tag": "h3",
-    "contains": "Informatie"
-  },
-  {
-    "key": "footer.usp",
-    "tag": "a",
-    "contains": "USP"
-  },
-  {
-    "key": "footer.nieuwsblog",
-    "tag": "a",
-    "contains": "Nieuws &"
-  },
-  {
-    "key": "footer.contact",
-    "tag": "a",
-    "contains": "Contact",
-    "attrs": "contact-modal"
-  },
-  {
-    "key": "footer.copyright",
-    "tag": "p",
-    "contains": "In partnership met"
-  },
-  {
-    "key": "footer.wcag",
-    "tag": "p",
-    "contains": "WCAG 2.2 compliant"
-  },
-  {
-    "key": "nav.home",
-    "tag": "a",
-    "contains": ">Home<"
-  },
-  {
-    "key": "modal.title",
-    "tag": "h3",
-    "contains": "Vrijblijvend contact"
-  },
-  {
-    "key": "modal.sub",
-    "tag": "p",
-    "contains": "Vul het formulier in"
-  },
-  {
-    "key": "modal.voornaam",
-    "tag": "label",
-    "contains": "Voornaam"
-  },
-  {
-    "key": "modal.achternaam",
-    "tag": "label",
-    "contains": "Achternaam"
-  },
-  {
-    "key": "modal.bedrijf",
-    "tag": "label",
-    "contains": "Bedrijfsnaam"
-  },
-  {
-    "key": "modal.functie",
-    "tag": "label",
-    "contains": "Functie"
-  },
-  {
-    "key": "modal.email",
-    "tag": "label",
-    "contains": "E-mailadres"
-  },
-  {
-    "key": "modal.mobiel",
-    "tag": "label",
-    "contains": "Mobiel nummer"
-  },
-  {
-    "key": "modal.bericht",
-    "tag": "label",
-    "contains": "Je bericht"
-  },
-  {
-    "key": "modal.submit",
-    "tag": "button",
-    "contains": "Verstuur bericht"
-  },
-  {
-    "key": "footer.ems",
-    "tag": "a",
-    "contains": "EMS &amp; monitoring"
-  },
-  {
-    "key": "footer.h_solutions",
-    "tag": "a",
-    "contains": "Energie uitdagingen",
-    "href": "/energie-uitdagingen"
-  },
-  {
-    "key": "footer.veiligheid",
-    "tag": "a",
-    "contains": "Veiligheid",
-    "href": "/veiligheid"
-  },
-  {
-    "key": "nav.ems",
-    "tag": "a",
-    "href": "/en/energy-management-system",
-    "contains": "Energy Management System"
-  },
-  {
-    "key": "nav.oplossingen_t",
-    "tag": "a",
-    "href": "/en/solutions",
-    "contains": "Solutions"
-  }
+  {"key": "nav.skip", "tag": "a", "contains": "Direct naar inhoud"},
+  {"key": "nav.oplossingen", "tag": "a", "contains": "Energie uitdagingen"},
+  {"key": "nav.oplossingen_h", "tag": "h4", "contains": "Energie uitdagingen", "all": true},
+  {"key": "nav.netcongestie", "tag": "a", "contains": "Netcongestie", "all": true},
+  {"key": "nav.verduurzamen", "tag": "a", "contains": "Verduurzamen", "all": true},
+  {"key": "nav.maxbelasting", "tag": "a", "contains": "Maximum belasting"},
+  {"key": "nav.stroomoverschot", "tag": "a", "contains": "Stroom (zon) overschot"},
+  {"key": "nav.stroomuitval", "tag": "a", "contains": "Stroomuitval / noodaggregaat"},
+  {"key": "nav.voordelen", "tag": "a", "contains": "Voordelen"},
+  {"key": "nav.voordelen_h", "tag": "h4", "contains": "Voordelen"},
+  {"key": "nav.usp", "tag": "a", "contains": "USP"},
+  {"key": "nav.veiligheid", "tag": "a", "contains": "Veiligheid"},
+  {"key": "nav.verdienmodellen", "tag": "a", "contains": "Verdienmodellen", "all": true},
+  {"key": "nav.configurator", "tag": "a", "contains": "Energieconfigurateur"},
+  {"key": "nav.vergelijk", "tag": "a", "contains": "Vergelijk"},
+  {"key": "nav.producten", "tag": "a", "contains": "Oplossingen"},
+  {"key": "nav.subsidies", "tag": "a", "contains": "Subsidies"},
+  {"key": "nav.overons", "tag": "a", "contains": "Over ons", "all": true},
+  {"key": "nav.nieuws", "tag": "a", "contains": "Nieuws"},
+  {"key": "nav.nieuws_h", "tag": "h4", "contains": "Nieuws"},
+  {"key": "nav.nieuws_all", "tag": "a", "contains": "Branche nieuws"},
+  {"key": "nav.blog", "tag": "a", "contains": "Blog"},
+  {"key": "nav.contact", "tag": "a", "contains": "Contact", "attrs": "btn btn-primary"},
+  {"key": "footer.desc", "tag": "p", "contains": "Lemnion maakt hotels energie-onafhankelijk met batterijopslag"},
+  {"key": "footer.maxbelasting", "tag": "a", "contains": "Maximum belasting"},
+  {"key": "footer.stroomoverschot", "tag": "a", "contains": "Stroom overschot"},
+  {"key": "footer.stroomuitval", "tag": "a", "contains": "Stroomuitval &"},
+  {"key": "footer.h_products", "tag": "a", "contains": "Oplossingen", "href": "/oplossingen"},
+  {"key": "footer.batterij", "tag": "a", "contains": "Batterijopslag"},
+  {"key": "footer.laadpalen", "tag": "a", "contains": "Laadpalen &"},
+  {"key": "footer.configurator", "tag": "a", "contains": "Energieconfigurator"},
+  {"key": "footer.subsidies", "tag": "a", "contains": "Subsidies &"},
+  {"key": "footer.h_info", "tag": "h3", "contains": "Informatie"},
+  {"key": "footer.usp", "tag": "a", "contains": "USP"},
+  {"key": "footer.nieuwsblog", "tag": "a", "contains": "Nieuws &"},
+  {"key": "footer.contact", "tag": "a", "contains": "Contact", "attrs": "contact-modal"},
+  {"key": "footer.copyright", "tag": "p", "contains": "In partnership met"},
+  {"key": "footer.wcag", "tag": "p", "contains": "WCAG 2.2 compliant"},
+  {"key": "nav.home", "tag": "a", "contains": ">Home<"},
+  {"key": "modal.title", "tag": "h3", "contains": "Vrijblijvend contact"},
+  {"key": "modal.sub", "tag": "p", "contains": "Vul het formulier in"},
+  {"key": "modal.voornaam", "tag": "label", "contains": "Voornaam"},
+  {"key": "modal.achternaam", "tag": "label", "contains": "Achternaam"},
+  {"key": "modal.bedrijf", "tag": "label", "contains": "Bedrijfsnaam"},
+  {"key": "modal.functie", "tag": "label", "contains": "Functie"},
+  {"key": "modal.email", "tag": "label", "contains": "E-mailadres"},
+  {"key": "modal.mobiel", "tag": "label", "contains": "Mobiel nummer"},
+  {"key": "modal.bericht", "tag": "label", "contains": "Je bericht"},
+  {"key": "modal.submit", "tag": "button", "contains": "Verstuur bericht"},
+  {"key": "footer.ems", "tag": "a", "contains": "EMS &amp; monitoring"},
+  {"key": "footer.h_solutions", "tag": "a", "contains": "Energie uitdagingen", "href": "/energie-uitdagingen"},
+  {"key": "footer.veiligheid", "tag": "a", "contains": "Veiligheid", "href": "/veiligheid"},
+  {"key": "nav.ems", "tag": "a", "href": "/en/energy-management-system", "contains": "Energy Management System"},
+  {"key": "nav.oplossingen_t", "tag": "a", "href": "/en/solutions", "contains": "Solutions"},
+  {"key": "footer.privacy", "tag": "a", "href": "/en/privacy", "contains": "Privacy notice"}
 ]
