@@ -394,6 +394,7 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
 var __lemLockY = 0;
 function lockScroll(on) {
     if (on) {
+        if (document.body.style.position === 'fixed') { return; }
         __lemLockY = window.scrollY;
         document.body.style.position = 'fixed';
         document.body.style.top = '-' + __lemLockY + 'px';
