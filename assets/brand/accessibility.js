@@ -135,6 +135,7 @@
         });
 
         a.setAttribute('aria-expanded', 'true');
+        mmSub.classList.remove('mm-anim-out');
         mmSub.removeAttribute('hidden');
         if (PANEL.scrollTop) PANEL.scrollTop = 0;
         var back = mmSub.querySelector('.mm-back');
@@ -142,16 +143,34 @@
     }
 
     function mmBack() {
-        mmReset();
+        // Eerst vloeiend naar rechts uitglijden, daarna niveau 1 terug
+        if (!mmSub) return;
+        if (mmSub.hasAttribute('hidden') || mmSub.classList.contains('mm-anim-out')) {
+            mmReset();
+            return;
+        }
+        mmSub.classList.add('mm-anim-out');
+        setTimeout(function () {
+            if (mmSub.classList.contains('mm-anim-out')) mmReset();
+        }, 170);
     }
 
     function mmReset() {
         if (!mmSub) return;
         if (!PANEL || !PANEL.contains(mmSub)) return;
+        mmSub.classList.remove('mm-anim-out');
         mmSub.setAttribute('hidden', '');
         if (mmList) mmList.innerHTML = '';
         var ul = PANEL.querySelector('.nav-links');
-        if (ul) ul.style.display = '';
+        if (ul) {
+            var wasHidden = ul.style.display === 'none';
+            ul.style.display = '';
+            if (wasHidden) {
+                ul.classList.remove('mm-anim-in');
+                void ul.offsetWidth;
+                ul.classList.add('mm-anim-in');
+            }
+        }
         if (PANEL.contains(mmSub)) {
             document.querySelectorAll('.nav-links .nav-dropdown.open').forEach(function (li) {
                 var a = li.querySelector(':scope > a');
