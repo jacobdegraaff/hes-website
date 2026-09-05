@@ -72,7 +72,7 @@
         .page-header p{opacity:0.85;max-width:650px;margin:0 auto;font-size:1.05rem}
         section{padding:4rem 0}
         section.alt{background:white}
-        .subsidy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem}
+        .subsidy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;margin-top:2rem}
         .subsidy-card{background:white;border-radius:var(--radius-lg);padding:2rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);position:relative;overflow:hidden}
         .subsidy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--green-accent)}
         .subsidy-card h3{margin-bottom:0.5rem}
@@ -351,6 +351,22 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
     </script>
 
 
+    <script>
+        (function () {
+            document.addEventListener('click', function () {
+                var el = document.getElementById('contact-modal');
+                if (!el) return;
+                if (el.style.display === 'flex') {
+                    if (el.getAttribute('data-over') !== '1') {
+                        el.setAttribute('data-over', '1');
+                        if (window._paq) { _paq.push(['trackGoal', 2]); _paq.push(['trackEvent', 'Formulier', 'Geopend']); }
+                    }
+                } else {
+                    el.removeAttribute('data-over');
+                }
+            });
+        })();
+    </script>
 </head>
 <body>
 
@@ -470,7 +486,7 @@ function lockScroll(on) {
 <section>
     <div class="container">
         <p data-i18n="subsidies.label" class="section-label">Landelijke regelingen</p>
-        <h2 data-i18n="subsidies.h2">Tot 60% subsidie op jouw investering</h2>
+        <h2 data-i18n="subsidies.h2">Aantrekkelijk door subsidies en fiscale regelingen</h2>
         <p data-i18n="subsidies.intro2" style="color:#3D4F40;max-width:750px;margin-top:0.75rem;">
             Nederland kent meerdere subsidieregelingen die specifiek gericht zijn op energie-investeringen voor bedrijven. 
             Door subsidies en fiscale aftrek slim te combineren kan jouw hotel tot wel 60% van de investering terugverdienen.
@@ -503,7 +519,7 @@ function lockScroll(on) {
                 <ul>
                     <li data-i18n="subsidies.mia-li1">MIA: tot 45% investeringsaftrek (milieulijst)</li>
                     <li data-i18n="subsidies.mia-li2">Vamil: vrije afschrijving op 75% van investering</li>
-                    <li data-i18n="subsidies.mia-li3">Combineerbaar met EIA voor maximaal voordeel</li>
+                    <li data-i18n="subsidies.mia-li3">Per bedrijfsmiddel kies je EIA óf MIA; je kunt de investering ook opsplitsen in een EIA- en een MIA-deel.</li>
                 </ul>
                 <p style="margin-top:0.9rem;"><a data-i18n="subsidies.mia-link" href="https://www.rvo.nl/milieu-energielijst-2026?sortBy=title&amp;sortOrder=ASC">Bekijk de milieulijst 2026 &#8594;</a></p>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
@@ -533,7 +549,7 @@ function lockScroll(on) {
                 </div>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:0.6rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.sprila-batterij-h">Ook interessant: batterijsubsidie</span></strong><br>
-                    <span data-i18n="subsidies.sprila-batterij">SPRILA subsidieert ook stationaire batterijen: <strong>€85 per kWh (mkb)</strong> of €60 per kWh (groot bedrijf), tot maximaal 1.000 kWh. Minimale subsidie: €25.000 in combinatie met nieuw aan te leggen laadinfra. Combineer met de Lemnion-accu.</span>
+                    <span data-i18n="subsidies.sprila-batterij">SPRILA subsidieert ook stationaire batterijen: <strong>€85 per kWh (mkb)</strong> of €60 per kWh (groot bedrijf), tot maximaal 1.000 kWh. Minimale subsidie: €25.000 in combinatie met nieuw aan te leggen laadinfra. Combineer met de Lemnion-accu. Voorwaarde: minimaal 70% van de ontladen kWh moet aantoonbaar naar de gesubsidieerde laadstations gaan.</span>
                 </div>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:0.6rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.sprila-info-h">Belangrijk vóór je aanvraagt</span></strong><br>
@@ -548,25 +564,6 @@ function lockScroll(on) {
                     <span data-i18n="subsidies.sprila-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 04-09-2026 · <strong>Open voor aanvragen</strong> · Budget €122,5 mln · Aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
                     <!-- SPRILA_STATUS_END -->
                     <span data-i18n="subsidies.sprila-links" style="font-size:0.72rem;color:var(--text-muted);">Meer informatie: <a href="https://www.rvo.nl/subsidies-financiering/sprila-en-spula/sprila-veelgestelde-vragen" style="color:var(--green-secondary);">veelgestelde vragen</a> · <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/rekenvoorbeelden-sprila" style="color:var(--green-secondary);">rekenvoorbeelden</a> · <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/sprila-aanschaf#rekentool-en-rekenvoorbeelden" style="color:var(--green-secondary);">rekentool</a> · <a href="https://www.rvo.nl/onderwerpen/subsidiespelregels/ez/mkb-verklaring" style="color:var(--green-secondary);">mkb-verklaring</a></span><br>
-                </div>
-            </div>
-            <div class="subsidy-card">
-                <p data-i18n="subsidies.spula-label" class="section-label" style="margin-bottom:0.25rem;">Subsidieregeling Publieke Laadinfrastructuur zwaar vervoer</p>
-                <h3>SPULA</h3>
-                <p class="percentage" style="font-size:1.2rem;">zwaar vervoer</p>
-                <p data-i18n="subsidies.spula-p">Subsidieregeling voor <strong>publieke</strong> laadinfrastructuur in de openbare ruimte, specifiek voor <strong>zwaar vervoer</strong> (vrachtwagens, goederenvervoer). Meestal niet relevant voor hotels &mdash; de hotelregeling is SPRILA.</p>
-                <ul>
-                    <li data-i18n="subsidies.spula-li1">Laadinfrastructuur in de openbare ruimte</li>
-                    <li data-i18n="subsidies.spula-li2">Voor zwaar vervoer (vrachtverkeer)</li>
-                    <li data-i18n="subsidies.spula-li3">Aanvragen t/m 18-12-2026</li>
-                </ul>
-                <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:1rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
-                    <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
-                    <span data-i18n="subsidies.spula-reken1">Bedrijven die publieke laadinfrastructuur voor zwaar vervoer realiseren in de openbare ruimte.<br></span>
-                    <span data-i18n="subsidies.spula-reken2">Hotels waar gasten op eigen terrein laden: gebruik <strong>SPRILA</strong>.<br></span>
-                    <!-- SPULA_STATUS_START -->
-                    <span data-i18n="subsidies.spula-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 04-09-2026 · Open voor aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
-                    <!-- SPULA_STATUS_END -->
                 </div>
             </div>
             <div class="subsidy-card">
@@ -585,9 +582,10 @@ function lockScroll(on) {
                     <strong style="color:var(--green-primary);"><svg width="16" height="16" style="vertical-align:-2px" viewBox="0 0 48 48" fill="none" stroke="#7FBF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14a10 10 0 1120 0c0 5-3 7-5 9h-10c-2-2-5-4-5-9z"/><path d="M18 30h12M20 36h8"/></svg> <span data-i18n="subsidies.reken-h">Rekenvoorbeeld</span></strong><br>
                     <span data-i18n="subsidies.ere-reken1">1 laadpaal (11 kW), 4 uur per dag.<br></span>
                     <span data-i18n="subsidies.ere-reken2">Per jaar: <strong>±16.000 kWh</strong> aan EV's.<br></span>
-                    <span data-i18n="subsidies.ere-reken3">Bij ~0,5 kg CO₂eq-reductie per kWh: <strong>±8.000 ERE's per jaar</strong>.<br></span>
+                    <span data-i18n="subsidies.ere-reken3">Bij ~0,33 kg CO₂eq-reductie per kWh (netstroom 2026): <strong>±5.300 ERE's per jaar</strong>.<br></span>
                     <!-- ERE_PRIJS_START -->
-                    <span data-i18n="subsidies.ere-reken4">Actuele marktprijs (juni 2026): <strong>€0,480 per ERE</strong> → <strong>~€3.840 marktwaarde per laadpaal per jaar</strong>.<br></span>
+                    <span data-i18n="subsidies.ere-reken4">Actuele marktprijs (juni 2026): <strong>€0,480 per ERE</strong> → <strong>±€2.500 marktwaarde per laadpaal per jaar (bruto)</strong>.<br></span>
+                    <span style="font-size:0.72rem;color:var(--text-muted);" data-i18n="subsidies.ere-voetnoot">Rekenvoorbeeld met de NEa-meetmethodiek (netstroom 2026): 0,33 kg CO₂eq-reductie per kWh. Bruto marktwaarde ≈ 5.300 ERE’s × €0,480 per ERE.</span>
                     <span data-i18n="subsidies.ere-status" style="font-size:0.72rem;color:var(--text-muted);">26-29 juni 2026 · Bron: Joulo via Duurzaam Ondernemen</span><br>
                     <!-- ERE_PRIJS_END -->
                     <span data-i18n="subsidies.ere-reken5"><strong>Netto na commissie:</strong> ±€1.900 per jaar op netstroom, ±€3.200 met zonnepanelen + GvO's.<br></span>
@@ -598,7 +596,7 @@ function lockScroll(on) {
             
         </div>
 
-            <div class="subsidy-card">
+            <div class="subsidy-card" style="margin-top:3rem">
                 <p data-i18n="subsidies.isde-label" class="section-label" style="margin-bottom:0.25rem;">Subsidie duurzame energie</p>
                 <h3>ISDE (zakelijk)</h3>
                 <p class="percentage">tot 30%</p>

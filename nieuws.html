@@ -361,6 +361,22 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
     </script>
 
 
+    <script>
+        (function () {
+            document.addEventListener('click', function () {
+                var el = document.getElementById('contact-modal');
+                if (!el) return;
+                if (el.style.display === 'flex') {
+                    if (el.getAttribute('data-over') !== '1') {
+                        el.setAttribute('data-over', '1');
+                        if (window._paq) { _paq.push(['trackGoal', 2]); _paq.push(['trackEvent', 'Formulier', 'Geopend']); }
+                    }
+                } else {
+                    el.removeAttribute('data-over');
+                }
+            });
+        })();
+    </script>
 </head>
 <body>
 

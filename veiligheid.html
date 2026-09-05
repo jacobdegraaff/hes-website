@@ -360,6 +360,22 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
     </script>
 
 
+    <script>
+        (function () {
+            document.addEventListener('click', function () {
+                var el = document.getElementById('contact-modal');
+                if (!el) return;
+                if (el.style.display === 'flex') {
+                    if (el.getAttribute('data-over') !== '1') {
+                        el.setAttribute('data-over', '1');
+                        if (window._paq) { _paq.push(['trackGoal', 2]); _paq.push(['trackEvent', 'Formulier', 'Geopend']); }
+                    }
+                } else {
+                    el.removeAttribute('data-over');
+                }
+            });
+        })();
+    </script>
 </head>
 <body>
 
@@ -489,7 +505,7 @@ function lockScroll(on) {
             <div class="problem-card fade-in">
                 <div class="icon"><span style="font-family:Montserrat;font-size:2rem;color:#7FBF3A;">01</span></div>
                 <h4 data-i18n="usp-veiligheid.l1h">LFP-celchemie</h4>
-                <p data-i18n="usp-veiligheid.l1p">Lithium-IJzer-Fosfaat (LFP) is de veiligste lithium-chemie. Geen thermal runaway zoals bij NMC-cellen. Zelfs bij doorboring geen brandgevaar.</p>
+                <p data-i18n="usp-veiligheid.l1p">LFP-chemie heeft een aanzienlijk lagere kans op thermische runaway dan NMC. Daarom bouwen we door op vijf extra veiligheidslagen (BMS, koeling, brandonderdrukking, noodstop, brandmeldkoppeling).</p>
             </div>
             <div class="problem-card fade-in">
                 <div class="icon"><span style="font-family:Montserrat;font-size:2rem;color:#7FBF3A;">02</span></div>
