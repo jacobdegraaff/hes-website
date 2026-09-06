@@ -15,7 +15,7 @@
   {"key": "overons.partnerp", "tag": "p", "contains": "Lemnion werkt exclusief samen met Stroomlijnen"},
   {"key": "overons.ignaciop", "tag": "p", "contains": "Technisch brein achter het Stroomlijnen-platform"},
   {"key": "overons.jaccop", "tag": "p", "contains": "Commercieel brein met diepgaande kennis"},
-  {"key": "overons.bottom", "tag": "p", "contains": "Lemnion verkoopt. Stroomlijnen bouwt"},
+  {"key": "overons.samen", "tag": "p", "contains": "Lemnion verkoopt. Stroomlijnen bouwt"},
   {"key": "overons.ctah", "tag": "h2", "contains": "Klaar om kennis te maken"},
   {"key": "overons.ctap", "tag": "p", "contains": "Plan een vrijblijvend gesprek"},
   {"key": "overons.cta", "tag": "a", "contains": "Doe de configurator"}

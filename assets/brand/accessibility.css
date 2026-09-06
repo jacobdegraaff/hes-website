@@ -110,3 +110,85 @@ summary:focus-visible,
 /* Groene page-header: subtitel wit i.p.v. vaag grijs; links lichtgroen (Jacob, 20-8-2026) */
 .page-header p{opacity:1!important;color:var(--off-white)!important}
 .page-header p a{color:var(--green-light)!important;text-decoration:underline}
+
+/* ── Mobiel menu: Nike-stijl drilldown (≤1180px) ──────────────────────────── */
+@media (max-width: 1180px) {
+    /* Oude accordion-bediening uit: geen toggle-knop, geen ▾-pseudo, geen uitklappanelen.
+       Hogere specificiteit dan de per-pagina inline regels (die ná accessibility.css komen). */
+    nav .nav-dd-toggle, .mobile-menu-panel .nav-dd-toggle, .nav-links > li > .nav-dd-toggle { display: none !important; }
+    .nav-dropdown > a::after { content: none !important; }
+    .nav-links .nav-dropdown .nav-dropdown-panel, .mobile-menu-panel .nav-dropdown .nav-dropdown-panel { display: none !important; }
+
+    /* Niveau-1-rij: label links, subtiel chevron-rechts (Nike) */
+    .nav-dropdown > a {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-right: 0.25rem !important;
+    }
+    .mm-chev { flex: 0 0 auto; display: inline-flex !important; color: var(--green-primary, #0F3D23); opacity: 0.6; }
+    .mm-chev svg { display: block; }
+
+    /* Niveau-2-scherm (drilldown) */
+    .mm-sub { display: none; flex-direction: column; width: 100%; }
+    .mm-sub.active { display: flex; }
+    .mm-sub:not([hidden]) { display: flex; animation: mmSlideInR 0.22s ease-out; }
+    .mm-sub.mm-anim-out { animation: mmSlideOutR 0.16s ease-in forwards; }
+    .mm-back {
+        display: flex; align-items: center; gap: 0.55rem;
+        width: 100%; min-height: 48px;
+        margin: 0.25rem 0 0.25rem;
+        padding: 0;
+        background: none; border: none;
+        color: var(--green-primary, #0F3D23);
+        font-family: inherit; font-size: 0.9rem; font-weight: 600;
+        cursor: pointer; text-align: left;
+    }
+    .mm-back:focus, .mm-back:focus-visible { outline: none !important; }
+    .mm-back svg { flex: 0 0 auto; }
+    .mm-back:hover { color: var(--green-accent, #7FBF3A); }
+    .mm-anim-in { animation: mmSlideInL 0.2s ease-out; }
+    .mm-sub-list { display: flex; flex-direction: column; list-style: none; }
+    .mm-sub-list a {
+        display: flex; align-items: center; min-height: 46px;
+        padding: 0.35rem 0; border-bottom: 1px solid var(--border, #D4DDD0);
+        color: var(--green-primary, #0F3D23); font-size: 1rem; text-decoration: none;
+    }
+    .mm-sub-list a:last-child { border-bottom: none; }
+    .mm-sub-list a.mm-cat { font-weight: 700; }
+    .mm-sub-list a:hover { color: var(--green-accent, #7FBF3A); }
+    .mm-sub-list .mega-desc { display: none !important; }
+
+    /* Vloeiend openen van het menu-paneel zelf */
+    .mobile-menu-panel.active { animation: mmPanelIn 0.18s ease-out; }
+}
+@keyframes mmPanelIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes mmSlideInR {
+    from { transform: translateX(36px); opacity: 0; }
+    to { transform: none; opacity: 1; }
+}
+@keyframes mmSlideInL {
+    from { transform: translateX(-24px); opacity: 0; }
+    to { transform: none; opacity: 1; }
+}
+@keyframes mmSlideOutR {
+    from { transform: none; opacity: 1; }
+    to { transform: translateX(36px); opacity: 0; }
+}
+@media (min-width: 1181px) {
+    /* Desktop: het ▾-driehoekje achter dropdown-triggers (was tekst, nu CSS) */
+    .nav-dropdown > a::after {
+        content: '\25BE';
+        margin-left: 0.45em;
+        font-size: 0.8em;
+        transition: transform 0.2s;
+    }
+    .nav-dropdown.open > a::after { transform: rotate(180deg); }
+    /* Mobiele drilldown-elementen nooit op desktop */
+    .mm-chev, .mm-sub { display: none !important; }
+}
+

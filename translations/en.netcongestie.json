@@ -34,5 +34,7 @@
  "netcongestie.checkh": "Is your hotel affected by grid congestion?",
  "netcongestie.checkp": "Enter your postcode to see whether your location is currently or soon affected by an overloaded electricity grid.",
  "netcongestie.checkbtn": "Check postcode",
- "netcongestie.checkloading": "Checking..."
+ "netcongestie.checkloading": "Checking...",
+ "netcongestie.checkph": "Postcode, e.g. 2671 AA",
+ "netcongestie.checkaria": "Postcode"
 }

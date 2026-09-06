@@ -1,0 +1,6 @@
+[
+  {"key": "privacy.label", "tag": "p", "contains": "Privacy"},
+  {"key": "privacy.h1", "tag": "h1", "contains": "Privacyverklaring"},
+  {"key": "privacy.li_cookieless", "tag": "li", "contains": "Geen cookies"},
+  {"key": "privacy.p_optout", "tag": "p", "contains": "Uitschrijven"}
+]

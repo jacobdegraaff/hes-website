@@ -29,7 +29,7 @@
     {"@context":"https://schema.org","@type":"Organization","name":"Hospitality Energy Solutions","alternateName":"Lemnion","url":"https://lemnion.nl/","logo":"https://lemnion.nl/assets/logo-og.png","description":"Lemnion maakt hotels energie-onafhankelijk.","foundingDate":"2025","contactPoint":{"@type":"ContactPoint","email":"info@lemnion.nl","contactType":"sales"},"sameAs":[]}
     </script>
     <script type="application/ld+json">
-    {"@context":"https:***@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lemnion.nl/"},{"@type":"ListItem","position":2,"name":"Stroomuitval / noodaggregaat","item":"https://lemnion.nl/stroomuitval-noodaggregaat"}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lemnion.nl/"},{"@type":"ListItem","position":2,"name":"Stroomuitval / noodaggregaat","item":"https://lemnion.nl/stroomuitval-noodaggregaat"}]}
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -303,7 +303,7 @@ h2{font-size:1.1rem}
 /* Dropdown: open-state toont het paneel ook zonder hover (alle apparaten) */
 .nav-dropdown.open > .nav-dropdown-panel { display: block !important; }
 </style><!-- balance-fix: 1 losse sluiter(s) verwijderd -->
-    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=13">
+    <link rel="stylesheet" href="/assets/brand/accessibility.css?v=15">
 <style>
 /* Nav: desktop hover opent de dropdown, mobiel accordion via chevron-togle */
 .nav-dropdown:hover .nav-dropdown-panel{display:block!important}
@@ -313,19 +313,50 @@ h2{font-size:1.1rem}
   .nav-mega-col h4{display:none!important}
   .nav-dropdown > a::after{content:none}
   .nav-dropdown > a{padding-right:2.75rem}
-  .nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
+  footer h3 a{color:inherit;text-decoration:none;transition:color .15s}footer h3 a:hover{color:var(--green-accent);text-decoration:underline}
+.nav-dd-toggle{display:flex!important;position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;z-index:2;color:var(--green-primary);font-size:1rem}
   .nav-dd-toggle::after{content:"\25be"}
   .nav-dropdown.open > .nav-dd-toggle::after{content:"\25b4"}
   .nav-dropdown.open > .nav-dropdown-panel{display:block!important}
 }
 </style>
 <script>
-function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(tog){e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");return;}if(window.innerWidth<=1180){var a=(t.closest?t.closest(".nav-dropdown > a"):null);if(a){e.preventDefault();var li2=a.closest(".nav-dropdown");var open2=li2.classList.toggle("open");var tg=li2.querySelector(".nav-dd-toggle");if(tg)tg.setAttribute("aria-expanded",open2?"true":"false");}}}
+function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(!tog){return;}e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");}
 function ddnavInit(){document.querySelectorAll(".nav-dropdown").forEach(function(li){if(!li.querySelector(".nav-dd-toggle")){var t=document.createElement("button");t.type="button";t.className="nav-dd-toggle";t.setAttribute("aria-label","Submenu");t.setAttribute("aria-expanded","false");li.appendChild(t);}});}
 document.addEventListener("click",ddnavClick);
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ddnavInit);}else{ddnavInit();}
 </script>
 <!-- data-navfix -->
+    <!-- Matomo -->
+    <link rel="dns-prefetch" href="//analytics.lemnion.nl">
+    <link rel="preconnect" href="//analytics.lemnion.nl">
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['disableCookies']);
+        _paq.push(['setDoNotTrack', true]);
+        _paq.push(['setAnonymizeIp', true]);
+        _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
+        _paq.push(['setSiteId', location.hostname.indexOf('dev.') === 0 ? '2' : '1']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = '//analytics.lemnion.nl/';
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+        <!-- End Matomo Code -->
+    <script>
+        (function () {
+            function fire(cat, val) { if (window._paq) _paq.push(['trackEvent', cat, 'Klik', val]); }
+            document.addEventListener('click', function (e) {
+                var n = e.target && e.target.closest ? e.target.closest('a[href^="tel:"], a[href^="mailto:"]') : null;
+                if (n) fire('Contact', n.getAttribute('href'));
+            });
+        })();
+    </script>
+
+
 </head>
 <body>
 
@@ -357,6 +388,7 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
 var __lemLockY = 0;
 function lockScroll(on) {
     if (on) {
+        if (document.body.style.position === 'fixed') { return; }
         __lemLockY = window.scrollY;
         document.body.style.position = 'fixed';
         document.body.style.top = '-' + __lemLockY + 'px';
@@ -376,7 +408,7 @@ function lockScroll(on) {
         </button>
                         <ul class="nav-links">
             <li class="nav-dropdown">
-                <a data-i18n="nav.oplossingen" href="/energie-uitdagingen">Energie uitdagingen ▾</a>
+                <a data-i18n="nav.oplossingen" href="/energie-uitdagingen">Energie uitdagingen</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
@@ -390,7 +422,7 @@ function lockScroll(on) {
                 </div>
             </li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.voordelen" href="/voordelen">Voordelen ▾</a>
+                <a data-i18n="nav.voordelen" href="/voordelen">Voordelen</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
@@ -401,11 +433,20 @@ function lockScroll(on) {
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.producten" href="/oplossingen">Oplossingen</a></li>
+            <li class="nav-dropdown">
+                <a data-i18n="nav.oplossingen_t" href="/oplossingen">Oplossingen</a>
+                <div class="nav-backdrop"></div>
+                <div class="nav-dropdown-panel">
+                    <div class="nav-mega-col">
+                        <h4><a data-i18n="nav.producten" href="/oplossingen">Oplossingen</a></h4>
+                        <a data-i18n="nav.ems" href="/energie-management-systeem">Energie Management Systeem</a>
+                    </div>
+                </div>
+            </li>
             <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
             <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
-                <a data-i18n="nav.nieuws" href="/nieuws">Nieuws ▾</a>
+                <a data-i18n="nav.nieuws" href="/nieuws">Nieuws</a>
                 <div class="nav-backdrop"></div>
                 <div class="nav-dropdown-panel">
                     <div class="nav-mega-col">
@@ -496,7 +537,7 @@ function lockScroll(on) {
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
         </div>
         <div>
-            <h3 data-i18n="footer.h_solutions">Energie uitdagingen</h3>
+            <h3><a data-i18n="footer.h_solutions" href="/energie-uitdagingen">Energie uitdagingen</a></h3>
             <ul>
                 <li><a data-i18n="nav.netcongestie" href="/netcongestie">Netcongestie</a></li>
                 <li><a data-i18n="nav.verduurzamen" href="/verduurzamen">Verduurzamen</a></li>
@@ -506,11 +547,11 @@ function lockScroll(on) {
             </ul>
         </div>
         <div>
-            <h3 data-i18n="footer.h_products">Oplossingen</h3>
+            <h3><a data-i18n="footer.h_products" href="/oplossingen">Oplossingen</a></h3>
             <ul>
                 <li><a data-i18n="footer.batterij" href="/oplossingen">Batterijopslag</a></li>
                 <li><a data-i18n="footer.laadpalen" href="/oplossingen">Laadpalen &amp; snelladers</a></li>
-                <li><a data-i18n="footer.ems" href="/oplossingen">EMS &amp; monitoring</a></li>
+                <li><a data-i18n="footer.ems" href="/energie-management-systeem">EMS &amp; monitoring</a></li>
                 <li><a data-i18n="footer.subsidies" href="/subsidies">Subsidies &amp; regelingen</a></li>
             </ul>
         </div>
@@ -527,6 +568,7 @@ function lockScroll(on) {
         </div>
         <div class="footer-bottom">
             <p data-i18n="footer.copyright">&copy; 2026 Lemnion B.V. In partnership met Stroomlijnen B.V.</p>
+            <p style="margin-top:0.5rem;font-size:0.75rem;"><a data-i18n="footer.privacy" href="/privacy">Privacyverklaring</a></p>
             <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
         </div>
     </div>
@@ -760,7 +802,7 @@ document.addEventListener('keydown',function(e){
         }).then(function(r){
             return r.json().then(function(d){ return { ok: r.ok, data: d }; });
         }).then(function(res){
-            if (res.ok && res.data.success) {
+            if (res.ok && res.data.success) { if (window._paq) { _paq.push(['trackGoal', 1]); _paq.push(['trackEvent', 'Formulier', 'Verzonden']); }
                 form.innerHTML = '<div style="text-align:center;padding:2rem;">' +
                     '<div style="font-size:3rem;margin-bottom:1rem;">✓</div>' +
                     '<h3 style="color:var(--green-primary);margin-bottom:0.5rem;">' + T.thanks + '</h3>' +
@@ -794,6 +836,6 @@ document.addEventListener('keydown',function(e){
 
 
 
-<script src="/assets/brand/accessibility.js?v=4" defer></script>
+<script src="/assets/brand/accessibility.js?v=6" defer></script>
 </body>
 </html> 
