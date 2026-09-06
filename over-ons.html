@@ -390,6 +390,22 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
     </script>
 
 
+    <script>
+        (function () {
+            document.addEventListener('click', function () {
+                var el = document.getElementById('contact-modal');
+                if (!el) return;
+                if (el.style.display === 'flex') {
+                    if (el.getAttribute('data-over') !== '1') {
+                        el.setAttribute('data-over', '1');
+                        if (window._paq) { _paq.push(['trackGoal', 2]); _paq.push(['trackEvent', 'Formulier', 'Geopend']); }
+                    }
+                } else {
+                    el.removeAttribute('data-over');
+                }
+            });
+        })();
+    </script>
 </head>
 <body>
 
@@ -561,6 +577,27 @@ function lockScroll(on) {
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG -->
+<section class="alt">
+    <div class="container">
+        <p data-i18n="overons.bloglabel" class="section-label">Onze inzichten</p>
+        <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:stretch;">
+            <div style="flex:1;min-width:260px;display:flex;flex-direction:column;justify-content:center;">
+                <h2 data-i18n="overons.blogh">Wat we schrijven over energie voor hotels</h2>
+                <p data-i18n="overons.blogp" style="color:#3D4F40;max-width:520px;">Als oprichters delen we onze visie op energie voor de hospitality: saldering, subsidies, slim laden en laden in de praktijk.</p>
+                <a href="/blog" class="btn btn-outline" style="align-self:flex-start;margin-top:0.5rem;" data-i18n="overons.blogbtn">Lees alle artikelen →</a>
+            </div>
+            <a href="/blog-salderingsregeling" style="flex:1;min-width:260px;display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;background:linear-gradient(135deg,#eef4ef,#f7faf8);border:1px solid #d8e5dc;border-left:5px solid var(--green-primary,#0F3D23);border-radius:12px;padding:1.5rem;gap:0.55rem;box-shadow:0 6px 24px rgba(15,61,35,0.08);">
+    <span data-i18n="overons.blogcard-tag" style="font-size:0.7rem;letter-spacing:0.09em;text-transform:uppercase;color:var(--green-primary,#0F3D23);font-weight:700;display:inline-flex;align-items:center;gap:0.4rem;"><span style="width:8px;height:8px;border-radius:50%;background:#7FBF3A;display:inline-block;"></span>Aanbevolen artikel</span>
+    <span data-i18n="overons.blogcard-date" style="font-size:0.85rem;color:#5b6d63;">1 september 2026</span>
+    <h3 data-i18n="overons.blogcard-title" style="font-size:1.15rem;line-height:1.4;color:var(--green-primary,#0F3D23);margin:0;">Salderingsregeling stopt in 2027: wat dit voor jouw hotel betekent</h3>
+    <p data-i18n="overons.blogcard-desc" style="font-size:0.92rem;color:#3D4F40;line-height:1.55;margin:0;">Vanaf 1 januari 2027 stopt de salderingsregeling. Zelfconsumptie, batterijen en slim laden bepalen voortaan het rendement van je zonnepanelen.</p>
+    <span data-i18n="overons.blogcard-read" style="margin-top:auto;font-weight:700;color:var(--green-primary,#0F3D23);display:inline-flex;align-items:center;gap:0.4rem;">Lees het artikel →</span>
+</a>
         </div>
     </div>
 </section>

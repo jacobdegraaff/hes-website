@@ -6,7 +6,7 @@
  "usp-veiligheid.cert4": "International standard for EES",
  "usp-veiligheid.cta-h2": "Ready to make your hotel safely energy independent?",
  "usp-veiligheid.l1h": "LFP cell chemistry",
- "usp-veiligheid.l1p": "Lithium Iron Phosphate (LFP) is the safest lithium chemistry. No thermal runaway like NMC cells. No fire hazard even when punctured.",
+ "usp-veiligheid.l1p": "LFP chemistry has a significantly lower risk of thermal runaway than NMC. That is why we build on five additional safety layers (BMS, cooling, fire suppression, emergency stop, fire alarm coupling).",
  "usp-veiligheid.l2h": "Per-cell BMS monitoring",
  "usp-veiligheid.l2p": "Every cell is continuously monitored for voltage, temperature and internal resistance. The BMS (Battery Management System) intervenes within milliseconds when deviations occur.",
  "usp-veiligheid.l3h": "Active liquid cooling",
