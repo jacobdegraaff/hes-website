@@ -52,6 +52,9 @@ jobs:
               # Afbeeldingen en assets (nieuwe plaatjes mogen mee)
               if f.startswith("assets/") or f.endswith((".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif")):
                   return True
+              # i18n vertaalbronnen (de nieuws-cron werkt ook translations/en.*.json bij)
+              if f.startswith("translations/"):
+                  return True
               # SEO/structuur-bestanden die geen code zijn
               if f in ("robots.txt", "sitemap.xml", "CONTENT-RICHTLIJNEN.md"):
                   return True
