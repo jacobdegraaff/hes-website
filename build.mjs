@@ -372,8 +372,7 @@ for (const page of pages) {
 }
 if (totalMissing > 0) console.log(`[build] ⚠️ totaal ${totalMissing} ontbrekende vertaalsleutels (vallen terug op NL)`);
 
-// admin.html: copy as-is (NL only)
-writeFileSync(join(OUT, 'admin.html'), readFileSync(join(ROOT, 'admin.html'), 'utf8'));
+// admin.html is verwijderd (oud CMS) — geen kopie meer nodig.
 
 // Non-HTML root files: copy ONLY what the site needs — internal docs,
 // financial models (.xlsx), designs/ etc. must NEVER end up in dist/.
