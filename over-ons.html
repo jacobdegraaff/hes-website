@@ -353,15 +353,14 @@ h2{font-size:1.1rem}
   .nav-dropdown.open > .nav-dropdown-panel{display:block!important}
 }
 /* Bedrijfsgegevens (over ons) */
-.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem;max-width:960px}
-.co-card{background:#fff;border:1px solid var(--border,#D4DDD0);border-radius:16px;padding:1.5rem 1.75rem;box-shadow:0 4px 24px rgba(15,61,35,.06)}
-.co-card h3{font-size:1rem;margin-bottom:1rem;color:var(--green-primary,#0F3D23);letter-spacing:.02em}
-.co-item{display:flex;justify-content:space-between;gap:1.25rem;padding:.6rem 0;border-bottom:1px solid #eef2ee;font-size:.92rem}
+.co-list{display:flex;flex-direction:column;max-width:720px;margin-top:2rem;border:1px solid var(--border,#D4DDD0);border-radius:16px;padding:0 1.5rem;background:#fff;box-shadow:0 4px 24px rgba(15,61,35,.06)}
+.co-item{display:flex;justify-content:space-between;gap:1.25rem;padding:.8rem 0;border-bottom:1px solid #eef2ee;font-size:.95rem}
 .co-item:last-child{border-bottom:none}
 .co-label{color:var(--text-muted,#5b6d63);flex-shrink:0}
 .co-value{font-weight:600;color:var(--green-primary,#0F3D23);text-align:right}
 .co-value a{color:inherit;text-decoration:underline}
-@media(max-width:560px){.co-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.co-item{flex-direction:column;gap:.2rem}.co-value{text-align:left}}
+}
 </style>
 <script>
 function ddnavClick(e){var t=e.target;var tog=(t.closest?t.closest(".nav-dd-toggle"):null);if(!tog){return;}e.preventDefault();e.stopPropagation();var li=tog.closest(".nav-dropdown");var open=li.classList.toggle("open");tog.setAttribute("aria-expanded",open?"true":"false");}
@@ -648,19 +647,12 @@ function lockScroll(on) {
     <div class="container">
         <p data-i18n="overons.co_label" class="section-label">Bedrijfsgegevens</p>
         <h2 data-i18n="overons.co_h2">Lemnion B.V.</h2>
-        <div class="co-grid">
-            <div class="co-card">
-                <h3 data-i18n="overons.co_vennootschap_h">De vennootschap</h3>
-                <div class="co-item"><span class="co-label" data-i18n="overons.co_rechtsvorm">Rechtsvorm</span><span class="co-value">Besloten vennootschap</span></div>
-                <div class="co-item"><span class="co-label" data-i18n="overons.co_zetel">Statutaire zetel</span><span class="co-value">Amsterdam</span></div>
-                <div class="co-item"><span class="co-label" data-i18n="overons.co_adres">Bezoekadres</span><span class="co-value">Jacob van Lennepkade 32 A, 1053MK Amsterdam</span></div>
-                <div class="co-item"><span class="co-label" data-i18n="overons.co_email">E-mail</span><span class="co-value"><a href="mailto:info@lemnion.nl">info@lemnion.nl</a></span></div>
-            </div>
-            <div class="co-card">
-                <h3 data-i18n="overons.co_registratie_h">Registratie</h3>
-                <div class="co-item"><span class="co-label" data-i18n="overons.co_kvk">KvK-nummer</span><span class="co-value">42157296</span></div>
-                <div class="co-item"><span class="co-label" data-i18n="overons.co_rsin">RSIN</span><span class="co-value">869965876</span></div>
-            </div>
+                <div class="co-list">
+            <div class="co-item"><span class="co-label" data-i18n="overons.co_rechtsvorm">Rechtsvorm</span><span class="co-value">Besloten vennootschap</span></div>
+            <div class="co-item"><span class="co-label" data-i18n="overons.co_zetel">Statutaire zetel</span><span class="co-value">Amsterdam</span></div>
+            <div class="co-item"><span class="co-label" data-i18n="overons.co_adres">Bezoekadres</span><span class="co-value">Jacob van Lennepkade 32 A, 1053MK Amsterdam</span></div>
+            <div class="co-item"><span class="co-label" data-i18n="overons.co_email">E-mail</span><span class="co-value"><a href="mailto:info@lemnion.nl">info@lemnion.nl</a></span></div>
+            <div class="co-item"><span class="co-label" data-i18n="overons.co_kvk">KvK-nummer</span><span class="co-value">42157296</span></div>
         </div>
     </div>
 </section>

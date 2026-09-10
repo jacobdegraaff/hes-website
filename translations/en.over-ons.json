@@ -35,12 +35,9 @@
  "overons.blogcard-tag": "Featured article",
  "overons.co_label": "Company details",
  "overons.co_h2": "Lemnion B.V.",
- "overons.co_vennootschap_h": "The company",
  "overons.co_rechtsvorm": "Legal form",
  "overons.co_zetel": "Registered seat",
  "overons.co_adres": "Visit address",
  "overons.co_email": "Email",
- "overons.co_registratie_h": "Registration",
- "overons.co_kvk": "KVK number",
- "overons.co_rsin": "RSIN"
+ "overons.co_kvk": "KVK number"
 }
