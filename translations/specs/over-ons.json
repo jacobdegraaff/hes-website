@@ -22,5 +22,15 @@
   {"key": "overons.blogh", "tag": "h2", "contains": "Wat we schrijven over energie"},
   {"key": "overons.blogbtn", "tag": "a", "href": "/en/blog", "contains": "Read all articles"},
   {"key": "overons.blogcard-title", "tag": "h3", "contains": "The netting scheme ends in 2027"},
-  {"key": "overons.blogcard-tag", "tag": "span", "contains": "Featured article"}
+  {"key": "overons.blogcard-tag", "tag": "span", "contains": "Featured article"},
+  {"key": "overons.co_label", "tag": "p", "contains": "Bedrijfsgegevens", "attrs": "section-label"},
+  {"key": "overons.co_h2", "tag": "h2", "contains": "Lemnion B.V."},
+  {"key": "overons.co_vennootschap_h", "tag": "h3", "contains": "De vennootschap"},
+  {"key": "overons.co_rechtsvorm", "tag": "span", "contains": "Rechtsvorm"},
+  {"key": "overons.co_zetel", "tag": "span", "contains": "Statutaire zetel"},
+  {"key": "overons.co_adres", "tag": "span", "contains": "Bezoekadres"},
+  {"key": "overons.co_email", "tag": "span", "contains": "E-mail"},
+  {"key": "overons.co_registratie_h", "tag": "h3", "contains": "Registratie"},
+  {"key": "overons.co_kvk", "tag": "span", "contains": "KvK-nummer"},
+  {"key": "overons.co_rsin", "tag": "span", "contains": "RSIN"}
 ]
