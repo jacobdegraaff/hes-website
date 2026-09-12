@@ -54,5 +54,6 @@
   {"key": "nav.ems", "tag": "a", "href": "/en/energy-management-system", "contains": "Energy Management System"},
   {"key": "nav.oplossingen_t", "tag": "a", "href": "/en/solutions", "contains": "Solutions"},
   {"key": "footer.privacy", "tag": "a", "href": "/en/privacy", "contains": "Privacy notice"},
-  {"key": "footer.kvkinfo", "tag": "p", "contains": "KvK 42157296"}
+  {"key": "footer.kvkinfo", "tag": "p", "contains": "KvK 42157296"},
+  {"key": "footer.follow_label", "tag": "p", "contains": "Volg ons op:"}
 ]
