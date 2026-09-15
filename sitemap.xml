@@ -97,6 +97,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lemnion.nl/gebouwautomatisering-gacs</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lemnion.nl/oplossingen</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
