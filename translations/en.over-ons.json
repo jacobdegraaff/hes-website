@@ -39,5 +39,6 @@
  "overons.co_zetel": "Registered seat",
  "overons.co_adres": "Visit address",
  "overons.co_email": "Email",
- "overons.co_kvk": "KVK number"
+ "overons.co_kvk": "KVK number",
+ "overons.co_btw": "VAT number"
 }
