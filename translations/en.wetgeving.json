@@ -1,0 +1,21 @@
+{
+ "meta.wetgeving.html.title": "Legislation and energy regulation for hotels · Lemnion",
+ "meta.wetgeving.html.description": "Which energy and building regulation applies to your hotel? The BACS obligation, the EPBD directive and more. We list the rules that matter for your hotel.",
+ "wetgeving.h1": "Legislation",
+ "wetgeving.sub": "Energy and building regulation for hotels is changing fast. From the BACS obligation to the European EPBD directive on the energy performance of buildings. We list the rules that matter for your hotel and explain what they mean for you.",
+ "wetgeving.label": "Regulation at a glance",
+ "wetgeving.h2": "Which rules affect your hotel?",
+ "wetgeving.lead": "Dutch and European rules keep raising the bar for the energy performance of buildings. For each topic we explain what applies, to whom, and when it takes effect.",
+ "wetgeving.c1h": "BACS obligation",
+ "wetgeving.c1p": "Since 1 January 2026, non-residential buildings with a heating or air-conditioning system above 290 kW must have a building automation and control system. Check whether your hotel falls within scope and what is needed.",
+ "wetgeving.c1a": "Read more →",
+ "wetgeving.c2h": "EPBD directive",
+ "wetgeving.c2p": "The European Energy Performance of Buildings Directive (EPBD) brings, among other things, an obligation for EV charging infrastructure at existing car parks and stricter energy performance requirements. Read the page about EPBD IV and charging infrastructure to find out what it means for hotels.",
+ "wetgeving.c2a": "Read more →",
+ "wetgeving.ctah": "Want to know which rules apply to your hotel?",
+ "wetgeving.ctap": "In a short conversation we map out your situation and explain which obligations apply to your hotel. No strings attached.",
+ "wetgeving.rl_label": "Read on",
+ "wetgeving.rl1": "More about the BACS obligation",
+ "wetgeving.rl2": "Energy grants for hotels",
+ "wetgeving.rl3": "EPBD IV and mandatory charging infrastructure"
+}

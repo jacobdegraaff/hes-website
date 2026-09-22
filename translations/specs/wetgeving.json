@@ -1,0 +1,19 @@
+[
+  {"key": "wetgeving.h1", "tag": "h1", "contains": "Wetgeving"},
+  {"key": "wetgeving.sub", "tag": "p", "contains": "Energie- en bouwregelgeving voor hotels verandert snel."},
+  {"key": "wetgeving.label", "tag": "p", "contains": "Regelgeving op een rij"},
+  {"key": "wetgeving.h2", "tag": "h2", "contains": "Welke regels raken jouw hotel?"},
+  {"key": "wetgeving.lead", "tag": "p", "contains": "Nederlandse en Europese regels stellen steeds hogere eisen"},
+  {"key": "wetgeving.c1h", "tag": "h4", "contains": "GACS-verplichting"},
+  {"key": "wetgeving.c1p", "tag": "p", "contains": "Sinds 1 januari 2026 moeten utiliteitsgebouwen met een verwarmings- of airconditioningsysteem boven 290 kW"},
+  {"key": "wetgeving.c1a", "tag": "a", "href": "/gebouwautomatisering-gacs", "contains": "Lees meer"},
+  {"key": "wetgeving.c2h", "tag": "h4", "contains": "EPBD-gebouwenrichtlijn"},
+  {"key": "wetgeving.c2p", "tag": "p", "contains": "De Europese energieprestatierichtlijn voor gebouwen (EPBD)"},
+  {"key": "wetgeving.c2a", "tag": "a", "href": "/blog-epbd-iv-laadinfra", "contains": "Lees meer"},
+  {"key": "wetgeving.ctah", "tag": "h2", "contains": "Wil je weten welke regels voor jouw hotel gelden?"},
+  {"key": "wetgeving.ctap", "tag": "p", "contains": "In een kort gesprek brengen we jouw situatie in kaart"},
+  {"key": "wetgeving.rl_label", "tag": "span", "contains": "Verder lezen"},
+  {"key": "wetgeving.rl1", "tag": "a", "href": "/gebouwautomatisering-gacs", "contains": "Meer over de GACS-verplichting"},
+  {"key": "wetgeving.rl2", "tag": "a", "href": "/subsidies", "contains": "Energiesubsidies voor hotels"},
+  {"key": "wetgeving.rl3", "tag": "a", "href": "/blog-epbd-iv-laadinfra", "contains": "EPBD IV en verplichte laadinfra"}
+]

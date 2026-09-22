@@ -103,6 +103,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lemnion.nl/wetgeving</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lemnion.nl/oplossingen</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>

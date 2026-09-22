@@ -16,6 +16,8 @@
   {"key": "nav.vergelijk", "tag": "a", "contains": "Vergelijk"},
   {"key": "nav.producten", "tag": "a", "contains": "Oplossingen"},
   {"key": "nav.subsidies", "tag": "a", "contains": "Subsidies"},
+  {"key": "nav.overheid", "tag": "a", "contains": "Overheid", "all": true},
+  {"key": "nav.wetgeving", "tag": "a", "contains": "Wetgeving", "all": true},
   {"key": "nav.overons", "tag": "a", "contains": "Over ons", "all": true},
   {"key": "nav.nieuws", "tag": "a", "contains": "Nieuws"},
   {"key": "nav.nieuws_h", "tag": "h4", "contains": "Nieuws"},
