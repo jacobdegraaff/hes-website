@@ -85,6 +85,7 @@
         .info-card{background:white;border-radius:var(--radius-lg);padding:1.75rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border)}
         .info-card h4{color:var(--green-primary);font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.5rem}
         .info-card p{font-size:0.9rem;color:#3D4F40}
+        .info-card .scope-extra{font-size:0.85rem;color:#5B6B5E;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid var(--border)}
         .cta-section{text-align:center;padding:4rem 0;background:white}
         footer{background:var(--green-primary);color:rgba(245,247,242,0.7);padding:3rem 0 2rem;font-size:0.85rem}
         footer .container{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}
@@ -515,19 +516,23 @@ function lockScroll(on) {
         <div class="info-grid">
             <div class="info-card">
                 <h4 data-i18n="installaties.c1h">Scope 8: elektra</h4>
-                <p data-i18n="installaties.c1p">Periodieke inspectie van je elektrische installatie: de groepenkast, kabels, beveiliging en vast aangesloten apparatuur, volgens NEN 3140.</p>
+                <p data-i18n="installaties.c1p">Periodieke inspectie van je vaste elektrische installatie: groepenkast, kabels, beveiliging en vast aangesloten apparatuur, volgens NEN 3140. Van toepassing op vrijwel elk hotel.</p>
+                <p class="scope-extra" data-i18n="installaties.c1q">Hoe vaak: risico-afhankelijk, in de praktijk 1 tot 3 jaar (tot 5 jaar bij laag risico). Voorbeeld: groepenkast, verlichting, EV-laadpalen en batterijopslag.</p>
             </div>
             <div class="info-card">
                 <h4 data-i18n="installaties.c2h">Scope 9: arbeidsmiddelen</h4>
-                <p data-i18n="installaties.c2p">Elektrische arbeidsmiddelen in en om het gebouw, zoals de apparatuur die je personeel dagelijks gebruikt.</p>
+                <p data-i18n="installaties.c2p">Elektrische arbeidsmiddelen in en om het gebouw die je personeel gebruikt. Van toepassing zodra medewerkers met elektrische apparaten werken.</p>
+                <p class="scope-extra" data-i18n="installaties.c2q">Hoe vaak: regelmatige controle volgens NEN 3140, vaak jaarlijks afhankelijk van gebruik en risico. Voorbeeld: stofzuigers, schrobmachines, verlengsnoeren en kabelhaspels.</p>
             </div>
             <div class="info-card">
                 <h4 data-i18n="installaties.c3h">Scope 10: brandrisico</h4>
-                <p data-i18n="installaties.c3p">Inspectie van elektrisch materieel op brandrisico, volgens NTA 8220. Richt zich op het beperken van brandschade en wordt veel gevraagd door verzekeraars.</p>
+                <p data-i18n="installaties.c3p">Inspectie van elektrisch materieel op brandrisico, volgens NTA 8220. Anders dan de arbeidsveiligheid van scope 8 en 9: gericht op het beperken van brandschade en vaak gevraagd door verzekeraars.</p>
+                <p class="scope-extra" data-i18n="installaties.c3q">Hoe vaak: niet wettelijk vastgelegd, periodiek op advies van de verzekeraar of NTA 8220. Voorbeeld: verdeelkasten en apparaten waar brandrisico door slijtage of vervuiling kan ontstaan.</p>
             </div>
             <div class="info-card">
                 <h4 data-i18n="installaties.c4h">Scope 12: zonnestroom</h4>
-                <p data-i18n="installaties.c4p">PV-panelen, omvormer en aansluiting. Relevant als je zelf zonnestroom opwekt.</p>
+                <p data-i18n="installaties.c4p">Inspectie van je zonnestroominstallatie: PV-panelen, omvormer en aansluitingen. Van toepassing als je zelf zonnestroom opwekt.</p>
+                <p class="scope-extra" data-i18n="installaties.c4q">Hoe vaak: eerst een eerste inspectie (EBI, gericht op aanlegkwaliteit), daarna periodieke vervolginspecties (PI, voor toestand, draagkracht en brandbaarheid dak). Voorbeeld: panelen op dak of terrein, omvormer.</p>
             </div>
         </div>
     </div></section>
