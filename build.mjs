@@ -327,9 +327,9 @@ const SEARCH_LABELS = {
 const SEARCH_CSS = `
 /* Lemnion look & feel — tokens uit brand kit (DESIGN.md / colors.json / tokens.css) */
 .search-overlay,.search-modal{position:fixed;inset:0}
-.search-overlay{background:rgba(10,46,26,.6);backdrop-filter:blur(4px);z-index:998}
+.search-overlay{background:rgba(10,46,26,.6);backdrop-filter:blur(4px);z-index:100000}
 .search-modal[hidden],.search-overlay[hidden]{display:none}
-.search-modal{display:flex;flex-direction:column;align-items:center;padding:9vh 1rem 2rem;overflow-y:auto;z-index:999}
+.search-modal{display:flex;flex-direction:column;align-items:center;padding:9vh 1rem 2rem;overflow-y:auto;z-index:100001}
 .search-modal .search-box{display:flex;align-items:center;gap:.75rem;width:100%;max-width:620px;background:#fff;border:1px solid #D4DDD0;border-radius:16px;padding:12px 18px;box-shadow:0 20px 60px rgba(15,61,35,.2);transition:border-color .2s,box-shadow .2s}
 .search-modal .search-box:focus-within{border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
 .search-modal .search-box svg{flex:0 0 auto;color:#2E7032}
@@ -352,6 +352,7 @@ const SEARCH_CSS = `
 .search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
 .search-toggle:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
 .search-toggle svg{stroke-width:2.5}
+.search-label{display:none} /* desktop: icon-only; mobiel: rij met tekst */
 /* Middenweg: rustige maar niet te brede cluster — interne gaten ~14px i.p.v.
    1.25rem, zodat de megamenu (Oplossingen) voldoende lucht naast het logo houdt
    zonder dat de knoppen aaneengeklonterd staan. */
@@ -373,13 +374,24 @@ const SEARCH_CSS = `
 .lang-menu .lang-opt .lang-code{font-size:.68rem;font-weight:600;color:#556B58}
 .lang-menu .lang-opt.is-cur{color:#2E7032;font-weight:600}
 .lang-menu .lang-opt.is-cur .lang-code{color:#2E7032;background:#F0F5EA;padding:1px 7px;border-radius:50px}
-@media(max-width:768px){.nav-search{display:none}}`;
+/* Mobiel: zoekknop als volwaardige rij in het hamburger-menu (panel z 99999;
+   de modal staat daar met 100000/100001 boven) */
+@media(max-width:1180px){
+  .search-label{display:inline;font-family:'Inter',system-ui,sans-serif;font-size:.92rem;font-weight:500;color:#3D4F40}
+  .nav-search{display:block;width:100%;margin:0;padding:.15rem 0}
+  .nav-search .search-toggle{width:100%;height:48px;display:flex;align-items:center;justify-content:flex-start;gap:.7rem;padding:0 .35rem;border:1px solid #D4DDD0;border-radius:10px;background:transparent;color:#0F3D23}
+  .nav-search .search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:none}
+  .nav-search .search-toggle svg{flex:0 0 auto}
+  .nav-search + .lang-switch{margin-left:0}
+  .lang-switch{margin-left:0}
+}`;
 
 function injectSearch(html, lang) {
   const L = SEARCH_LABELS[lang] || SEARCH_LABELS.nl;
   const mag = '<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
   // 1) nav button, right before the language switcher (desktop top-right)
-  const btn = `<li class="nav-search"><button type="button" id="search-toggle" class="search-toggle" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}</button></li>`;
+  //    De label-span toont de tekst op mobiel (desktop = icon-only).
+  const btn = `<li class="nav-search"><button type="button" id="search-toggle" class="search-toggle" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}<span class="search-label">${L.open}</span></button></li>`;
   html = html.replace(/(<li class="lang-switch[^"]*")/, btn + '$1');
   // 2) modal + styles + script, before </body> (both languages get their labels)
   const modalHtml =
@@ -393,7 +405,7 @@ function injectSearch(html, lang) {
       `<div id="search-results" class="search-results" role="listbox" aria-label="${L.title}"></div>` +
     `</div>` +
     `<style>${SEARCH_CSS}</style>` +
-    `<script src="/assets/brand/search.js?v=1" defer></script>`;
+    `<script src="/assets/brand/search.js?v=2" defer></script>`;
   html = html.replace('</body>', modalHtml + '</body>');
   return html;
 }

@@ -32,7 +32,21 @@
     if (closeBtn) closeBtn.setAttribute('aria-label', docLang === 'en' ? 'Close search' : 'Sluiten zoeken');
 
     /* ── Open / close ─────────────────────────────────────────────────── */
+    function closeMobileMenuIfOpen() {
+        var m = document.getElementById('mobile-menu-panel');
+        var btn = document.querySelector('.menu-toggle');
+        if (m && m.classList.contains('active')) {
+            m.classList.remove('active');
+            if (m.style.display) m.style.display = '';
+        }
+        if (btn) {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    }
+
     function open() {
+        closeMobileMenuIfOpen();
         modal.hidden = false;
         if (overlay) overlay.hidden = false;
         toggle.setAttribute('aria-expanded', 'true');
