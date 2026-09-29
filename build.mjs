@@ -231,7 +231,7 @@ function finalizeHtml(html, page, lang) {
   }
   // Breadcrumbs: JSON-LD (structured data) + zichtbare trail in de page-header
   html = injectBreadcrumbs(html, page, lang);
-  return injectHead(html, page, lang);
+  return injectHead(injectSearch(html, lang), page, lang);
 }
 
 function rewriteLinks(html, lang) {
@@ -310,6 +310,88 @@ function guardEnLinks(html) {
   }
   return [...bad];
 }
+// ---------------------------------------------------------------------------
+// Site-wide search: inject nav button, modal, script + generate search index
+// ---------------------------------------------------------------------------
+const SEARCH_LABELS = {
+  nl: { open: 'Zoeken', placeholder: 'Doorzoek de site…', close: 'Sluiten zoeken', title: 'Zoeken op lemnion.nl' },
+  en: { open: 'Search', placeholder: 'Search the site…', close: 'Close search', title: 'Search lemnion.nl' }
+};
+
+const SEARCH_CSS = `
+.search-modal[hidden],.search-overlay[hidden]{display:none}
+.search-overlay{position:fixed;inset:0;background:rgba(4,20,11,.55);backdrop-filter:blur(3px);z-index:998}
+.search-modal{position:fixed;inset:0;z-index:999;display:flex;flex-direction:column;align-items:center;padding:9vh 1rem 2rem;overflow-y:auto}
+.search-modal .search-box{width:100%;max-width:640px;display:flex;align-items:center;gap:.75rem;background:var(--off-white,#fff);border:2px solid var(--green-accent,#7FBF3A);border-radius:12px;padding:.85rem 1rem;box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.search-modal .search-box svg{flex:0 0 auto;color:var(--green-secondary,#2E7032)}
+.search-modal .search-box input{flex:1;min-width:0;border:none;outline:none;background:transparent;font:inherit;font-size:1.05rem;color:var(--green-primary,#0F3D23)}
+.search-modal .search-box .search-close{border:none;background:transparent;font-size:1.35rem;cursor:pointer;color:var(--text-muted,#5b6b55);line-height:1;}
+.search-modal .search-box .search-close:hover{color:var(--green-primary,#0F3D23)}
+.search-results{width:100%;max-width:640px;margin-top:.9rem}
+.search-result{display:block;background:var(--off-white,#fff);border:1px solid var(--border,#dfe6d8);border-radius:10px;padding:.8rem 1rem;margin-bottom:.5rem;color:inherit;text-decoration:none}
+.search-result:hover,.search-result:focus-within{border-color:var(--green-accent,#7FBF3A);box-shadow:0 8px 24px rgba(0,0,0,.14)}
+.search-result .sr-t{font-weight:600;color:var(--green-primary,#0F3D23);font-size:1rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.search-result .sr-badge{font-size:.65rem;font-weight:700;letter-spacing:.05em;background:var(--green-light,#DFF0D4);color:var(--green-secondary,#2E7032);border-radius:6px;padding:.12rem .42rem;text-transform:uppercase}
+.search-result .sr-url{font-size:.72rem;color:var(--text-muted,#5b6b55);margin:.15rem 0 .3rem}
+.search-result .sr-s{font-size:.85rem;color:var(--text-muted,#5b6b55);line-height:1.5}
+.search-hint,.search-none{width:100%;max-width:640px;margin-top:.9rem;padding:1.2rem;text-align:center;color:#fff;background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.35);border-radius:10px}
+@media(max-width:768px){.nav-search{display:none}}`;
+
+function injectSearch(html, lang) {
+  const L = SEARCH_LABELS[lang] || SEARCH_LABELS.nl;
+  const mag = '<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
+  // 1) nav button, right before the language switcher (desktop top-right)
+  const btn = `<li class="nav-search"><button type="button" id="search-toggle" class="search-toggle" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}</button></li>`;
+  html = html.replace(/(<li class="lang-switch")/, btn + '$1');
+  // 2) modal + styles + script, before </body> (both languages get their labels)
+  const modalHtml =
+    `<div id="search-overlay" class="search-overlay" hidden></div>` +
+    `<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="${L.title}" hidden>` +
+      `<div class="search-box">` +
+        `<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>` +
+        `<input type="search" id="search-input" placeholder="${L.placeholder}" aria-label="${L.placeholder}" autocomplete="off" spellcheck="false" enterkeyhint="search">` +
+        `<button type="button" id="search-close" class="search-close" aria-label="${L.close}">✕</button>` +
+      `</div>` +
+      `<div id="search-results" class="search-results" role="listbox" aria-label="${L.title}"></div>` +
+    `</div>` +
+    `<style>${SEARCH_CSS}</style>` +
+    `<script src="/assets/brand/search.js?v=1" defer></script>`;
+  html = html.replace('</body>', modalHtml + '</body>');
+  return html;
+}
+
+function buildSearchIndex(pages) {
+  const entries = [];
+  for (const page of pages) {
+    for (const lang of ['nl', ...LANGS]) {
+      const slug = lang === 'nl' ? page : (SLUGS[page] || page);
+      const fname = slug === '' ? 'index.html' : slug.replace(/\.html$/, '') + '.html';
+      const file = lang === 'nl' ? join(OUT, page) : join(OUT, lang, fname);
+      if (!existsSync(file)) continue;
+      const raw = readFileSync(file, 'utf8');
+      const url = pageUrl(page, lang).replace(BASE_URL, ''); // '/oplossingen', '/en/solutions'
+      const t = raw.match(/<title>([^<]*)<\/title>/);
+      const title = t ? t[1].trim() : (page === 'index.html' ? 'Home' : page.replace(/\.html$/, ''));
+      let body = raw;
+      const m = raw.match(/<main[\s\S]*?>([\s\S]*?)<\/main>/);
+      if (m) body = m[1];
+      else { const b = raw.match(/<body[\s\S]*?>([\s\S]*?)<\/body>/); if (b) body = b[1]; }
+      const content = body
+        .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+        .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+        .replace(/\s+/g, ' ').trim();
+      entries.push({ url, title, lang, content });
+    }
+  }
+  const json = JSON.stringify(entries);
+  writeFileSync(join(OUT, 'search-index.json'), json);
+  const kb = Math.round(Buffer.byteLength(json) / 1024);
+  console.log(`[build] search-index.json: ${entries.length} entries (${kb} KB)`);
+}
+
 // ---------------------------------------------------------------------------
 // Sitemap
 // ---------------------------------------------------------------------------
@@ -395,5 +477,8 @@ for (const f of readdirSync(ROOT)) {
 
 // Generated sitemap (lemnion.nl + language variants)
 writeFileSync(join(OUT, 'sitemap.xml'), buildSitemap(pages));
+
+// Site-wide search index (NL + EN, from the built dist pages)
+buildSearchIndex(pages);
 
 console.log(`[build] klaar → dist/ (${pages.length} NL + ${pages.length * LANGS.length} vertaald + sitemap)`);
