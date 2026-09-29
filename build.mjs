@@ -274,26 +274,30 @@ function rewriteLinks(html, lang) {
 
 
 function fixLangSwitch(html, page, lang) {
-  // Structureel correcte lang-switch: genereer de NL- en EN-links opnieuw uit
-  // slug-kaart i.p.v. de handmatige bron-links te kopiëren (die waren per
-  // pagina na te houden en foutgevoelig; bv. de EMS-pagina verwees nog naar
-  // /energie-uitdagingen). Draait voor NL en EN.
+  // Structureel correcte taal-dropdown: compacte knop met de huidige taal,
+  // die een gestapeld menu opent met beide talen. Genereer ALLES uit de
+  // slug-kaart per pagina+taal (NL en EN) — geen handmatige links meer.
   const nlSlug = page === 'index.html' ? '' : page.replace(/\.html$/, '');
   const enSlug = SLUGS[page];
   const nlHref = nlSlug === '' ? '/' : '/' + nlSlug;
   const enHref = (enSlug === '' || enSlug === undefined) ? '/en/' : '/en/' + enSlug;
-  return html.replace(/<li class="lang-switch"[^>]*>[\s\S]*?<\/li>/, (ls) => {
-    // De lang-switch bevat exact 2 hrefs: eerst de NL-link, dan de EN-link.
-    const parts = ls.split('href="');
-    if (parts.length >= 3) {
-      const c1 = parts[1].indexOf('"');
-      const c2 = parts[2].indexOf('"');
-      parts[1] = nlHref + parts[1].slice(c1);  // href #1 = NL
-      parts[2] = enHref + parts[2].slice(c2);  // href #2 = EN
-      ls = parts.join('href="');
-    }
-    return ls;
-  });
+  const curEn = lang !== 'nl';
+  const curCode = curEn ? 'EN' : 'NL';
+  const globe = '<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>';
+  const caret = '<svg aria-hidden="true" class="lang-caret" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>';
+  const menu =
+    `<li class="lang-switch lang-nav" aria-label="Taal / Language">` +
+      `<button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="${curEn ? 'Language / Taal' : 'Taal / Language'}">` +
+        globe +
+        `<span class="lang-cur">${curCode}</span>` +
+        caret +
+      `</button>` +
+      `<ul class="lang-menu">` +
+        `<li><a class="lang-opt${curEn ? '' : ' is-cur'}" lang="nl" hreflang="nl" href="${nlHref}"${curEn ? '' : ' aria-current="true"'}><span class="lang-name">Nederlands</span><span class="lang-code">NL</span></a></li>` +
+        `<li><a class="lang-opt${curEn ? ' is-cur' : ''}" lang="en" hreflang="en" href="${enHref}"${curEn ? ' aria-current="true"' : ''}><span class="lang-name">English</span><span class="lang-code">EN</span></a></li>` +
+      `</ul>` +
+    `</li>`;
+  return html.replace(/<li class="lang-switch"[^>]*>[\s\S]*?<\/li>/, () => menu);
 }
 
 function guardEnLinks(html) {
@@ -350,6 +354,22 @@ const SEARCH_CSS = `
    zodat de rechtercluster strak op elkaar staat */
 .nav-search{margin:0 -0.9rem}
 .nav-search + .lang-switch{margin-left:-0.25rem}
+/* ── Taal-dropdown: compacte gebruikerstaal-knop met gestapeld NL/EN-menu ── */
+.lang-nav{position:relative;display:inline-flex}
+.lang-btn{display:inline-flex;align-items:center;gap:.35rem;height:44px;padding:.4rem .15rem;background:none;border:none;cursor:pointer;font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:.9rem;color:#556B58;white-space:nowrap;transition:color .2s}
+.lang-btn:hover{color:#7FBF3A}
+.lang-btn:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
+.lang-btn .lang-cur{font-weight:600;color:#2E7032}
+.lang-btn .lang-caret{transition:transform .2s}
+.lang-nav.open .lang-btn{color:#7FBF3A}
+.lang-nav.open .lang-btn .lang-caret{transform:rotate(180deg)}
+.lang-menu{list-style:none;margin:0;padding:.4rem;min-width:150px;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid #D4DDD0;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,.12);display:none;flex-direction:column;gap:2px;z-index:120}
+.lang-nav.open .lang-menu{display:flex}
+.lang-menu .lang-opt{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:.55rem .75rem;border-radius:8px;color:#3D4F40;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:.9rem;font-weight:500;white-space:nowrap}
+.lang-menu .lang-opt:hover{background:#F0F5EA;color:#0F3D23}
+.lang-menu .lang-opt .lang-code{font-size:.68rem;font-weight:600;color:#556B58}
+.lang-menu .lang-opt.is-cur{color:#2E7032;font-weight:600}
+.lang-menu .lang-opt.is-cur .lang-code{color:#2E7032;background:#F0F5EA;padding:1px 7px;border-radius:50px}
 @media(max-width:768px){.nav-search{display:none}}`;
 
 function injectSearch(html, lang) {
@@ -357,7 +377,7 @@ function injectSearch(html, lang) {
   const mag = '<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
   // 1) nav button, right before the language switcher (desktop top-right)
   const btn = `<li class="nav-search"><button type="button" id="search-toggle" class="search-toggle" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}</button></li>`;
-  html = html.replace(/(<li class="lang-switch")/, btn + '$1');
+  html = html.replace(/(<li class="lang-switch[^"]*")/, btn + '$1');
   // 2) modal + styles + script, before </body> (both languages get their labels)
   const modalHtml =
     `<div id="search-overlay" class="search-overlay" hidden></div>` +
