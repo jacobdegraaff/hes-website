@@ -339,12 +339,17 @@ const SEARCH_CSS = `
 .search-result .sr-url{font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:#556B58;margin:4px 0 8px}
 .search-result .sr-s{font-family:'Inter',system-ui,sans-serif;font-size:.88rem;color:#3D4F40;line-height:1.55}
 .search-hint,.search-none{width:100%;max-width:620px;margin-top:16px;padding:20px;text-align:center;color:#F5F7F2;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.4);border-radius:16px;font-family:'Inter',system-ui,sans-serif}
-/* nav toggle: omlijnde pill-knop (secondary outline), icon 2.5px ronde stroke */
-.nav-search{display:inline-flex;align-items:center;margin-left:.75rem}
-.search-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50px;border:2px solid #D4DDD0;background:transparent;color:#0F3D23;cursor:pointer;transition:border-color .2s,color .2s,box-shadow .2s,background-color .2s}
+/* nav toggle: omlijnde pill-knop (secondary outline), icon 2.5px ronde stroke,
+   compact zodat 'ie de ruimte tussen Contact en NL/EN niet opblaast */
+.nav-search{display:inline-flex;align-items:center}
+.search-toggle{display:inline-flex;align-items:center;justify-content:center;width:36px;height:44px;border-radius:50px;border:2px solid #D4DDD0;background:transparent;color:#0F3D23;cursor:pointer;transition:border-color .2s,color .2s,box-shadow .2s,background-color .2s}
 .search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
 .search-toggle:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
 .search-toggle svg{stroke-width:2.5}
+/* trek de flex-gap (1.25rem) tussen Contact → zoekknop en zoekknop → NL weg
+   zodat de rechtercluster strak op elkaar staat */
+.nav-search{margin:0 -0.9rem}
+.nav-search + .lang-switch{margin-left:-0.25rem}
 @media(max-width:768px){.nav-search{display:none}}`;
 
 function injectSearch(html, lang) {
