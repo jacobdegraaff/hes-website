@@ -319,27 +319,37 @@ const SEARCH_LABELS = {
 };
 
 const SEARCH_CSS = `
+/* Lemnion look & feel — tokens uit brand kit (DESIGN.md / colors.json / tokens.css) */
+.search-overlay,.search-modal{position:fixed;inset:0}
+.search-overlay{background:rgba(10,46,26,.6);backdrop-filter:blur(4px);z-index:998}
 .search-modal[hidden],.search-overlay[hidden]{display:none}
-.search-overlay{position:fixed;inset:0;background:rgba(4,20,11,.55);backdrop-filter:blur(3px);z-index:998}
-.search-modal{position:fixed;inset:0;z-index:999;display:flex;flex-direction:column;align-items:center;padding:9vh 1rem 2rem;overflow-y:auto}
-.search-modal .search-box{width:100%;max-width:640px;display:flex;align-items:center;gap:.75rem;background:var(--off-white,#fff);border:2px solid var(--green-accent,#7FBF3A);border-radius:12px;padding:.85rem 1rem;box-shadow:0 20px 50px rgba(0,0,0,.28)}
-.search-modal .search-box svg{flex:0 0 auto;color:var(--green-secondary,#2E7032)}
-.search-modal .search-box input{flex:1;min-width:0;border:none;outline:none;background:transparent;font:inherit;font-size:1.05rem;color:var(--green-primary,#0F3D23)}
-.search-modal .search-box .search-close{border:none;background:transparent;font-size:1.35rem;cursor:pointer;color:var(--text-muted,#5b6b55);line-height:1;}
-.search-modal .search-box .search-close:hover{color:var(--green-primary,#0F3D23)}
-.search-results{width:100%;max-width:640px;margin-top:.9rem}
-.search-result{display:block;background:var(--off-white,#fff);border:1px solid var(--border,#dfe6d8);border-radius:10px;padding:.8rem 1rem;margin-bottom:.5rem;color:inherit;text-decoration:none}
-.search-result:hover,.search-result:focus-within{border-color:var(--green-accent,#7FBF3A);box-shadow:0 8px 24px rgba(0,0,0,.14)}
-.search-result .sr-t{font-weight:600;color:var(--green-primary,#0F3D23);font-size:1rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
-.search-result .sr-badge{font-size:.65rem;font-weight:700;letter-spacing:.05em;background:var(--green-light,#DFF0D4);color:var(--green-secondary,#2E7032);border-radius:6px;padding:.12rem .42rem;text-transform:uppercase}
-.search-result .sr-url{font-size:.72rem;color:var(--text-muted,#5b6b55);margin:.15rem 0 .3rem}
-.search-result .sr-s{font-size:.85rem;color:var(--text-muted,#5b6b55);line-height:1.5}
-.search-hint,.search-none{width:100%;max-width:640px;margin-top:.9rem;padding:1.2rem;text-align:center;color:#fff;background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.35);border-radius:10px}
+.search-modal{display:flex;flex-direction:column;align-items:center;padding:9vh 1rem 2rem;overflow-y:auto;z-index:999}
+.search-modal .search-box{display:flex;align-items:center;gap:.75rem;width:100%;max-width:620px;background:#fff;border:1px solid #D4DDD0;border-radius:16px;padding:12px 18px;box-shadow:0 20px 60px rgba(15,61,35,.2);transition:border-color .2s,box-shadow .2s}
+.search-modal .search-box:focus-within{border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
+.search-modal .search-box svg{flex:0 0 auto;color:#2E7032}
+.search-modal .search-box input{flex:1;min-width:0;border:none;outline:none;background:transparent;font-family:'Inter',system-ui,sans-serif;font-size:1.05rem;font-weight:400;color:#2F3437;padding:6px 0}
+.search-modal .search-box input::placeholder{color:#556B58}
+.search-modal .search-box .search-close{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:0 0 auto;border:none;background:transparent;border-radius:50%;font-size:1.4rem;line-height:1;cursor:pointer;color:#556B58;transition:color .2s,background-color .2s}
+.search-modal .search-box .search-close:hover{color:#0F3D23;background:#F0F5EA}
+.search-results{width:100%;max-width:620px;margin-top:16px}
+.search-result{display:block;background:#fff;border:1px solid #D4DDD0;border-radius:12px;padding:16px 20px;margin-bottom:8px;color:inherit;text-decoration:none;box-shadow:0 4px 24px rgba(15,61,35,.06);transition:border-color .2s,box-shadow .2s}
+.search-result:hover{border-color:#7FBF3A;box-shadow:0 20px 60px rgba(15,61,35,.12)}
+.search-result .sr-t{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1.05rem;color:#0F3D23}
+.search-result .sr-badge{font-family:'Inter',system-ui,sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#F0F5EA;color:#2E7032;border-radius:50px;padding:3px 10px}
+.search-result .sr-url{font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:#556B58;margin:4px 0 8px}
+.search-result .sr-s{font-family:'Inter',system-ui,sans-serif;font-size:.88rem;color:#3D4F40;line-height:1.55}
+.search-hint,.search-none{width:100%;max-width:620px;margin-top:16px;padding:20px;text-align:center;color:#F5F7F2;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.4);border-radius:16px;font-family:'Inter',system-ui,sans-serif}
+/* nav toggle: omlijnde pill-knop (secondary outline), icon 2.5px ronde stroke */
+.nav-search{display:inline-flex;align-items:center;margin-left:.75rem}
+.search-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50px;border:2px solid #D4DDD0;background:transparent;color:#0F3D23;cursor:pointer;transition:border-color .2s,color .2s,box-shadow .2s,background-color .2s}
+.search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
+.search-toggle:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
+.search-toggle svg{stroke-width:2.5}
 @media(max-width:768px){.nav-search{display:none}}`;
 
 function injectSearch(html, lang) {
   const L = SEARCH_LABELS[lang] || SEARCH_LABELS.nl;
-  const mag = '<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
+  const mag = '<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
   // 1) nav button, right before the language switcher (desktop top-right)
   const btn = `<li class="nav-search"><button type="button" id="search-toggle" class="search-toggle" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}</button></li>`;
   html = html.replace(/(<li class="lang-switch")/, btn + '$1');
@@ -348,7 +358,7 @@ function injectSearch(html, lang) {
     `<div id="search-overlay" class="search-overlay" hidden></div>` +
     `<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="${L.title}" hidden>` +
       `<div class="search-box">` +
-        `<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>` +
+        `<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>` +
         `<input type="search" id="search-input" placeholder="${L.placeholder}" aria-label="${L.placeholder}" autocomplete="off" spellcheck="false" enterkeyhint="search">` +
         `<button type="button" id="search-close" class="search-close" aria-label="${L.close}">✕</button>` +
       `</div>` +
