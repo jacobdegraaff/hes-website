@@ -352,7 +352,6 @@ const SEARCH_CSS = `
 .search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
 .search-toggle:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
 .search-toggle svg{stroke-width:2.5}
-.search-label{display:none} /* desktop: icon-only; mobiel: rij met tekst */
 /* Middenweg: rustige maar niet te brede cluster — interne gaten ~14px i.p.v.
    1.25rem, zodat de megamenu (Oplossingen) voldoende lucht naast het logo houdt
    zonder dat de knoppen aaneengeklonterd staan. */
@@ -367,21 +366,19 @@ const SEARCH_CSS = `
 .lang-btn .lang-caret{transition:transform .2s}
 .lang-nav.open .lang-btn{color:#7FBF3A}
 .lang-nav.open .lang-btn .lang-caret{transform:rotate(180deg)}
-.lang-menu{list-style:none;margin:0;padding:.4rem;min-width:150px;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid #D4DDD0;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,.12);display:none;flex-direction:column;gap:2px;z-index:120}
+.lang-menu{list-style:none;margin:0;padding:.4rem;min-width:150px;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);max-width:calc(100vw - 2rem);background:#fff;border:1px solid #D4DDD0;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,.12);display:none;flex-direction:column;gap:2px;z-index:120}
 .lang-nav.open .lang-menu{display:flex}
 .lang-menu .lang-opt{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:.55rem .75rem;border-radius:8px;color:#3D4F40;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:.9rem;font-weight:500;white-space:nowrap}
 .lang-menu .lang-opt:hover{background:#F0F5EA;color:#0F3D23}
 .lang-menu .lang-opt .lang-code{font-size:.68rem;font-weight:600;color:#556B58}
 .lang-menu .lang-opt.is-cur{color:#2E7032;font-weight:600}
 .lang-menu .lang-opt.is-cur .lang-code{color:#2E7032;background:#F0F5EA;padding:1px 7px;border-radius:50px}
-/* Mobiel: zoekknop als volwaardige rij in het hamburger-menu (panel z 99999;
-   de modal staat daar met 100000/100001 boven) */
+/* Mobiel: zoekknop als nette vergrootglas-pill naast het hamburger-knopje
+   (zelfde stijl als desktop); de desktop-zoekknop tonen we niet in het menu */
+.search-toggle-mob{display:none}
 @media(max-width:1180px){
-  .search-label{display:inline;font-family:'Inter',system-ui,sans-serif;font-size:.92rem;font-weight:500;color:#3D4F40}
-  .nav-search{display:block;width:100%;margin:0;padding:.15rem 0}
-  .nav-search .search-toggle{width:100%;height:48px;display:flex;align-items:center;justify-content:flex-start;gap:.7rem;padding:0 .35rem;border:1px solid #D4DDD0;border-radius:10px;background:transparent;color:#0F3D23}
-  .nav-search .search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:none}
-  .nav-search .search-toggle svg{flex:0 0 auto}
+  .search-toggle-mob{display:inline-flex}
+  .nav-search{display:none}
   .nav-search + .lang-switch{margin-left:0}
   .lang-switch{margin-left:0}
 }`;
@@ -390,9 +387,11 @@ function injectSearch(html, lang) {
   const L = SEARCH_LABELS[lang] || SEARCH_LABELS.nl;
   const mag = '<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
   // 1) nav button, right before the language switcher (desktop top-right)
-  //    De label-span toont de tekst op mobiel (desktop = icon-only).
-  const btn = `<li class="nav-search"><button type="button" id="search-toggle" class="search-toggle" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}<span class="search-label">${L.open}</span></button></li>`;
+  const btn = `<li class="nav-search"><button type="button" id="search-toggle" class="search-toggle" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}</button></li>`;
   html = html.replace(/(<li class="lang-switch[^"]*")/, btn + '$1');
+  // 1b) mobiele zoekknop naast het hamburger-knopje (same neately styled pill)
+  const btnMob = `<button type="button" class="search-toggle search-toggle-mob" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}</button>`;
+  html = html.replace(/(<button class="menu-toggle")/, btnMob + '$1');
   // 2) modal + styles + script, before </body> (both languages get their labels)
   const modalHtml =
     `<div id="search-overlay" class="search-overlay" hidden></div>` +
@@ -405,7 +404,7 @@ function injectSearch(html, lang) {
       `<div id="search-results" class="search-results" role="listbox" aria-label="${L.title}"></div>` +
     `</div>` +
     `<style>${SEARCH_CSS}</style>` +
-    `<script src="/assets/brand/search.js?v=2" defer></script>`;
+    `<script src="/assets/brand/search.js?v=3" defer></script>`;
   html = html.replace('</body>', modalHtml + '</body>');
   return html;
 }

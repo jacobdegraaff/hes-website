@@ -11,9 +11,15 @@
     var overlay  = document.getElementById('search-overlay');
     var input    = document.getElementById('search-input');
     var resultsEl = document.getElementById('search-results');
-    var toggle   = document.getElementById('search-toggle');
+    var toggles  = Array.prototype.slice.call(document.querySelectorAll('.search-toggle'));
 
-    if (!modal || !input || !resultsEl || !toggle) return; // not injected -> no-op
+    if (!modal || !input || !resultsEl || toggles.length === 0) return; // not injected -> no-op
+
+    function setExpanded(on) {
+        for (var i = 0; i < toggles.length; i++) {
+            toggles[i].setAttribute('aria-expanded', on ? 'true' : 'false');
+        }
+    }
 
     var INDEX_URL  = '/search-index.json';
     var index      = null;
@@ -49,7 +55,7 @@
         closeMobileMenuIfOpen();
         modal.hidden = false;
         if (overlay) overlay.hidden = false;
-        toggle.setAttribute('aria-expanded', 'true');
+        setExpanded(true);
         if (typeof window.lockScroll === 'function') window.lockScroll(true);
         document.body.classList.add('search-open');
         loadIndex(function () { if (input) render(input.value); });
@@ -58,15 +64,17 @@
     function close() {
         modal.hidden = true;
         if (overlay) overlay.hidden = true;
-        toggle.setAttribute('aria-expanded', 'false');
+        setExpanded(false);
         if (typeof window.lockScroll === 'function') window.lockScroll(false);
         document.body.classList.remove('search-open');
     }
 
-    toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (modal.hidden) open(); else close();
-    });
+    for (var ti = 0; ti < toggles.length; ti++) {
+        toggles[ti].addEventListener('click', function (e) {
+            e.preventDefault();
+            if (modal.hidden) open(); else close();
+        });
+    }
     if (closeBtn) closeBtn.addEventListener('click', close);
     if (overlay) overlay.addEventListener('click', close);
 
