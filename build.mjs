@@ -304,7 +304,7 @@ function guardEnLinks(html) {
   // Build-guard: een gegenereerde EN-pagina mag GEEN interne link naar een
   // NL-slug bevatten (behalve de taalwissel, die bewust de NL-link toont).
   // Zo blijft de gebruiker na een klik in de gekozen taal. Anders: build faalt.
-  const body = html.replace(/<li class="lang-switch"[\s\S]*?<\/li>/, '');
+  const body = html.replace(/<li class="lang-switch[^>]*>[\s\S]*?<\/li>/, '');
   const bad = new Set();
   for (const m of body.matchAll(/href="\/(?!#)([a-z][a-z0-9-]*)(#[^"]*)?"/g)) {
     if (m[1] === 'en') continue;
