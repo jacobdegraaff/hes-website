@@ -231,6 +231,10 @@ function finalizeHtml(html, page, lang) {
   }
   // Breadcrumbs: JSON-LD (structured data) + zichtbare trail in de page-header
   html = injectBreadcrumbs(html, page, lang);
+  // Cache-buster voor accessibility.js (bevat de taal-dropdown-toggle e.d.).
+  // Verhoog deze bij elke JS-wijziging, anders krijgen terugkerende browsers
+  // de gecachte oude versie en werkt de toggle niet.
+  html = html.replace(/\/assets\/brand\/accessibility\.js\?v=\d+/g, '/assets/brand/accessibility.js?v=7');
   return injectHead(injectSearch(html, lang), page, lang);
 }
 
@@ -283,12 +287,10 @@ function fixLangSwitch(html, page, lang) {
   const enHref = (enSlug === '' || enSlug === undefined) ? '/en/' : '/en/' + enSlug;
   const curEn = lang !== 'nl';
   const curCode = curEn ? 'EN' : 'NL';
-  const globe = '<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>';
   const caret = '<svg aria-hidden="true" class="lang-caret" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>';
   const menu =
     `<li class="lang-switch lang-nav" aria-label="Taal / Language">` +
       `<button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="${curEn ? 'Language / Taal' : 'Taal / Language'}">` +
-        globe +
         `<span class="lang-cur">${curCode}</span>` +
         caret +
       `</button>` +
