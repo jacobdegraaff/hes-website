@@ -339,15 +339,19 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
         var _paq = window._paq = window._paq || [];
         _paq.push(['disableCookies']);
         _paq.push(['setDoNotTrack', true]);
-        _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
-        _paq.push(['setSiteId', location.hostname.indexOf('dev.') === 0 ? '2' : '1']);
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function () {
-            var u = '//analytics.lemnion.nl/';
-            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
-        })();
+        var _H = location.hostname;
+        var _ok = _H === 'lemnion.nl' || _H === 'www.lemnion.nl' || _H === 'dev.lemnion.nl';
+        if (_ok) {
+            _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
+            _paq.push(['setSiteId', _H.indexOf('dev.') === 0 ? '2' : '1']);
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function () {
+                var u = '//analytics.lemnion.nl/';
+                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+                g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+            })();
+        }
     </script>
         <!-- End Matomo Code -->
     <script>
