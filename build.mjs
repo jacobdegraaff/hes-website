@@ -348,13 +348,15 @@ const SEARCH_CSS = `
 /* nav toggle: omlijnde pill-knop (secondary outline), icon 2.5px ronde stroke,
    compact zodat 'ie de ruimte tussen Contact en NL/EN niet opblaast */
 .nav-search{display:inline-flex;align-items:center}
-.search-toggle{display:inline-flex;align-items:center;justify-content:center;width:36px;height:44px;border-radius:50px;border:2px solid #D4DDD0;background:transparent;color:#0F3D23;cursor:pointer;transition:border-color .2s,color .2s,box-shadow .2s,background-color .2s}
+.search-toggle{display:inline-flex;align-items:center;justify-content:center;width:32px;height:44px;border-radius:50px;border:2px solid #D4DDD0;background:transparent;color:#0F3D23;cursor:pointer;transition:border-color .2s,color .2s,box-shadow .2s,background-color .2s}
 .search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
 .search-toggle:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
 .search-toggle svg{stroke-width:2.5}
-/* herstel normale nav-afstand (flex-gap 1.25rem) rond zoekknop en taal-knop
-   zodat de rechtercluster rustig oogt i.p.v. aaneen te klonteren */
-.nav-search + .lang-switch{margin-left:0}
+/* Middenweg: rustige maar niet te brede cluster — interne gaten ~14px i.p.v.
+   1.25rem, zodat de megamenu (Oplossingen) voldoende lucht naast het logo houdt
+   zonder dat de knoppen aaneengeklonterd staan. */
+.nav-search{margin-left:-0.35rem}
+.nav-search + .lang-switch{margin-left:-0.45rem}
 /* ── Taal-dropdown: compacte gebruikerstaal-knop met gestapeld NL/EN-menu ── */
 .lang-nav{position:relative;display:inline-flex}
 .lang-btn{display:inline-flex;align-items:center;gap:.35rem;height:44px;padding:.4rem .15rem;background:none;border:none;cursor:pointer;font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:.9rem;color:#556B58;white-space:nowrap;transition:color .2s}
