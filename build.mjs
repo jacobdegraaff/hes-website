@@ -352,10 +352,9 @@ const SEARCH_CSS = `
 .search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
 .search-toggle:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
 .search-toggle svg{stroke-width:2.5}
-/* trek de flex-gap (1.25rem) tussen Contact → zoekknop en zoekknop → NL weg
-   zodat de rechtercluster strak op elkaar staat */
-.nav-search{margin:0 -0.9rem}
-.nav-search + .lang-switch{margin-left:-0.25rem}
+/* herstel normale nav-afstand (flex-gap 1.25rem) rond zoekknop en taal-knop
+   zodat de rechtercluster rustig oogt i.p.v. aaneen te klonteren */
+.nav-search + .lang-switch{margin-left:0}
 /* ── Taal-dropdown: compacte gebruikerstaal-knop met gestapeld NL/EN-menu ── */
 .lang-nav{position:relative;display:inline-flex}
 .lang-btn{display:inline-flex;align-items:center;gap:.35rem;height:44px;padding:.4rem .15rem;background:none;border:none;cursor:pointer;font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:.9rem;color:#556B58;white-space:nowrap;transition:color .2s}
