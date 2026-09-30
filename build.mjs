@@ -370,7 +370,7 @@ const SEARCH_CSS = `
 .lang-nav.open .lang-menu{display:flex}
 .lang-menu .lang-opt{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:.55rem .75rem;border-radius:8px;color:#3D4F40;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:.9rem;font-weight:500;white-space:nowrap}
 .lang-menu .lang-opt:hover{background:#F0F5EA;color:#0F3D23}
-.lang-menu .lang-opt .lang-code{font-size:.68rem;font-weight:600;color:#556B58}
+.lang-menu .lang-opt .lang-code{font-size:.68rem;font-weight:600;color:#556B58;min-width:32px;display:inline-flex;align-items:center;justify-content:center}
 .lang-menu .lang-opt.is-cur{color:#2E7032;font-weight:600}
 .lang-menu .lang-opt.is-cur .lang-code{color:#2E7032;background:#F0F5EA;padding:1px 7px;border-radius:50px}
 /* Mobiel: zoekknop als nette vergrootglas-pill naast het hamburger-knopje
