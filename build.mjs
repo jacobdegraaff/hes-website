@@ -377,7 +377,7 @@ const SEARCH_CSS = `
    (zelfde stijl als desktop); de desktop-zoekknop tonen we niet in het menu */
 .search-toggle-mob{display:none}
 @media(max-width:1180px){
-  .search-toggle-mob{display:inline-flex}
+  .search-toggle-mob{display:inline-flex;margin-left:auto}
   .nav-search{display:none}
   .nav-search + .lang-switch{margin-left:0}
   .lang-switch{margin-left:0}
