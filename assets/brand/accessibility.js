@@ -265,4 +265,35 @@
     window.addEventListener('resize', function () {
         if (!isMobileNav()) mmReset();
     });
+
+    /* ── Taal-dropdown (NL/EN) toggle ─────────────────────────────── */
+    function bindLangMenus() {
+        var items = document.querySelectorAll('.lang-nav');
+        for (var i = 0; i < items.length; i++) {
+            (function (li) {
+                var btn = li.querySelector('.lang-btn');
+                if (!btn) return;
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var open = li.classList.toggle('open');
+                    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+            })(items[i]);
+        }
+    }
+    function closeLangMenus() {
+        var open = document.querySelectorAll('.lang-nav.open');
+        for (var i = 0; i < open.length; i++) {
+            open[i].classList.remove('open');
+            var b = open[i].querySelector('.lang-btn');
+            if (b) b.setAttribute('aria-expanded', 'false');
+        }
+    }
+    document.addEventListener('click', function (e) {
+        if (e.target && e.target.closest && !e.target.closest('.lang-nav')) closeLangMenus();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLangMenus();
+    });
+    bindLangMenus();
 })();

@@ -231,7 +231,11 @@ function finalizeHtml(html, page, lang) {
   }
   // Breadcrumbs: JSON-LD (structured data) + zichtbare trail in de page-header
   html = injectBreadcrumbs(html, page, lang);
-  return injectHead(html, page, lang);
+  // Cache-buster voor accessibility.js (bevat de taal-dropdown-toggle e.d.).
+  // Verhoog deze bij elke JS-wijziging, anders krijgen terugkerende browsers
+  // de gecachte oude versie en werkt de toggle niet.
+  html = html.replace(/\/assets\/brand\/accessibility\.js\?v=\d+/g, '/assets/brand/accessibility.js?v=7');
+  return injectHead(injectSearch(html, lang), page, lang);
 }
 
 function rewriteLinks(html, lang) {
@@ -274,33 +278,35 @@ function rewriteLinks(html, lang) {
 
 
 function fixLangSwitch(html, page, lang) {
-  // Structureel correcte lang-switch: genereer de NL- en EN-links opnieuw uit
-  // slug-kaart i.p.v. de handmatige bron-links te kopiëren (die waren per
-  // pagina na te houden en foutgevoelig; bv. de EMS-pagina verwees nog naar
-  // /energie-uitdagingen). Draait voor NL en EN.
+  // Structureel correcte taal-dropdown: compacte knop met de huidige taal,
+  // die een gestapeld menu opent met beide talen. Genereer ALLES uit de
+  // slug-kaart per pagina+taal (NL en EN) — geen handmatige links meer.
   const nlSlug = page === 'index.html' ? '' : page.replace(/\.html$/, '');
   const enSlug = SLUGS[page];
   const nlHref = nlSlug === '' ? '/' : '/' + nlSlug;
   const enHref = (enSlug === '' || enSlug === undefined) ? '/en/' : '/en/' + enSlug;
-  return html.replace(/<li class="lang-switch"[^>]*>[\s\S]*?<\/li>/, (ls) => {
-    // De lang-switch bevat exact 2 hrefs: eerst de NL-link, dan de EN-link.
-    const parts = ls.split('href="');
-    if (parts.length >= 3) {
-      const c1 = parts[1].indexOf('"');
-      const c2 = parts[2].indexOf('"');
-      parts[1] = nlHref + parts[1].slice(c1);  // href #1 = NL
-      parts[2] = enHref + parts[2].slice(c2);  // href #2 = EN
-      ls = parts.join('href="');
-    }
-    return ls;
-  });
+  const curEn = lang !== 'nl';
+  const curCode = curEn ? 'EN' : 'NL';
+  const caret = '<svg aria-hidden="true" class="lang-caret" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>';
+  const menu =
+    `<li class="lang-switch lang-nav" aria-label="Taal / Language">` +
+      `<button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="${curEn ? 'Language / Taal' : 'Taal / Language'}">` +
+        `<span class="lang-cur">${curCode}</span>` +
+        caret +
+      `</button>` +
+      `<ul class="lang-menu">` +
+        `<li><a class="lang-opt${curEn ? '' : ' is-cur'}" lang="nl" hreflang="nl" href="${nlHref}"${curEn ? '' : ' aria-current="true"'}><span class="lang-name">Nederlands</span><span class="lang-code">NL</span></a></li>` +
+        `<li><a class="lang-opt${curEn ? ' is-cur' : ''}" lang="en" hreflang="en" href="${enHref}"${curEn ? ' aria-current="true"' : ''}><span class="lang-name">English</span><span class="lang-code">EN</span></a></li>` +
+      `</ul>` +
+    `</li>`;
+  return html.replace(/<li class="lang-switch"[^>]*>[\s\S]*?<\/li>/, () => menu);
 }
 
 function guardEnLinks(html) {
   // Build-guard: een gegenereerde EN-pagina mag GEEN interne link naar een
   // NL-slug bevatten (behalve de taalwissel, die bewust de NL-link toont).
   // Zo blijft de gebruiker na een klik in de gekozen taal. Anders: build faalt.
-  const body = html.replace(/<li class="lang-switch"[\s\S]*?<\/li>/, '');
+  const body = html.replace(/<li class="lang-switch[^>]*>[\s\S]*?<\/li>/, '');
   const bad = new Set();
   for (const m of body.matchAll(/href="\/(?!#)([a-z][a-z0-9-]*)(#[^"]*)?"/g)) {
     if (m[1] === 'en') continue;
@@ -310,6 +316,131 @@ function guardEnLinks(html) {
   }
   return [...bad];
 }
+// ---------------------------------------------------------------------------
+// Site-wide search: inject nav button, modal, script + generate search index
+// ---------------------------------------------------------------------------
+const SEARCH_LABELS = {
+  nl: { open: 'Zoeken', placeholder: 'Doorzoek de site…', close: 'Sluiten zoeken', title: 'Zoeken op lemnion.nl' },
+  en: { open: 'Search', placeholder: 'Search the site…', close: 'Close search', title: 'Search lemnion.nl' }
+};
+
+const SEARCH_CSS = `
+/* Lemnion look & feel — tokens uit brand kit (DESIGN.md / colors.json / tokens.css) */
+.search-overlay,.search-modal{position:fixed;inset:0}
+.search-overlay{background:rgba(10,46,26,.6);backdrop-filter:blur(4px);z-index:100000}
+.search-modal[hidden],.search-overlay[hidden]{display:none}
+.search-modal{display:flex;flex-direction:column;align-items:center;padding:9vh 1rem 2rem;overflow-y:auto;z-index:100001}
+.search-modal .search-box{display:flex;align-items:center;gap:.75rem;width:100%;max-width:620px;background:#fff;border:1px solid #D4DDD0;border-radius:16px;padding:12px 18px;box-shadow:0 20px 60px rgba(15,61,35,.2);transition:border-color .2s,box-shadow .2s}
+.search-modal .search-box:focus-within{border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
+.search-modal .search-box svg{flex:0 0 auto;color:#2E7032}
+.search-modal .search-box input{flex:1;min-width:0;border:none;outline:none;background:transparent;font-family:'Inter',system-ui,sans-serif;font-size:1.05rem;font-weight:400;color:#2F3437;padding:6px 0}
+.search-modal .search-box input::placeholder{color:#556B58}
+.search-modal .search-box .search-close{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:0 0 auto;border:none;background:transparent;border-radius:50%;font-size:1.4rem;line-height:1;cursor:pointer;color:#556B58;transition:color .2s,background-color .2s}
+.search-modal .search-box .search-close:hover{color:#0F3D23;background:#F0F5EA}
+.search-results{width:100%;max-width:620px;margin-top:16px}
+.search-result{display:block;background:#fff;border:1px solid #D4DDD0;border-radius:12px;padding:16px 20px;margin-bottom:8px;color:inherit;text-decoration:none;box-shadow:0 4px 24px rgba(15,61,35,.06);transition:border-color .2s,box-shadow .2s}
+.search-result:hover{border-color:#7FBF3A;box-shadow:0 20px 60px rgba(15,61,35,.12)}
+.search-result .sr-t{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1.05rem;color:#0F3D23}
+.search-result .sr-badge{font-family:'Inter',system-ui,sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#F0F5EA;color:#2E7032;border-radius:50px;padding:3px 10px}
+.search-result .sr-url{font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:#556B58;margin:4px 0 8px}
+.search-result .sr-s{font-family:'Inter',system-ui,sans-serif;font-size:.88rem;color:#3D4F40;line-height:1.55}
+.search-hint,.search-none{width:100%;max-width:620px;margin-top:16px;padding:20px;text-align:center;color:#F5F7F2;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.4);border-radius:16px;font-family:'Inter',system-ui,sans-serif}
+/* nav toggle: omlijnde pill-knop (secondary outline), icon 2.5px ronde stroke,
+   compact zodat 'ie de ruimte tussen Contact en NL/EN niet opblaast */
+.nav-search{display:inline-flex;align-items:center}
+.search-toggle{display:inline-flex;align-items:center;justify-content:center;width:32px;height:44px;border-radius:50px;border:2px solid #D4DDD0;background:transparent;color:#0F3D23;cursor:pointer;transition:border-color .2s,color .2s,box-shadow .2s,background-color .2s}
+.search-toggle:hover{color:#7FBF3A;border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.15)}
+.search-toggle:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
+.search-toggle svg{stroke-width:2.5}
+/* Middenweg: rustige maar niet te brede cluster — interne gaten ~14px i.p.v.
+   1.25rem, zodat de megamenu (Oplossingen) voldoende lucht naast het logo houdt
+   zonder dat de knoppen aaneengeklonterd staan. */
+.nav-search{margin-left:-0.35rem}
+.nav-search + .lang-switch{margin-left:-0.45rem}
+/* ── Taal-dropdown: compacte gebruikerstaal-knop met gestapeld NL/EN-menu ── */
+.lang-nav{position:relative;display:inline-flex}
+.lang-btn{display:inline-flex;align-items:center;gap:.35rem;height:44px;padding:.4rem .15rem;background:none;border:none;cursor:pointer;font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:.9rem;color:#556B58;white-space:nowrap;transition:color .2s}
+.lang-btn:hover{color:#7FBF3A}
+.lang-btn:focus-visible{outline:2px solid #7FBF3A;outline-offset:2px}
+.lang-btn .lang-cur{font-weight:600;color:#2E7032}
+.lang-btn .lang-caret{transition:transform .2s}
+.lang-nav.open .lang-btn{color:#7FBF3A}
+.lang-nav.open .lang-btn .lang-caret{transform:rotate(180deg)}
+.lang-menu{list-style:none;margin:0;padding:.4rem;min-width:150px;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);max-width:calc(100vw - 2rem);background:#fff;border:1px solid #D4DDD0;border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,.12);display:none;flex-direction:column;gap:2px;z-index:120}
+.lang-nav.open .lang-menu{display:flex}
+.lang-menu .lang-opt{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:.55rem .75rem;border-radius:8px;color:#3D4F40;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:.9rem;font-weight:500;white-space:nowrap}
+.lang-menu .lang-opt:hover{background:#F0F5EA;color:#0F3D23}
+.lang-menu .lang-opt .lang-code{font-size:.68rem;font-weight:600;color:#556B58;min-width:32px;display:inline-flex;align-items:center;justify-content:center}
+.lang-menu .lang-opt.is-cur{color:#2E7032;font-weight:600}
+.lang-menu .lang-opt.is-cur .lang-code{color:#2E7032;background:#F0F5EA;padding:1px 7px;border-radius:50px}
+/* Mobiel: zoekknop als nette vergrootglas-pill naast het hamburger-knopje
+   (zelfde stijl als desktop); de desktop-zoekknop tonen we niet in het menu */
+.search-toggle-mob{display:none}
+@media(max-width:1180px){
+  .search-toggle-mob{display:inline-flex;margin-left:auto}
+  .nav-search{display:none}
+  .nav-search + .lang-switch{margin-left:0}
+  .lang-switch{margin-left:0}
+}`;
+
+function injectSearch(html, lang) {
+  const L = SEARCH_LABELS[lang] || SEARCH_LABELS.nl;
+  const mag = '<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
+  // 1) nav button, right before the language switcher (desktop top-right)
+  const btn = `<li class="nav-search"><button type="button" id="search-toggle" class="search-toggle" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}</button></li>`;
+  html = html.replace(/(<li class="lang-switch[^"]*")/, btn + '$1');
+  // 1b) mobiele zoekknop naast het hamburger-knopje (same neately styled pill)
+  const btnMob = `<button type="button" class="search-toggle search-toggle-mob" aria-label="${L.open}" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal">${mag}</button>`;
+  html = html.replace(/(<button class="menu-toggle")/, btnMob + '$1');
+  // 2) modal + styles + script, before </body> (both languages get their labels)
+  const modalHtml =
+    `<div id="search-overlay" class="search-overlay" hidden></div>` +
+    `<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="${L.title}" hidden>` +
+      `<div class="search-box">` +
+        `<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>` +
+        `<input type="search" id="search-input" placeholder="${L.placeholder}" aria-label="${L.placeholder}" autocomplete="off" spellcheck="false" enterkeyhint="search">` +
+        `<button type="button" id="search-close" class="search-close" aria-label="${L.close}">✕</button>` +
+      `</div>` +
+      `<div id="search-results" class="search-results" role="listbox" aria-label="${L.title}"></div>` +
+    `</div>` +
+    `<style>${SEARCH_CSS}</style>` +
+    `<script src="/assets/brand/search.js?v=3" defer></script>`;
+  html = html.replace('</body>', modalHtml + '</body>');
+  return html;
+}
+
+function buildSearchIndex(pages) {
+  const entries = [];
+  for (const page of pages) {
+    for (const lang of ['nl', ...LANGS]) {
+      const slug = lang === 'nl' ? page : (SLUGS[page] || page);
+      const fname = slug === '' ? 'index.html' : slug.replace(/\.html$/, '') + '.html';
+      const file = lang === 'nl' ? join(OUT, page) : join(OUT, lang, fname);
+      if (!existsSync(file)) continue;
+      const raw = readFileSync(file, 'utf8');
+      const url = pageUrl(page, lang).replace(BASE_URL, ''); // '/oplossingen', '/en/solutions'
+      const t = raw.match(/<title>([^<]*)<\/title>/);
+      const title = t ? t[1].trim() : (page === 'index.html' ? 'Home' : page.replace(/\.html$/, ''));
+      let body = raw;
+      const m = raw.match(/<main[\s\S]*?>([\s\S]*?)<\/main>/);
+      if (m) body = m[1];
+      else { const b = raw.match(/<body[\s\S]*?>([\s\S]*?)<\/body>/); if (b) body = b[1]; }
+      const content = body
+        .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+        .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+        .replace(/\s+/g, ' ').trim();
+      entries.push({ url, title, lang, content });
+    }
+  }
+  const json = JSON.stringify(entries);
+  writeFileSync(join(OUT, 'search-index.json'), json);
+  const kb = Math.round(Buffer.byteLength(json) / 1024);
+  console.log(`[build] search-index.json: ${entries.length} entries (${kb} KB)`);
+}
+
 // ---------------------------------------------------------------------------
 // Sitemap
 // ---------------------------------------------------------------------------
@@ -395,5 +526,8 @@ for (const f of readdirSync(ROOT)) {
 
 // Generated sitemap (lemnion.nl + language variants)
 writeFileSync(join(OUT, 'sitemap.xml'), buildSitemap(pages));
+
+// Site-wide search index (NL + EN, from the built dist pages)
+buildSearchIndex(pages);
 
 console.log(`[build] klaar → dist/ (${pages.length} NL + ${pages.length * LANGS.length} vertaald + sitemap)`);
