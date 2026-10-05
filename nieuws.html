@@ -338,16 +338,19 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
         var _paq = window._paq = window._paq || [];
         _paq.push(['disableCookies']);
         _paq.push(['setDoNotTrack', true]);
-        _paq.push(['setAnonymizeIp', true]);
-        _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
-        _paq.push(['setSiteId', location.hostname.indexOf('dev.') === 0 ? '2' : '1']);
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function () {
-            var u = '//analytics.lemnion.nl/';
-            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
-        })();
+        var _H = location.hostname;
+        var _ok = _H === 'lemnion.nl' || _H === 'www.lemnion.nl' || _H === 'dev.lemnion.nl';
+        if (_ok) {
+            _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
+            _paq.push(['setSiteId', _H.indexOf('dev.') === 0 ? '2' : '1']);
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function () {
+                var u = '//analytics.lemnion.nl/';
+                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+                g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+            })();
+        }
     </script>
         <!-- End Matomo Code -->
     <script>
@@ -463,7 +466,16 @@ function lockScroll(on) {
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
+            <li class="nav-dropdown">
+                <a data-i18n="nav.overheid" href="/subsidies">Overheid</a>
+                <div class="nav-backdrop"></div>
+                <div class="nav-dropdown-panel">
+                    <div class="nav-mega-col">
+                        <a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a>
+                        <a data-i18n="nav.wetgeving" href="/wetgeving">Wetgeving</a>
+                    </div>
+                </div>
+            </li>
             <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
                 <a data-i18n="nav.nieuws" href="/nieuws">Nieuws</a>
@@ -476,7 +488,7 @@ function lockScroll(on) {
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.contact" href="/#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li><a data-i18n="nav.contact" href="https://lemnion.nl/contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
             <li class="lang-switch" aria-label="Taal / Language">
                 <a href="/nieuws" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
                 <span class="lang-sep" aria-hidden="true">/</span>

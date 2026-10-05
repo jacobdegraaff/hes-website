@@ -57,7 +57,7 @@ jobs:
           while IFS= read -r file; do
             case "$file" in
               nieuws.html|subsidies.html|sitemap.xml|robots.txt|CONTENT-RICHTLIJNEN.md) ;;
-              HES_Budget_*.xlsx|assets/*|images/*|img/*|uploads/*|*.png|*.jpg|*.jpeg|*.webp|*.svg|*.gif|*.pdf) ;;
+              HES_Budget_*.xlsx|assets/*|images/*|img/*|uploads/*|translations/*|*.png|*.jpg|*.jpeg|*.webp|*.gif|*.pdf) ;;
               *)
                 echo "❌ Niet-content bestand gedetecteerd: $file"
                 CONTENT_ONLY=false

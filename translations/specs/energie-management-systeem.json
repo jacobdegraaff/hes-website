@@ -35,6 +35,7 @@
   {"key": "ems.label", "tag": "span", "contains": "Verder lezen"},
   {"key": "ems.rl1", "tag": "a", "contains": "Bekijk onze oplossingen", "href": "/oplossingen"},
   {"key": "ems.rl2", "tag": "a", "contains": "Alle energie-uitdagingen op een rij", "href": "/energie-uitdagingen"},
+  {"key": "ems.rl3", "tag": "a", "contains": "GACS-verplichting vanaf 2026", "href": "/gebouwautomatisering-gacs"},
   {"key": "ems.ins-label", "tag": "p", "contains": "Inzicht voor de hotelier"},
   {"key": "ems.ins-h2", "tag": "h2", "contains": "Alles overzichtelijk, sturing wanneer jij wilt"},
   {"key": "ems.i1h", "tag": "h4", "contains": "Data op één plek"},

@@ -334,16 +334,19 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
         var _paq = window._paq = window._paq || [];
         _paq.push(['disableCookies']);
         _paq.push(['setDoNotTrack', true]);
-        _paq.push(['setAnonymizeIp', true]);
-        _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
-        _paq.push(['setSiteId', location.hostname.indexOf('dev.') === 0 ? '2' : '1']);
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function () {
-            var u = '//analytics.lemnion.nl/';
-            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
-        })();
+        var _H = location.hostname;
+        var _ok = _H === 'lemnion.nl' || _H === 'www.lemnion.nl' || _H === 'dev.lemnion.nl';
+        if (_ok) {
+            _paq.push(['setTrackerUrl', '//analytics.lemnion.nl/matomo.php']);
+            _paq.push(['setSiteId', _H.indexOf('dev.') === 0 ? '2' : '1']);
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function () {
+                var u = '//analytics.lemnion.nl/';
+                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+                g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+            })();
+        }
     </script>
         <!-- End Matomo Code -->
     <script>
@@ -459,7 +462,16 @@ function lockScroll(on) {
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a></li>
+            <li class="nav-dropdown">
+                <a data-i18n="nav.overheid" href="/subsidies">Overheid</a>
+                <div class="nav-backdrop"></div>
+                <div class="nav-dropdown-panel">
+                    <div class="nav-mega-col">
+                        <a data-i18n="nav.subsidies" href="/subsidies">Subsidies</a>
+                        <a data-i18n="nav.wetgeving" href="/wetgeving">Wetgeving</a>
+                    </div>
+                </div>
+            </li>
             <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
             <li class="nav-dropdown">
                 <a data-i18n="nav.nieuws" href="/nieuws">Nieuws</a>
@@ -472,7 +484,7 @@ function lockScroll(on) {
                     </div>
                 </div>
             </li>
-            <li><a data-i18n="nav.contact" href="/#contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
+            <li><a data-i18n="nav.contact" href="https://lemnion.nl/contact" class="btn btn-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;">Contact</a></li>
             <li class="lang-switch" aria-label="Taal / Language">
                 <a href="/stroomuitval-noodaggregaat" class="lang-link" lang="nl" hreflang="nl" aria-current="true">NL</a>
                 <span class="lang-sep" aria-hidden="true">/</span>
@@ -551,6 +563,7 @@ function lockScroll(on) {
             <h3 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:600;">LEMNION · HOSPITALITY ENERGY SOLUTIONS</h3>
             <p data-i18n="footer.desc" style="margin-top:0.5rem;">Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen. In partnership met Stroomlijnen.</p>
             <p style="margin-top:0.5rem;font-size:0.8rem;">Optimizing Every Watt</p>
+            <a class="footer-linkedin" href="https://www.linkedin.com/company/lemnion-hospitality-energy-solutions/" target="_blank" rel="noopener" aria-label="Lemnion op LinkedIn" onmouseover="this.style.background='#6FAA2E'" onmouseout="this.style.background='var(--green-accent)'" style="display:inline-flex;align-items:center;gap:0.55rem;margin-top:0.85rem;padding:0.5rem 1.1rem;background:var(--green-accent);color:var(--green-primary);border-radius:50px;text-decoration:none;font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:0.8rem;"><span data-i18n="footer.follow_label">Volg ons op:</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></a>
         </div>
         <div>
             <h3><a data-i18n="footer.h_solutions" href="/energie-uitdagingen">Energie uitdagingen</a></h3>
@@ -583,6 +596,8 @@ function lockScroll(on) {
             </ul>
         </div>
         <div class="footer-bottom">
+            <p data-i18n="footer.kvkinfo" style="margin-bottom:0.5rem;font-size:0.8rem;">Lemnion B.V. · KvK 42157296 · BTW NL869965876B01 · Amsterdam</p>
+
             <p data-i18n="footer.copyright">&copy; 2026 Lemnion B.V. In partnership met Stroomlijnen B.V.</p>
             <p style="margin-top:0.5rem;font-size:0.75rem;"><a data-i18n="footer.privacy" href="/privacy">Privacyverklaring</a></p>
             <p data-i18n="footer.wcag" style="margin-top:0.5rem;font-size:0.75rem;">♿ WCAG 2.2 compliant gebouwd</p>
