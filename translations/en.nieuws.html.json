@@ -348,6 +348,7 @@
 "nieuws.g2t": "Enexis grid full: 85,000 new homes on the waiting list",
 "nieuws.g2p": "Grid operator Enexis is putting more than 85,000 new-build homes on its waiting list because there is no room on the electricity grid. Of the 140,000-plus homes submitted by municipalities and developers under the national transition scheme, direct capacity can be reserved for only about 54,000 &#8211; under 40 percent. Normally Enexis connects around 25,000 homes a year; the pressure is greatest in Noord-Brabant. Grid capacity thus remains the deciding factor for hotels and their expansion plans too.",
 "nieuws.g2src": "Source: TPO.NL, 17 September 2026",
+"nieuws.g3t": "The battle for power now starts at town hall: what does the &#8216;Apply earlier&#8217; scheme solve?",
 "nieuws.s23t": "Two-thirds of SPriLa subsidy applicants choose a stationary battery",
 "nieuws.s23p": "Two-thirds of the companies applying for SPriLa subsidy for private charging infrastructure this year combine it with a stationary battery. That emerges from a letter to parliament by state secretary Annet Bertram: the sub-budget for battery storage was oversubscribed almost immediately. The total budget has been raised by 35 million euros from the heavy goods vehicle levy to 122.5 million euros, and the scheme stays open until 18 December. Batteries flatten peaks in power draw, which lets charging infrastructure go ahead even on congested grids.",
 "nieuws.s23src": "Source: Solar &amp; Storage Magazine, 24 September 2026",
@@ -469,5 +470,11 @@
  "nieuws.s62src": "Source: Duurzaam Ondernemen, 2 October 2026",
  "nieuws.s63t": "Enkhuizen allows solar panels on historic facades",
  "nieuws.s63p": "The municipality of Enkhuizen relaxed its aesthetics policy for the protected townscape: visible solar panels are no longer refused as a rule but assessed case by case, with the historic character as the starting point. In the city centre a permit with a placement plan remains mandatory; anyone who already has panels without a permit must apply for one before 1 January 2027.",
- "nieuws.s63src": "Source: Solar &amp; Storage Magazine, 5 October 2026"
+ "nieuws.s63src": "Source: Solar &amp; Storage Magazine, 5 October 2026",
+ "nieuws.s64t": "Feed-in waiting list shrinks slightly, requested capacity rises 13 percent",
+ "nieuws.s64p": "At the end of June the regional grid operators had 8,558 feed-in requests on the waiting list, slightly fewer than the 8,612 at the end of last year. The requested transport capacity did rise in six months from 5,027 to 5,693 megawatts, more than 13 percent. The waiting list for consumption grew to 15,498 requests. For hotels with their own generation the conclusion remains that using and storing power yourself pays off better than feeding it back.",
+ "nieuws.s64src": "Source: Solar &amp; Storage Magazine, 6 October 2026",
+ "nieuws.s65t": "Waiting list for the power grid grows again, but grid operators also see hopeful signs",
+ "nieuws.s65p": "Almost 15,500 companies and organisations are waiting for a heavier power connection, over 300 more than six months ago. Growth is flattening and in a few regions the waiting list is even falling. Utrecht remains the problem area, where the regions around Amersfoort and Food Valley are closing to new connections. More and more companies therefore choose a flexible contract without a full-time right to power, in exchange for a discount.",
+ "nieuws.s65src": "Source: NOS, 5 October 2026"
 }
