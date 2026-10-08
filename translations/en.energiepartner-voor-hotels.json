@@ -15,7 +15,7 @@
   "sol.h2": "Four building blocks, one system at your location",
   "sol.intro": "We combine storage, control, self-generation and charging infrastructure into one whole. That gives you more power from the connection you already have, without waiting for grid reinforcement.",
   "sol.c1h": "Energy storage",
-  "sol.c1p": "A battery absorbs your peaks and supplies power when you need it. You charge at off-peak hours and stay within your contracted capacity.",
+  "sol.c1p": "A battery absorbs your peaks and supplies power when you need it.",
   "sol.c2h": "Smart EMS",
   "sol.c2p": "The energy management system learns your consumption profile and controls battery, solar and chargers in real time. Everything comes together in one dashboard.",
   "sol.c3h": "Solar panels",
