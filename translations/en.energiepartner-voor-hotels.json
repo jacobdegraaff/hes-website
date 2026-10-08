@@ -53,12 +53,12 @@
   "aan.c4p": "Delivered turnkey, with warranty and 24/7 monitoring. We spot deviations first and intervene, without you having to think about it.",
   "vi.label": "Vertically integrated",
   "vi.h2": "One point of contact for the whole solution",
-  "vi.intro": "No separate parties you have to bring together yourself. We design and supply. The installation is carried out by an installer on site. Our technical partner Stroomlijnen handles the commissioning.",
+  "vi.intro": "No separate parties you have to bring together yourself. We design and supply. The installation is carried out by an installer on site. Our technical partner Stroomlijnen handles the commissioning and maintenance.",
   "vi.p": "And we map the available energy at your location. So you know exactly what you have, what you can allocate and where there is room to grow.",
   "vi.c1": "✓",
   "vi.c1t": "Advice and contract with Lemnion",
   "vi.c2": "✓",
-  "vi.c2t": "Commissioning by Stroomlijnen",
+  "vi.c2t": "Commissioning and maintenance by Stroomlijnen",
   "vi.c3": "✓",
   "vi.c3t": "One dashboard for storage, solar and charging",
   "vi.c4": "✓",
@@ -79,5 +79,6 @@
   "footer.d": "Hospitality Energy Solutions · Optimizing Every Watt",
   "footer.partner": "In partnership with Stroomlijnen",
   "meta.energiepartner-voor-hotels.html.title": "Lemnion · The energy partner for hotels",
-  "meta.energiepartner-voor-hotels.html.description": "Lemnion is the energy partner for hotels: energy storage, smart energy management systems, solar panels and guest EV charging. More power at your site, always insight into your consumption."
+  "meta.energiepartner-voor-hotels.html.description": "Lemnion is the energy partner for hotels: energy storage, smart energy management systems, solar panels and guest EV charging. More power at your site, always insight into your consumption.",
+  "vi.p2": "After an analysis we map out what is available at your location: your connection, your consumption and your own generation. Once that room is there, you allocate it yourself through our smart EMS. You set energy budgets per department, floor or charging point, and keep sight of what is left."
 }
