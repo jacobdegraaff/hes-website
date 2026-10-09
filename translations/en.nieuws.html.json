@@ -491,5 +491,14 @@
 "nieuws.hn10src": "Source: De Ondernemer, 6 October 2026",
 "nieuws.hn11t": "No room on the power grid? This company runs on its own energy 365 days a year: 'We do everything ourselves'",
 "nieuws.hn11p": "A company that could not get space on the power grid built its own energy system and now runs on self-generated power all year round. The example shows how entrepreneurs can work around grid congestion by combining generation, storage and smart control. That is relevant for hotels, where charging points, cooling and kitchen equipment create large peaks together.",
-"nieuws.hn11src": "Source: De Ondernemer, 5 October 2026"
+"nieuws.hn11src": "Source: De Ondernemer, 5 October 2026",
+"nieuws.s69t": "Grid tariffs from 2029 higher at peak hours, lower off-peak",
+"nieuws.s69p": "The Dutch consumer authority ACM wants to reform electricity transport tariffs: from 2029 users pay more at busy moments and less during off-peak hours. About a third of the tariff remains a fixed amount, the rest depends on how much power you use and when. For businesses with a battery or smart control, shifting consumption to quiet hours becomes more rewarding.",
+"nieuws.s69src": "Source: TPO.NL, 8 October 2026",
+"nieuws.s70t": "€200 extra subsidy for smart heat pumps, subsidy for triple glazing halved",
+"nieuws.s70p": "The cabinet is adjusting the ISDE subsidy from 1 January 2027. Smart, controllable heat pumps that communicate via an open protocol such as EEBus, S2 or Matter receive a €200 bonus, while the subsidy per kilowatt of thermal capacity drops from €225 to €120. The subsidy for triple glazing with new frames falls from €111 to €55 per square metre. Steering to quiet moments should thus relieve the power grid.",
+"nieuws.s70src": "Source: Solar &amp; Storage Magazine, 7 October 2026",
+"nieuws.s71t": "Electrifying without waiting for grid expansion",
+"nieuws.s71p": "Installation company Batenburg opened the Smart Solar Energy Hub in Twello: battery storage, energy management, charging infrastructure and on-site generation in one installation, within the existing grid connection. Smart control shifts consumption to moments when the grid has room, so businesses can electrify or expand without waiting for a heavier connection.",
+"nieuws.s71src": "Source: Installatie.nl, 7 October 2026"
 }
