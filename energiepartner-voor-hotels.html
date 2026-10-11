@@ -4,7 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lemnion · De energiepartner voor hotels</title>
-<meta name="description" content="Lemnion is de energiepartner voor hotels: energieopslag, slimme energiemanagementsystemen, zonnepanelen en laadpalen voor gasten. Meer stroom op je locatie, altijd zicht op je verbruik.">
+<meta name="description" content="Lemnion is de energiepartner voor hotels: energieopslag, EMS, zonnepanelen en laadpalen. Meer stroom op je locatie en altijd zicht op je verbruik.">
+<meta property="og:title" content="Lemnion · De energiepartner voor hotels">
+<meta property="og:description" content="Lemnion is de energiepartner voor hotels: energieopslag, EMS, zonnepanelen en laadpalen. Meer stroom op je locatie en altijd zicht op je verbruik.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lemnion.nl/energiepartner-voor-hotels">
+<meta property="og:image" content="https://lemnion.nl/assets/logo-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Lemnion · Hospitality Energy Solutions">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lemnion · De energiepartner voor hotels">
+<meta name="twitter:description" content="Energieopslag, EMS, zonnepanelen en laadpalen voor hotels. Meer stroom op je locatie en altijd zicht op je verbruik.">
+<meta name="twitter:image" content="https://lemnion.nl/assets/logo-og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://lemnion.nl/energiepartner-voor-hotels#webpage","url":"https://lemnion.nl/energiepartner-voor-hotels","name":"Lemnion · De energiepartner voor hotels","description":"Lemnion is de energiepartner voor hotels: energieopslag, EMS, zonnepanelen en laadpalen. Meer stroom op je locatie en altijd zicht op je verbruik.","inLanguage":"nl-NL","isPartOf":{"@type":"WebSite","name":"Lemnion · Hospitality Energy Solutions","url":"https://lemnion.nl/"}},{"@type":"Service","@id":"https://lemnion.nl/energiepartner-voor-hotels#service","name":"Energiepartner voor hotels","serviceType":"Energieopslag, energiemanagementsysteem, zonnepanelen en laadpalen voor hotels","provider":{"@type":"Organization","name":"Lemnion","alternateName":"Hospitality Energy Solutions","url":"https://lemnion.nl/","logo":"https://lemnion.nl/assets/logo-og.png","email":"info@lemnion.nl"},"areaServed":{"@type":"Country","name":"Nederland"},"audience":{"@type":"BusinessAudience","name":"Hotels"},"url":"https://lemnion.nl/energiepartner-voor-hotels"}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
@@ -49,8 +65,10 @@
   nav.menu a:hover{background:var(--n100);color:var(--secondary)}
   .lang{display:flex;gap:6px;align-items:center;border-left:1px solid var(--n300);padding-left:12px}
   .lang button{border:1px solid var(--n300);background:var(--white);border-radius:var(--radius-sm);
-               width:40px;height:34px;font-size:1.15rem;cursor:pointer;line-height:1;transition:.15s}
-  .lang button.on{border-color:var(--primary);background:var(--primary);box-shadow:var(--shadow-glow)}
+               min-width:44px;height:34px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.82rem;
+               letter-spacing:.06em;color:var(--primary);cursor:pointer;line-height:1;transition:.15s}
+  .lang button:hover{background:var(--n100)}
+  .lang button.on{border-color:var(--primary);background:var(--primary);color:var(--off);box-shadow:var(--shadow-glow)}
   .lang button:focus-visible,nav.menu a:focus-visible,a.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   @media(max-width:760px){
     .nav{flex-wrap:wrap;gap:10px}
@@ -224,8 +242,8 @@
       <a href="#contact" data-i18n="ep.nav.contact">Contact</a>
     </nav>
     <div class="lang" role="group" aria-label="Taal / Language">
-      <button id="langNl" class="on" title="Nederlands" onclick="setLang('nl')" aria-pressed="true">&#127475;&#127473;</button>
-      <button id="langEn" title="English" onclick="setLang('en')" aria-pressed="false">&#127468;&#127463;</button>
+      <button id="langNl" class="on" title="Nederlands" lang="nl" onclick="setLang('nl')" aria-pressed="true">NL</button>
+      <button id="langEn" title="English" lang="en" onclick="setLang('en')" aria-pressed="false">EN</button>
     </div>
   </div>
 </header>
@@ -300,13 +318,15 @@
         <summary><span data-i18n="reg.e1h">EPBD IV: verplichte laadinfrastructuur</span>
           <svg class="chev" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
         <div class="acc-body">
-          <p data-i18n="reg.e1p">Laadinfrastructuur bij gebouwen met parkeerplaatsen is sinds 29 mei 2026 in Nederland geregeld. Voor bestaande hotels volgen de eisen vanaf 1 januari 2027.</p>
+          <p data-i18n="reg.e1p">Laadinfrastructuur bij gebouwen met parkeerplaatsen is sinds 29 mei 2026 in Nederland geregeld. Voor bestaande hotels met meer dan 20 parkeerplaatsen geldt nu al minimaal één laadpunt. Vanaf 1 januari 2027 wordt die plicht verzwaard.</p>
           <ul class="facts">
-            <li><span data-i18n="reg.e1i1">Nieuwbouw en ingrijpende renovatie, vanaf 29 mei 2026: bij meer dan 5 parkeerplaatsen minimaal 1 laadpunt per 5 parkeerplaatsen, plus voorbekabeling voor 50%.</span></li>
+            <li><span data-i18n="reg.e1i1">Nieuwbouw en ingrijpende renovatie, vanaf 29 mei 2026: bij meer dan 5 parkeerplaatsen minimaal 1 laadpunt per 5 parkeerplaatsen, plus voorbekabeling voor ten minste 50% en leidingdoorvoeren voor de overige parkeerplaatsen.</span></li>
             <li><span data-i18n="reg.e1i2">Bestaande hotels met meer dan 20 parkeerplaatsen, vanaf 1 januari 2027: minimaal 1 laadpunt per 10 parkeerplaatsen, of leidingdoorvoeren voor de helft van de plaatsen.</span></li>
+            <li><span data-i18n="reg.e1i4">Laadpunten moeten geschikt zijn voor slim laden, zodat ze op het juiste moment kunnen worden aangestuurd.</span></li>
+            <li><span data-i18n="reg.e1i5">Bij een ingrijpende renovatie vervallen de verplichtingen als de kosten meer dan 10% van de totale renovatiekosten bedragen. Dat onderbouw je met offertes.</span></li>
             <li><span data-i18n="reg.e1i3">Netcongestie is geen vrijstelling. Met batterij, slimme sturing en load balancing plaats je de laadpunten zonder dure netverzwaring.</span></li>
           </ul>
-          <p class="src" data-i18n="reg.e1src">Bron: <a href="https://lemnion.nl/blog-epbd-iv-laadinfra" target="_blank" rel="noopener">EPBD IV: verplichte laadinfra voor hotels</a></p>
+          <p class="src" data-i18n="reg.e1src">Bron: <a href="/blog-epbd-iv-laadinfra" target="_blank" rel="noopener">EPBD IV: verplichte laadinfra voor hotels</a></p>
         </div>
       </details>
       <details class="acc">
@@ -315,11 +335,11 @@
         <div class="acc-body">
           <p data-i18n="reg.e2p">Een gebouwautomatiserings- en controlesysteem meet, analyseert en stuurt je klimaatinstallaties. Het is geen product uit een doos, maar een laag bovenop je bestaande installaties.</p>
           <ul class="facts">
-            <li><span data-i18n="reg.e2i1">Sinds 1 januari 2026 verplicht voor utiliteitsgebouwen met een verwarmings- of airconditioningsysteem boven 290 kW. Met een zaal, keuken en zwembad zit je daar als hotel snel boven.</span></li>
+            <li><span data-i18n="reg.e2i1">Sinds 1 januari 2026 verplicht voor utiliteitsgebouwen met een verwarmings- of airconditioningsysteem boven 290 kW. Dat wordt per systeem getoetst: verwarming en airconditioning tellen niet bij elkaar op. Bij hotels met een zaal, keuken en zwembad komt dat vaak wel voor; wij toetsen het op basis van je installatiegegevens.</span></li>
             <li><span data-i18n="reg.e2i2">Vanaf 1 januari 2028 wordt automatische lichtregeling per zone verplicht boven 290 kW.</span></li>
             <li><span data-i18n="reg.e2i3">Vanaf 1 januari 2030 zakt de grens naar 70 kW. Vanaf dat moment geldt GACS ook voor middelgrote hotels.</span></li>
           </ul>
-          <p class="src" data-i18n="reg.e2src">Bron: <a href="https://lemnion.nl/gebouwautomatisering-gacs" target="_blank" rel="noopener">GACS-verplichting voor hotels</a></p>
+          <p class="src" data-i18n="reg.e2src">Bron: <a href="/gebouwautomatisering-gacs" target="_blank" rel="noopener">GACS-verplichting voor hotels</a></p>
         </div>
       </details>
       <details class="acc">
@@ -468,17 +488,19 @@ const I18N = {
     "reg.h2":"Blijf voldoen aan EPBD IV en GACS",
     "reg.intro":"We bereiden je ook voor op wat er komt. Zo blijf je voldoen aan de verplichte laadinfrastructuur (EPBD IV) en aan GACS, de regelgeving voor gebouwautomatisering. Die geldt nu nog voor grotere gebouwen, maar vanaf 2030 ook voor kleinere hotels.",
     "reg.e1h":"EPBD IV: verplichte laadinfrastructuur",
-    "reg.e1p":"Laadinfrastructuur bij gebouwen met parkeerplaatsen is sinds 29 mei 2026 in Nederland geregeld. Voor bestaande hotels volgen de eisen vanaf 1 januari 2027.",
-    "reg.e1i1":"Nieuwbouw en ingrijpende renovatie, vanaf 29 mei 2026: bij meer dan 5 parkeerplaatsen minimaal 1 laadpunt per 5 parkeerplaatsen, plus voorbekabeling voor 50%.",
+    "reg.e1p":"Laadinfrastructuur bij gebouwen met parkeerplaatsen is sinds 29 mei 2026 in Nederland geregeld. Voor bestaande hotels met meer dan 20 parkeerplaatsen geldt nu al minimaal één laadpunt. Vanaf 1 januari 2027 wordt die plicht verzwaard.",
+    "reg.e1i1":"Nieuwbouw en ingrijpende renovatie, vanaf 29 mei 2026: bij meer dan 5 parkeerplaatsen minimaal 1 laadpunt per 5 parkeerplaatsen, plus voorbekabeling voor ten minste 50% en leidingdoorvoeren voor de overige parkeerplaatsen.",
     "reg.e1i2":"Bestaande hotels met meer dan 20 parkeerplaatsen, vanaf 1 januari 2027: minimaal 1 laadpunt per 10 parkeerplaatsen, of leidingdoorvoeren voor de helft van de plaatsen.",
+    "reg.e1i4":"Laadpunten moeten geschikt zijn voor slim laden, zodat ze op het juiste moment kunnen worden aangestuurd.",
+    "reg.e1i5":"Bij een ingrijpende renovatie vervallen de verplichtingen als de kosten meer dan 10% van de totale renovatiekosten bedragen. Dat onderbouw je met offertes.",
     "reg.e1i3":"Netcongestie is geen vrijstelling. Met batterij, slimme sturing en load balancing plaats je de laadpunten zonder dure netverzwaring.",
-    "reg.e1src":"Bron: <a href=\"https://lemnion.nl/blog-epbd-iv-laadinfra\" target=\"_blank\" rel=\"noopener\">EPBD IV: verplichte laadinfra voor hotels</a>",
+    "reg.e1src":"Bron: <a href=\"/blog-epbd-iv-laadinfra\" target=\"_blank\" rel=\"noopener\">EPBD IV: verplichte laadinfra voor hotels</a>",
     "reg.e2h":"GACS: gebouwautomatisering",
     "reg.e2p":"Een gebouwautomatiserings- en controlesysteem meet, analyseert en stuurt je klimaatinstallaties. Het is geen product uit een doos, maar een laag bovenop je bestaande installaties.",
-    "reg.e2i1":"Sinds 1 januari 2026 verplicht voor utiliteitsgebouwen met een verwarmings- of airconditioningsysteem boven 290 kW. Met een zaal, keuken en zwembad zit je daar als hotel snel boven.",
+    "reg.e2i1":"Sinds 1 januari 2026 verplicht voor utiliteitsgebouwen met een verwarmings- of airconditioningsysteem boven 290 kW. Dat wordt per systeem getoetst: verwarming en airconditioning tellen niet bij elkaar op. Bij hotels met een zaal, keuken en zwembad komt dat vaak wel voor; wij toetsen het op basis van je installatiegegevens.",
     "reg.e2i2":"Vanaf 1 januari 2028 wordt automatische lichtregeling per zone verplicht boven 290 kW.",
     "reg.e2i3":"Vanaf 1 januari 2030 zakt de grens naar 70 kW. Vanaf dat moment geldt GACS ook voor middelgrote hotels.",
-    "reg.e2src":"Bron: <a href=\"https://lemnion.nl/gebouwautomatisering-gacs\" target=\"_blank\" rel=\"noopener\">GACS-verplichting voor hotels</a>",
+    "reg.e2src":"Bron: <a href=\"/gebouwautomatisering-gacs\" target=\"_blank\" rel=\"noopener\">GACS-verplichting voor hotels</a>",
     "reg.e3h":"Waarom dit nu al slim is",
     "reg.e3p":"Wie nu investeert in laadpalen en sturing, is straks niet alleen compliant, maar verlaagt ook zijn energiekosten en maakt het hotel aantrekkelijker voor gasten met een elektrische auto.",
     "aan.label":"Onze aanpak",
@@ -524,7 +546,7 @@ const I18N = {
     "sol.h2":"Four building blocks, one system at your location",
     "sol.intro":"We combine storage, control, self-generation and charging infrastructure into one whole. That gives you more power from the connection you already have, without waiting for grid reinforcement.",
     "sol.c1h":"Energy storage",
-    "sol.c1p":"A battery absorbs your peaks and supplies power when you need it. You charge at off-peak hours and stay within your contracted capacity.",
+    "sol.c1p":"A battery absorbs your peaks and supplies power when you need it.",
     "sol.c2h":"Smart EMS",
     "sol.c2p":"The energy management system learns your consumption profile and controls battery, solar and chargers in real time. Everything comes together in one dashboard.",
     "sol.c3h":"Solar panels",
@@ -535,17 +557,18 @@ const I18N = {
     "reg.h2":"Stay compliant with EPBD IV and GACS",
     "reg.intro":"We also prepare you for what is coming. So you keep complying with the mandatory charging infrastructure (EPBD IV) and with GACS, the regulation for building automation. It currently applies to larger buildings, and from 2030 also to smaller hotels.",
     "reg.e1h":"EPBD IV: mandatory charging infrastructure",
-    "reg.e1p":"Charging infrastructure at buildings with parking spaces has been regulated in the Netherlands since 29 May 2026. For existing hotels the requirements follow from 1 January 2027.",
-    "reg.e1i1":"New build and major renovation, from 29 May 2026: with more than 5 parking spaces at least 1 charging point per 5 spaces, plus pre-cabling for 50%.",
+    "reg.e1p":"Charging infrastructure at buildings with parking spaces has been regulated in the Netherlands since 29 May 2026. For existing hotels with more than 20 parking spaces at least one charging point is already required today. From 1 January 2027 that obligation is tightened.",
+    "reg.e1i1":"New build and major renovation, from 29 May 2026: with more than 5 parking spaces at least 1 charging point per 5 spaces, plus pre-cabling for at least 50% and ducting for the remaining parking spaces.",
     "reg.e1i2":"Existing hotels with more than 20 parking spaces, from 1 January 2027: at least 1 charging point per 10 spaces, or ducting for half of the spaces.",
+    "reg.e1i4":"Charging points must be suitable for smart charging, so they can be controlled at the right moment.","reg.e1i5":"In a major renovation the obligations lapse if the costs exceed 10% of the total renovation costs. You substantiate that with quotes.",
     "reg.e1i3":"Grid congestion is not an exemption. With battery, smart control and load balancing you install the charging points without costly grid reinforcement.",
-    "reg.e1src":"Source: <a href=\"https://lemnion.nl/blog-epbd-iv-laadinfra\" target=\"_blank\" rel=\"noopener\">EPBD IV: mandatory charging infrastructure for hotels</a>",
+    "reg.e1src":"Source: <a href=\"/en/blog-epbd-iv-ev-charging-infrastructure\" target=\"_blank\" rel=\"noopener\">EPBD IV: mandatory charging infrastructure for hotels</a>",
     "reg.e2h":"GACS: building automation",
     "reg.e2p":"A building automation and control system measures, analyses and controls your climate installations. It is not a product in a box, but a layer on top of your existing installations.",
-    "reg.e2i1":"Mandatory since 1 January 2026 for non-residential buildings with a heating or air conditioning system above 290 kW. With a ballroom, kitchen and pool a hotel reaches that threshold quickly.",
+    "reg.e2i1":"Mandatory since 1 January 2026 for non-residential buildings with a heating or air conditioning system above 290 kW. This is assessed per system: heating and air conditioning are not added together. At hotels with a ballroom, kitchen and pool that is often the case; we assess it on the basis of your installation data.",
     "reg.e2i2":"From 1 January 2028 automatic lighting control per zone becomes mandatory above 290 kW.",
     "reg.e2i3":"From 1 January 2030 the threshold drops to 70 kW. From then on GACS also applies to mid-sized hotels.",
-    "reg.e2src":"Source: <a href=\"https://lemnion.nl/gebouwautomatisering-gacs\" target=\"_blank\" rel=\"noopener\">GACS obligation for hotels</a>",
+    "reg.e2src":"Source: <a href=\"/en/building-automation-gacs\" target=\"_blank\" rel=\"noopener\">GACS obligation for hotels</a>",
     "reg.e3h":"Why this is smart today",
     "reg.e3p":"Whoever invests in charging stations and control now, is not only compliant later, but also lowers energy costs and makes the hotel more attractive to guests with an electric car.",
     "aan.label":"Our approach",
