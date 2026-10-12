@@ -23,7 +23,7 @@
   "sol.c3h": "Solar panels",
   "sol.c3p": "Your own generation on the roof, directly linked to storage and consumption. That way you use your own power at the moment you need it.",
   "sol.c4h": "Charging stations for guests",
-  "sol.c4p": "From 22 kW AC to fast chargers. Guests charge on stored energy, with dynamic load management, so your connection is not strained.",
+  "sol.c4p": "From 22 kW AC to fast chargers. Guests charge on your own stored energy, with dynamic load management. That keeps your connection within its capacity.",
   "reg.label": "Prepared for what is coming",
   "reg.h2": "Stay compliant with EPBD IV and GACS",
   "reg.intro": "We also prepare you for what is coming. So you keep complying with the mandatory charging infrastructure (EPBD IV) and with GACS, the regulation for building automation. It currently applies to larger buildings, and from 2030 also to smaller hotels.",
