@@ -63,18 +63,37 @@
   nav.menu a{text-decoration:none;font-weight:500;font-size:.88rem;color:var(--primary);white-space:nowrap;
              padding:8px 10px;border-radius:var(--radius-sm)}
   nav.menu a:hover{background:var(--n100);color:var(--secondary)}
-  .lang{display:flex;gap:6px;align-items:center;border-left:1px solid var(--n300);padding-left:12px}
-  .lang button{border:1px solid var(--n300);background:var(--white);border-radius:var(--radius-sm);
-               min-width:44px;height:34px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.82rem;
-               letter-spacing:.06em;color:var(--primary);cursor:pointer;line-height:1;transition:.15s}
-  .lang button:hover{background:var(--n100)}
-  .lang button.on{border-color:var(--primary);background:var(--primary);color:var(--off);box-shadow:var(--shadow-glow)}
-  .lang button:focus-visible,nav.menu a:focus-visible,a.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  /* Taal-dropdown: identiek aan lemnion.nl (taal-dropdown in de header) */
+  .lang-switch{position:relative;display:inline-flex}
+  .lang-btn{display:inline-flex;align-items:center;gap:.35rem;height:44px;padding:.4rem .15rem;background:none;
+            border:none;cursor:pointer;font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:.9rem;
+            color:#556B58;white-space:nowrap;transition:color .2s}
+  .lang-btn:hover{color:#7FBF3A}
+  .lang-btn:focus-visible,nav.menu a:focus-visible,a.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .lang-btn .lang-cur{font-weight:600;color:#2E7032}
+  .lang-btn .lang-caret{transition:transform .2s}
+  .lang-nav.open .lang-btn{color:#7FBF3A}
+  .lang-nav.open .lang-btn .lang-caret{transform:rotate(180deg)}
+  /* Hogere specificiteit dan de site-CSS die de build in elke pagina injecteert:
+     het menu klapt rechtsonder de knop open (de knop staat hier uiterst rechts,
+     gecentreerd zou het menu buiten het scherm vallen). */
+  .lang-switch .lang-menu{list-style:none;margin:0;padding:.4rem;min-width:150px;position:absolute;top:calc(100% + 8px);
+             right:0;left:auto;transform:none;max-width:calc(100vw - 2rem);background:#fff;border:1px solid #D4DDD0;
+             border-radius:12px;box-shadow:0 20px 60px rgba(15,61,35,.12);display:none;flex-direction:column;gap:2px;z-index:120}
+  .lang-nav.open .lang-menu{display:flex}
+  .lang-menu .lang-opt{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:.55rem .75rem;
+             border-radius:8px;color:#3D4F40;text-decoration:none;font-family:'Inter',system-ui,sans-serif;
+             font-size:.9rem;font-weight:500;white-space:nowrap}
+  .lang-menu .lang-opt:hover{background:#F0F5EA;color:#0F3D23}
+  .lang-menu .lang-opt .lang-code{font-size:.68rem;font-weight:600;color:#556B58;min-width:32px;display:inline-flex;
+             align-items:center;justify-content:center}
+  .lang-menu .lang-opt.is-cur{color:#2E7032;font-weight:600}
+  .lang-menu .lang-opt.is-cur .lang-code{color:#2E7032;background:#F0F5EA;padding:1px 7px;border-radius:50px}
   @media(max-width:760px){
     .nav{flex-wrap:wrap;gap:10px}
     .wrap.nav{padding:10px 16px}
     .brand{flex:1 1 auto}
-    .lang{margin-left:auto}
+    .lang-switch{margin-left:auto}
     nav.menu{order:3;width:100%;margin-left:0;padding-top:8px;border-top:1px solid var(--n300)}
   }
 
@@ -241,9 +260,13 @@
       <a href="#team" data-i18n="nav.team">Voor hoteliers</a>
       <a href="#contact" data-i18n="ep.nav.contact">Contact</a>
     </nav>
-    <div class="lang" role="group" aria-label="Taal / Language">
-      <button id="langNl" class="on" title="Nederlands" lang="nl" onclick="setLang('nl')" aria-pressed="true">NL</button>
-      <button id="langEn" title="English" lang="en" onclick="setLang('en')" aria-pressed="false">EN</button>
+    <div class="lang-switch lang-nav" aria-label="Taal / Language">
+      <button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false"
+              aria-label="Taal / Language" data-i18n-aria-label="ep.lang.aria">
+        <span class="lang-cur" data-i18n="ep.lang.cur">NL</span>
+        <svg aria-hidden="true" class="lang-caret" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+      </button>
+      <ul class="lang-menu"></ul>
     </div>
   </div>
 </header>
@@ -300,7 +323,7 @@
           <rect x="6" y="5" width="12" height="10" rx="3"/><path d="M12 2v3M12 15v3M8 21h8"/></svg>
       </span>
       <h3 data-i18n="sol.c4h">Laadpalen voor gasten</h3>
-      <p data-i18n="sol.c4p">Van 22 kW AC tot snelladers. Gasten laden op opgeslagen energie, met dynamisch belastingsbeheer, zodat je aansluiting het niet zwaar krijgt.</p>
+      <p data-i18n="sol.c4p">Van 22 kW AC tot snelladers. Gasten laden op je eigen opgeslagen energie, met dynamisch belastingsbeheer. Zo blijft je aansluiting binnen zijn capaciteit.</p>
     </div>
   </div>
 </section>
@@ -469,6 +492,7 @@ const I18N = {
   nl:{
     "nav.descriptor":"HOSPITALITY ENERGY SOLUTIONS",
     "nav.oplossing":"Oplossing","nav.regels":"Regels","nav.aanpak":"Aanpak","nav.team":"Voor hoteliers","ep.nav.contact":"Contact",
+    "ep.lang.cur":"NL","ep.lang.aria":"Taal / Language",
     "hero.pill":"Voor hotels \u00b7 Energiepartner van de hotellerie",
     "hero.h1":"Lemnion is de <span class=\"accent\">energiepartner voor hotels</span>.",
     "hero.lead":"Met energieopslag, slimme energiemanagementsystemen (EMS), zonnepanelen en laadpalen voor gasten vergroten we de beschikbare stroom op je locatie. En je houdt altijd zicht op je verbruik.",
@@ -483,7 +507,7 @@ const I18N = {
     "sol.c3h":"Zonnepanelen",
     "sol.c3p":"Eigen opwek op je dak, direct gekoppeld aan opslag en verbruik. Zo gebruik je je eigen stroom op het moment dat je hem nodig hebt.",
     "sol.c4h":"Laadpalen voor gasten",
-    "sol.c4p":"Van 22 kW AC tot snelladers. Gasten laden op opgeslagen energie, met dynamisch belastingsbeheer, zodat je aansluiting het niet zwaar krijgt.",
+    "sol.c4p":"Van 22 kW AC tot snelladers. Gasten laden op je eigen opgeslagen energie, met dynamisch belastingsbeheer. Zo blijft je aansluiting binnen zijn capaciteit.",
     "reg.label":"Voorbereid op wat komt",
     "reg.h2":"Blijf voldoen aan EPBD IV en GACS",
     "reg.intro":"We bereiden je ook voor op wat er komt. Zo blijf je voldoen aan de verplichte laadinfrastructuur (EPBD IV) en aan GACS, de regelgeving voor gebouwautomatisering. Die geldt nu nog voor grotere gebouwen, maar vanaf 2030 ook voor kleinere hotels.",
@@ -538,6 +562,7 @@ const I18N = {
   en:{
     "nav.descriptor":"HOSPITALITY ENERGY SOLUTIONS",
     "nav.oplossing":"Solution","nav.regels":"Regulation","nav.aanpak":"Approach","nav.team":"For hoteliers","ep.nav.contact":"Contact",
+    "ep.lang.cur":"EN","ep.lang.aria":"Language / Taal",
     "hero.pill":"For hotels \u00b7 Energy partner of hospitality",
     "hero.h1":"Lemnion is the <span class=\"accent\">energy partner for hotels</span>.",
     "hero.lead":"With energy storage, smart energy management systems (EMS), solar panels and charging stations for guests we increase the available power at your location. And you always keep insight into your usage.",
@@ -552,7 +577,7 @@ const I18N = {
     "sol.c3h":"Solar panels",
     "sol.c3p":"Your own generation on the roof, directly linked to storage and consumption. That way you use your own power at the moment you need it.",
     "sol.c4h":"Charging stations for guests",
-    "sol.c4p":"From 22 kW AC to fast chargers. Guests charge on stored energy, with dynamic load management, so your connection is not strained.",
+    "sol.c4p":"From 22 kW AC to fast chargers. Guests charge on your own stored energy, with dynamic load management. That keeps your connection within its capacity.",
     "reg.label":"Prepared for what is coming",
     "reg.h2":"Stay compliant with EPBD IV and GACS",
     "reg.intro":"We also prepare you for what is coming. So you keep complying with the mandatory charging infrastructure (EPBD IV) and with GACS, the regulation for building automation. It currently applies to larger buildings, and from 2030 also to smaller hotels.",
@@ -613,10 +638,60 @@ function setLang(l){
     const k=el.getAttribute('data-i18n');
     if(t[k]!==undefined){ el.innerHTML=t[k]; }
   });
-  const on=document.getElementById('langNl'), oe=document.getElementById('langEn');
-  on.classList.toggle('on',l==='nl'); on.setAttribute('aria-pressed',l==='nl');
-  oe.classList.toggle('on',l==='en'); oe.setAttribute('aria-pressed',l==='en');
+  syncLangSwitch();
 }
+/* Taal-dropdown (NL/EN) — markup en gedrag identiek aan lemnion.nl */
+const EP_LANG_PATHS={nl:'/energiepartner-voor-hotels',en:'/en/hotel-energy-partner'};
+const EP_LANG_NAMES={nl:'Nederlands',en:'English'};
+function syncLangSwitch(){
+  const nav=document.querySelector('.lang-nav');
+  if(!nav) return;
+  const curEn=(document.documentElement.getAttribute('lang')||'nl').toLowerCase().indexOf('en')===0;
+  const cur=curEn?'en':'nl';
+  const curEl=nav.querySelector('.lang-cur');
+  if(curEl) curEl.textContent=curEn?'EN':'NL';
+  const btn=nav.querySelector('.lang-btn');
+  if(btn) btn.setAttribute('aria-label',curEn?'Language / Taal':'Taal / Language');
+  const menu=nav.querySelector('.lang-menu');
+  if(!menu) return;
+  menu.innerHTML='';
+  ['nl','en'].forEach(function(l){
+    const isCur=(l===cur);
+    const li=document.createElement('li');
+    const a=document.createElement('a');
+    a.className='lang-opt'+(isCur?' is-cur':'');
+    a.setAttribute('lang',l);
+    a.setAttribute('hreflang',l);
+    a.setAttribute('href',EP_LANG_PATHS[l]);
+    if(isCur) a.setAttribute('aria-current','true');
+    const nm=document.createElement('span'); nm.className='lang-name'; nm.textContent=EP_LANG_NAMES[l];
+    const cd=document.createElement('span'); cd.className='lang-code'; cd.textContent=l.toUpperCase();
+    a.appendChild(nm); a.appendChild(cd); li.appendChild(a); menu.appendChild(li);
+  });
+}
+function closeLangSwitch(){
+  const nav=document.querySelector('.lang-nav');
+  if(!nav) return;
+  nav.classList.remove('open');
+  const btn=nav.querySelector('.lang-btn');
+  if(btn) btn.setAttribute('aria-expanded','false');
+}
+(function bindLangSwitch(){
+  const nav=document.querySelector('.lang-nav');
+  if(!nav) return;
+  const btn=nav.querySelector('.lang-btn');
+  if(!btn) return;
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    const open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){
+    if(e.target && e.target.closest && !e.target.closest('.lang-nav')) closeLangSwitch();
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLangSwitch(); });
+})();
+syncLangSwitch();
 </script>
 </body>
 </html>
