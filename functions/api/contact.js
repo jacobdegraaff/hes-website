@@ -141,10 +141,16 @@ export async function onRequestPost(context) {
     "<p><strong>Bericht:</strong></p>" +
     "<p>" + escapeHtml(fields.bericht).replace(/\n/g, "<br>") + "</p>";
 
-  // Versturen via Resend
+  // 1) Eerst de CRM-prospect aanmaken (de melding in het CRM-dashboard).
+  //    Best-effort: faalt dit, dan gaat de rest gewoon door.
+  await forwardToCrm(fields, env);
+
+  // 2) Daarna de mail naar info@lemnion.nl. Best-effort: faalt dit, dan
+  //    krijgt de bezoeker tóch een bevestiging en staat de aanvraag al in
+  //    de CRM.
   try {
     const apiKey = env.RESEND_API_KEY || env.Resend || "";
-    const res = await fetch("https://api.resend.com/emails", {
+    await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + apiKey,
@@ -158,24 +164,9 @@ export async function onRequestPost(context) {
         html: html,
       }),
     });
-
-    if (!res.ok) {
-      return json(
-        { success: false, message: L.fail },
-        500
-      );
-    }
   } catch (e) {
-    return json(
-      { success: false, message: L.fail },
-      500
-    );
+    // best-effort — de mail mag het formulier nooit laten falen.
   }
-
-  // Best-effort: stuur de aanvraag ook naar de CRM als nieuwe prospect.
-  // Faalt dit (CRM offline, geen secret), dan is de mail al verstuurd en
-  // krijgt de bezoeker gewoon netjes een bevestiging.
-  await forwardToCrm(fields, env);
 
   return json({ success: true }, 200);
 }
