@@ -165,11 +165,52 @@ export async function onRequestPost(context) {
         500
       );
     }
-    return json({ success: true }, 200);
   } catch (e) {
     return json(
       { success: false, message: L.fail },
       500
     );
+  }
+
+  // Best-effort: stuur de aanvraag ook naar de CRM als nieuwe prospect.
+  // Faalt dit (CRM offline, geen secret), dan is de mail al verstuurd en
+  // krijgt de bezoeker gewoon netjes een bevestiging.
+  await forwardToCrm(fields, env);
+
+  return json({ success: true }, 200);
+}
+
+const CRM_FIELDS = [
+  "voornaam",
+  "achternaam",
+  "bedrijfsnaam",
+  "functie",
+  "email",
+  "mobiel",
+  "bericht",
+];
+
+async function forwardToCrm(fields, env) {
+  const url = env.INTAKE_URL;
+  const secret = env.INTAKE_SECRET;
+  if (!url || !secret) return;
+
+  const payload = {};
+  for (const key of CRM_FIELDS) {
+    if (fields[key]) payload[key] = fields[key];
+  }
+  payload.lang = "nl";
+
+  try {
+    await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + secret,
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (e) {
+    // best-effort — het contactformulier mag nooit falen door de CRM-forward.
   }
 }
