@@ -205,5 +205,11 @@
  "footer.veiligheid": "Safety",
  "nav.ems": "Energy Management System",
  "nav.oplossingen_t": "Solutions",
- "footer.privacy": "Privacy notice"
+ "footer.privacy": "Privacy notice",
+ "nlhome.h2": "Stay informed about energy innovations",
+ "nlhome.p": "Occasional updates on battery storage, EMS and grid congestion for the hospitality sector. Straight to your inbox, no spam.",
+ "nlhome.email": "Your email address",
+ "nlhome.submit": "Subscribe",
+ "nlhome.consent": "I agree to the",
+ "nlhome.privacy": "privacy policy"
 }

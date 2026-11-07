@@ -235,7 +235,7 @@ function finalizeHtml(html, page, lang) {
   // Verhoog deze bij elke JS-wijziging, anders krijgen terugkerende browsers
   // de gecachte oude versie en werkt de toggle niet.
   html = html.replace(/\/assets\/brand\/accessibility\.js\?v=\d+/g, '/assets/brand/accessibility.js?v=7');
-  return injectHead(injectSearch(html, lang), page, lang);
+  return injectHead(injectSearch(injectNewsletter(html, lang), page, lang), page, lang);
 }
 
 function rewriteLinks(html, lang) {
@@ -323,6 +323,123 @@ const SEARCH_LABELS = {
   nl: { open: 'Zoeken', placeholder: 'Doorzoek de site…', close: 'Sluiten zoeken', title: 'Zoeken op lemnion.nl' },
   en: { open: 'Search', placeholder: 'Search the site…', close: 'Close search', title: 'Search lemnion.nl' }
 };
+
+// Nieuwsbrief — inschrijvingsveld in de footer van elke pagina (NL + EN).
+// Label-teksten per taal expliciet (translatePage draait vóór finalizeHtml),
+// zelfde patroon als SEARCH_LABELS. Verstuurt naar /api/newsletter (Mailchimp,
+// double opt-in via status=pending). Honeypot + client-validatie, groene Lemnion-stijl.
+const NEWSLETTER_LABELS = {
+  nl: {
+    title: 'Blijf op de hoogte',
+    text: 'Ontvang af en toe update’s over energie-oplossingen voor de hotelerie. Geen spam.',
+    placeholder: 'Je e-mailadres',
+    submit: 'Inschrijven',
+    consent: 'Ik ga akkoord met de ',
+    privacy: 'privacyverklaring',
+    thanks: 'Bedankt! Check je inbox om je inschrijving te bevestigen.',
+    errInvalid: 'Vul een geldig e-mailadres in.',
+    errFail: 'Er ging iets mis. Probeer het later opnieuw.'
+  },
+  en: {
+    title: 'Stay updated',
+    text: 'Occasional updates about energy solutions for hospitality. No spam.',
+    placeholder: 'Your email address',
+    submit: 'Subscribe',
+    consent: 'I agree to the ',
+    privacy: 'privacy policy',
+    thanks: 'Thanks! Check your inbox to confirm your subscription.',
+    errInvalid: 'Please enter a valid email address.',
+    errFail: 'Something went wrong. Please try again later.'
+  }
+};
+
+function injectNewsletter(html, lang) {
+  const L = NEWSLETTER_LABELS[lang] || NEWSLETTER_LABELS.nl;
+  const privacyHref = lang === 'en' ? '/en/privacy' : '/privacy';
+  const block =
+    `${NEWSLETTER_CSS}` +
+    `<div class="newsletter" id="newsletter">` +
+      `<div class="newsletter-inner">` +
+        `<div class="newsletter-copy">` +
+          `<h3>${L.title}</h3>` +
+          `<p>${L.text}</p>` +
+        `</div>` +
+        `<form class="newsletter-form" id="newsletter-form" novalidate>` +
+          `<input type="text" name="website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">` +
+          `<label class="newsletter-field">` +
+            `<span class="sr-only">${L.placeholder}</span>` +
+            `<input type="email" name="email" placeholder="${L.placeholder}" autocomplete="email" required>` +
+          `</label>` +
+          `<button type="submit" class="btn">${L.submit}</button>` +
+          `<p class="newsletter-consent">${L.consent}<a href="${privacyHref}">${L.privacy}</a></p>` +
+          `<p class="newsletter-msg" role="status" aria-live="polite" hidden></p>` +
+        `</form>` +
+      `</div>` +
+    `</div>` +
+    `<script>${NEWSLETTER_JS}</script>`;
+  return html.replace('</footer>', block + '</footer>');
+}
+
+// Groene Lemnion-stijl voor de nieuwsbriefblok in de footer (mobiel-first).
+const NEWSLETTER_CSS =
+`<style>
+.newsletter{background:#0F3D23;color:#F5F7F2;margin:0;padding:2.25rem 1.25rem;}
+.newsletter-inner{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:1.25rem;align-items:flex-start;}
+.newsletter-copy h3{font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:1.15rem;color:#fff;margin:0 0 .35rem;}
+.newsletter-copy p{margin:0;color:#C9E2B0;font-size:.9rem;line-height:1.5;max-width:46ch;}
+.newsletter-form{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;width:100%;max-width:560px;}
+.newsletter-field{flex:1 1 220px;min-width:0;}
+.newsletter-field input{width:100%;box-sizing:border-box;border:1px solid #B7E08A;border-radius:10px;background:#0a2e1a;color:#fff;padding:.75rem 1rem;font-family:'Inter',system-ui,sans-serif;font-size:.95rem;outline:none;transition:border-color .2s,box-shadow .2s;}
+.newsletter-field input::placeholder{color:#8FBB77;}
+.newsletter-field input:focus{border-color:#7FBF3A;box-shadow:0 0 0 3px rgba(127,191,58,.25);}
+.newsletter-form .btn{flex:0 0 auto;border:none;border-radius:10px;background:#7FBF3A;color:#0F3D23;font-family:'Montserrat',system-ui,sans-serif;font-weight:600;font-size:.9rem;padding:.75rem 1.4rem;cursor:pointer;transition:background .2s;}
+.newsletter-form .btn:hover{background:#9BD44E;}
+.newsletter-form .btn:disabled{opacity:.6;cursor:default;}
+.newsletter-consent{margin:0 0 0 100%;width:100%;font-size:.78rem;color:#B7E08A;}
+.newsletter-consent a{color:#7FBF3A;text-decoration:none;}
+.newsletter-consent a:hover{text-decoration:underline;}
+.newsletter-msg{width:100%;margin:.4rem 0 0;font-size:.85rem;color:#fff;}
+.newsletter-msg.err{color:#FFD6A8;}
+.newsletter-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+@media(min-width:760px){
+  .newsletter-inner{flex-direction:row;align-items:center;justify-content:space-between;}
+  .newsletter-consent{margin-left:0;}
+}
+</style>`;
+
+// Verstuurt naar /api/newsletter (double opt-in via Mailchimp). Honeypot +
+// client-validatie; succes- en foutmeldingen per taal via <html lang>.
+const NEWSLETTER_JS =
+`(function(){
+  var form=document.getElementById('newsletter-form');
+  if(!form)return;
+  var msg=form.querySelector('.newsletter-msg');
+  var hp=form.querySelector('.newsletter-hp');
+  var ln=(document.documentElement.getAttribute('lang')||'nl');
+  var labels={nl:{invalid:'Vul een geldig e-mailadres in.',fail:'Er ging iets mis. Probeer het later opnieuw.',thanks:'Bedankt! Check je inbox om je inschrijving te bevestigen.'},en:{invalid:'Please enter a valid email address.',fail:'Something went wrong. Please try again later.',thanks:'Thanks! Check your inbox to confirm your subscription.'}};
+  var L=labels[ln]||labels.nl;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=form.querySelector('input[name=email]').value.trim();
+    if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(email)){
+      show(L.invalid);return;
+    }
+    var btn=form.querySelector('button[type=submit]');
+    var orig=btn?btn.innerHTML:'';
+    if(btn){btn.disabled=true;btn.innerHTML=(ln==='en'?'Sending…':'Verzenden…');}
+    fetch('/api/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,website:hp?hp.value:'',lang:ln})})
+      .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});})
+      .then(function(res){
+        if(res.ok&&res.data.success){form.innerHTML='<p style="color:#fff;font-family:Inter,sans-serif;font-size:.95rem;margin:0;">'+L.thanks+'</p>';return;}
+        if(btn){btn.disabled=false;btn.innerHTML=orig;}
+        show(res.data&&res.data.message?res.data.message:L.fail);
+      })
+      .catch(function(){if(btn){btn.disabled=false;btn.innerHTML=orig;}show(L.fail);});
+    function show(t){msg.textContent=t;msg.hidden=false;msg.className='newsletter-msg err';}
+  });
+})();`;
+
+
 
 const SEARCH_CSS = `
 /* Lemnion look & feel — tokens uit brand kit (DESIGN.md / colors.json / tokens.css) */
