@@ -164,6 +164,8 @@
  "news.label": "News",
  "news.h2": "Urgent developments",
  "news.all": "View all blog articles →",
+ "news.cta": "Get updates by email →",
+ "news.cta_aria": "Newsletter",
  "news.tag": "Blog",
  "news.b1date": "10 August 2026",
  "news.b1": "EPBD IV: mandatory charging infrastructure for hotels",
