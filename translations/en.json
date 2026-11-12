@@ -211,5 +211,6 @@
  "nlhome.email": "Your email address",
  "nlhome.submit": "Subscribe",
  "nlhome.consent": "I agree to the",
- "nlhome.privacy": "privacy policy"
+ "nlhome.privacy": "privacy policy",
+ "news.cta": "Get updates by email →"
 }
