@@ -447,30 +447,9 @@
         .cta-section h2 { margin-bottom: 1rem; }
         .cta-section p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
 
-        /* Nieuwsbriefstrip direct onder de banner (compact) */
-        .nlsection { padding: 1.15rem 0; background: #0B2F1C; border-top: 1px solid rgba(183,224,138,0.22); scroll-margin-top: 92px; }
-        .nlsection h2 { font-family: 'Montserrat',system-ui,sans-serif; font-weight: 600; font-size: 1rem; color: #fff; margin: 0 0 0.2rem; line-height: 1.3; }
-        .nlcap p { color: #C9E2B0; font-size: 0.85rem; line-height: 1.45; margin: 0; }
-        .nlbox { display: flex; flex-direction: column; gap: 0.85rem; max-width: 1180px; margin: 0 auto; }
-        .nlform { width: 100%; max-width: 540px; }
-        .nlform-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .nlfield { flex: 1 1 190px; min-width: 0; }
-        .nlfield input { width: 100%; box-sizing: border-box; border: 1px solid #B7E08A; border-radius: 8px; background: #0a2e1a; color: #fff; padding: 0.6rem 0.9rem; font-family: 'Inter',system-ui,sans-serif; font-size: 0.9rem; outline: none; }
-        .nlfield input::placeholder { color: #8FBB77; }
-        .nlfield input:focus { border-color: var(--green-accent); box-shadow: 0 0 0 3px rgba(127,191,58,0.25); }
-        .nlform .btn { border-radius: 8px; padding: 0.6rem 1.1rem; font-size: 0.9rem; }
-        .nlconsent { margin: 0.45rem 0 0; font-size: 0.72rem; line-height: 1.4; color: #B7E08A; }
-        .nlconsent a { color: #7FBF3A; text-decoration: none; }
-        .nlconsent a:hover { text-decoration: underline; }
-        .newsletter-msg { width: 100%; margin: 0.4rem 0 0; font-size: 0.8rem; color: #fff; }
-        .newsletter-msg.err { color: #FFD6A8; }
-        .newsletter-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-        @media (min-width: 900px) { .nlbox { flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; } .nlform { flex: 0 1 520px; } }
 
         /* CTA na het nieuwsblok */
-        .news-cta { background: #fff; border-top: 1px solid var(--border, #E3E9DE); padding: 1.6rem 0; }
-        .news-cta .container { display: flex; justify-content: center; }
 
         /* Contact Modal */
         .contact-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100000; align-items: center; justify-content: center; } /* boven mobiel menu (99999) */
@@ -1151,30 +1130,6 @@ function lockScroll(on) {
         </div>
     </section>
 
-    <!-- NIEUWSBRIEFSTRIP (direct onder de banner) -->
-    <section id="newsletter-home" class="nlsection">
-        <div class="container">
-            <div class="nlbox">
-                <div class="nlcap">
-                    <h2 data-i18n="nlhome.h2">Blijf op de hoogte van energie-innovaties</h2>
-                    <p data-i18n="nlhome.p">Ontvang af en toe update’s over batterijopslag, EMS en netcongestie voor de hotelerie. Direct in je inbox, geen spam.</p>
-                </div>
-                <form id="newsletter-home-form" class="nlform" novalidate>
-                    <input type="text" name="website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <div class="nlform-row">
-                        <label class="nlfield">
-                            <span class="sr-only" data-i18n="nlhome.email">Je e-mailadres</span>
-                            <input type="email" name="email" data-i18n-placeholder="nlhome.email" placeholder="Je e-mailadres" autocomplete="email" required>
-                        </label>
-                        <button type="submit" class="btn btn-primary" data-i18n="nlhome.submit">Inschrijven</button>
-                    </div>
-                    <p class="nlconsent"><span data-i18n="nlhome.consent">Ik ga akkoord met de</span> <a data-i18n="nlhome.privacy" href="/privacy">privacyverklaring</a></p>
-                    <p class="newsletter-msg" role="status" aria-live="polite" hidden></p>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- NIEUWS TICKER -->
     <section class="news-ticker" aria-labelledby="news-h2">
         <div class="container">
@@ -1227,12 +1182,6 @@ function lockScroll(on) {
     </section>
 
     <!-- CTA na het nieuwsblok -->
-    <section class="news-cta" aria-label="Nieuwsbrief" data-i18n-aria-label="news.cta_aria">
-        <div class="container">
-            <a class="btn btn-outline" data-i18n="news.cta" href="#newsletter-home">Ontvang updates per mail →</a>
-        </div>
-    </section>
-
     <!-- PROBLEEM -->
     <section id="probleem">
         <div class="container">
@@ -1476,7 +1425,6 @@ function lockScroll(on) {
                 <li><a data-i18n="footer.veiligheid" href="/veiligheid">Veiligheid</a></li>
                 <li><a data-i18n="nav.overons" href="/over-ons">Over ons</a></li>
                 <li><a data-i18n="footer.nieuwsblog" href="/nieuws">Nieuws &amp; blog</a></li>
-                <li><a data-i18n="footer.newsletter" href="/#newsletter-home">Blijf op de hoogte</a></li>
                 <li><a data-i18n="footer.contact" href="#" onclick="document.getElementById('contact-modal').style.display='flex';lockScroll(true);return false;">Contact</a></li>
             </ul>
         </div>
@@ -1775,43 +1723,6 @@ document.addEventListener('keydown', function(e) {
 
 
 
-<script>
-/* Homepage nieuwsbrief — verstuurt naar /api/newsletter (Mailchimp double opt-in).
-   Eigen formulier met eigen ID (botst niet met de footer-versie). */
-(function(){
-    var form = document.getElementById('newsletter-home-form');
-    if (!form) return;
-    var msg = form.querySelector('.newsletter-msg');
-    var hp = form.querySelector('.newsletter-hp');
-    var lang = document.documentElement.getAttribute('lang') || 'nl';
-    var L = (lang === 'en')
-        ? { invalid:'Please enter a valid email address.', fail:'Something went wrong. Please try again later.', thanks:'Thanks! Check your inbox to confirm your subscription.' }
-        : { invalid:'Vul een geldig e-mailadres in.', fail:'Er ging iets mis. Probeer het later opnieuw.', thanks:'Bedankt! Check je inbox om je inschrijving te bevestigen.' };
-    function show(t){ msg.textContent = t; msg.hidden = false; msg.className = 'newsletter-msg err'; }
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
-        var email = form.querySelector('input[name=email]').value.trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { show(L.invalid); return; }
-        var btn = form.querySelector('button[type=submit]');
-        var orig = btn ? btn.innerHTML : '';
-        if (btn) { btn.disabled = true; btn.innerHTML = (lang === 'en') ? 'Sending…' : 'Verzenden…'; }
-        fetch('/api/newsletter', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, website: hp ? hp.value : '', lang: lang })
-        }).then(function(r){ return r.json().then(function(d){ return { ok: r.ok, data: d }; }); })
-          .then(function(res){
-            if (res.ok && res.data.success) {
-                form.innerHTML = '<p style="color:#fff;font-family:Inter,sans-serif;font-size:.95rem;margin:0;">' + L.thanks + '</p>';
-                return;
-            }
-            if (btn) { btn.disabled = false; btn.innerHTML = orig; }
-            show(res.data && res.data.message ? res.data.message : L.fail);
-          })
-          .catch(function(){ if (btn) { btn.disabled = false; btn.innerHTML = orig; } show(L.fail); });
-    });
-})();
-</script>
 
 <script src="/assets/brand/accessibility.js?v=6" defer></script>
 </body>

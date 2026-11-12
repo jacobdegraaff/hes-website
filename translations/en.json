@@ -133,7 +133,6 @@
  "footer.h_info": "Information",
  "footer.usp": "USP",
  "footer.nieuwsblog": "News &amp; blog",
- "footer.newsletter": "Stay updated",
  "footer.contact": "Contact",
  "footer.copyright": "&copy; 2026 Lemnion. In partnership with Stroomlijnen B.V.",
  "footer.wcag": "♿ Built to WCAG 2.2 AA standards",
@@ -164,8 +163,6 @@
  "news.label": "News",
  "news.h2": "Urgent developments",
  "news.all": "View all blog articles →",
- "news.cta": "Get updates by email →",
- "news.cta_aria": "Newsletter",
  "news.tag": "Blog",
  "news.b1date": "10 August 2026",
  "news.b1": "EPBD IV: mandatory charging infrastructure for hotels",
@@ -208,11 +205,5 @@
  "footer.veiligheid": "Safety",
  "nav.ems": "Energy Management System",
  "nav.oplossingen_t": "Solutions",
- "footer.privacy": "Privacy notice",
- "nlhome.h2": "Stay informed about energy innovations",
- "nlhome.p": "Occasional updates on battery storage, EMS and grid congestion for the hospitality sector. Straight to your inbox, no spam.",
- "nlhome.email": "Your email address",
- "nlhome.submit": "Subscribe",
- "nlhome.consent": "I agree to the",
- "nlhome.privacy": "privacy policy"
+ "footer.privacy": "Privacy notice"
 }
