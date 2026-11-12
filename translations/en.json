@@ -212,5 +212,7 @@
  "nlhome.submit": "Subscribe",
  "nlhome.consent": "I agree to the",
  "nlhome.privacy": "privacy policy",
- "news.cta": "Get updates by email →"
+ "news.cta": "Get updates by email →",
+ "news.cta_h2": "What's happening in energy for hotels",
+ "news.cta_p": "Legislation, subsidies, grid congestion and storage. Plus what Lemnion realises at hotels. Straight to your inbox, no spam."
 }

@@ -449,6 +449,9 @@
 
         .news-cta { background: #fff; border-top: 1px solid var(--border, #E3E9DE); padding: 1.6rem 0; }
         .news-cta .container { display: flex; justify-content: center; }
+        .news-cta-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; max-width: 620px; margin: 0 auto; }
+        .news-cta-inner h2 { font-family: 'Montserrat',system-ui,sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--green-primary, #0F3D23); margin: 0; line-height: 1.3; }
+        .news-cta-inner p { color: var(--text-muted, #4A5A4E); font-size: 0.95rem; line-height: 1.55; margin: 0 0 0.35rem; }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
         /* CTA na het nieuwsblok */
@@ -1186,7 +1189,11 @@ function lockScroll(on) {
     <!-- CTA na het nieuwsblok -->
     <section class="news-cta" aria-label="Nieuwsbrief">
         <div class="container">
-            <a class="btn btn-outline" data-i18n="news.cta" href="#" onclick="document.getElementById('newsletter-modal').style.display='flex';lockScroll(true);return false;">Ontvang updates per mail →</a>
+            <div class="news-cta-inner">
+                <h2 data-i18n="news.cta_h2">Wat er speelt in energie voor hotels</h2>
+                <p data-i18n="news.cta_p">Wetgeving, subsidies, netcongestie en opslag. Plus wat Lemnion bij hotels realiseert. Direct in je inbox, geen spam.</p>
+                <a class="btn btn-outline" data-i18n="news.cta" href="#" onclick="document.getElementById('newsletter-modal').style.display='flex';lockScroll(true);return false;">Ontvang updates per mail →</a>
+            </div>
         </div>
     </section>
 
