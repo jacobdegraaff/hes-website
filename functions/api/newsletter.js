@@ -19,6 +19,7 @@ const MSG = {
     emailTooLong: "E-mailadres is te lang.",
     config: "Inschrijven is tijdelijk niet beschikbaar. Probeer het later opnieuw.",
     fail: "Het inschrijven is mislukt. Probeer het later opnieuw.",
+    blocked: "Dit adres kan niet opnieuw worden ingeschreven. Mail ons via info@lemnion.nl.",
   },
   en: {
     rate: "Too many requests. Please try again later.",
@@ -27,6 +28,7 @@ const MSG = {
     emailTooLong: "Email address is too long.",
     config: "Sign-up is temporarily unavailable. Please try again later.",
     fail: "Sign-up failed. Please try again later.",
+    blocked: "This address cannot be subscribed again. Contact us at info@lemnion.nl.",
   },
 };
 
@@ -107,18 +109,30 @@ export async function onRequestPost(context) {
         email_address: email,
         status: "pending", // double opt-in: Mailchimp stuurt eerst bevestiging
         merge_fields: { FNAME: "", LNAME: "" },
+        tags: ["nieuwsbrief"],
       }),
     });
 
-    // 400 = al ingeschreven/aanwezig -> netjes afhandelen als succes (double opt-in)
-    if (res.status === 400) {
+    const body = await res.json().catch(() => ({}));
+
+    if (res.ok) {
+      return json({ success: true }, 200);
+    }
+
+    // Al bekend: Mailchimp stuurt geen tweede bevestigingsmail.
+    if (res.status === 400 && /member exists/i.test(body.title || "")) {
       return json({ success: true, already: true }, 200);
     }
-    if (!res.ok) {
-      return json({ success: false, message: L.fail }, 500);
+
+    // Eerder uitgeschreven of opgeschoond: Mailchimp blokkeert herinschrijving.
+    if (res.status === 400 && /compliance|forgotten/i.test(body.title || "")) {
+      return json({ success: false, message: L.blocked }, 409);
     }
-    return json({ success: true }, 200);
+
+    console.error("newsletter: mailchimp error", res.status, body.title, body.detail);
+    return json({ success: false, message: L.fail }, 502);
   } catch (e) {
-    return json({ success: false, message: L.fail }, 500);
+    console.error("newsletter: fetch failed", e && e.message);
+    return json({ success: false, message: L.fail }, 502);
   }
 }
