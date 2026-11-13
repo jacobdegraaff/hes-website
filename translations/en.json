@@ -205,5 +205,14 @@
  "footer.veiligheid": "Safety",
  "nav.ems": "Energy Management System",
  "nav.oplossingen_t": "Solutions",
- "footer.privacy": "Privacy notice"
+ "footer.privacy": "Privacy notice",
+ "nlhome.h2": "Energy updates from Lemnion",
+ "nlhome.p": "Updates on battery storage, EMS and grid congestion for the hospitality sector. Straight to your inbox, no spam.",
+ "nlhome.email": "Your email address",
+ "nlhome.submit": "Subscribe",
+ "nlhome.consent": "I agree to the",
+ "nlhome.privacy": "privacy policy",
+ "news.cta": "Get updates by email →",
+ "news.cta_h2": "Energy updates from Lemnion",
+ "news.cta_p": "Legislation, grid congestion, storage and what we realise at hotels. Straight to your inbox, no spam."
 }

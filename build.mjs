@@ -235,7 +235,7 @@ function finalizeHtml(html, page, lang) {
   // Verhoog deze bij elke JS-wijziging, anders krijgen terugkerende browsers
   // de gecachte oude versie en werkt de toggle niet.
   html = html.replace(/\/assets\/brand\/accessibility\.js\?v=\d+/g, '/assets/brand/accessibility.js?v=7');
-  return injectHead(injectSearch(html, lang), page, lang);
+  return injectHead(injectSearch(html, page, lang), page, lang);
 }
 
 function rewriteLinks(html, lang) {
