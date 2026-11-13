@@ -40,7 +40,7 @@
   {"key": "subsidies.budget-sub", "tag": "p", "contains": "Dagelijks bijgewerkt"},
   {"key": "subsidies.budget-eia-amount", "tag": "span", "contains": "€460 miljoen"},
   {"key": "subsidies.budget-eia-desc", "tag": "span", "contains": "40% aftrek op fiscale winst"},
-  {"key": "subsidies.budget-mia-amount", "tag": "span", "contains": "€150 miljoen"},
+  {"key": "subsidies.budget-mia-amount", "tag": "span", "contains": "€155 miljoen"},
   {"key": "subsidies.budget-mia-desc", "tag": "span", "contains": "tot 45% aftrek"},
   {"key": "subsidies.help-label", "tag": "p", "contains": "Hoe Lemnion helpt", "attrs": "section-label"},
   {"key": "subsidies.help-h2", "tag": "h2", "contains": "Van aanvraag tot uitbetaling"},
