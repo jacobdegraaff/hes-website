@@ -61,6 +61,7 @@ const TRAIL = {
   'nieuws.html':        { parent: null,               nl: 'Nieuws',                 en: 'News' },
   'blog.html':          { parent: 'nieuws.html',      nl: 'Blog',                   en: 'Blog' },
   'blog-epbd-iv-laadinfra.html': { parent: 'nieuws.html', nl: 'Blog',               en: 'Blog' },
+  'blog-sprila-2027.html': { parent: 'nieuws.html', nl: 'Blog',               en: 'Blog' },
   'producten.html':     { parent: null,               nl: 'Producten',              en: 'Products' },
   'subsidies.html':     { parent: null,               nl: 'Subsidies',              en: 'Subsidies' },
   'over-ons.html':      { parent: null,               nl: 'Over ons',               en: 'About us' },
