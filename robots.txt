@@ -1,8 +1,7 @@
 # robots.txt voor Hospitality Energy Solutions
-# Laatst bijgewerkt: 2026-08-03
+# Laatst bijgewerkt: 2026-11-24
 
 User-agent: *
 Allow: /
-Disallow: /assets/
 
 Sitemap: https://lemnion.nl/sitemap.xml
