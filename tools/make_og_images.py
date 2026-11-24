@@ -125,6 +125,7 @@ def main():
     # Bestandsnaam = cache-buster: LinkedIn cachet per URL, dus een nieuwe
     # afbeelding krijgt een nieuwe naam in plaats van dezelfde te overschrijven.
     card.save(ROOT / "assets" / "lemnion-share-1200x627.png", optimize=True)
+    card.save(ROOT / "lemnion-share-1200x627.png", optimize=True)  # root: buiten /assets/
     card.save(ROOT / "assets" / "logo-og.png", optimize=True)  # legacy URL
     print(f"assets/lemnion-share-1200x627.png  {card.width}x{card.height}")
 
