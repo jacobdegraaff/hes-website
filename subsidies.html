@@ -77,6 +77,9 @@
         .subsidy-card{background:white;border-radius:var(--radius-lg);padding:2rem;box-shadow:0 4px 24px rgba(15,61,35,0.06);border:1px solid var(--border);position:relative;overflow:hidden}
         .subsidy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--green-accent)}
         .subsidy-card h3{margin-bottom:0.5rem}
+        .subsidy-card .sprila-signal{background:rgba(127,191,58,0.10);border-left:3px solid var(--green-accent);border-radius:8px;padding:0.7rem 0.95rem;margin:0.35rem 0 1rem}
+        .subsidy-card .sprila-signal p{font-size:0.86rem;line-height:1.5;margin:0;color:var(--green-primary)}
+        .subsidy-card .sprila-signal a{display:inline-block;margin-top:0.35rem;font-size:0.82rem;font-weight:600;color:var(--green-secondary);text-decoration:underline}
         .subsidy-card .percentage{font-family:'Montserrat',system-ui,sans-serif;font-size:1.8rem;font-weight:600;color:var(--green-secondary);margin-bottom:0.25rem}
         .subsidy-card p{font-size:0.9rem;color:#3D4F40}
         .subsidy-card ul{list-style:none;margin-top:1rem}
@@ -546,6 +549,10 @@ function lockScroll(on) {
             <div class="subsidy-card">
                 <p data-i18n="subsidies.sprila-label" class="section-label" style="margin-bottom:0.25rem;">Subsidieregeling Private Laadinfrastructuur bij bedrijven</p>
                 <h3>SPRILA</h3>
+                <div class="sprila-signal">
+                    <p data-i18n="subsidies.sprila-nieuws"><strong>Budget 2026 is overtekend.</strong> De nieuwe ronde opent naar verwachting eind januari 2027; dan kun je weer aanvragen.</p>
+                    <a data-i18n="subsidies.sprila-nieuws-link" href="/blog-sprila-2027">Lees wat dit voor jouw hotel betekent →</a>
+                </div>
                 <p data-i18n="subsidies.per-station" class="percentage">subsidie per laadstation</p>
                 <p data-i18n="subsidies.sprila-p">Subsidieregeling voor <strong>private</strong> laadinfrastructuur bij bedrijven: laadpalen op eigen of gehuurd terrein voor gasten en personeel. Ideaal voor hotels.</p>
                 <ul>
@@ -574,7 +581,7 @@ function lockScroll(on) {
                 </div>
                 <div style="background:var(--off-white);border-radius:var(--radius);padding:0.85rem 1rem;margin-top:0.6rem;font-size:0.82rem;color:#3D4F40;line-height:1.5;">
                     <!-- SPRILA_STATUS_START -->
-                    <span data-i18n="subsidies.sprila-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 13-11-2026 · <strong>Open voor aanvragen</strong> · Budget €122,5 mln · Aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
+                    <span data-i18n="subsidies.sprila-status" style="font-size:0.72rem;color:var(--text-muted);">Peildatum: 16-11-2026 · <strong>Open voor aanvragen</strong> · Budget €122,5 mln · Aanvragen t/m 18-12-2026 · Bron: <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur" style="color:var(--green-secondary);">RVO.nl</a></span><br>
                     <!-- SPRILA_STATUS_END -->
                     <span data-i18n="subsidies.sprila-links" style="font-size:0.72rem;color:var(--text-muted);">Meer informatie: <a href="https://www.rvo.nl/subsidies-financiering/sprila-en-spula/sprila-veelgestelde-vragen" style="color:var(--green-secondary);">veelgestelde vragen</a> · <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/rekenvoorbeelden-sprila" style="color:var(--green-secondary);">rekenvoorbeelden</a> · <a href="https://www.rvo.nl/subsidies-financiering/laadinfrastructuur/sprila-aanschaf#rekentool-en-rekenvoorbeelden" style="color:var(--green-secondary);">rekentool</a> · <a href="https://www.rvo.nl/onderwerpen/subsidiespelregels/ez/mkb-verklaring" style="color:var(--green-secondary);">mkb-verklaring</a></span><br>
                 </div>
@@ -631,7 +638,7 @@ function lockScroll(on) {
         <!-- BUDGET_STATUS_START -->
         <div id="budget-status" style="background:white; border-radius:var(--radius-lg); padding:1.5rem 2rem; box-shadow:0 4px 24px rgba(15,61,35,0.06); border:1px solid var(--border); margin-top:2rem; text-align:center;">
             <p data-i18n="subsidies.budget-label" class="section-label" style="margin-bottom:0.25rem;">Beschikbare budgetten</p>
-            <p data-i18n="subsidies.budget-sub" style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Peildatum: 13-11-2026 · Dagelijks bijgewerkt · Bron: <a href="https://www.rvo.nl/subsidies-financiering/eia/ondernemers" style="color:var(--green-secondary);">RVO.nl</a></p>
+            <p data-i18n="subsidies.budget-sub" style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Peildatum: 16-11-2026 · Dagelijks bijgewerkt · Bron: <a href="https://www.rvo.nl/subsidies-financiering/eia/ondernemers" style="color:var(--green-secondary);">RVO.nl</a></p>
             <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1rem;">
                 <div>
                     <span style="font-family:'Montserrat',system-ui,sans-serif; font-weight:600; color:var(--green-primary);">EIA</span>
