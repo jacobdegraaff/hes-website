@@ -22,7 +22,8 @@
     <meta property="og:url" content="https://lemnion.nl/">
     <meta property="og:image" content="https://lemnion.nl/assets/logo-og.png">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:height" content="627">
+    <meta property="og:image:alt" content="Lemnion Hospitality Energy Solutions">
     <meta property="og:locale" content="nl_NL">
     <meta property="og:site_name" content="Lemnion · Hospitality Energy Solutions">
     
@@ -40,7 +41,7 @@
       "name": "Lemnion",
       "alternateName": "Lemnion",
       "url": "https://lemnion.nl/",
-      "logo": "https://lemnion.nl/assets/logo-og.png",
+      "logo": "https://lemnion.nl/assets/logo-org.png",
       "description": "Lemnion maakt hotels energie-onafhankelijk met batterijopslag, EMS, zonnepanelen en EV-laadpalen.",
       "foundingDate": "2025",
       "founders": [
@@ -316,6 +317,7 @@
             gap: 1rem; margin-top: 1.25rem;
         }
         .news-ticker-grid li { height: 100%; min-width: 0; }
+        .news-ticker-grid li > article { height: 100%; }
         .news-ticker-card {
             background: #FFFFFF; border: 1px solid var(--border);
             border-radius: var(--radius-lg); box-shadow: 0 2px 12px rgba(15, 61, 35, 0.05);
@@ -1146,6 +1148,18 @@ function lockScroll(on) {
                 <a data-i18n="news.all" class="news-ticker-all" href="/blog">Bekijk alle blogartikelen →</a>
             </div>
             <ul class="news-ticker-grid">
+                <li>
+                    <article>
+                        <a class="news-ticker-card" href="/blog-sprila-2027">
+                            <span class="news-ticker-meta">
+                                <span class="news-ticker-tag" data-i18n="news.tag">Blog</span>
+                                <span class="news-ticker-date" data-i18n="news.b4date">23 november 2026</span>
+                            </span>
+                            <h3 data-i18n="news.b4">SPRILA 2027: wat de nieuwe ronde betekent voor jouw hotel</h3>
+                            <p class="news-ticker-ingang" data-i18n="news.b4ingang">Nieuwe ronde: naar verwachting eind januari 2027</p>
+                        </a>
+                    </article>
+                </li>
                 <li>
                     <article>
                         <a class="news-ticker-card" href="/blog-salderingsregeling">
