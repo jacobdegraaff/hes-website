@@ -26,7 +26,7 @@
   {"key": "subsidies.sprila-li1", "tag": "li", "contains": "AC-laadstation"},
   {"key": "subsidies.sprila-li2", "tag": "li", "contains": "Eigen of gehuurd terrein"},
   {"key": "subsidies.sprila-li3", "tag": "li", "contains": "Slimme laadfunctionaliteit"},
-  {"key": "subsidies.sprila-status", "tag": "span", "contains": "Budget €122,5 mln"},
+  {"key": "subsidies.sprila-status", "tag": "span", "contains": "Aanvragen t/m"},
   {"key": "subsidies.ere-label", "tag": "p", "contains": "Verhandelbare emissie-eenheden", "attrs": "section-label"},
   {"key": "subsidies.ere-p", "tag": "p", "contains": "Geen subsidie, maar een extra inkomstenstroom"},
   {"key": "subsidies.ere-li1", "tag": "li", "contains": "1 ERE = 1 kg CO₂eq"},
